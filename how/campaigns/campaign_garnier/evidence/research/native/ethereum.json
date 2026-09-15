@@ -1,0 +1,1433 @@
+[
+  {
+    "id": "ethereum",
+    "capturedAt": "2026-09-15T11:58:42.784Z",
+    "requestedURL": "https://ethereum.org/en/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://ethereum.org/",
+    "title": "Ethereum - The complete guide from ethereum.org",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "documentWidth": 1440,
+    "fullHeight": 9438,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "The internet that belongs to you",
+        "href": null,
+        "x": 274,
+        "y": 748,
+        "w": 893,
+        "h": 115
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Ethereum gives back control of your assets",
+        "href": null,
+        "x": 16,
+        "y": 1331,
+        "w": 823,
+        "h": 144
+      },
+      {
+        "tag": "H2",
+        "text": "Use the internet without being watched",
+        "href": null,
+        "x": 16,
+        "y": 1939,
+        "w": 660,
+        "h": 216
+      },
+      {
+        "tag": "H2",
+        "text": "Send money home in 12 seconds",
+        "href": null,
+        "x": 1456,
+        "y": 2014,
+        "w": 660,
+        "h": 144
+      },
+      {
+        "tag": "H2",
+        "text": "Borrow without credit history",
+        "href": null,
+        "x": 2896,
+        "y": 2014,
+        "w": 660,
+        "h": 144
+      },
+      {
+        "tag": "H2",
+        "text": "Built to last",
+        "href": null,
+        "x": 764,
+        "y": 2987,
+        "w": 660,
+        "h": 72
+      },
+      {
+        "tag": "H2",
+        "text": "Try Ethereum in your browser",
+        "href": null,
+        "x": 275,
+        "y": 3790,
+        "w": 890,
+        "h": 75
+      },
+      {
+        "tag": "H3",
+        "text": "Receive digital assets from anywhere",
+        "href": null,
+        "x": 316,
+        "y": 4129,
+        "w": 454,
+        "h": 80
+      },
+      {
+        "tag": "H2",
+        "text": "What makes Ethereum different",
+        "href": null,
+        "x": 243,
+        "y": 4991,
+        "w": 955,
+        "h": 72
+      },
+      {
+        "tag": "H3",
+        "text": "Direct ownership",
+        "href": null,
+        "x": 128,
+        "y": 5316,
+        "w": 651,
+        "h": 58
+      },
+      {
+        "tag": "H3",
+        "text": "Public rules",
+        "href": null,
+        "x": 876,
+        "y": 5229,
+        "w": 435,
+        "h": 58
+      },
+      {
+        "tag": "H3",
+        "text": "Global",
+        "href": null,
+        "x": 129,
+        "y": 5653,
+        "w": 329,
+        "h": 39
+      },
+      {
+        "tag": "H3",
+        "text": "Free access",
+        "href": null,
+        "x": 556,
+        "y": 5653,
+        "w": 329,
+        "h": 39
+      },
+      {
+        "tag": "H3",
+        "text": "Nobody owns Ethereum",
+        "href": null,
+        "x": 982,
+        "y": 5653,
+        "w": 329,
+        "h": 78
+      },
+      {
+        "tag": "H2",
+        "text": "Latest Ethereum updates",
+        "href": null,
+        "x": 344,
+        "y": 6679,
+        "w": 752,
+        "h": 72
+      },
+      {
+        "tag": "H3",
+        "text": "Tenev On Stock Token Issuer Consent",
+        "href": null,
+        "x": 112,
+        "y": 7065,
+        "w": 373,
+        "h": 62
+      },
+      {
+        "tag": "H3",
+        "text": "Ethereal news weekly #39",
+        "href": null,
+        "x": 533,
+        "y": 7065,
+        "w": 373,
+        "h": 31
+      },
+      {
+        "tag": "H3",
+        "text": "Spill Slot Collision Across Mutual Recursion Bug",
+        "href": null,
+        "x": 955,
+        "y": 7065,
+        "w": 373,
+        "h": 62
+      },
+      {
+        "tag": "H2",
+        "text": "Get started on Ethereum",
+        "href": null,
+        "x": 354,
+        "y": 7639,
+        "w": 732,
+        "h": 72
+      },
+      {
+        "tag": "H3",
+        "text": "Understand Ethereum",
+        "href": null,
+        "x": 160,
+        "y": 8114,
+        "w": 264,
+        "h": 31
+      },
+      {
+        "tag": "H3",
+        "text": "Start building",
+        "href": null,
+        "x": 592,
+        "y": 8114,
+        "w": 164,
+        "h": 31
+      },
+      {
+        "tag": "H3",
+        "text": "For enterprise",
+        "href": null,
+        "x": 1024,
+        "y": 8114,
+        "w": 170,
+        "h": 31
+      },
+      {
+        "tag": "H3",
+        "text": "Learn",
+        "href": null,
+        "x": 32,
+        "y": 8755,
+        "w": 262,
+        "h": 22
+      },
+      {
+        "tag": "H3",
+        "text": "Use",
+        "href": null,
+        "x": 310,
+        "y": 8755,
+        "w": 262,
+        "h": 22
+      },
+      {
+        "tag": "H3",
+        "text": "Build",
+        "href": null,
+        "x": 589,
+        "y": 8755,
+        "w": 262,
+        "h": 22
+      },
+      {
+        "tag": "H3",
+        "text": "Community",
+        "href": null,
+        "x": 867,
+        "y": 8755,
+        "w": 262,
+        "h": 22
+      },
+      {
+        "tag": "H3",
+        "text": "Roadmap",
+        "href": null,
+        "x": 1146,
+        "y": 8755,
+        "w": 262,
+        "h": 22
+      }
+    ],
+    "headerControls": [
+      {
+        "tag": "A",
+        "text": "Home",
+        "href": "/",
+        "x": 32,
+        "y": 16,
+        "w": 22,
+        "h": 43
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Learn",
+        "href": null,
+        "x": 86,
+        "y": 16,
+        "w": 77,
+        "h": 44
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Use",
+        "href": null,
+        "x": 163,
+        "y": 16,
+        "w": 64,
+        "h": 44
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Build",
+        "href": null,
+        "x": 227,
+        "y": 16,
+        "w": 71,
+        "h": 44
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Community",
+        "href": null,
+        "x": 298,
+        "y": 16,
+        "w": 121,
+        "h": 44
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Roadmap",
+        "href": null,
+        "x": 419,
+        "y": 16,
+        "w": 105,
+        "h": 44
+      },
+      {
+        "tag": "BUTTON",
+        "text": "search ⌘ k",
+        "href": null,
+        "x": 1013,
+        "y": 16,
+        "w": 169,
+        "h": 44
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Switch to dark mode",
+        "href": null,
+        "x": 1194,
+        "y": 17,
+        "w": 50,
+        "h": 42
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Languages EN",
+        "href": null,
+        "x": 1244,
+        "y": 16,
+        "w": 164,
+        "h": 44
+      },
+      {
+        "tag": "A",
+        "text": "Overview",
+        "href": "/learn/",
+        "x": 22,
+        "y": 77,
+        "w": 72,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "What is Ethereum?",
+        "href": "/what-is-ethereum/",
+        "x": 22,
+        "y": 114,
+        "w": 141,
+        "h": 20
+      }
+    ],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "Home",
+        "href": "/",
+        "x": 32,
+        "y": 16,
+        "w": 22,
+        "h": 43
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Learn",
+        "href": null,
+        "x": 86,
+        "y": 16,
+        "w": 77,
+        "h": 44
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Use",
+        "href": null,
+        "x": 163,
+        "y": 16,
+        "w": 64,
+        "h": 44
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Build",
+        "href": null,
+        "x": 227,
+        "y": 16,
+        "w": 71,
+        "h": 44
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Community",
+        "href": null,
+        "x": 298,
+        "y": 16,
+        "w": 121,
+        "h": 44
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Roadmap",
+        "href": null,
+        "x": 419,
+        "y": 16,
+        "w": 105,
+        "h": 44
+      },
+      {
+        "tag": "BUTTON",
+        "text": "search ⌘ k",
+        "href": null,
+        "x": 1013,
+        "y": 16,
+        "w": 169,
+        "h": 44
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Switch to dark mode",
+        "href": null,
+        "x": 1194,
+        "y": 17,
+        "w": 50,
+        "h": 42
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Languages EN",
+        "href": null,
+        "x": 1244,
+        "y": 16,
+        "w": 164,
+        "h": 44
+      },
+      {
+        "tag": "A",
+        "text": "Overview",
+        "href": "/learn/",
+        "x": 22,
+        "y": 77,
+        "w": 72,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "What is Ethereum?",
+        "href": "/what-is-ethereum/",
+        "x": 22,
+        "y": 114,
+        "w": 141,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "What is the Ethereum network?",
+        "href": "/what-is-the-ethereum-network/",
+        "x": 22,
+        "y": 151,
+        "w": 236,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "What is ether (ETH)?",
+        "href": "/what-is-ether/",
+        "x": 22,
+        "y": 189,
+        "w": 156,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Ethereum's core principles",
+        "href": "/values/",
+        "x": 22,
+        "y": 226,
+        "w": 202,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "What is Web3?",
+        "href": "/web3/",
+        "x": 22,
+        "y": 263,
+        "w": 113,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "How people use Ethereum",
+        "href": "/stories/",
+        "x": 22,
+        "y": 300,
+        "w": 199,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Smart contracts",
+        "href": "/smart-contracts/",
+        "x": 22,
+        "y": 337,
+        "w": 120,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Ethereum wallets",
+        "href": "/wallets/",
+        "x": 22,
+        "y": 375,
+        "w": 129,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Gas fees",
+        "href": "/gas/",
+        "x": 22,
+        "y": 412,
+        "w": 66,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "What are layer 2 networks?",
+        "href": "/layer-2/learn/",
+        "x": 22,
+        "y": 449,
+        "w": 206,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Staking",
+        "href": "/staking/",
+        "x": 22,
+        "y": 486,
+        "w": 56,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Ethereum vs Bitcoin",
+        "href": "/ethereum-vs-bitcoin/",
+        "x": 22,
+        "y": 523,
+        "w": 150,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Privacy on Ethereum",
+        "href": "/privacy/",
+        "x": 22,
+        "y": 560,
+        "w": 156,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Ethereum security and scam prevention",
+        "href": "/security/",
+        "x": 22,
+        "y": 598,
+        "w": 300,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Support",
+        "href": "/community/support/",
+        "x": 22,
+        "y": 635,
+        "w": 60,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Test your knowledge",
+        "href": "/quizzes/",
+        "x": 22,
+        "y": 672,
+        "w": 158,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Videos",
+        "href": "/videos/",
+        "x": 22,
+        "y": 709,
+        "w": 52,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Start here",
+        "href": "/start/",
+        "x": 22,
+        "y": 746,
+        "w": 74,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Choose your wallet",
+        "href": "/wallets/find-wallet/",
+        "x": 22,
+        "y": 784,
+        "w": 145,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Get ETH",
+        "href": "/get-eth/",
+        "x": 22,
+        "y": 821,
+        "w": 63,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Explore apps",
+        "href": "/apps/",
+        "x": 22,
+        "y": 858,
+        "w": 98,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "See all guides",
+        "href": "/guides/",
+        "x": 22,
+        "y": 895,
+        "w": 105,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Get tickets link-external-assistive-text",
+        "href": "https://devcon.org/en/tickets/?mtm_campaign=ethorg10&mtm_source=ethereum.org&mtm_medium=referral",
+        "x": 1280,
+        "y": 91,
+        "w": 128,
+        "h": 39
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Ethereum",
+        "href": null,
+        "x": 667,
+        "y": 689,
+        "w": 106,
+        "h": 44
+      },
+      {
+        "tag": "A",
+        "text": "Pick a wallet",
+        "href": "/wallets/find-wallet/",
+        "x": 720,
+        "y": 749,
+        "w": 94,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Try apps",
+        "href": "/apps/",
+        "x": 813,
+        "y": 749,
+        "w": 66,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Start building",
+        "href": "/developers/",
+        "x": 880,
+        "y": 749,
+        "w": 101,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Docs",
+        "href": "/developers/docs/",
+        "x": 980,
+        "y": 749,
+        "w": 39,
+        "h": 20
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Feedback",
+        "href": null,
+        "x": 1376,
+        "y": 836,
+        "w": 48,
+        "h": 48
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "Ethereum is the global network where you control your assets, your data, and your identity.",
+        "x": 350,
+        "y": 896,
+        "w": 741,
+        "h": 78
+      },
+      {
+        "text": "Your bank account is an entry in someone else's database. Your application is a file in someone else's server. Ethereum is an alternative network where you hold your assets directly.",
+        "x": 16,
+        "y": 1515,
+        "w": 823,
+        "h": 117
+      },
+      {
+        "text": "322M",
+        "x": 1168,
+        "y": 1377,
+        "w": 102,
+        "h": 43
+      },
+      {
+        "text": "ETH holders",
+        "x": 1168,
+        "y": 1424,
+        "w": 102,
+        "h": 26
+      },
+      {
+        "text": "10 515 080",
+        "x": 1168,
+        "y": 1482,
+        "w": 189,
+        "h": 43
+      },
+      {
+        "text": "Transactions today",
+        "x": 1168,
+        "y": 1529,
+        "w": 189,
+        "h": 26
+      },
+      {
+        "text": "Most apps track what you do, who you talk to, and what you own. They sell that data or hand it over when asked. On Ethereum, your activity can stay private.",
+        "x": 16,
+        "y": 2203,
+        "w": 660,
+        "h": 117
+      },
+      {
+        "text": "No account tied to your name. No company watching your balance.",
+        "x": 16,
+        "y": 2344,
+        "w": 660,
+        "h": 78
+      }
+    ],
+    "fonts": {
+      "body": "Inter, \"Inter Fallback\"",
+      "headline": "Inter, \"Inter Fallback\"",
+      "headlinePx": "64px"
+    },
+    "bodyBackground": "rgb(255, 255, 255)"
+  },
+  {
+    "id": "ethereum",
+    "capturedAt": "2026-09-15T11:58:45.108Z",
+    "requestedURL": "https://ethereum.org/en/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://ethereum.org/",
+    "title": "Ethereum - The complete guide from ethereum.org",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "documentWidth": 375,
+    "fullHeight": 15466,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "The internet that belongs to you",
+        "href": null,
+        "x": 16,
+        "y": 524,
+        "w": 343,
+        "h": 158
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Ethereum gives back control of your assets",
+        "href": null,
+        "x": 16,
+        "y": 1112,
+        "w": 343,
+        "h": 230
+      },
+      {
+        "tag": "H2",
+        "text": "Use the internet without being watched",
+        "href": null,
+        "x": 16,
+        "y": 2235,
+        "w": 343,
+        "h": 230
+      },
+      {
+        "tag": "H2",
+        "text": "Send money home in 12 seconds",
+        "href": null,
+        "x": 391,
+        "y": 2236,
+        "w": 343,
+        "h": 173
+      },
+      {
+        "tag": "H2",
+        "text": "Borrow without credit history",
+        "href": null,
+        "x": 766,
+        "y": 2236,
+        "w": 343,
+        "h": 173
+      },
+      {
+        "tag": "H2",
+        "text": "Built to last",
+        "href": null,
+        "x": 16,
+        "y": 3706,
+        "w": 343,
+        "h": 58
+      },
+      {
+        "tag": "H2",
+        "text": "Try Ethereum in your browser",
+        "href": null,
+        "x": 16,
+        "y": 4313,
+        "w": 343,
+        "h": 180
+      },
+      {
+        "tag": "H3",
+        "text": "Receive digital assets from anywhere",
+        "href": null,
+        "x": 85,
+        "y": 4674,
+        "w": 250,
+        "h": 64
+      },
+      {
+        "tag": "H2",
+        "text": "What makes Ethereum different",
+        "href": null,
+        "x": 32,
+        "y": 5614,
+        "w": 311,
+        "h": 173
+      },
+      {
+        "tag": "H3",
+        "text": "Direct ownership",
+        "href": null,
+        "x": 64,
+        "y": 6044,
+        "w": 247,
+        "h": 86
+      },
+      {
+        "tag": "H3",
+        "text": "Public rules",
+        "href": null,
+        "x": 65,
+        "y": 6468,
+        "w": 245,
+        "h": 43
+      },
+      {
+        "tag": "H3",
+        "text": "Global",
+        "href": null,
+        "x": 65,
+        "y": 6753,
+        "w": 245,
+        "h": 39
+      },
+      {
+        "tag": "H3",
+        "text": "Free access",
+        "href": null,
+        "x": 65,
+        "y": 6983,
+        "w": 245,
+        "h": 39
+      },
+      {
+        "tag": "H3",
+        "text": "Nobody owns Ethereum",
+        "href": null,
+        "x": 65,
+        "y": 7213,
+        "w": 245,
+        "h": 78
+      },
+      {
+        "tag": "H2",
+        "text": "Latest Ethereum updates",
+        "href": null,
+        "x": 32,
+        "y": 8459,
+        "w": 311,
+        "h": 173
+      },
+      {
+        "tag": "H3",
+        "text": "Tenev On Stock Token Issuer Consent",
+        "href": null,
+        "x": 48,
+        "y": 8869,
+        "w": 279,
+        "h": 62
+      },
+      {
+        "tag": "H3",
+        "text": "Ethereal news weekly #39",
+        "href": null,
+        "x": 48,
+        "y": 9348,
+        "w": 279,
+        "h": 62
+      },
+      {
+        "tag": "H3",
+        "text": "Spill Slot Collision Across Mutual Recursion Bug",
+        "href": null,
+        "x": 48,
+        "y": 9827,
+        "w": 279,
+        "h": 94
+      },
+      {
+        "tag": "H2",
+        "text": "Get started on Ethereum",
+        "href": null,
+        "x": 32,
+        "y": 10400,
+        "w": 311,
+        "h": 115
+      },
+      {
+        "tag": "H3",
+        "text": "Understand Ethereum",
+        "href": null,
+        "x": 98,
+        "y": 10898,
+        "w": 221,
+        "h": 62
+      },
+      {
+        "tag": "H3",
+        "text": "Start building",
+        "href": null,
+        "x": 104,
+        "y": 11512,
+        "w": 164,
+        "h": 31
+      },
+      {
+        "tag": "H3",
+        "text": "For enterprise",
+        "href": null,
+        "x": 104,
+        "y": 12080,
+        "w": 170,
+        "h": 31
+      },
+      {
+        "tag": "H3",
+        "text": "Learn",
+        "href": null,
+        "x": 16,
+        "y": 12727,
+        "w": 322,
+        "h": 22
+      },
+      {
+        "tag": "H3",
+        "text": "Use",
+        "href": null,
+        "x": 16,
+        "y": 13266,
+        "w": 322,
+        "h": 22
+      },
+      {
+        "tag": "H3",
+        "text": "Build",
+        "href": null,
+        "x": 16,
+        "y": 13766,
+        "w": 322,
+        "h": 22
+      },
+      {
+        "tag": "H3",
+        "text": "Community",
+        "href": null,
+        "x": 16,
+        "y": 14229,
+        "w": 322,
+        "h": 22
+      },
+      {
+        "tag": "H3",
+        "text": "Roadmap",
+        "href": null,
+        "x": 16,
+        "y": 14691,
+        "w": 322,
+        "h": 22
+      }
+    ],
+    "headerControls": [
+      {
+        "tag": "A",
+        "text": "Home",
+        "href": "/",
+        "x": 16,
+        "y": 20,
+        "w": 22,
+        "h": 35
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Toggle search button",
+        "href": null,
+        "x": 283,
+        "y": 17,
+        "w": 42,
+        "h": 42
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Toggle menu button",
+        "href": null,
+        "x": 325,
+        "y": 17,
+        "w": 42,
+        "h": 42
+      },
+      {
+        "tag": "A",
+        "text": "Overview",
+        "href": "/learn/",
+        "x": 22,
+        "y": 77,
+        "w": 72,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "What is Ethereum?",
+        "href": "/what-is-ethereum/",
+        "x": 22,
+        "y": 114,
+        "w": 141,
+        "h": 20
+      }
+    ],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "Home",
+        "href": "/",
+        "x": 16,
+        "y": 20,
+        "w": 22,
+        "h": 35
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Toggle search button",
+        "href": null,
+        "x": 283,
+        "y": 17,
+        "w": 42,
+        "h": 42
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Toggle menu button",
+        "href": null,
+        "x": 325,
+        "y": 17,
+        "w": 42,
+        "h": 42
+      },
+      {
+        "tag": "A",
+        "text": "Overview",
+        "href": "/learn/",
+        "x": 22,
+        "y": 77,
+        "w": 72,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "What is Ethereum?",
+        "href": "/what-is-ethereum/",
+        "x": 22,
+        "y": 114,
+        "w": 141,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "What is the Ethereum network?",
+        "href": "/what-is-the-ethereum-network/",
+        "x": 22,
+        "y": 151,
+        "w": 236,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "What is ether (ETH)?",
+        "href": "/what-is-ether/",
+        "x": 22,
+        "y": 189,
+        "w": 156,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Ethereum's core principles",
+        "href": "/values/",
+        "x": 22,
+        "y": 226,
+        "w": 202,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "What is Web3?",
+        "href": "/web3/",
+        "x": 22,
+        "y": 263,
+        "w": 113,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "How people use Ethereum",
+        "href": "/stories/",
+        "x": 22,
+        "y": 300,
+        "w": 199,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Smart contracts",
+        "href": "/smart-contracts/",
+        "x": 22,
+        "y": 337,
+        "w": 120,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Ethereum wallets",
+        "href": "/wallets/",
+        "x": 22,
+        "y": 375,
+        "w": 129,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Gas fees",
+        "href": "/gas/",
+        "x": 22,
+        "y": 412,
+        "w": 66,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "What are layer 2 networks?",
+        "href": "/layer-2/learn/",
+        "x": 22,
+        "y": 449,
+        "w": 206,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Staking",
+        "href": "/staking/",
+        "x": 22,
+        "y": 486,
+        "w": 56,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Ethereum vs Bitcoin",
+        "href": "/ethereum-vs-bitcoin/",
+        "x": 22,
+        "y": 523,
+        "w": 150,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Privacy on Ethereum",
+        "href": "/privacy/",
+        "x": 22,
+        "y": 560,
+        "w": 156,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Ethereum security and scam prevention",
+        "href": "/security/",
+        "x": 22,
+        "y": 598,
+        "w": 300,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Support",
+        "href": "/community/support/",
+        "x": 22,
+        "y": 635,
+        "w": 60,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Test your knowledge",
+        "href": "/quizzes/",
+        "x": 22,
+        "y": 672,
+        "w": 158,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Videos",
+        "href": "/videos/",
+        "x": 22,
+        "y": 709,
+        "w": 52,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Start here",
+        "href": "/start/",
+        "x": 22,
+        "y": 746,
+        "w": 74,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Choose your wallet",
+        "href": "/wallets/find-wallet/",
+        "x": 22,
+        "y": 784,
+        "w": 145,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Get tickets link-external-assistive-text",
+        "href": "https://devcon.org/en/tickets/?mtm_campaign=ethorg10&mtm_source=ethereum.org&mtm_medium=referral",
+        "x": 262,
+        "y": 112,
+        "w": 97,
+        "h": 29
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Ethereum",
+        "href": null,
+        "x": 134,
+        "y": 465,
+        "w": 106,
+        "h": 44
+      },
+      {
+        "tag": "A",
+        "text": "Pick a wallet",
+        "href": "/wallets/find-wallet/",
+        "x": 187,
+        "y": 525,
+        "w": 94,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Try apps",
+        "href": "/apps/",
+        "x": 281,
+        "y": 525,
+        "w": 66,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Start building",
+        "href": "/developers/",
+        "x": 347,
+        "y": 525,
+        "w": 101,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Docs",
+        "href": "/developers/docs/",
+        "x": 448,
+        "y": 525,
+        "w": 39,
+        "h": 20
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Feedback",
+        "href": null,
+        "x": 311,
+        "y": 748,
+        "w": 48,
+        "h": 48
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "Ethereum is the global network where you control your assets, your data, and your identity.",
+        "x": 16,
+        "y": 715,
+        "w": 343,
+        "h": 88
+      },
+      {
+        "text": "Your bank account is an entry in someone else's database. Your application is a file in someone else's server. Ethereum is an alternative network where you hold your assets directly.",
+        "x": 16,
+        "y": 1382,
+        "w": 343,
+        "h": 176
+      },
+      {
+        "text": "322M",
+        "x": 60,
+        "y": 1590,
+        "w": 102,
+        "h": 43
+      },
+      {
+        "text": "ETH holders",
+        "x": 60,
+        "y": 1637,
+        "w": 102,
+        "h": 26
+      },
+      {
+        "text": "10 515 080",
+        "x": 60,
+        "y": 1694,
+        "w": 189,
+        "h": 43
+      },
+      {
+        "text": "Transactions today",
+        "x": 60,
+        "y": 1742,
+        "w": 189,
+        "h": 26
+      },
+      {
+        "text": "Most apps track what you do, who you talk to, and what you own. They sell that data or hand it over when asked. On Ethereum, your activity can stay private.",
+        "x": 16,
+        "y": 2498,
+        "w": 343,
+        "h": 117
+      },
+      {
+        "text": "No account tied to your name. No company watching your balance.",
+        "x": 16,
+        "y": 2631,
+        "w": 343,
+        "h": 59
+      }
+    ],
+    "fonts": {
+      "body": "Inter, \"Inter Fallback\"",
+      "headline": "Inter, \"Inter Fallback\"",
+      "headlinePx": "48px"
+    },
+    "bodyBackground": "rgb(255, 255, 255)"
+  }
+]

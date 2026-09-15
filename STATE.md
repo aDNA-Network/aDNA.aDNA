@@ -21,6 +21,18 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
+### 2026-09-15 — GARNIER design context ingested; account routes clarified
+
+[D] `updated: 2026-09-15`; `last_edited_by: agent_codex`; runtime Codex. [[how/campaigns/campaign_garnier/artifacts/research/design_context_20260915|Design research]] adds nine usable site inspections, one blocked Nous refresh, forty reviewed native frames and twelve source-linked quality criteria. [[what/design/garnier_quality_research|Quality brief]] assigns concrete follow-up topics to existing missions; proposals do not alter governed doctrine or authorize P2/P3. All fifteen preview hashes still match source b1cf040 at http://127.0.0.1:4465/.
+
+[D/R] [[how/campaigns/campaign_garnier/artifacts/research/account_execution_options|Account options]] corrects the funded-API-only blocker. Host Claude Code reports claude.ai sign-in; Codex reports ChatGPT sign-in. ANTHROPIC_API_KEY is present; named subscription/access-token environment variables are absent in this process. Quota and broker access inside the disposable environment are unverified. No login, credential transfer or model retry performed. P1.1 complete; P1.2/P1.3 in progress; human observations absent; DP3 pending.
+
+[I] Separately requested research forecast55 kT, rough actual65±25 kT; billing unavailable. Prior P1 implementation/evidence330±120 kT and wind-down30±15 kT remain separately recorded. P1 follow-up forecast20–35 kT after inputs remains unchanged.
+
+**Intake:** 2026-09-15 · GARNIER design research · native reference review and primary guidance ingested; host account sign-ins verified through redacted status fields; API-only next-input wording corrected.
+
+**Resume-Here:** Follow the CURRENT prompt in [[how/campaigns/campaign_garnier/missions/session_prompts_garnier]]. Prefer the existing Claude subscription for the exact P1 command after verifying an approved broker/storage route into a fresh disposable environment. A Codex run is additional compatibility evidence. Receive actual consenting engineer/funder/scientist records using the frozen protocol. Keep source b1cf040 stable; load the new quality brief for later authorized design work. No P0/P1.1 replay, DP3 inference, push/deploy or peer delivery. Session: [[session_stanley_20260915_114947_garnier_design_context]].
+
 ### 2026-09-15 — GARNIER P1 retry reached the API; funded execution and humans remain owed
 
 [D] `last_edited_by: agent_codex`; runtime Codex. [[how/campaigns/campaign_garnier/artifacts/p1/first_task_continuation|Evidence continuation]] restored source `b1cf040` at `http://127.0.0.1:4465/` (15/15 served hashes). The exact copied command cloned `dea4ab9`; Claude Code 2.1.223 launched, but the first project request returned **Credit balance too low**. Router/standard checks pass; project/triad/history checks fail. No first project or fresh-session success. P1.1 completed; P1.2/P1.3 in_progress; DP3 pending.

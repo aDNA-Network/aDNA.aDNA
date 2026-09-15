@@ -1,0 +1,1127 @@
+[
+  {
+    "id": "linear",
+    "capturedAt": "2026-09-15T11:58:04.405Z",
+    "requestedURL": "https://linear.app/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://linear.app/",
+    "title": "Linear – The system for product development",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "documentWidth": 1440,
+    "fullHeight": 9960,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "The product development system for teams and agents The product development system for teams and agents",
+        "href": null,
+        "x": 78,
+        "y": 272,
+        "w": 1282,
+        "h": 128
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H3",
+        "text": "Faster app launch",
+        "href": null,
+        "x": 373,
+        "y": 643,
+        "w": 630,
+        "h": 27
+      },
+      {
+        "tag": "H2",
+        "text": "A new species of product tool. Purpose-built for modern teams with AI workflows at its core, Linear sets a new standard for planning and building products.",
+        "href": null,
+        "x": 46,
+        "y": 1596,
+        "w": 1250,
+        "h": 144
+      },
+      {
+        "tag": "H2",
+        "text": "Intake and integrations",
+        "href": null,
+        "x": 78,
+        "y": 2674,
+        "w": 542,
+        "h": 83
+      },
+      {
+        "tag": "H2",
+        "text": "Planning and monitoring",
+        "href": null,
+        "x": 78,
+        "y": 3910,
+        "w": 542,
+        "h": 83
+      },
+      {
+        "tag": "H2",
+        "text": "AI and automations",
+        "href": null,
+        "x": 78,
+        "y": 5149,
+        "w": 542,
+        "h": 83
+      },
+      {
+        "tag": "H2",
+        "text": "Build, review, and ship",
+        "href": null,
+        "x": 78,
+        "y": 6391,
+        "w": 542,
+        "h": 83
+      },
+      {
+        "tag": "H2",
+        "text": "Changelog",
+        "href": null,
+        "x": 78,
+        "y": 7644,
+        "w": 224,
+        "h": 48
+      },
+      {
+        "tag": "H2",
+        "text": "Built for the future. Available today.",
+        "href": null,
+        "x": 359,
+        "y": 9014,
+        "w": 722,
+        "h": 144
+      },
+      {
+        "tag": "H3",
+        "text": "Product",
+        "href": null,
+        "x": 304,
+        "y": 9523,
+        "w": 160,
+        "h": 20
+      },
+      {
+        "tag": "H3",
+        "text": "Features",
+        "href": null,
+        "x": 528,
+        "y": 9523,
+        "w": 160,
+        "h": 20
+      },
+      {
+        "tag": "H3",
+        "text": "Company",
+        "href": null,
+        "x": 752,
+        "y": 9523,
+        "w": 160,
+        "h": 20
+      },
+      {
+        "tag": "H3",
+        "text": "Resources",
+        "href": null,
+        "x": 976,
+        "y": 9523,
+        "w": 160,
+        "h": 20
+      },
+      {
+        "tag": "H3",
+        "text": "Connect",
+        "href": null,
+        "x": 1200,
+        "y": 9523,
+        "w": 160,
+        "h": 20
+      }
+    ],
+    "headerControls": [
+      {
+        "tag": "A",
+        "text": "Navigate to home",
+        "href": "/homepage",
+        "x": 71,
+        "y": 20,
+        "w": 104,
+        "h": 32
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Product",
+        "href": null,
+        "x": 741,
+        "y": 20,
+        "w": 72,
+        "h": 32
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Resources",
+        "href": null,
+        "x": 813,
+        "y": 20,
+        "w": 89,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Customers",
+        "href": "/customers",
+        "x": 902,
+        "y": 20,
+        "w": 91,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Pricing",
+        "href": "/pricing",
+        "x": 992,
+        "y": 20,
+        "w": 67,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Now",
+        "href": "/now",
+        "x": 1059,
+        "y": 20,
+        "w": 52,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Contact",
+        "href": "/contact",
+        "x": 1111,
+        "y": 20,
+        "w": 72,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Log in",
+        "href": "/login",
+        "x": 1218,
+        "y": 20,
+        "w": 62,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Sign up",
+        "href": "/signup",
+        "x": 1288,
+        "y": 20,
+        "w": 73,
+        "h": 32
+      }
+    ],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "Skip to content →",
+        "href": "#skip-nav",
+        "x": 0,
+        "y": 72,
+        "w": 1440,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Navigate to home",
+        "href": "/homepage",
+        "x": 71,
+        "y": 20,
+        "w": 104,
+        "h": 32
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Product",
+        "href": null,
+        "x": 741,
+        "y": 20,
+        "w": 72,
+        "h": 32
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Resources",
+        "href": null,
+        "x": 813,
+        "y": 20,
+        "w": 89,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Customers",
+        "href": "/customers",
+        "x": 902,
+        "y": 20,
+        "w": 91,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Pricing",
+        "href": "/pricing",
+        "x": 992,
+        "y": 20,
+        "w": 67,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Now",
+        "href": "/now",
+        "x": 1059,
+        "y": 20,
+        "w": 52,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Contact",
+        "href": "/contact",
+        "x": 1111,
+        "y": 20,
+        "w": 72,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Log in",
+        "href": "/login",
+        "x": 1218,
+        "y": 20,
+        "w": 62,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Sign up",
+        "href": "/signup",
+        "x": 1288,
+        "y": 20,
+        "w": 73,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "New Loops →",
+        "href": "https://linear.app/now/introducing-loops",
+        "x": 1256,
+        "y": 432,
+        "w": 104,
+        "h": 25
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Linear",
+        "href": null,
+        "x": 76,
+        "y": 543,
+        "w": 97,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Search workspace",
+        "href": null,
+        "x": 222,
+        "y": 543,
+        "w": 28,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "New issue",
+        "href": null,
+        "x": 256,
+        "y": 543,
+        "w": 28,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Pulse",
+        "href": null,
+        "x": 76,
+        "y": 587,
+        "w": 208,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Inbox",
+        "href": null,
+        "x": 76,
+        "y": 617,
+        "w": 208,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "My issues",
+        "href": null,
+        "x": 76,
+        "y": 647,
+        "w": 208,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reviews",
+        "href": null,
+        "x": 76,
+        "y": 677,
+        "w": 208,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Workspace",
+        "href": null,
+        "x": 76,
+        "y": 721,
+        "w": 208,
+        "h": 24
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Initiatives",
+        "href": null,
+        "x": 76,
+        "y": 745,
+        "w": 208,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Projects",
+        "href": null,
+        "x": 76,
+        "y": 775,
+        "w": 208,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "More",
+        "href": null,
+        "x": 76,
+        "y": 805,
+        "w": 208,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Favorites",
+        "href": null,
+        "x": 76,
+        "y": 849,
+        "w": 208,
+        "h": 24
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Faster app launch",
+        "href": null,
+        "x": 76,
+        "y": 873,
+        "w": 208,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Remove from favorites",
+        "href": null,
+        "x": 526,
+        "y": 544,
+        "w": 28,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Issue options",
+        "href": null,
+        "x": 554,
+        "y": 544,
+        "w": 28,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Previous issue",
+        "href": null,
+        "x": 1299,
+        "y": 544,
+        "w": 30,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Next issue",
+        "href": null,
+        "x": 1329,
+        "y": 544,
+        "w": 30,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Copy issue URL",
+        "href": null,
+        "x": 1196,
+        "y": 588,
+        "w": 28,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Copy issue ID",
+        "href": null,
+        "x": 1230,
+        "y": 588,
+        "w": 28,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Copy git branch name",
+        "href": null,
+        "x": 1264,
+        "y": 588,
+        "w": 28,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Delegate to an agent",
+        "href": null,
+        "x": 1298,
+        "y": 588,
+        "w": 30,
+        "h": 28
+      },
+      {
+        "tag": "BUTTON",
+        "text": "More delegation options",
+        "href": null,
+        "x": 1329,
+        "y": 588,
+        "w": 30,
+        "h": 28
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "Purpose-built for planning and building products. Designed for the AI era.",
+        "x": 80,
+        "y": 432,
+        "w": 505,
+        "h": 25
+      },
+      {
+        "text": "Render UI before vehicle_state sync when minimum required state is present, instead of blocking on full refresh during iOS startup.",
+        "x": 373,
+        "y": 678,
+        "w": 540,
+        "h": 42
+      },
+      {
+        "text": "Fix the dimmed ride rows that never reset and open a PR",
+        "x": 1006,
+        "y": 777,
+        "w": 342,
+        "h": 60
+      },
+      {
+        "text": "Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitingStatusById directly.",
+        "x": 966,
+        "y": 900,
+        "w": 386,
+        "h": 52
+      },
+      {
+        "text": "Reply…",
+        "x": 980,
+        "y": 1138,
+        "w": 358,
+        "h": 38
+      },
+      {
+        "text": "POWERING THE COMPANIES BUILDING THE FUTURE",
+        "x": 47,
+        "y": 1483,
+        "w": 1345,
+        "h": 17
+      },
+      {
+        "text": "Linear is shaped by the practices and principles of world-class product teams.",
+        "x": 80,
+        "y": 2296,
+        "w": 368,
+        "h": 48
+      },
+      {
+        "text": "Designed for workflows shared by humans and agents. From drafting PRDs to pushing PRs.",
+        "x": 539,
+        "y": 2296,
+        "w": 362,
+        "h": 48
+      }
+    ],
+    "fonts": {
+      "body": "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "headline": "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "headlinePx": "64px"
+    },
+    "bodyBackground": "rgb(8, 9, 10)"
+  },
+  {
+    "id": "linear",
+    "capturedAt": "2026-09-15T11:58:07.018Z",
+    "requestedURL": "https://linear.app/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://linear.app/",
+    "title": "Linear – The system for product development",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "documentWidth": 375,
+    "fullHeight": 5864,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "The product development system for teams and agents The product development system for teams and agents",
+        "href": null,
+        "x": 23,
+        "y": 196,
+        "w": 328,
+        "h": 167
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H3",
+        "text": "Faster app launch",
+        "href": null,
+        "x": 174,
+        "y": 579,
+        "w": 315,
+        "h": 13
+      },
+      {
+        "tag": "H2",
+        "text": "A new species of product tool. Purpose-built for modern teams with AI workflows at its core, Linear sets a new standard for planning and building products.",
+        "href": null,
+        "x": 15,
+        "y": 1076,
+        "w": 344,
+        "h": 191
+      },
+      {
+        "tag": "H2",
+        "text": "Intake and integrations",
+        "href": null,
+        "x": 23,
+        "y": 2251,
+        "w": 275,
+        "h": 49
+      },
+      {
+        "tag": "H2",
+        "text": "Planning and monitoring",
+        "href": null,
+        "x": 23,
+        "y": 2849,
+        "w": 275,
+        "h": 49
+      },
+      {
+        "tag": "H2",
+        "text": "AI and automations",
+        "href": null,
+        "x": 23,
+        "y": 3418,
+        "w": 275,
+        "h": 49
+      },
+      {
+        "tag": "H2",
+        "text": "Build, review, and ship",
+        "href": null,
+        "x": 23,
+        "y": 3991,
+        "w": 275,
+        "h": 49
+      },
+      {
+        "tag": "H2",
+        "text": "Built for the future. Available today.",
+        "href": null,
+        "x": 16,
+        "y": 4723,
+        "w": 343,
+        "h": 84
+      },
+      {
+        "tag": "H3",
+        "text": "Product",
+        "href": null,
+        "x": 24,
+        "y": 5043,
+        "w": 148,
+        "h": 20
+      },
+      {
+        "tag": "H3",
+        "text": "Features",
+        "href": null,
+        "x": 204,
+        "y": 5043,
+        "w": 148,
+        "h": 20
+      },
+      {
+        "tag": "H3",
+        "text": "Company",
+        "href": null,
+        "x": 24,
+        "y": 5365,
+        "w": 148,
+        "h": 20
+      },
+      {
+        "tag": "H3",
+        "text": "Resources",
+        "href": null,
+        "x": 204,
+        "y": 5365,
+        "w": 148,
+        "h": 20
+      },
+      {
+        "tag": "H3",
+        "text": "Connect",
+        "href": null,
+        "x": 24,
+        "y": 5656,
+        "w": 148,
+        "h": 20
+      },
+      {
+        "tag": "H3",
+        "text": "Legal",
+        "href": null,
+        "x": 204,
+        "y": 5656,
+        "w": 148,
+        "h": 20
+      }
+    ],
+    "headerControls": [
+      {
+        "tag": "A",
+        "text": "Navigate to home",
+        "href": "/homepage",
+        "x": 15,
+        "y": 16,
+        "w": 104,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Log in",
+        "href": "/login",
+        "x": 173,
+        "y": 16,
+        "w": 62,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Sign up",
+        "href": "/signup",
+        "x": 243,
+        "y": 16,
+        "w": 73,
+        "h": 32
+      }
+    ],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "Skip to content →",
+        "href": "#skip-nav",
+        "x": 0,
+        "y": 64,
+        "w": 375,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Navigate to home",
+        "href": "/homepage",
+        "x": 15,
+        "y": 16,
+        "w": 104,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Log in",
+        "href": "/login",
+        "x": 173,
+        "y": 16,
+        "w": 62,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Sign up",
+        "href": "/signup",
+        "x": 243,
+        "y": 16,
+        "w": 73,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "New Loops →",
+        "href": "https://linear.app/now/introducing-loops",
+        "x": 24,
+        "y": 451,
+        "w": 93,
+        "h": 24
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Linear",
+        "href": null,
+        "x": 26,
+        "y": 529,
+        "w": 49,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Search workspace",
+        "href": null,
+        "x": 99,
+        "y": 529,
+        "w": 14,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "New issue",
+        "href": null,
+        "x": 116,
+        "y": 529,
+        "w": 14,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Pulse",
+        "href": null,
+        "x": 26,
+        "y": 551,
+        "w": 104,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Inbox",
+        "href": null,
+        "x": 26,
+        "y": 566,
+        "w": 104,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "My issues",
+        "href": null,
+        "x": 26,
+        "y": 581,
+        "w": 104,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reviews",
+        "href": null,
+        "x": 26,
+        "y": 596,
+        "w": 104,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Workspace",
+        "href": null,
+        "x": 26,
+        "y": 618,
+        "w": 104,
+        "h": 12
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Initiatives",
+        "href": null,
+        "x": 26,
+        "y": 630,
+        "w": 104,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Projects",
+        "href": null,
+        "x": 26,
+        "y": 645,
+        "w": 104,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "More",
+        "href": null,
+        "x": 26,
+        "y": 660,
+        "w": 104,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Favorites",
+        "href": null,
+        "x": 26,
+        "y": 682,
+        "w": 104,
+        "h": 12
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Faster app launch",
+        "href": null,
+        "x": 26,
+        "y": 694,
+        "w": 104,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Agent tasks",
+        "href": null,
+        "x": 26,
+        "y": 709,
+        "w": 104,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Agent Insights",
+        "href": null,
+        "x": 26,
+        "y": 724,
+        "w": 104,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "UI Refresh",
+        "href": null,
+        "x": 26,
+        "y": 739,
+        "w": 104,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Remove from favorites",
+        "href": null,
+        "x": 251,
+        "y": 529,
+        "w": 14,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Issue options",
+        "href": null,
+        "x": 265,
+        "y": 529,
+        "w": 14,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Previous issue",
+        "href": null,
+        "x": 638,
+        "y": 529,
+        "w": 15,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Next issue",
+        "href": null,
+        "x": 653,
+        "y": 529,
+        "w": 15,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Copy issue URL",
+        "href": null,
+        "x": 586,
+        "y": 552,
+        "w": 14,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Copy issue ID",
+        "href": null,
+        "x": 603,
+        "y": 552,
+        "w": 14,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Copy git branch name",
+        "href": null,
+        "x": 620,
+        "y": 552,
+        "w": 14,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Delegate to an agent",
+        "href": null,
+        "x": 637,
+        "y": 552,
+        "w": 15,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "More delegation options",
+        "href": null,
+        "x": 653,
+        "y": 552,
+        "w": 15,
+        "h": 14
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Performance",
+        "href": null,
+        "x": 525,
+        "y": 727,
+        "w": 56,
+        "h": 12
+      },
+      {
+        "tag": "BUTTON",
+        "text": "iOS",
+        "href": null,
+        "x": 585,
+        "y": 727,
+        "w": 29,
+        "h": 12
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "Purpose-built for planning and building products. Designed for the AI era.",
+        "x": 24,
+        "y": 383,
+        "w": 276,
+        "h": 48
+      },
+      {
+        "text": "Render UI before vehicle_state sync when minimum required state is present, instead of blocking on full refresh during iOS startup.",
+        "x": 174,
+        "y": 596,
+        "w": 270,
+        "h": 21
+      },
+      {
+        "text": "Fix the dimmed ride rows that never reset and open a PR",
+        "x": 491,
+        "y": 642,
+        "w": 171,
+        "h": 30
+      },
+      {
+        "text": "Pushed and opened a draft PR. Removed dimmedIds — isItemDimmed now checks waitingStatusById directly.",
+        "x": 471,
+        "y": 704,
+        "w": 193,
+        "h": 26
+      },
+      {
+        "text": "Reply…",
+        "x": 478,
+        "y": 824,
+        "w": 179,
+        "h": 19
+      },
+      {
+        "text": "POWERING THE COMPANIES BUILDING THE FUTURE",
+        "x": 15,
+        "y": 1011,
+        "w": 344,
+        "h": 17
+      },
+      {
+        "text": "Linear is shaped by the practices and principles of world-class product teams.",
+        "x": 33,
+        "y": 1673,
+        "w": 250,
+        "h": 72
+      },
+      {
+        "text": "Designed for workflows shared by humans and agents. From drafting PRDs to pushing PRs.",
+        "x": 369,
+        "y": 1673,
+        "w": 250,
+        "h": 72
+      }
+    ],
+    "fonts": {
+      "body": "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "headline": "\"Inter Variable\", \"SF Pro Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+      "headlinePx": "38px"
+    },
+    "bodyBackground": "rgb(8, 9, 10)"
+  }
+]

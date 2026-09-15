@@ -1,0 +1,847 @@
+[
+  {
+    "id": "huggingface",
+    "capturedAt": "2026-09-15T11:58:32.762Z",
+    "requestedURL": "https://huggingface.co/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://huggingface.co/",
+    "title": "Hugging Face – The AI community building the future.",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "documentWidth": 1440,
+    "fullHeight": 5986,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "The AI community building the future.",
+        "href": null,
+        "x": 176,
+        "y": 337,
+        "w": 512,
+        "h": 96
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Models",
+        "href": null,
+        "x": 96,
+        "y": 907,
+        "w": 400,
+        "h": 28
+      },
+      {
+        "tag": "H2",
+        "text": "Spaces",
+        "href": null,
+        "x": 520,
+        "y": 907,
+        "w": 400,
+        "h": 28
+      },
+      {
+        "tag": "H2",
+        "text": "Datasets",
+        "href": null,
+        "x": 944,
+        "y": 907,
+        "w": 400,
+        "h": 28
+      },
+      {
+        "tag": "H2",
+        "text": "The Home of Machine Learning",
+        "href": null,
+        "x": 517,
+        "y": 1651,
+        "w": 406,
+        "h": 36
+      },
+      {
+        "tag": "H3",
+        "text": "The collaboration platform",
+        "href": null,
+        "x": 241,
+        "y": 1846,
+        "w": 606,
+        "h": 28
+      },
+      {
+        "tag": "H3",
+        "text": "Move faster",
+        "href": null,
+        "x": 945,
+        "y": 1846,
+        "w": 254,
+        "h": 28
+      },
+      {
+        "tag": "H3",
+        "text": "Explore all modalities",
+        "href": null,
+        "x": 241,
+        "y": 2298,
+        "w": 254,
+        "h": 28
+      },
+      {
+        "tag": "H3",
+        "text": "Build your portfolio",
+        "href": null,
+        "x": 593,
+        "y": 2298,
+        "w": 382,
+        "h": 28
+      },
+      {
+        "tag": "H2",
+        "text": "Accelerate your ML",
+        "href": null,
+        "x": 596,
+        "y": 2781,
+        "w": 247,
+        "h": 36
+      },
+      {
+        "tag": "H3",
+        "text": "Team & Enterprise",
+        "href": null,
+        "x": 248,
+        "y": 3069,
+        "w": 261,
+        "h": 32
+      },
+      {
+        "tag": "H3",
+        "text": "Inference Providers",
+        "href": null,
+        "x": 249,
+        "y": 3472,
+        "w": 414,
+        "h": 32
+      },
+      {
+        "tag": "H3",
+        "text": "Compute",
+        "href": null,
+        "x": 777,
+        "y": 3472,
+        "w": 414,
+        "h": 32
+      },
+      {
+        "tag": "H2",
+        "text": "More than 50,000 organizations are using Hugging Face",
+        "href": null,
+        "x": 538,
+        "y": 3993,
+        "w": 365,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Our Open Source",
+        "href": null,
+        "x": 609,
+        "y": 4490,
+        "w": 223,
+        "h": 36
+      }
+    ],
+    "headerControls": [
+      {
+        "tag": "A",
+        "text": "Hugging Face",
+        "href": "/",
+        "x": 96,
+        "y": 18,
+        "w": 142,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Models",
+        "href": "/models",
+        "x": 611,
+        "y": 18,
+        "w": 86,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Datasets",
+        "href": "/datasets",
+        "x": 701,
+        "y": 18,
+        "w": 95,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Spaces",
+        "href": "/spaces",
+        "x": 800,
+        "y": 18,
+        "w": 85,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Buckets NEW",
+        "href": "/storage",
+        "x": 889,
+        "y": 18,
+        "w": 126,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Docs",
+        "href": "/docs",
+        "x": 1019,
+        "y": 18,
+        "w": 71,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Pricing",
+        "href": "/pricing",
+        "x": 1093,
+        "y": 18,
+        "w": 63,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Tasks",
+        "href": "/tasks",
+        "x": 1159,
+        "y": 69,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "HuggingChat",
+        "href": "/chat",
+        "x": 1159,
+        "y": 101,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Collections",
+        "href": "/collections",
+        "x": 1159,
+        "y": 133,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Log In",
+        "href": "/login",
+        "x": 1206,
+        "y": 18,
+        "w": 56,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Sign Up",
+        "href": "/join",
+        "x": 1266,
+        "y": 17,
+        "w": 78,
+        "h": 30
+      }
+    ],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "Hugging Face",
+        "href": "/",
+        "x": 96,
+        "y": 18,
+        "w": 142,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Models",
+        "href": "/models",
+        "x": 611,
+        "y": 18,
+        "w": 86,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Datasets",
+        "href": "/datasets",
+        "x": 701,
+        "y": 18,
+        "w": 95,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Spaces",
+        "href": "/spaces",
+        "x": 800,
+        "y": 18,
+        "w": 85,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Buckets NEW",
+        "href": "/storage",
+        "x": 889,
+        "y": 18,
+        "w": 126,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Docs",
+        "href": "/docs",
+        "x": 1019,
+        "y": 18,
+        "w": 71,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Pricing",
+        "href": "/pricing",
+        "x": 1093,
+        "y": 18,
+        "w": 63,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Tasks",
+        "href": "/tasks",
+        "x": 1159,
+        "y": 69,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "HuggingChat",
+        "href": "/chat",
+        "x": 1159,
+        "y": 101,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Collections",
+        "href": "/collections",
+        "x": 1159,
+        "y": 133,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Languages",
+        "href": "/languages",
+        "x": 1159,
+        "y": 165,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Organizations",
+        "href": "/organizations",
+        "x": 1159,
+        "y": 197,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Blog",
+        "href": "/blog",
+        "x": 1159,
+        "y": 257,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Posts",
+        "href": "/posts",
+        "x": 1159,
+        "y": 289,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Daily Papers",
+        "href": "/papers",
+        "x": 1159,
+        "y": 321,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Hardware",
+        "href": "/hardware",
+        "x": 1159,
+        "y": 353,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Learn",
+        "href": "/learn",
+        "x": 1159,
+        "y": 385,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Discord",
+        "href": "/join/discord",
+        "x": 1159,
+        "y": 417,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Forum",
+        "href": "https://discuss.huggingface.co/",
+        "x": 1159,
+        "y": 449,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "GitHub",
+        "href": "https://github.com/huggingface",
+        "x": 1159,
+        "y": 481,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Team & Enterprise",
+        "href": "/enterprise",
+        "x": 1159,
+        "y": 541,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Hugging Face PRO",
+        "href": "/pro",
+        "x": 1159,
+        "y": 573,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Enterprise Support",
+        "href": "/support",
+        "x": 1159,
+        "y": 605,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Inference Providers",
+        "href": "/inference/models",
+        "x": 1159,
+        "y": 637,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Inference Endpoints",
+        "href": "/inference-endpoints",
+        "x": 1159,
+        "y": 669,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Storage Buckets",
+        "href": "/storage",
+        "x": 1159,
+        "y": 701,
+        "w": 24,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Log In",
+        "href": "/login",
+        "x": 1206,
+        "y": 18,
+        "w": 56,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Sign Up",
+        "href": "/join",
+        "x": 1266,
+        "y": 17,
+        "w": 78,
+        "h": 30
+      },
+      {
+        "tag": "A",
+        "text": "Explore AI Apps",
+        "href": "/spaces",
+        "x": 176,
+        "y": 573,
+        "w": 148,
+        "h": 42
+      },
+      {
+        "tag": "A",
+        "text": "Browse 2M+ models",
+        "href": "/models",
+        "x": 365,
+        "y": 582,
+        "w": 133,
+        "h": 24
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "The platform where the machine learning community collaborates on models, datasets, and applications.",
+        "x": 176,
+        "y": 473,
+        "w": 512,
+        "h": 56
+      },
+      {
+        "text": "generate a video from an image with a text prompt",
+        "x": 544,
+        "y": 999,
+        "w": 304,
+        "h": 18
+      },
+      {
+        "text": "Video generation with a synchronized soundtrack",
+        "x": 544,
+        "y": 1071,
+        "w": 304,
+        "h": 18
+      },
+      {
+        "text": "Krea 2 Turbo text2image and image editing",
+        "x": 544,
+        "y": 1143,
+        "w": 304,
+        "h": 18
+      },
+      {
+        "text": "Demo of the Collection of Qwen Image Edit LoRAs",
+        "x": 544,
+        "y": 1215,
+        "w": 304,
+        "h": 18
+      },
+      {
+        "text": "generate a video from an image with a text prompt with text",
+        "x": 544,
+        "y": 1287,
+        "w": 304,
+        "h": 18
+      },
+      {
+        "text": "Create, discover and collaborate on ML better.",
+        "x": 96,
+        "y": 1695,
+        "w": 1248,
+        "h": 28
+      },
+      {
+        "text": "Host and collaborate on unlimited public models, datasets and applications.",
+        "x": 241,
+        "y": 1874,
+        "w": 606,
+        "h": 24
+      }
+    ],
+    "fonts": {
+      "body": "\"Source Sans Pro\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "headline": "\"Source Sans Pro\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "headlinePx": "48px"
+    },
+    "bodyBackground": "rgb(255, 255, 255)"
+  },
+  {
+    "id": "huggingface",
+    "capturedAt": "2026-09-15T11:58:35.387Z",
+    "requestedURL": "https://huggingface.co/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://huggingface.co/",
+    "title": "Hugging Face – The AI community building the future.",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "documentWidth": 375,
+    "fullHeight": 9045,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "The AI community building the future.",
+        "href": null,
+        "x": 16,
+        "y": 219,
+        "w": 343,
+        "h": 80
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Models",
+        "href": null,
+        "x": 16,
+        "y": 852,
+        "w": 343,
+        "h": 28
+      },
+      {
+        "tag": "H2",
+        "text": "Spaces",
+        "href": null,
+        "x": 16,
+        "y": 1351,
+        "w": 343,
+        "h": 28
+      },
+      {
+        "tag": "H2",
+        "text": "Datasets",
+        "href": null,
+        "x": 16,
+        "y": 1853,
+        "w": 343,
+        "h": 28
+      },
+      {
+        "tag": "H2",
+        "text": "The Home of Machine Learning",
+        "href": null,
+        "x": 40,
+        "y": 2527,
+        "w": 295,
+        "h": 72
+      },
+      {
+        "tag": "H3",
+        "text": "The collaboration platform",
+        "href": null,
+        "x": 41,
+        "y": 2722,
+        "w": 293,
+        "h": 28
+      },
+      {
+        "tag": "H3",
+        "text": "Move faster",
+        "href": null,
+        "x": 41,
+        "y": 3138,
+        "w": 293,
+        "h": 28
+      },
+      {
+        "tag": "H3",
+        "text": "Explore all modalities",
+        "href": null,
+        "x": 41,
+        "y": 3544,
+        "w": 293,
+        "h": 28
+      },
+      {
+        "tag": "H3",
+        "text": "Build your portfolio",
+        "href": null,
+        "x": 41,
+        "y": 3950,
+        "w": 222,
+        "h": 28
+      },
+      {
+        "tag": "H2",
+        "text": "Accelerate your ML",
+        "href": null,
+        "x": 64,
+        "y": 4411,
+        "w": 247,
+        "h": 36
+      },
+      {
+        "tag": "H3",
+        "text": "Team & Enterprise",
+        "href": null,
+        "x": 44,
+        "y": 4683,
+        "w": 287,
+        "h": 32
+      },
+      {
+        "tag": "H3",
+        "text": "Inference Providers",
+        "href": null,
+        "x": 45,
+        "y": 5118,
+        "w": 285,
+        "h": 32
+      },
+      {
+        "tag": "H3",
+        "text": "Compute",
+        "href": null,
+        "x": 33,
+        "y": 5549,
+        "w": 309,
+        "h": 32
+      },
+      {
+        "tag": "H2",
+        "text": "More than 50,000 organizations are using Hugging Face",
+        "href": null,
+        "x": 48,
+        "y": 5950,
+        "w": 279,
+        "h": 48
+      },
+      {
+        "tag": "H2",
+        "text": "Our Open Source",
+        "href": null,
+        "x": 76,
+        "y": 6868,
+        "w": 223,
+        "h": 36
+      }
+    ],
+    "headerControls": [],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "Explore AI Apps",
+        "href": "/spaces",
+        "x": 46,
+        "y": 439,
+        "w": 135,
+        "h": 40
+      },
+      {
+        "tag": "A",
+        "text": "Browse 2M+ models",
+        "href": "/models",
+        "x": 213,
+        "y": 449,
+        "w": 116,
+        "h": 20
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "The platform where the machine learning community collaborates on models, datasets, and applications.",
+        "x": 16,
+        "y": 331,
+        "w": 343,
+        "h": 72
+      },
+      {
+        "text": "generate a video from an image with a text prompt",
+        "x": 40,
+        "y": 1444,
+        "w": 247,
+        "h": 18
+      },
+      {
+        "text": "Video generation with a synchronized soundtrack",
+        "x": 40,
+        "y": 1516,
+        "w": 247,
+        "h": 18
+      },
+      {
+        "text": "Krea 2 Turbo text2image and image editing",
+        "x": 40,
+        "y": 1588,
+        "w": 247,
+        "h": 18
+      },
+      {
+        "text": "Demo of the Collection of Qwen Image Edit LoRAs",
+        "x": 40,
+        "y": 1660,
+        "w": 247,
+        "h": 18
+      },
+      {
+        "text": "generate a video from an image with a text prompt with text",
+        "x": 40,
+        "y": 1732,
+        "w": 247,
+        "h": 18
+      },
+      {
+        "text": "Create, discover and collaborate on ML better.",
+        "x": 16,
+        "y": 2607,
+        "w": 343,
+        "h": 28
+      },
+      {
+        "text": "Host and collaborate on unlimited public models, datasets and applications.",
+        "x": 41,
+        "y": 2750,
+        "w": 293,
+        "h": 48
+      }
+    ],
+    "fonts": {
+      "body": "\"Source Sans Pro\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "headline": "\"Source Sans Pro\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "headlinePx": "36px"
+    },
+    "bodyBackground": "rgb(255, 255, 255)"
+  }
+]

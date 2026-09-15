@@ -1,0 +1,23 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 1067,
+    "title": "NOUS RESEARCH",
+    "desc": "Nous Research is a leader in the American open source AI movement, training world-class open source language models.",
+    "ogTitle": "NOUS RESEARCH",
+    "h1": "",
+    "h2count": 0,
+    "bodyLen": 817,
+    "fullH": 1295,
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 403 ()",
+      "Failed to load resource: the server responded with a status of 403 ()",
+      "Failed to load resource: the server responded with a status of 403 ()",
+      "Failed to load resource: the server responded with a status of 403 ()",
+      "Failed to load resource: the server responded with a status of 403 ()",
+      "Failed to load resource: the server responded with a status of 403 ()"
+    ]
+  }
+]

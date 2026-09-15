@@ -1,0 +1,594 @@
+[
+  {
+    "id": "govuk",
+    "capturedAt": "2026-09-15T11:58:21.965Z",
+    "requestedURL": "https://design-system.service.gov.uk/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://design-system.service.gov.uk/",
+    "title": "Home – GOV.UK Design System",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "documentWidth": 1440,
+    "fullHeight": 3654,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "Design your service using GOV.UK styles, components and patterns",
+        "href": null,
+        "x": 170,
+        "y": 406,
+        "w": 723,
+        "h": 150
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Cookies on GOV.UK Design System",
+        "href": null,
+        "x": 170,
+        "y": 20,
+        "w": 723,
+        "h": 30
+      },
+      {
+        "tag": "H2",
+        "text": "What’s new",
+        "href": null,
+        "x": 170,
+        "y": 830,
+        "w": 723,
+        "h": 40
+      },
+      {
+        "tag": "H3",
+        "text": "27 August 2026: We’ve released GOV.UK Frontend v6.5.0",
+        "href": null,
+        "x": 170,
+        "y": 900,
+        "w": 723,
+        "h": 30
+      },
+      {
+        "tag": "H2",
+        "text": "Get updates on the Design System",
+        "href": null,
+        "x": 170,
+        "y": 1230,
+        "w": 723,
+        "h": 40
+      },
+      {
+        "tag": "H2",
+        "text": "Styles",
+        "href": null,
+        "x": 170,
+        "y": 1481,
+        "w": 347,
+        "h": 40
+      },
+      {
+        "tag": "H2",
+        "text": "Components",
+        "href": null,
+        "x": 547,
+        "y": 1481,
+        "w": 347,
+        "h": 40
+      },
+      {
+        "tag": "H2",
+        "text": "Patterns",
+        "href": null,
+        "x": 923,
+        "y": 1481,
+        "w": 347,
+        "h": 40
+      },
+      {
+        "tag": "H2",
+        "text": "Update your service to use the refreshed GOV.UK brand",
+        "href": null,
+        "x": 170,
+        "y": 1772,
+        "w": 723,
+        "h": 80
+      },
+      {
+        "tag": "H2",
+        "text": "Principles we follow",
+        "href": null,
+        "x": 170,
+        "y": 2123,
+        "w": 723,
+        "h": 40
+      },
+      {
+        "tag": "H2",
+        "text": "Community",
+        "href": null,
+        "x": 170,
+        "y": 2459,
+        "w": 723,
+        "h": 40
+      },
+      {
+        "tag": "H2",
+        "text": "Support",
+        "href": null,
+        "x": 170,
+        "y": 2865,
+        "w": 723,
+        "h": 40
+      },
+      {
+        "tag": "H2",
+        "text": "Roadmap",
+        "href": null,
+        "x": 170,
+        "y": 3176,
+        "w": 723,
+        "h": 40
+      },
+      {
+        "tag": "H2",
+        "text": "Support links",
+        "href": null,
+        "x": 170,
+        "y": 3489,
+        "w": 1,
+        "h": 1
+      }
+    ],
+    "headerControls": [],
+    "foldControls": [
+      {
+        "tag": "BUTTON",
+        "text": "Accept analytics cookies",
+        "href": null,
+        "x": 170,
+        "y": 185,
+        "w": 227,
+        "h": 38
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reject analytics cookies",
+        "href": null,
+        "x": 412,
+        "y": 185,
+        "w": 221,
+        "h": 38
+      },
+      {
+        "tag": "A",
+        "text": "View cookies",
+        "href": "/cookies/",
+        "x": 647,
+        "y": 195,
+        "w": 107,
+        "h": 19
+      },
+      {
+        "tag": "A",
+        "text": "Skip to main content",
+        "href": "#main-content",
+        "x": 0,
+        "y": 255,
+        "w": 1,
+        "h": 1
+      },
+      {
+        "tag": "A",
+        "text": "Design System",
+        "href": "/",
+        "x": 170,
+        "y": 267,
+        "w": 362,
+        "h": 37
+      },
+      {
+        "tag": "A",
+        "text": "Get started",
+        "href": "/get-started/",
+        "x": 170,
+        "y": 334,
+        "w": 94,
+        "h": 23
+      },
+      {
+        "tag": "A",
+        "text": "Styles",
+        "href": "/styles/",
+        "x": 294,
+        "y": 334,
+        "w": 51,
+        "h": 23
+      },
+      {
+        "tag": "A",
+        "text": "Components",
+        "href": "/components/",
+        "x": 374,
+        "y": 334,
+        "w": 106,
+        "h": 23
+      },
+      {
+        "tag": "A",
+        "text": "Patterns",
+        "href": "/patterns/",
+        "x": 510,
+        "y": 334,
+        "w": 70,
+        "h": 23
+      },
+      {
+        "tag": "A",
+        "text": "Community",
+        "href": "/community/",
+        "x": 611,
+        "y": 334,
+        "w": 95,
+        "h": 23
+      },
+      {
+        "tag": "A",
+        "text": "Accessibility",
+        "href": "/accessibility/",
+        "x": 735,
+        "y": 334,
+        "w": 103,
+        "h": 23
+      },
+      {
+        "tag": "A",
+        "text": "Get started",
+        "href": "/get-started/",
+        "x": 170,
+        "y": 706,
+        "w": 177,
+        "h": 43
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "Use this design system to make government services consistent with GOV.UK. Learn from the research and experience of other service teams and avoid repeating work that’s already been done.",
+        "x": 170,
+        "y": 586,
+        "w": 723,
+        "h": 90
+      },
+      {
+        "text": "This release adds the Feedback component to help you gather feedback from your users and the Language navigation component to let your users switch between languages your service offers.",
+        "x": 170,
+        "y": 950,
+        "w": 723,
+        "h": 75
+      },
+      {
+        "text": "Both these components have been released as ‘Trial’ components, using our new component lifecycle statuses. See each component’s guidance page to learn how you can help us move them to ‘Stable’ status.",
+        "x": 170,
+        "y": 1045,
+        "w": 723,
+        "h": 75
+      },
+      {
+        "text": "Read the release notes for v6.5.0 on GitHub to see what’s changed or see our latest updates on the What’s new page.",
+        "x": 170,
+        "y": 1140,
+        "w": 723,
+        "h": 50
+      },
+      {
+        "text": "Interested in changes to the Design System, or our upcoming events and workshops?",
+        "x": 170,
+        "y": 1300,
+        "w": 723,
+        "h": 25
+      },
+      {
+        "text": "Sign up with your email",
+        "x": 170,
+        "y": 1345,
+        "w": 723,
+        "h": 25
+      },
+      {
+        "text": "Make government services look like GOV.UK with guides for applying layout, typography, colour and images.",
+        "x": 170,
+        "y": 1551,
+        "w": 347,
+        "h": 75
+      },
+      {
+        "text": "Browse our styles",
+        "x": 170,
+        "y": 1646,
+        "w": 347,
+        "h": 25
+      }
+    ],
+    "fonts": {
+      "body": "Times",
+      "headline": "\"GDS Transport\", arial, sans-serif",
+      "headlinePx": "48px"
+    },
+    "bodyBackground": "rgb(255, 255, 255)"
+  },
+  {
+    "id": "govuk",
+    "capturedAt": "2026-09-15T11:58:24.074Z",
+    "requestedURL": "https://design-system.service.gov.uk/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://design-system.service.gov.uk/",
+    "title": "Home – GOV.UK Design System",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "documentWidth": 375,
+    "fullHeight": 4649,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "Design your service using GOV.UK styles, components and patterns",
+        "href": null,
+        "x": 15,
+        "y": 616,
+        "w": 345,
+        "h": 140
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Cookies on GOV.UK Design System",
+        "href": null,
+        "x": 15,
+        "y": 20,
+        "w": 345,
+        "h": 25
+      },
+      {
+        "tag": "H2",
+        "text": "What’s new",
+        "href": null,
+        "x": 15,
+        "y": 1038,
+        "w": 345,
+        "h": 30
+      },
+      {
+        "tag": "H3",
+        "text": "27 August 2026: We’ve released GOV.UK Frontend v6.5.0",
+        "href": null,
+        "x": 15,
+        "y": 1088,
+        "w": 345,
+        "h": 50
+      },
+      {
+        "tag": "H2",
+        "text": "Get updates on the Design System",
+        "href": null,
+        "x": 15,
+        "y": 1588,
+        "w": 345,
+        "h": 60
+      },
+      {
+        "tag": "H2",
+        "text": "Styles",
+        "href": null,
+        "x": 15,
+        "y": 1849,
+        "w": 345,
+        "h": 30
+      },
+      {
+        "tag": "H2",
+        "text": "Components",
+        "href": null,
+        "x": 15,
+        "y": 2044,
+        "w": 345,
+        "h": 30
+      },
+      {
+        "tag": "H2",
+        "text": "Patterns",
+        "href": null,
+        "x": 15,
+        "y": 2239,
+        "w": 345,
+        "h": 30
+      },
+      {
+        "tag": "H2",
+        "text": "Update your service to use the refreshed GOV.UK brand",
+        "href": null,
+        "x": 15,
+        "y": 2465,
+        "w": 345,
+        "h": 60
+      },
+      {
+        "tag": "H2",
+        "text": "Principles we follow",
+        "href": null,
+        "x": 15,
+        "y": 2796,
+        "w": 345,
+        "h": 30
+      },
+      {
+        "tag": "H2",
+        "text": "Community",
+        "href": null,
+        "x": 15,
+        "y": 3172,
+        "w": 345,
+        "h": 30
+      },
+      {
+        "tag": "H2",
+        "text": "Support",
+        "href": null,
+        "x": 15,
+        "y": 3638,
+        "w": 345,
+        "h": 30
+      },
+      {
+        "tag": "H2",
+        "text": "Roadmap",
+        "href": null,
+        "x": 15,
+        "y": 3939,
+        "w": 345,
+        "h": 30
+      },
+      {
+        "tag": "H2",
+        "text": "Support links",
+        "href": null,
+        "x": 15,
+        "y": 4220,
+        "w": 1,
+        "h": 1
+      }
+    ],
+    "headerControls": [],
+    "foldControls": [
+      {
+        "tag": "BUTTON",
+        "text": "Accept analytics cookies",
+        "href": null,
+        "x": 15,
+        "y": 240,
+        "w": 345,
+        "h": 38
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reject analytics cookies",
+        "href": null,
+        "x": 15,
+        "y": 295,
+        "w": 345,
+        "h": 38
+      },
+      {
+        "tag": "A",
+        "text": "View cookies",
+        "href": "/cookies/",
+        "x": 134,
+        "y": 355,
+        "w": 107,
+        "h": 19
+      },
+      {
+        "tag": "A",
+        "text": "Skip to main content",
+        "href": "#main-content",
+        "x": 0,
+        "y": 399,
+        "w": 1,
+        "h": 1
+      },
+      {
+        "tag": "A",
+        "text": "Design System",
+        "href": "/",
+        "x": 15,
+        "y": 411,
+        "w": 193,
+        "h": 69
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Menu",
+        "href": null,
+        "x": 15,
+        "y": 560,
+        "w": 78,
+        "h": 25
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "Use this design system to make government services consistent with GOV.UK. Learn from the research and experience of other service teams and avoid repeating work that’s already been done.",
+        "x": 15,
+        "y": 777,
+        "w": 345,
+        "h": 150
+      },
+      {
+        "text": "This release adds the Feedback component to help you gather feedback from your users and the Language navigation component to let your users switch between languages your service offers.",
+        "x": 15,
+        "y": 1153,
+        "w": 345,
+        "h": 150
+      },
+      {
+        "text": "Both these components have been released as ‘Trial’ components, using our new component lifecycle statuses. See each component’s guidance page to learn how you can help us move them to ‘Stable’ status.",
+        "x": 15,
+        "y": 1318,
+        "w": 345,
+        "h": 150
+      },
+      {
+        "text": "Read the release notes for v6.5.0 on GitHub to see what’s changed or see our latest updates on the What’s new page.",
+        "x": 15,
+        "y": 1483,
+        "w": 345,
+        "h": 75
+      },
+      {
+        "text": "Interested in changes to the Design System, or our upcoming events and workshops?",
+        "x": 15,
+        "y": 1668,
+        "w": 345,
+        "h": 75
+      },
+      {
+        "text": "Sign up with your email",
+        "x": 15,
+        "y": 1758,
+        "w": 345,
+        "h": 25
+      },
+      {
+        "text": "Make government services look like GOV.UK with guides for applying layout, typography, colour and images.",
+        "x": 15,
+        "y": 1899,
+        "w": 345,
+        "h": 75
+      },
+      {
+        "text": "Browse our styles",
+        "x": 15,
+        "y": 1989,
+        "w": 345,
+        "h": 25
+      }
+    ],
+    "fonts": {
+      "body": "Times",
+      "headline": "\"GDS Transport\", arial, sans-serif",
+      "headlinePx": "32px"
+    },
+    "bodyBackground": "rgb(255, 255, 255)"
+  }
+]

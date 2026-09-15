@@ -1,0 +1,488 @@
+[
+  {
+    "id": "vercel",
+    "capturedAt": "2026-09-15T11:58:57.064Z",
+    "requestedURL": "https://vercel.com/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://vercel.com/",
+    "title": "Agentic Infrastructure - Vercel",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "documentWidth": 1440,
+    "fullHeight": 5333,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "Agentic Infrastructure",
+        "href": null,
+        "x": 24,
+        "y": 328,
+        "w": 444,
+        "h": 128
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Build agents on infrastructure that thinks like them",
+        "href": null,
+        "x": 24,
+        "y": 1108,
+        "w": 673,
+        "h": 112
+      },
+      {
+        "tag": "H2",
+        "text": "Ship apps that scale from zero to millions instantly",
+        "href": null,
+        "x": 495,
+        "y": 1981,
+        "w": 921,
+        "h": 112
+      }
+    ],
+    "headerControls": [
+      {
+        "tag": "A",
+        "text": "Vercel",
+        "href": "/home",
+        "x": 16,
+        "y": 15,
+        "w": 37,
+        "h": 34
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Products",
+        "href": null,
+        "x": 65,
+        "y": 16,
+        "w": 94,
+        "h": 32
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Resources",
+        "href": null,
+        "x": 159,
+        "y": 16,
+        "w": 104,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Enterprise",
+        "href": "/enterprise",
+        "x": 264,
+        "y": 16,
+        "w": 89,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Pricing",
+        "href": "/pricing",
+        "x": 353,
+        "y": 16,
+        "w": 68,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Get a Demo",
+        "href": "/contact/sales",
+        "x": 1152,
+        "y": 16,
+        "w": 101,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Log In",
+        "href": "/login",
+        "x": 1265,
+        "y": 16,
+        "w": 64,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Sign Up",
+        "href": "/signup",
+        "x": 1341,
+        "y": 16,
+        "w": 75,
+        "h": 32
+      }
+    ],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "Skip to content",
+        "href": "#geist-skip-nav",
+        "x": 47,
+        "y": 63,
+        "w": 120,
+        "h": 24
+      },
+      {
+        "tag": "A",
+        "text": "Vercel",
+        "href": "/home",
+        "x": 16,
+        "y": 15,
+        "w": 37,
+        "h": 34
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Products",
+        "href": null,
+        "x": 65,
+        "y": 16,
+        "w": 94,
+        "h": 32
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Resources",
+        "href": null,
+        "x": 159,
+        "y": 16,
+        "w": 104,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Enterprise",
+        "href": "/enterprise",
+        "x": 264,
+        "y": 16,
+        "w": 89,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Pricing",
+        "href": "/pricing",
+        "x": 353,
+        "y": 16,
+        "w": 68,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Get a Demo",
+        "href": "/contact/sales",
+        "x": 1152,
+        "y": 16,
+        "w": 101,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Log In",
+        "href": "/login",
+        "x": 1265,
+        "y": 16,
+        "w": 64,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Sign Up",
+        "href": "/signup",
+        "x": 1341,
+        "y": 16,
+        "w": 75,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Get your ticket",
+        "href": "https://vercel.fyi/qqAGIC2",
+        "x": 727,
+        "y": 80,
+        "w": 153,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Deploy now",
+        "href": "/new",
+        "x": 24,
+        "y": 488,
+        "w": 124,
+        "h": 40
+      },
+      {
+        "tag": "A",
+        "text": "Talk to sales",
+        "href": "/contact/sales",
+        "x": 160,
+        "y": 488,
+        "w": 130,
+        "h": 40
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "Ship 26 is coming to SF",
+        "x": 559,
+        "y": 86,
+        "w": 152,
+        "h": 20
+      },
+      {
+        "text": "Notion powers millions of agent conversations daily on Vercel.",
+        "x": 1083,
+        "y": 1380,
+        "w": 333,
+        "h": 64
+      },
+      {
+        "text": "Zapier serves over 100 million monthly website visits on Vercel.",
+        "x": 24,
+        "y": 2253,
+        "w": 333,
+        "h": 64
+      },
+      {
+        "text": "",
+        "x": 1083,
+        "y": 3110,
+        "w": 333,
+        "h": 96
+      },
+      {
+        "text": "",
+        "x": 45,
+        "y": 4356,
+        "w": 288,
+        "h": 20
+      },
+      {
+        "text": "",
+        "x": 1185,
+        "y": 3884,
+        "w": 50,
+        "h": 92
+      },
+      {
+        "text": "",
+        "x": 1255,
+        "y": 3884,
+        "w": 84,
+        "h": 20
+      },
+      {
+        "text": "",
+        "x": 1255,
+        "y": 3908,
+        "w": 84,
+        "h": 20
+      }
+    ],
+    "fonts": {
+      "body": "GeistSans, \"GeistSans Fallback\"",
+      "headline": "GeistSans, \"GeistSans Fallback\"",
+      "headlinePx": "64px"
+    },
+    "bodyBackground": "rgb(250, 250, 250)"
+  },
+  {
+    "id": "vercel",
+    "capturedAt": "2026-09-15T11:58:59.359Z",
+    "requestedURL": "https://vercel.com/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://vercel.com/",
+    "title": "Agentic Infrastructure - Vercel",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "documentWidth": 375,
+    "fullHeight": 4999,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "Agentic Infrastructure",
+        "href": null,
+        "x": 24,
+        "y": 412,
+        "w": 327,
+        "h": 112
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Build agents on infrastructure that thinks like them",
+        "href": null,
+        "x": 24,
+        "y": 972,
+        "w": 327,
+        "h": 120
+      },
+      {
+        "tag": "H2",
+        "text": "Ship apps that scale from zero to millions instantly",
+        "href": null,
+        "x": 24,
+        "y": 1729,
+        "w": 327,
+        "h": 120
+      }
+    ],
+    "headerControls": [
+      {
+        "tag": "A",
+        "text": "Vercel",
+        "href": "/home",
+        "x": 16,
+        "y": 15,
+        "w": 37,
+        "h": 34
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Open menu",
+        "href": null,
+        "x": 317,
+        "y": 10,
+        "w": 44,
+        "h": 44
+      }
+    ],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "Skip to content",
+        "href": "#geist-skip-nav",
+        "x": 47,
+        "y": 63,
+        "w": 120,
+        "h": 24
+      },
+      {
+        "tag": "A",
+        "text": "Vercel",
+        "href": "/home",
+        "x": 16,
+        "y": 15,
+        "w": 37,
+        "h": 34
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Open menu",
+        "href": null,
+        "x": 317,
+        "y": 10,
+        "w": 44,
+        "h": 44
+      },
+      {
+        "tag": "A",
+        "text": "Get your ticket",
+        "href": "https://vercel.fyi/qqAGIC2",
+        "x": 191,
+        "y": 72,
+        "w": 153,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Deploy now",
+        "href": "/new",
+        "x": 24,
+        "y": 592,
+        "w": 327,
+        "h": 40
+      },
+      {
+        "tag": "A",
+        "text": "Talk to sales",
+        "href": "/contact/sales",
+        "x": 24,
+        "y": 644,
+        "w": 327,
+        "h": 40
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "Ship 26 is coming to SF",
+        "x": 31,
+        "y": 78,
+        "w": 152,
+        "h": 20
+      },
+      {
+        "text": "For coding agents\nFor coding agents to ship apps and agents automated by agents.",
+        "x": 24,
+        "y": 540,
+        "w": 327,
+        "h": 24
+      },
+      {
+        "text": "Notion powers millions of agent conversations daily on Vercel.",
+        "x": 24,
+        "y": 1421,
+        "w": 327,
+        "h": 64
+      },
+      {
+        "text": "Zapier serves over 100 million monthly website visits on Vercel.",
+        "x": 24,
+        "y": 2179,
+        "w": 327,
+        "h": 96
+      },
+      {
+        "text": "",
+        "x": 24,
+        "y": 2928,
+        "w": 327,
+        "h": 96
+      },
+      {
+        "text": "",
+        "x": 45,
+        "y": 3540,
+        "w": 163,
+        "h": 40
+      },
+      {
+        "text": "",
+        "x": 219,
+        "y": 3697,
+        "w": 68,
+        "h": 100
+      },
+      {
+        "text": "",
+        "x": 288,
+        "y": 3676,
+        "w": 86,
+        "h": 37
+      }
+    ],
+    "fonts": {
+      "body": "GeistSans, \"GeistSans Fallback\"",
+      "headline": "GeistSans, \"GeistSans Fallback\"",
+      "headlinePx": "48px"
+    },
+    "bodyBackground": "rgb(250, 250, 250)"
+  }
+]

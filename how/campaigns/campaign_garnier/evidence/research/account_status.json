@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-09-15T12:14:08.972191+00:00",
+  "scope": "CLI-reported status only; no model request or quota verification",
+  "claude": {
+    "exit_code": 0,
+    "logged_in": true,
+    "authMethod": "claude.ai",
+    "apiProvider": "firstParty"
+  },
+  "codex": {
+    "exit_code": 0,
+    "method": "chatgpt"
+  },
+  "api_key_environment_present": true,
+  "subscription_token_environment_present": false,
+  "codex_access_token_environment_present": false,
+  "environment_scope_note": "These two named environment variables were absent; this is not an inventory of all broker capabilities."
+}

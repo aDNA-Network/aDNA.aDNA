@@ -1,0 +1,18 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 3085,
+    "title": "Stripe Documentation",
+    "desc": "Explore our guides and examples to integrate Stripe.",
+    "ogTitle": "Documentation",
+    "h1": "Documentation",
+    "h2count": 5,
+    "bodyLen": 2821,
+    "fullH": 900,
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 403 ()"
+    ]
+  }
+]

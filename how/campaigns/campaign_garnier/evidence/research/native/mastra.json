@@ -1,0 +1,1424 @@
+[
+  {
+    "id": "mastra",
+    "capturedAt": "2026-09-15T11:58:52.086Z",
+    "requestedURL": "https://mastra.ai/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://mastra.ai/",
+    "title": "TypeScript AI Framework for Agents and Apps | Mastra",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "documentWidth": 1440,
+    "fullHeight": 9462,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "Build AI agents",
+        "href": null,
+        "x": 94,
+        "y": 324,
+        "w": 1252,
+        "h": 59
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Workflows. Memory. Harness. Mastra agents have the tools you need to ship fast.",
+        "href": null,
+        "x": 220,
+        "y": 1251,
+        "w": 1000,
+        "h": 88
+      },
+      {
+        "tag": "H3",
+        "text": "Agents",
+        "href": null,
+        "x": 693,
+        "y": 2240,
+        "w": 53,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Workflows",
+        "href": null,
+        "x": 681,
+        "y": 2220,
+        "w": 78,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Harness",
+        "href": null,
+        "x": 689,
+        "y": 2220,
+        "w": 62,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Memory",
+        "href": null,
+        "x": 690,
+        "y": 2220,
+        "w": 61,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Server",
+        "href": null,
+        "x": 695,
+        "y": 2220,
+        "w": 49,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Factory",
+        "href": null,
+        "x": 691,
+        "y": 2220,
+        "w": 57,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Best-in-class, built-in observability. You can always see exactly what your Mastra agents are doing.",
+        "href": null,
+        "x": 220,
+        "y": 2579,
+        "w": 1000,
+        "h": 88
+      },
+      {
+        "tag": "H3",
+        "text": "Evals",
+        "href": null,
+        "x": 701,
+        "y": 3568,
+        "w": 39,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Metrics",
+        "href": null,
+        "x": 692,
+        "y": 3548,
+        "w": 55,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Datasets",
+        "href": null,
+        "x": 686,
+        "y": 3548,
+        "w": 68,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Traces",
+        "href": null,
+        "x": 695,
+        "y": 3548,
+        "w": 49,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Signals",
+        "href": null,
+        "x": 693,
+        "y": 3548,
+        "w": 55,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Great AI teams move fast. From fast-scaling startups to large global organizations, you're in good company.",
+        "href": null,
+        "x": 220,
+        "y": 3907,
+        "w": 1000,
+        "h": 88
+      },
+      {
+        "tag": "H2",
+        "text": "Empower your customers, turbo-charge your company. Mastra agents can do it all.",
+        "href": null,
+        "x": 220,
+        "y": 5106,
+        "w": 1000,
+        "h": 88
+      },
+      {
+        "tag": "H3",
+        "text": "Real-world agents",
+        "href": null,
+        "x": 96,
+        "y": 5434,
+        "w": 135,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Customer-facing agents",
+        "href": null,
+        "x": 547,
+        "y": 5434,
+        "w": 183,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Developer Infrastructure",
+        "href": null,
+        "x": 997,
+        "y": 5434,
+        "w": 185,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Resources",
+        "href": null,
+        "x": -1,
+        "y": 5937,
+        "w": 1,
+        "h": 1
+      },
+      {
+        "tag": "H2",
+        "text": "Frequently asked questions",
+        "href": null,
+        "x": 55,
+        "y": 6867,
+        "w": 1,
+        "h": 1
+      },
+      {
+        "tag": "H3",
+        "text": "What is Mastra?",
+        "href": null,
+        "x": 106,
+        "y": 7170,
+        "w": 155,
+        "h": 30
+      },
+      {
+        "tag": "H3",
+        "text": "Is Mastra an agent builder?",
+        "href": null,
+        "x": 106,
+        "y": 7358,
+        "w": 259,
+        "h": 30
+      },
+      {
+        "tag": "H3",
+        "text": "What can you build with Mastra?",
+        "href": null,
+        "x": 106,
+        "y": 7428,
+        "w": 311,
+        "h": 30
+      },
+      {
+        "tag": "H3",
+        "text": "What AI models and providers does Mastra support?",
+        "href": null,
+        "x": 106,
+        "y": 7498,
+        "w": 499,
+        "h": 30
+      },
+      {
+        "tag": "H3",
+        "text": "What are Mastra workflows?",
+        "href": null,
+        "x": 106,
+        "y": 7568,
+        "w": 272,
+        "h": 30
+      },
+      {
+        "tag": "H3",
+        "text": "How does Mastra handle agent memory and context?",
+        "href": null,
+        "x": 106,
+        "y": 7638,
+        "w": 510,
+        "h": 30
+      },
+      {
+        "tag": "H3",
+        "text": "Does Mastra support MCP servers?",
+        "href": null,
+        "x": 106,
+        "y": 7707,
+        "w": 335,
+        "h": 30
+      },
+      {
+        "tag": "H3",
+        "text": "How does Mastra handle testing and observability?",
+        "href": null,
+        "x": 106,
+        "y": 7777,
+        "w": 487,
+        "h": 30
+      },
+      {
+        "tag": "H3",
+        "text": "How do you deploy Mastra applications?",
+        "href": null,
+        "x": 106,
+        "y": 7847,
+        "w": 383,
+        "h": 30
+      },
+      {
+        "tag": "H3",
+        "text": "Why use Mastra instead of a Python AI framework?",
+        "href": null,
+        "x": 106,
+        "y": 7917,
+        "w": 485,
+        "h": 30
+      },
+      {
+        "tag": "H3",
+        "text": "Is Mastra open source?",
+        "href": null,
+        "x": 106,
+        "y": 7987,
+        "w": 220,
+        "h": 30
+      },
+      {
+        "tag": "H2",
+        "text": "Start building with Mastra today",
+        "href": null,
+        "x": 315,
+        "y": 8315,
+        "w": 809,
+        "h": 59
+      },
+      {
+        "tag": "H2",
+        "text": "Framework",
+        "href": null,
+        "x": 94,
+        "y": 8999,
+        "w": 183,
+        "h": 36
+      },
+      {
+        "tag": "H2",
+        "text": "Product",
+        "href": null,
+        "x": 315,
+        "y": 8999,
+        "w": 183,
+        "h": 36
+      },
+      {
+        "tag": "H2",
+        "text": "Developers",
+        "href": null,
+        "x": 537,
+        "y": 8999,
+        "w": 183,
+        "h": 36
+      },
+      {
+        "tag": "H2",
+        "text": "Resources",
+        "href": null,
+        "x": 758,
+        "y": 8999,
+        "w": 183,
+        "h": 36
+      },
+      {
+        "tag": "H2",
+        "text": "Company",
+        "href": null,
+        "x": 979,
+        "y": 8999,
+        "w": 183,
+        "h": 36
+      },
+      {
+        "tag": "H2",
+        "text": "Connect",
+        "href": null,
+        "x": 1201,
+        "y": 8999,
+        "w": 183,
+        "h": 36
+      }
+    ],
+    "headerControls": [
+      {
+        "tag": "A",
+        "text": "mastra",
+        "href": "/",
+        "x": 94,
+        "y": 16,
+        "w": 120,
+        "h": 29
+      },
+      {
+        "tag": "A",
+        "text": "Sep 17th • Build and Own Your Software Factory",
+        "href": "https://luma.com/mastra-gogz",
+        "x": 66,
+        "y": 74,
+        "w": 474,
+        "h": 32
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Product",
+        "href": null,
+        "x": 250,
+        "y": 12,
+        "w": 102,
+        "h": 38
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Solutions",
+        "href": null,
+        "x": 356,
+        "y": 12,
+        "w": 111,
+        "h": 38
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Resources",
+        "href": null,
+        "x": 471,
+        "y": 12,
+        "w": 118,
+        "h": 38
+      },
+      {
+        "tag": "A",
+        "text": "Pricing",
+        "href": "/pricing",
+        "x": 593,
+        "y": 12,
+        "w": 81,
+        "h": 38
+      },
+      {
+        "tag": "A",
+        "text": "Customers",
+        "href": "/customers",
+        "x": 678,
+        "y": 12,
+        "w": 108,
+        "h": 38
+      },
+      {
+        "tag": "A",
+        "text": "Docs",
+        "href": "/docs",
+        "x": 790,
+        "y": 12,
+        "w": 68,
+        "h": 38
+      },
+      {
+        "tag": "A",
+        "text": "28.1k",
+        "href": "https://github.com/mastra-ai/mastra",
+        "x": 1092,
+        "y": 14,
+        "w": 82,
+        "h": 34
+      },
+      {
+        "tag": "A",
+        "text": "Login",
+        "href": "https://projects.mastra.ai",
+        "x": 1178,
+        "y": 12,
+        "w": 70,
+        "h": 38
+      },
+      {
+        "tag": "A",
+        "text": "Sign Up",
+        "href": "https://projects.mastra.ai/sign-up",
+        "x": 1260,
+        "y": 12,
+        "w": 86,
+        "h": 38
+      }
+    ],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "mastra",
+        "href": "/",
+        "x": 94,
+        "y": 16,
+        "w": 120,
+        "h": 29
+      },
+      {
+        "tag": "A",
+        "text": "Sep 17th • Build and Own Your Software Factory",
+        "href": "https://luma.com/mastra-gogz",
+        "x": 66,
+        "y": 74,
+        "w": 474,
+        "h": 32
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Product",
+        "href": null,
+        "x": 250,
+        "y": 12,
+        "w": 102,
+        "h": 38
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Solutions",
+        "href": null,
+        "x": 356,
+        "y": 12,
+        "w": 111,
+        "h": 38
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Resources",
+        "href": null,
+        "x": 471,
+        "y": 12,
+        "w": 118,
+        "h": 38
+      },
+      {
+        "tag": "A",
+        "text": "Pricing",
+        "href": "/pricing",
+        "x": 593,
+        "y": 12,
+        "w": 81,
+        "h": 38
+      },
+      {
+        "tag": "A",
+        "text": "Customers",
+        "href": "/customers",
+        "x": 678,
+        "y": 12,
+        "w": 108,
+        "h": 38
+      },
+      {
+        "tag": "A",
+        "text": "Docs",
+        "href": "/docs",
+        "x": 790,
+        "y": 12,
+        "w": 68,
+        "h": 38
+      },
+      {
+        "tag": "A",
+        "text": "28.1k",
+        "href": "https://github.com/mastra-ai/mastra",
+        "x": 1092,
+        "y": 14,
+        "w": 82,
+        "h": 34
+      },
+      {
+        "tag": "A",
+        "text": "Login",
+        "href": "https://projects.mastra.ai",
+        "x": 1178,
+        "y": 12,
+        "w": 70,
+        "h": 38
+      },
+      {
+        "tag": "A",
+        "text": "Sign Up",
+        "href": "https://projects.mastra.ai/sign-up",
+        "x": 1260,
+        "y": 12,
+        "w": 86,
+        "h": 38
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Copy agent prompt Copied",
+        "href": null,
+        "x": 94,
+        "y": 684,
+        "w": 298,
+        "h": 50
+      },
+      {
+        "tag": "A",
+        "text": "Quickstart",
+        "href": "https://mastra.ai/guides/getting-started/quickstart",
+        "x": 412,
+        "y": 684,
+        "w": 156,
+        "h": 50
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/salesforce",
+        "x": 55,
+        "y": 767,
+        "w": 222,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/sanity",
+        "x": 498,
+        "y": 767,
+        "w": 222,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/softbank",
+        "x": 720,
+        "y": 767,
+        "w": 222,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/workos",
+        "x": 942,
+        "y": 767,
+        "w": 222,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/range",
+        "x": 55,
+        "y": 895,
+        "w": 222,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/mongodb",
+        "x": 498,
+        "y": 895,
+        "w": 222,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/factorial",
+        "x": 720,
+        "y": 895,
+        "w": 222,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "https://www.elastic.co/search-labs/blog/agentic-rag",
+        "x": 942,
+        "y": 895,
+        "w": 222,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/replit",
+        "x": 1163,
+        "y": 895,
+        "w": 222,
+        "h": 128
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "Build, observe, and improve agents that run for days with Mastra, the leading TypeScript agent framework",
+        "x": 94,
+        "y": 407,
+        "w": 352,
+        "h": 90
+      },
+      {
+        "text": "mastra-project",
+        "x": 745,
+        "y": 294,
+        "w": 206,
+        "h": 35
+      },
+      {
+        "text": "Observability",
+        "x": 745,
+        "y": 294,
+        "w": 206,
+        "h": 35
+      },
+      {
+        "text": "Evals",
+        "x": 745,
+        "y": 294,
+        "w": 206,
+        "h": 35
+      },
+      {
+        "text": "Read →",
+        "x": 143,
+        "y": 865,
+        "w": 46,
+        "h": 20
+      },
+      {
+        "text": "Read →",
+        "x": 586,
+        "y": 865,
+        "w": 46,
+        "h": 20
+      },
+      {
+        "text": "Read →",
+        "x": 808,
+        "y": 865,
+        "w": 46,
+        "h": 20
+      },
+      {
+        "text": "Read →",
+        "x": 1030,
+        "y": 865,
+        "w": 46,
+        "h": 20
+      }
+    ],
+    "fonts": {
+      "body": "greed, \"greed Fallback\"",
+      "headline": "greed, \"greed Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "headlinePx": "54px"
+    },
+    "bodyBackground": "rgb(2, 2, 2)"
+  },
+  {
+    "id": "mastra",
+    "capturedAt": "2026-09-15T11:58:54.681Z",
+    "requestedURL": "https://mastra.ai/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://mastra.ai/",
+    "title": "TypeScript AI Framework for Agents and Apps | Mastra",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "documentWidth": 375,
+    "fullHeight": 12653,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "Build AI agents",
+        "href": null,
+        "x": 28,
+        "y": 190,
+        "w": 319,
+        "h": 33
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Workflows. Memory. Harness. Mastra agents have the tools you need to ship fast.",
+        "href": null,
+        "x": 18,
+        "y": 1039,
+        "w": 339,
+        "h": 123
+      },
+      {
+        "tag": "H3",
+        "text": "Agents",
+        "href": null,
+        "x": 61,
+        "y": 1375,
+        "w": 53,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Workflows",
+        "href": null,
+        "x": 62,
+        "y": 1355,
+        "w": 78,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Harness",
+        "href": null,
+        "x": 62,
+        "y": 1355,
+        "w": 62,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Memory",
+        "href": null,
+        "x": 62,
+        "y": 1355,
+        "w": 61,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Server",
+        "href": null,
+        "x": 62,
+        "y": 1355,
+        "w": 49,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Factory",
+        "href": null,
+        "x": 62,
+        "y": 1355,
+        "w": 57,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Best-in-class, built-in observability. You can always see exactly what your Mastra agents are doing.",
+        "href": null,
+        "x": 18,
+        "y": 1942,
+        "w": 339,
+        "h": 154
+      },
+      {
+        "tag": "H3",
+        "text": "Evals",
+        "href": null,
+        "x": 61,
+        "y": 2293,
+        "w": 39,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Metrics",
+        "href": null,
+        "x": 62,
+        "y": 2273,
+        "w": 55,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Datasets",
+        "href": null,
+        "x": 62,
+        "y": 2273,
+        "w": 68,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Traces",
+        "href": null,
+        "x": 62,
+        "y": 2273,
+        "w": 49,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Signals",
+        "href": null,
+        "x": 62,
+        "y": 2273,
+        "w": 55,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Great AI teams move fast. From fast-scaling startups to large global organizations, you're in good company.",
+        "href": null,
+        "x": 18,
+        "y": 2790,
+        "w": 339,
+        "h": 154
+      },
+      {
+        "tag": "H2",
+        "text": "Empower your customers, turbo-charge your company. Mastra agents can do it all.",
+        "href": null,
+        "x": 18,
+        "y": 5827,
+        "w": 339,
+        "h": 123
+      },
+      {
+        "tag": "H3",
+        "text": "Real-world agents",
+        "href": null,
+        "x": 48,
+        "y": 6087,
+        "w": 135,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Customer-facing agents",
+        "href": null,
+        "x": 48,
+        "y": 6625,
+        "w": 183,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Developer Infrastructure",
+        "href": null,
+        "x": 48,
+        "y": 7163,
+        "w": 185,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Resources",
+        "href": null,
+        "x": -1,
+        "y": 7670,
+        "w": 1,
+        "h": 1
+      },
+      {
+        "tag": "H2",
+        "text": "Frequently asked questions",
+        "href": null,
+        "x": 17,
+        "y": 9084,
+        "w": 1,
+        "h": 1
+      },
+      {
+        "tag": "H2",
+        "text": "Frequently asked questions",
+        "href": null,
+        "x": 18,
+        "y": 9162,
+        "w": 218,
+        "h": 25
+      },
+      {
+        "tag": "H3",
+        "text": "What is Mastra?",
+        "href": null,
+        "x": 68,
+        "y": 9333,
+        "w": 155,
+        "h": 30
+      },
+      {
+        "tag": "H3",
+        "text": "Is Mastra an agent builder?",
+        "href": null,
+        "x": 68,
+        "y": 9706,
+        "w": 201,
+        "h": 60
+      },
+      {
+        "tag": "H3",
+        "text": "What can you build with Mastra?",
+        "href": null,
+        "x": 68,
+        "y": 9806,
+        "w": 201,
+        "h": 60
+      },
+      {
+        "tag": "H3",
+        "text": "What AI models and providers does Mastra support?",
+        "href": null,
+        "x": 68,
+        "y": 9906,
+        "w": 201,
+        "h": 90
+      },
+      {
+        "tag": "H3",
+        "text": "What are Mastra workflows?",
+        "href": null,
+        "x": 68,
+        "y": 10036,
+        "w": 201,
+        "h": 60
+      },
+      {
+        "tag": "H3",
+        "text": "How does Mastra handle agent memory and context?",
+        "href": null,
+        "x": 68,
+        "y": 10135,
+        "w": 201,
+        "h": 120
+      },
+      {
+        "tag": "H3",
+        "text": "Does Mastra support MCP servers?",
+        "href": null,
+        "x": 68,
+        "y": 10295,
+        "w": 201,
+        "h": 60
+      },
+      {
+        "tag": "H3",
+        "text": "How does Mastra handle testing and observability?",
+        "href": null,
+        "x": 68,
+        "y": 10395,
+        "w": 201,
+        "h": 90
+      },
+      {
+        "tag": "H3",
+        "text": "How do you deploy Mastra applications?",
+        "href": null,
+        "x": 68,
+        "y": 10525,
+        "w": 201,
+        "h": 60
+      },
+      {
+        "tag": "H3",
+        "text": "Why use Mastra instead of a Python AI framework?",
+        "href": null,
+        "x": 68,
+        "y": 10624,
+        "w": 201,
+        "h": 90
+      },
+      {
+        "tag": "H3",
+        "text": "Is Mastra open source?",
+        "href": null,
+        "x": 68,
+        "y": 10754,
+        "w": 201,
+        "h": 60
+      },
+      {
+        "tag": "H2",
+        "text": "Start building with Mastra today",
+        "href": null,
+        "x": 24,
+        "y": 10978,
+        "w": 327,
+        "h": 66
+      },
+      {
+        "tag": "H2",
+        "text": "Framework",
+        "href": null,
+        "x": 54,
+        "y": 11623,
+        "w": 118,
+        "h": 36
+      },
+      {
+        "tag": "H2",
+        "text": "Product",
+        "href": null,
+        "x": 204,
+        "y": 11623,
+        "w": 118,
+        "h": 36
+      },
+      {
+        "tag": "H2",
+        "text": "Developers",
+        "href": null,
+        "x": 54,
+        "y": 11877,
+        "w": 118,
+        "h": 36
+      },
+      {
+        "tag": "H2",
+        "text": "Resources",
+        "href": null,
+        "x": 204,
+        "y": 11877,
+        "w": 118,
+        "h": 36
+      },
+      {
+        "tag": "H2",
+        "text": "Company",
+        "href": null,
+        "x": 54,
+        "y": 12165,
+        "w": 118,
+        "h": 36
+      },
+      {
+        "tag": "H2",
+        "text": "Connect",
+        "href": null,
+        "x": 204,
+        "y": 12165,
+        "w": 118,
+        "h": 36
+      }
+    ],
+    "headerControls": [
+      {
+        "tag": "A",
+        "text": "mastra",
+        "href": "/",
+        "x": 28,
+        "y": 18,
+        "w": 88,
+        "h": 22
+      },
+      {
+        "tag": "A",
+        "text": "Sep 17th • Build and Own Your Software Factory",
+        "href": "https://luma.com/mastra-gogz",
+        "x": 66,
+        "y": 69,
+        "w": 243,
+        "h": 32
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Open main menu",
+        "href": null,
+        "x": 315,
+        "y": 13,
+        "w": 32,
+        "h": 32
+      }
+    ],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "mastra",
+        "href": "/",
+        "x": 28,
+        "y": 18,
+        "w": 88,
+        "h": 22
+      },
+      {
+        "tag": "A",
+        "text": "Sep 17th • Build and Own Your Software Factory",
+        "href": "https://luma.com/mastra-gogz",
+        "x": 66,
+        "y": 69,
+        "w": 243,
+        "h": 32
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Open main menu",
+        "href": null,
+        "x": 315,
+        "y": 13,
+        "w": 32,
+        "h": 32
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Copy agent prompt Copied",
+        "href": null,
+        "x": 40,
+        "y": 624,
+        "w": 295,
+        "h": 50
+      },
+      {
+        "tag": "A",
+        "text": "Quickstart",
+        "href": "https://mastra.ai/guides/getting-started/quickstart",
+        "x": 28,
+        "y": 690,
+        "w": 319,
+        "h": 50
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/salesforce",
+        "x": 0,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/sanity",
+        "x": 352,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/softbank",
+        "x": 528,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/workos",
+        "x": 704,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/range",
+        "x": 1056,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/mongodb",
+        "x": 1408,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/factorial",
+        "x": 1584,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "https://www.elastic.co/search-labs/blog/agentic-rag",
+        "x": 1760,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/replit",
+        "x": 1936,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/salesforce",
+        "x": 2112,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/sanity",
+        "x": 2464,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/softbank",
+        "x": 2640,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/workos",
+        "x": 2816,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/range",
+        "x": 3168,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/mongodb",
+        "x": 3520,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/factorial",
+        "x": 3696,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "https://www.elastic.co/search-labs/blog/agentic-rag",
+        "x": 3872,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      },
+      {
+        "tag": "A",
+        "text": "Read →",
+        "href": "/customers/replit",
+        "x": 4048,
+        "y": 781,
+        "w": 160,
+        "h": 128
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "Build, observe, and improve agents that run for days with Mastra, the leading TypeScript agent framework",
+        "x": 28,
+        "y": 247,
+        "w": 319,
+        "h": 120
+      },
+      {
+        "text": "mastra-project",
+        "x": 49,
+        "y": 438,
+        "w": 124,
+        "h": 21
+      },
+      {
+        "text": "Observability",
+        "x": 49,
+        "y": 438,
+        "w": 124,
+        "h": 21
+      },
+      {
+        "text": "Evals",
+        "x": 49,
+        "y": 438,
+        "w": 124,
+        "h": 21
+      },
+      {
+        "text": "Read →",
+        "x": 57,
+        "y": 862,
+        "w": 46,
+        "h": 20
+      },
+      {
+        "text": "Read →",
+        "x": 409,
+        "y": 852,
+        "w": 46,
+        "h": 20
+      },
+      {
+        "text": "Read →",
+        "x": 585,
+        "y": 852,
+        "w": 46,
+        "h": 20
+      },
+      {
+        "text": "Read →",
+        "x": 761,
+        "y": 852,
+        "w": 46,
+        "h": 20
+      }
+    ],
+    "fonts": {
+      "body": "greed, \"greed Fallback\"",
+      "headline": "greed, \"greed Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "headlinePx": "30px"
+    },
+    "bodyBackground": "rgb(2, 2, 2)"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 5241,
+    "title": "Linear – The system for product development",
+    "desc": "Purpose-built for planning and building products with AI agents.",
+    "ogTitle": "Linear – The system for product development",
+    "h1": "The product development\nsystem for teams and agents\nThe product development system for teams and agents",
+    "h2count": 7,
+    "bodyLen": 9611,
+    "fullH": 9960,
+    "consoleErrors": []
+  }
+]

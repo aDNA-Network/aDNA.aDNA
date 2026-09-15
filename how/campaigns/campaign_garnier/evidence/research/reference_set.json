@@ -1,0 +1,15 @@
+{
+  "inspected": "2026-09-15",
+  "sites": [
+    {"id":"linear","url":"https://linear.app/","role":"product","lesson":"Show the working artifact at a readable scale."},
+    {"id":"stripe_docs","url":"https://docs.stripe.com/","role":"docs","lesson":"Group technical entry points by the task."},
+    {"id":"govuk","url":"https://design-system.service.gov.uk/","role":"docs/design system","lesson":"Consistency makes actions and reading predictable."},
+    {"id":"owid","url":"https://ourworldindata.org/","role":"research/public good","lesson":"Connect a public purpose to inspectable research objects."},
+    {"id":"huggingface","url":"https://huggingface.co/","role":"registry/community","lesson":"Make useful artifacts and contributors visible."},
+    {"id":"mcp","url":"https://modelcontextprotocol.io/","role":"protocol","lesson":"Define the mechanism before presenting a broad ecosystem."},
+    {"id":"ethereum","url":"https://ethereum.org/en/","role":"protocol/movement","lesson":"Offer concrete participation paths beside the mission."},
+    {"id":"nous","url":"https://nousresearch.com/","role":"research/movement","lesson":"Use dated project rows to convey real work."},
+    {"id":"mastra","url":"https://mastra.ai/","role":"developer product","lesson":"Pair an entry action with an understandable workflow."},
+    {"id":"vercel","url":"https://vercel.com/","role":"product/platform","lesson":"Use hierarchy and deliberate section contrast."}
+  ]
+}

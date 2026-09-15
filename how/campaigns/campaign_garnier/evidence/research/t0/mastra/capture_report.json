@@ -1,0 +1,18 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 2935,
+    "title": "TypeScript AI Framework for Agents and Apps | Mastra",
+    "desc": "Ship AI agents that reason, remember, and act in TypeScript. Mastra provides memory, tools, MCP, and observability to go from prototype to production.",
+    "ogTitle": "TypeScript AI Framework for Agents and Apps | Mastra",
+    "h1": "Build AI agents",
+    "h2count": 14,
+    "bodyLen": 7608,
+    "fullH": 9462,
+    "consoleErrors": [
+      "[swan] domain not whitelisted"
+    ]
+  }
+]

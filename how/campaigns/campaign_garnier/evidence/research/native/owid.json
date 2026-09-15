@@ -1,0 +1,1301 @@
+[
+  {
+    "id": "owid",
+    "capturedAt": "2026-09-15T11:58:26.985Z",
+    "requestedURL": "https://ourworldindata.org/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://ourworldindata.org/",
+    "title": "Our World in Data",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "documentWidth": 1440,
+    "fullHeight": 4889,
+    "h1": [],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Research and data to make progress against the world’s largest problems.",
+        "href": null,
+        "x": 406,
+        "y": 148,
+        "w": 628,
+        "h": 80
+      },
+      {
+        "tag": "H3",
+        "text": "Is organic farming better for the environment than conventional farming?",
+        "href": null,
+        "x": 97,
+        "y": 654,
+        "w": 268,
+        "h": 72
+      },
+      {
+        "tag": "H3",
+        "text": "A never-ending childhood of malaria",
+        "href": null,
+        "x": 97,
+        "y": 1070,
+        "w": 268,
+        "h": 48
+      },
+      {
+        "tag": "H3",
+        "text": "Wild mammals have declined by 85% since the rise of humans, but there is a possible future where they flourish",
+        "href": null,
+        "x": 423,
+        "y": 665,
+        "w": 268,
+        "h": 96
+      },
+      {
+        "tag": "H3",
+        "text": "We’re looking for a writer",
+        "href": null,
+        "x": 423,
+        "y": 1104,
+        "w": 268,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Tracking the size of public sector workforces around the world",
+        "href": null,
+        "x": 748,
+        "y": 569,
+        "w": 270,
+        "h": 42
+      },
+      {
+        "tag": "H3",
+        "text": "Hannah Ritchie’s second book, “Clearing the Air”, is out in paperback in the United Kingdom",
+        "href": null,
+        "x": 748,
+        "y": 727,
+        "w": 270,
+        "h": 63
+      },
+      {
+        "tag": "H3",
+        "text": "New data: World Development Indicators, July 2026 release",
+        "href": null,
+        "x": 748,
+        "y": 907,
+        "w": 270,
+        "h": 42
+      },
+      {
+        "tag": "H2",
+        "text": "Data Insights",
+        "href": null,
+        "x": 80,
+        "y": 1226,
+        "w": 845,
+        "h": 32
+      },
+      {
+        "tag": "H3",
+        "text": "Men are more likely to use tobacco than women almost everywhere in the world",
+        "href": null,
+        "x": 410,
+        "y": 1334,
+        "w": 499,
+        "h": 48
+      },
+      {
+        "tag": "H3",
+        "text": "Around 5% of electricity in the United States is used for data centers — far more than the global average",
+        "href": null,
+        "x": 1279,
+        "y": 1334,
+        "w": 499,
+        "h": 48
+      },
+      {
+        "tag": "H3",
+        "text": "China only just missed the income cutoff to become a high-income country this year",
+        "href": null,
+        "x": 2148,
+        "y": 1334,
+        "w": 499,
+        "h": 48
+      },
+      {
+        "tag": "H3",
+        "text": "In these nine African countries, average incomes have more than doubled since 1990",
+        "href": null,
+        "x": 3017,
+        "y": 1334,
+        "w": 499,
+        "h": 48
+      },
+      {
+        "tag": "H3",
+        "text": "Five countries had more women than men in parliament in 2025",
+        "href": null,
+        "x": 3886,
+        "y": 1334,
+        "w": 499,
+        "h": 48
+      },
+      {
+        "tag": "H3",
+        "text": "More Indians live in the Gulf states than in the US, UK, and Canada combined",
+        "href": null,
+        "x": 4755,
+        "y": 1334,
+        "w": 499,
+        "h": 48
+      },
+      {
+        "tag": "H3",
+        "text": "Money spent on building data centers in the US has grown 5-fold since late 2022",
+        "href": null,
+        "x": 5624,
+        "y": 1334,
+        "w": 499,
+        "h": 48
+      },
+      {
+        "tag": "H2",
+        "text": "Explore our data",
+        "href": null,
+        "x": 80,
+        "y": 1684,
+        "w": 845,
+        "h": 32
+      },
+      {
+        "tag": "H3",
+        "text": "Child mortality rate Long-run estimates combining data from UN & Gapminder",
+        "href": null,
+        "x": 80,
+        "y": 1756,
+        "w": 1280,
+        "h": 56
+      },
+      {
+        "tag": "H3",
+        "text": "Share of population living in extreme poverty World Bank",
+        "href": null,
+        "x": 80,
+        "y": 2436,
+        "w": 1280,
+        "h": 56
+      },
+      {
+        "tag": "H3",
+        "text": "Life expectancy Long-run estimates collated from multiple sources by Our World in Data",
+        "href": null,
+        "x": 80,
+        "y": 2493,
+        "w": 1280,
+        "h": 56
+      },
+      {
+        "tag": "H3",
+        "text": "CO₂ emissions per capita Long-run estimates from the Global Carbon Budget",
+        "href": null,
+        "x": 80,
+        "y": 2550,
+        "w": 1280,
+        "h": 56
+      },
+      {
+        "tag": "H3",
+        "text": "GDP per capita Long-run estimates from the Maddison Project Database",
+        "href": null,
+        "x": 80,
+        "y": 2607,
+        "w": 1280,
+        "h": 56
+      },
+      {
+        "tag": "H3",
+        "text": "Share of people who are undernourished UN FAO",
+        "href": null,
+        "x": 80,
+        "y": 2664,
+        "w": 1280,
+        "h": 56
+      },
+      {
+        "tag": "H3",
+        "text": "Literacy rate Long-run estimates collated from multiple sources by Our World in Data",
+        "href": null,
+        "x": 80,
+        "y": 2721,
+        "w": 1280,
+        "h": 56
+      },
+      {
+        "tag": "H3",
+        "text": "Share of the population with access to electricity World Bank",
+        "href": null,
+        "x": 80,
+        "y": 2778,
+        "w": 1280,
+        "h": 56
+      },
+      {
+        "tag": "H2",
+        "text": "Data explorers",
+        "href": null,
+        "x": 80,
+        "y": 2858,
+        "w": 628,
+        "h": 32
+      },
+      {
+        "tag": "H2",
+        "text": "All our topics",
+        "href": null,
+        "x": 80,
+        "y": 3140,
+        "w": 1280,
+        "h": 32
+      },
+      {
+        "tag": "H2",
+        "text": "Population and Demographic Change",
+        "href": null,
+        "x": 80,
+        "y": 3220,
+        "w": 1280,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Health",
+        "href": null,
+        "x": 80,
+        "y": 3309,
+        "w": 1280,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Energy and Environment",
+        "href": null,
+        "x": 80,
+        "y": 3470,
+        "w": 1280,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Food and Agriculture",
+        "href": null,
+        "x": 80,
+        "y": 3631,
+        "w": 1280,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Poverty and Economic Development",
+        "href": null,
+        "x": 80,
+        "y": 3768,
+        "w": 1280,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Education and Knowledge",
+        "href": null,
+        "x": 80,
+        "y": 3905,
+        "w": 1280,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Innovation and Technological Change",
+        "href": null,
+        "x": 80,
+        "y": 3994,
+        "w": 1280,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Living Conditions, Community and Wellbeing",
+        "href": null,
+        "x": 80,
+        "y": 4083,
+        "w": 1280,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Human Rights and Democracy",
+        "href": null,
+        "x": 80,
+        "y": 4196,
+        "w": 1280,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Violence and War",
+        "href": null,
+        "x": 80,
+        "y": 4285,
+        "w": 1280,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Cookies help us build a better website",
+        "href": null,
+        "x": 80,
+        "y": 780,
+        "w": 582,
+        "h": 24
+      }
+    ],
+    "headerControls": [
+      {
+        "tag": "A",
+        "text": "Our World in Data",
+        "href": "/",
+        "x": 90,
+        "y": 12,
+        "w": 93,
+        "h": 48
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Browse by topic",
+        "href": null,
+        "x": 207,
+        "y": 26,
+        "w": 121,
+        "h": 21
+      },
+      {
+        "tag": "A",
+        "text": "Data",
+        "href": "/search",
+        "x": 352,
+        "y": 28,
+        "w": 30,
+        "h": 17
+      },
+      {
+        "tag": "A",
+        "text": "Latest",
+        "href": "/latest",
+        "x": 405,
+        "y": 28,
+        "w": 38,
+        "h": 17
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Resources",
+        "href": null,
+        "x": 467,
+        "y": 26,
+        "w": 79,
+        "h": 21
+      },
+      {
+        "tag": "BUTTON",
+        "text": "About",
+        "href": null,
+        "x": 570,
+        "y": 26,
+        "w": 55,
+        "h": 21
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Subscribe",
+        "href": null,
+        "x": 1138,
+        "y": 16,
+        "w": 110,
+        "h": 40
+      },
+      {
+        "tag": "A",
+        "text": "Donate",
+        "href": "/donate",
+        "x": 1256,
+        "y": 16,
+        "w": 94,
+        "h": 40
+      }
+    ],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "Our World in Data",
+        "href": "/",
+        "x": 90,
+        "y": 12,
+        "w": 93,
+        "h": 48
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Browse by topic",
+        "href": null,
+        "x": 207,
+        "y": 26,
+        "w": 121,
+        "h": 21
+      },
+      {
+        "tag": "A",
+        "text": "Data",
+        "href": "/search",
+        "x": 352,
+        "y": 28,
+        "w": 30,
+        "h": 17
+      },
+      {
+        "tag": "A",
+        "text": "Latest",
+        "href": "/latest",
+        "x": 405,
+        "y": 28,
+        "w": 38,
+        "h": 17
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Resources",
+        "href": null,
+        "x": 467,
+        "y": 26,
+        "w": 79,
+        "h": 21
+      },
+      {
+        "tag": "BUTTON",
+        "text": "About",
+        "href": null,
+        "x": 570,
+        "y": 26,
+        "w": 55,
+        "h": 21
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Subscribe",
+        "href": null,
+        "x": 1138,
+        "y": 16,
+        "w": 110,
+        "h": 40
+      },
+      {
+        "tag": "A",
+        "text": "Donate",
+        "href": "/donate",
+        "x": 1256,
+        "y": 16,
+        "w": 94,
+        "h": 40
+      },
+      {
+        "tag": "A",
+        "text": "CO₂ Emissions",
+        "href": "https://ourworldindata.org/co2-and-greenhouse-gas-emissions",
+        "x": 202,
+        "y": 84,
+        "w": 121,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Population Growth",
+        "href": "https://ourworldindata.org/population-growth",
+        "x": 331,
+        "y": 84,
+        "w": 149,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Life Expectancy",
+        "href": "https://ourworldindata.org/life-expectancy",
+        "x": 488,
+        "y": 84,
+        "w": 129,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Poverty",
+        "href": "https://ourworldindata.org/poverty",
+        "x": 625,
+        "y": 84,
+        "w": 80,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Impacts of Food",
+        "href": "https://ourworldindata.org/environmental-impacts-of-food",
+        "x": 713,
+        "y": 84,
+        "w": 131,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "War & Peace",
+        "href": "https://ourworldindata.org/war-and-peace",
+        "x": 852,
+        "y": 84,
+        "w": 111,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Global Education",
+        "href": "https://ourworldindata.org/global-education",
+        "x": 971,
+        "y": 84,
+        "w": 137,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Artificial Intelligence",
+        "href": "https://ourworldindata.org/artificial-intelligence",
+        "x": 1116,
+        "y": 84,
+        "w": 158,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Democracy",
+        "href": "https://ourworldindata.org/democracy",
+        "x": 1282,
+        "y": 84,
+        "w": 102,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Read about our mission",
+        "href": "https://ourworldindata.org/about#our-mission",
+        "x": 406,
+        "y": 236,
+        "w": 628,
+        "h": 24
+      },
+      {
+        "tag": "A",
+        "text": "14,095 charts",
+        "href": "/search",
+        "x": 425,
+        "y": 348,
+        "w": 131,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "126 topic pages",
+        "href": "#all-topics",
+        "x": 572,
+        "y": 348,
+        "w": 140,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "29 data explorers",
+        "href": "/explorers",
+        "x": 729,
+        "y": 348,
+        "w": 153,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "506 articles",
+        "href": "/latest?type=article",
+        "x": 898,
+        "y": 348,
+        "w": 117,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "NEW ARTICLE · 14 MIN READ Is organic farming better for the environment than conventional farming? Organic farming often wins when we compare impacts on one unit of land, but there is no clear winner when we look at impacts per unit of food production. Hannah Ritchie",
+        "href": "https://ourworldindata.org/is-organic-farming-better-for-the-environment-than-conventional-farming",
+        "x": 80,
+        "y": 464,
+        "w": 302,
+        "h": 391
+      },
+      {
+        "tag": "A",
+        "text": "ARTICLE · 5 MIN READ A never-ending childhood of malaria Hannah Ritchie",
+        "href": "https://ourworldindata.org/a-never-ending-childhood-of-malaria",
+        "x": 80,
+        "y": 880,
+        "w": 302,
+        "h": 280
+      },
+      {
+        "tag": "A",
+        "text": "FROM OUR CLASSICS Wild mammals have declined by 85% since the rise of humans, but there is a possible future where they flourish Wild mammal biomass has declined by 85% since the rise of humans. But we can turn things around by reducing the amount of land we use for agriculture. Hannah Ritchie",
+        "href": "https://ourworldindata.org/wild-mammal-decline",
+        "x": 406,
+        "y": 464,
+        "w": 302,
+        "h": 427
+      },
+      {
+        "tag": "A",
+        "text": "DATA UPDATE - 7 DAYS AGO Tracking the size of public sector workforces around the world Explore updated data from the World Bank’s Worldwide Bureaucracy Indicators. Read more",
+        "href": "/latest#tracking-the-size-of-public-sector-workforces-around-the-world",
+        "x": 748,
+        "y": 552,
+        "w": 270,
+        "h": 126
+      },
+      {
+        "tag": "A",
+        "text": "ANNOUNCEMENT - 13 DAYS AGO Hannah Ritchie’s second book, “Clearing the Air”, is out in paperback in the United Kingdom “Clearing the Air” is published in paperback on September 3, 2026. Read more",
+        "href": "/latest#hannah-ritchies-second-book-clearing-the-air-is-out-in-paperback-in-the-united-kingdom",
+        "x": 748,
+        "y": 711,
+        "w": 270,
+        "h": 147
+      },
+      {
+        "tag": "A",
+        "text": "DATA UPDATE - 16 DAYS AGO New data: World Development Indicators, July 2026 release Explore updated data on global development from the World Bank. Read more",
+        "href": "/latest#new-data-world-development-indicators-july-2026-release",
+        "x": 748,
+        "y": 890,
+        "w": 270,
+        "h": 126
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Subscribe",
+        "href": null,
+        "x": 1074,
+        "y": 831,
+        "w": 270,
+        "h": 40
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Subscribe",
+        "href": null,
+        "x": 1336,
+        "y": 844,
+        "w": 40,
+        "h": 40
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Feedback",
+        "href": null,
+        "x": 1384,
+        "y": 844,
+        "w": 40,
+        "h": 40
+      },
+      {
+        "tag": "A",
+        "text": "donations",
+        "href": "/donate",
+        "x": 314,
+        "y": 812,
+        "w": 57,
+        "h": 16
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reject optional cookies",
+        "href": null,
+        "x": 1004,
+        "y": 780,
+        "w": 159,
+        "h": 34
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Accept optional cookies",
+        "href": null,
+        "x": 1179,
+        "y": 780,
+        "w": 181,
+        "h": 34
+      },
+      {
+        "tag": "A",
+        "text": "Privacy Policy",
+        "href": "/privacy-policy",
+        "x": 586,
+        "y": 852,
+        "w": 79,
+        "h": 16
+      },
+      {
+        "tag": "A",
+        "text": "manage your cookie settings",
+        "href": "/cookie-notice#cookie-preferences",
+        "x": 683,
+        "y": 852,
+        "w": 162,
+        "h": 16
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "POPULAR PAGES",
+        "x": 80,
+        "y": 84,
+        "w": 113,
+        "h": 32
+      },
+      {
+        "text": "All free: open access and openly licensed",
+        "x": 0,
+        "y": 394,
+        "w": 1440,
+        "h": 22
+      },
+      {
+        "text": "Organic farming often wins when we compare impacts on one unit of land, but there is no clear winner when we look at impacts per unit of food production.",
+        "x": 97,
+        "y": 730,
+        "w": 268,
+        "h": 84
+      },
+      {
+        "text": "Hannah Ritchie",
+        "x": 97,
+        "y": 818,
+        "w": 268,
+        "h": 21
+      },
+      {
+        "text": "Hannah Ritchie",
+        "x": 97,
+        "y": 1122,
+        "w": 268,
+        "h": 21
+      },
+      {
+        "text": "Wild mammal biomass has declined by 85% since the rise of humans. But we can turn things around by reducing the amount of land we use for agriculture.",
+        "x": 423,
+        "y": 765,
+        "w": 268,
+        "h": 84
+      },
+      {
+        "text": "Hannah Ritchie",
+        "x": 423,
+        "y": 853,
+        "w": 268,
+        "h": 21
+      },
+      {
+        "text": "Hannah Ritchie",
+        "x": 423,
+        "y": 1132,
+        "w": 268,
+        "h": 21
+      }
+    ],
+    "fonts": {
+      "body": "Lato, \"Helvetica Neue\", Helvetica, Arial, \"Liberation Sans\", sans-serif"
+    },
+    "bodyBackground": "rgb(255, 255, 255)"
+  },
+  {
+    "id": "owid",
+    "capturedAt": "2026-09-15T11:58:29.838Z",
+    "requestedURL": "https://ourworldindata.org/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://ourworldindata.org/",
+    "title": "Our World in Data",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "documentWidth": 375,
+    "fullHeight": 6201,
+    "h1": [],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Research and data to make progress against the world’s largest problems.",
+        "href": null,
+        "x": 16,
+        "y": 140,
+        "w": 343,
+        "h": 90
+      },
+      {
+        "tag": "H3",
+        "text": "Is organic farming better for the environment than conventional farming?",
+        "href": null,
+        "x": 33,
+        "y": 610,
+        "w": 268,
+        "h": 72
+      },
+      {
+        "tag": "H3",
+        "text": "Wild mammals have declined by 85% since the rise of humans, but there is a possible future where they flourish",
+        "href": null,
+        "x": 359,
+        "y": 622,
+        "w": 268,
+        "h": 96
+      },
+      {
+        "tag": "H3",
+        "text": "A never-ending childhood of malaria",
+        "href": null,
+        "x": 685,
+        "y": 611,
+        "w": 268,
+        "h": 48
+      },
+      {
+        "tag": "H3",
+        "text": "We’re looking for a writer",
+        "href": null,
+        "x": 1011,
+        "y": 610,
+        "w": 268,
+        "h": 24
+      },
+      {
+        "tag": "H3",
+        "text": "Tracking the size of public sector workforces around the world",
+        "href": null,
+        "x": 16,
+        "y": 1008,
+        "w": 343,
+        "h": 42
+      },
+      {
+        "tag": "H3",
+        "text": "Hannah Ritchie’s second book, “Clearing the Air”, is out in paperback in the United Kingdom",
+        "href": null,
+        "x": 16,
+        "y": 1167,
+        "w": 343,
+        "h": 42
+      },
+      {
+        "tag": "H2",
+        "text": "Data Insights",
+        "href": null,
+        "x": 16,
+        "y": 1622,
+        "w": 343,
+        "h": 32
+      },
+      {
+        "tag": "H3",
+        "text": "Men are more likely to use tobacco than women almost everywhere in the world",
+        "href": null,
+        "x": 32,
+        "y": 2053,
+        "w": 280,
+        "h": 65
+      },
+      {
+        "tag": "H3",
+        "text": "Around 5% of electricity in the United States is used for data centers — far more than the global average",
+        "href": null,
+        "x": 360,
+        "y": 2053,
+        "w": 280,
+        "h": 86
+      },
+      {
+        "tag": "H3",
+        "text": "China only just missed the income cutoff to become a high-income country this year",
+        "href": null,
+        "x": 688,
+        "y": 2053,
+        "w": 280,
+        "h": 65
+      },
+      {
+        "tag": "H3",
+        "text": "In these nine African countries, average incomes have more than doubled since 1990",
+        "href": null,
+        "x": 1016,
+        "y": 2053,
+        "w": 280,
+        "h": 65
+      },
+      {
+        "tag": "H3",
+        "text": "Five countries had more women than men in parliament in 2025",
+        "href": null,
+        "x": 1345,
+        "y": 2053,
+        "w": 280,
+        "h": 43
+      },
+      {
+        "tag": "H3",
+        "text": "More Indians live in the Gulf states than in the US, UK, and Canada combined",
+        "href": null,
+        "x": 1673,
+        "y": 2053,
+        "w": 280,
+        "h": 65
+      },
+      {
+        "tag": "H3",
+        "text": "Money spent on building data centers in the US has grown 5-fold since late 2022",
+        "href": null,
+        "x": 2001,
+        "y": 2012,
+        "w": 280,
+        "h": 65
+      },
+      {
+        "tag": "H2",
+        "text": "Explore our data",
+        "href": null,
+        "x": 16,
+        "y": 2328,
+        "w": 343,
+        "h": 32
+      },
+      {
+        "tag": "H2",
+        "text": "Data explorers",
+        "href": null,
+        "x": 16,
+        "y": 4384,
+        "w": 164,
+        "h": 27
+      }
+    ],
+    "headerControls": [
+      {
+        "tag": "BUTTON",
+        "text": "Toggle menu",
+        "href": null,
+        "x": 16,
+        "y": 12,
+        "w": 40,
+        "h": 40
+      },
+      {
+        "tag": "A",
+        "text": "Our World in Data",
+        "href": "/",
+        "x": 150,
+        "y": 13,
+        "w": 74,
+        "h": 38
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Toggle subscribe menu",
+        "href": null,
+        "x": 319,
+        "y": 12,
+        "w": 40,
+        "h": 40
+      }
+    ],
+    "foldControls": [
+      {
+        "tag": "BUTTON",
+        "text": "Toggle menu",
+        "href": null,
+        "x": 16,
+        "y": 12,
+        "w": 40,
+        "h": 40
+      },
+      {
+        "tag": "A",
+        "text": "Our World in Data",
+        "href": "/",
+        "x": 150,
+        "y": 13,
+        "w": 74,
+        "h": 38
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Toggle subscribe menu",
+        "href": null,
+        "x": 319,
+        "y": 12,
+        "w": 40,
+        "h": 40
+      },
+      {
+        "tag": "A",
+        "text": "CO₂ Emissions",
+        "href": "https://ourworldindata.org/co2-and-greenhouse-gas-emissions",
+        "x": 138,
+        "y": 76,
+        "w": 121,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Population Growth",
+        "href": "https://ourworldindata.org/population-growth",
+        "x": 267,
+        "y": 76,
+        "w": 149,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Life Expectancy",
+        "href": "https://ourworldindata.org/life-expectancy",
+        "x": 424,
+        "y": 76,
+        "w": 129,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Poverty",
+        "href": "https://ourworldindata.org/poverty",
+        "x": 561,
+        "y": 76,
+        "w": 80,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Impacts of Food",
+        "href": "https://ourworldindata.org/environmental-impacts-of-food",
+        "x": 649,
+        "y": 76,
+        "w": 131,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "War & Peace",
+        "href": "https://ourworldindata.org/war-and-peace",
+        "x": 788,
+        "y": 76,
+        "w": 111,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Global Education",
+        "href": "https://ourworldindata.org/global-education",
+        "x": 907,
+        "y": 76,
+        "w": 137,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Artificial Intelligence",
+        "href": "https://ourworldindata.org/artificial-intelligence",
+        "x": 1052,
+        "y": 76,
+        "w": 158,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Democracy",
+        "href": "https://ourworldindata.org/democracy",
+        "x": 1218,
+        "y": 76,
+        "w": 102,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Read about our mission",
+        "href": "https://ourworldindata.org/about#our-mission",
+        "x": 16,
+        "y": 238,
+        "w": 343,
+        "h": 21
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Try “Life expectancy”, “Poverty Nigeria Vietnam”, “CO2 France”…",
+        "href": null,
+        "x": 16,
+        "y": 275,
+        "w": 343,
+        "h": 56
+      },
+      {
+        "tag": "A",
+        "text": "14,095 charts",
+        "href": "/data",
+        "x": 90,
+        "y": 349,
+        "w": 85,
+        "h": 17
+      },
+      {
+        "tag": "A",
+        "text": "NEW ARTICLE · 14 MIN READ Is organic farming better for the environment than conventional farming? Organic farming often wins when we compare impacts on one unit of land, but there is no clear winner when we look at impacts per unit of food production. Hannah Ritchie",
+        "href": "https://ourworldindata.org/is-organic-farming-better-for-the-environment-than-conventional-farming",
+        "x": 16,
+        "y": 421,
+        "w": 302,
+        "h": 451
+      },
+      {
+        "tag": "A",
+        "text": "FROM OUR CLASSICS Wild mammals have declined by 85% since the rise of humans, but there is a possible future where they flourish Wild mammal biomass has declined by 85% since the rise of humans. But we can turn things around by reducing the amount of land we use for agriculture. Hannah Ritchie",
+        "href": "https://ourworldindata.org/wild-mammal-decline",
+        "x": 342,
+        "y": 421,
+        "w": 302,
+        "h": 451
+      },
+      {
+        "tag": "A",
+        "text": "ARTICLE · 5 MIN READ A never-ending childhood of malaria How often do people in high-burden areas get malaria? Studies suggest that many children can experience five or more malaria infections a year. Hannah Ritchie",
+        "href": "https://ourworldindata.org/a-never-ending-childhood-of-malaria",
+        "x": 668,
+        "y": 421,
+        "w": 302,
+        "h": 451
+      },
+      {
+        "tag": "A",
+        "text": "ANNOUNCEMENT We’re looking for a writer We’re hiring a writer who can make the world’s largest problems understandable to our large Our World in Data audience. Hannah Ritchie",
+        "href": "https://ourworldindata.org/hiring-writer-2026",
+        "x": 994,
+        "y": 421,
+        "w": 302,
+        "h": 451
+      },
+      {
+        "tag": "A",
+        "text": "Privacy Policy",
+        "href": "/privacy-policy",
+        "x": 117,
+        "y": 676,
+        "w": 79,
+        "h": 16
+      },
+      {
+        "tag": "A",
+        "text": "manage preferences",
+        "href": "/cookie-notice#cookie-preferences",
+        "x": 214,
+        "y": 676,
+        "w": 115,
+        "h": 16
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reject optional cookies",
+        "href": null,
+        "x": 16,
+        "y": 708,
+        "w": 343,
+        "h": 40
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Accept optional cookies",
+        "href": null,
+        "x": 16,
+        "y": 756,
+        "w": 343,
+        "h": 40
+      }
+    ],
+    "paragraphs": [
+      {
+        "text": "POPULAR PAGES",
+        "x": 16,
+        "y": 76,
+        "w": 113,
+        "h": 32
+      },
+      {
+        "text": "All free: open access and openly licensed",
+        "x": 16,
+        "y": 368,
+        "w": 343,
+        "h": 21
+      },
+      {
+        "text": "Organic farming often wins when we compare impacts on one unit of land, but there is no clear winner when we look at impacts per unit of food production.",
+        "x": 33,
+        "y": 686,
+        "w": 268,
+        "h": 84
+      },
+      {
+        "text": "Hannah Ritchie",
+        "x": 33,
+        "y": 774,
+        "w": 268,
+        "h": 21
+      },
+      {
+        "text": "Wild mammal biomass has declined by 85% since the rise of humans. But we can turn things around by reducing the amount of land we use for agriculture.",
+        "x": 359,
+        "y": 722,
+        "w": 268,
+        "h": 84
+      },
+      {
+        "text": "Hannah Ritchie",
+        "x": 359,
+        "y": 810,
+        "w": 268,
+        "h": 21
+      },
+      {
+        "text": "How often do people in high-burden areas get malaria? Studies suggest that many children can experience five or more malaria infections a year.",
+        "x": 685,
+        "y": 663,
+        "w": 268,
+        "h": 84
+      },
+      {
+        "text": "Hannah Ritchie",
+        "x": 685,
+        "y": 751,
+        "w": 268,
+        "h": 21
+      }
+    ],
+    "fonts": {
+      "body": "Lato, \"Helvetica Neue\", Helvetica, Arial, \"Liberation Sans\", sans-serif"
+    },
+    "bodyBackground": "rgb(255, 255, 255)"
+  }
+]

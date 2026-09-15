@@ -6,7 +6,11 @@ status: in_progress
 last_edited_by: agent_codex
 tags: [garnier, p1, evidence, first_task]
 ---
-# P1 first-task continuation — API credit blocks creation
+# P1 first-task continuation — selected API route failed
+
+## Account-route clarification — 2026-09-15
+
+[R/I] The observed API-credit failure does not require an API top-up: eligible Claude subscription authentication is another supported route for the exact command. Verify account access through the approved node broker/store and omit conflicting API overrides. Codex/ChatGPT or another runtime can supply additional compatibility evidence but cannot silently replace the copied Claude command. [[account_execution_options]] records current official sources, prerequisites and boundaries. No account login or successful retry occurred in the design-research sitting. Earlier run evidence below remains intact.
 
 [D] Session [[session_stanley_20260915_112428_garnier_p1_evidence]] implemented the approved continuation. Source remains `b1cf040`; the preview at `http://127.0.0.1:4465/` matches all 15 hashes in the prior closure. The rendered copy-button payload equals the frozen executable string. Receipts: `evidence/p1/resume_preview_identity.json` and `resume_copied_command.json`, resolved from the campaign root.
 
@@ -23,7 +27,7 @@ tags: [garnier, p1, evidence, first_task]
 
 [D] Stanley chose to collect the required engineer/funder/scientist observations on this machine. [[formative_reader_pack]] now includes a blank de-identified worksheet. No participant record or consent has arrived. No new synthetic reader or scorer was run; the existing calibrated protocol is ready for actual records.
 
-[I] P1.2 C2 requires a funded broker credential or a supplied completed authenticated disposable-run transcript. Retry in a **fresh** disposable environment; the retained failed container already contains the clone and cannot repeat the exact clone command cleanly. Do not put credentials in chat. P1.3 C2 requires all three consenting reader records. These inputs remain separate from DP3 ratification. Missing inputs keep both missions in progress.
+[I] P1.2 C2 requires an authenticated completed run of the copied command: a verified Claude subscription route, funded broker API/cloud route, or a supplied completed disposable-run transcript can provide it. The previous funded-API-only wording was too narrow; see [[account_execution_options]]. Retry in a **fresh** disposable environment; the retained failed container already contains the clone and cannot repeat the exact clone command cleanly. Do not put credentials in chat. P1.3 C2 requires all three consenting reader records. These inputs remain separate from DP3 ratification. Missing evidence keeps both missions in progress.
 
 ## Verification and limits
 

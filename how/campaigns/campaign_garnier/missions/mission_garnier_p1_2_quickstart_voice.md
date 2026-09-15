@@ -182,6 +182,12 @@ Previous: [[mission_garnier_p1_1_homepage_voice]]. Next: [[mission_garnier_p1_3_
 
 ## Evidence continuation — 2026-09-15
 
+### Account and design-context clarification — later 2026-09-15
+
+[R/I] [[account_execution_options]] corrects the earlier funded-API-only next-input wording: a verified eligible Claude subscription route can preserve the exact command; Codex is additional provider evidence, not an automatic substitute. No account login or successful retry was performed. [[garnier_quality_research]] and [[design_context_20260915]] supply the requested design context. This separate research sitting is booked independently, without changing the historical mission actuals or C2 status.
+
+### Earlier execution finding (preserved)
+
 [D] C2 reached the installed CLI and first model request, then failed for insufficient API credit. No project was created; the first two file checks pass, the remaining three fail, and fresh-session recognition is untested. A funded broker credential or actual completed transcript is the next input. See [[first_task_continuation]] and [[session_stanley_20260915_112428_garnier_p1_evidence]]. Status remains in_progress; historical implementation and AAR above are preserved.
 
 [I] Allocated continuation workload 60 kT; cumulative mission rough actual 135±50 kT. The shared sitting is counted once in phase totals. Remaining phase estimate 20–35 kT after inputs arrive; billing unavailable. Latest phase actuals and limitations are in [[first_task_continuation]].

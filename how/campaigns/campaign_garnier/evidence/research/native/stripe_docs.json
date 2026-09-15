@@ -1,0 +1,615 @@
+[
+  {
+    "id": "stripe_docs",
+    "capturedAt": "2026-09-15T11:58:13.741Z",
+    "requestedURL": "https://docs.stripe.com/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://docs.stripe.com/",
+    "title": "Stripe Documentation",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "documentWidth": 1440,
+    "fullHeight": 900,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "Documentation",
+        "href": null,
+        "x": 209,
+        "y": 168,
+        "w": 654,
+        "h": 40
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Payments",
+        "href": null,
+        "x": 209,
+        "y": 412,
+        "w": 102,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Revenue",
+        "href": null,
+        "x": 550,
+        "y": 412,
+        "w": 89,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Developers",
+        "href": null,
+        "x": 891,
+        "y": 412,
+        "w": 115,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Try it out",
+        "href": null,
+        "x": 209,
+        "y": 590,
+        "w": 91,
+        "h": 24
+      },
+      {
+        "tag": "H2",
+        "text": "Browse by product",
+        "href": null,
+        "x": 209,
+        "y": 1084,
+        "w": 209,
+        "h": 24
+      }
+    ],
+    "headerControls": [],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "Skip to content",
+        "href": "#main-content",
+        "x": 8,
+        "y": 8,
+        "w": 32,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Search /",
+        "href": null,
+        "x": 577,
+        "y": 16,
+        "w": 200,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Ask AI",
+        "href": null,
+        "x": 785,
+        "y": 16,
+        "w": 82,
+        "h": 32
+      },
+      {
+        "tag": "A",
+        "text": "Create account",
+        "href": "https://dashboard.stripe.com/register",
+        "x": 1229,
+        "y": 22,
+        "w": 101,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Sign in",
+        "href": "https://dashboard.stripe.com/login?redirect=https%3A%2F%2Fdocs.stripe.com%2F",
+        "x": 1354,
+        "y": 18,
+        "w": 62,
+        "h": 28
+      },
+      {
+        "tag": "A",
+        "text": "Get started",
+        "href": "/get-started",
+        "x": 24,
+        "y": 78,
+        "w": 99,
+        "h": 34
+      },
+      {
+        "tag": "A",
+        "text": "Payments",
+        "href": "/payments",
+        "x": 123,
+        "y": 78,
+        "w": 89,
+        "h": 34
+      },
+      {
+        "tag": "A",
+        "text": "Revenue",
+        "href": "/revenue",
+        "x": 212,
+        "y": 78,
+        "w": 81,
+        "h": 34
+      },
+      {
+        "tag": "A",
+        "text": "Platforms and marketplaces",
+        "href": "/connect",
+        "x": 292,
+        "y": 78,
+        "w": 209,
+        "h": 34
+      },
+      {
+        "tag": "A",
+        "text": "Money management",
+        "href": "/money-management",
+        "x": 501,
+        "y": 78,
+        "w": 158,
+        "h": 34
+      },
+      {
+        "tag": "A",
+        "text": "Developer resources",
+        "href": "/development",
+        "x": 659,
+        "y": 78,
+        "w": 136,
+        "h": 34
+      },
+      {
+        "tag": "A",
+        "text": "APIs & SDKs",
+        "href": null,
+        "x": 1247,
+        "y": 82,
+        "w": 98,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Help",
+        "href": null,
+        "x": 1369,
+        "y": 82,
+        "w": 47,
+        "h": 20
+      },
+      {
+        "tag": "A",
+        "text": "Get started with Stripe",
+        "href": "/get-started/use-cases",
+        "x": 209,
+        "y": 276,
+        "w": 212,
+        "h": 36
+      },
+      {
+        "tag": "A",
+        "text": "Explore all products",
+        "href": "#products",
+        "x": 444,
+        "y": 282,
+        "w": 147,
+        "h": 24
+      },
+      {
+        "tag": "A",
+        "text": "Sign in",
+        "href": "https://dashboard.stripe.com/login?redirect=https%3A%2F%2Fdocs.stripe.com%2F",
+        "x": 896,
+        "y": 223,
+        "w": 45,
+        "h": 17
+      },
+      {
+        "tag": "A",
+        "text": "create an account",
+        "href": "https://dashboard.stripe.com/register",
+        "x": 961,
+        "y": 223,
+        "w": 118,
+        "h": 17
+      },
+      {
+        "tag": "A",
+        "text": "Test cards",
+        "href": "/testing#cards",
+        "x": 1070,
+        "y": 279,
+        "w": 90,
+        "h": 26
+      },
+      {
+        "tag": "A",
+        "text": "4242 4242 4242 4242",
+        "href": null,
+        "x": 1073,
+        "y": 301,
+        "w": 162,
+        "h": 41
+      },
+      {
+        "tag": "A",
+        "text": "Accept payments online",
+        "href": "/get-started/use-cases/startup",
+        "x": 209,
+        "y": 456,
+        "w": 178,
+        "h": 18
+      },
+      {
+        "tag": "A",
+        "text": "Collect payments with invoices",
+        "href": "/get-started/use-cases/invoices",
+        "x": 209,
+        "y": 486,
+        "w": 229,
+        "h": 18
+      },
+      {
+        "tag": "A",
+        "text": "Accept payments in-person",
+        "href": "/get-started/use-cases/in-person-payments",
+        "x": 209,
+        "y": 516,
+        "w": 205,
+        "h": 18
+      },
+      {
+        "tag": "A",
+        "text": "Sell subscriptions",
+        "href": "/get-started/use-cases/saas-subscriptions",
+        "x": 550,
+        "y": 456,
+        "w": 131,
+        "h": 18
+      },
+      {
+        "tag": "A",
+        "text": "Offer usage-based pricing",
+        "href": "/billing/how-metronome-works-with-stripe",
+        "x": 550,
+        "y": 486,
+        "w": 195,
+        "h": 18
+      },
+      {
+        "tag": "A",
+        "text": "Set up the customer portal",
+        "href": "/no-code/customer-portal",
+        "x": 550,
+        "y": 516,
+        "w": 198,
+        "h": 18
+      },
+      {
+        "tag": "A",
+        "text": "Set up your development environment",
+        "href": "/get-started/development-environment",
+        "x": 891,
+        "y": 456,
+        "w": 282,
+        "h": 18
+      },
+      {
+        "tag": "A",
+        "text": "Build on Stripe with AI",
+        "href": "/agents",
+        "x": 891,
+        "y": 486,
+        "w": 163,
+        "h": 18
+      },
+      {
+        "tag": "A",
+        "text": "Integration quickstarts",
+        "href": "/quickstarts",
+        "x": 891,
+        "y": 516,
+        "w": 168,
+        "h": 18
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Start a payment",
+        "href": null,
+        "x": 221,
+        "y": 646,
+        "w": 309,
+        "h": 49
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Start a checkout session",
+        "href": null,
+        "x": 221,
+        "y": 699,
+        "w": 309,
+        "h": 49
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Create a customer",
+        "href": null,
+        "x": 221,
+        "y": 752,
+        "w": 309,
+        "h": 49
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Sell a product",
+        "href": null,
+        "x": 221,
+        "y": 805,
+        "w": 309,
+        "h": 49
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Issue coupons",
+        "href": null,
+        "x": 221,
+        "y": 857,
+        "w": 309,
+        "h": 49
+      },
+      {
+        "tag": "A",
+        "text": "Change the country setting",
+        "href": null,
+        "x": 16,
+        "y": 842,
+        "w": 248,
+        "h": 17
+      },
+      {
+        "tag": "A",
+        "text": "Change the language setting",
+        "href": null,
+        "x": 16,
+        "y": 867,
+        "w": 248,
+        "h": 17
+      },
+      {
+        "tag": "A",
+        "text": "cookie policy",
+        "href": "https://stripe.com/cookies-policy/legal",
+        "x": 454,
+        "y": 877,
+        "w": 81,
+        "h": 16
+      },
+      {
+        "tag": "A",
+        "text": "manage cookies",
+        "href": "https://stripe.com/cookie-settings",
+        "x": 555,
+        "y": 877,
+        "w": 100,
+        "h": 16
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Accept all",
+        "href": null,
+        "x": 1266,
+        "y": 873,
+        "w": 77,
+        "h": 24
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reject all",
+        "href": null,
+        "x": 1352,
+        "y": 873,
+        "w": 72,
+        "h": 24
+      }
+    ],
+    "paragraphs": [],
+    "fonts": {
+      "body": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Ubuntu, sans-serif",
+      "headline": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "headlinePx": "32px"
+    },
+    "bodyBackground": "rgba(0, 0, 0, 0)"
+  },
+  {
+    "id": "stripe_docs",
+    "capturedAt": "2026-09-15T11:58:18.934Z",
+    "requestedURL": "https://docs.stripe.com/",
+    "status": 200,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://docs.stripe.com/",
+    "title": "Stripe Documentation",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "documentWidth": 375,
+    "fullHeight": 2622,
+    "h1": [
+      {
+        "tag": "H1",
+        "text": "Documentation",
+        "href": null,
+        "x": 24,
+        "y": 120,
+        "w": 311,
+        "h": 40
+      }
+    ],
+    "headings": [
+      {
+        "tag": "H2",
+        "text": "Browse by product",
+        "href": null,
+        "x": 24,
+        "y": 428,
+        "w": 209,
+        "h": 24
+      }
+    ],
+    "headerControls": [],
+    "foldControls": [
+      {
+        "tag": "A",
+        "text": "Skip to content",
+        "href": "#main-content",
+        "x": 8,
+        "y": 8,
+        "w": 32,
+        "h": 32
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Home",
+        "href": null,
+        "x": 16,
+        "y": 20,
+        "w": 72,
+        "h": 24
+      },
+      {
+        "tag": "A",
+        "text": "Create account",
+        "href": "https://dashboard.stripe.com/register",
+        "x": 177,
+        "y": 23,
+        "w": 103,
+        "h": 17
+      },
+      {
+        "tag": "A",
+        "text": "Sign in",
+        "href": "https://dashboard.stripe.com/login?redirect=https%3A%2F%2Fdocs.stripe.com%2F",
+        "x": 305,
+        "y": 23,
+        "w": 46,
+        "h": 17
+      },
+      {
+        "tag": "A",
+        "text": "Get started with Stripe",
+        "href": "/get-started/use-cases",
+        "x": 24,
+        "y": 292,
+        "w": 212,
+        "h": 36
+      },
+      {
+        "tag": "A",
+        "text": "Payments Online payments",
+        "href": "/payments",
+        "x": 24,
+        "y": 518,
+        "w": 327,
+        "h": 44
+      },
+      {
+        "tag": "A",
+        "text": "Managed Payments Stripe Merchant of record solution",
+        "href": "/payments/managed-payments",
+        "x": 24,
+        "y": 578,
+        "w": 327,
+        "h": 44
+      },
+      {
+        "tag": "A",
+        "text": "Terminal In-person and omnichannel payments",
+        "href": "/terminal",
+        "x": 24,
+        "y": 638,
+        "w": 327,
+        "h": 44
+      },
+      {
+        "tag": "A",
+        "text": "Radar Fraud and risk management",
+        "href": "/radar",
+        "x": 24,
+        "y": 698,
+        "w": 327,
+        "h": 44
+      },
+      {
+        "tag": "A",
+        "text": "Climate Carbon removal",
+        "href": "/climate",
+        "x": 24,
+        "y": 758,
+        "w": 327,
+        "h": 44
+      },
+      {
+        "tag": "A",
+        "text": "cookie policy",
+        "href": "https://stripe.com/cookies-policy/legal",
+        "x": 142,
+        "y": 737,
+        "w": 81,
+        "h": 16
+      },
+      {
+        "tag": "A",
+        "text": "manage cookies",
+        "href": "https://stripe.com/cookie-settings",
+        "x": 243,
+        "y": 737,
+        "w": 100,
+        "h": 16
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Accept all",
+        "href": null,
+        "x": 200,
+        "y": 771,
+        "w": 77,
+        "h": 24
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Reject all",
+        "href": null,
+        "x": 286,
+        "y": 771,
+        "w": 72,
+        "h": 24
+      }
+    ],
+    "paragraphs": [],
+    "fonts": {
+      "body": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Ubuntu, sans-serif",
+      "headline": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "headlinePx": "32px"
+    },
+    "bodyBackground": "rgba(0, 0, 0, 0)"
+  }
+]

@@ -2,19 +2,23 @@
 type: exemplar_site_set
 artifact_class: reference_set_manifest
 created: 2026-06-03
-updated: 2026-07-12
+updated: 2026-09-15
 mission: mission_adna_str_p5_m58_reference_design_dna
 campaign: campaign_adna_serious_tool_readiness
 phase: 5
 persona: rosetta
 status: active
-last_edited_by: agent_rosetta
+last_edited_by: agent_codex
 site_count: 12   # +2 install-forward exemplars (Bun, Astro) at Storyweave P5 O3
 last_inspected: 2026-07-12
 tags: [exemplar, reference_set, site_inspection, design_dna, m5_8, ecosystem_site]
 ---
 
 # Reference Set — Ecosystem-Site Design Inspection (M5.8)
+
+## Latest supplementary inspection
+
+[D] [[reference_set_garnier_20260915]] adds a dated GARNIER refresh: ten attempted sites, nine usable native desktop/mobile inspections, one checkpoint exclusion. [[garnier_quality_research]] ingests primary design guidance and proposed applications. The historical twelve-site corpus and its inspection dates below remain unchanged; the new supplement does not ratify doctrine or refresh unvisited sites.
 
 > The curated corpus of exemplar sites inspected to ground the front-page **[[front_page_doctrine]]**. Each site is chosen to give **one clean signal** on a specific cell of two axes — **tonal** (sleek-professional ↔ progressive-revolutionary) and **functional** (docs · registry/marketplace · community/network · movement/manifesto · protocol · product-polish) — so a single inspection yields a usable rule rather than mush. Inspection method: [[skill_reference_inspection]]. Self-reference: this manifest *is* the worked output of that skill's "curate + inspect + synthesize" steps.
 

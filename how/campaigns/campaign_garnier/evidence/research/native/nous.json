@@ -1,0 +1,72 @@
+[
+  {
+    "id": "nous",
+    "capturedAt": "2026-09-15T11:58:47.194Z",
+    "requestedURL": "https://nousresearch.com/",
+    "status": 403,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://nousresearch.com/",
+    "title": "Vercel Security Checkpoint",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "documentWidth": 1440,
+    "fullHeight": 900,
+    "h1": [],
+    "headings": [],
+    "headerControls": [],
+    "foldControls": [],
+    "paragraphs": [
+      {
+        "text": "We're verifying your browser",
+        "x": 595,
+        "y": 414,
+        "w": 249,
+        "h": 32
+      }
+    ],
+    "fonts": {
+      "body": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\""
+    },
+    "bodyBackground": "rgb(255, 255, 255)"
+  },
+  {
+    "id": "nous",
+    "capturedAt": "2026-09-15T11:58:49.465Z",
+    "requestedURL": "https://nousresearch.com/",
+    "status": 403,
+    "error": null,
+    "colorScheme": "light",
+    "reducedMotion": "reduce",
+    "domMutation": false,
+    "url": "https://nousresearch.com/",
+    "title": "Vercel Security Checkpoint",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "documentWidth": 375,
+    "fullHeight": 812,
+    "h1": [],
+    "headings": [],
+    "headerControls": [],
+    "foldControls": [],
+    "paragraphs": [
+      {
+        "text": "We're verifying your browser",
+        "x": 63,
+        "y": 342,
+        "w": 249,
+        "h": 32
+      }
+    ],
+    "fonts": {
+      "body": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\""
+    },
+    "bodyBackground": "rgb(255, 255, 255)"
+  }
+]

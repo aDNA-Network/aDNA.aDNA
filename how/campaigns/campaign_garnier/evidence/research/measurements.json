@@ -1,0 +1,87 @@
+{
+  "inspected": "2026-09-15",
+  "basis": "Manual reconciliation with native frames; sampled headings are not whole-page visual sections; tonal score is heuristic.",
+  "rows": [
+    {
+      "id": "linear",
+      "hero_word_count": 19,
+      "sampled_h2_groups": 7,
+      "primary_nav_destinations": 6,
+      "hero_actions": 1,
+      "tonal_revolutionary": 25,
+      "evidence": "native/linear.json"
+    },
+    {
+      "id": "stripe_docs",
+      "hero_word_count": 9,
+      "sampled_h2_groups": 5,
+      "primary_nav_destinations": 6,
+      "hero_actions": 2,
+      "tonal_revolutionary": 20,
+      "evidence": "native/stripe_docs.json"
+    },
+    {
+      "id": "govuk",
+      "hero_word_count": 38,
+      "sampled_h2_groups": 10,
+      "primary_nav_destinations": 6,
+      "hero_actions": 1,
+      "tonal_revolutionary": 15,
+      "evidence": "native/govuk.json"
+    },
+    {
+      "id": "owid",
+      "hero_word_count": 11,
+      "sampled_h2_groups": 14,
+      "primary_nav_destinations": 5,
+      "hero_actions": 1,
+      "tonal_revolutionary": 60,
+      "evidence": "native/owid.json"
+    },
+    {
+      "id": "huggingface",
+      "hero_word_count": 19,
+      "sampled_h2_groups": 7,
+      "primary_nav_destinations": 6,
+      "hero_actions": 2,
+      "tonal_revolutionary": 55,
+      "evidence": "native/huggingface.json"
+    },
+    {
+      "id": "mcp",
+      "hero_word_count": 22,
+      "sampled_h2_groups": 9,
+      "primary_nav_destinations": 6,
+      "hero_actions": 0,
+      "tonal_revolutionary": 40,
+      "evidence": "native/mcp.json"
+    },
+    {
+      "id": "ethereum",
+      "hero_word_count": 21,
+      "sampled_h2_groups": 9,
+      "primary_nav_destinations": 5,
+      "hero_actions": 1,
+      "tonal_revolutionary": 70,
+      "evidence": "native/ethereum.json"
+    },
+    {
+      "id": "mastra",
+      "hero_word_count": 19,
+      "sampled_h2_groups": 7,
+      "primary_nav_destinations": 6,
+      "hero_actions": 2,
+      "tonal_revolutionary": 35,
+      "evidence": "native/mastra.json"
+    },
+    {
+      "id": "vercel",
+      "hero_word_count": 13,
+      "sampled_h2_groups": 2,
+      "primary_nav_destinations": 4,
+      "hero_actions": 2,
+      "tonal_revolutionary": 30,
+      "evidence": "native/vercel.json"
+    }
+  ]
+}

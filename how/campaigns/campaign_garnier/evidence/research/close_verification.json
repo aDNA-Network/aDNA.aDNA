@@ -1,0 +1,28 @@
+{
+  "verified_at": "2026-09-15T12:19:42.448929+00:00",
+  "source_commit": "b1cf040",
+  "base_commit": "628acae",
+  "checks": {
+    "selected_evidence_hashes": 66,
+    "local_t0_hashes": 120,
+    "native_frames_reviewed": 40,
+    "new_markdown_frontmatter": 14,
+    "missing_new_wikilinks": 0,
+    "current_prompt_count": 1,
+    "ingestion_links_present": true,
+    "preview_identity_routes": 15,
+    "site_and_reserved_scope_diff_empty": true
+  },
+  "limitations": [
+    "No R-SITE rerun: documentation/research-only changes.",
+    "No account quota/model request or disposable subscription route tested.",
+    "No new human or synthetic reader observations.",
+    "No independent certification or full foreign-site accessibility audit."
+  ],
+  "result": "passed",
+  "staged_scope": {
+    "files": 93,
+    "outside_scope": 0,
+    "raw_or_t0_png_staged": 0
+  }
+}

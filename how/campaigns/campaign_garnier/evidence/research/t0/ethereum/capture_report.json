@@ -1,0 +1,16 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 2816,
+    "title": "Ethereum - The complete guide from ethereum.org",
+    "desc": "Ethereum is a decentralized platform for resilient apps and infrastructure. Control your money, data, and identity, with no bank or middleman needed.",
+    "ogTitle": "Ethereum - The complete guide from ethereum.org",
+    "h1": "The internet that belongs to you",
+    "h2count": 9,
+    "bodyLen": 7770,
+    "fullH": 9438,
+    "consoleErrors": []
+  }
+]

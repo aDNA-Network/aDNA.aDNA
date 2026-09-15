@@ -15,6 +15,10 @@ tags:
 [D] Fresh-context entry: [[artifacts/p1/phase_exit]] → [[artifacts/p1/formative_reader_pack]] → the CURRENT P1.2 resume prompt. Closure `f34f9c2` preserves the implementation evidence; do not replay the original P1.2 opening pass. Wind-down: [[session_stanley_20260915_110717_garnier_winddown]].
 
 - [[CLAUDE]]
+- [[artifacts/research/design_context_20260915]]
+- [[artifacts/research/account_execution_options]]
+- [[garnier_quality_research]]
+- [[reference_set_garnier_20260915]]
 - [[artifacts/amendments/amendment_aar]]
 - [[artifacts/amendments/amendment_verification]]
 - [[artifacts/amendments/budget_basis]]
