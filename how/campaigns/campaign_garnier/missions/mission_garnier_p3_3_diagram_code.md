@@ -43,9 +43,10 @@ acceptance_criteria:
   and code remains readable without page overflow.'
 - 'C3: mission_garnier_p3_3_diagram_code closes with a scoped diff, cited evidence and five-line AAR; DP5 remains
   a human gate and no reserved path/outward action is inferred.'
+- 'C4: FG-P0-003 is resolved on /learn/concepts/triad: diagram labels remain legible on fresh mobile loads in both themes, with equivalent text/keyboard access and no page overflow.'
 verification_method:
 - id: V1
-  surface: graph/keyboard twin; code components; all /vaults routes assigned by docs_population; diagram source
+  surface: /learn/concepts/triad; graph/keyboard twin; code components; all /vaults routes assigned by docs_population; diagram source
     data
   method: Diagram semantics have a text/keyboard equivalent matching source nodes/edges; registry template labels
     are reviewed read-only, data corrections staged to Hestia.
@@ -56,7 +57,7 @@ verification_method:
   surface: diagram_grammar.md; code_state_pack.md; registry_template_review.md
   method: Every executable code action copies the displayed runnable string; clipboard denial has accessible recovery,
     and code remains readable without page overflow.
-  command: R-SITE; R-CAPTURE /vaults/graph and code-bearing templates; manual keyboard traversal and clipboard success/rejection
+  command: R-SITE; R-CAPTURE /learn/concepts/triad, /vaults/graph and code-bearing templates; manual keyboard traversal and clipboard success/rejection
     using disposable Playwright permissions.
   red_test: 'Reject clipboard permission and inject an overlong unbroken command: absence of recovery or page-wide
     overflow must fail.'
@@ -67,6 +68,11 @@ verification_method:
   command: R-CLOSE; inspect diagram_grammar.md; code_state_pack.md; registry_template_review.md and the DP5 disposition.
   red_test: Place a registry/predecessor write or an unsigned DP5 approval in a disposable mission_garnier_p3_3_diagram_code
     closure record; scope/authority review must reject it.
+- id: V4
+  surface: /learn/concepts/triad fresh mobile loads in both observed themes; diagram_grammar.md captures and text/keyboard equivalent
+  method: Verify readable labels at default zoom, reflow and equivalent text/keyboard access for FG-P0-003.
+  command: 'Run C4 fresh-context capture protocol at 390px and canonical mobile widths in both observed themes; inspect labels, computed sizes and keyboard/text equivalence.'
+  red_test: 'A disposable reproduction of P0 tiny-label scaling must fail visual inspection even when axe reports zero.'
 human_gate: DP4 phase entry/budget; DP5 phase exit. DP1 accepted with amendments on 2026-09-15.
 verification_surface: agent
 verification_check_set: custom
@@ -77,7 +83,7 @@ budget_breakdown_kT:
   bounded_objective_work: 32
 budget_status: provisional_until_DP4
 human_elapsed_time: phase-gate response time excluded
-input_manifest: graph/keyboard twin; code components; all /vaults routes assigned by docs_population; diagram source
+input_manifest: /learn/concepts/triad; graph/keyboard twin; code components; all /vaults routes assigned by docs_population; diagram source
   data
 output_artifacts:
 - diagram_grammar.md
@@ -99,7 +105,7 @@ contract_version: garnier_amendment_20260915
 
 ## Scope
 
-[I] Inputs: graph/keyboard twin; code components; all /vaults routes assigned by docs_population; diagram source data. Outputs: diagram_grammar.md; code_state_pack.md; registry_template_review.md. Use the command contexts and output-path precautions in [[verification_recipes]]. No future verification is claimed passed by authoring this specification.
+[I] Inputs: /learn/concepts/triad; graph/keyboard twin; code components; all /vaults routes assigned by docs_population; diagram source data. Outputs: diagram_grammar.md; code_state_pack.md; registry_template_review.md. Use the command contexts and output-path precautions in [[verification_recipes]]. No future verification is claimed passed by authoring this specification.
 
 ## Objectives
 
@@ -108,6 +114,8 @@ contract_version: garnier_amendment_20260915
 | 1 | Diagram semantics have a text/keyboard equivalent matching source nodes/edges; registry template labels are reviewed read-only, data corrections staged to Hestia. | diagram_grammar.md | ⛩ DP4 entry and C1 |
 | 2 | Every executable code action copies the displayed runnable string; clipboard denial has accessible recovery, and code remains readable without page overflow. | diagram_grammar.md; code_state_pack.md; registry_template_review.md | C2 reached-surface evidence |
 | 3 | Reconcile the actual diff, limitations and AAR | Mission evidence manifest and five-line AAR | ⛩ DP5 remains human |
+
+| 4 | Resolve FG-P0-003 with legible fresh-mobile labels and text/keyboard equivalence | diagram_grammar.md | C4 at DP5 |
 
 ## Constraints & gates
 
@@ -124,13 +132,13 @@ contract_version: garnier_amendment_20260915
 [I] This is a method-feasibility assessment, not executed acceptance. V1 and V2 are defined in frontmatter with concrete command/protocol references and controls; V3 uses R-CLOSE on this mission's actual diff. All nine pairs were assessed for the amended scope:
 
 - V1×C1: covers the input/population contract by Manual: compare source graph IDs/edges with visible keyboard twin; derive diagram/code instances from tracked source imports.
-- V1×C2: insufficient; inspecting graph/keyboard twin; code components; all /vaults routes assigned by docs_population; diagram source data cannot establish the behavior in C2; V2 must reach its named output.
+- V1×C2: insufficient; inspecting /learn/concepts/triad; graph/keyboard twin; code components; all /vaults routes assigned by docs_population; diagram source data cannot establish the behavior in C2; V2 must reach its named output.
 - V1×C3: insufficient; input inspection does not prove the actual mission_garnier_p3_3_diagram_code diff or a human gate event.
 - V2×C1: supplementary; producing diagram_grammar.md; code_state_pack.md; registry_template_review.md does not prove the original input set was complete; retain V1.
-- V2×C2: covers the behavior through R-SITE; R-CAPTURE /vaults/graph and code-bearing templates; manual keyboard traversal and clipboard success/rejection using disposable Playwright permissions.
+- V2×C2: covers the behavior through R-SITE; R-CAPTURE /learn/concepts/triad, /vaults/graph and code-bearing templates; manual keyboard traversal and clipboard success/rejection using disposable Playwright permissions.
 - V2×C3: supplies behavioral evidence for mission_garnier_p3_3_diagram_code, but V3 must independently inspect scope and closure authority.
 - V3×C1: checks that diagram_grammar.md; code_state_pack.md; registry_template_review.md are present in the delivered set, not the truth or coverage of their contents.
-- V3×C2: cannot replace R-SITE; R-CAPTURE /vaults/graph and code-bearing templates; manual keyboard traversal and clipboard success/rejection using disposable Playwright permissions.; a clean diff is not a runtime, reader or measurement result.
+- V3×C2: cannot replace R-SITE; R-CAPTURE /learn/concepts/triad, /vaults/graph and code-bearing templates; manual keyboard traversal and clipboard success/rejection using disposable Playwright permissions.; a clean diff is not a runtime, reader or measurement result.
 - V3×C3: covers the mission_garnier_p3_3_diagram_code changed paths, linked evidence, AAR and explicitly separate DP5 event via R-CLOSE.
 
 The three methods jointly cover the three criteria; no individual method proves all three. Run controls before trusting their verdicts. V1 negative control: Drop a node from the keyboard twin: node-set comparison must fail. V2 negative control: Reject clipboard permission and inject an overlong unbroken command: absence of recovery or page-wide overflow must fail. V3 negative control: reject a disposable reserved-path change or unsigned phase acceptance. Controls are isolated, never planted into production or peer files. New reusable checkers are provider contributions, authored early with their red-tests in the same commit.
@@ -141,7 +149,7 @@ The three methods jointly cover the three criteria; no individual method proves 
 
 ## Definition of done
 
-C1/C2/C3 are satisfied on their stated surfaces with evidence and controls, every output is linked, changed claims and accessibility consequences are documented, scope stays within authority, and the SITREP, next prompt and AAR are filed. A manual or human item remains owed until performed. Append this mission's objective/finding/budget evidence to the rolling closure ledger during work; P6 reconciles it rather than reconstructing the campaign at the end. A human phase gate remains pending until the operator rules.
+C1/C2/C3/C4 are satisfied on their stated surfaces with evidence and controls, every output is linked, changed claims and accessibility consequences are documented, scope stays within authority, and the SITREP, next prompt and AAR are filed. A manual or human item remains owed until performed. Append this mission's objective/finding/budget evidence to the rolling closure ledger during work; P6 reconciles it rather than reconstructing the campaign at the end. A human phase gate remains pending until the operator rules.
 
 ## Campaign context
 
@@ -162,3 +170,11 @@ Deliverables: pending execution. Descoped: none. Key findings: pending. Scope ch
 - **Finding:** pending execution.
 - **Change:** pending execution.
 - **Follow-up:** pending execution.
+
+## DP2 finding assignment — execution remains gated by DP4
+
+[D] [[dp2_ratification_20260915]] assigns FG-P0-003 to this mission. Include /learn/concepts/triad in the diagram inventory and capture pack; the approved readability correction must preserve text/keyboard equivalence and meaningful reading order.
+
+[I] C4 verification: V1×C4 identifies each source label and its text equivalent; V2×C4 directly loads the route in a fresh browser context at 390px and every canonical mobile width in both observed themes, inspects labels at default zoom and checks reflow/keyboard access. A disposable reproduction of the P0 tiny-label scaling must be rejected by visual inspection even if axe reports zero. V3×C4 checks these exact-route receipts and finding disposition, not readability itself. Record actual computed label sizes and captures; no axe-only closure. The three new pairs supplement the existing nine, without claiming execution. P3 scope/budget remains provisional until DP4.
+
+[I] Dedicated V4 pair audit: V4×C1 supplements semantic/text-equivalence review on the triad route; V4×C2 cannot establish clipboard behavior; V4×C3 supplies route receipts but cannot authorize closure; V4×C4 directly tests fresh-mobile readability, reflow and accessible equivalents. Together with the original nine and V1–V3×C4 supplement, all sixteen method/criterion pairs are assessed for feasibility; no execution pass is claimed.

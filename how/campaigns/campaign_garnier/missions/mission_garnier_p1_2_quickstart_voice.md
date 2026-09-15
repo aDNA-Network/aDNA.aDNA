@@ -18,10 +18,11 @@ tags:
 - garnier
 executor_tier: opus
 executor_runtime: codex
-token_budget_estimated: 61
+token_budget_estimated: 90
+token_budget_original: 61
 token_budget_unit: kT_content_load
 token_budget_reforecast_proposed: 90
-reforecast_status: proposed_DP2
+reforecast_status: accepted_DP2
 reforecast_basis: {"orientation": 30, "source_and_clean_reproduction": 35, "copy_checks": 25}
 estimated_sessions: 1
 calibrated_sessions: null
@@ -68,15 +69,16 @@ verification_method:
   command: R-CLOSE; inspect quickstart_copy_diff.md; instruction_ledger.md; command_transcripts.md and the DP3 disposition.
   red_test: Place a registry/predecessor write or an unsigned DP3 approval in a disposable mission_garnier_p1_2_quickstart_voice
     closure record; scope/authority review must reject it.
-human_gate: DP2 phase entry/budget; DP3 phase exit. DP1 accepted with amendments on 2026-09-15.
+human_gate: DP2 accepted with six amendments on 2026-09-15; DP3 remains a human phase exit.
 verification_surface: agent
 verification_check_set: custom
 calibration_status: uncalibrated
 calibration_basis: Judgment estimate with stated workload; no measured GARNIER execution calibration.
-budget_breakdown_kT:
+budget_breakdown_original_kT:
   transition: 23
   bounded_objective_work: 38
-budget_status: provisional_until_DP2
+budget_breakdown_kT: {"orientation": 30, "source_and_clean_reproduction": 35, "copy_checks": 25}
+budget_status: committed_DP2
 human_elapsed_time: phase-gate response time excluded
 input_manifest: /get-started; /learn/what-is-adna; /get-started/what-your-agent-reads subtree; command prerequisites
 output_artifacts:
@@ -87,7 +89,7 @@ contract_version: garnier_amendment_20260915
 ---
 # Bring the first task into focus
 
-> **Read cold.** Act as Rosetta's executor for Stanley through Berthier. Read root and [[../CLAUDE|campaign governance]], [[campaign_garnier]], [[charter_ratification_20260915]], [[verification_recipes]] and this mission. DP1 is accepted; verify the named later phase gate before execution.
+> **Read cold.** Act as Rosetta's executor for Stanley through Berthier. Read root and [[../CLAUDE|campaign governance]], [[campaign_garnier]], [[charter_ratification_20260915]], [[verification_recipes]] and this mission. DP1 and DP2 are accepted; read [[dp2_ratification_20260915]] and verify dependencies before execution. DP3 remains human.
 
 ## Why
 
@@ -137,6 +139,9 @@ The three methods jointly cover the three criteria; no individual method proves 
 
 ## Budget
 
+[D] DP2 accepted the working forecast of **90 kT** on 2026-09-15; see [[dp2_ratification_20260915]]. Current breakdown: {"orientation": 30, "source_and_clean_reproduction": 35, "copy_checks": 25}. The original estimate below is preserved as history. Report actuals and remaining phase forecast at close; bounded work within the approved envelope needs no repeat permission.
+
+
 [I] ADR-016 content-load estimate: {"transition": 23, "bounded_objective_work": 38} = **61 kT**. Estimated agent sittings: **1**; calibration is **unmeasured**, not a repeated estimate presented as measured data. The work allowance is a judgment forecast, not a limit on honest reporting. Human recruitment/response time is excluded. Independent scoring work must be included in actuals rather than disappearing from the coordinator's accounting. See [[budget_basis]] for uncertainty and phase commitment. Re-scope at the next gate if projected work exceeds the bounded contract; do not silently skip routes. Billing is separately measured or reported unavailable.
 
 ## Definition of done
@@ -163,6 +168,10 @@ Deliverables: pending execution. Descoped: none. Key findings: pending. Scope ch
 - **Change:** pending execution.
 - **Follow-up:** pending execution.
 
-## P0-derived budget proposal — DP2 pending
+## P0-derived budget proposal — historical, accepted at DP2
 
-[I] The original estimate remains above. Proposed reforecast 90 kT includes {"orientation": 30, "source_and_clean_reproduction": 35, "copy_checks": 25}. This is not committed until DP2; human waiting time and billing currency are excluded. See [[p0_estimation_retrospective]].
+[I] The original estimate remains above. Proposed reforecast 90 kT includes {"orientation": 30, "source_and_clean_reproduction": 35, "copy_checks": 25}. This proposal was accepted at DP2 with six amendments; human waiting time and billing currency are excluded. See [[p0_estimation_retrospective]].
+
+## DP2 execution discipline
+
+[D] [[dp2_ratification_20260915]] governs this scope. Reuse the frozen P0 findings; bound and record reviewer inputs, linked-page allowance and stop conditions before any prescreen. Account for independent work and reruns once. Report actual workload and remaining phase forecast at each close. Keep human, synthetic, local and deployed evidence distinct.

@@ -23,3 +23,7 @@ Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
 ## P0.2 — 2026-09-15
 
 [D] O1/C1: instrument_contract + complete component/first-contact censuses + consumer_bar_manifest. O2/C2: instrument_controls + calibration/prescreen receipts; actual human windows remain owed. O3/C3: phase_exit pendingDP2, final scope receipt and session AAR. Findings FG-P0-001…005 open, carried to P1/P2/P3/P4 owners; no source fix claimed. patterns_to_author staged in provider_pattern_proposal. [I] Estimate53kT; rough actual210±80kT; partial CLI usage only, total billing unavailable. P6 consumes this trail; Rosetta owns follow-up, Stanley owns DP2.
+
+## DP2 ratification — 2026-09-15
+
+[D] Stanley accepted the six amendments in [[dp2_ratification_20260915]]. Campaign phase 1 authorized; three P1 forecasts updated to 150/90/80 kT, originals preserved. Specifications now assign privacy/state and fresh-mobile triad fixes, count-release ownership and gate-adoption controls. This is a records-only ratification, not P1 acceptance evidence. Baseline pack is unchanged. Actuals and verification: [[session_stanley_20260915_092248_garnier_dp2_ratification]]. Next owner: Rosetta P1.1; next human phase gate: Stanley DP3.

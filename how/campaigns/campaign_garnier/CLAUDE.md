@@ -12,7 +12,7 @@ tags:
 
 ## Campaign Identity
 
-Campaign `campaign_garnier`; owner Stanley Bishop (`stanley`); Rosetta executor `agent_codex`; commissioned through Berthier. Status active. DP1 accepted with amendments on 2026-09-15; P0 is completed; DP2 phase exit/P1 budget is pending, and later phase gates remain human. Read root governance before this file.
+Campaign `campaign_garnier`; owner Stanley Bishop (`stanley`); Rosetta executor `agent_codex`; commissioned through Berthier. Status active. DP1 accepted with amendments on 2026-09-15; P0 is completed; DP2 accepted P0 and the 320 kT P1 envelope with six amendments on 2026-09-15; phase 1 is authorized, and later phase gates remain human. Read root governance before this file.
 
 ## Quick Start
 
@@ -334,3 +334,7 @@ Related: [[campaign_garnier]] · [[mission_garnier_genesis]].
 ## DP1 approved amendment contract — 2026-09-15
 
 [D] [[charter_ratification_20260915]] records Stanley's accepted D-1–D-10 dispositions. Follow [[reader_protocol]], [[field_performance_policy]], [[docs_review_scope]], [[budget_basis]] and [[verification_recipes]]. The storyboard and formative humans precede visual production; word budgets are advisory with reasons for overage; unsupported claims remain blocking. Preserve original synthetic evidence and its limitations. P0 envelope is 123 kT; each later phase budget is committed at its preceding human gate. Append evidence/actuals to [[rolling_closure_ledger]] during each mission. No new checker at sitting tail, no provider fork, no implicit phase or publication advance.
+
+## DP2 approved amendment contract — 2026-09-15
+
+[D] [[dp2_ratification_20260915]] records Stanley’s approval. Its six clauses govern P1 and the named later finding owners. P1.1 starts with a reviewable mechanism/example/action, keeps the public-good explanation accessible, and strengthens experimental checks before approval use. P1.3 includes /privacy and /state-of-the-network alongside its four invitation surfaces and retains the three-class formative human requirement before DP3. P2.2 owns FG-P0-001 release fidelity; P3.3 owns /learn/concepts/triad fresh-mobile readability. P1 budgets 150/90/80 kT are committed forecasts with mission-close actuals and remaining forecasts; routine work within scope/envelope proceeds without repeated permission. No baseline rerun or publication authority is implied.

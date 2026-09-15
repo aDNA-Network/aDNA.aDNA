@@ -39,7 +39,7 @@ flowchart LR
 | [[mission_garnier_p0_1_baseline]] | Freeze baseline and reconcile authority | 2 | opus / codex | DP1 |
 | [[mission_garnier_p0_2_instruments]] | Calibrate the added instruments | 1 | opus / codex | mission_garnier_p0_1_baseline |
 
-**⛩ DP2 exit:** Pinned target/exemplar baseline; two isolated v1.1 scorers; added instruments have passing/failing controls; P1 budget presented for operator commitment. Named artifact: `artifacts/p0/phase_exit.md`. Estimated agent sittings: 3; budget: 123 kT (committed at DP1). Missions remain queued.
+**⛩ DP2 exit:** Pinned target/exemplar baseline; two isolated v1.1 scorers; added instruments have passing/failing controls; P1 budget presented for operator commitment. Named artifact: `artifacts/p0/phase_exit.md`. Estimated agent sittings: 3; budget: 123 kT (committed at DP1). P0 completed; DP2 accepted with six amendments on 2026-09-15.
 
 ### P1 — Voice and concision
 
@@ -49,7 +49,7 @@ flowchart LR
 | [[mission_garnier_p1_2_quickstart_voice]] | Bring the first task into focus | 1 | opus / codex | mission_garnier_p1_1_homepage_voice |
 | [[mission_garnier_p1_3_mission_voice]] | Make the public-good invitation concise | 1 | opus / codex | mission_garnier_p1_2_quickstart_voice |
 
-**⛩ DP3 exit:** Four-part homepage storyboard and all seven surface word-target dispositions complete; unsupported claims and banned prose zero; formative human feedback recorded for all three decisive classes; P2 tranche scope/budget presented. Named artifact: `artifacts/p1/phase_exit.md`. Estimated agent sittings: 3; budget: 186 kT (provisional until DP2). Missions remain queued.
+**⛩ DP3 exit:** Four-part homepage storyboard and all seven surface word-target dispositions complete; unsupported claims and banned prose zero; formative human feedback recorded for all three decisive classes; P2 tranche scope/budget presented. Named artifact: `artifacts/p1/phase_exit.md`. Estimated agent sittings: 3; budget: 320 kT (committed at DP2; original 186 kT preserved). P1 is authorized and queued.
 
 ### P2 — Proof, fidelity and midpoint
 
@@ -148,7 +148,7 @@ VITRUVIUS v1.1 remains the instrument of record; consume the predecessor instrum
 
 ## Budgets and tiers
 
-[D] Actual amended mission files derive 38 missions, 47 estimated agent sittings and 2,310 kT content-load. Calibration remains unmeasured; the original 1,637 kT arithmetic is historical. [[budget_basis]] owns objective allowances, uncertainty, tier choices and per-phase commitments. P0 retains its initial 123 kT envelope; later phases are provisional.
+[D] Actual amended mission files derive 38 missions, 47 estimated agent sittings and 2,444 kT content-load. Calibration remains unmeasured; the original 1,637 kT arithmetic is historical. [[budget_basis]] owns objective allowances, uncertainty, tier choices and per-phase commitments. P0 retains its initial 123 kT envelope; P1 is committed at 320 kT under [[dp2_ratification_20260915]]; P2 and later phase budgets are provisional.
 
 ## Evidence and gate growth
 
@@ -175,3 +175,5 @@ P6.1 full and lightweight campaign AAR with instrument drift and estimate/actual
 
 
 Related: [[campaign_garnier]] · [[mission_garnier_genesis]].
+
+[D] DP2 adds the six clauses in [[dp2_ratification_20260915]]: visible homepage output first, accessible AI DNA/public-good explanation, exact privacy and mobile-diagram owners, gate-adoption failure controls, bounded workload reviews and formative humans before DP3. The original DP1 forecast was 2,310 kT; the current sum reflects only the approved P1 reforecast.

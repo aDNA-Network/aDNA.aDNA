@@ -21,6 +21,16 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
+### 2026-09-15 — GARNIER DP2 accepted with six amendments; P1 authorized
+
+[D] `last_edited_by: agent_codex`; runtime Codex. Stanley’s “I accept with those amendments.” ratifies [[how/campaigns/campaign_garnier/artifacts/amendments/dp2_ratification_20260915|DP2]]. P0 is accepted as the planning baseline with its evidence limits. P1 is authorized at 320 kT (150/90/80), original 186 kT preserved; campaign forecast derives to 2,444 kT across 38 missions/47 estimated sittings. Later phase budgets remain provisional.
+
+[D] Amendment specifications name the first homepage mechanism/example/action deliverable, accessible AI DNA/public-good explanation, privacy/state corrections in P1.3, count-release fidelity in P2.2, fresh-mobile triad readability in P3.3, and experimental gate adoption controls in P1.1. Formative humans from all three decisive classes remain required before DP3. No website repair or instrument execution is claimed by this records-only ratification. All 1,692 frozen baseline hashes remain unchanged; document integrity and twelve negative controls pass.
+
+**Intake:** 2026-09-15 · GARNIER DP2 · six amendments recorded, P1 budget committed, mission prompts aligned; local commit only.
+
+**Resume / next session:** Begin [[mission_garnier_p1_1_homepage_voice]] under the accepted DP2 record; do not ask for DP1/DP2 again. Read root/campaign governance, active leases, the updated mission and [[prescreen_pack]]. Produce the reviewable homepage/storyboard first; prove C4 gate-adoption failures before relying on experimental checks. Keep research and independent reviews bounded, report actuals plus remaining forecast, preserve reserved paths and predecessor publication holds. DP3 is the next human phase gate. Session: [[session_stanley_20260915_092248_garnier_dp2_ratification]].
+
 ### 2026-09-15 — GARNIER P0 completed; DP2 exit and P1 budget pending
 
 [D] `last_edited_by: agent_codex`; runtime Codex; [[campaign_garnier]] remains active in phase0. Both P0 missions completed. [[how/campaigns/campaign_garnier/artifacts/p0/phase_exit|DP2 evidence and budget gate]] is the next live decision. Two clean replacement scorers share a frozen v1.1 pack; paired breakdowns/ceilings and excluded attempts are preserved in [[baseline_reconciliation]]. Production still serves `eda4cbfc`; local build source was `c38c6dc`. No composite is promoted as a launch score.

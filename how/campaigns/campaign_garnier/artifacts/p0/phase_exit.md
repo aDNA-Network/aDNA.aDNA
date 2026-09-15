@@ -2,11 +2,13 @@
 type: artifact
 created: 2026-09-15
 updated: 2026-09-15
-status: needs_human
+status: accepted
 last_edited_by: agent_codex
-tags: [garnier, p0, phase_exit, needs_human]
+tags: [garnier, p0, phase_exit, ratified]
 ---
 # DP2 — accept P0 and commit the P1 budget
+
+[D] **Accepted with six amendments on 2026-09-15.** See [[dp2_ratification_20260915]] for the operator event and binding changes. The proposal and evidence below are preserved as presented; their pending-language describes the pre-ratification state. P1 is now authorized; DP3 and publication remain separately gated.
 
 **Recommendation: accept the P0 evidence pack and authorize the three P1 missions with the proposed 320kT envelope.** [I] Keep a spend/scope review at each mission close. The original 186kT estimate remains preserved; additive proposed budgets are not yet committed. No P1 implementation or publication has begun.
 
@@ -49,10 +51,10 @@ Default proposal: option1. Refusing it changes the commitment and next executabl
 **Ratification record**
 
 - decision: P0 exit and P1 budget
-- ratified-by: pending Stanley Bishop
-- date: pending
-- status: proposed
-- operator answer/comment: pending
+- ratified-by: Stanley Bishop, Founding Architect
+- date: 2026-09-15
+- status: accepted with amendments
+- operator answer/comment: “I accept with those amendments.” — six-point recommendation recorded in [[dp2_ratification_20260915]].
 
 [D] ISS generator resolves, but the receiver health probe did not return a valid healthy response. The skill’s rich-context copy/paste fallback is used here; no receiver configuration, install, shared gate directory or outward publication was needed. Reply in the conversation with the choice/amendments; only that event may change ratification status.
 

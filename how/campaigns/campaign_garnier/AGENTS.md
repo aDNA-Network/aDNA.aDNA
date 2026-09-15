@@ -10,12 +10,13 @@ tags:
 ---
 # GARNIER campaign index
 
-[D] The charter is active; DP1 was accepted with amendments on 2026-09-15. Start at [[artifacts/amendments/charter_ratification_20260915]] and [[artifacts/amendments/amendment_verification]]. P0 is completed; [[artifacts/p0/phase_exit|DP2]] is pending. P1 remains queued and its 320kT reforecast is proposed; later gates remain human. Read [[CLAUDE]] before execution. This index is derived from current GARNIER-owned Markdown paths; the original packet and archived pending marker are historical artifacts.
+[D] The charter is active; DP1 was accepted with amendments on 2026-09-15. Start at [[artifacts/amendments/charter_ratification_20260915]] and [[artifacts/amendments/amendment_verification]]. P0 is completed; [[artifacts/amendments/dp2_ratification_20260915|DP2]] is accepted with six amendments. P1 is authorized at 320 kT and queued for execution; DP3 and later gates remain human. Read [[CLAUDE]] before execution. This index is derived from current GARNIER-owned Markdown paths; the original packet and archived pending marker are historical artifacts.
 
 - [[CLAUDE]]
 - [[artifacts/amendments/amendment_aar]]
 - [[artifacts/amendments/amendment_verification]]
 - [[artifacts/amendments/budget_basis]]
+- [[artifacts/amendments/dp2_ratification_20260915]]
 - [[artifacts/amendments/charter_ratification_20260915]]
 - [[artifacts/amendments/docs_review_scope]]
 - [[artifacts/amendments/field_performance_policy]]

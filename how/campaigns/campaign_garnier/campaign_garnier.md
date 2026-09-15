@@ -9,7 +9,8 @@ phase_count: 7
 mission_count: 38
 estimated_sessions: 47
 calibrated_sessions: null
-token_budget_estimated: 2310
+token_budget_estimated: 2444
+token_budget_original_dp1: 2310
 token_budget_unit: kT_content_load
 estimation_class: content-novel
 executor_tier_default: opus
@@ -34,7 +35,7 @@ calibration_status: uncalibrated
 ratification_status: accepted
 ratification_date: '2026-09-15'
 amendment_implementation: verified
-current_phase: 0
+current_phase: 1
 ---
 # Campaign GARNIER
 
@@ -69,7 +70,7 @@ VITRINE's proposed website craft and docs work is absorbed prospectively into P1
 | [[mission_garnier_p0_1_baseline]] | Freeze baseline and reconcile authority | 2 | opus / codex | DP1 |
 | [[mission_garnier_p0_2_instruments]] | Calibrate the added instruments | 1 | opus / codex | mission_garnier_p0_1_baseline |
 
-**⛩ DP2 exit:** Pinned target/exemplar baseline; two isolated v1.1 scorers; added instruments have passing/failing controls; P1 budget presented for operator commitment. Named artifact: `artifacts/p0/phase_exit.md`. Estimated agent sittings: 3; budget: 123 kT (committed at DP1). Both missions completed on 2026-09-15; rough actual 590±210kT, retrospective filed. DP2 pending.
+**⛩ DP2 exit:** Pinned target/exemplar baseline; two isolated v1.1 scorers; added instruments have passing/failing controls; P1 budget presented for operator commitment. Named artifact: `artifacts/p0/phase_exit.md`. Estimated agent sittings: 3; budget: 123 kT (committed at DP1). Both missions completed on 2026-09-15; rough actual 590±210kT, retrospective filed. DP2 accepted with six amendments on 2026-09-15; see [[dp2_ratification_20260915]].
 
 ### P1 — Voice and concision
 
@@ -79,7 +80,7 @@ VITRINE's proposed website craft and docs work is absorbed prospectively into P1
 | [[mission_garnier_p1_2_quickstart_voice]] | Bring the first task into focus | 1 | opus / codex | mission_garnier_p1_1_homepage_voice |
 | [[mission_garnier_p1_3_mission_voice]] | Make the public-good invitation concise | 1 | opus / codex | mission_garnier_p1_2_quickstart_voice |
 
-**⛩ DP3 exit:** Four-part homepage storyboard and all seven surface word-target dispositions complete; unsupported claims and banned prose zero; formative human feedback recorded for all three decisive classes; P2 tranche scope/budget presented. Named artifact: `artifacts/p1/phase_exit.md`. Estimated agent sittings: 3; budget: 186 kT original;320kT proposed reforecast derived from additive mission fields (uncommitted until DP2). Missions remain queued.
+**⛩ DP3 exit:** Four-part homepage storyboard and all seven surface word-target dispositions complete; unsupported claims and banned prose zero; formative human feedback recorded for all three decisive classes; P2 tranche scope/budget presented. Named artifact: `artifacts/p1/phase_exit.md`. Estimated agent sittings: 3; budget: 320 kT committed at DP2 (186 kT original preserved). Missions are authorized and queued for execution under [[dp2_ratification_20260915]].
 
 ### P2 — Proof, fidelity and midpoint
 
@@ -151,7 +152,7 @@ VITRINE's proposed website craft and docs work is absorbed prospectively into P1
 
 ## Decision Points
 
-DP1: charter ratification, accepted with amendments on 2026-09-15. DP2: P0 instruments and P1 budget, pending. DP3: P1 voice/formative humans and P2 tranche budget, pending. DP4: P2 midpoint, Decade 2 replan and P3 budget, pending. DP5: P3 visual craft, pending. DP6: P4 hardening, pending. DP7: P5 humans/rescore and separate publication authority, pending. DP8: P6 closure, pending. Each gate needs a named operator, date, scope and event reference; no agent signature can advance a phase.
+DP1: charter ratification, accepted with amendments on 2026-09-15. DP2: P0 planning baseline and P1 320 kT budget, accepted with six amendments on 2026-09-15. DP3: P1 voice/formative humans and P2 tranche budget, pending. DP4: P2 midpoint, Decade 2 replan and P3 budget, pending. DP5: P3 visual craft, pending. DP6: P4 hardening, pending. DP7: P5 humans/rescore and separate publication authority, pending. DP8: P6 closure, pending. Each gate needs a named operator, date, scope and event reference; no agent signature can advance a phase.
 
 ## Risk Register
 
@@ -193,7 +194,7 @@ VITRUVIUS v1.1 remains the instrument of record; consume the predecessor instrum
 
 ## Timeline
 
-[D] Quality-led, no launch date. **38 missions / 47 estimated agent sittings / 2,310 kT content-load** derive from actual mission frontmatters via `python3 how/campaigns/campaign_garnier/evidence/genesis/derive_campaign.py`. Calibration is unmeasured. Decade 1 scope is approved; P0's 123 kT is committed, each later phase budget awaits its preceding human gate. Decade 2 architecture remains provisional until DP4. [[budget_basis]] records the original estimate, workload assumptions and human-time separation. Publication stays subordinate to the predecessor frozen-evidence boundary.
+[D] Quality-led, no launch date. **38 missions / 47 estimated agent sittings / 2,444 kT content-load** derive from actual mission frontmatters via `python3 how/campaigns/campaign_garnier/evidence/genesis/derive_campaign.py`. Calibration is unmeasured. Decade 1 scope is approved; P0's 123 kT and P1's 320 kT are committed; P2 and later budgets await their preceding human gates. The DP1 total of 2,310 kT is preserved as the original forecast. Decade 2 architecture remains provisional until DP4. [[budget_basis]] records the original estimate, workload assumptions and human-time separation. Publication stays subordinate to the predecessor frozen-evidence boundary.
 
 ## What this campaign protects
 
@@ -232,6 +233,10 @@ Deliverables: pending campaign execution. Descoped: none approved. Key findings:
 - **Change:** pending.
 - **Follow-up:** pending P6.5.
 
-## P0 execution close — 2026-09-15
+## P0 execution close — 2026-09-15 (historical, before DP2 ruling)
 
 [D] Both P0 missions completed; [[phase_exit]] is the next live decision. [[baseline_reconciliation]] preserves the paired v1.1 breakdowns and uncertainty; [[prescreen_pack]] records synthetic-only observations. [[p0_estimation_retrospective]] records the budget miss and uncommitted P1 proposal. No phase transition or publication occurred.
+
+## DP2 ratification — 2026-09-15
+
+[D] Stanley accepted P0 with the six amendments in [[dp2_ratification_20260915]]. P1 is authorized at 320 kT; the first output is a reviewable homepage mechanism/example/action. P1.3 owns privacy/state disclosure consistency and the formative human checkpoint. P2.2 owns stale-count release fidelity; P3.3 owns fresh-mobile triad readability. P1.1 must prove experimental gate failure behavior before adoption. Preserve AI DNA as an explanatory bridge to Agentic DNA, opt-in knowledge sharing and the public-good mission. No human, field, comparative-rank or publication claim is added by this ratification. DP3 remains the next phase gate.

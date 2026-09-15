@@ -18,10 +18,11 @@ tags:
 - garnier
 executor_tier: opus
 executor_runtime: codex
-token_budget_estimated: 62
+token_budget_estimated: 150
+token_budget_original: 62
 token_budget_unit: kT_content_load
 token_budget_reforecast_proposed: 150
-reforecast_status: proposed_DP2
+reforecast_status: accepted_DP2
 reforecast_basis: {"coordinator_copy_storyboard_checks": 70, "three_fresh_prescreens": 60, "two_keyed_graders": 20}
 estimated_sessions: 1
 calibrated_sessions: null
@@ -45,6 +46,7 @@ acceptance_criteria:
   reads record confusions before DP3 formative humans.'
 - 'C3: mission_garnier_p1_1_homepage_voice closes with a scoped diff, cited evidence and five-line AAR; DP3 remains
   a human gate and no reserved path/outward action is inferred.'
+- 'C4: Experimental checks used as approval gates reject empty/incomplete/duplicate capture populations and actual blocking vocabulary violations with nonzero exit; positive controls pass and frozen P0 evidence is preserved.'
 verification_method:
 - id: V1
   surface: home source/twin; front_page_doctrine; existing primitive; word_budgets; reader_protocol
@@ -68,18 +70,25 @@ verification_method:
   command: R-CLOSE; inspect homepage_storyboard.md; homepage_copy_diff.md; homepage_claim_map.md and the DP3 disposition.
   red_test: Place a registry/predecessor write or an unsigned DP3 approval in a disposable mission_garnier_p1_1_homepage_voice
     closure record; scope/authority review must reject it.
-human_gate: DP2 phase entry/budget; DP3 phase exit. DP1 accepted with amendments on 2026-09-15.
+- id: V4
+  surface: candidate capture matrix and rendered-prose population; consuming runner process exits; instrument_adoption_controls.md
+  method: Demonstrate the adopted blocking checks reject incomplete populations and actual prohibited prose, while clean input passes.
+  command: 'Run C4 adoption protocol from this mission in disposable fixtures; record expected population, argv, stdout/stderr and exit status; preserve frozen P0.'
+  red_test: 'Empty/missing/duplicate matrix cells and a real banned-prose candidate must exit nonzero; a complete clean candidate must exit zero.'
+human_gate: DP2 accepted with six amendments on 2026-09-15; DP3 remains a human phase exit.
 verification_surface: agent
 verification_check_set: custom
 calibration_status: uncalibrated
 calibration_basis: Judgment estimate with stated workload; no measured GARNIER execution calibration.
-budget_breakdown_kT:
+budget_breakdown_original_kT:
   transition: 23
   bounded_objective_work: 39
-budget_status: provisional_until_DP2
+budget_breakdown_kT: {"coordinator_copy_storyboard_checks": 70, "three_fresh_prescreens": 60, "two_keyed_graders": 20}
+budget_status: committed_DP2
 human_elapsed_time: phase-gate response time excluded
 input_manifest: home source/twin; front_page_doctrine; existing primitive; word_budgets; reader_protocol
 output_artifacts:
+- instrument_adoption_controls.md
 - homepage_storyboard.md
 - homepage_copy_diff.md
 - homepage_claim_map.md
@@ -87,7 +96,7 @@ contract_version: garnier_amendment_20260915
 ---
 # Make the homepage demonstrate the mechanism
 
-> **Read cold.** Act as Rosetta's executor for Stanley through Berthier. Read root and [[../CLAUDE|campaign governance]], [[campaign_garnier]], [[charter_ratification_20260915]], [[verification_recipes]] and this mission. DP1 is accepted; verify the named later phase gate before execution.
+> **Read cold.** Act as Rosetta's executor for Stanley through Berthier. Read root and [[../CLAUDE|campaign governance]], [[campaign_garnier]], [[charter_ratification_20260915]], [[verification_recipes]] and this mission. DP1 and DP2 are accepted; read [[dp2_ratification_20260915]] and verify dependencies before execution. DP3 remains human.
 
 ## Why
 
@@ -108,6 +117,8 @@ contract_version: garnier_amendment_20260915
 | 1 | Low-fidelity storyboard orders mechanism, working example, shared-cultural-heritage rationale and participation before visual production, with text/DOM reading order preserved. | homepage_storyboard.md | ⛩ DP2 entry and C1 |
 | 2 | Rendered home/twin agree, claims cite evidence, word-target exceptions are justified, and fresh-context synthetic reads record confusions before DP3 formative humans. | homepage_storyboard.md; homepage_copy_diff.md; homepage_claim_map.md | C2 reached-surface evidence |
 | 3 | Reconcile the actual diff, limitations and AAR | Mission evidence manifest and five-line AAR | ⛩ DP3 remains human |
+
+| 4 | Prove blocking behavior before experimental gate adoption; preserve P0 evidence | instrument_adoption_controls.md | C4 before approval use |
 
 ## Constraints & gates
 
@@ -137,11 +148,14 @@ The three methods jointly cover the three criteria; no individual method proves 
 
 ## Budget
 
+[D] DP2 accepted the working forecast of **150 kT** on 2026-09-15; see [[dp2_ratification_20260915]]. Current breakdown: {"coordinator_copy_storyboard_checks": 70, "three_fresh_prescreens": 60, "two_keyed_graders": 20}. The original estimate below is preserved as history. Report actuals and remaining phase forecast at close; bounded work within the approved envelope needs no repeat permission.
+
+
 [I] ADR-016 content-load estimate: {"transition": 23, "bounded_objective_work": 39} = **62 kT**. Estimated agent sittings: **1**; calibration is **unmeasured**, not a repeated estimate presented as measured data. The work allowance is a judgment forecast, not a limit on honest reporting. Human recruitment/response time is excluded. Independent scoring work must be included in actuals rather than disappearing from the coordinator's accounting. See [[budget_basis]] for uncertainty and phase commitment. Re-scope at the next gate if projected work exceeds the bounded contract; do not silently skip routes. Billing is separately measured or reported unavailable.
 
 ## Definition of done
 
-C1/C2/C3 are satisfied on their stated surfaces with evidence and controls, every output is linked, changed claims and accessibility consequences are documented, scope stays within authority, and the SITREP, next prompt and AAR are filed. A manual or human item remains owed until performed. Append this mission's objective/finding/budget evidence to the rolling closure ledger during work; P6 reconciles it rather than reconstructing the campaign at the end. A human phase gate remains pending until the operator rules.
+C1/C2/C3/C4 are satisfied on their stated surfaces with evidence and controls, every output is linked, changed claims and accessibility consequences are documented, scope stays within authority, and the SITREP, next prompt and AAR are filed. A manual or human item remains owed until performed. Append this mission's objective/finding/budget evidence to the rolling closure ledger during work; P6 reconciles it rather than reconstructing the campaign at the end. A human phase gate remains pending until the operator rules.
 
 ## Campaign context
 
@@ -163,6 +177,20 @@ Deliverables: pending execution. Descoped: none. Key findings: pending. Scope ch
 - **Change:** pending execution.
 - **Follow-up:** pending execution.
 
-## P0-derived budget proposal — DP2 pending
+## P0-derived budget proposal — historical, accepted at DP2
 
-[I] The original estimate remains above. Proposed reforecast 150 kT includes {"coordinator_copy_storyboard_checks": 70, "three_fresh_prescreens": 60, "two_keyed_graders": 20}. This is not committed until DP2; human waiting time and billing currency are excluded. See [[p0_estimation_retrospective]].
+[I] The original estimate remains above. Proposed reforecast 150 kT includes {"coordinator_copy_storyboard_checks": 70, "three_fresh_prescreens": 60, "two_keyed_graders": 20}. This proposal was accepted at DP2 with six amendments; human waiting time and billing currency are excluded. See [[p0_estimation_retrospective]].
+
+## DP2 execution discipline
+
+[D] [[dp2_ratification_20260915]] governs this scope. Reuse the frozen P0 findings; bound and record reviewer inputs, linked-page allowance and stop conditions before any prescreen. Account for independent work and reruns once. Report actual workload and remaining phase forecast at each close. Keep human, synthetic, local and deployed evidence distinct.
+
+## DP2 first deliverable and instrument adoption
+
+[D] First deliver a reviewable homepage/storyboard with the mechanism, actual file/code example and next action, before further broad research. Use “AI DNA” as an explanatory bridge while retaining Agentic DNA; show the shared-cultural-heritage rationale and voluntary participation in accessible text after the example. Preserve semantic reading order, clear labels and equivalent text.
+
+[I] C4 supplements V1/V2 before their verdicts can approve this mission. V1 inventories the expected route × viewport × theme cells and the exact candidate HTML/twin population. V2 runs positive controls plus empty, missing-cell, duplicate-cell, wrong-theme, missing-capture and actual banned-prose failures through the proposed consuming runner; assert nonzero exit for blocking failures and zero for clean input. Preserve output/argv/exit receipts in instrument_adoption_controls.md. An advisory report alone cannot satisfy a blocking criterion. Version new receipts outside frozen evidence/p0; provider contributions remain staged via the wrapper and receive red-tests in the same early commit.
+
+[I] Convention-13 additions: V1×C4 establishes expected nonempty population but cannot prove process failure; V2×C4 reaches the consuming process and its exit status for each positive/negative fixture; V3×C4 checks receipt linkage and frozen-pack preservation without substituting for execution. Existing nine pairs retain their roles. C4 is pending execution, not claimed passed at ratification.
+
+[I] Dedicated V4 pair audit: V4×C1 supplements the changed-surface population but does not establish the storyboard; V4×C2 supplies instrument trust but cannot replace content/twin review or readers; V4×C3 supplies receipts but cannot authorize closure; V4×C4 directly reaches positive/negative consuming-process exits. Together with the original nine and V1–V3×C4 supplement, all sixteen method/criterion pairs are assessed for feasibility; no execution pass is claimed.

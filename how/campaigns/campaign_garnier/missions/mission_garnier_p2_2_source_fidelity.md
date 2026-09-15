@@ -161,3 +161,9 @@ Deliverables: pending execution. Descoped: none. Key findings: pending. Scope ch
 - **Finding:** pending execution.
 - **Change:** pending execution.
 - **Follow-up:** pending execution.
+
+## DP2 release-blocking finding ownership
+
+[D] [[dp2_ratification_20260915]] assigns Rosetta in this mission primary ownership of FG-P0-001. Reconcile every one of the seven source/HTML/twin comparisons in the frozen P0 local_live_content_comparison evidence, deriving current counts from the executing snapshot. P2.3 supplies corpus review; HAUSSMANN GR-7 retains its own integration authority. No stale public-count finding is closed merely because local corrections exist. Candidate verification is required before promotion; actual deployed comparison is owed to the separately authorized publication verification.
+
+[I] Existing C1/C2 extend to these seven pairs: V1×C1 enumerates all seven and their owners; V2×C2 compares candidate source and both built outputs, with a disposable stale-count control that must fail even when outputs agree with each other. V3 checks candidate evidence and the still-owed deployed disposition. Other recorded pairs remain unchanged. Include this bounded duty in the next phase-budget review; this assignment does not authorize P2 execution.
