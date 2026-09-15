@@ -21,6 +21,18 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
+### 2026-09-15 — GARNIER P1.2 complete through local inference; reader evidence next
+
+[D] `updated: 2026-09-15`; `last_edited_by: agent_codex`; runtime Codex. [[how/campaigns/campaign_garnier/artifacts/p1/local_model_continuation|Local-model reproduction]] completes P1.2: exact copied Claude Code command through existing broker C69/Qwen3.6, all five file/history checks and distinct fresh-session governance recognition pass. Initial commit9431f681 contains360 files. The model needed a prompt to add that commit; earlier API and Qwen2.5 failures remain preserved. No unassisted timing or Claude subscription success is claimed.
+
+[D] P1.1/P1.2 complete; P1.3 consenting engineer/funder/scientist observations absent; DP3 pending. [[how/campaigns/campaign_garnier/artifacts/research/next_build_scope|Next homepage increment]] is concrete and proposed: hierarchy, readable file example, interaction states, separate preview,60±25kT. The explicit early-visual sequence amendment has no response. Source b1cf040 and all15 route hashes at http://127.0.0.1:4465/ remain unchanged. Both local-model containers are stopped and retained; no push/deploy or peer delivery.
+
+[I] Sitting315±45kT versus25 preparation forecast, including237.3kT of reported non-cached runtime input/output;735.4kT cached input is separately disclosed. Allocation295±35 to P1.2 and20±10 to preparation. Phase implementation/evidence625±155kT versus320 committed; previous wind-down/research separately booked. The overrun retrospective and measurement limits are in the run receipt. Remaining P1 forecast10–20kT after real records, excluding waiting/design; billing unavailable.
+
+**Intake:** 2026-09-15 · GARNIER P1.2 · brokered local-model first project and fresh-session checks completed with recorded assistance; live mission routing advanced to formative evidence; early design amendment prepared and unanswered.
+
+**Resume-Here:** Follow the CURRENT P1.3 evidence-intake prompt in [[how/campaigns/campaign_garnier/missions/session_prompts_garnier]]. Do not repeat the completed unchanged-candidate first-project run or request API credit as its missing input. Receive actual consenting reader records under [[how/campaigns/campaign_garnier/artifacts/p1/formative_reader_pack]]. If Stanley explicitly accepts [[how/campaigns/campaign_garnier/artifacts/research/next_build_scope]], record the narrow sequence amendment and build an isolated second preview; preserve the frozen port4465 stimulus, human requirements and pending DP3. Otherwise keep the existing visual-production sequence. Session/AAR: [[session_stanley_20260915_122656_garnier_next_build]].
+
 ### 2026-09-15 — GARNIER design context ingested; account routes clarified
 
 [D] `updated: 2026-09-15`; `last_edited_by: agent_codex`; runtime Codex. [[how/campaigns/campaign_garnier/artifacts/research/design_context_20260915|Design research]] adds nine usable site inspections, one blocked Nous refresh, forty reviewed native frames and twelve source-linked quality criteria. [[what/design/garnier_quality_research|Quality brief]] assigns concrete follow-up topics to existing missions; proposals do not alter governed doctrine or authorize P2/P3. All fifteen preview hashes still match source b1cf040 at http://127.0.0.1:4465/.

@@ -3,10 +3,12 @@ type: artifact
 created: 2026-09-15
 updated: 2026-09-15
 last_edited_by: agent_codex
-status: in_progress
+status: completed
 tags: [garnier, p1, evidence, local_model]
 ---
 # P1 local-model continuation
+
+[D] **Completed with recorded assistance.** Qwen3.6-35B-A3B created the disposable project through the exact copied Claude Code command. All five displayed checks pass, and a separate fresh session identified the project and two actual governance rules. P1.2 C2 is satisfied on this recorded local-provider route. Claude subscription execution, unassisted setup, full onboarding and human reader outcomes are not established by this run.
 
 ## What is established
 
@@ -32,7 +34,35 @@ tags: [garnier, p1, evidence, local_model]
 
 [D] A later local-chat probe returned “OK” (15 input / 107 output tokens reported by that tool). A second fresh container, `garnier-p1-qwen36-20260915-1246`, uses the same image, CLI and Git versions, the same C69 broker route, and the compatibility setting before launch. It fetched the same public release with the exact copied command. Native setup accepted the key and trusted workspace without the earlier terminal-selection error.
 
-[D] The exact first request was submitted at 12:48:46 UTC. Execution and final file checks are in progress. No completed-project claim is made here yet.
+[D] The exact first request was submitted at 12:48:46 UTC. The model read the actual fork skill, asked for a name/description, and received `garnier_repro` with a disposable learning-project description. After confirmation it copied the template correctly, initialized Git and prepared the governance files. The executor approved the scoped container commands and enabled edits for this disposable creation session.
+
+[D] The model initially reported completion without an initial commit. The first check set returned 0/0/0/0/128. The executor supplied that observed failure and asked the model to finish the documented process. Its first commit command used a relative path from the wrong working directory and failed; it corrected the path itself. The resulting initial commit is `9431f681be31c3fc3ccd413240ecbed886b0157c`, with 360 tracked files. All five checks now return 0. The working tree is clean and the cloned base standard/router have zero tracked diff. Earlier failed check sets are retained; the executor did not create the commit on the model's behalf.
+
+[D] A fresh `claude` process, without `--resume`, opened inside the generated project. Session `c0d2cb03-a20f-4b83-be42-933a4a834748` differs from creation session `f80270e8-b7b4-4849-8ef3-18ccf88f259d`. Asked to read `CLAUDE.md`/`STATE.md` without modifying files, it identified `garnier_repro`, active/setup state, the unresolved persona and `agent_init` markers, then correctly stated Standing Orders 1 and 6. The project stayed clean. This verifies fresh-session governance recognition; personalization/onboarding remains a subsequent user task.
+
+[D] The second container is stopped and retained. The final scan found zero full-token matches in 1,723 regular non-symlink files under `/root` below 10 MB, with two larger files skipped and zero read errors. Docker configuration and the current exported run-evidence files also had zero full-token matches. The only credential source used was C69 via Keychain; no host subscription cache was extracted.
+
+### Evidence and limits
+
+[D] `evidence/p1/local_model_20260915/` contains both attempts' check sets, native message exports, timestamped inputs, generated governance files and hashes, fresh-session verification, credential scans and `runtime_token_usage.json`. Creation/fresh message exports omit thinking blocks and non-message records. The large model's raw sanitized terminal trace remains local under ignored `evidence/p1/raw/repro_20260915/qwen36_20260915/`; its native messages and events are the reviewable evidence. The reused controller's old C06 route label is preserved with a correction field naming actual C69 access.
+
+[D/I] One transient “waiting for API response” display cleared; it did not become a recorded failed second-run request. The model's statement about 31 templates/33 skills and install-pending plugins was not independently validated here and is not adopted as a public claim. The existing release-fidelity issue remains with P2.2. A basic file/history pass is not a full project-conformance audit or a model benchmark. The CLI warned that it assumed a 200k window for the unrecognized gateway alias; the deployed model window was not independently established. Native CLI permission/setup assistance and the missing-commit correction prevent treating elapsed wall time as unassisted setup time or human TTFS.
+
+## Workload and retrospective
+
+[D] Native assistant message IDs were used to deduplicate split content rows before summing provider-reported usage: **231,372 input + 5,690 output + 735,402 cached-input tokens** across these runs. Three successful small probes add 194 reported input/output tokens; the timed-out probe has no usage receipt. Root Codex billing/telemetry is unavailable. These provider reports are not independent tokenization or a currency invoice.
+
+[I] Booked sitting workload is approximately **315±45 kT**: 237.3 kT of reported non-cached runtime input/output plus approximately 78±45 kT of executor work. The **735.4 kT of reported cached input is disclosed separately** as repeated context; it is not silently added to a differently defined workload forecast or dropped from the evidence. Allocate approximately **295±35 kT to P1.2** and **20±10 kT to next-build preparation**. P1.2 cumulative rough actual becomes **430±85 kT** versus its 90 kT forecast; phase implementation/evidence becomes **625±155 kT** versus 320 committed. Earlier 30±15 kT wind-down and 65±25 kT design research remain separately booked. Mixed measured/estimated bases limit exact comparison; no budget-cap compliance is claimed.
+
+[I] The initial 25 kT preparation forecast substantially understated two full CLI reproductions. It assumed route verification would be short and did not account for repeated model context, runtime setup mistakes, model failure, recovery and the fresh-session check. The useful next change is procedural: reuse the known C69 route and working larger-model configuration, send terminal selection keys separately, measure runtime usage before estimating another reproduction, and rerun only for an actual source/runtime change. The small-model failure remains evidence; repeatedly coaching it or repairing its output manually would not have supplied the missing criterion. No new runtime test is needed for this unchanged candidate. Remaining P1 forecast: **10–20 kT after actual reader records arrive**, excluding waiting and any separately authorized design increment; billing unavailable.
+
+## AAR
+
+- **Worked:** [D] The brokered local gateway enabled a real first-project run without the depleted Anthropic API route.
+- **Did not:** [D] The smaller model failed the fork, and the larger model needed a prompt to add the initial commit; the workload forecast missed the runtime work.
+- **Finding:** [D] Authentication, task execution, file/history success and fresh-session recognition require separate evidence.
+- **Change:** [D] Retained both failures, applied a documented process-only compatibility setting and verified the actual generated project.
+- **Follow-up:** [I] Intake the three consenting reader records; use the proposed design amendment only after an explicit ruling. Keep DP3 pending.
 
 ## Remaining authority and evidence
 

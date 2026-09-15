@@ -1,0 +1,15 @@
+{
+  "recorded_at": "2026-09-15T13:04:51.546982+00:00",
+  "container": "garnier-p1-qwen36-20260915-1246",
+  "model": "local-qwen3.6-35b-a3b",
+  "creation_session": "f80270e8-b7b4-4849-8ef3-18ccf88f259d",
+  "fresh_session": "c0d2cb03-a20f-4b83-be42-933a4a834748",
+  "command": "cd /root/aDNA/garnier_repro.aDNA && claude",
+  "resumed": false,
+  "prompt": "For verification only, read this project's CLAUDE.md and STATE.md. Identify the project and state two rules that govern your work here. Do not change files.",
+  "answer": "**Project:** `garnier_repro` \u2014 a disposable learning project for trying aDNA with sample notes. Status: `active`, phase: `setup`. The persona placeholder `{{persona}}` is unresolved and `last_edited_by: agent_init`, indicating it's in a freshly-forked, uncustomized state.\n\n**Two governing rules from this project's CLAUDE.md (Standing Orders):**\n\n1. **Phase gates are human gates** (Standing Orders #1): Never auto-advance between campaign phases without explicit user approval.\n2. **Archive, never delete** (Standing Orders #6): Campaign docs, mission files, session records \u2014 permanent audit trail. Set `status: abandoned` or `status: completed`, never remove.",
+  "verdict": "pass",
+  "basis": "Named the project, active/setup state, unresolved persona/agent_init markers and two exact Standing Orders; compared to generated CLAUDE.md and STATE.md.",
+  "project_worktree_clean_after": true,
+  "scope": "One automated fresh-session recognition check; not human comprehension or full onboarding."
+}

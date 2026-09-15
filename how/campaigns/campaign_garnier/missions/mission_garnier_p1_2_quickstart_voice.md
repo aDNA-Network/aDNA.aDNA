@@ -3,7 +3,7 @@ plan_id: mission_garnier_p1_2_quickstart_voice
 type: plan
 title: Bring the first task into focus
 owner: stanley
-status: in_progress
+status: completed
 campaign_id: campaign_garnier
 campaign: campaign_garnier
 campaign_phase: 1
@@ -21,10 +21,11 @@ executor_runtime: codex
 token_budget_estimated: 90
 token_budget_original: 61
 token_budget_unit: kT_content_load
-token_budget_actual: 135
-token_budget_actual_uncertainty: 50
-token_budget_actual_basis: rough_content_load_including_reviews_planning_and_evidence_continuation
-actual_sessions: 2
+token_budget_actual: 430
+token_budget_actual_uncertainty: 85
+token_budget_actual_basis: prior_rough_actual_plus_parent_estimate_and_reported_uncached_runtime_io
+reported_runtime_cached_input_kT: 735.402
+actual_sessions: 3
 token_budget_reforecast_proposed: 90
 reforecast_status: accepted_DP2
 reforecast_basis: {"orientation": 30, "source_and_clean_reproduction": 35, "copy_checks": 25}
@@ -156,11 +157,11 @@ C1/C2/C3 are satisfied on their stated surfaces with evidence and controls, ever
 
 Previous: [[mission_garnier_p1_1_homepage_voice]]. Next: [[mission_garnier_p1_3_mission_voice]]. [[campaign_architecture]] and [[charter_ratification_20260915]] govern scope/budgets.
 
-## Progress
+## Progress — historical implementation snapshot
 
 [D] C1 implemented and verified locally, including source-tour correction and explicit first task. C2 partial: exact rendered command cloned/entered the public image in a disposable container, then exited127 because Claude Code was absent. Authenticated project creation is owed. C3 sitting evidence is filed; mission closure remains pending. See [[instruction_ledger]] and [[command_transcripts]].
 
-## Completion Summary
+## Completion Summary — historical implementation snapshot
 
 [D] Source candidate b1cf040. Evidence: [[how/campaigns/campaign_garnier/artifacts/p1/verification_report]]. Implementation delivered; the named evidence gap above prevents completion. No publication, predecessor mutation or peer delivery. [I] Rough actual 75±25kT; API billing unavailable. Remaining P1 follow-up estimate25–50kT across the phase, excluding human waiting.
 
@@ -191,3 +192,19 @@ Previous: [[mission_garnier_p1_1_homepage_voice]]. Next: [[mission_garnier_p1_3_
 [D] C2 reached the installed CLI and first model request, then failed for insufficient API credit. No project was created; the first two file checks pass, the remaining three fail, and fresh-session recognition is untested. A funded broker credential or actual completed transcript is the next input. See [[first_task_continuation]] and [[session_stanley_20260915_112428_garnier_p1_evidence]]. Status remains in_progress; historical implementation and AAR above are preserved.
 
 [I] Allocated continuation workload 60 kT; cumulative mission rough actual 135±50 kT. The shared sitting is counted once in phase totals. Remaining phase estimate 20–35 kT after inputs arrive; billing unavailable. Latest phase actuals and limitations are in [[first_task_continuation]].
+
+## Completed — local-model continuation, later 2026-09-15
+
+[D] C2 is complete for the recorded local-provider route: exact copied command, fresh public clone, Claude Code2.1.223 through broker C69/Qwen3.6-35B-A3B; all five displayed checks pass and a distinct fresh session recognizes the generated project/governance. Initial commit9431f681be31c3fc3ccd413240ecbed886b0157c,360 tracked files, clean project and unchanged base standard. The model needed a prompt after its initial history check failed; this is assisted automated reproduction, not human TTFS or Claude subscription validation. [[local_model_continuation]] retains all failures, setup choices, receipts and limitations.
+
+[D] C1's implemented source/twin verification remains at b1cf040; no source changed in this sitting. C3 closes with scoped evidence, the AAR below and the session record. Full R-SITE is still required at actual phase exit; P1.3 humans and DP3 remain open. The proposed [[next_build_scope]] has no operator ruling yet.
+
+[I] This sitting allocates295±35kT to P1.2; cumulative430±85kT versus90 forecast. Reported cached input735.4kT is separately visible in runtime_token_usage.json. The overrun retrospective and mixed measurement basis are explicit in [[local_model_continuation]]; billing unavailable. Remaining P1 forecast10–20kT after human records, excluding waiting and proposed design work.
+
+### Completion AAR
+
+- **Worked:** [D] Existing brokered local inference completed the copied first-project workflow and fresh-session check.
+- **Did not:** [D] Small-model tool arguments/fork failed; larger model omitted the initial commit;25kT sitting forecast was inadequate for runtime execution.
+- **Finding:** [D] File/history checks catch failures hidden by successful command exits or fluent completion statements.
+- **Change:** [D] Recorded assistance, retained failed attempts, fixed only the disposable process configuration and verified actual generated files.
+- **Follow-up:** [I] P1.3 consumes actual consenting reader records; DP3 and the proposed early-design amendment remain separate human decisions.

@@ -1,0 +1,49 @@
+{
+  "container": "garnier-p1-qwen36-20260915-1246",
+  "model": "local-qwen3.6-35b-a3b",
+  "candidate": "b1cf040",
+  "checks": [
+    {
+      "check": "router",
+      "command": "test -f ~/aDNA/CLAUDE.md",
+      "at": "2026-09-15T12:56:56.455425+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "check": "standard",
+      "command": "test -d ~/aDNA/.adna",
+      "at": "2026-09-15T12:56:56.507851+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "check": "project",
+      "command": "ls -d ~/aDNA/*.aDNA",
+      "at": "2026-09-15T12:56:56.557556+00:00",
+      "exit_code": 0,
+      "stdout": "/root/aDNA/garnier_repro.aDNA\n",
+      "stderr": ""
+    },
+    {
+      "check": "triad",
+      "command": "ls ~/aDNA/garnier_repro.aDNA/what ~/aDNA/garnier_repro.aDNA/how ~/aDNA/garnier_repro.aDNA/who",
+      "at": "2026-09-15T12:56:56.610106+00:00",
+      "exit_code": 0,
+      "stdout": "/root/aDNA/garnier_repro.aDNA/how:\nAGENTS.md\nHome.md\nairlock\nbacklog\ncampaigns\ndocs\nmigrations\nmissions\npipelines\nquests\nsessions\nskills\nstandard\ntemplates\n\n/root/aDNA/garnier_repro.aDNA/what:\nAGENTS.md\nassets\ncontext\ndecisions\ndocs\ninventory\nlattices\nontology.md\npatterns\n\n/root/aDNA/garnier_repro.aDNA/who:\nAGENTS.md\ncoordination\ngovernance\nidentity\nteam\n",
+      "stderr": ""
+    },
+    {
+      "check": "history",
+      "command": "git -C ~/aDNA/garnier_repro.aDNA log",
+      "at": "2026-09-15T12:56:56.661284+00:00",
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: your current branch 'master' does not have any commits yet\n"
+    }
+  ],
+  "completed_first_project": false,
+  "fresh_session": "not_yet_run"
+}

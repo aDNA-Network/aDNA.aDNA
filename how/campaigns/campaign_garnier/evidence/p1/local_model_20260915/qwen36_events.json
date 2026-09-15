@@ -1,0 +1,207 @@
+[
+  {
+    "event": "start",
+    "at": "2026-09-15T12:45:53.520530+00:00",
+    "argv": [
+      "docker",
+      "exec",
+      "-it",
+      "garnier-p1-qwen36-20260915-1246",
+      "bash",
+      "-lc",
+      "stty -echo; printf \"__AUTH_INPUT__\\n\"; IFS= read -r ANTHROPIC_API_KEY; export ANTHROPIC_API_KEY; export ANTHROPIC_BASE_URL=http://host.docker.internal:4000; export ANTHROPIC_MODEL=local-qwen3.6-35b-a3b; export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1; export DISABLE_AUTOUPDATER=1; export CLAUDE_CODE_DISABLE_THINKING=1; printf \"__AUTH_LOADED__\\n\"; stty echo; exec bash -l"
+    ],
+    "secret_route": "inherited broker environment -> echo-disabled PTY -> child environment; no persisted secret",
+    "route_label_correction": "Actual source: broker C69 Keychain direct read in recorder, then echo-disabled PTY, then child environment. The reused C06 route label above is historical controller wording."
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:46:16.192910+00:00",
+    "input": {
+      "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:46:42.816293+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:47:12.319481+00:00",
+    "input": {
+      "text": "1"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:47:48.175716+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:48:16.860233+00:00",
+    "input": {
+      "text": "1"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:48:34.121972+00:00",
+    "input": {
+      "text": "Create a new aDNA project for my work."
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:48:46.278837+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:50:12.953345+00:00",
+    "input": {
+      "text": "Name: garnier_repro. Description: A disposable learning project for trying aDNA with sample notes. No real data."
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:50:43.641536+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:52:54.355993+00:00",
+    "input": {
+      "text": "Yes"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:53:12.674948+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:54:08.027464+00:00",
+    "input": {
+      "text": "1"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:54:29.257751+00:00",
+    "input": {
+      "text": "1"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:55:46.363152+00:00",
+    "input": {
+      "text": "2"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:57:16.277342+00:00",
+    "input": {
+      "text": "The displayed success check `git -C ~/aDNA/garnier_repro.aDNA log` fails: there is no commit. Please finish the documented fork process, including the missing initial commit."
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:57:34.344447+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:58:26.969750+00:00",
+    "input": {
+      "text": "1"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:59:16.260085+00:00",
+    "input": {
+      "text": "1"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:59:58.867506+00:00",
+    "input": {
+      "text": "/exit"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T13:00:25.891895+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T13:00:38.593723+00:00",
+    "input": {
+      "text": "cd /root/aDNA/garnier_repro.aDNA && claude",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T13:01:05.623904+00:00",
+    "input": {
+      "text": "For verification only, read this project's CLAUDE.md and STATE.md. Identify the project and state two rules that govern your work here. Do not change files."
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T13:01:39.912751+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T13:03:46.795667+00:00",
+    "input": {
+      "text": "/exit"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T13:04:00.049457+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T13:04:50.624578+00:00",
+    "input": {
+      "text": "exit",
+      "enter": true
+    }
+  },
+  {
+    "event": "exit",
+    "at": "2026-09-15T13:04:50.642913+00:00",
+    "exit_code": 0
+  }
+]

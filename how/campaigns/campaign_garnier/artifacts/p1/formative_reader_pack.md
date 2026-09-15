@@ -22,7 +22,9 @@ tags: [garnier, p1, evidence]
 4. Record answers and confusions verbatim, followed by any clarification. Preserve the original response. These are three individual observations, not an aggregate success rate.
 5. Apply the frozen reader protocol; correct each material confusion or give it an explicit disposition before DP3. Synthetic passes do not fill this record.
 
-## Additional quickstart evidence
+## Additional quickstart evidence — requirement fulfilled locally
+
+[D] Later 2026-09-15: [[local_model_continuation]] completes the automated first-project requirement with the recorded local gateway and assistance. The three consenting reader records remain the needed inputs. The original run instructions below are preserved as the method, not a request to repeat the unchanged-candidate test.
 
 [I] In a genuinely disposable environment with Git and authenticated Claude Code, copy the candidate’s exact command, complete the first project and run its displayed success checks. Record versions, argv, outputs, actual timestamps and any assistance. Never run a clone/removal command over an existing personal workspace. The agent’s previous container run proves only clone/entry; C2 remains owed. Do not publish credentials or personal project content.
 
@@ -69,4 +71,4 @@ node scripts/inject_redirects.mjs .
 npx astro preview --port 4465
 ```
 
-[I] Run commands sequentially and stop on a failure. Never use `npm run build` or registry synchronization. Check build identity and rendered route hashes before reusing prior evidence; changed bytes require a fresh identity and affected checks. Read the current CI injection steps before gate execution, as required by [[verification_recipes]]. The rebuild is not itself a new test pass. The preview URL is local to this machine, not a public participant link; operator-mediated access or sharing requires its own explicit scope. P1's full authenticated task and human observations remain owed.
+[I] Run commands sequentially and stop on a failure. Never use `npm run build` or registry synchronization. Check build identity and rendered route hashes before reusing prior evidence; changed bytes require a fresh identity and affected checks. Read the current CI injection steps before gate execution, as required by [[verification_recipes]]. The rebuild is not itself a new test pass. The preview URL is local to this machine, not a public participant link; operator-mediated access or sharing requires its own explicit scope. The assisted automated task is complete in [[local_model_continuation]]; P1's human observations remain owed.

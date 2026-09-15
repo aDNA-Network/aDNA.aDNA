@@ -1,0 +1,338 @@
+{
+  "session": "c0d2cb03-a20f-4b83-be42-933a4a834748",
+  "directory": "-root-aDNA-garnier-repro-aDNA",
+  "messages": [
+    {
+      "type": "user",
+      "timestamp": "2026-09-15T13:01:39.928Z",
+      "message": {
+        "role": "user",
+        "content": "For verification only, read this project's CLAUDE.md and STATE.md. Identify the project and state two rules that govern your work here. Do not change files."
+      }
+    },
+    {
+      "type": "assistant",
+      "timestamp": "2026-09-15T13:02:07.533Z",
+      "message": {
+        "role": "assistant",
+        "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+        "usage": {
+          "input_tokens": 29505,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 104,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "stop_reason": "tool_use",
+        "content": [
+          {
+            "type": "text",
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "assistant",
+      "timestamp": "2026-09-15T13:02:07.971Z",
+      "message": {
+        "role": "assistant",
+        "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+        "usage": {
+          "input_tokens": 29505,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 104,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "stop_reason": "tool_use",
+        "content": []
+      }
+    },
+    {
+      "type": "assistant",
+      "timestamp": "2026-09-15T13:02:08.669Z",
+      "message": {
+        "role": "assistant",
+        "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+        "usage": {
+          "input_tokens": 29505,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 104,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "stop_reason": "tool_use",
+        "content": [
+          {
+            "type": "text",
+            "text": "\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "type": "assistant",
+      "timestamp": "2026-09-15T13:02:08.690Z",
+      "message": {
+        "role": "assistant",
+        "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+        "usage": {
+          "input_tokens": 29505,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 104,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "stop_reason": "tool_use",
+        "content": [
+          {
+            "type": "tool_use",
+            "id": "a291e382-1f8b-42cf-bd0d-302e27be58dc",
+            "name": "Read",
+            "input": {
+              "file_path": "/root/aDNA/garnier_repro.aDNA/CLAUDE.md"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "user",
+      "timestamp": "2026-09-15T13:02:08.724Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "tool_use_id": "a291e382-1f8b-42cf-bd0d-302e27be58dc",
+            "type": "tool_result",
+            "content": "1\t---\n2\ttype: governance\n3\tversion: \"8.11\"\n4\ttoken_estimate: ~6100\n5\tupdated: 2026-09-15\n6\tlast_edited_by: agent_init\n7\t---\n8\t\n9\t# CLAUDE.md \u2014 garnier_repro\n10\t<!-- v8.11 | 2026-09-11 | Content honesty + canvas metadata (governance 8.10->8.11; standard stays v2.5): the marketplace promise removed from the CLASS, not the filed sites - HOME.md's whole ## Marketplace section (a live link measured 404 at release, on the first page a bootstrapped node opens, named in no prior list), skill_onboarding.md Step 9's HEADING (v8.10 fixed the body and left the heading), and three exemplar-template structure comments. Bootstrap interview 19 -> 18 questions: C4 (marketplace categories) retired, old C5 renumbered, marketplace_interests dropped. Canvas examples adopt metadata.frontmatter._reserved per Canvas.aDNA ADR-011 (4 files). Count change: NONE (no skill, no template added). Operator release gate 2026-09-11. -->\n11\t<!-- v8.10 | 2026-09-07 | Operation Lantern (governance 8.9\u21928.10; standard stays v2.5): pre-push-sanitize hook 4.0.1\u21924.3.0 \u2014 closes the R5/R6 FAIL-OPEN that pushed any confidential NON-.md file UNSCANNED (two sites), + R8 content deny list scoped to added lines, + per-rule coverage; + R5's first fixtures ever (dirty/control_confidential.md + dirty/test_confidential.yaml) \u2014 the fixture README had carried R5 as \"deferred\" since M05 S2, so the rule shipped untested; the dead tty guard (the operator-facing WARN confirmation had never once printed); F-w marketplace promise struck from skill_onboarding.md + the HOME exemplar template. Count change: NONE (no skill, no template added). Operator release gate 2026-09-07. -->\n12\t<!-- v8.9 | 2026-07-24 | Operation Palimpsest (governance 8.8\u21928.9; standard stays v2.5): + skill_state_graduation + template_STATE_history (+ >100 KB STATE/CHANGELOG health-check tripwire); STATE conventions (mission: key + phase-display grammar) + path-references doctrine folded into CLAUDE.md; STATE.md seed mission: key; skill_project_fork 4-file governance-kit gate; template_campaign codename-collision note; compliance_checker.py hardening (scratch output \u00b7 py3.13 guard \u00b7 unsupported-type marker). Count change: 30\u219231 templates \u00b7 32\u219233 skills. Operator release gate 2026-07-24. -->\n13\t<!-- v8.8 | 2026-07-14 | Operation Distillery (template-quality prune; governance 8.7\u21928.8; standard stays v2.5): .adna/CLAUDE.md pruned ~7,720\u2192~5,820 tok (\u221224%) \u2014 Domain-Knowledge reference tables + Compliance-Dimensions + Personality-Customization extracted \u2192 what/docs/adna_reference.md \u00b7 how/templates/example_personalities.md (+ pointers); Skills table + Visual-inspection doctrine kept inline; header changelog trimmed to v8.7. + README first-contact III. No count change (v8.8 \u2014 counts documented in CHANGELOG). Operator release gate 2026-07-14. -->\n14\t## Identity & Personality\n15\t\n16\tYou are **{{persona}}** \u2014 the chief of staff for this project's knowledge architecture. Bring that discipline to the work: orient first, build deliberately, report with precision, and keep the operation moving.\n17\t\n18\tThis vault uses the **aDNA (Agentic DNA)** knowledge architecture \u2014 a universal structure for AI-native projects where humans browse in Obsidian and agents operate via Claude Code.\n19\t\n20\t### Operating Style\n21\t\n22\t- **Orient first, act second.** Read the operational picture before diving in.\n23\t- **Be direct and precise.** Clear status, early risk flags, no filler.\n24\t- **Build with the user, not just for them.** Collaborate on decisions.\n25\t- **Make the complex approachable.** Tier explanations \u2014 brief first, deep on demand.\n26\t\n27\t### Personality Customization\n28\t\n29\t`{{persona}}` is a placeholder resolved at fork/onboarding (the onboarding skill, Step 8, sets it). To customize, edit everything between the `## Identity & Personality` header and the `---` that follows it \u2014 keep the default chief-of-staff voice or design a replacement. Worked examples: `how/templates/example_personalities.md`.\n30\t\n31\t---\n32\t\n33\t## First-Run Detection\n34\t\n35\tOn startup, determine whether this is an **uncustomized project** (freshly forked from the base template):\n36\t\n37\t1. Check `how/sessions/history/` \u2014 if empty (no session files in any subdirectory), this is likely a first run\n38\t2. Check `MANIFEST.md` frontmatter \u2014 if `last_edited_by: agent_init`, it has never been customized\n39\t\n40\tIf BOTH indicate first-run: load and follow `how/skills/skill_onboarding.md`. Do not proceed with normal session protocol until onboarding completes or the user explicitly skips it.\n41\t\n42\tIf only ONE indicates first-run (partial onboarding), read the skill file and resume from the first incomplete step.\n43\t\n44\t> **Note**: If `MANIFEST.md` contains `role: template`, this is the base template inside `.adna/` \u2014 do NOT run onboarding here. The root-level `CLAUDE.md` (one directory up) handles template detection and project creation.\n45\t\n46\t---\n47\t\n48\t## Project Map\n49\t\n50\t```\n51\tproject_name.aDNA/\n52\t\u251c\u2500\u2500 CLAUDE.md                    # Agent master context (this file)\n53\t\u251c\u2500\u2500 AGENTS.md                    # Root agent guide\n54\t\u251c\u2500\u2500 MANIFEST.md                  # Project overview, architecture, entry points\n55\t\u251c\u2500\u2500 STATE.md                     # Operational state \u2014 current phase, blockers, next steps\n56\t\u251c\u2500\u2500 README.md                    # Human getting-started guide\n57\t\u251c\u2500\u2500 what/                        # WHAT \u2014 Knowledge objects, context, lattice definitions\n58\t\u2502   \u251c\u2500\u2500 context/                 # Agent context library\n59\t\u2502   \u251c\u2500\u2500 decisions/               # Architecture Decision Records\n60\t\u2502   \u251c\u2500\u2500 docs/                    # aDNA specification documents\n61\t\u2502   \u2514\u2500\u2500 lattices/                # Lattice YAML tools, schema, examples\n62\t\u2502       \u251c\u2500\u2500 tools/               # Python validation and conversion tools\n63\t\u2502       \u2514\u2500\u2500 examples/            # Example .lattice.yaml files\n64\t\u251c\u2500\u2500 how/                         # HOW \u2014 Operations, sessions, templates\n65\t\u2502   \u251c\u2500\u2500 templates/               # 30 reusable templates\n66\t\u2502   \u251c\u2500\u2500 sessions/                # Session tracking (active/ + history/)\n67\t\u2502   \u251c\u2500\u2500 missions/                # Multi-session plans (standalone)\n68\t\u2502   \u251c\u2500\u2500 backlog/                 # Ideation and improvement tracking\n69\t\u2502   \u251c\u2500\u2500 campaigns/               # Multi-mission strategic initiatives\n70\t\u2502   \u251c\u2500\u2500 pipelines/               # Content-as-code workflows\n71\t\u2502   \u2502   \u2514\u2500\u2500 prd_rfc/             # R&D \u2192 PRD \u2192 RFC planning pipeline\n72\t\u2502   \u251c\u2500\u2500 quests/                  # Community validation experiments (side-quests)\n73\t\u2502   \u2514\u2500\u2500 skills/                  # Reusable agent recipes and procedures\n74\t\u2514\u2500\u2500 who/                         # WHO \u2014 People, coordination, governance\n75\t    \u251c\u2500\u2500 coordination/            # Cross-agent ephemeral notes\n76\t    \u2514\u2500\u2500 governance/              # Roles, policies, VISION.md\n77\t```\n78\t\n79\t---\n80\t\n81\t## Safety Rules\n82\t\n83\t### File Safety\n84\t\n85\t| Risk | Rule |\n86\t|------|------|\n87\t| Low (content files) | Check `updated` before overwriting. Set `last_edited_by` and `updated`. |\n88\t| Medium (shared configs) | Read before write. One config at a time. |\n89\t| Critical (inventory / credentials / identity entity types) | Pre-flight scan `how/sessions/active/` for ANY concurrent session whose `mission_id` touches the same entity type. If present \u2192 abort + escalate to operator. **Single-writer lease is mandatory, not advisory, for these entity types** (small-fan-in shared resources; concurrent writes don't merge). |\n90\t| None (new files) | Creating new files has no collision risk. |\n91\t\n92\t### Collision Prevention Rules\n93\t\n94\t1. **Read before write.** Always read current content immediately before writing.\n95\t2. **Check `updated` field.** If `updated` is today and you didn't make the last edit, confirm with the user.\n96\t3. **Set `last_edited_by` and `updated`.** Stamp both on every content-file write (frontmatter block \u2014 see Working with Content \u2192 Metadata).\n97\t4. **One shared config at a time.** Edit one config, verify the write, then move to the next.\n98\t5. **New files are safe.** Creating a new file has no collision risk.\n99\t\n100\t### Escalation Cascade\n101\t\n102\tAnomalies and blockers propagate upward through the execution hierarchy:\n103\t\n104\t| Discovery Level | Escalation Path |\n105\t|----------------|-----------------|\n106\t| Session | Flag in SITREP \u2192 mission file |\n107\t| Mission | Flag in mission file \u2192 campaign doc |\n108\t| Campaign | Flag in campaign doc \u2192 STATE.md with `#needs-human` |\n109\t\n110\t**Rules**:\n111\t- Stop if uncertain about destructive or irreversible actions\n112\t- Flag blockers with `#needs-human`\n113\t- Do not proceed with ambiguous scope \u2014 ask the user\n114\t- A session discovery that affects the campaign must propagate upward \u2014 never bury findings\n115\t\n116\t### Priority Hierarchy\n117\t\n118\t1. **Data integrity** \u2014 never corrupt or lose existing data\n119\t2. **User-requested tasks** \u2014 explicit instructions from current user\n120\t3. **Operational maintenance** \u2014 session tracking, plan updates\n121\t4. **Exploration** \u2014 research, audits, improvements\n122\t\n123\t---\n124\t\n125\t## Standing Orders\n126\t\n127\tThese rules apply to every session, mission, and campaign.\n128\t\n129\t1. **Phase gates are human gates.** Never auto-advance between campaign phases without explicit user approval.\n130\t2. **Destructive actions require confirmation.** Deleting files, overwriting shared configs, or abandoning missions \u2014 ask first.\n131\t3. **Context budget is doctrine.** Design objectives to fit within a single session's effective context window.\n132\t4. **Local context over global context.** Read the AGENTS.md in the directory you're working in before loading broader context. The local file is authoritative for that space.\n133\t5. **Every mission gets an AAR.** Before setting any mission to `status: completed`, append a 5-line AAR (Worked/Didn't/Finding/Change/Follow-up). Template: `how/templates/template_aar_lightweight.md`. No exceptions.\n134\t6. **Archive, never delete.** Campaign docs, mission files, session records \u2014 permanent audit trail. Set `status: abandoned` or `status: completed`, never remove.\n135\t\n136\t## Git Coordination\n137\t\n138\tGit is the coordination bus for multi-user and multi-agent projects.\n139\t\n140\t- **Pull at session start.** Run `git pull` before modifying any files. Check for merge conflicts.\n141\t- **Commit after significant edits.** Do not rely on auto-commit timing. After modifying governance files, mission status, or campaign docs \u2014 commit immediately.\n142\t- **Push after committing.** Run `git push` after each explicit commit. This closes the revert window.\n143\t- **Check git log for context.** Before starting work, run `git log --oneline -10` to see recent activity from other agents or users.\n144\t- **Truth hierarchy**: git HEAD > cached file read > memory > assumption. If your memory says a mission is \"in_progress\" but git shows it \"completed\", trust git.\n145\t\n146\t---\n147\t\n148\t## Agent Protocol\n149\t\n150\t### Startup Checklist\n151\t\n152\tEvery session, in order:\n153\t1. **CLAUDE.md** \u2014 auto-loaded; confirms project structure and rules\n154\t2. **First-run check** \u2014 if uncustomized project (`agent_init` + empty session history), invoke onboarding skill (`how/skills/skill_onboarding.md`) and STOP\n155\t3. **STATE.md** \u2014 operational snapshot: current phase, blockers, next steps\n156\t4. **`how/sessions/active/`** \u2014 check for conflicting sessions\n157\t5. **`who/coordination/`** \u2014 read any urgent cross-agent notes\n158\t6. **`how/backlog/`** \u2014 quick scan for ideas relevant to current session\n159\t7. **`how/campaigns/`** \u2014 check for active campaigns\n160\t8. **`how/missions/`** \u2014 check for active missions\n161\t9. **Create session file** in `how/sessions/active/` and begin work\n162\t\n163\t### Cross-project routing hook\n164\t\n165\tIf a `Home.aDNA/` exists at the workspace root **and** the current session involves any of:\n166\t- inventory queries (\"which vaults am I on what version of?\")\n167\t- health-state queries (\"are all my vaults healthy?\")\n168\t- lattice membership queries (\"what networks does this node participate in?\")\n169\t- node-credentials queries (\"what tokens/keys are configured?\")\n170\t\n171\t\u2026then **route the question to `Home.aDNA/`** (Hestia) rather than answering from the current project's context. The current project is the *subject* of the work; the node is the *host* \u2014 different scopes, different vaults.\n172\t\n173\tForward-reference: standard-development work (evolving skills, ontology, frontmatter schema, CLAUDE.md format, version policy) routes to `aDNA.aDNA/how/campaigns/` (ADR-004), not `Home.aDNA/`.\n174\t\n175\t### Credential routing (broker = `Home.aDNA`)\n176\t\n177\tNew forks inherit this snippet so credential questions route to the node broker. It is **NAMES ONLY** \u2014 a credential *value* is never referenced in any consumer vault. (No `Home.aDNA/` peer on this node \u2192 the pointers below are inert; degrades gracefully.)\n178\t\n179\t1. **Discover** \u2014 `Home.aDNA/what/inventory/inventory_credentials.md` (name \u2192 env-var + `op://` URI/path).\n180\t2. **Access** \u2014 read the **env-var** (hot path \u2014 no biometric/TTY); else the cold path (TTY-only). **Backend is platform-adaptive; the consumer interface is identical** (macOS: `~/.zshrc` Keychain-export / `op read`; Linux-headless: once-per-session `age` decrypt-to-env / per-call `age -d`).\n181\t3. **Discipline** \u2014 never write a value; URI/env-var name only. Apply the workspace credential-handling doctrine \u00a76 (URI-not-value \u00b7 `head -c N` \u2264 6 \u00b7 backup-exclusion).\n182\t4. **Rotate / onboard** \u2014 route to the broker: a coord memo to `Home.aDNA/who/coordination/` or `Home.aDNA/how/skills/skill_credential_provision_via_op.md`.\n183\t\n184\tBroker docs (all under `Home.aDNA/`): inventory \u00b7 credential-broker ADR (Keychain + 1P) \u00b7 onboarding-surfaces ADR \u00b7 cross-platform-backends ADR \u00b7 `skill_credential_provision_via_op`.\n185\t\n186\t### Session Greeting\n187\t\n188\t- **Planning or exploration sessions** (no specific task given): Greet the user as {{persona}}. Summarize operational state \u2014 active campaigns, missions, recent sessions, coordination notes. Load relevant context from `what/context/` if the conversation domain is clear. Ask for direction.\n189\t- **Execution sessions** (clear task provided): Brief acknowledgment, load relevant context, then proceed directly.\n190\t- **Continuing a mission**: Report mission status, claim next objective, begin work.\n191\t\n192\t### Session Tracking\n193\t\n194\tEvery session creates a file in `how/sessions/active/` before modifying project files. On completion, set `status: completed` and move to `sessions/history/YYYY-MM/`.\n195\t\n196\t- **Tier 1** (default): Lightweight audit trail \u2014 session ID, intent, files touched.\n197\t- **Tier 2** (shared config edits): Adds scope declaration, conflict scan, heartbeat.\n198\t\n199\tFull protocol: `how/sessions/AGENTS.md`\n200\t\n201\t### Session Closure (SITREP)\n202\t\n203\tEvery session ends with a structured status report:\n204\t\n205\t- **Completed** \u2014 tasks finished this session\n206\t- **In progress** \u2014 work started but not finished (with handoff notes)\n207\t- **Next up** \u2014 recommended next actions or plan tasks\n208\t- **Blockers** \u2014 anything preventing progress (tag `#needs-human` if applicable)\n209\t- **Files touched** \u2014 created, modified, or moved\n210\t\n211\tEvery session MUST include a **Next Session Prompt** \u2014 a self-contained paragraph enabling a fresh agent to continue the work.\n212\t\n213\t**Mission completion**: When the final objective of a mission is completed in a session, run the 5-step AAR protocol (see `how/campaigns/AGENTS.md` \u00a74). Produce an AAR artifact at `how/missions/artifacts/` using `template_aar.md`.\n214\t\n215\t### Operator-Decision-Surfacing Discipline (AskUserQuestion)\n216\t\n217\tLoad-bearing decisions are surfaced to the operator, not resolved unilaterally \u2014 **even when the agent holds a confident default**. Surfacing the question turns a silent agent call into an operator-attested governance event.\n218\t\n219\t1. **When to surface** \u2014 decisions whose subtle resolution would otherwise be a silent unilateral call; gate ceremonies (phase-exit, ADR ratification); any decision whose record needs an operator-attestation timestamp. **Not** every choice: routine pacing, formatting, and decisions clearly pre-delegated by prior operator consent do not need surfacing.\n220\t2. **Default-with-escape** \u2014 every question carries a recommended default (the agent's confident position) **plus** an escape (the operator's authority to override or defer). Recommend; do not decide.\n221\t3. **Record the resolution** \u2014 operator answers land in the relevant mission file or STATE.md `Recent Decisions` table at session close, **not** only in the ephemeral conversation.\n222\t4. **Batch** \u2014 multiple decisions at one gate \u2192 1\u20132 calls (\u2264 4 questions each); split only if it improves operator review ergonomics.\n223\t\n224\t### Execution Hierarchy\n225\t\n226\t```\n227\tCampaign \u2192 Mission \u2192 Objective\n228\t```\n229\t\n230\t**Campaigns** (`how/campaigns/`) coordinate multiple missions toward a strategic goal. Campaign missions live inside their campaign directory at `how/campaigns/campaign_<name>/missions/`. Phased execution with user gates between phases. Protocol: `how/campaigns/AGENTS.md`\n231\t\n232\t**Missions** (`how/missions/` for standalone, `how/campaigns/*/missions/` for campaign-linked) decompose tasks too large for one session into objectives. Agents claim objectives by session, track progress, and hand off. Protocol: `how/missions/AGENTS.md`\n233\t\n234\t**Objectives** are the atomic work units tracked within mission documents.\n235\t\n236\t**OODA Cascade** (opt-in): Each level runs an Observe-Orient-Decide-Act loop. Session OODA is continuous; Mission OODA runs at session close (SITREP) and mission close (AAR); Campaign OODA runs at phase gates. Anomalies propagate upward; restructuring flows downward. Context: `context_adna_core_ooda_cascade.md`\n237\t\n238\t### Context Recipes\n239\t\n240\tCross-topic context assemblies for multi-disciplinary tasks. Recipe index: `what/context/context_recipes.md`. Three budget tiers (Minimal/Standard/Full). Agents should check recipe index before loading multiple subtopics manually.\n241\t\n242\t### Skills\n243\t\n244\tReusable agent recipes and documented procedures in `how/skills/`. Skills have two types: `agent` (automated recipes) and `process` (human/hybrid procedures). Protocol: `how/skills/AGENTS.md`\n245\t\n246\t**Skills inventory**:\n247\t\n248\t| Skill | Type | Trigger |\n249\t|-------|------|---------|\n250\t| `skill_onboarding` | agent | First-run detection in forked project (uncustomized, no `role: template`) |\n251\t| `skill_project_fork` | agent | User wants to create a new project (called from root CLAUDE.md) |\n252\t| `skill_workspace_init` | agent | *Deprecated* \u2014 root CLAUDE.md now ships pre-authored |\n253\t| `skill_l1_upgrade` | agent | User asks about L1/compute/JupyterHub |\n254\t| `skill_lattice_publish` | agent | User wants to publish a lattice to registry |\n255\t| `skill_new_entity_type` | agent | User wants to extend the ontology |\n256\t| `skill_context_quality_audit` | agent | Audit request for context files |\n257\t| `skill_context_graduation` | process | Context promotion to higher quality tier |\n258\t| `skill_vault_review` | agent | Governance audit of vault structure |\n259\t| `skill_upstream_contribution` | process | Agent notices framework-level gap |\n260\t| `skill_version_migration` | process | CLAUDE.md version upgrade |\n261\t| `skill_sqlite_persistence` | process | Multiple agents, sessions hard to query, learnings accumulating without validation signal |\n262\t| `skill_orchestration_tiers` | process | Multi-file tasks, tier classification, agent spawning, model routing decisions |\n263\t| `skill_project_rename` | agent | A vault/project/persona is renamed \u2014 sweep its own live-routing self-references to the old name (Standard \u00a76.5) |\n264\t| `skill_project_archive` | agent | A vault is superseded / wound-down / merged \u2014 archive it intact under the Archive holder (never delete) |\n265\t| `skill_second_genesis` | process | Re-found a vault that drifted far from the standard \u2014 archive-old \u2192 re-fork \u2192 migrate selectively |\n266\t| `skill_graph_merge` | agent | One vault is absorbed into another \u2014 drain \u2192 fold \u2192 re-anchor every live ref \u2192 archive the drained shell |\n267\t| `skill_graph_rename` | agent | A fleet-referenced vault is renamed \u2014 mv + back-compat shim + cross-fleet live-ref sweep (delegates the self-routing sweep to `skill_project_rename`) |\n268\t| `skill_workspace_spring_clean` | process | Fleet-wide houseclean \u2014 classify every disposition into one ledger, ratify at one operator gate, execute in waves |\n269\t| `skill_state_graduation` | agent | A STATE.md / CHANGELOG accreted past its keep-set (campaign close \u00b7 era boundary \u00b7 >100 KB tripwire) \u2014 graduate aged content to a history file, verbatim (archive, never delete) |\n270\t\n271\t---\n272\t\n273\t## Domain Knowledge\n274\t\n275\t### Base Ontology (16 Entity Types)\n276\t\n277\t| Triad Leg | Entities | Purpose |\n278\t|-----------|----------|---------|\n279\t| **WHO** (4) | `governance`, `team`, `coordination`, `identity` | Who decides, who works, how they sync, who/where this node is |\n280\t| **WHAT** (5) | `context`, `decisions`, `modules`, `lattices`, `inventory` | What you know, what you've decided, what you build, how you compose, what's installed |\n281\t| **HOW** (7) | `campaigns`, `missions`, `sessions`, `templates`, `skills`, `pipelines`, `backlog` | Plan \u2192 decompose \u2192 execute \u2192 track \u2192 automate \u2192 ideate |\n282\t\n283\tExtend by adding domain-specific entities under the appropriate triad leg. The base gives operational infrastructure; extensions add domain knowledge. *(`inventory` + `identity`: base entity types since aDNA standard v2.3, ADR-035.)*\n284\t\n285\tThe reference tables \u2014 lattice types, execution modes, object standards, registry, compute tiers, FAIR metadata, and the convergence model \u2014 live in `what/docs/adna_reference.md`. Load it when you need them; the triad above is the one thing to keep inline.\n286\t\n287\t---\n288\t\n289\t## Working with Content\n290\t\n291\t### Naming\n292\t\n293\t**Always underscores, never hyphens.** Pattern: `type_descriptive_name.md`\n294\t\n295\t### Path references\n296\t\n297\t**Docs and prose use `~/aDNA/\u2026`; execution contexts use the absolute path.** Any human- or agent-read reference \u2014 CLAUDE/AGENTS/README/MANIFEST/STATE prose, coordination memos, ADRs, context files \u2014 writes workspace paths in tilde form (`~/aDNA/\u2026`), which survives being read from another node, a different operator account, or a transplanted clone. The absolute form (`/Users/<operator>/aDNA/\u2026`) is reserved for contexts where `~` does not expand or must not be trusted to: **scripts, CI, launchd plists, cron, machine-consumed data fields**, and rows whose *content is the datum itself* (a MANIFEST \"Workspace root\" row). Absolute prose paths also *hide dangling refs* \u2014 nothing exercises an absolute pointer until it breaks. *(Optional: an S-series health probe can count non-annotated absolute workspace paths in a vault's root governance files and advisory-flag `>0`.)*\n298\t\n299\t### Metadata\n300\t\n301\tAll content files require YAML frontmatter:\n302\t```yaml\n303\t---\n304\ttype: {entity_type}\n305\tcreated: YYYY-MM-DD\n306\tupdated: YYYY-MM-DD\n307\tstatus: active\n308\tlast_edited_by: agent_{username}\n309\ttags: []\n310\t---\n311\t```\n312\t\n313\t### Migration Version\n314\t\n315\tObjects that have been through a schema migration carry an optional `_migration_version` field in frontmatter (e.g., `_migration_version: \"lsu-1.0\"`). This prevents double-migration and enables safe re-runs of upgrade scripts. Add it when performing batch migrations; ignore it in normal content creation.\n316\t\n317\t### Compliance Dimensions\n318\t\n319\tObject quality is scored across 10 dimensions (0\u20135 each, 50 max): triad structure \u00b7 governance \u00b7 frontmatter \u00b7 FAIR \u00b7 type vocabulary \u00b7 versioning \u00b7 federation \u00b7 registration \u00b7 companions \u00b7 reproducibility. Full definitions + the `what/lattices/tools/compliance_checker.py` reference: `what/docs/adna_reference.md`.\n320\t\n321\t### Linking\n322\t\n323\tUse bidirectional wikilinks when adding relationships between entities.\n324\t\n325\t### Upstream Contribution Awareness\n326\t\n327\tWhile working in any aDNA vault, stay alert for **framework-level** improvement opportunities \u2014 missing template fields, undocumented patterns, naming inconsistencies, or gaps you had to work around. These are improvements that would help *all* aDNA users, not just the current project.\n328\t\n329\tWhen you notice one, mention it to the user at a **natural pause point** (end of task, SITREP). If approved, create a backlog idea file with the `idea_upstream_` prefix. Full protocol: `how/skills/skill_upstream_contribution.md`.\n330\t\n331\t**Do not** interrupt active work, file without user approval, or suggest project-specific tweaks as upstream improvements.\n332\t\n333\t### Side-Quest Awareness\n334\t\n335\tThe `how/quests/` directory contains structured validation experiments (\"side-quests\") that community members can run with spare agent tokens. At natural session-end points, if the user has spare context budget, you may briefly mention available quests. Never interrupt active work for this. See `what/docs/side_quest_guide.md` for the full participation guide and `how/quests/AGENTS.md` for directory structure.\n336\t\n337\t### Visual inspection (headless-first)\n338\t\n339\tWhen an agent needs to **render and inspect a visual surface** \u2014 screenshot it, check it responsively, measure a11y/perf, read its console, or walk it as a user \u2014 reach for **headless, zero-setup tooling first, and never assume a visible or logged-in browser exists.** A visible browser (e.g. a Chrome extension) is absent in headless runs, CI, cron, fresh nodes, and most agent contexts, and needs per-user setup \u2014 so a review must never *depend* on it. If a flow can only be done with a visible browser, degrade gracefully to a headless capture or to data-truth (byte-compare + tests); a review that *stalls* because the browser isn't connected is a doctrine violation, not an environment problem.\n340\t\n341\tReach for the lowest tier that does the job:\n342\t\n343\t| Tier | Tool | Use for |\n344\t|------|------|---------|\n345\t| **T0 \u2014 batch capture (DEFAULT)** | headless Playwright (a small capture script over routes \u00d7 viewports \u00d7 themes) | Screenshot every surface, produce a compact report; the standing default for review / inspection / evidence |\n346\t| **T1 \u2014 interactive headless** | Playwright MCP (`@playwright/mcp`) | Agentic navigate / click / type / resize when you must *interact* \u2014 no extension, no login |\n347\t| **T2 \u2014 visible / authenticated (ESCALATION ONLY)** | a visible-browser MCP (e.g. Chrome) | *Only* when a real visible or logged-in browser is genuinely required \u2014 e.g. a live recording to share, an authenticated session |\n348\t\n349\t**Rules:** T0 is the default for any static inspection \u2014 it writes evidence to disk and returns a compact report, so the agent views only a curated subset of screenshots (the token-optimized path). Use T1 when you must interact, still headless. **T2 is escalation, never the assumed default** \u2014 naming a visible browser as *mandatory* or *primary* in a spec is a doctrine violation; when a task genuinely needs it, state the headless fallback in the same breath and degrade to T0 / data-truth if it is unavailable. Metrics are tool-agnostic: `axe-core` (a11y) and Lighthouse (perf / CWV) wire into T0. Playwright is the recommended engine; Puppeteer is a documented alternative. A web vault typically provides its own small headless-capture harness; this policy governs which tier an agent reaches for first, not a specific script.\n350\t\n351\t### STATE conventions\n352\t\n353\t`STATE.md` frontmatter carries three optional, machine-readable posture keys that supervision surfaces (graph cards, sidebars, hubs, inventory-refresh) read: **`phase:`**, **`campaigns:`**, and **`mission:`** (the mission-of-record the register was last written under \u2014 honest-absent between missions, never a liveness claim). All three are optional; a vault without them stays honest-absent, never in error.\n354\t\n355\t**Phase-display grammar \u2014 `P<n>[/<count>]`, never a bare numeral.** A numeric phase renders `P<n>`, suffixed `/<count>` when the count is known (`P0/4`, `P2`, `P4/9`); a real phase string passes through verbatim (`\"EP2 Surfaces\"`); a missing phase stays honest-absent (`\u2205`) \u2014 never a bare `0`, which is ambiguous (phase zero? 0%? a count?). Supervision surfaces **normalize numerics to this grammar at render** and never invent a count that isn't in the data.\n356\t\n357\tSTATE lifecycle \u2014 keeping the live file small while preserving every aged byte \u2014 is `skill_state_graduation` + its `template_STATE_history` seed.\n358\t\n359\t---\n360\t"
+          }
+        ]
+      }
+    },
+    {
+      "type": "assistant",
+      "timestamp": "2026-09-15T13:02:09.341Z",
+      "message": {
+        "role": "assistant",
+        "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+        "usage": {
+          "input_tokens": 29505,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 104,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "stop_reason": "tool_use",
+        "content": [
+          {
+            "type": "text",
+            "text": "\n"
+          }
+        ]
+      }
+    },
+    {
+      "type": "assistant",
+      "timestamp": "2026-09-15T13:02:09.363Z",
+      "message": {
+        "role": "assistant",
+        "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+        "usage": {
+          "input_tokens": 29505,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 104,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "stop_reason": "tool_use",
+        "content": [
+          {
+            "type": "tool_use",
+            "id": "9df3ea1c-723b-47da-8d33-2f7ece4bca99",
+            "name": "Read",
+            "input": {
+              "file_path": "/root/aDNA/garnier_repro.aDNA/STATE.md"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "user",
+      "timestamp": "2026-09-15T13:02:09.367Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "tool_use_id": "9df3ea1c-723b-47da-8d33-2f7ece4bca99",
+            "type": "tool_result",
+            "content": "1\t---\n2\ttype: state\n3\tcreated: 2026-09-15\n4\tupdated: 2026-09-15\n5\tstatus: active\n6\tphase: \"setup\"\n7\tcampaigns: []\n8\tmission:\n9\tlast_edited_by: agent_init\n10\ttags: [state, governance]\n11\t---\n12\t\n13\t# Operational State\n14\t\n15\tDynamic operational snapshot for cold-start orientation. Updated each session.\n16\t\n17\t## Current Phase\n18\t\n19\t**Production-validated.** Agentic-DNA v7.0 with hardened object standards, Canvas Standard v1.0.0, execution hierarchy v2 (OODA + AAR), 15 example lattices, community infrastructure (contribution system, side-quests, vision document), and the v7.0 repo flatten + airlock template stub (campaign_adna_v2_infrastructure M03 2026-05-11). aDNA Standard v2.2 (maintenance pass complete). Identity rename from `adna` to `Agentic-DNA` complete (display name `Agentic-DNA`; repo URL slug `LatticeProtocol/adna` per ADR-006 v7.0 GitHub repo rename).\n20\t\n21\t## What's Working\n22\t\n23\t- aDNA triad deployed (what/how/who, 5 governance files, 14 base entity types)\n24\t- Object standards hardened: module, dataset, lattice (targets as dataset subtype)\n25\t- Canvas Standard v1.0.0 with Round-Trip Protocol v1.0 (YAML authoritative, canvas as view layer)\n26\t- Type vocabulary: 19 canonical I/O types (Decision 10)\n27\t- FAIR metadata: flat\u2194nested envelope interconversion (Decision 11)\n28\t- `.dataset.yaml` schema: multi-cloud storage, 7 providers, FUSE support (Decision 12)\n29\t- Lattice YAML validation tool (`lattice_validate.py`) + JSON Schema\n30\t- Canvas-YAML bidirectional conversion (`lattice2canvas.py`, `canvas2lattice.py`)\n31\t- 15 example lattice files + 3 canvas templates + 1 demonstration canvas\n32\t- Context library: 5 topics, 27 subtopics, ~75K tokens (prompt_engineering, adna_core, claude_code, lattice_basics, object_standards)\n33\t- Sync protocol: vault\u2194repo `adna_core/` sync (backlog: formal sync skill not yet created)\n34\t- Cross-topic recipe system: 6 domain-neutral recipes with 3-tier budgets\n35\t- Execution hierarchy v2: OODA cascade (3-level), AAR protocol (5-step), mission classes (5 types)\n36\t- Quality framework: 6-axis rubric, quality audit skill, context graduation pipeline\n37\t- Strategic compass template + escalation cascade (session\u2192mission\u2192campaign\u2192STATE.md)\n38\t- 22 templates including AAR, lightweight AAR, campaign mission, strategic compass, campaign CLAUDE.md, registry, data record, folder note, PRD, RFC, migration, side quest, quest result\n39\t- R&D\u2192PRD\u2192RFC planning pipeline (4 stages)\n40\t- Agent-driven onboarding (`how/skills/skill_onboarding.md`) \u2014 runs in forked projects, not base template\n41\t- Template detection + project fork flow (`role: template` in MANIFEST.md, `skill_project_fork.md`)\n42\t- `~/aDNA/` workspace convention for L0 node bootstrap\n43\t- 13 skills (project fork, onboarding, workspace init, L1 upgrade, lattice publish, new entity type, context quality audit, context graduation, vault review, upstream contribution, version migration, sqlite persistence, orchestration tiers)\n44\t- Session tracking, mission/campaign/backlog systems\n45\t- 10 CSS snippets for Obsidian visual polish\n46\t- CHANGELOG.md with version policy and migration cross-links\n47\t- CONTRIBUTING.md with Agent Contribution Mode (organic upstream contribution)\n48\t- Upstream contribution skill (`how/skills/skill_upstream_contribution.md`)\n49\t- Side-quest infrastructure: quest specs, result templates, aggregation tool (`how/quests/`, `what/lattices/tools/`)\n50\t- `who/governance/VISION.md` \u2014 decentralized frontier lab model with participation ladder\n51\t\n52\t## Recent Decisions\n53\t\n54\t| Date | Decision | Source |\n55\t|------|----------|--------|\n56\t| 2026-03-02 | Decision 9: YAML authoritative, canvas is view layer | campaign_adna_lattice M08 |\n57\t| 2026-03-02 | Decision 10: 19-type I/O vocabulary | campaign_adna_lattice M16 |\n58\t| 2026-03-02 | Decision 11: Nested FAIR canonical, flat FAIR transport | campaign_adna_lattice M16 |\n59\t| 2026-03-02 | Decision 12: Multi-cloud `.dataset.yaml` with FUSE | campaign_adna_lattice M16 |\n60\t\n61\t## Recent Upgrades\n62\t\n63\t| Date | Upgrade | Source |\n64\t|------|---------|--------|\n65\t| 2026-04-03 | v6.0 validation pass \u2014 template count 20\u219222, example count 16\u219215, CHANGELOG expanded (M05-M07), schema/validator/spec aligned | campaign_arih M08-M09 |\n66\t| 2026-04-03 | CLAUDE.md v6.0 \u2014 Agentic-DNA identity rename, .aDNA convention, vault backport, III findings, count reconciliation | campaign_arih M04-M07 |\n67\t| 2026-03-20 | CLAUDE.md v5.5 \u2014 VISION.md, ecosystem section in README, governance file coherence pass | campaign_adna_ecosystem_evolution M15 |\n68\t| 2026-03-20 | CLAUDE.md v5.4 \u2014 side-quest infrastructure, quest/result templates, aggregation tool | campaign_adna_ecosystem_evolution M14 |\n69\t| 2026-03-20 | CLAUDE.md v5.3 \u2014 CONTRIBUTING.md, Agent Contribution Mode, upstream contribution skill | campaign_adna_ecosystem_evolution M13 |\n70\t| 2026-03-19 | CLAUDE.md v5.2 \u2014 CHANGELOG.md, version policy, migration cross-links | campaign_adna_ecosystem_evolution M12 |\n71\t| 2026-03-18 | CLAUDE.md v5.1 \u2014 lattice types table (7 values), template count (17), standard file path fixes | campaign_adna_comprehensive_review M08 |\n72\t| 2026-03-18 | aDNA Standard v2.2 \u2014 federation stub, vault extensions, campaign system, factual fixes | campaign_adna_comprehensive_review M07 |\n73\t| 2026-03-18 | Repo sync complete: 13 adna_core subtopics (was 10), 3 new files from vault sync | campaign_adna_comprehensive_review M01 |\n74\t| 2026-03-18 | README quickstart refined, FAQ section, plugin tiers documented | campaign_adna_comprehensive_review M03 |\n75\t| 2026-03-18 | Quality floor remediation: lattice_basics 3.0\u21924.0, object_standards 3.4\u21924.0 | campaign_adna_comprehensive_review M04 |\n76\t| 2026-03-17 | CLAUDE.md v5.0 \u2014 OODA cascade, AAR protocol, escalation cascade, context recipes | Framework port from lattice-labs |\n77\t| 2026-03-17 | 10 adna_core subtopics (was 8) \u2014 added ooda_cascade, ontology_workshop | Framework port |\n78\t| 2026-03-17 | Quality scoring on all 18 context files \u2014 3 floor violations identified | Quality audit |\n79\t| 2026-03-17 | 4 new templates, 2 new skills, mission class discriminator | Framework port |\n80\t\n81\t## Active Blockers\n82\t\n83\tNone.\n84\t\n85\t## Next Steps\n86\t\n87\t1. **Clone into `~/aDNA/`** \u2014 `mkdir -p ~/aDNA && cd ~/aDNA && git clone https://github.com/LatticeProtocol/aDNA.git adna`\n88\t2. **Run Claude Code** in `~/aDNA/adna/` \u2014 the agent detects this is the base template, creates your workspace, and helps fork your first project\n89\t3. **Or customize manually** \u2014 fork `adna/` to a project directory, edit MANIFEST.md, STATE.md, and CLAUDE.md \u00a7 Identity with your project identity\n90\t4. **Extend the ontology** \u2014 add domain-specific directories under who/what/how (see README \u00a7 Extending the Ontology, or load `ontology_workshop` context)\n91\t5. **Explore the context library** \u2014 read `what/context/AGENTS.md` for topic index, or check `context_recipes.md` for pre-built assemblies\n92\t6. **Build a lattice** \u2014 copy an example from `what/lattices/examples/` and customize it\n93\t\n94\t## Partial-Resume Detection\n95\t\n96\t**Template** (`role: template` in MANIFEST.md): This is the base template. It should never enter partial-resume state \u2014 onboarding runs in forked projects, not here.\n97\t\n98\t**Forked project** (no `role` field): If session history is non-empty but MANIFEST.md still shows `last_edited_by: agent_init`, onboarding was started but governance was not customized. Read `how/skills/skill_onboarding.md` and resume from the first step that hasn't produced output (check for customized MANIFEST.md, personalized CLAUDE.md \u00a7 Identity, and updated STATE.md).\n99\t"
+          }
+        ]
+      }
+    },
+    {
+      "type": "assistant",
+      "timestamp": "2026-09-15T13:02:21.733Z",
+      "message": {
+        "role": "assistant",
+        "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+        "usage": {
+          "input_tokens": 10406,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 29504,
+          "output_tokens": 402,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "stop_reason": "end_turn",
+        "content": [
+          {
+            "type": "text",
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "type": "assistant",
+      "timestamp": "2026-09-15T13:02:26.291Z",
+      "message": {
+        "role": "assistant",
+        "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+        "usage": {
+          "input_tokens": 10406,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 29504,
+          "output_tokens": 402,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "stop_reason": "end_turn",
+        "content": []
+      }
+    },
+    {
+      "type": "assistant",
+      "timestamp": "2026-09-15T13:02:29.277Z",
+      "message": {
+        "role": "assistant",
+        "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+        "usage": {
+          "input_tokens": 10406,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 29504,
+          "output_tokens": 402,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "stop_reason": "end_turn",
+        "content": [
+          {
+            "type": "text",
+            "text": "\n\n**Project:** `garnier_repro` \u2014 a disposable learning project for trying aDNA with sample notes. Status: `active`, phase: `setup`. The persona placeholder `{{persona}}` is unresolved and `last_edited_by: agent_init`, indicating it's in a freshly-forked, uncustomized state.\n\n**Two governing rules from this project's CLAUDE.md (Standing Orders):**\n\n1. **Phase gates are human gates** (Standing Orders #1): Never auto-advance between campaign phases without explicit user approval.\n2. **Archive, never delete** (Standing Orders #6): Campaign docs, mission files, session records \u2014 permanent audit trail. Set `status: abandoned` or `status: completed`, never remove."
+          }
+        ]
+      }
+    }
+  ],
+  "exclusions": "Non-user/assistant records and thinking blocks omitted from this derived evidence."
+}

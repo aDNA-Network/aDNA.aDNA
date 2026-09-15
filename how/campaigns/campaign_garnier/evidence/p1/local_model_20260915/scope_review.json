@@ -1,0 +1,14 @@
+{
+  "reviewer": "agent_codex",
+  "review_type": "manual_scope_review_by_same_executor_not_independent_certification",
+  "base_commit": "134be68",
+  "positive_case": "GARNIER evidence/records and scoped STATE/session updates",
+  "positive_verdict": "allowed",
+  "negative_fixture": "scope_negative_control.diff",
+  "negative_verdict": "reject",
+  "reason": "site/src/data/vaults.json is reserved; the fixture does not authorize or perform that write.",
+  "authority_case": "next_build_scope.md has pending ratified-by/date and proposed status; no operator response has arrived",
+  "authority_verdict": "early visual production and DP3 acceptance not authorized",
+  "website_source_diff": [],
+  "frozen_p0_diff": []
+}

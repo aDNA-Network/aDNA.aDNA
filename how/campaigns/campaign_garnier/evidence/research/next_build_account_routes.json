@@ -38,7 +38,7 @@
       "gateway_origin": "http://host.docker.internal:4000",
       "liveliness_http": 200
     },
-    "project_creation": "in_progress",
+    "project_creation": "completed_with_recorded_assistance_on_qwen36",
     "qwen36_recheck": {
       "surface": "local_chat MCP",
       "model": "local-qwen3.6-35b-a3b",
@@ -47,7 +47,8 @@
       "output_tokens": 107
     },
     "qwen25_project_creation": "failed_triad_and_history",
-    "qwen36_project_creation": "in_progress"
+    "qwen36_project_creation": "all_five_checks_and_fresh_session_pass",
+    "evidence": "../p1/local_model_20260915/qwen36_final_project_checks.json"
   },
   "host_account_status_receipt": "account_status.json",
   "quota_verified": false,

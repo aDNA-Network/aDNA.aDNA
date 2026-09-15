@@ -1,0 +1,95 @@
+{
+  "recorded_at": "2026-09-15T13:12:56.400212+00:00",
+  "source_candidate": "b1cf040",
+  "public_release": "dea4ab9d4eb7242c832a6311a6e08d85a5791f8c",
+  "generated_project_commit": "9431f681be31c3fc3ccd413240ecbed886b0157c",
+  "files": [
+    {
+      "file": "qwen25_credential_scan.json",
+      "bytes": 307,
+      "sha256": "9e0d5478481ad7309feeef4b40a02bb32d90369b04d0b373c884f71aa8ac5dab"
+    },
+    {
+      "file": "qwen25_events.json",
+      "bytes": 4572,
+      "sha256": "dc871da184007bce991f8975a07a553ce943d59042b4393abfa5f4bf66e3a678"
+    },
+    {
+      "file": "qwen25_messages.json",
+      "bytes": 12709,
+      "sha256": "40edb61a18608d5410be6b452a3068cb80379a345980a9e9cbb79d2323983135"
+    },
+    {
+      "file": "qwen25_project_checks.json",
+      "bytes": 1620,
+      "sha256": "442d00624d00881844e38830fdfe29b031ada48a92ee65e2724ebafb173ea40f"
+    },
+    {
+      "file": "qwen25_terminal_sanitized.log",
+      "bytes": 96052,
+      "sha256": "e75c91f3db169b2ee39de10529233b5a6eb60198b5cb736d3abbc6e8047c7ecb"
+    },
+    {
+      "file": "qwen36_after_commit_request_checks.json",
+      "bytes": 1854,
+      "sha256": "e1918a33651588c9188003a2bb0e34de9bd7168aa8fac405e42622aef241541c"
+    },
+    {
+      "file": "qwen36_creation_messages.json",
+      "bytes": 201271,
+      "sha256": "3552dd4c4f599b72bac6b4053415e271660b368f1bd91db8f651eb72d0241ff0"
+    },
+    {
+      "file": "qwen36_credential_scan.json",
+      "bytes": 433,
+      "sha256": "d7e183f33317dd2a96d2e25a44ac1d09cc71398fcb6597633356b0e14283a967"
+    },
+    {
+      "file": "qwen36_events.json",
+      "bytes": 4733,
+      "sha256": "fd5f22053052bb12cdd088d1d60432d556e7b2b283779648ade6f5ec32ce3e57"
+    },
+    {
+      "file": "qwen36_final_project_checks.json",
+      "bytes": 2177,
+      "sha256": "7997a995396257a5c1019ebcbe27d3908af1063c626dae617e3178736f22c148"
+    },
+    {
+      "file": "qwen36_fresh_messages.json",
+      "bytes": 48577,
+      "sha256": "55016b3d39b05b3bdc2e4600abac6d060512721fe287c0350fa0f0103e4e462a"
+    },
+    {
+      "file": "qwen36_fresh_session_check.json",
+      "bytes": 1542,
+      "sha256": "0e41e602063bda3ae906cb2d180d4a378abe244621abc13b388b2d561f2cddc6"
+    },
+    {
+      "file": "qwen36_generated_project.json",
+      "bytes": 48895,
+      "sha256": "6f297c6b93123cf93430f5da3eb009ee4f4de99147c1ccb99bbabe7a6c783990"
+    },
+    {
+      "file": "qwen36_initial_project_checks.json",
+      "bytes": 1728,
+      "sha256": "d3a95fcb4d18746c8d504370e2012c3d0bbbf66d6d7c4071d07187dd260afcac"
+    },
+    {
+      "file": "runtime_token_usage.json",
+      "bytes": 9600,
+      "sha256": "87abbc918528ba9664c192adb35f66b7de8daf0765d9601081a9afa927e3aa83"
+    },
+    {
+      "file": "scope_negative_control.diff",
+      "bytes": 183,
+      "sha256": "02d087c97e9097f2054bc6ba291d5e36bdaa55ad6e339e3eac95b0655849b468"
+    },
+    {
+      "file": "scope_review.json",
+      "bytes": 716,
+      "sha256": "66ad3657c8b92ff2b75d28e53b913cce678d8f59b5e2100ac7eb961dbd829a57"
+    }
+  ],
+  "raw_terminal_policy": "Original sanitized traces and controller scripts retained in ignored ../raw/repro_20260915; large-model thinking blocks omitted from derived message exports.",
+  "containers": "Both local-model containers stopped and retained; previous API attempt retained separately."
+}

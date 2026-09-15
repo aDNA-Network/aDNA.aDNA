@@ -11,6 +11,8 @@ tags: [garnier, p1, authentication, research]
 
 ## Verified local route — later 2026-09-15 continuation
 
+[D] The completed Qwen3.6 run now satisfies P1.2 C2 on the recorded local-provider route: all five displayed checks and separate fresh-session governance recognition pass, with an explicit initial-commit correction. [[local_model_continuation]] holds the complete receipt; the host subscription route itself remains untested.
+
 [D] Broker inventory C41 identifies the existing Claude session store with `access_pattern: claude_code_internal`. It does not register a portable subscription environment credential for a container. No C41 credential values or host login cache were read. The earlier host sign-in remains valid evidence at its recorded time; disposable subscription access is still unverified.
 
 [D] A separate existing route is available: broker C69 (`INFERENCE_GATEWAY_TOKEN`) authorizes the node's local inference gateway. Its health endpoint and authenticated model listing responded. Qwen2.5-7B returned “OK” through both the local-chat tool and `/v1/messages`, and the fresh disposable container reached the gateway. Qwen3.6's separate 45-second probe timed out; that single probe does not establish that the model is generally unavailable. Receipt: `evidence/research/next_build_account_routes.json`.

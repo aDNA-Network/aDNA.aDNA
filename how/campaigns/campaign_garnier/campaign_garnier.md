@@ -80,7 +80,7 @@ VITRINE's proposed website craft and docs work is absorbed prospectively into P1
 | [[mission_garnier_p1_2_quickstart_voice]] | Bring the first task into focus | 1 | opus / codex | mission_garnier_p1_1_homepage_voice |
 | [[mission_garnier_p1_3_mission_voice]] | Make the public-good invitation concise | 1 | opus / codex | mission_garnier_p1_2_quickstart_voice |
 
-**⛩ DP3 exit:** Mechanism-first homepage storyboard and all seven surface word-target dispositions complete; unsupported claims and banned prose zero; formative human feedback recorded for all three decisive classes; P2 tranche scope/budget presented. Named artifact: `artifacts/p1/phase_exit.md`. Estimated agent sittings: 3; budget: 320 kT committed at DP2 (186 kT original preserved). P1.1 is completed; P1.2/P1.3 are in progress with implementation delivered and first-task/human evidence owed. See [[artifacts/p1/phase_exit]] under [[dp2_ratification_20260915]].
+**⛩ DP3 exit:** Mechanism-first homepage storyboard and all seven surface word-target dispositions complete; unsupported claims and banned prose zero; formative human feedback recorded for all three decisive classes; P2 tranche scope/budget presented. Named artifact: `artifacts/p1/phase_exit.md`. Estimated agent sittings: 3; budget: 320 kT committed at DP2 (186 kT original preserved). P1.1/P1.2 are completed; P1.3 is in progress with its human evidence owed. The assisted local-provider first-project result is in [[local_model_continuation]]. See [[artifacts/p1/phase_exit]] under [[dp2_ratification_20260915]].
 
 ### P2 — Proof, fidelity and midpoint
 
@@ -248,3 +248,7 @@ Deliverables: pending campaign execution. Descoped: none approved. Key findings:
 ## P1 evidence continuation — 2026-09-15
 
 [D] [[first_task_continuation]] records source-stable preview restoration and a real first-task attempt with the installed CLI. The model request returned Credit balance too low; project creation and fresh-session checks remain owed. Stanley selected local formative collection; the worksheet is ready and zero human records have arrived. P1.1 completed; P1.2/P1.3 in_progress; DP3 pending. [I] Latest implementation/evidence actual330±120kT vs320 committed, prior wind-down30±15kT additional, remaining20–35kT after inputs. No P2 budget was committed and no publication or peer delivery occurred.
+
+## Local-provider P1.2 completion — later 2026-09-15
+
+[D] P1.2 completed through broker C69/Qwen3.6 with exact command, all five file/history checks and separate fresh-session recognition. The model required an initial-commit correction; earlier failed attempts remain evidence. [[local_model_continuation]] records315±45kT sitting workload, its variance/measurement basis and remaining10–20kT P1 forecast after human input. P1.3 humans and DP3 remain pending. [[next_build_scope]] is a proposed bounded early design increment, awaiting an explicit sequence amendment; no phase advance or website source change.

@@ -11,7 +11,8 @@
       "-lc",
       "stty -echo; printf \"__AUTH_INPUT__\\n\"; IFS= read -r ANTHROPIC_API_KEY; export ANTHROPIC_API_KEY; export ANTHROPIC_BASE_URL=http://host.docker.internal:4000; export ANTHROPIC_MODEL=local-qwen2.5-7b; export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1; export DISABLE_AUTOUPDATER=1; printf \"__AUTH_LOADED__\\n\"; stty echo; exec bash -l"
     ],
-    "secret_route": "inherited broker environment -> echo-disabled PTY -> child environment; no persisted secret"
+    "secret_route": "inherited broker environment -> echo-disabled PTY -> child environment; no persisted secret",
+    "route_label_correction": "The reused controller retained its C06 label above. Actual source: broker C69 Keychain direct read in the host recorder, then echo-disabled PTY, then child environment. No inherited C06 value was used."
   },
   {
     "event": "input",

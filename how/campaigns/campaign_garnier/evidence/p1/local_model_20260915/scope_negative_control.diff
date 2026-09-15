@@ -1,0 +1,6 @@
+diff --git a/site/src/data/vaults.json b/site/src/data/vaults.json
+--- a/site/src/data/vaults.json
++++ b/site/src/data/vaults.json
+@@ -1 +1 @@
+-{}
++{"unapproved_scope_fixture": true}

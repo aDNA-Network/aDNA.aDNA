@@ -1,0 +1,287 @@
+{
+  "method": "Per native assistant message.id, maximum reported usage per field across split content rows, then sum unique messages. Provider-reported tokens, not independent tokenization or billing. Root Codex and unreported retries excluded.",
+  "runs": [
+    {
+      "run": "qwen25",
+      "messages": [
+        {
+          "message_id": "msg_57ed83d5-e131-4f09-8a9e-bd07a8f20b4e",
+          "model": "qwen2.5:7b-instruct-q8_0",
+          "input_tokens": 21110,
+          "output_tokens": 34,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "rows": 1
+        },
+        {
+          "message_id": "msg_58ce3c0b-36c6-48d2-94d2-58d5df02fcdc",
+          "model": "qwen2.5:7b-instruct-q8_0",
+          "input_tokens": 21195,
+          "output_tokens": 254,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "rows": 1
+        },
+        {
+          "message_id": "msg_7d3ef221-fd51-45c3-9d14-57b3c2e081c6",
+          "model": "qwen2.5:7b-instruct-q8_0",
+          "input_tokens": 21478,
+          "output_tokens": 269,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "rows": 1
+        },
+        {
+          "message_id": "msg_002d7131-5da4-4e0e-ad05-f574ced596fb",
+          "model": "qwen2.5:7b-instruct-q8_0",
+          "input_tokens": 21764,
+          "output_tokens": 122,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "rows": 1
+        },
+        {
+          "message_id": "msg_e6184ec6-e958-4064-a3d6-095bd52d4576",
+          "model": "qwen2.5:7b-instruct-q8_0",
+          "input_tokens": 22053,
+          "output_tokens": 365,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "rows": 1
+        },
+        {
+          "message_id": "69c98ebd-330d-4158-9126-38baa1c1c5de",
+          "model": "<synthetic>",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "rows": 1
+        }
+      ],
+      "totals": {
+        "input_tokens": 107600,
+        "output_tokens": 1044,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "run": "qwen36_creation",
+      "messages": [
+        {
+          "message_id": "msg_161c60e8-84fc-4826-8710-30fadf6d9f3c",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 23743,
+          "output_tokens": 225,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "rows": 8
+        },
+        {
+          "message_id": "msg_86c459fe-6fa8-4fcd-bfc2-ac440b9350dd",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 2649,
+          "output_tokens": 101,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 23742,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_e43dd55f-95a5-4ad6-80d8-7c317b6c9f67",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 116,
+          "output_tokens": 170,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 26390,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_581a29c9-bb69-4731-a586-66b22806d3b6",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 6012,
+          "output_tokens": 152,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 26505,
+          "rows": 3
+        },
+        {
+          "message_id": "msg_c33928d6-eb2b-4070-8beb-8122db90c39b",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 8923,
+          "output_tokens": 167,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 23741,
+          "rows": 3
+        },
+        {
+          "message_id": "msg_14be9f4c-3dd4-4802-8e89-be4d7ba007b6",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 128,
+          "output_tokens": 245,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 32662,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_c70c718f-ad57-4aff-832f-076326f3e722",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 274,
+          "output_tokens": 195,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 32789,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_94f94e64-e109-4c75-b82e-6dba3c4cfbfb",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 271,
+          "output_tokens": 417,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 33062,
+          "rows": 10
+        },
+        {
+          "message_id": "msg_90119e51-3515-4345-a3b0-052668d5ead9",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 14343,
+          "output_tokens": 285,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 33332,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_c44ed388-5925-4d35-9767-ed41cc9b3cdb",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 240,
+          "output_tokens": 277,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 47674,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_cc10598a-50bc-472f-97cc-1016be9a7f53",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 307,
+          "output_tokens": 332,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 47913,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_d58c563b-9119-4ee3-8183-d24f12035d92",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 548,
+          "output_tokens": 68,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 48219,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_5cc5715c-0205-411b-bd7a-915f90acdcf6",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 271,
+          "output_tokens": 324,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 48766,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_4134abe4-7c72-4ca9-88a7-90ff25c32019",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 356,
+          "output_tokens": 207,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 49036,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_79c67282-ba5e-4e9a-9a63-dad73fb17d4f",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 233,
+          "output_tokens": 207,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 49391,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_df35fef0-d21c-43d1-833f-64e688d6652f",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 164,
+          "output_tokens": 287,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 49623,
+          "rows": 3
+        },
+        {
+          "message_id": "msg_0de85a57-83c2-44e1-9f5f-eddf1404809d",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 17274,
+          "output_tokens": 150,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 32788,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_aca81c1a-6817-4833-8a63-112ec29f109b",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 144,
+          "output_tokens": 130,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 50061,
+          "rows": 4
+        },
+        {
+          "message_id": "msg_1bbe6bd7-6fb3-4c4a-9981-29da21b858b0",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 7865,
+          "output_tokens": 201,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 50204,
+          "rows": 3
+        }
+      ],
+      "totals": {
+        "input_tokens": 83861,
+        "output_tokens": 4140,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 705898
+      }
+    },
+    {
+      "run": "qwen36_fresh",
+      "messages": [
+        {
+          "message_id": "msg_d7d3e47a-9c10-4787-8857-7cee104153fa",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 29505,
+          "output_tokens": 104,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "rows": 6
+        },
+        {
+          "message_id": "msg_e1ec80f6-079c-48fd-ab76-a486887f65f6",
+          "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+          "input_tokens": 10406,
+          "output_tokens": 402,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 29504,
+          "rows": 3
+        }
+      ],
+      "totals": {
+        "input_tokens": 39911,
+        "output_tokens": 506,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 29504
+      }
+    }
+  ],
+  "totals": {
+    "input_tokens": 231372,
+    "output_tokens": 5690,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 735402
+  }
+}

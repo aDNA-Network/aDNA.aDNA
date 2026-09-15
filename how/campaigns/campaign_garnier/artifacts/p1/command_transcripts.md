@@ -20,3 +20,7 @@ Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
 ## Authenticated continuation — 2026-09-15
 
 [D] The later installed-CLI attempt supersedes the prior missing prerequisite as the live blocker. Exact command and project request reached Claude Code 2.1.223; the API returned Credit balance too low. Launcher exit 0 did not create a project. All five displayed checks and sanitized terminal evidence are preserved in [[first_task_continuation]]. C2 remains open.
+
+## Completed local-provider reproduction — later 2026-09-15
+
+[D] [[local_model_continuation]] supplies the complete exact-command run through broker C69/Qwen3.6, including the initial-commit correction, all five checks, distinct fresh session and credential-scan limits. P1.2 C2 is complete on that recorded route. The earlier missing-CLI, API-credit and smaller-model failures remain preserved. No unassisted timing, Claude subscription success or human outcome is claimed.

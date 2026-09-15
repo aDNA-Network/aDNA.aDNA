@@ -8,6 +8,10 @@ tags: [garnier, p1, evidence, first_task]
 ---
 # P1 first-task continuation — selected API route failed
 
+## Later completion — 2026-09-15
+
+[D] [[local_model_continuation]] completes the owed task through the existing C69 local gateway and Qwen3.6 with recorded assistance. All five displayed checks and fresh-session governance recognition pass. This file preserves the earlier API-credit failure; it is no longer the live C2 blocker. Human reader observations and DP3 remain open.
+
 ## Account-route clarification — 2026-09-15
 
 [R/I] The observed API-credit failure does not require an API top-up: eligible Claude subscription authentication is another supported route for the exact command. Verify account access through the approved node broker/store and omit conflicting API overrides. Codex/ChatGPT or another runtime can supply additional compatibility evidence but cannot silently replace the copied Claude command. [[account_execution_options]] records current official sources, prerequisites and boundaries. No account login or successful retry occurred in the design-research sitting. Earlier run evidence below remains intact.
