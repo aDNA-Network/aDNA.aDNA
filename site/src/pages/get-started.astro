@@ -120,7 +120,9 @@ const jsonLD = buildWebPageJsonLD({
   <h2 id="step-2">2. Start Claude Code</h2>
   <p>
     Run <code>{commands.launch}</code> in the workspace. The agent reads the router, sees a fresh workspace
-    with no projects yet, and walks you through creating your first one:
+    with no projects yet. Ask it: <strong>“Create a new aDNA project for my work.”</strong>
+    Choose a name when it asks, then review the proposed files before creation. Agent behavior can vary;
+    the procedure it should follow is linked in the source tour.
   </p>
   <pre class="cmd"><code>{commands.enter}
 {commands.launch}</code></pre>
