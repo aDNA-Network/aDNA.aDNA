@@ -21,6 +21,14 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
+### 2026-09-15 — GARNIER wind-down reconciled; resume at remaining P1 evidence
+
+[D] `last_edited_by: agent_codex`; runtime Codex. Implementation and evidence closure are committed through `f34f9c2` (website source `b1cf040`, synthetic stimulus `5b92495`). P1.1 is completed; P1.2/P1.3 remain in progress; DP1/DP2 accepted, DP3 pending. The session AAR, final verification and frozen baseline remain preserved. This is a records-only handoff, not a fresh website verification or phase transition.
+
+**Intake:** 2026-09-15 · GARNIER wind-down · session metadata/inventory reconciled; CURRENT prompt narrowed; preview identity/restart documented; no outward action.
+
+**Resume-Here:** Read root/campaign governance and active leases, then [[how/campaigns/campaign_garnier/artifacts/p1/phase_exit]] and [[how/campaigns/campaign_garnier/artifacts/p1/formative_reader_pack]]. Follow the CURRENT P1.2 resume prompt. Finish authenticated disposable first-project reproduction and receive consenting operator-supplied engineer/funder/scientist observations. If evidence is unavailable, name the missing input and keep the hold; do not restart P0/P1.1, rerun implemented copy work by default, re-ask DP1/DP2, or enter P2. Preserve source/evidence identity and unrelated work. Wind-down session: [[session_stanley_20260915_110717_garnier_winddown]].
+
 ### 2026-09-15 — GARNIER P1 candidate implemented; formative evidence next
 
 [D] `last_edited_by: agent_codex`; runtime Codex. Candidate source `b1cf040` implements the approved homepage file example/AI DNA bridge, quickstart/source-tour corrections and six-route public-good/privacy work. P1.1 completed; P1.2 remains in progress pending authenticated first-project reproduction; P1.3 remains in progress pending operator-supplied formative humans. [[how/campaigns/campaign_garnier/artifacts/p1/phase_exit|P1 review packet]] and [[how/campaigns/campaign_garnier/artifacts/p1/formative_reader_pack|human protocol]] are the next live inputs. DP1/DP2 remain accepted; DP3 is not yet ready for acceptance.

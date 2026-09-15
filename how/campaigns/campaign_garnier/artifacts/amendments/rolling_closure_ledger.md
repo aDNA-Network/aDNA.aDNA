@@ -37,3 +37,7 @@ Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
 [D] P1.3 C1 six-route local copy/disclosure correction complete; C2 formative human evidence absent; C3 sitting evidence/AAR filed, closure owed. FG-P0-002 contradictory privacy/state language corrected; field collector remains P4.1. [[artifacts/p1/claim_evidence_map]] and [[artifacts/p1/formative_reader_pack]]. [I] Rough40±20kT vs80 estimate.
 
 [D] All records retain source b1cf040 versus prescreen5b92495. No peer delivery; patterns_to_author remain staged, augmented with the prose-extraction population caveat. P6 must graduate and reconcile these records. [I] Phase actual roughly260±90kT including independent work/reruns;25–50kT future follow-up, billing unavailable. Stanley owns human inputs and DP3; Rosetta owns bounded corrections. No field, human, independent-adoption or launch-score claim.
+
+## Records-only wind-down — 2026-09-15
+
+[D] Implementation closure `f34f9c2` reconciled: session inventory/timestamp corrected additively, CURRENT prompt narrowed to remaining evidence, preview identity/restart documented, STATE resume appended. P1.1 completed; P1.2/P1.3 in progress; DP3 pending. Existing AAR and 260±90 kT implementation estimate preserved; wind-down overhead reported separately in [[session_stanley_20260915_110717_garnier_winddown]]. Rosetta owns evidence intake and bounded corrections; Stanley supplies participants and owns DP3. No new site behavior, human result, phase acceptance or publication.

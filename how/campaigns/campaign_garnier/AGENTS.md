@@ -12,6 +12,8 @@ tags:
 
 [D] The charter is active; DP1 was accepted with amendments on 2026-09-15. Start at [[artifacts/amendments/charter_ratification_20260915]] and [[artifacts/amendments/amendment_verification]]. P0 is completed; [[artifacts/amendments/dp2_ratification_20260915|DP2]] is accepted with six amendments. P1 is authorized at 320 kT; implementation is delivered locally, P1.1 is complete and P1.2/P1.3 owe first-task/human evidence; DP3 and later gates remain human. Read [[CLAUDE]] before execution. This index is derived from current GARNIER-owned Markdown paths; the original packet and archived pending marker are historical artifacts.
 
+[D] Fresh-context entry: [[artifacts/p1/phase_exit]] → [[artifacts/p1/formative_reader_pack]] → the CURRENT P1.2 resume prompt. Closure `f34f9c2` preserves the implementation evidence; do not replay the original P1.2 opening pass. Wind-down: [[session_stanley_20260915_110717_garnier_winddown]].
+
 - [[CLAUDE]]
 - [[artifacts/amendments/amendment_aar]]
 - [[artifacts/amendments/amendment_verification]]

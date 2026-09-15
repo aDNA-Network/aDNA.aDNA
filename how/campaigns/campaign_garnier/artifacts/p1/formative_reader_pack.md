@@ -8,7 +8,7 @@ tags: [garnier, p1, evidence]
 ---
 # P1 formative review pack — awaiting people
 
-[D] Candidate source: b1cf040, local preview at http://localhost:4465/. Homepage [first screen](../../evidence/p1/home_first_screen.png), [390px light](../../evidence/p1/home_390_light.png), [390px dark](../../evidence/p1/home_390_dark.png). These show a local candidate, not the deployed website. Start the same candidate from `site/` with `npx astro preview --port 4465` if the preview is no longer running. [[how/campaigns/campaign_garnier/artifacts/p1/phase_exit|P1 review packet]] lists verification and open work.
+[D] Candidate source: b1cf040, local preview at http://localhost:4465/. Homepage [first screen](../../evidence/p1/home_first_screen.png), [390px light](../../evidence/p1/home_390_light.png), [390px dark](../../evidence/p1/home_390_dark.png). These show a local candidate, not the deployed website. Use the restart procedure below if the preview is no longer running. [[how/campaigns/campaign_garnier/artifacts/p1/phase_exit|P1 review packet]] lists verification and open work.
 
 ## Operator-supplied participants
 
@@ -32,3 +32,19 @@ tags: [garnier, p1, evidence]
 
 
 Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
+
+## Fresh-context preview restart
+
+[D] Source identity is `b1cf040`; final evidence/test records are at `f34f9c2`; synthetic-reader inputs were captured at `5b92495`. These are separate evidence populations. A running preview alone does not prove which source it serves.
+
+[I] From the vault root, inspect `git rev-parse HEAD`, `git status --short`, and `git diff f34f9c2 -- site/ CLAUDE.md`. If the site or its root-governance example has changed, identify and record the new candidate before presenting it; do not reset or overwrite another session's work. Read `evidence/p1/close_candidate_identity.json` from the campaign root for the recorded route hashes. Reuse a built candidate only when those hashes match. Otherwise rebuild from the verified source using the following commands from `site/`:
+
+```sh
+npx astro build
+node scripts/inject_headers.mjs .
+node scripts/inject_installer_headers.mjs .
+node scripts/inject_redirects.mjs .
+npx astro preview --port 4465
+```
+
+[I] Run commands sequentially and stop on a failure. Never use `npm run build` or registry synchronization. Check build identity and rendered route hashes before reusing prior evidence; changed bytes require a fresh identity and affected checks. Read the current CI injection steps before gate execution, as required by [[verification_recipes]]. The rebuild is not itself a new test pass. The preview URL is local to this machine, not a public participant link; operator-mediated access or sharing requires its own explicit scope. P1's full authenticated task and human observations remain owed.
