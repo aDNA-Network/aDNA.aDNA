@@ -8,16 +8,18 @@
     {
       "id": "R-12",
       "url": "/",
-      "quote": "aDNA (agentic DNA) is an open standard for organizing a project's files",
+      "quote": "aDNA (Agentic DNA) is an open standard for organizing a project's files",
       "class": "verified",
-      "why": "The ADR-048 definition-as-hero lead (ratified DP2; shipped P1.1) — the anti-jargon functional definition, spec public + versioned + MIT, clone-and-run image real. Replaced the Meridian-era 'project knowledge' phrasing."
+      "why": "The ADR-048 definition-as-hero lead (ratified DP2; shipped P1.1) — the anti-jargon functional definition, spec public + versioned + MIT, clone-and-run image real. Replaced the Meridian-era 'project knowledge' phrasing. GARNIER DP2 / approved P1.1 implementation, 2026-09-15: copy amended; inspect the GARNIER claim map for source/meaning preservation. Original quote retained in prior_quote; predecessor register unchanged.",
+      "prior_quote": "aDNA (agentic DNA) is an open standard for organizing a project's files"
     },
     {
       "id": "R-24",
       "url": "/",
-      "quote": "Every file is plain Markdown. Browse in Obsidian, VS Code, or GitHub. No proprietary formats, no lock-in.",
+      "quote": "Your notes are plain Markdown. Read them in Obsidian, VS Code or GitHub.",
       "class": "verified",
-      "why": "The no-lock-in promise. Verifiable by cloning the image; must not silently disappear in a redesign."
+      "why": "The no-lock-in promise. Verifiable by cloning the image; must not silently disappear in a redesign. GARNIER DP2 / approved P1.1 implementation, 2026-09-15: copy amended; inspect the GARNIER claim map for source/meaning preservation. Original quote retained in prior_quote; predecessor register unchanged.",
+      "prior_quote": "Every file is plain Markdown. Browse in Obsidian, VS Code, or GitHub. No proprietary formats, no lock-in."
     },
     {
       "id": "R-31",
@@ -92,9 +94,10 @@
     {
       "id": "R-94",
       "url": "/",
-      "quote": "Language and DNA were co-created by everyone before us. The context that powers AI should be too - built, shared, and governed in the open, for the good of all.",
+      "quote": "The knowledge we choose to share can become a cultural inheritance for AI.",
       "class": "verified",
-      "why": "The manifesto lyric, demoted INTACT from the hero to the movement band per ADR-048 ('demoted intact to the movement band directly below the fold'). Its silent deletion would violate the ratified package."
+      "why": "The manifesto lyric, demoted INTACT from the hero to the movement band per ADR-048 ('demoted intact to the movement band directly below the fold'). Its silent deletion would violate the ratified package. GARNIER DP2 / approved P1.1 implementation, 2026-09-15: copy amended; inspect the GARNIER claim map for source/meaning preservation. Original quote retained in prior_quote; predecessor register unchanged.",
+      "prior_quote": "Language and DNA were co-created by everyone before us. The context that powers AI should be too - built, shared, and governed in the open, for the good of all."
     },
     {
       "id": "R-95",

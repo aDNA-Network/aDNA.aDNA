@@ -145,7 +145,9 @@ const {
 } = Astro.props;
 
 // Home-only graph-led variant is active iff a hero graph was passed (additive-optional prop).
-const graphLed = Boolean(heroGraph);
+// agent_codex · 2026-09-15: named example slot is opt-in; other hero consumers retain their output.
+const exampleLed = Astro.slots.has('example');
+const graphLed = Boolean(heroGraph) || exampleLed;
 
 // HAUSSMANN P1.2 — the proof block used to require `proofNames`; home now passes a disclosure
 // SENTENCE with no name list, so either alone is enough to render it. Consumers that pass neither
@@ -164,13 +166,13 @@ const showProof = proofNames.length > 0 || Boolean(proofLead);
 // `scripts/build_graph_svg.mjs` still writes raw ids into the asset, and fixing it there alone
 // would leave the committed SVG stale until someone regenerated it. Idempotent, so it is also
 // correct once that generator is fixed.
-const heroNodes = graphLed
+const heroNodes = heroGraph
   ? [...(heroGraph as string).matchAll(/<g class="node" data-slug="([^"]+)">.*?<text[^>]*>([^<]*)<\/text>/g)]
       .map((m) => ({ slug: canonicalVaultSlug(m[1]), name: m[2].replace(/\.aDNA$/, '') }))
   : [];
 ---
 
-<section class:list={['hero', 'dark', { 'hero--graph-led': graphLed }]}>
+<section class:list={['hero', 'dark', { 'hero--graph-led': graphLed, 'hero--example-led': exampleLed }]}>
   {graphLed ? (
     <Fragment>
       {/* GRAPH-LED variant (Storyweave direction A, home only): the rebuilt connected graph becomes
@@ -202,8 +204,7 @@ const heroNodes = graphLed
           )}
           <h1 class="hero-title hero-title--split">
             {/* Accent "Network" — the second word — while keeping the full accessible title. */}
-            <span class="hero-title-lead">The aDNA</span>{' '}
-            <span class="hero-title-accent">Network</span>
+            {exampleLed ? title : <Fragment><span class="hero-title-lead">The aDNA</span>{' '}<span class="hero-title-accent">Network</span></Fragment>}
           </h1>
 
           <p class="hero-lead">{lead}</p>
@@ -298,6 +299,7 @@ const heroNodes = graphLed
             Canvas "constellation" (aria-hidden) cross-fades in over it when JS is present — the
             Storyweave P1.6 / T2 progressive enhancement. `set:html` needs its own wrapper so it does
             not wipe the sibling <canvas>. */}
+        {exampleLed ? <div class="hero-example"><slot name="example" /></div> : (
         <figure class="hero-graph" data-hero-graph>
           <div class="hero-graph-frame">
             <div class="hero-graph-svg-wrap" set:html={heroGraph} />
@@ -305,6 +307,7 @@ const heroNodes = graphLed
           </div>
           <figcaption class="hero-graph-caption">{heroGraphCaption}</figcaption>
         </figure>
+        )}
         {/* Storyweave P3 / M3.1 — the hero graph's keyboard/AT/no-JS deep-link twin. Visually hidden;
             revealed on keyboard focus. Each connected vault opens its own /vaults/[slug] page. */}
         {heroNodes.length > 0 && (
@@ -429,7 +432,7 @@ const heroNodes = graphLed
     is aria-hidden decorative). Honors reduced-motion (renders one static frame), only animates while
     on-screen, adapts to the live theme, and adds NO data-chart hook (gate-22). Astro bundles this as a
     deferred module script — non-render-blocking (gate-10), and it inits off the LCP path (idle). */}
-{graphLed && (
+{graphLed && !exampleLed && (
   <script>
     (() => {
       const fig = document.querySelector('[data-hero-graph]');
@@ -638,6 +641,12 @@ const heroNodes = graphLed
 </script>
 
 <style>
+  .hero-example { min-width: 0; width: 100%; }
+  .hero--example-led .hero-title--split { font-size: var(--text-4xl); text-wrap: balance; }
+  .hero--example-led .hero-quals { font-size: var(--text-sm); }
+  .hero--example-led .hero-grid { align-items: start; }
+  .hero--example-led .hero-lead { font-size: var(--text-lg); }
+
   /* E1 c3 dark-mode-first hero band (scoped `.dark`) retained; c146 makes it image-led. */
   .hero {
     position: relative;

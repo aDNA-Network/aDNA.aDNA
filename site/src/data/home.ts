@@ -184,3 +184,19 @@ export const stats: HomeStat[] = [
   { value: STANDARD_VERSION, label: 'Current Version' },
   { value: STANDARD_LICENSE, label: 'Licensed' },
 ];
+
+// agent_codex · 2026-09-15. Select public rules from this dev vault's real governance file.
+// A missing source anchor stops the build; no fabricated terminal transcript or runtime promise.
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+// Build and gate commands run from site/; this data module is server/build-only.
+const publicGovernance = readFileSync(resolve(process.cwd(), '../CLAUDE.md'), 'utf8');
+const publicRule = publicGovernance.split('\n').find(line => line.startsWith('1. **Phase gates are human gates.**'));
+if (!publicRule) throw new Error('home: public governance example anchor missing');
+export const governanceExample = ['# CLAUDE.md — aDNA.aDNA', '', '## Standing Orders', '', publicRule].join('\n');
+export const projectTree = `aDNA.aDNA/
+├── CLAUDE.md      Agent instructions
+├── STATE.md       Work in progress
+├── what/          Knowledge and decisions
+├── how/           Plans and procedures
+└── who/           People and roles`;

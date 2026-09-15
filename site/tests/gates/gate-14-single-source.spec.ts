@@ -83,7 +83,10 @@ const ALLOW: { file: string; pattern: string; rationale: string; date: string }[
  * links, and JSON-LD across every page — including on the pages that carry a footer.
  */
 const PROVENANCE_EDIT_LINK = /<a[^>]*class="[^"]*doc-provenance-edit[^"]*"[^>]*>[\s\S]*?<\/a>/g;
-const scannable = (html: string) => html.replace(PROVENANCE_EDIT_LINK, '');
+// GARNIER DP2 (2026-09-15): this exact source citation describes the site's own
+// instruction excerpt. Installation links remain governed by the public-image rule.
+const HOME_EXCERPT_SOURCE = /<a href="https:\/\/github\.com\/aDNA-Network\/aDNA\.aDNA\/blob\/main\/CLAUDE\.md" class="example-source"[^>]*>Read the full instruction file<\/a>/g;
+const scannable = (html: string) => html.replace(PROVENANCE_EDIT_LINK, '').replace(HOME_EXCERPT_SOURCE, '');
 
 test('G5 single-source: no drifted repo/publisher literals in built output', () => {
   const files = htmlFiles(DIST);

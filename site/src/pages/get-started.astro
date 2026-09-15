@@ -46,14 +46,15 @@ const jsonLD = buildWebPageJsonLD({
   }}
 >
   <p>
-    Set up your own aDNA workspace — a local, agent-readable home for every project's context — in
-    about 5 minutes. The workspace is files on your machine and makes no network calls of its own.
+    Create a local workspace, then ask your agent to scaffold a project. aDNA organizes files;
+    it does not train a model or automatically share your work. The workspace is files on your machine and makes no network calls of its own.
   </p>
 
   <Callout variant="info" title="Prerequisites">
     <p>
-      Git, and <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">Claude Code</a>
-      installed via <code>npm install -g @anthropic-ai/claude-code</code>. Obsidian is optional — vaults are
+      Git, and <a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener">Claude Code</a>
+      installed and authenticated with a supported account or API access. Follow the linked installation guide.
+      Use a terminal with a POSIX shell (macOS, Linux or WSL) for the commands below. Obsidian is optional — vaults are
       plain Markdown, so any editor works.
     </p>
   </Callout>
@@ -77,8 +78,8 @@ const jsonLD = buildWebPageJsonLD({
   <p class="cmd-oneliner"><code>{installTruth.one_liner}</code></p>
   <ul>
     <li>
-      <strong>Writes one directory: <code>{workspace_root}/</code>.</strong> Nothing outside it — no system
-      settings, no <code>PATH</code> changes, no daemon, no login item. If you would rather not use that path,
+      <strong>The clone writes one directory: <code>{workspace_root}/</code>.</strong> The clone changes no system
+      settings or <code>PATH</code>, and starts no daemon or login item. Claude Code has its own configuration and storage. If you would rather not use that path,
       clone anywhere: nothing in the workspace depends on its location, and <code>{workspace_root}</code> is
       only the default the docs assume.
     </li>
@@ -90,8 +91,8 @@ const jsonLD = buildWebPageJsonLD({
     </li>
     <li>
       <strong>So read them first.</strong>
-      <a href="/get-started/what-your-agent-reads/">Every file the agent reads on first run, annotated →</a>
-      They are shown verbatim, at a pinned commit, with hashes you can check against your own clone.
+      <a href="/get-started/what-your-agent-reads/">Selected instructions and the actual router, annotated →</a>
+      The tour copies are pinned to a release; the normal clone may be newer.
     </li>
     <li><strong>The workspace sends nothing anywhere.</strong> No account, no telemetry, no network call
       after the clone — it is plain Markdown on your disk. <strong>Your agent is a separate question,
@@ -105,7 +106,7 @@ const jsonLD = buildWebPageJsonLD({
       will not run this command.
     </li>
     <li>
-      <strong>To undo it: <code>rm -rf {workspace_root}</code>.</strong> There is nothing else to uninstall.
+      <strong>To remove it, first move or back up your projects.</strong> Then remove only the workspace directory. Claude Code is a separate installation.
     </li>
   </ul>
 
@@ -167,7 +168,7 @@ const jsonLD = buildWebPageJsonLD({
 
   <Callout variant="info" title="The whole flow, one command">
     <p>
-      Both steps, chained — auditable inline, nothing executed from the network:
+      Both steps, chained — the final command launches Claude Code:
     </p>
     <p class="cmd-oneliner"><code>{installTruth.one_liner}</code></p>
   </Callout>
@@ -207,8 +208,7 @@ git -C {workspace_root}/&lt;name&gt;.aDNA log      # its own history, separate f
   <ul>
     <li>
       <code>{commands.launch}: command not found</code> — Claude Code is not installed, or not on your
-      <code>PATH</code>. Install it with <code>npm install -g @anthropic-ai/claude-code</code> and open a
-      new shell.
+      <code>PATH</code>. Follow the <a href="https://code.claude.com/docs/en/setup">Claude Code setup guide</a> and open a new shell.
     </li>
     <li>
       <code>fatal: destination path '{workspace_root}' already exists</code> — you already have a workspace
@@ -220,9 +220,8 @@ git -C {workspace_root}/&lt;name&gt;.aDNA log      # its own history, separate f
       <code>{commands.enter}</code> first — an agent launched from your home directory reads nothing.
     </li>
     <li>
-      <strong>You want to check what the agent is acting on.</strong> Every file it reads on first run is
-      <a href="/get-started/what-your-agent-reads/">published here verbatim</a>, with hashes to compare
-      against your clone.
+      <strong>You want to check what the agent is acting on.</strong> The
+      <a href="/get-started/what-your-agent-reads/">source tour</a> links the actual router and selected pinned instructions. Compare their release with your clone.
     </li>
   </ul>
   <p>
@@ -232,9 +231,10 @@ git -C {workspace_root}/&lt;name&gt;.aDNA log      # its own history, separate f
 
   <h2 id="removing-it">Removing it</h2>
   <p>
-    <code>rm -rf {workspace_root}</code> — and that is the whole uninstall. Nothing was installed outside
-    that directory, so there is no package to remove, no configuration to revert, and no service to stop.
-    If you moved your projects elsewhere first, they are ordinary git repositories and keep working.
+    First move or back up any projects you want to keep. Removing <code>{workspace_root}</code>
+    also removes projects still inside it. Once they are safe, remove that directory in your file
+    manager. This removes the cloned workspace; uninstalling Claude Code or clearing its settings
+    is a separate step covered by its documentation.
   </p>
 
   <Callout variant="info" title="Existing installs (pre-June-2026 layout)">
@@ -252,11 +252,11 @@ git -C {workspace_root}/&lt;name&gt;.aDNA log      # its own history, separate f
   <h2 id="next-steps">Next steps</h2>
   {/* Storyweave P3 / M3.2 — the north-star bridge: make the loop explicit (you built a node → it
       joins a living network), not just a list of "learn more" links. */}
-  <p>You just built a node in a living network. Grow it — then see where it connects:</p>
+  <p>Your project is local. Joining the registry or sharing files is optional:</p>
   <ul>
-    <li><strong>Where it joins:</strong> the <a href="/vaults/">living registry</a> of vaults and <a href="/network/">the network</a> your project can federate with — building in the open is the whole point.</li>
+    <li><strong>Where it joins:</strong> the <a href="/vaults/">living registry</a> of vaults and <a href="/network/">the network</a> your project can federate with — only if you choose to share.</li>
     <li><strong>Ready to shape it:</strong> aDNA is built in the open — see <a href="/community/community-contribution-standards/">how to propose a change</a> to the standard or contribute a pattern, vault, or idea.</li>
-    <li><a href="/learn/what-is-adna">What is aDNA?</a> — the five-minute conceptual tour</li>
+    <li><a href="/learn/what-is-adna">What is aDNA?</a> — the conceptual tour</li>
     <li><a href="/learn/concepts/triad">The Triad</a> — why every project splits into what / how / who</li>
     <li><a href="/learn/tutorials/first-claude-md">Tutorial: Create Your First CLAUDE.md</a></li>
     <li><a href="/learn/tutorials/navigate-a-vault">Tutorial: Navigate a Vault</a> — reading a context graph like an agent does</li>

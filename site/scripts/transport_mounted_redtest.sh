@@ -103,14 +103,14 @@ grep -q '<SpeedInsights />' "$LAYOUT" && { echo "  BUG   [G56b] mutation did not
 # CASE 2 — /privacy stops saying the numbers are sent, while the transport stays mounted.
 # The promise-breaking direction: a live transport with no disclosure.
 restore_all
-perl -0pi -e 's/now <strong>sent to Vercel<\/strong>/kept entirely in memory/' "$PRIVACY"
+perl -0pi -e 's/Vercel Speed Insights is configured to report page-performance measurements/Performance measurement is absent/' "$PRIVACY"
 build_quiet
 check_case "the transport ships and /privacy no longer discloses it" "G56d" "$(failing_set "$GATE56")"
 
 # CASE 3 — the pre-transport sentence comes back while the transport is live.
 # The reassuring direction: the page claims MORE privacy than the site provides.
 restore_all
-perl -0pi -e 's/A second measurement still stays entirely on your device/Those numbers are not sent anywhere/' "$PRIVACY"
+perl -0pi -e 's/Treat performance reporting as enabled/Those numbers are not sent anywhere/' "$PRIVACY"
 build_quiet
 check_case "/privacy re-asserts 'not sent anywhere' while the transport is mounted" "G56e" "$(failing_set "$GATE56")"
 

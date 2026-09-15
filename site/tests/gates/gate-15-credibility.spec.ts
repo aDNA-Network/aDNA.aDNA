@@ -86,6 +86,12 @@ for (const path of proofPages) {
     // The credibility surfaces must carry at least one real GitHub proof link.
     expect(hrefs.length, `${path}: expected GitHub proof links`).toBeGreaterThan(0);
     for (const href of hrefs) {
+      // GARNIER DP2: exact source of the displayed dev-vault excerpt, not the install target.
+      if (path === '/' && href === 'https://github.com/aDNA-Network/aDNA.aDNA/blob/main/CLAUDE.md') {
+        await expect(page.locator('.example-source')).toHaveAttribute('href', href);
+        await expect(page.locator('.governance-example')).toContainText('Phase gates are human gates');
+        continue;
+      }
       for (const dead of DEAD_PATTERNS) {
         expect(href.includes(dead), `${path}: dead/legacy GitHub link "${href}" (${dead})`).toBe(false);
       }

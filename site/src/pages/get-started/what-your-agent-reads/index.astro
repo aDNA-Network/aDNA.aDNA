@@ -33,7 +33,7 @@ const totalKb = (manifest.files.reduce((n, f) => n + f.bytes, 0) / 1024).toFixed
 
 const title = 'What your agent reads';
 const description =
-  'Every file a fresh aDNA workspace gives your agent on first run, shown verbatim at a pinned commit — so you can audit the instructions before you run anything.';
+  'Selected instruction files from a pinned aDNA release, with the actual workspace router linked separately. Inspect the sources before running an agent.';
 
 const jsonLD = [
   buildTechArticleJsonLD({ title, description, url: Astro.url.href }),
@@ -58,25 +58,27 @@ const jsonLD = [
     the files <em>are</em> the program.
   </p>
   <p>
-    So read them first. Below is every file a fresh workspace hands your agent on its first run —
-    all {files.length} of them, about {totalKb}&thinsp;KB, shown exactly as they arrive. Nothing here
-    is a paraphrase or a screenshot. If you would rather read them in the repository, or diff them
-    against what you cloned, every file links to its source at the same commit.
+    Inspect the sources first. Below are {files.length} selected files, about {totalKb}&thinsp;KB,
+    from the pinned release. They are verbatim copies, not the complete set an agent may read.
+    The router template is different from the ready-made root router in a fresh clone.
+    <a href={`${manifest.source_repo}/blob/${manifest.source_ref}/CLAUDE.md`}>Read that release’s actual root CLAUDE.md</a>,
+    or <a href={`${manifest.source_repo}/blob/main/CLAUDE.md`}>inspect the current clone’s router</a>.
   </p>
 
   <Callout variant="info" title="Where these came from">
     <p>
       Vendored from <a href={`${manifest.source_repo}/tree/${manifest.source_ref}/.adna`} target="_blank" rel="noopener">
       the standard</a> at release <code>{manifest.source_ref}</code> ({manifest.source_commit_date}). The build
-      refuses to publish this page if those bytes stop matching that commit, so the copy you are reading
-      cannot quietly drift from the copy you would clone.
+      checks these copies against their recorded hashes. A normal clone follows the repository’s
+      default branch and may contain a newer version. Compare at this release, not against an
+      assumed match with the latest clone.
     </p>
   </Callout>
 
   <h2 id="reading-order">The reading order</h2>
   <p>
-    This is the order your agent meets them in, not a ranking. The first two are read on every
-    session; the last two are procedures it follows only when you ask for a new project.
+    Start with the actual root router linked above. These selected files then explain governance,
+    project creation and onboarding; the files an agent reads depend on its task and your workspace.
   </p>
 
   <ol class="tour-list">
@@ -101,8 +103,7 @@ const jsonLD = [
 
   <h2 id="what-a-project-looks-like">And what it builds</h2>
   <p>
-    Those four files exist to produce one thing: a project that is legible to an agent without being
-    explained to it. Here is a real one — the triad of this vault, the context graph that publishes
+    These instructions describe how to create a project with an explicit structure. Here is a real one — the triad of this vault, the context graph that publishes
     the page you are reading:
   </p>
   <div class="tour-triad">
@@ -114,9 +115,8 @@ const jsonLD = [
     ))}
   </div>
   <p class="tour-triad-note">
-    Derived from this repository at build time, so it is the real directory listing rather than an
-    illustration of one. Knowledge in <code>what/</code>, operations in <code>how/</code>, people in
-    <code>who/</code> — that split is the standard's one structural rule, and everything above is in
+    Recorded from this repository when the tour data was generated. Knowledge in <code>what/</code>, operations in <code>how/</code>, people in
+    <code>who/</code> — that split is the standard's central organizing convention, and everything above is in
     service of it.
   </p>
 

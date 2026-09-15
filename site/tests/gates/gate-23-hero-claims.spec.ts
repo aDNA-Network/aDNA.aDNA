@@ -137,6 +137,9 @@ test('G-hero-claims: the NetworkDiagram is an inline SVG with real <text> labels
     const page = await context.newPage();
     await page.goto('/');
 
+    // GARNIER P1.1: relationships are behind a native details disclosure; keyboard/JS-off access must work.
+    await page.locator('.network-detail > summary').click();
+
     // HAUSSMANN P1.4 (F3): the figure now ships a landscape + portrait twin-pair of the SAME
     // diagram, media-query-swapped at 768px so phone labels stay legible. Exactly two inline
     // SVGs — and exactly ONE displayed per viewport (the hidden twin is display:none, out of

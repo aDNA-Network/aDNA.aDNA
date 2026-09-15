@@ -11,6 +11,7 @@
  * Astro escapes text expressions, so {file.content} cannot inject markup no matter what the
  * standard's authors write in a future release.
  */
+import { createHash } from 'node:crypto';
 import DocumentationLayout from '../../../layouts/DocumentationLayout.astro';
 import manifest from '../../../data/tour_manifest.json';
 import { TOUR_ANNOTATIONS } from '../../../data/tour_annotations';
@@ -51,7 +52,7 @@ const { file, note, content, prevFile, nextFile } = Astro.props;
 // not describe the bytes below it — the install_truth `template_sha` failure, reproduced. Cheap to
 // check at build time, and it fails loudly instead of rendering a false claim.
 const actualBytes = new TextEncoder().encode(content).length;
-if (actualBytes !== file.bytes) {
+if (actualBytes !== file.bytes || createHash('sha256').update(content).digest('hex') !== file.sha256) {
   throw new Error(
     `tour file "${file.slug}": vendored .txt is ${actualBytes} bytes but the manifest records ${file.bytes} — re-run scripts/build_tour_files.mjs`,
   );
@@ -92,6 +93,7 @@ const nextNote = nextFile ? TOUR_ANNOTATIONS[nextFile.slug] : undefined;
   </p>
 
   <p>{note.what}</p>
+  {file.slug === 'workspace-router' && <p>This is the template. <a href={`${manifest.source_repo}/blob/${manifest.source_ref}/CLAUDE.md`}>Read the actual workspace-root router at this release</a> before following the setup instructions.</p>}
   <p><strong>Why your agent reads it.</strong> {note.why}</p>
   <p><strong>What to look for.</strong> {note.lookFor}</p>
 
@@ -106,8 +108,8 @@ const nextNote = nextFile ? TOUR_ANNOTATIONS[nextFile.slug] : undefined;
     </div>
   </dl>
   <p class="tour-verify">
-    Verify it yourself: <code>shasum -a 256 ~/aDNA/.adna/{file.source_path}</code> after cloning
-    should print the hash above.
+    Verify it yourself: <code>shasum -a 256 ~/aDNA/.adna/{file.source_path}</code> in a checkout of release <code>{manifest.source_ref}</code>
+    should print the hash above. The current default branch may differ.
   </p>
 
   <h2 id="file">{fileName}</h2>

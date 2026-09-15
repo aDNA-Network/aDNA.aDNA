@@ -73,20 +73,23 @@ test('G13 Nav: footer carries the top-level model including Commons', async ({ p
   }
 });
 
-test('G13 §5: home "Join the network" hands off to the live /commons', async ({ page }) => {
+test('G13 §5: home "Build with us" hands off to the live /commons', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
   const sec = page.locator('section.join-network');
-  await expect(sec.locator('.section-title')).toHaveText('Join the network');
+  await expect(sec.locator('#participate-title')).toHaveText('Build with us');
   await expect(sec.locator('.join-cta a[href="/commons/"]')).toBeVisible();
   await expect(sec.locator('.join-cta a[href="/community/"]')).toBeVisible();
 });
 
-test('G13 §5: featured subnetworks render verbatim from subnetworks.json (no hardcoding)', async ({ page }) => {
+// GARNIER DP2: the concise homepage hands off to /commons instead of duplicating its cards.
+// The destination still must expose every data-sourced name and tagline.
+test('G13 §5: public-good handoff reaches the data-sourced commons', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
-  const sec = page.locator('section.join-network');
+  await page.locator('section.join-network .join-cta a[href="/commons/"]').click();
+  await expect(page).toHaveURL(/\/commons\/?$/);
   for (const s of subnetworksData.subnetworks) {
-    await expect(sec, `§5 must name "${s.display_name}" from the fixture`).toContainText(s.display_name);
-    await expect(sec, `§5 must carry the "${s.id}" tagline from the fixture`).toContainText(s.tagline);
+    await expect(page.locator('main')).toContainText(s.display_name);
+    await expect(page.locator('main')).toContainText(s.tagline);
   }
 });
 

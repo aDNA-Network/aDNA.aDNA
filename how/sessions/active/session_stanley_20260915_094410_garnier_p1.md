@@ -16,7 +16,7 @@ token_budget_estimated: 320
 token_budget_unit: kT_content_load
 token_budget_actual: null
 tier: 2
-declared_files: [site/src/pages/index.astro, site/src/components/sections/HomeHero.astro, site/src/data/home.ts, site/src/pages/get-started.astro, site/src/pages/learn/what-is-adna.astro, site/src/pages/get-started/what-your-agent-reads, site/src/pages/about.astro, site/src/pages/community.astro, site/src/pages/commons.astro, site/src/pages/network.astro, site/src/pages/privacy.astro, site/src/pages/state-of-the-network.astro, site/tests/gates, how/campaigns/campaign_garnier, STATE.md]
+declared_files: [site/src/pages/index.astro, site/src/components/sections/HomeHero.astro, site/src/data/home.ts, site/src/pages/get-started.astro, site/src/pages/learn/what-is-adna.astro, site/src/pages/get-started/what-your-agent-reads, site/src/pages/about.astro, site/src/pages/community.astro, site/src/pages/commons.astro, site/src/pages/network.astro, site/src/pages/privacy/index.astro, site/src/pages/state-of-the-network/index.astro, site/src/data/tour_annotations.ts, site/scripts, site/tests/gates, how/campaigns/campaign_garnier, STATE.md]
 files_modified: []
 files_created: []
 ---
@@ -26,3 +26,5 @@ files_created: []
 - [D] Frontend-design, web-quality-sweep, campaign verification recipes and session-close skills applied. Existing governance/context read in this conversation; actual methods and candidate source re-read at execution. No new visual voice or imagery planned; readable hierarchy and text equivalents remain binding.
 
 Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
+
+- [D] P1.1 first fast run: 573 passed, 7 failed, 1 skipped. Correcting same-diff selectors, exact dev-source citation exception, broken glossary link and graph width regression. P1.2 source reconnaissance found the displayed router is a pinned template, not the released root router. No template bytes changed.

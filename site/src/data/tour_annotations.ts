@@ -26,25 +26,24 @@ export interface TourAnnotation {
 
 export const TOUR_ANNOTATIONS: Record<string, TourAnnotation> = {
   'workspace-router': {
-    title: 'The workspace router',
-    what: 'The CLAUDE.md that sits at the root of your new workspace — the first file an agent reads.',
-    why: 'An agent started anywhere in the workspace reads this to work out which project you mean before it does anything else. It is a map, and it is the reason the standard needs no index service and no daemon.',
-    lookFor:
-      'Read it as what it is: instructions addressed to an agent, in English. There is no code path here — nothing fetches, nothing installs, nothing phones home. The strongest check is the plainest one: if this file asked an agent to send your files somewhere, you would be able to read the sentence that said so.',
+    title: 'The workspace router template',
+    what: 'A router template inside the pinned standard, not the ready-made CLAUDE.md at the workspace root.',
+    why: 'This template shows how workspace instructions are authored. The current clone ships its own root router; follow the separate source link on this tour before running the command.',
+    lookFor: 'Compare its setup instructions with the released root router. A template can describe an older installation layout. Neither file is a sandbox: your agent must interpret the instructions and can make mistakes.',
   },
   'standard-governance': {
     title: "The standard's own governance",
     what: 'The CLAUDE.md inside the hidden .adna/ folder — the standard describing itself.',
     why: 'Your agent reads this to learn the conventions it is expected to follow: the triad, the entity types, the session and mission protocol. This is the file that makes the standard self-teaching rather than a PDF you have to remember.',
     lookFor:
-      'Its frontmatter carries role: template. That single field is load-bearing — it is what tells an agent this directory is the standard itself and must never be edited, which is why updates arrive by git pull instead of by merge conflict.',
+      'Its frontmatter carries role: template. That single field is load-bearing — it is what tells an agent this directory is the standard itself and must never be edited, updates to the embedded standard arrive through git pull at the workspace root. Local changes can still cause conflicts.',
   },
   'skill-project-fork': {
     title: 'The skill that actually runs first',
     what: 'The procedure an agent follows to scaffold your first project.',
     why: 'This is the one that fires on a fresh clone. The workspace has no projects yet, so the router routes here — it creates <your_project>.aDNA/, its triad of what/ how/ who/, its governance files, and its own git history.',
     lookFor:
-      'Follow it as a recipe and you can predict exactly what will appear on disk before you run anything. That predictability is the point of the tour: nothing below is a surprise. If you would rather do it by hand, you can — the skill is a description of file creation, not a binary.',
+      'Inspect the creation steps before running them; the resulting files also depend on your answers and the agent. If you would rather do it by hand, you can — the skill is a description of file creation, not a binary.',
   },
   'skill-onboarding': {
     title: 'The interview that comes second',

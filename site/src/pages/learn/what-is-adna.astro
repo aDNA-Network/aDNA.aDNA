@@ -39,7 +39,7 @@ const proofLinks = [
   { path: '.adna/', href: `${REPO_HTTPS}/tree/main/.adna`, note: 'the full aDNA standard, embedded and ready to clone' },
   { path: '.adna/how/skills/skill_onboarding.md', href: `${REPO_HTTPS}/blob/main/.adna/how/skills/skill_onboarding.md`, note: 'the first-run recipe that orients a new project' },
   { path: '.adna/how/skills/skill_project_fork.md', href: `${REPO_HTTPS}/blob/main/.adna/how/skills/skill_project_fork.md`, note: 'how a new .aDNA project is created' },
-  { path: '.adna/how/templates/template_workspace_claude.md', href: `${REPO_HTTPS}/blob/main/.adna/how/templates/template_workspace_claude.md`, note: 'the router template every workspace starts from' },
+  { path: '.adna/how/templates/template_workspace_claude.md', href: `${REPO_HTTPS}/blob/main/.adna/how/templates/template_workspace_claude.md`, note: 'the reusable router template; the clone already has its own root router' },
   { path: '.adna/how/templates/template_home_claude.md', href: `${REPO_HTTPS}/blob/main/.adna/how/templates/template_home_claude.md`, note: 'the governance template a fresh clone uses to bootstrap a polished Home (shipped at v8.0)' },
   { path: '.adna/how/templates/template_node_adna_exemplar/', href: `${REPO_HTTPS}/tree/main/.adna/how/templates/template_node_adna_exemplar`, note: 'the themed exemplar Home the bootstrap offers out of the box (shipped at v8.0)' },
 ];
@@ -65,11 +65,11 @@ const proofLinks = [
       and below the point of confusion. Named here rather than in the hero, because the page
       titled "What is aDNA?" is where someone who wondered about the name will look, and a hero
       is the wrong place to answer a question most readers never asked. */}
-  <p class="name-note"><strong>A note on the name.</strong> In genomics, <em>aDNA</em> usually means <a href="https://en.wikipedia.org/wiki/Ancient_DNA">ancient DNA</a>. This is not that. Here it stands for <em>Agentic DNA</em>, and the borrowing is deliberate: a genome is structure a cell inherits and reads, and these files are structure a project keeps and its agents read.</p>
+  <p class="name-note"><strong>A note on the name.</strong> In genomics, <em>aDNA</em> usually means <a href="https://en.wikipedia.org/wiki/Ancient_DNA">ancient DNA</a>. This is not that. Here it stands for <em>Agentic DNA</em>, and the borrowing is deliberate: think of it as AI DNA — project knowledge that can be read, revised and passed on. Sharing is your choice; the biological comparison is a metaphor, not a claim about how a model learns.</p>
 
   <h2 id="the-problem">The problem</h2>
   <p>AI agents have the same trouble people do: finding the right file. With no shape to follow, an agent reads the wrong thing, or misses the thing that counts. So you explain the project again at the start of each session. Agents undo decisions they made last week. Work slips out of reach as the context window fills.</p>
-  <p>The problem is the filing, not the agent. The agent is able; it has nowhere to look. Most teams patch the gap with long READMEs and custom prompts, and none of that carries to the next session, the next agent, or the next teammate. aDNA is one open answer. Any team can adopt it, any tool can support it, and any agent can read it with no setup.</p>
+  <p>A shared file structure gives people and agents a place to look. aDNA documents one such convention in plain Markdown. An agent still needs access to the files and instructions to read them; the structure does not guarantee that it will follow a rule or find the right answer.</p>
 
   <h2 id="the-approach">How aDNA works</h2>
   <p>aDNA gives a project three things:</p>
@@ -92,10 +92,10 @@ const proofLinks = [
 └── how/               # HOW — operations, plans, execution
     ├── missions/      # Work decomposed into claimable objectives
     └── sessions/      # Per-session tracking and handoff notes</code></pre>
-  <p>An agent that has seen one aDNA project knows this at a glance, before it reads a word of the content.</p>
+  <p>The directory names provide a starting map; the agent must still read the project’s instructions.</p>
 
   <h3 id="entity-types">The 16 entity types</h3>
-  <p>Every file states its type. Because the types never change, an agent can work in a project it has never seen, with nothing to set up first. The 16 base types are split across the Triad — <strong>4 WHO, 5 WHAT, 7 HOW</strong>. Here is the whole set:</p>
+  <p>Content files state a type in their metadata. The base types provide a common vocabulary; a project can document extensions. The 16 base types are split across the Triad — <strong>4 WHO, 5 WHAT, 7 HOW</strong>. Here is the whole set:</p>
   <details class="disclose">
     <summary>The 16 base entity types</summary>
     <div class="disclose-body">
@@ -124,9 +124,9 @@ const proofLinks = [
   </details>
 
   <h3 id="claude-md-example">What a CLAUDE.md looks like</h3>
-  <p>A <code>CLAUDE.md</code> is not a README. It is the agent's operating protocol, and the agent reads it first, every session. Instead of "work it out from the README", the project and the agent share one set of terms.</p>
+  <p>A <code>CLAUDE.md</code> gives an agent instructions for the project. Claude Code supports this filename; other tools need their own entry-point configuration.</p>
   <details class="disclose">
-    <summary>See the opening of a real CLAUDE.md</summary>
+    <summary>See an abbreviated CLAUDE.md example</summary>
     <div class="disclose-body">
       <pre><code># CLAUDE.md — aDNA.aDNA
 
@@ -168,7 +168,7 @@ aDNA.aDNA/
   <p><strong>With aDNA:</strong> the same project has a <a href="/glossary/glossary-context-library"><code>what/context/</code> library</a>, a <code>STATE.md</code> that names the current priorities and blockers, and a <code>how/missions/</code> directory where work is split into pieces someone can claim. An agent opens <code>CLAUDE.md</code>, reads the context it points to, and starts in the right direction — in that same session.</p>
 
   <h2 id="see-for-yourself">See for yourself</h2>
-  <p><strong>aDNA is not a concept deck. It is a standard you can clone and read today.</strong> The public image at <a href={REPO_HTTPS}><code>github.com/aDNA-Network/aDNA</code></a> is a real aDNA workspace. One command gives you the standard, the skills and the templates. A fresh clone also offers to set up a complete Home for an agent. Open the files yourself:</p>
+  <p><strong>aDNA is not a concept deck. It is a standard you can clone and read today.</strong> The public image at <a href={REPO_HTTPS}><code>github.com/aDNA-Network/aDNA</code></a> is a real aDNA workspace. One command gives you the standard, the skills and the templates. After you create a project, the router can offer an optional Home vault for machine-level organization. Open the files yourself:</p>
   <ul>
     {proofLinks.map(({ path, href, note }) => (
       <li><a href={href}><code>{path}</code></a> — {note}</li>
@@ -177,13 +177,13 @@ aDNA.aDNA/
   <p>This site is itself an aDNA vault. The shape you are reading about is the shape that produced it. Clone the image and open it in Obsidian, in VS Code, or on GitHub — every directory and every frontmatter field is one of these ideas at work.</p>
 
   <h2 id="three-questions">The three-question test</h2>
-  <p>A well-built aDNA project lets any agent answer three questions at once, without asking:</p>
+  <p>Use these three questions to check whether your project is navigable:</p>
   <ol>
     <li><strong>What is this project?</strong> — <code>CLAUDE.md</code> and <code>MANIFEST.md</code> at the root.</li>
     <li><strong>Where does it stand?</strong> — <code>STATE.md</code>: blockers, active work, next steps.</li>
     <li><strong>Where do I start?</strong> — the open mission in <code>how/missions/</code>, or the nearest <code>AGENTS.md</code>.</li>
   </ol>
-  <p>If your project answers all three within ten seconds of reading, it is ready for aDNA.</p>
+  <p>Check that each answer is written down and that its links lead to the current files.</p>
 
   <h2 id="next-steps">Explore further</h2>
   <ul>

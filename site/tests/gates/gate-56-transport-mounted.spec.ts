@@ -138,7 +138,7 @@ test.describe('gate-56 — the field-CWV transport is mounted, not merely instal
     ).toEqual([...UNCOVERED_BY_CONSTRUCTION].sort());
   });
 
-  test('G56d: /privacy states that the numbers ARE sent, and names the recipient', () => {
+  test('G56d: /privacy discloses configured transport and unverified receipt', () => {
     // ⛔⛔ THIS LIMB WAS WEAK ON ITS FIRST WRITING AND THE RED-PROOF CAUGHT IT. It asserted
     // `includes('sent to') && includes('Vercel')` — and BOTH substrings occur elsewhere on this
     // page in unrelated copy ("sent to us or to anyone else" in the storage section; "Vercel" 8×,
@@ -152,7 +152,9 @@ test.describe('gate-56 — the field-CWV transport is mounted, not merely instal
         'page promised, in its own voice, to be updated BEFORE this shipped. A transport without ' +
         'its disclosure is the exact defect this increment\'s ordering was designed to prevent, ' +
         'arriving later by a different route.',
-    ).toContain('Those numbers are now sent to Vercel');
+    ).toContain('Vercel Speed Insights is configured to report page-performance measurements');
+    expect(text).toContain('We have not yet verified receipt of its reports in the collector');
+    expect(text).not.toContain('adna.network collects nothing');
   });
 
   test('G56e: /privacy does NOT still claim the numbers stay on the device', () => {

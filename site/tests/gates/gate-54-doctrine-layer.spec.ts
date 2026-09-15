@@ -796,8 +796,8 @@ test.describe('gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, 
 
     expect(
       (privacyTwin ?? '').toLowerCase(),
-      'the /privacy twin does not contain "collects" — the probe is not reaching the page it grades.',
-    ).toContain('collects');
+      'the /privacy twin does not contain "performance measurement" — the probe is not reaching the page it grades.',
+    ).toContain('performance measurement');
   });
 
   test('G54w: R-124\'s disclaiming section reaches the reader, and is not a mention', () => {

@@ -3,7 +3,7 @@ plan_id: mission_garnier_p1_2_quickstart_voice
 type: plan
 title: Bring the first task into focus
 owner: stanley
-status: queued
+status: in_progress
 campaign_id: campaign_garnier
 campaign: campaign_garnier
 campaign_phase: 1
@@ -154,7 +154,7 @@ Previous: [[mission_garnier_p1_1_homepage_voice]]. Next: [[mission_garnier_p1_3_
 
 ## Progress
 
-Queued. Specification amended; no campaign acceptance criterion has been executed by this records-only sitting.
+[D] 2026-09-15: scoped candidate copy implemented under DP2. Validation is in progress alongside the homepage; dependencies are not claimed complete. See [[claim_evidence_map]]. Human observations remain owed before DP3.
 
 ## Completion Summary
 
