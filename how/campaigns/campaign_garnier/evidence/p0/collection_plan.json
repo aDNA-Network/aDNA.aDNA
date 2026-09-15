@@ -341,5 +341,26 @@
         "/blog"
       ]
     }
-  }
+  },
+  "supplemental_comparators": {
+    "nous_releases": {
+      "origin": "https://nousresearch.com",
+      "routes": [
+        "/releases/",
+        "/blog/"
+      ]
+    },
+    "nous_hermes": {
+      "origin": "https://hermes-agent.nousresearch.com",
+      "routes": [
+        "/",
+        "/docs",
+        "/docs/getting-started/quickstart",
+        "/docs/developer-guide/contributing"
+      ]
+    }
+  },
+  "collection_corrections": [
+    "Nous /research/ and /about/ were collector guesses returning 404, not claimed site dead links. Follow actual /releases/ and /blog/ links plus linked Hermes product/docs. Failed seeds retained."
+  ]
 }

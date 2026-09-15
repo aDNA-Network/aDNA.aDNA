@@ -1,0 +1,386 @@
+{
+  "type": "synthetic_calibration",
+  "scorer": "b",
+  "created": "2026-09-15",
+  "updated": "2026-09-15",
+  "last_edited_by": "agent_codex",
+  "status": "completed",
+  "provenance": "D-syn",
+  "human_evidence": false,
+  "scope": "Published reader-answer-key application to six supplied synthetic fixtures; not baseline scoring, human perception or participant outcomes.",
+  "supplied_context": {
+    "task": "Bounded parent assignment; no expected-label file, peer calibration or prescreen responses read.",
+    "files_read": [
+      {
+        "path": "how/campaigns/campaign_garnier/artifacts/amendments/reader_protocol.md",
+        "sha256": "609bfd8cea1db2835fc57545a4d70bf9a5d05b90e495e9271636d718b3ece30b"
+      },
+      {
+        "path": "how/campaigns/campaign_garnier/evidence/p0/reader_calibration_answers.json",
+        "sha256": "2f7e31dd79bdcf1bd26b58cd4141051bfe973a78a5954b20bc2b465c560eaead"
+      },
+      {
+        "path": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started.txt",
+        "sha256": "27045e7a8f45028fe6caf68d29be92370d501a647a9dd2d6a16e3486031b20e5"
+      },
+      {
+        "path": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_canonical-properties.txt",
+        "sha256": "b700207b8af932367bd3219791e9c9086862a57f8bc0faf8814a253bf09c988a"
+      },
+      {
+        "path": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_what-is-adna.txt",
+        "sha256": "215747a0b0e802dc1fbfe00359bc04d92989b0fd4592e72993f9109c6b017ba0"
+      },
+      {
+        "path": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_about.txt",
+        "sha256": "431ec1150cb85b6f62245a1da57ae3d8e1e2928e22de98770abd5fa3185a3eeb"
+      },
+      {
+        "path": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_state-of-the-network.txt",
+        "sha256": "9a7db1a9e07b012f4c619cf70ac6edc31845ddad176a4469856dc9eb08f99557"
+      },
+      {
+        "path": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community.txt",
+        "sha256": "51d664fb9e1a0e8e3f27b9625ff622fd67b0a06946e2748ef0ae4e071833425d"
+      }
+    ],
+    "protocol_scope_note": "The full reader_protocol.md was displayed; scoring uses its Answer key only. Other protocol sections contain procedure, not participant outcomes.",
+    "fixture_scope_note": "The fixture source field itself labels three entries synthetic failing calibration. Decisions above are based on criterion application, not those labels; this is consequently not a blinded-label validation experiment.",
+    "inherited_context": "This agent retains the earlier excluded baseline task context, including historical instrument exposure and its own excluded baseline output. Parent explicitly permitted reuse for this calibration. No baseline score or finding was consulted or used as the answer key.",
+    "source_verification": "Verified against frozen public text named by fixtures. Entries whose source field is synthetic failing calibration have no page URL; their failure follows directly from the published key.",
+    "tool_access": "Read local files and wrote this JSON only in the calibration subtask; no browsing, new website observations, executions of sample commands, delegation or commits."
+  },
+  "results": [
+    {
+      "id": "K17",
+      "role": "engineer",
+      "short": {
+        "result": "PASS",
+        "criteria": [
+          {
+            "criterion": "Reusable structure or standard for agent context",
+            "result": "PASS",
+            "reason": "Folder-and-file convention accurately paraphrases the standard."
+          },
+          {
+            "criterion": "Present supported action",
+            "result": "PASS",
+            "reason": "Clone the published workspace is available in the pinned Get Started page."
+          },
+          {
+            "criterion": "No disqualifying model/federation/ownership claim",
+            "result": "PASS",
+            "reason": "No trained-model, independent-federation or current democratic-ownership claim."
+          }
+        ],
+        "rationale": "All required short-answer criteria hold.",
+        "inability_to_answer": false
+      },
+      "long": {
+        "result": "PASS",
+        "criteria": [
+          {
+            "criterion": "Exact initial command or local file example",
+            "result": "PASS",
+            "reason": "The full git clone URL, ~/aDNA destination, cd and claude invocation match Get Started."
+          },
+          {
+            "criterion": "Prerequisite",
+            "result": "PASS",
+            "reason": "Git, installed Claude Code and Anthropic account match the page."
+          },
+          {
+            "criterion": "Context and governance location",
+            "result": "PASS",
+            "reason": "Workspace CLAUDE.md router, project CLAUDE.md and what/how/who folders match the published tree."
+          }
+        ],
+        "rationale": "All three artifacts match. Plain-language wording is sufficient.",
+        "inability_to_answer": false
+      }
+    },
+    {
+      "id": "K04",
+      "role": "funder",
+      "short": {
+        "result": "FAIL",
+        "criteria": [
+          {
+            "criterion": "Reusable structure or standard for agent context",
+            "result": "FAIL",
+            "reason": "Describes a frontier model federation, not a reusable context structure."
+          },
+          {
+            "criterion": "Present supported action",
+            "result": "FAIL",
+            "reason": "Investing in an established network/model service is not a supported present action."
+          },
+          {
+            "criterion": "No disqualifying model/federation/ownership claim",
+            "result": "FAIL",
+            "reason": "Claims multiple independent institutions and current public ownership, both prohibited by the key."
+          }
+        ],
+        "rationale": "Incorrect substantive claims, not inability to answer; disqualifying confusion cannot be offset by fluency.",
+        "inability_to_answer": false
+      },
+      "long": {
+        "result": "FAIL",
+        "criteria": [
+          {
+            "criterion": "Named present steward",
+            "result": "FAIL",
+            "reason": "Stanley is named, but described as one of elected owners today; the supplied public About page says one current decision-holder and future decentralization."
+          },
+          {
+            "criterion": "Available versus planned",
+            "result": "FAIL",
+            "reason": "Treats independent federation and elected stewardship as already established."
+          },
+          {
+            "criterion": "Present contribution/contact ask",
+            "result": "FAIL",
+            "reason": "Buying into a model service replaces the actual clone/contribute/propose/join ask."
+          },
+          {
+            "criterion": "No invented endorsement or adoption",
+            "result": "FAIL",
+            "reason": "Independent institutional endorsement is invented rather than distinguished from a related-party relationship."
+          }
+        ],
+        "rationale": "Merely naming Stanley cannot satisfy a criterion whose current role is materially misdescribed.",
+        "inability_to_answer": false
+      }
+    },
+    {
+      "id": "K22",
+      "role": "scientist",
+      "short": {
+        "result": "PASS",
+        "criteria": [
+          {
+            "criterion": "Reusable structure or standard for agent context",
+            "result": "PASS",
+            "reason": "Standard for organizing project context as agent-readable files meets the mechanism criterion."
+          },
+          {
+            "criterion": "Present supported action",
+            "result": "PASS",
+            "reason": "Inspecting the public repository is a supported present action."
+          },
+          {
+            "criterion": "No disqualifying model/federation/ownership claim",
+            "result": "PASS",
+            "reason": "No disqualifying claim."
+          }
+        ],
+        "rationale": "All required short-answer criteria hold.",
+        "inability_to_answer": false
+      },
+      "long": {
+        "result": "PASS",
+        "criteria": [
+          {
+            "criterion": "Explain mechanism",
+            "result": "PASS",
+            "reason": "Governance file plus knowledge/operations/people folders and linked Markdown matches the public explanation."
+          },
+          {
+            "criterion": "Locate source or lineage",
+            "result": "PASS",
+            "reason": "Names the public aDNA-Network/aDNA.aDNA self-application repository; canonical-properties identifies it as the source workspace for this site."
+          },
+          {
+            "criterion": "Available or explicitly absent evaluation",
+            "result": "PASS",
+            "reason": "Get Started explicitly says a real clean-machine recording has not yet been made; inspection of source is correctly separated from measured model-performance evidence."
+          }
+        ],
+        "rationale": "All three criteria hold. The answer does not rely on the DNA metaphor as proof or invent a benchmark.",
+        "inability_to_answer": false
+      }
+    },
+    {
+      "id": "K09",
+      "role": "engineer",
+      "short": {
+        "result": "FAIL",
+        "criteria": [
+          {
+            "criterion": "Reusable structure or standard for agent context",
+            "result": "FAIL",
+            "reason": "Calls it a trained frontier model pooling member context."
+          },
+          {
+            "criterion": "Present supported action",
+            "result": "FAIL",
+            "reason": "Hosted inference is not the available local workspace action."
+          },
+          {
+            "criterion": "No disqualifying model/federation/ownership claim",
+            "result": "FAIL",
+            "reason": "Trained-model and already-pooled federation claims trigger explicit failure."
+          }
+        ],
+        "rationale": "Incorrect substantive claims, not inability to answer; disqualifying confusion cannot be offset by fluency.",
+        "inability_to_answer": false
+      },
+      "long": {
+        "result": "FAIL",
+        "criteria": [
+          {
+            "criterion": "Exact initial command or local file example",
+            "result": "FAIL",
+            "reason": "No runnable command or local file example is located."
+          },
+          {
+            "criterion": "Prerequisite",
+            "result": "FAIL",
+            "reason": "Invents a cloud-account flow and denies the actual local prerequisites."
+          },
+          {
+            "criterion": "Context and governance location",
+            "result": "FAIL",
+            "reason": "Places governance in a hosted democratic federation instead of the documented local files."
+          }
+        ],
+        "rationale": "All three engineer requirements fail; this is an incorrect response, not a missing answer.",
+        "inability_to_answer": false
+      }
+    },
+    {
+      "id": "K31",
+      "role": "funder",
+      "short": {
+        "result": "PASS",
+        "criteria": [
+          {
+            "criterion": "Reusable structure or standard for agent context",
+            "result": "PASS",
+            "reason": "Open file standard for agent context meets the reusable-structure requirement."
+          },
+          {
+            "criterion": "Present supported action",
+            "result": "PASS",
+            "reason": "Inspect or clone published material is supported."
+          },
+          {
+            "criterion": "No disqualifying model/federation/ownership claim",
+            "result": "PASS",
+            "reason": "No unsupported claim of present democratic ownership or independent federation."
+          }
+        ],
+        "rationale": "All required short-answer criteria hold.",
+        "inability_to_answer": false
+      },
+      "long": {
+        "result": "PASS",
+        "criteria": [
+          {
+            "criterion": "Named present steward",
+            "result": "PASS",
+            "reason": "Stanley Bishop as Founding Architect/current single steward matches About."
+          },
+          {
+            "criterion": "Available versus planned",
+            "result": "PASS",
+            "reason": "Published workspace/specification are present; second independent node and democratic stewardship are explicitly future."
+          },
+          {
+            "criterion": "Present contribution/contact ask",
+            "result": "PASS",
+            "reason": "Clone, contribute, propose a change or join the community matches the supplied public pages."
+          },
+          {
+            "criterion": "No invented endorsement or adoption",
+            "result": "PASS",
+            "reason": "Explicitly refuses to equate a related-party relationship with independent endorsement."
+          }
+        ],
+        "rationale": "All funder requirements hold without demanding project-specific jargon.",
+        "inability_to_answer": false
+      }
+    },
+    {
+      "id": "K13",
+      "role": "scientist",
+      "short": {
+        "result": "FAIL",
+        "criteria": [
+          {
+            "criterion": "Reusable structure or standard for agent context",
+            "result": "FAIL",
+            "reason": "DNA metaphor plus frontier model is not a file/context standard."
+          },
+          {
+            "criterion": "Present supported action",
+            "result": "FAIL",
+            "reason": "Validated intelligence-gain reproduction is not a supported available action."
+          },
+          {
+            "criterion": "No disqualifying model/federation/ownership claim",
+            "result": "FAIL",
+            "reason": "Claims an evaluated frontier model, triggering the key\u2019s failure condition."
+          }
+        ],
+        "rationale": "Incorrect substantive claims, not inability to answer; disqualifying confusion cannot be offset by fluency.",
+        "inability_to_answer": false
+      },
+      "long": {
+        "result": "FAIL",
+        "criteria": [
+          {
+            "criterion": "Explain mechanism",
+            "result": "FAIL",
+            "reason": "Democratic ownership is asserted as mechanism; no governance-file/folder/context mechanism is explained."
+          },
+          {
+            "criterion": "Locate source or lineage",
+            "result": "FAIL",
+            "reason": "Biological metaphor is offered as proof of novelty; no published repository, specification or source artifact is located."
+          },
+          {
+            "criterion": "Available or explicitly absent evaluation",
+            "result": "FAIL",
+            "reason": "Invents multi-operator controlled trials and better reasoning instead of identifying available evidence or its stated absence."
+          }
+        ],
+        "rationale": "All scientist requirements fail; metaphor and aspiration are incorrectly treated as experimental evidence.",
+        "inability_to_answer": false
+      }
+    }
+  ],
+  "summary": {
+    "short_pass_ids": [
+      "K17",
+      "K22",
+      "K31"
+    ],
+    "short_fail_ids": [
+      "K04",
+      "K09",
+      "K13"
+    ],
+    "long_pass_ids": [
+      "K17",
+      "K22",
+      "K31"
+    ],
+    "long_fail_ids": [
+      "K04",
+      "K09",
+      "K13"
+    ],
+    "inability_to_answer_ids": []
+  },
+  "effort": {
+    "rough_content_load_tokens": 13000,
+    "estimate_only": true,
+    "runtime": "Not metered; several minutes of reading and criterion application.",
+    "billing": "unavailable"
+  },
+  "limitations": [
+    "Synthetic fixtures establish key application only; no human success rate, timing or comprehension is measured.",
+    "No claim of agreement with the coordinator expected labels or another scorer; neither was read."
+  ]
+}

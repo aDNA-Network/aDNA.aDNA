@@ -1,0 +1,102 @@
+{
+  "dist": "/Users/stanley/aDNA/aDNA.aDNA/site/dist",
+  "include404": false,
+  "floor": 200,
+  "pages_scanned": 229,
+  "pages_with_jsonld": 228,
+  "pages_without_jsonld": 1,
+  "total_blocks": 228,
+  "parse_failures": 0,
+  "parse_failure_routes": [],
+  "type_counts": {
+    "WebPage": 85,
+    "TechArticle": 113,
+    "BreadcrumbList": 123,
+    "CollectionPage": 17,
+    "WebSite": 1,
+    "HowTo": 12,
+    "Dataset": 1
+  },
+  "organizations_found": 0,
+  "organizations_missing_sameas": 0,
+  "class_counts": {
+    "other": 58,
+    "commons": 1,
+    "community": 8,
+    "get-started": 6,
+    "home": 1,
+    "learn": 25,
+    "tutorial": 11,
+    "network": 1,
+    "patterns": 9,
+    "reference": 33,
+    "vault-detail": 74,
+    "vaults-graph": 1,
+    "vaults-index": 1
+  },
+  "class_coverage": {
+    "commons": {
+      "pages": 1,
+      "with_jsonld": 1
+    },
+    "community": {
+      "pages": 8,
+      "with_jsonld": 8
+    },
+    "get-started": {
+      "pages": 6,
+      "with_jsonld": 6
+    },
+    "home": {
+      "pages": 1,
+      "with_jsonld": 1
+    },
+    "learn": {
+      "pages": 25,
+      "with_jsonld": 25
+    },
+    "network": {
+      "pages": 1,
+      "with_jsonld": 1
+    },
+    "other": {
+      "pages": 58,
+      "with_jsonld": 57
+    },
+    "patterns": {
+      "pages": 9,
+      "with_jsonld": 9
+    },
+    "reference": {
+      "pages": 33,
+      "with_jsonld": 33
+    },
+    "tutorial": {
+      "pages": 11,
+      "with_jsonld": 11
+    },
+    "vault-detail": {
+      "pages": 74,
+      "with_jsonld": 74
+    },
+    "vaults-graph": {
+      "pages": 1,
+      "with_jsonld": 1
+    },
+    "vaults-index": {
+      "pages": 1,
+      "with_jsonld": 1
+    }
+  },
+  "without_routes": [
+    "install.html"
+  ],
+  "build": {
+    "head": "1e5b8d0",
+    "siteDirtyFiles": [],
+    "siteDirty": false,
+    "treeDirty": true,
+    "siteHead": "0a6fa5a"
+  },
+  "generated_at": "2026-09-15T08:22:49.910Z"
+}

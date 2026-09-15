@@ -1,0 +1,6 @@
+import {createRequire} from 'node:module';import fs from 'node:fs';import path from 'node:path';import http from 'node:http';
+const root=process.cwd(),out=path.join(root,'how/campaigns/campaign_garnier/evidence/p0'),req=createRequire(path.join(out,'raw/tools/package.json')),pa11y=req('pa11y'),siteReq=createRequire(path.join(root,'site/package.json')),{chromium}=siteReq('@playwright/test');
+const server=http.createServer((q,s)=>{s.setHeader('Content-Type','text/html');s.end(`<!doctype html><html lang="en"><head><title>Control</title></head><body><main><h1>Control</h1><p style="color:${q.url==='/bad'?'#eeeeee':'#111111'};background:#ffffff">This text tests readable contrast.</p></main></body></html>`);});await new Promise(ok=>server.listen(0,'127.0.0.1',ok));let rows=[];
+try{for(const name of ['good','bad']){const r=await pa11y(`http://127.0.0.1:${server.address().port}/${name}`,{chromeLaunchConfig:{executablePath:chromium.executablePath(),headless:true},standard:'WCAG2AA',runners:['htmlcs']});rows.push({name,issues:r.issues});}
+ const pass=!rows[0].issues.some(x=>x.type==='error')&&rows[1].issues.some(x=>x.code.endsWith('G18.Fail'));fs.writeFileSync(path.join(out,'pa11y_controls.json'),JSON.stringify({pass,rows},null,2));if(!pass)process.exitCode=1;
+}finally{await new Promise(ok=>server.close(ok));}

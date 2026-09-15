@@ -3,7 +3,7 @@ plan_id: mission_garnier_p0_2_instruments
 type: plan
 title: Calibrate the added instruments
 owner: stanley
-status: queued
+status: in_progress
 campaign_id: campaign_garnier
 campaign: campaign_garnier
 campaign_phase: 0
@@ -151,7 +151,7 @@ Previous: [[mission_garnier_p0_1_baseline]]. Next: [[mission_garnier_p1_1_homepa
 
 ## Progress
 
-Queued. Specification amended; no campaign acceptance criterion has been executed by this records-only sitting.
+[D] P0.1 is complete with a paired provisional baseline. Instrument contract and controls were prepared independently while scoring finished, committed before prescreen outcomes. Twenty consumer controls and eighteen existing reading controls pass; complete tracked-source and first-contact censuses are recorded. Two key calibrators have returned; clean synthetic prescreens are running outside the vault after governance priming was detected and excluded.
 
 ## Completion Summary
 

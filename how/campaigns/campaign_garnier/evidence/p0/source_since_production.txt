@@ -1,0 +1,15 @@
+M	site/scripts/deploy_log.txt
+M	site/src/content/docs/community-context-commons.mdx
+M	site/src/content/docs/community-processes.mdx
+M	site/src/content/docs/community-roles.mdx
+M	site/src/content/docs/glossary-mission.mdx
+M	site/src/content/docs/glossary-ontology-extension.mdx
+M	site/src/content/docs/glossary-skill.mdx
+M	site/src/content/docs/glossary-template.mdx
+M	site/src/data/network_state.ts
+M	site/src/data/subnetworks.yaml
+M	site/src/pages/about.astro
+M	site/src/pages/commons.astro
+M	what/glossary/glossary_mission.md
+A	who/coordination/coord_2026_09_13_rosetta_to_codex_vitrine_design_brief.md
+A	who/coordination/inbox/coord_2026_09_11_mondrian_to_rosetta_a8_ships_and_your_invitation_was_needed_the_sentence_got_misread.md

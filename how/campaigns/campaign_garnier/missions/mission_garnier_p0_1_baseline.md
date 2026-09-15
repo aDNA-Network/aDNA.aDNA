@@ -3,7 +3,7 @@ plan_id: mission_garnier_p0_1_baseline
 type: plan
 title: Freeze baseline and reconcile authority
 owner: stanley
-status: in_progress
+status: completed
 campaign_id: campaign_garnier
 campaign: campaign_garnier
 campaign_phase: 0
@@ -20,6 +20,9 @@ executor_tier: opus
 executor_runtime: codex
 token_budget_estimated: 70
 token_budget_unit: kT_content_load
+token_budget_actual: 380
+token_budget_actual_basis: rough content-load estimate, uncertainty plus_or_minus 130 kT; includes two excluded scorer attempts
+api_billing_actual: unavailable
 estimated_sessions: 2
 calibrated_sessions: null
 estimation_class: governance-tight
@@ -150,16 +153,18 @@ Previous: DP1 accepted charter. Next: [[mission_garnier_p0_2_instruments]]. [[ca
 
 ## Progress
 
-[D] Execution opened 2026-09-15; baseline evidence collection in progress. No score claimed.
+[D] Completed on 2026-09-15 within the ongoing P0 session. C1: production/local identities and both reference inputs frozen; all 1,692 hashes verified after scoring. C2: two clean replacement contexts returned 36 integer dimensions each; all three sites meet the within-one-point variance bar on all dimensions. Original contaminated contexts are excluded. Both sheets, clause disagreement and provisional/ceiling debt are preserved in [[baseline_reconciliation]]. C3: reserved paths untouched; local-only evidence commit and final scoped-close receipt are in the session/phase exit. DP2 remains pending.
 
 ## Completion Summary
 
-Deliverables: pending execution. Descoped: none. Key findings: pending. Scope changes: approved charter amendments; exact tranche assignment where applicable.
+[D] Delivered [[baseline_manifest]], [[scorer_a]], [[scorer_b]], [[baseline_reconciliation]], [[finding_register_p0]] and the frozen evidence pack. Local build/gates and production evidence are not conflated. Mastra D11’s literal-anchor gap prohibits using the retained reference composite as a calibrated rank. No humans, clean-machine TTFS, manual AT or field p75 were invented. Every V1/V2/V3 × C1/C2/C3 limitation in the original method matrix remains binding; direct acceptance pairs are discharged in baseline_reconciliation.
+
+[I] Actual content-load approximately 380 kT ±130 versus 70 estimated; this includes root collection/reconciliation, both final scorers and both excluded attempts. These are rough content-load units, not a model invoice. The >2× drift triggers [[p0_estimation_retrospective]].
 
 ## AAR
 
-- **Worked:** pending execution.
-- **Did not:** pending execution.
-- **Finding:** pending execution.
-- **Change:** pending execution.
-- **Follow-up:** pending execution.
+- **Worked:** [D] Frozen identities, broad reached-surface evidence, clean replacement isolation, negative controls and preserved independent judgments.
+- **Did not:** [D] Initial full-instrument reads contaminated both original contexts; the budget omitted the true cost of broad collection and independent review.
+- **Finding:** [D] Stale production counts and a fresh-mobile diagram failure survive green local automated checks; rubric low-rung gaps prevent unqualified reference ranking.
+- **Change:** [I] Bound scorer reads explicitly, retain fresh-load capture states and cost every independent context separately; stage instrument clarification without forking it.
+- **Follow-up:** [I] P0.2 closes instrument/prescreen calibration; DP2 ratifies P1. Predecessor publication, human and field debts remain with their named gates.

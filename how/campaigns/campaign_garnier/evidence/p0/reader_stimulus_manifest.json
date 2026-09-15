@@ -1,0 +1,1388 @@
+{
+  "production_commit": "eda4cbfc2857a6d2d9df7d80a5db170957d45cab",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "theme": "light",
+  "first_fold": "how/campaigns/campaign_garnier/evidence/p0/captures_curated/home_first_fold_1440_light.png",
+  "first_fold_sha256": "073b7458cb6fedaa657990584f267217c297875f58e6d47dce723d6c123cf0bc",
+  "source_capture": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/adna/desktop_light/home__desktop__light.png",
+  "pages": [
+    {
+      "url": "https://adna.network/install",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_install.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_install.txt",
+      "sha256": "9843f2930d1f62874a7db5f40bd38833ac7b7cb358de96f4dde9f7f5f8efb11e"
+    },
+    {
+      "url": "https://adna.network/",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_.txt",
+      "sha256": "883a20a318ee7b0de4820902b760a51797230c6b51235156ad27e88d283f7069"
+    },
+    {
+      "url": "https://adna.network/learn",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn.txt",
+      "sha256": "135aad62d80abcfd79af41fd1300483cfe617f68d616576c10bed9f4d948c1d2"
+    },
+    {
+      "url": "https://adna.network/privacy",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_privacy.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_privacy.txt",
+      "sha256": "b3d8b5cae3f2d1c41dc16f24a1ee1faaf0985b8d2d48367a409efdde1ab36ac2"
+    },
+    {
+      "url": "https://adna.network/patterns",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns.txt",
+      "sha256": "714f4520210d797862c12f4ad632733c4e4b6344bdb8725bcab48fd20aab7b78"
+    },
+    {
+      "url": "https://adna.network/how",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how.txt",
+      "sha256": "6d0e9063a8b0b7c09ea335ed8db965a46bd7a9c49652ee0c0c43cc33c7340e23"
+    },
+    {
+      "url": "https://adna.network/changelog",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_changelog.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_changelog.txt",
+      "sha256": "8ed3a478ea05c0d569332da8cbfa1b29f3ac09e9fa6d70011bf51749e7b6cbdd"
+    },
+    {
+      "url": "https://adna.network/security",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_security.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_security.txt",
+      "sha256": "bd4610644ab6ffcc38bfbb75dfe771c10c9d394fce989d7f1d6f4df83f6490d8"
+    },
+    {
+      "url": "https://adna.network/commons",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_commons.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_commons.txt",
+      "sha256": "2743616ebb90eeb081025ab9d4395598282ca5abe3118c7c6ef278e73ab1f46c"
+    },
+    {
+      "url": "https://adna.network/network",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_network.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_network.txt",
+      "sha256": "c299c4a2fc3b9a9e9e2c7ca9e031242fea1b27adc77d9ccb72382c37f25397a9"
+    },
+    {
+      "url": "https://adna.network/provenance-audit",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_provenance-audit.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_provenance-audit.txt",
+      "sha256": "588069fc0b60be41850af30f6059749cfb093e3a1d164510bf85d1b3c31bfef2"
+    },
+    {
+      "url": "https://adna.network/state-of-the-network",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_state-of-the-network.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_state-of-the-network.txt",
+      "sha256": "3a94a8fd744d1431b5fdd3d3105f7de7fa4197a272ecb75811dc439fac120cef"
+    },
+    {
+      "url": "https://adna.network/about",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_about.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_about.txt",
+      "sha256": "df246145de8e00b5dc61189b3c0adebd2660c06fd913354b81a3513bdd9526f3"
+    },
+    {
+      "url": "https://adna.network/use-cases",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases.txt",
+      "sha256": "ed7ad6f30d684c87eb3723ce6dcda5796da78a361d9abe8ff7a3686d8560a8f6"
+    },
+    {
+      "url": "https://adna.network/vaults",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults.txt",
+      "sha256": "721fb5be5290fd625b3efa84755edde6cd1bf69e8b2da7806a39f66a66cb82c6"
+    },
+    {
+      "url": "https://adna.network/glossary",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary.txt",
+      "sha256": "04dd078b69e7253f023f28810ca8a8dfbaf636d4803253fe5321551e86bbcf15"
+    },
+    {
+      "url": "https://adna.network/canonical-properties",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_canonical-properties.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_canonical-properties.txt",
+      "sha256": "643b8d0068dee8188b4d0470cb2bf7aa281993727850a12582d754585ad4b635"
+    },
+    {
+      "url": "https://adna.network/community",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community.txt",
+      "sha256": "4e5acfc64b12bb158170c7b6fa9c25483a670fa0c2574adf3cb2e7951f489240"
+    },
+    {
+      "url": "https://adna.network/accessibility",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_accessibility.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_accessibility.txt",
+      "sha256": "77119fca712715057282040e851006a27ff0da33aec86e9eceb273336f6594dc"
+    },
+    {
+      "url": "https://adna.network/design-system",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_design-system.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_design-system.txt",
+      "sha256": "a8620162646cbfb536d24b21ff4bf3dec9ec49205f9661920ccfff0fa372ee81"
+    },
+    {
+      "url": "https://adna.network/reference",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference.txt",
+      "sha256": "1a3b756dbf7be9c3cc454e1c2aa6d66e22dafb147a24b9bd242ad2c52299db14"
+    },
+    {
+      "url": "https://adna.network/get-started",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started.txt",
+      "sha256": "e04bdede6822240742821d512e69c7a1d02d80aacda2e719e51cf25dada17037"
+    },
+    {
+      "url": "https://adna.network/get-started/what-your-agent-reads",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started_what-your-agent-reads.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started_what-your-agent-reads.txt",
+      "sha256": "549cffc8d33ac9a0ede344d9380fe39e11dc7a101732d7ad25c9fdacf152f14b"
+    },
+    {
+      "url": "https://adna.network/get-started/what-your-agent-reads/skill-project-fork",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started_what-your-agent-reads_skill-project-fork.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started_what-your-agent-reads_skill-project-fork.txt",
+      "sha256": "72743e5352e3d922e777519cf42326c801f3a12f2f354ed43d4ac72bcd8c27d2"
+    },
+    {
+      "url": "https://adna.network/get-started/what-your-agent-reads/standard-governance",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started_what-your-agent-reads_standard-governance.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started_what-your-agent-reads_standard-governance.txt",
+      "sha256": "e5eb997832a0ac41c53db1548ffa23ddfc624ec8e6f00ef0faf49e69db4b2e08"
+    },
+    {
+      "url": "https://adna.network/get-started/what-your-agent-reads/skill-onboarding",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started_what-your-agent-reads_skill-onboarding.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started_what-your-agent-reads_skill-onboarding.txt",
+      "sha256": "0a1cf0803d5f122bb83ab90ef1c4b61115dab39ede57683708a1bc74652ebd1d"
+    },
+    {
+      "url": "https://adna.network/get-started/what-your-agent-reads/workspace-router",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started_what-your-agent-reads_workspace-router.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started_what-your-agent-reads_workspace-router.txt",
+      "sha256": "4dd1b4c64a09387579ae45a7e61ac9e3cb8e058ca658aebbe258e4f5f9992cfe"
+    },
+    {
+      "url": "https://adna.network/reference/reading-guide",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_reading-guide.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_reading-guide.txt",
+      "sha256": "7390d174c3ae8677bf719facdcf06f5f18ccb9e9112c93bd50c157bd03572c32"
+    },
+    {
+      "url": "https://adna.network/reference/tool-setup",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_tool-setup.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_tool-setup.txt",
+      "sha256": "d85f897edf9348f98a0e655ec350dc4007446de1e8aa9ee3eeaf61f285224924"
+    },
+    {
+      "url": "https://adna.network/reference/writing-guidelines",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_writing-guidelines.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_writing-guidelines.txt",
+      "sha256": "f8fa66ef0c31af93cb2f35fa81deb3b620bc396de48ffe41707523006149c875"
+    },
+    {
+      "url": "https://adna.network/reference/registry-api",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_registry-api.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_registry-api.txt",
+      "sha256": "5654c49f467b3b2de177512d2354309e3cb12a8376bd7bc7d8ee6908e45a61a4"
+    },
+    {
+      "url": "https://adna.network/reference/specification",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification.txt",
+      "sha256": "a1cda7f96143098a602431542186932f9cc925b8129bfd59f0cadd8b55b72807"
+    },
+    {
+      "url": "https://adna.network/reference/migration-guide",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_migration-guide.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_migration-guide.txt",
+      "sha256": "56e74b7b8ed16212d244bbd2eaf9d38cf58a9e4cda937140f1ea6cbefbeb3cab"
+    },
+    {
+      "url": "https://adna.network/reference/visual-identity-v2",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_visual-identity-v2.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_visual-identity-v2.txt",
+      "sha256": "4044993c8c1eab918dd956f04fb5e966d5b2c4070f8ba786c70dfb5ce588ec3a"
+    },
+    {
+      "url": "https://adna.network/reference/agent-first-guide",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_agent-first-guide.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_agent-first-guide.txt",
+      "sha256": "c8a65101657233cf29d6277f2fa323fc306039f4df7227e3a81f11f7f07c53d0"
+    },
+    {
+      "url": "https://adna.network/reference/governance-model",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_governance-model.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_governance-model.txt",
+      "sha256": "6f15ce8e5be6cc61eb7964d8b811a6562e8b63a784ba81260e54525b688262ae"
+    },
+    {
+      "url": "https://adna.network/reference/design-rationale",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_design-rationale.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_design-rationale.txt",
+      "sha256": "5b611361d5fcd7004ec5a67f74acc3c10cb2e679cdd03d3357913b8b7ddf129e"
+    },
+    {
+      "url": "https://adna.network/reference/quality-rubric",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_quality-rubric.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_quality-rubric.txt",
+      "sha256": "e1fc7c54b503f98c4d1d10fe8d89257f615ef4e133469c61d0c5825ec7ba02d3"
+    },
+    {
+      "url": "https://adna.network/reference/specification/18-success-criteria",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_18-success-criteria.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_18-success-criteria.txt",
+      "sha256": "286e17d988c8206305cf9053b50eb964d759836ab325086d3d55dfc842399069"
+    },
+    {
+      "url": "https://adna.network/reference/specification/full",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_full.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_full.txt",
+      "sha256": "44fb3e511541e5f5e59477f7f954675ecd0da8579b216d1252284f04085c5648"
+    },
+    {
+      "url": "https://adna.network/reference/specification/8-session-model",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_8-session-model.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_8-session-model.txt",
+      "sha256": "4e60a87c9665e7ffe5d17317e9731092f8c53d71d2d01822bcac5bc9b8ce3e0c"
+    },
+    {
+      "url": "https://adna.network/reference/specification/4-governance-files",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_4-governance-files.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_4-governance-files.txt",
+      "sha256": "4ab0f3c8e6ee1e63acba8d2bb03531e26c0df506c60fc446e739a7af5897e0cf"
+    },
+    {
+      "url": "https://adna.network/reference/specification/13-collision-prevention",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_13-collision-prevention.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_13-collision-prevention.txt",
+      "sha256": "72cab00286d037507ca8aba3e2a361bd8d233fb408bfa6604e538df3a8d5d84a"
+    },
+    {
+      "url": "https://adna.network/reference/specification/5-directory-structure",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_5-directory-structure.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_5-directory-structure.txt",
+      "sha256": "d55004c4d65d07e38ed41499bc345bef3470b3d38f120da10c794bac3bb1cd68"
+    },
+    {
+      "url": "https://adna.network/reference/specification/17-error-recovery-protocol",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_17-error-recovery-protocol.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_17-error-recovery-protocol.txt",
+      "sha256": "8832a10c24dbaf0b7ef299070fe1d32fc4f834127626610c5f2142de7737228b"
+    },
+    {
+      "url": "https://adna.network/reference/specification/7-frontmatter-system",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_7-frontmatter-system.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_7-frontmatter-system.txt",
+      "sha256": "3b76b7314a91588599f342640800ea3c7d973d1c62258f1e79984f51542ddce5"
+    },
+    {
+      "url": "https://adna.network/reference/specification/10-context-library",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_10-context-library.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_10-context-library.txt",
+      "sha256": "0d752ff755d04c273b9074b70f2d70ccca494acadfecb3b9a756eed2b384429a"
+    },
+    {
+      "url": "https://adna.network/reference/specification/1-introduction-scope",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_1-introduction-scope.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_1-introduction-scope.txt",
+      "sha256": "a212ee44af651f9076cfac78671d237d65f3f1272c5b74007a74e65a71233ec3"
+    },
+    {
+      "url": "https://adna.network/reference/specification/15-archive-versioning",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_15-archive-versioning.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_15-archive-versioning.txt",
+      "sha256": "e7c3bdc5eb1676ef88a028e27367a05f84fe58c6f604d5082de329b82b3a804d"
+    },
+    {
+      "url": "https://adna.network/reference/specification/16-tool-integration-tiers",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_16-tool-integration-tiers.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_16-tool-integration-tiers.txt",
+      "sha256": "5fb39e0480180d58559e3a2a5b41fd1d7478254131423239233ed7f81b5f17b1"
+    },
+    {
+      "url": "https://adna.network/reference/specification/6-naming-conventions",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_6-naming-conventions.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_6-naming-conventions.txt",
+      "sha256": "13192329ad4317072ce52597b7ba4b3906e97f21308abaeb15d1273c669c06ae"
+    },
+    {
+      "url": "https://adna.network/reference/specification/2-terminology",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_2-terminology.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_2-terminology.txt",
+      "sha256": "2f8a3beed382ac85a00be3e05e54beea2a7de28f3df98bb4ab5063358a115aca"
+    },
+    {
+      "url": "https://adna.network/reference/specification/11-coordination-protocol",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_11-coordination-protocol.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_11-coordination-protocol.txt",
+      "sha256": "a8e3ea08815eb67d0954ad6372590d8026fc582e5747cb826577d00ec1fb5a50"
+    },
+    {
+      "url": "https://adna.network/reference/specification/12-template-system",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_12-template-system.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_12-template-system.txt",
+      "sha256": "c9c1ad1fa9a15a606126dc66f9ad5c3933229145b4b61a2c2a2868bc79a2c15f"
+    },
+    {
+      "url": "https://adna.network/reference/specification/9-mission-system",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_9-mission-system.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_9-mission-system.txt",
+      "sha256": "2f3bbf68120d9c70492f3422f5654e2b8a62d287a910bea54d01c980845633ad"
+    },
+    {
+      "url": "https://adna.network/reference/specification/20-appendices",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_20-appendices.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_20-appendices.txt",
+      "sha256": "2ba1ff25f20555bf10603d882ab09856ab88fec4b1e347fba9d84de1c1d8280c"
+    },
+    {
+      "url": "https://adna.network/reference/specification/14-content-as-code-pipelines",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_14-content-as-code-pipelines.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_14-content-as-code-pipelines.txt",
+      "sha256": "215ae00fb34b604209b72679e700eff0fa7f6ba384b59b60c23f1df15b31ece7"
+    },
+    {
+      "url": "https://adna.network/reference/specification/3-triad-architecture",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_3-triad-architecture.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_3-triad-architecture.txt",
+      "sha256": "4a6cd0c3736e033abf35866c2cfa57ac6ae7a4950c6c15ca98f57d51cdbf2999"
+    },
+    {
+      "url": "https://adna.network/reference/specification/19-optional-extensions",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_19-optional-extensions.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_19-optional-extensions.txt",
+      "sha256": "1fff6b5a623da354023269a1cb441ca8ba8832c29597f555c03f9fcd3ab781a0"
+    },
+    {
+      "url": "https://adna.network/community/community-processes",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_community-processes.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_community-processes.txt",
+      "sha256": "5be024c95e100a1ed56ebd11201565b323e92a97c7684d07b6b66055b0b87b12"
+    },
+    {
+      "url": "https://adna.network/community/community-context-commons",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_community-context-commons.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_community-context-commons.txt",
+      "sha256": "7c7fa9721d4f55d71693d1013f9e5efcf2a8382a537188df52644ab026e901df"
+    },
+    {
+      "url": "https://adna.network/community/community-roles",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_community-roles.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_community-roles.txt",
+      "sha256": "fb92801827c13352acb4fc53dfb083ba70244d70a7953c4443d20af923fd40ec"
+    },
+    {
+      "url": "https://adna.network/community/community-contribution-standards",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_community-contribution-standards.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_community-contribution-standards.txt",
+      "sha256": "bae0f6c4be9516aafe77ccff4dba8cc7163dd2160afdb3c2c9a1525557fd5eaa"
+    },
+    {
+      "url": "https://adna.network/community/proposals",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_proposals.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_proposals.txt",
+      "sha256": "6eb9a80339879322efc126e3eced96d85839fee5377afa8a41ce4395d5e7106d"
+    },
+    {
+      "url": "https://adna.network/community/proposals/aep-2",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_proposals_aep-2.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_proposals_aep-2.txt",
+      "sha256": "ee86a2b934ecd9669d31fd44d58149131260e017ce850b85fd9aeb62ff63b875"
+    },
+    {
+      "url": "https://adna.network/community/proposals/aep-1",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_proposals_aep-1.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_proposals_aep-1.txt",
+      "sha256": "54d33c6f17c5d94d85167885fe079f5327506dfe3d389f9e7354e103472e0302"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-adna",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-adna.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-adna.txt",
+      "sha256": "0bb0383423aab6fcd1e1860de2cba1776d941caa2cc8463c0c79bc4b10da375d"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-bare-triad",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-bare-triad.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-bare-triad.txt",
+      "sha256": "8145c566660f083747731746e0bf0114fa3367f1e3c5fe502f5916199e1f10d0"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-collision-prevention",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-collision-prevention.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-collision-prevention.txt",
+      "sha256": "15a4ce3025df26c9da433736ef256454d8f4a64afd36ed72d591ad00d6122eb7"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-governance-file",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-governance-file.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-governance-file.txt",
+      "sha256": "01f1f202b412bc30e23fcbfddde57db0b688b373c6c6b00bdd6692e1310a9357"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-mission",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-mission.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-mission.txt",
+      "sha256": "7c9abe368055be508477a26f894146f300beb3f93df54ce8128b1bf29af5aa74"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-question-test",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-question-test.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-question-test.txt",
+      "sha256": "4467557bedd89f940b2bcd36ac682f44852a5f2ac78fced98fc4c692e79329fc"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-what",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-what.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-what.txt",
+      "sha256": "4e693fa480c401d9fb879ae4c1fab990109304d76289e8853e8d98e9e5c605c2"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-coordination-note",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-coordination-note.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-coordination-note.txt",
+      "sha256": "8019a7043d85630b91b274273ffdbab40b59917a47fccd095e15d4dfc100773d"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-session",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-session.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-session.txt",
+      "sha256": "d3ad4d3fd24e0e685a74d3cceacee9bce420a5edadb49acaa8c32144b9d12b82"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-content-as-code",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-content-as-code.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-content-as-code.txt",
+      "sha256": "65e7dfd11a915217bae8c4904e1d857f2f86c8e623c74f70fed2fd615cbc5ca9"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-how",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-how.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-how.txt",
+      "sha256": "edfb9b204517c771d062c74ac7b2f39fc11573235880582ebc9eac3628ea94a2"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-ontology-extension",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-ontology-extension.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-ontology-extension.txt",
+      "sha256": "3a0487ce0ba835747f2063c8beeb5e3d1a05a4ecc7553631b51a65d6e86784e7"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-conformance-level",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-conformance-level.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-conformance-level.txt",
+      "sha256": "077f3b65caa439fd4e65c4806d4440817dd29ab42d4ae4831f4c52c9c73541f6"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-sitrep",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-sitrep.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-sitrep.txt",
+      "sha256": "21cf8e8f5246026aae77f93cd45a414a7cd053611294e4b7a3e2d7a13344cf94"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-readme-md",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-readme-md.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-readme-md.txt",
+      "sha256": "ea460e0dd7fe5dce7eba15f61af3e40de8f0a85568145a5ce8140bc813b39d85"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-conformant-instance",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-conformant-instance.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-conformant-instance.txt",
+      "sha256": "5dc380d6d79ba54dcd309fe645a6147447d557bacb4c5db901aefa3c4a64bf2c"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-frontmatter",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-frontmatter.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-frontmatter.txt",
+      "sha256": "3ec10165d53af9b4dd53884866435b73648876c3909c607a8c8476ef2f285760"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-context-library",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-context-library.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-context-library.txt",
+      "sha256": "763ba96d4204d0448135d56bd9bc1b2af12dcfa15f8ec7e7227a8397505fe669"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-triad",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-triad.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-triad.txt",
+      "sha256": "0af1c37d23f7f38109dd867b1adc24d1483deeebb8499b032cf774bad0bb848e"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-template",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-template.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-template.txt",
+      "sha256": "70c406b89290e35ac2e1d2c9cac3994ea55540c35a658a8dd788f9507ce5253b"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-deployment-form",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-deployment-form.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-deployment-form.txt",
+      "sha256": "ee169d328cc842c536468e35cc320979b4300858b27af25f5a244a0281f547dd"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-agents-md",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-agents-md.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-agents-md.txt",
+      "sha256": "9ba6a081d586d50ceae0100b9ea6f0bc6ebcbab13a66763ea2f49ae08dc6a84b"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-skill",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-skill.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-skill.txt",
+      "sha256": "993f6fbee751bd4ff58d70ecffffe54b71b25f1a11ad82e5fa021514f0794dd1"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-embedded-triad",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-embedded-triad.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-embedded-triad.txt",
+      "sha256": "b06e18da51b129874fe2e5f880fda61b170efd707f3ab63eab254febb3c30458"
+    },
+    {
+      "url": "https://adna.network/glossary/glossary-who",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-who.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_glossary_glossary-who.txt",
+      "sha256": "787ec8c966430ac36855a07526b15ec27bda500fb7edf75f9241ac2496967b11"
+    },
+    {
+      "url": "https://adna.network/vaults/organization",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_organization.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_organization.txt",
+      "sha256": "6b7e30ce74e13fdc2ab16746556dda9777edd2a06399e74692bd9521da072541"
+    },
+    {
+      "url": "https://adna.network/vaults/nextcloud",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_nextcloud.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_nextcloud.txt",
+      "sha256": "819054bd24d42bd4fa56a7ca5f3e2400cc49f3fd3a2c38c03e26fc0e186fb298"
+    },
+    {
+      "url": "https://adna.network/vaults/regenesis",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_regenesis.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_regenesis.txt",
+      "sha256": "9dc5b1849c5d9e232b231f121c3ac9d4fec5798279702824885938d0019507c3"
+    },
+    {
+      "url": "https://adna.network/vaults/neo4j",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_neo4j.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_neo4j.txt",
+      "sha256": "f3ccb00e085ded341e5c334e73172498e34f256dbe2c61c5d6c113f03d24a637"
+    },
+    {
+      "url": "https://adna.network/vaults/home",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_home.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_home.txt",
+      "sha256": "5ba4a45248bcbb5484c8ddb5839ddc825362d3a08f3cf420fac7c1065291388e"
+    },
+    {
+      "url": "https://adna.network/vaults/zeta",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_zeta.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_zeta.txt",
+      "sha256": "80a6573e8bb8da79d8b6818c4dc8e025939c80d9471685ab990e19214d84f93c"
+    },
+    {
+      "url": "https://adna.network/vaults/visualdna",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_visualdna.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_visualdna.txt",
+      "sha256": "52f1bf0c4bda0677f88eae217836501eb326d7419b8eb401cfe9089b450ffa9d"
+    },
+    {
+      "url": "https://adna.network/vaults/molecules",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_molecules.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_molecules.txt",
+      "sha256": "37f14acd7fef97d08d89759e2d668f76a8bdfb869cce20b98d99560ba6622ae0"
+    },
+    {
+      "url": "https://adna.network/vaults/llamacppforge",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_llamacppforge.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_llamacppforge.txt",
+      "sha256": "c5d8f5c6d86ab298cdcdc982752c765f57dc9f8efc818818c46a5a5204397f62"
+    },
+    {
+      "url": "https://adna.network/vaults/exchange",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_exchange.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_exchange.txt",
+      "sha256": "06cbd721eed2241bca13b3be6755b67382c8530abd2e52448a776db4d16365a3"
+    },
+    {
+      "url": "https://adna.network/vaults/cakeprotocol",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_cakeprotocol.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_cakeprotocol.txt",
+      "sha256": "10404e1ddf9af1470c8ff2da4b72ba11e308b75dc7fe11b0ac0450e3fa00200f"
+    },
+    {
+      "url": "https://adna.network/vaults/wga",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_wga.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_wga.txt",
+      "sha256": "84ab6a776faff56afa8a0239e3a59b8497af10748513210bd2edbb179472567d"
+    },
+    {
+      "url": "https://adna.network/vaults/context",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_context.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_context.txt",
+      "sha256": "4dbc11348ccb960923117750646f34bf8a831e9cebf1f5ef59d0e5c69497db1f"
+    },
+    {
+      "url": "https://adna.network/vaults/vercel",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_vercel.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_vercel.txt",
+      "sha256": "6ee4c978dc5fcc97f87762b1b0658c0b7c34660ee00d66f54b32273038ee814b"
+    },
+    {
+      "url": "https://adna.network/vaults/contextcommons",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_contextcommons.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_contextcommons.txt",
+      "sha256": "31c266bbff8248de785d2775b0ad8c96c17e43a8fc1de94707d12b66ea705286"
+    },
+    {
+      "url": "https://adna.network/vaults/latticeprotocol",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_latticeprotocol.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_latticeprotocol.txt",
+      "sha256": "19358103b25ee0a40e8be2b60599761a4afe64ee29c7a7e79ab2911818e24282"
+    },
+    {
+      "url": "https://adna.network/vaults/comfyui",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_comfyui.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_comfyui.txt",
+      "sha256": "1ef53b23b049b9faf1a3fcc718fa4ea7863a2207164ccfb3483109c9327a4b3a"
+    },
+    {
+      "url": "https://adna.network/vaults/nebula",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_nebula.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_nebula.txt",
+      "sha256": "a06e1d9435240b3eb27c5781f703af33c5eb88b14d34005df07a21afbc6e0fc8"
+    },
+    {
+      "url": "https://adna.network/vaults/rareanthropic",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_rareanthropic.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_rareanthropic.txt",
+      "sha256": "ff1bb73e23ed99aa7b0ceec3f8df21aa8f7e12598b6736a2f6b7bfcc33cd2dd0"
+    },
+    {
+      "url": "https://adna.network/vaults/fluxer",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_fluxer.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_fluxer.txt",
+      "sha256": "ee6e7b7a70c0371139d403f46fcfbeb451092c52b67121dabad1eaa9ad049070"
+    },
+    {
+      "url": "https://adna.network/vaults/typescript",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_typescript.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_typescript.txt",
+      "sha256": "9f76fa69f1269779018a8c97e8af2db1d69e8faa1b23f714fb24acdcac05ffc7"
+    },
+    {
+      "url": "https://adna.network/vaults/laventuregraph",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_laventuregraph.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_laventuregraph.txt",
+      "sha256": "8e404cc616a4585c1fd9ae012d2cb3c1546968352f38aed7b2143305788d7b95"
+    },
+    {
+      "url": "https://adna.network/vaults/gotfn",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_gotfn.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_gotfn.txt",
+      "sha256": "6349f831c6a8fb49df2a50f45387be14b834f9ee4278be31d68a65bab5388fc0"
+    },
+    {
+      "url": "https://adna.network/vaults/sciencestanley",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_sciencestanley.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_sciencestanley.txt",
+      "sha256": "55b172f36b87e71aa257ccc1066a1bf4f2d41d6406821ddb77694eac275af531"
+    },
+    {
+      "url": "https://adna.network/vaults/network",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_network.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_network.txt",
+      "sha256": "dd8f460c473db74b933520609dbdc34cc1b8d10473b1578450aa6757bbe14dac"
+    },
+    {
+      "url": "https://adna.network/vaults/datasets",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_datasets.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_datasets.txt",
+      "sha256": "084639f871fcc35d898c8b23cbf4e2f3581ed4e92749003233a60e64e81f8179"
+    },
+    {
+      "url": "https://adna.network/vaults/graph",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_graph.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_graph.txt",
+      "sha256": "25093f8d23a13a0ab3654dd280c3eacbff33702b3632ceb521040b541d80dab5"
+    },
+    {
+      "url": "https://adna.network/vaults/percysleep",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_percysleep.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_percysleep.txt",
+      "sha256": "d4c81dccee86ce500eb250ddf63cb53b300d3af30edf55ba844c11325c92911a"
+    },
+    {
+      "url": "https://adna.network/vaults/terminal",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_terminal.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_terminal.txt",
+      "sha256": "96bf025e19d1f224f770c5905d34685440e393c182e41b5a96892417b1e9e944"
+    },
+    {
+      "url": "https://adna.network/vaults/worldgenome",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_worldgenome.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_worldgenome.txt",
+      "sha256": "1209bea20605160be695f9469f42a42cf2b89e4088e2dd63572aa556fa65c8ed"
+    },
+    {
+      "url": "https://adna.network/vaults/wilhelmai",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_wilhelmai.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_wilhelmai.txt",
+      "sha256": "ca665c12c7593c1bd3e81f005b80222dc8e98e022f3b69cd7438e4304b06fb5f"
+    },
+    {
+      "url": "https://adna.network/vaults/tappprotocol",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_tappprotocol.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_tappprotocol.txt",
+      "sha256": "daa8b74febec236bbd2b71e99e1ed241c2d66dd254106ad74faf79a6b3ff1a16"
+    },
+    {
+      "url": "https://adna.network/vaults/operations",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_operations.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_operations.txt",
+      "sha256": "6c11f72a5630be0fd52105fd37c2fb0eb706c47fce7fcfd7dd19ea6df4a0cdb3"
+    },
+    {
+      "url": "https://adna.network/vaults/emacs",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_emacs.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_emacs.txt",
+      "sha256": "52cf738f0edd0fd9602052cd3f6c02c162a1d5304e52f0055d51356768bb0fcb"
+    },
+    {
+      "url": "https://adna.network/vaults/canvas",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_canvas.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_canvas.txt",
+      "sha256": "d7ffed75328837cff18fd4521a8eccfc7e602659a13e5a9dbefb2ca0e30eb5f0"
+    },
+    {
+      "url": "https://adna.network/vaults/adnalabs",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_adnalabs.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_adnalabs.txt",
+      "sha256": "dd6c5f4af9a91048da17304c9b388f7374d7c09501d457a2bff5a686eb1b6dce"
+    },
+    {
+      "url": "https://adna.network/vaults/tailwind",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_tailwind.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_tailwind.txt",
+      "sha256": "afcc7aa21def874e66c7b599a00062b13f4af3729c6f9d798fdd9bfd526ae52f"
+    },
+    {
+      "url": "https://adna.network/vaults/container",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_container.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_container.txt",
+      "sha256": "27f35ea461a35eefd0ade9f8744b1799ca88301f77ce9d94a9192bf675f1e5e6"
+    },
+    {
+      "url": "https://adna.network/vaults/harness",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_harness.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_harness.txt",
+      "sha256": "99f8d72a79cdb9dec232f6bca2e2015842b79facd94cef9c6d14306c3af22e0f"
+    },
+    {
+      "url": "https://adna.network/vaults/oration",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_oration.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_oration.txt",
+      "sha256": "adcd863d2e20c498eaa8b39adc8e6b6dc3759b8176a412ba3b0048311ffc99d5"
+    },
+    {
+      "url": "https://adna.network/vaults/rarearchive",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_rarearchive.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_rarearchive.txt",
+      "sha256": "c964fe2e06a0967c10a6376f9c7d90cf360109d855718eec51267597d5defb25"
+    },
+    {
+      "url": "https://adna.network/vaults/videos",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_videos.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_videos.txt",
+      "sha256": "cdb45dc5adce9b8eb14c13963d2437d516b84170aa836800f1ab4b26e352e3fd"
+    },
+    {
+      "url": "https://adna.network/vaults/cakehealth",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_cakehealth.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_cakehealth.txt",
+      "sha256": "a35acbea0146db7c966497fdb4cc8aa508e36c8d50c464ddd400227128f76638"
+    },
+    {
+      "url": "https://adna.network/vaults/dashboards",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_dashboards.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_dashboards.txt",
+      "sha256": "90bac9044cd846d205090966b6ec136ccbc4d7370cc3999b9bbe82a41ce8d72b"
+    },
+    {
+      "url": "https://adna.network/vaults/realityscan",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_realityscan.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_realityscan.txt",
+      "sha256": "3f6a69e63d55751bfa57ee82e3a9ea1e02ec8d540eff10b3bfdf25472ff3592d"
+    },
+    {
+      "url": "https://adna.network/vaults/bitwarden",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_bitwarden.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_bitwarden.txt",
+      "sha256": "0790e615324ae9f25374becac6bceede48e5013dcb2a5ada4b6c791f5ac6a910"
+    },
+    {
+      "url": "https://adna.network/vaults/d3",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_d3.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_d3.txt",
+      "sha256": "8ba1896e2eb79bb81658d70b757a40656b9bc741b2aafb498e80ee2406f2ce60"
+    },
+    {
+      "url": "https://adna.network/vaults/fastapi",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_fastapi.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_fastapi.txt",
+      "sha256": "f66b285adbf2787fabdde226c8069affc3639da243cfb9eee423941cc354b342"
+    },
+    {
+      "url": "https://adna.network/vaults/zenzachary",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_zenzachary.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_zenzachary.txt",
+      "sha256": "827cf6fc117317532ff6d044c2f02e501e1d5655f5b9636d69b39da7944aaa91"
+    },
+    {
+      "url": "https://adna.network/vaults/ailp-dataroom",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_ailp-dataroom.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_ailp-dataroom.txt",
+      "sha256": "fedd3eef215ff0b0aa47ba3d7d4384362096da868986be0008d61946a234ec89"
+    },
+    {
+      "url": "https://adna.network/vaults/warp",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_warp.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_warp.txt",
+      "sha256": "90344e249140227c7e25cbf28d5d3c5668b23d4abeb61afa582c47feb7fde79f"
+    },
+    {
+      "url": "https://adna.network/vaults/superleague",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_superleague.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_superleague.txt",
+      "sha256": "2c60b791cdf5a06da167d842aabc32699293554c99beafa1a60387971d741f56"
+    },
+    {
+      "url": "https://adna.network/vaults/inference",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_inference.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_inference.txt",
+      "sha256": "392d103df993c7668eb98ff99e632bab0999d634574f1406e6a79403ae872e0a"
+    },
+    {
+      "url": "https://adna.network/vaults/awsbootstrap",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_awsbootstrap.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_awsbootstrap.txt",
+      "sha256": "e1d3fde1a5fde5eb2571804e6a91c73bf437b83b10e1e29bc472f542d645ddfc"
+    },
+    {
+      "url": "https://adna.network/vaults/datarooms",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_datarooms.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_datarooms.txt",
+      "sha256": "25e6a348dfbc8814aa995611ee14524763a8e55ac501ab3a3d0b663fc6664049"
+    },
+    {
+      "url": "https://adna.network/vaults/spacemacs",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_spacemacs.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_spacemacs.txt",
+      "sha256": "deeb5248d46d17350eff9b3a5b36ceee9493417ad662af4437f89b4dd0460735"
+    },
+    {
+      "url": "https://adna.network/vaults/lighthouse",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_lighthouse.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_lighthouse.txt",
+      "sha256": "bfee96b62ff81edf86b93a287ba0d60c8dd8c3617bd820b519676aa748488feb"
+    },
+    {
+      "url": "https://adna.network/vaults/vaas",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_vaas.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_vaas.txt",
+      "sha256": "280648e17a2a996ee2cfcbf1af5c14e75632960ba950959e7ed3287b6045075c"
+    },
+    {
+      "url": "https://adna.network/vaults/obsidian",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_obsidian.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_obsidian.txt",
+      "sha256": "438accad51602299d07bdc72974666c51a6d3120d2d4c48121460d5b17e65d8c"
+    },
+    {
+      "url": "https://adna.network/vaults/groupware",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_groupware.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_groupware.txt",
+      "sha256": "0fba4dc568fbbb3fd0888db869895407f4cab2fba1bd4c27308404e62988bf5f"
+    },
+    {
+      "url": "https://adna.network/vaults/astro",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_astro.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_astro.txt",
+      "sha256": "d650ad886fd114897f3dcef6aa2718eb3ff0615a9ffc9f44fd63c61f608a5e35"
+    },
+    {
+      "url": "https://adna.network/vaults/prefect",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_prefect.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_prefect.txt",
+      "sha256": "6208ed7109bd9cec715ef23514edea402f1caf82c039e820fbb0d2bffcba1255"
+    },
+    {
+      "url": "https://adna.network/vaults/magnapetra",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_magnapetra.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_magnapetra.txt",
+      "sha256": "1f14ba75f75cedae8431fea91690f68a7ed5cc6715fa2c1af3ddc1c5608b1f74"
+    },
+    {
+      "url": "https://adna.network/vaults/remotecontrol",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_remotecontrol.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_remotecontrol.txt",
+      "sha256": "280dd6bce49aa005ad101bb517e7a3399db9037bd91edd2afce72e86d915787b"
+    },
+    {
+      "url": "https://adna.network/vaults/webforge",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_webforge.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_webforge.txt",
+      "sha256": "94dfa61a371be95641a8efa5632ac8281b09d969bd648d6cde82b7250615a621"
+    },
+    {
+      "url": "https://adna.network/vaults/forgejo",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_forgejo.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_forgejo.txt",
+      "sha256": "a5acd404adbc7d6fb9c302d17b72fb4532990facdfb9aa8915a34db4329b4975"
+    },
+    {
+      "url": "https://adna.network/vaults/react",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_react.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_react.txt",
+      "sha256": "c0b67f820cba41f5631b42fe5ba6f8a9f4df5647fa44f97022bfa1d0024c331e"
+    },
+    {
+      "url": "https://adna.network/vaults/apscheduler",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_apscheduler.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_apscheduler.txt",
+      "sha256": "adad01fad4df465cc06746a7717f88ac36b3533fad680e9f6a2192957ffd3895"
+    },
+    {
+      "url": "https://adna.network/vaults/jupyter",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_jupyter.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_jupyter.txt",
+      "sha256": "fa4564d304b9303e71726f3a83a9c4d4fbe4b310d7a7743b64ccf416016f8ae1"
+    },
+    {
+      "url": "https://adna.network/vaults/caddy",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_caddy.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_caddy.txt",
+      "sha256": "6183a3a7e43de7136d82385a901e5f144c15514d28c6abad02a9111f9ddcc8db"
+    },
+    {
+      "url": "https://adna.network/vaults/adna",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_adna.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_adna.txt",
+      "sha256": "43470341d33049d215d1dfffa3c180143b2ff111af521272b5f4b2927563d7c0"
+    },
+    {
+      "url": "https://adna.network/vaults/git",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_git.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_git.txt",
+      "sha256": "8ae19bddf70f16ddb4f3ee630f0f4d183ab2b0abe1f989fa93372ec61c3de8b1"
+    },
+    {
+      "url": "https://adna.network/vaults/iii",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_iii.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_iii.txt",
+      "sha256": "f43da6b051348d087da02049467d65f1ef9e2a6fe858028c4f2989cf0a1833a0"
+    },
+    {
+      "url": "https://adna.network/vaults/threejs",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_threejs.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_threejs.txt",
+      "sha256": "2a687e868a99e4b112b7d385fcbd5a8cc7cb6ab0bb6ad3d3d80b6f18aa969b1c"
+    },
+    {
+      "url": "https://adna.network/vaults/store",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_store.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_vaults_store.txt",
+      "sha256": "e22262e25d602dbfd70b05fce7d799ff7b0ca0e98c22291e2c11c288dff57633"
+    },
+    {
+      "url": "https://adna.network/use-cases/open-source-project",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases_open-source-project.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases_open-source-project.txt",
+      "sha256": "40f75ade0f2dde1c6e0fe57d727de0f2a8623d5725122c7f4de63a0ac6025998"
+    },
+    {
+      "url": "https://adna.network/use-cases/enterprise-team",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases_enterprise-team.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases_enterprise-team.txt",
+      "sha256": "703aad666982be5c471f73249888d8cb9ce8d9b036d3d79c40dfc4543d3abed0"
+    },
+    {
+      "url": "https://adna.network/use-cases/educator",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases_educator.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases_educator.txt",
+      "sha256": "a77d6632150b1f92b11db09e93730689e0df4ce2a7a168d37b7a2c63d615b7b8"
+    },
+    {
+      "url": "https://adna.network/use-cases/research-lab",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases_research-lab.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases_research-lab.txt",
+      "sha256": "921fb630fbda52fabd00d918cf2e16c3ee4502b672019645bbd88f7915f1c9b6"
+    },
+    {
+      "url": "https://adna.network/use-cases/solo-developer",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases_solo-developer.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases_solo-developer.txt",
+      "sha256": "818b8e18cfe6aa41a0e53836949c313050f487961c06f84a6115cb2045230f1a"
+    },
+    {
+      "url": "https://adna.network/use-cases/startup",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases_startup.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_use-cases_startup.txt",
+      "sha256": "74b6cb572899017c6ff2baf15158226731982217d4a4fbf40befeb14b85b4a27"
+    },
+    {
+      "url": "https://adna.network/how/publishing",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_publishing.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_publishing.txt",
+      "sha256": "cfb993f8da9b6f2cf382b63d1b21d0ce36ad86f868cef562599aa30a038cb3a8"
+    },
+    {
+      "url": "https://adna.network/how/workshops",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_workshops.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_workshops.txt",
+      "sha256": "c6878f0bfab5bdf0e7f8812a246a6e57c4788fa055e6876a0c7c53b9ea9dde90"
+    },
+    {
+      "url": "https://adna.network/how/lattice-examples",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_lattice-examples.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_lattice-examples.txt",
+      "sha256": "9bde1c3613bed00a880fd77c35e497c3f02793b1fd8abf46e3c2ab20dd9bd6f7"
+    },
+    {
+      "url": "https://adna.network/how/lattice-examples/lattice-campaign-execution",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_lattice-examples_lattice-campaign-execution.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_lattice-examples_lattice-campaign-execution.txt",
+      "sha256": "e216710197b0de7e4f3374f5890d639d799f98cb9226ce80d6aa5df0f32d84d8"
+    },
+    {
+      "url": "https://adna.network/how/lattice-examples/lattice-dual-audience-review",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_lattice-examples_lattice-dual-audience-review.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_lattice-examples_lattice-dual-audience-review.txt",
+      "sha256": "feaad990d128e3c5c065241710c84371b7269e3c7b536255610e5dc49f1585f9"
+    },
+    {
+      "url": "https://adna.network/how/lattice-examples/lattice-context-serving",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_lattice-examples_lattice-context-serving.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_lattice-examples_lattice-context-serving.txt",
+      "sha256": "befa0b23757782efc457e1da8757b6c8bea69b03a023f2631d95569927724cda"
+    },
+    {
+      "url": "https://adna.network/how/lattice-examples/lattice-content-pipeline",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_lattice-examples_lattice-content-pipeline.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_lattice-examples_lattice-content-pipeline.txt",
+      "sha256": "771b0fe4588b46cc300430a481e91eda8ddd71ba418d387b7d55b9bfa3b0be10"
+    },
+    {
+      "url": "https://adna.network/how/workshops/facilitation-guide",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_workshops_facilitation-guide.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_workshops_facilitation-guide.txt",
+      "sha256": "3081fa46094cf924771cf6dadca300186b6b67089bebb2265e43e1c7193c9667"
+    },
+    {
+      "url": "https://adna.network/how/workshops/vault-exploration",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_workshops_vault-exploration.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_workshops_vault-exploration.txt",
+      "sha256": "4d77b9a470d6a11f3f2234b069d57868fbbd9fe23fff5bbdbbbaae6a5eb85824"
+    },
+    {
+      "url": "https://adna.network/how/workshops/build-your-first-vault",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_workshops_build-your-first-vault.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_workshops_build-your-first-vault.txt",
+      "sha256": "7ea1d22c4bb0d3c687757acf1d4903fbd9ce6137c6b3f6f090acc23e30ef1b54"
+    },
+    {
+      "url": "https://adna.network/how/workshops/lattice-design",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_workshops_lattice-design.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_workshops_lattice-design.txt",
+      "sha256": "709b21823044b1a02f2b9ce4a44eddfb0f0af051c598dfc9201939fcd431c671"
+    },
+    {
+      "url": "https://adna.network/how/publishing/social-sharing",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_publishing_social-sharing.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_publishing_social-sharing.txt",
+      "sha256": "2c73fae1db4ca93f8e15ac749fb58ee37a0719dea9abd0b66e4e650d57344078"
+    },
+    {
+      "url": "https://adna.network/how/publishing/vault-to-site",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_publishing_vault-to-site.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_publishing_vault-to-site.txt",
+      "sha256": "c62cd2b09f5958864e5a618e5708905d7f7a846d8b70549085ea21d697f76748"
+    },
+    {
+      "url": "https://adna.network/how/publishing/content-mapping",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_publishing_content-mapping.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_how_publishing_content-mapping.txt",
+      "sha256": "a8724ee5beb4fea740d2e6565ecd525f396fee9aed4c1d0fa917a200faef7ad7"
+    },
+    {
+      "url": "https://adna.network/patterns/dual-audience-writing",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_dual-audience-writing.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_dual-audience-writing.txt",
+      "sha256": "c98557cbb1f8134a423b8c8def4d0808d117f6d9f6c6f26173b8d2bfb8d8b14e"
+    },
+    {
+      "url": "https://adna.network/patterns/base-extension",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_base-extension.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_base-extension.txt",
+      "sha256": "7ff908a8f8ff74de2d8b0b2dc8afc2bbda876e7f7bdc233524060cee0c16ab94"
+    },
+    {
+      "url": "https://adna.network/patterns/context-recipe",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_context-recipe.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_context-recipe.txt",
+      "sha256": "aa7bb9b834cb32a4eb0e132e4bfec9c729651733a395606329525657ae3d5927"
+    },
+    {
+      "url": "https://adna.network/patterns/fair-envelope",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_fair-envelope.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_fair-envelope.txt",
+      "sha256": "8c3b862e9a21b914879e5259d7a71df05480c40e87a4f5d9b3fd0ee39f5d9d4f"
+    },
+    {
+      "url": "https://adna.network/patterns/federation-readiness",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_federation-readiness.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_federation-readiness.txt",
+      "sha256": "5f6e8f7d269fd351d436461d59ffc94bb961c3bc6fc4364012894cb589509661"
+    },
+    {
+      "url": "https://adna.network/patterns/mission-decomposition",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_mission-decomposition.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_mission-decomposition.txt",
+      "sha256": "3c3edcf41d594077489f92d4e58f8160306f3e52cee32557563d8020d78c13da"
+    },
+    {
+      "url": "https://adna.network/patterns/agents-md",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_agents-md.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_agents-md.txt",
+      "sha256": "2cd3d57cb58ab4256a7a17edb4782e67b3c74655fc4295a3701065fac3b10dab"
+    },
+    {
+      "url": "https://adna.network/patterns/question-test",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_question-test.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_patterns_question-test.txt",
+      "sha256": "fee986bdb384f4014dbb9aa8a4a0e6baf58ce25036a0ec0a555e46c150fb1a09"
+    },
+    {
+      "url": "https://adna.network/learn/course",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_course.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_course.txt",
+      "sha256": "183b0ace49116b042977859509fc46aad7c807cbd73018bb978aca967cad4934"
+    },
+    {
+      "url": "https://adna.network/learn/comparisons",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_comparisons.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_comparisons.txt",
+      "sha256": "23e2d362b0dd9e34f98949a736d64061b704c934efa7b9f1cd432c01883f1fb3"
+    },
+    {
+      "url": "https://adna.network/learn/what-is-adna",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_what-is-adna.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_what-is-adna.txt",
+      "sha256": "28a3a2d42d0bcc2727ebc66cb4fc4f230641d39b97a90323e2245288f4a190f6"
+    },
+    {
+      "url": "https://adna.network/learn/concepts",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts.txt",
+      "sha256": "fd8d90c09e66dd86d74ff3d91a1c835a5be14232ebe6bd8787d46ebb8e95c2e1"
+    },
+    {
+      "url": "https://adna.network/learn/tutorials",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials.txt",
+      "sha256": "239cf47f9ff82b1119f07b74206d7c0db9ceddcb1ef789731ba865647c01194e"
+    },
+    {
+      "url": "https://adna.network/learn/tutorials/write-a-context-file",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_write-a-context-file.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_write-a-context-file.txt",
+      "sha256": "3c4be6d8bb08dcb363676ae6a76a3514fd7374a021fd4f61869b78479ddfc15e"
+    },
+    {
+      "url": "https://adna.network/learn/tutorials/first-claude-md",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_first-claude-md.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_first-claude-md.txt",
+      "sha256": "9723330e06bd3b94cec040b07f1f96c3f7fac305e2a8c1c7002f80b32ef17628"
+    },
+    {
+      "url": "https://adna.network/learn/tutorials/federate-a-vault",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_federate-a-vault.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_federate-a-vault.txt",
+      "sha256": "6443b21d85d5c60985f91001548b276412919ea320fa77afc6687fa5cddb09c4"
+    },
+    {
+      "url": "https://adna.network/learn/tutorials/build-a-lattice",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_build-a-lattice.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_build-a-lattice.txt",
+      "sha256": "07726f2be00cbaf914b76cc2c2de119b304e4366c5f40e179dc1c4a0a490b189"
+    },
+    {
+      "url": "https://adna.network/learn/tutorials/extend-the-ontology",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_extend-the-ontology.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_extend-the-ontology.txt",
+      "sha256": "fa1b4012af0e7958731a1f29f54f62000079d2acee528e676e5b7a29605c8adc"
+    },
+    {
+      "url": "https://adna.network/learn/tutorials/navigate-a-vault",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_navigate-a-vault.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_navigate-a-vault.txt",
+      "sha256": "1f7b4e2fc0bf774f7698500b72a6a822bf603069067d554e99df5b624379eaab"
+    },
+    {
+      "url": "https://adna.network/learn/tutorials/exchange-adoption-path",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_exchange-adoption-path.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_exchange-adoption-path.txt",
+      "sha256": "7889a456463fcaf3fc8d1289807e11f580d7543eb171c2581cbf6f2b35b402ae"
+    },
+    {
+      "url": "https://adna.network/learn/tutorials/question-test",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_question-test.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_question-test.txt",
+      "sha256": "1659ba92282e1b24893105b78222efa2077e6ef2ecd2d7081cce29246e319283"
+    },
+    {
+      "url": "https://adna.network/learn/tutorials/run-a-campaign",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_run-a-campaign.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_run-a-campaign.txt",
+      "sha256": "89487479b3dceb7de1e87e8cd6d4d45054fa04171cc130939af95baa0be95d8a"
+    },
+    {
+      "url": "https://adna.network/learn/tutorials/design-a-mission",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_design-a-mission.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_tutorials_design-a-mission.txt",
+      "sha256": "29e29014611ac60d5cfb16e8f817383a3bb3cd548271878c6a3ed26e0d4ede30"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/fair-metadata",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_fair-metadata.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_fair-metadata.txt",
+      "sha256": "5ae73975beeaddcc1dcbac61a34e9b4fb35fcb75fcebfccee360b963a3d3c822"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/knowledge-graph",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_knowledge-graph.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_knowledge-graph.txt",
+      "sha256": "661d5ffe415a5eedbcae075fca1946e9f7a89eace519f79ffa1a9bdd98b50914"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/agentic-literacy",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_agentic-literacy.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_agentic-literacy.txt",
+      "sha256": "230abf028391f2a312dabcbf64940dda0eec4c8141ba276265f558a6b9cd725e"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/triad",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_triad.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_triad.txt",
+      "sha256": "93ecb4d130fbb843d6b24f413e8e9b1506f57ae044437963fdfb5ce205c4be63"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/dual-audience",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_dual-audience.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_dual-audience.txt",
+      "sha256": "18d842eee4b3bb7aacc9318dae83eecd65117cf707bc5567ac74e813a29ad578"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/ontology",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_ontology.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_ontology.txt",
+      "sha256": "ee2cbabbea54f94ea303c12db976acdb6505c87b76efc30907e9f502cae4eb90"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/convergence",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_convergence.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_convergence.txt",
+      "sha256": "0b40005d405dd752a3c993b62aa23ade6136e4b2f3d0979b1fcfb49134ed8b39"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/lattice-composition",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_lattice-composition.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_lattice-composition.txt",
+      "sha256": "899c355aa67d5e9cebd293ec18d25213716b12bbfa121fc049b69115f3b5f454"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/token-selection",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_token-selection.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_token-selection.txt",
+      "sha256": "5f7d2c2cd40e5afe4f00b28fa73ebcc0f496de37f7cb3effa7ee71a092e74304"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/context-optimization",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_context-optimization.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_context-optimization.txt",
+      "sha256": "e36a36cd4da9bed856b4e3da2a25a6875f5d73cec8d17f1ce4f9dabdf02eab29"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/governance-files",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_governance-files.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_governance-files.txt",
+      "sha256": "9a4c5a5eb7093e07fcf328c8e24bd6c6cbe087f327176197400aef2cf8334fb9"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/context-commons",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_context-commons.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_context-commons.txt",
+      "sha256": "f637f724091ef425bc5b43a9e283a27a556ec8780d3a13c4ed0124f0e9718fd9"
+    },
+    {
+      "url": "https://adna.network/learn/concepts/open-standard",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_open-standard.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_open-standard.txt",
+      "sha256": "0aaaa37ee4458a988b4c5b547622432990b0e6eac0b88274f9beb6b809010ffd"
+    },
+    {
+      "url": "https://adna.network/learn/comparisons/adna-vs-para",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_comparisons_adna-vs-para.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_comparisons_adna-vs-para.txt",
+      "sha256": "7134bccab0879011ddf83a908b8b70b1715f60775a7239b4351ff2b074f35f29"
+    },
+    {
+      "url": "https://adna.network/learn/comparisons/adna-vs-notion",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_comparisons_adna-vs-notion.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_comparisons_adna-vs-notion.txt",
+      "sha256": "60b622395fea0248d0f6fda3ac7b1ece6211d1914e472a2df36284dcd7db94b4"
+    },
+    {
+      "url": "https://adna.network/learn/comparisons/adna-vs-plain-markdown",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_comparisons_adna-vs-plain-markdown.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_comparisons_adna-vs-plain-markdown.txt",
+      "sha256": "36fab0b16934bd4d2a284a356bc6bf6f64225162d47d3c7273fbf33f76227a13"
+    },
+    {
+      "url": "https://adna.network/learn/comparisons/adna-vs-zettelkasten",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_comparisons_adna-vs-zettelkasten.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_comparisons_adna-vs-zettelkasten.txt",
+      "sha256": "057aa1f95c95593023ffcb208c29a4f47302fada6c208cd234f73f938d25f7ed"
+    },
+    {
+      "url": "https://adna.network/learn/comparisons/adna-vs-johnny-decimal",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_comparisons_adna-vs-johnny-decimal.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_comparisons_adna-vs-johnny-decimal.txt",
+      "sha256": "1f760cd756eb9fa15cc212363439e78407cd70d4d0ecae45546c158d854d69f5"
+    },
+    {
+      "url": "https://adna.network/learn/course/four-files-your-agent-reads-first",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_course_four-files-your-agent-reads-first.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_course_four-files-your-agent-reads-first.txt",
+      "sha256": "b852b9e05d204ad27add768f4515ce0b5a437adaa03660f0808511a84bb0da6f"
+    },
+    {
+      "url": "https://adna.network/learn/course/what-is-an-adna-graph",
+      "body": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_course_what-is-an-adna-graph.body",
+      "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_course_what-is-an-adna-graph.txt",
+      "sha256": "6f1ab57f74f6b4370951913848d83ad0ec563ee1c0770a43c07f87d12109369f"
+    }
+  ],
+  "protocol": "Synthetic sequential first-fold then browsing task, no wall-clock/human timing claim. No answer key, author conclusions or campaign material supplied."
+}

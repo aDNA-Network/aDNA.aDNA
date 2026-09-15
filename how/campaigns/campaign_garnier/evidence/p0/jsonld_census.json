@@ -1,0 +1,1838 @@
+[
+  {
+    "path": "site/dist/install.html",
+    "blocks": 0,
+    "types": [],
+    "errors": []
+  },
+  {
+    "path": "site/dist/index.html",
+    "blocks": 1,
+    "types": [
+      "WebSite"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/404.html",
+    "blocks": 0,
+    "types": [],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/privacy/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/patterns/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/changelog/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/security/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/commons/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/network/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/provenance-audit/index.html",
+    "blocks": 1,
+    "types": [
+      "TechArticle"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/state-of-the-network/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/about/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/use-cases/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/canonical-properties/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/community/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/accessibility/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/design-system/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/get-started/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/get-started/what-your-agent-reads/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/get-started/what-your-agent-reads/skill-project-fork/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/get-started/what-your-agent-reads/standard-governance/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/get-started/what-your-agent-reads/skill-onboarding/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/get-started/what-your-agent-reads/workspace-router/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/reading-guide/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/tool-setup/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/writing-guidelines/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/registry-api/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/migration-guide/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/visual-identity-v2/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/agent-first-guide/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/governance-model/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/design-rationale/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/quality-rubric/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/18-success-criteria/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/full/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/8-session-model/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/4-governance-files/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/13-collision-prevention/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/5-directory-structure/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/17-error-recovery-protocol/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/7-frontmatter-system/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/10-context-library/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/1-introduction-scope/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/15-archive-versioning/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/16-tool-integration-tiers/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/6-naming-conventions/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/2-terminology/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/11-coordination-protocol/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/12-template-system/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/9-mission-system/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/20-appendices/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/14-content-as-code-pipelines/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/3-triad-architecture/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/reference/specification/19-optional-extensions/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/community/community-processes/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/community/community-context-commons/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/community/community-roles/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/community/community-contribution-standards/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/community/proposals/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/community/proposals/aep-2/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/community/proposals/aep-1/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-adna/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-bare-triad/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-collision-prevention/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-governance-file/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-mission/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-question-test/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-what/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-coordination-note/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-session/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-content-as-code/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-how/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-ontology-extension/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-conformance-level/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-sitrep/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-readme-md/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-conformant-instance/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-frontmatter/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-context-library/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-triad/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-template/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-deployment-form/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-agents-md/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-skill/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-embedded-triad/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/glossary/glossary-who/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/organization/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/nextcloud/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/regenesis/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/neo4j/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/home/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/zeta/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/visualdna/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/molecules/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/llamacppforge/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/exchange/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/cakeprotocol/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/wga/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/context/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/vercel/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/contextcommons/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/latticeprotocol/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/comfyui/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/nebula/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/rareanthropic/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/fluxer/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/typescript/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/laventuregraph/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/gotfn/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/sciencestanley/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/network/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/datasets/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/graph/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/percysleep/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/terminal/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/worldgenome/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/wilhelmai/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/tappprotocol/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/operations/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/emacs/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/canvas/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/adnalabs/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/tailwind/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/container/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/harness/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/oration/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/rarearchive/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/videos/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/cakehealth/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/dashboards/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/realityscan/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/bitwarden/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/d3/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/fastapi/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/zenzachary/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/ailp-dataroom/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/warp/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/superleague/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/inference/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/awsbootstrap/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/datarooms/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/spacemacs/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/lighthouse/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/vaas/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/obsidian/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/groupware/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/astro/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/prefect/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/magnapetra/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/remotecontrol/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/webforge/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/forgejo/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/react/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/apscheduler/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/jupyter/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/caddy/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/adna/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/git/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/iii/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/threejs/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/vaults/store/index.html",
+    "blocks": 1,
+    "types": [
+      "WebPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/use-cases/open-source-project/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/use-cases/enterprise-team/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/use-cases/educator/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/use-cases/research-lab/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/use-cases/solo-developer/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/use-cases/startup/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/publishing/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/workshops/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/lattice-examples/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/lattice-examples/lattice-campaign-execution/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/lattice-examples/lattice-dual-audience-review/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/lattice-examples/lattice-context-serving/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/lattice-examples/lattice-content-pipeline/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/workshops/facilitation-guide/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/workshops/vault-exploration/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/workshops/build-your-first-vault/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/workshops/lattice-design/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/publishing/social-sharing/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/publishing/vault-to-site/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/how/publishing/content-mapping/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/patterns/dual-audience-writing/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/patterns/base-extension/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/patterns/context-recipe/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/patterns/fair-envelope/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/patterns/federation-readiness/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/patterns/mission-decomposition/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/patterns/agents-md/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/patterns/question-test/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/course/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/comparisons/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/what-is-adna/index.html",
+    "blocks": 1,
+    "types": [
+      "TechArticle"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/tutorials/index.html",
+    "blocks": 1,
+    "types": [
+      "CollectionPage"
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/tutorials/write-a-context-file/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/tutorials/first-claude-md/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/tutorials/federate-a-vault/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/tutorials/build-a-lattice/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/tutorials/extend-the-ontology/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/tutorials/navigate-a-vault/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/tutorials/exchange-adoption-path/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/tutorials/question-test/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/tutorials/run-a-campaign/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/tutorials/design-a-mission/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/fair-metadata/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/knowledge-graph/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/agentic-literacy/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/triad/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/dual-audience/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/ontology/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/convergence/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/lattice-composition/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/token-selection/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/context-optimization/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/governance-files/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/context-commons/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/concepts/open-standard/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/comparisons/adna-vs-para/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/comparisons/adna-vs-notion/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/comparisons/adna-vs-plain-markdown/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/comparisons/adna-vs-zettelkasten/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/comparisons/adna-vs-johnny-decimal/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/course/four-files-your-agent-reads-first/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  },
+  {
+    "path": "site/dist/learn/course/what-is-an-adna-graph/index.html",
+    "blocks": 1,
+    "types": [
+      null
+    ],
+    "errors": []
+  }
+]

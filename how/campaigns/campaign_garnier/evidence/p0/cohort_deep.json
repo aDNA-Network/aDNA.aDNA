@@ -1,0 +1,263 @@
+[
+  {
+    "name": "cohort_deep_0",
+    "url": "https://hermes-agent.nousresearch.com/docs",
+    "final_url": "https://hermes-agent.nousresearch.com/docs",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "observed_at": "2026-09-15T08:06:56.058532+00:00",
+    "sha256": "c712e9444578914e3d9add0370d756e18fe289f98efc5f298a6f471c99b444b9",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 07:03:29 GMT",
+      "Strict-Transport-Security": "max-age=31556952",
+      "Vary": "Accept-Encoding"
+    },
+    "title": "Hermes Agent Documentation | Hermes Agent",
+    "canonical": "https://hermes-agent.nousresearch.com/docs/",
+    "headings": [
+      [
+        "h1",
+        " Hermes Agent"
+      ],
+      [
+        "h2",
+        " Install \u200b"
+      ],
+      [
+        "h3",
+        " Windows or macOS \u200b"
+      ],
+      [
+        "h3",
+        " Without Hermes Desktop: \u200b"
+      ],
+      [
+        "h4",
+        " Linux / macOS / WSL2 / Android (Termux) \u200b"
+      ],
+      [
+        "h4",
+        " Windows (native) \u200b"
+      ],
+      [
+        "h2",
+        " What is Hermes Agent? \u200b"
+      ],
+      [
+        "h2",
+        " Quick Links \u200b"
+      ],
+      [
+        "h2",
+        " Key Features \u200b"
+      ],
+      [
+        "h2",
+        " For LLMs and coding agents \u200b"
+      ]
+    ],
+    "links": [
+      "#__docusaurus_skipToContent_fallback",
+      "/docs/",
+      "/docs/user-stories",
+      "/docs/skills",
+      "/docs/plugins",
+      "https://hermes-agent.nousresearch.com/",
+      "#",
+      "/docs/",
+      "/docs/zh-Hans/",
+      "https://hermes-agent.nousresearch.com",
+      "https://github.com/NousResearch/hermes-agent",
+      "https://discord.gg/NousResearch",
+      "/docs/user-stories",
+      "/docs/getting-started/quickstart",
+      "/docs/user-guide/cli",
+      "/docs/user-guide/features/overview",
+      "/docs/user-guide/messaging/",
+      "/docs/integrations/",
+      "/docs/guides/run-nemotron-3-ultra-free",
+      "/docs/developer-guide/contributing",
+      "/docs/reference/cli-commands",
+      "/docs/",
+      "https://nousresearch.com",
+      "/docs/getting-started/installation",
+      "/docs/user-guide/bot-mode",
+      "https://hermes-agent.nousresearch.com/",
+      "https://github.com/NousResearch/hermes-agent",
+      "#install",
+      "#windows-or-macos",
+      "https://hermes-agent.nousresearch.com/",
+      "#without-hermes-desktop",
+      "#linux--macos--wsl2--android-termux",
+      "#windows-native",
+      "/docs/getting-started/installation",
+      "/docs/getting-started/platform-support",
+      "/docs/integrations/nous-portal",
+      "#what-is-hermes-agent",
+      "#quick-links",
+      "/docs/getting-started/installation",
+      "/docs/getting-started/quickstart",
+      "/docs/getting-started/learning-path",
+      "/docs/user-guide/configuration",
+      "/docs/user-guide/messaging",
+      "/docs/user-guide/bot-mode",
+      "/docs/user-guide/features/tools",
+      "/docs/user-guide/features/memory",
+      "/docs/user-guide/features/skills",
+      "/docs/user-guide/features/mcp",
+      "/docs/guides/use-mcp-with-hermes",
+      "/docs/user-guide/features/voice-mode",
+      "/docs/guides/use-voice-mode-with-hermes",
+      "/docs/user-guide/features/personality",
+      "/docs/user-guide/features/context-files",
+      "/docs/user-guide/security",
+      "/docs/guides/tips",
+      "/docs/developer-guide/architecture",
+      "/docs/reference/faq",
+      "#key-features",
+      "https://github.com/plastic-labs/honcho",
+      "https://nousresearch.com",
+      "https://portal.nousresearch.com",
+      "https://openrouter.ai",
+      "/docs/user-guide/bot-mode",
+      "https://agentskills.io",
+      "/docs/integrations/nous-portal",
+      "https://nousresearch.com",
+      "#for-llms-and-coding-agents",
+      "/docs/assets/files/llms-dffc5b193656db49af48829a9dbaa0b5.txt",
+      "/docs/assets/files/llms-full-094b49acf5e57716e2764bcc1abe57fd.txt",
+      "https://github.com/NousResearch/hermes-agent/edit/main/website/docs/index.mdx",
+      "/docs/getting-started/quickstart",
+      "/docs/user-guide/cli",
+      "/docs/developer-guide/architecture",
+      "/docs/reference/cli-commands",
+      "https://discord.gg/NousResearch",
+      "https://github.com/NousResearch/hermes-agent/issues",
+      "https://agentskills.io",
+      "https://hermes-agent.nousresearch.com/",
+      "https://github.com/NousResearch/hermes-agent",
+      "https://nousresearch.com",
+      "https://nousresearch.com"
+    ],
+    "main_words": 799,
+    "body_words": 870,
+    "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.txt"
+  },
+  {
+    "name": "cohort_deep_1",
+    "url": "https://hermes-agent.nousresearch.com/llms.txt",
+    "final_url": "https://hermes-agent.nousresearch.com/llms.txt",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:06:56.060858+00:00",
+    "sha256": "eca01dac8337793c7bb5c6e1afb5c85cd1b17a300e5b404d14691b41c053d536",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_1.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 07:03:56 GMT",
+      "Strict-Transport-Security": "max-age=63072000"
+    }
+  },
+  {
+    "name": "cohort_deep_2",
+    "url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/README.md",
+    "final_url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/README.md",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:06:56.061824+00:00",
+    "sha256": "1d733df90c2836c1b9cd8d7307d2d222023456b7b55b5036c2fbb54fd8bcfdf4",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_2.body",
+    "headers": {
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+      "Strict-Transport-Security": "max-age=31536000",
+      "Vary": "Authorization,Accept-Encoding",
+      "X-Content-Type-Options": "nosniff"
+    }
+  },
+  {
+    "name": "cohort_deep_3",
+    "url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/CONTRIBUTING.md",
+    "final_url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/CONTRIBUTING.md",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:06:56.062205+00:00",
+    "sha256": "ded473ce7c809574d1db8f8424fec03470a688a3368e8205e8593e7d1fcc1b8f",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_3.body",
+    "headers": {
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+      "Strict-Transport-Security": "max-age=31536000",
+      "Vary": "Authorization,Accept-Encoding",
+      "X-Content-Type-Options": "nosniff"
+    }
+  },
+  {
+    "name": "cohort_deep_4",
+    "url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/LICENSE",
+    "final_url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/LICENSE",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:06:56.150967+00:00",
+    "sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_4.body",
+    "headers": {
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+      "Strict-Transport-Security": "max-age=31536000",
+      "Vary": "Authorization,Accept-Encoding",
+      "X-Content-Type-Options": "nosniff"
+    }
+  },
+  {
+    "name": "cohort_deep_5",
+    "url": "https://api.github.com/repos/mastra-ai/mastra/license",
+    "final_url": "https://api.github.com/repos/mastra-ai/mastra/license",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "observed_at": "2026-09-15T08:06:56.318368+00:00",
+    "sha256": "bc07300f7b6865a97d943756729e05f0f7008f403a58a992f5a5cc8bb94124f3",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_5.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 07:49:55 GMT",
+      "Content-Security-Policy": "default-src 'none'",
+      "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+      "Vary": "Accept,Accept-Encoding, Accept, X-Requested-With",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin"
+    }
+  },
+  {
+    "name": "cohort_deep_6",
+    "url": "https://api.github.com/repos/NousResearch/hermes-agent",
+    "final_url": "https://api.github.com/repos/NousResearch/hermes-agent",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "observed_at": "2026-09-15T08:06:56.369147+00:00",
+    "sha256": "c1b631b6a5da4933865c5a5c4753930c58c7621f4b13bec865f2142247d816fb",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_6.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 08:04:27 GMT",
+      "Content-Security-Policy": "default-src 'none'",
+      "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+      "Vary": "Accept,Accept-Encoding, Accept, X-Requested-With",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin"
+    }
+  },
+  {
+    "name": "cohort_deep_7",
+    "url": "https://api.github.com/repos/mastra-ai/mastra",
+    "final_url": "https://api.github.com/repos/mastra-ai/mastra",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "observed_at": "2026-09-15T08:06:56.431701+00:00",
+    "sha256": "768fe00dbc8a9b329630cba3b97f5b83ff7967ddc3b00c018569f327b74a2235",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_7.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 07:50:01 GMT",
+      "Content-Security-Policy": "default-src 'none'",
+      "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+      "Vary": "Accept,Accept-Encoding, Accept, X-Requested-With",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin"
+    }
+  }
+]

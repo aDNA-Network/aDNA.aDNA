@@ -1,0 +1,1718 @@
+{
+  "scorer": "a",
+  "freeze_sha256": "04d28711834eca943cd8774ddaf0f34641e20629317f698eefd07c56314c053b",
+  "sites": {
+    "adna": {
+      "weights": [
+        12,
+        8,
+        12,
+        12,
+        8,
+        8,
+        14,
+        10,
+        6,
+        6,
+        2,
+        2
+      ],
+      "dimensions": [
+        {
+          "id": "D1",
+          "score": 4,
+          "state": "ceiling",
+          "ceiling": 4,
+          "reason": "Hero explicitly defines an open standard for organizing project files, names teams using agentic coding tools, and states no server/signup/cost. Thirty-second human comprehension is unmeasured; this is a provisional 4 under \u00a75.1.4, not a panel result.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/adna_home_desktop_light.png",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/contact_390_light_0.jpg"
+          ],
+          "owed": "Cold-reader panel across 390/768/1440; score may fall, be confirmed, or rise to 5 after ceiling lifts.",
+          "awarded_clauses": [
+            {
+              "clause": "Correct summary in ~30s at all three viewports",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "audience explicit",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Correct summary in ~30s at all three viewports",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "audience explicit",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "reader can state what it is not",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "correctly name a use case not shown on the page",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Coherent triad-linked navigation. Homepage graph reaches spec in one click and tool setup in two; /install is unreachable from homepage in frozen link graph. No site-wide search in inspected header/sidebar. Depth clause at 3 is provisional: the pack does not establish several selected high-value pages at \u22653 clicks; shallower routes exceed that negative wording without earning rung 4.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/link_graph.json",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/adna_learn-concepts-triad_desktop_light.png"
+          ],
+          "owed": "Define the ten high-value routes and task-test all; can confirm/lower 3; search/orphan fixes needed for 4.",
+          "awarded_clauses": [
+            {
+              "clause": "Coherent but deep",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "several high-value pages \u22653 clicks",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "\u22642 clicks to all high-value pages",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "search present and scoped",
+              "status": "FAILS [D]"
+            },
+            {
+              "clause": "no orphans",
+              "status": "FAILS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "Published commands, prerequisites, explicit file-and-fresh-session success checks, annotated first-run files, troubleshooting and cleanup are substantial. No clean-machine execution/timing exists; even the page says the first-run recording is absent. Thin troubleshooting is not established; actual content exceeds that descriptive weakness, while real coverage remains untested.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/run_summary.json"
+          ],
+          "owed": "Clean VM + unfamiliar human + stopwatch/video; 3 is provisional within ceiling, may move either way; <10 minutes cannot be claimed.",
+          "awarded_clauses": [
+            {
+              "clause": "Completes as written",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "TTFS 10\u201330 min",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "troubleshooting thin",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "TTFS < 10 min",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "prerequisites stated up front",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "troubleshooting present",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "escape hatches present",
+              "status": "PASS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D4",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Concepts/tutorials/reference are navigable; a 20-section spec is present, but complete field coverage was not audited. Reference mixes rationale, migration and craft; migration guide describes adoption into an existing project, not every breaking-version boundary. Historical docs selector and tested examples are not established.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_migration-guide.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification.txt"
+          ],
+          "owed": "Corpus/API completeness and version-boundary/example CI audit; may lower 3 or confirm; four-type IA and migrations need work for 4.",
+          "awarded_clauses": [
+            {
+              "clause": "Clear types",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "complete reference",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "versioning weak",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Four types cleanly separated in the IA",
+              "status": "FAILS [D]"
+            },
+            {
+              "clause": "versioned",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "migrations documented",
+              "status": "FAILS [D]"
+            },
+            {
+              "clause": "examples tested",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D5",
+          "score": 3,
+          "state": "graded",
+          "ceiling": null,
+          "reason": "Token census and build checks support a mostly conformant published design system. Actual Triad SVG uses a huge viewBox with tiny nodes, leaving most of the panel empty; fresh 390px observation measures labels around 3.87px high. This is a responsive-legibility failure despite no document overflow.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/token_census.json",
+            "how/campaigns/campaign_garnier/evidence/p0/run_summary.json",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_design-system.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/adna_learn-concepts-triad_desktop_light.png",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/triad_390_t1_ready.png",
+            "how/campaigns/campaign_garnier/evidence/p0/triad_t1_observation.json"
+          ],
+          "owed": "Fix SVG sizing; re-render key widths and themes. Rung 4 fails 1/4 clauses: responsive integrity verified.",
+          "awarded_clauses": [
+            {
+              "clause": "Tokenised system",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "mostly conformant",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "some drift",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Published system",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "enforced in build",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "responsive integrity verified",
+              "status": "FAILS [D]"
+            },
+            {
+              "clause": "states designed",
+              "status": "PASS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D6",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Accessible plain-language core prose coexists with internal campaign/ADR shorthand in writing guidelines and old clone/open-in-Obsidian quickstart shorthand in the migration guide. Privacy declares no analytics while a Speed Insights script is fetched; this establishes a disclosure-review question, not proof of collection. Comprehensive factual verification is absent.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_writing-guidelines.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_migration-guide.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_privacy.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/transport_observation.json",
+            "how/campaigns/campaign_garnier/evidence/p0/source_fact_inventory.json"
+          ],
+          "owed": "Complete claim/tense register and reconcile privacy with actual transport/backend observation; may lower or confirm 3.",
+          "awarded_clauses": [
+            {
+              "clause": "Consistent voice",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "claims mostly supportable",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "some aspirational tense",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Single voice throughout",
+              "status": "FAILS [D]"
+            },
+            {
+              "clause": "every claim verified or verifiable",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "tense discipline enforced",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D7",
+          "score": 2,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Named founder, partner overlap, one-contributor Rare Archive and founder stewardship are plainly disclosed. The site does not establish independent adoption; the partner is explicitly not independent corroboration. Dated activity is present, an excess over 2. No independent use claim is invented from registry size.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_about.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_state-of-the-network.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_changelog.txt"
+          ],
+          "owed": "Verify independent adopter artifacts; absent adoption is a site proof gap, not failure to browse. Claim-strength audit could also lower 2.",
+          "awarded_clauses": [
+            {
+              "clause": "Named humans",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "no independent adoption",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "claims at strength ceiling",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Named humans",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "some verifiable third-party use",
+              "status": "FAILS [D]"
+            },
+            {
+              "clause": "activity visible",
+              "status": "PASS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D8",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Ladder, standards and linked CoC are published. AEP archive actually contains AEP-1 final and AEP-2 review with named author/sponsor. This exceeds informal-process wording of 3. Chartered groups are not instantiated; approval-gated Fluxer is described, but last-message recency was not observed.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_proposals.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_governance-model.txt"
+          ],
+          "owed": "Read venue activity and verify role/group artifacts; provisional informal-process clause is exceeded by formal AEPs; live venue alone cannot yield 4 without chartered groups.",
+          "awarded_clauses": [
+            {
+              "clause": "Ladder published",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "contribution standards published",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "CoC published",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "venue exists",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "process informal",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Numbered proposal process with public archive",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "chartered groups",
+              "status": "FAILS [D]"
+            },
+            {
+              "clause": "named role-holders",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "live venue",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D9",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "Site links contribution guide and issue templates and names non-code paths. The frozen pack does not count open unassigned good-first-issues or measure responsiveness. Rung 3 is provisional because labelled-issue population is unverified; no outsider contribution completed.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_community-contribution-standards.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/run_summary.json"
+          ],
+          "owed": "Outsider PR run, populated-label census and 90-day median response measurement; may lower 3 or lift ceiling.",
+          "awarded_clauses": [
+            {
+              "clause": "CONTRIBUTING",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "templates",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "some labelled issues",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "response time unmeasured",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "One-command dev setup",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "populated good-first-issues",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "median first response < 72h",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "non-code paths named",
+              "status": "PASS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D10",
+          "score": 4,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Fetched curated llms map/full corpus, sitemap, RSS, markdown twin, semantic text and registry JSON; live content negotiation returns identical markdown. Structured-data census covers 228/229 local pages (install lacks it), with no Organization. Missing /.well-known/mcp.json is only a failed discovery route, not proof no MCP server exists. Site-wide self-conformance and copy-context behavior are unverified.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/machine_1.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/machine_6.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/machine_7.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/machine_8.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/machine_9.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/jsonld_canonical.json",
+            "how/campaigns/campaign_garnier/evidence/p0/machine_verification.json"
+          ],
+          "owed": "Corpus MCP discovery/execution, copy-context test and self-conformance audit. Local census scope must remain separate from production; could confirm 4 or reach 5 after evidence.",
+          "awarded_clauses": [
+            {
+              "clause": "llms.txt",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "sitemap",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "RSS",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "clean extraction",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "markdown twins",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "JSON-LD",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "machine-readable registry",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "documented agent entry point",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "llms.txt",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "sitemap",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "RSS",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "clean extraction",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "markdown twins",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "JSON-LD",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "machine-readable registry",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "documented agent entry point",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "MCP server over the corpus",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "copy-as-context affordances",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "stable resolvable URIs",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "demonstrated self-conformance",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D11",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "Automated axe findings are zero on sampled live target templates; pa11y is WCAG2AA browser-default theme and leaves manual warnings. Tiny Triad diagram has accompanying textual explanation. AA primary-template conformance remains provisional: keyboard/zoom/manual contrast/AT were not performed.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/supplement_390.json",
+            "how/campaigns/campaign_garnier/evidence/p0/pa11y_results.json",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/triad_390_t1_ready.png",
+            "how/campaigns/campaign_garnier/evidence/p0/run_summary.json"
+          ],
+          "owed": "Manual keyboard/zoom/contrast plus VoiceOver/NVDA, then AT users; score can fall or ceiling lift. No AA certification or gate pass.",
+          "awarded_clauses": [
+            {
+              "clause": "AA on primary templates",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "complex graphics partially covered",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Verified AA across all templates including graphics and registry",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "screen-reader tested",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D12",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Internal extra-link probes have no errors and expected /404 is control. Local homepage initial lab score 92, LCP 2408.9ms, TBT 246ms; three diagnostic repeats score96 with TBT0 and do not replace initial. Live script GETs show transport only; no field dataset or collector receipt. Rung3 uses explicit provisional p75, not a fabricated desktop/mobile pass or arbitrary cap2.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/run_summary.json",
+            "how/campaigns/campaign_garnier/evidence/p0/lighthouse_followup.json",
+            "how/campaigns/campaign_garnier/evidence/p0/inventory_coverage.json",
+            "how/campaigns/campaign_garnier/evidence/p0/transport_observation.json",
+            "how/campaigns/campaign_garnier/evidence/p0/public_inventory.json"
+          ],
+          "owed": "Production p75 LCP/INP/CLS mobile+desktop across five templates, collector receipt and operational CI/header audit; may fall or rise.",
+          "awarded_clauses": [
+            {
+              "clause": "CWV green at p75",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "no internal 404s",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "CWV green at p75",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "no internal 404s",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "budgets enforced in CI",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "redirect map maintained",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "security headers set",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        }
+      ],
+      "composite": 60.8
+    },
+    "nous": {
+      "weights": [
+        12,
+        8,
+        15,
+        8,
+        8,
+        8,
+        8,
+        14,
+        10,
+        5,
+        2,
+        2
+      ],
+      "dimensions": [
+        {
+          "id": "D1",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 4,
+          "reason": "Nous homepage starts with research mission; concrete Hermes agent mechanism is on linked product/docs. Successful 390px home exists; blocked desktop lab pages are excluded, not defects. Human summary timing has not been tested.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/nous_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/capture_index.json"
+          ],
+          "owed": "Cold-reader panel and successful all-width top-level renders. Provisional score may fall or rise after ceiling lifts.",
+          "awarded_clauses": [
+            {
+              "clause": "Correct summary",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "but only after scrolling past the fold",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Correct summary in ~30s at all three viewports",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "audience explicit",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Docs have clear task/reference navigation and visible scoped search. Property-wide top-ten route depth and orphan census were not collected; deep-rung descriptor is provisional, not an invented count. Nous/Hermes is treated as one linked property, retaining parent-site access limits.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/nous_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/capture_index.json"
+          ],
+          "owed": "Frozen-cohort complete crawl and ten-task depth/search audit; may lower 3, confirm or raise to4.",
+          "awarded_clauses": [
+            {
+              "clause": "Coherent but deep",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "several high-value pages \u22653 clicks",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "\u22642 clicks to all high-value pages",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "search present and scoped",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "no orphans",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "No human clean-machine install/timing. Hermes supplies OS-specific installation, provider choice, first chat/session checks and Common Failure Modes/Recovery Toolkit; thin troubleshooting wording is not verified and visible content exceeds it.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/run_summary.json"
+          ],
+          "owed": "Unfamiliar human VM run; score3 is provisional, can fall or ceiling lift to4/5.",
+          "awarded_clauses": [
+            {
+              "clause": "Completes as written",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "TTFS 10\u201330 min",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "troubleshooting thin",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "TTFS < 10 min",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "prerequisites stated up front",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "troubleshooting present",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "escape hatches present",
+              "status": "PASS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D4",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Substantial differentiated tutorial/user/developer/reference documentation is visible, but complete API coverage, old-version access, migration completeness and runnable-example CI were not examined. Do not infer them from the framework reputation.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_3.body"
+          ],
+          "owed": "Full docs/API inventory, version/migration paths and example execution; may lower/confirm/raise3.",
+          "awarded_clauses": [
+            {
+              "clause": "Clear types",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "complete reference",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "versioning weak",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Four types cleanly separated in the IA",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "versioned",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "migrations documented",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "examples tested",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D5",
+          "score": 2,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Three recognizable visual registers: Nous research page, electric-blue Hermes product and Docusaurus docs. Property-wide token enforcement is unverified; their cross-property styling differs visibly.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/capture_index.json",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/desktop_light/docs__desktop__light.png",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous/instrument_390_light/_.png"
+          ],
+          "owed": "Token/build-system evidence and repeat responsive renders. No-enforced-tokens clause is UNEVIDENCED, not an assertion of absence; provisional2 may move either way.",
+          "awarded_clauses": [
+            {
+              "clause": "Coherent surface",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "no enforced tokens",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "drift visible across templates",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Tokenised system",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "mostly conformant",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "some drift",
+              "status": "PASS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D6",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Research mission, Hermes promotional superlatives (only agent/learning loop) and practical documentation are readable but vary in register. Universal claims are not independently supported.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/nous_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_0.txt"
+          ],
+          "owed": "Claim register, source corroboration and corpus voice/tense audit; may lower or confirm3, then earn4.",
+          "awarded_clauses": [
+            {
+              "clause": "Consistent voice",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "claims mostly supportable",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "some aspirational tense",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Single voice throughout",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "every claim verified or verifiable",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "tense discipline enforced",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D7",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Releases link research/model artifacts and repository is active; named-human attribution and independent third-party use not sufficiently verified in bounded frozen sample. Provisional3 is a hypothesis, not established adoption.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/nous_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/cohort_deep.json"
+          ],
+          "owed": "Resolve identities and independent artifacts, live metric source and security path; may lower3 or substantiate higher anchor.",
+          "awarded_clauses": [
+            {
+              "clause": "Named humans",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "some verifiable third-party use",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "activity visible",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Multiple independent adopters with linked artifacts",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "live metrics",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "security path",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "claims at or below true strength",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D8",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Contribution standards and public repository/Discord venue links exist; review process is informal maintainer review. No contributor ladder, CoC artifact, chartered groups or venue recency is demonstrated in this limited pack. Provisional3 does not mean those absent instruments passed.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_3.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.txt"
+          ],
+          "owed": "Governance-artifact inventory, actual role holders, venue-recency check. May lower3; formal process evidence could raise it.",
+          "awarded_clauses": [
+            {
+              "clause": "Ladder published",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "contribution standards published",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "CoC published",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "venue exists",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "process informal",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Numbered proposal process with public archive",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "chartered groups",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "named role-holders",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "live venue",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D9",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "Contribution guide contains setup/testing/PR workflow and templates are linked or referenced. No open-unassigned labelled-issue census, outsider trial or measured response median. Non-code docs contributions are explicitly named.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_3.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.txt"
+          ],
+          "owed": "Outsider contribution run, issue-label census and90-day response metric; may lower3 or lift ceiling.",
+          "awarded_clauses": [
+            {
+              "clause": "CONTRIBUTING",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "templates",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "some labelled issues",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "response time unmeasured",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "One-command dev setup",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "populated good-first-issues",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "median first response < 72h",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "non-code paths named",
+              "status": "PASS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D10",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Curated llms.txt and semantic text are fetched; robots advertises sitemap(s), but sitemap contents and RSS are not fetched in this bounded cohort pack. Rung3 is expressly provisional for those two clauses. Hermes MCP feature documentation describes connecting servers/running an agent as MCP, which does not establish MCP over the docs corpus.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_3.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_4.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.txt"
+          ],
+          "owed": "Fetch and inspect sitemap/RSS/twins/schema/catalogue, exercise corpus MCP; provisional3 may fall or rise. No claim missing fetch is a missing feature.",
+          "awarded_clauses": [
+            {
+              "clause": "llms.txt",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "sitemap",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "RSS",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "clean extraction",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "llms.txt",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "sitemap",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "RSS",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "clean extraction",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "markdown twins",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "JSON-LD",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "machine-readable registry",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "documented agent entry point",
+              "status": "PASS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D11",
+          "score": 0,
+          "state": "provisional",
+          "ceiling": 3,
+          "reason": "Primary Hermes quickstart has aria-allowed-attr CRITICAL; primary docs also have many serious contrast/link findings. Therefore criticals-confined-to-secondary rung1 fails. Keyboard traversal is untested, so0 is provisional.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/supplement_390.json",
+            "how/campaigns/campaign_garnier/evidence/p0/supplement_linked_390.json"
+          ],
+          "owed": "Manual keyboard/AT and impact adjudication. Can rise from0 if higher clauses establish; no unconditional AA pass. Ceiling3 until AT testing.",
+          "awarded_clauses": [
+            {
+              "clause": "Automated criticals",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "keyboard traversal broken",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Automated criticals confined to secondary templates",
+              "status": "FAILS [D]"
+            },
+            {
+              "clause": "keyboard traversal works",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "focus is unlabelled or invisible",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D12",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Hermes lab desktop LCP1793.9ms versus mobile13580.2ms; parent-site access blocked. These are lab observations, not field CWV. All p75 and whole-property internal-link clauses are untested. Provisional3 under5.1.4 preserves uncertainty; no green or red field gate is declared. A hard cap2 is not justified because no-monitoring clause is also untested.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/lighthouse_followup.json",
+            "how/campaigns/campaign_garnier/evidence/p0/cohort_expansion.json"
+          ],
+          "owed": "Collect p75 mobile+desktop five-template dataset and full internal-link/ops crawl;3 may move down or up. This number carries high uncertainty.",
+          "awarded_clauses": [
+            {
+              "clause": "CWV green at p75",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "no internal 404s",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "CWV green at p75",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "no internal 404s",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "budgets enforced in CI",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "redirect map maintained",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "security headers set",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        }
+      ],
+      "composite": 57.2
+    },
+    "mastra": {
+      "weights": [
+        12,
+        8,
+        18,
+        15,
+        6,
+        5,
+        8,
+        5,
+        6,
+        10,
+        4,
+        3
+      ],
+      "dimensions": [
+        {
+          "id": "D1",
+          "score": 4,
+          "state": "ceiling",
+          "ceiling": 4,
+          "reason": "Build AI agents plus TypeScript framework provides an immediate category and developer audience; mobile/desktop screenshots carry the same proposition. Human summary timing has not been tested.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/capture_index.json"
+          ],
+          "owed": "Cold-reader panel and successful all-width top-level renders. Provisional score may fall or rise after ceiling lifts.",
+          "awarded_clauses": [
+            {
+              "clause": "Correct summary in ~30s at all three viewports",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "audience explicit",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Correct summary in ~30s at all three viewports",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "audience explicit",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "reader can state what it is not",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "correctly name a use case not shown on the page",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D2",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Docs taxonomy and search are visible. Several product families and guides exist, but exhaustive ten-page depth and orphan audit is missing; no whole-site 4 inferred from one docs page.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/capture_index.json"
+          ],
+          "owed": "Frozen-cohort complete crawl and ten-task depth/search audit; may lower 3, confirm or raise to4.",
+          "awarded_clauses": [
+            {
+              "clause": "Coherent but deep",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "several high-value pages \u22653 clicks",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "\u22642 clicks to all high-value pages",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "search present and scoped",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "no orphans",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D3",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "No human clean-machine install/timing. Mastra advertises npm create, local Studio and a provider choice; clean prerequisite timing, keys and failure handling are not verified. Some captured quickstart text is an agent instruction block; it is evidence of copy, not a direction to this reviewer.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_8.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/run_summary.json"
+          ],
+          "owed": "Unfamiliar human VM run; score3 is provisional, can fall or ceiling lift to4/5.",
+          "awarded_clauses": [
+            {
+              "clause": "Completes as written",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "TTFS 10\u201330 min",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "troubleshooting thin",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "TTFS < 10 min",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "prerequisites stated up front",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "troubleshooting present",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "escape hatches present",
+              "status": "PASS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D4",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Substantial differentiated tutorial/user/developer/reference documentation is visible, but complete API coverage, old-version access, migration completeness and runnable-example CI were not examined. Do not infer them from the framework reputation.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_8.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_10.body"
+          ],
+          "owed": "Full docs/API inventory, version/migration paths and example execution; may lower/confirm/raise3.",
+          "awarded_clauses": [
+            {
+              "clause": "Clear types",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "complete reference",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "versioning weak",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Four types cleanly separated in the IA",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "versioned",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "migrations documented",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "examples tested",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D5",
+          "score": 2,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Homepage and mobile docs are composed and coherent. Desktop docs capture collapses main text into a one-character-wide column; fresh390 docs is normal. Scope is captured browser state, not a claim all desktops fail. Token enforcement unverified.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/capture_index.json",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/mastra/desktop_light/docs__desktop__light.png",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/mastra/instrument_390_light/_docs.png"
+          ],
+          "owed": "Token/build-system evidence and repeat responsive renders. No-enforced-tokens clause is UNEVIDENCED, not an assertion of absence; provisional2 may move either way.",
+          "awarded_clauses": [
+            {
+              "clause": "Coherent surface",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "no enforced tokens",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "drift visible across templates",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Tokenised system",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "mostly conformant",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "some drift",
+              "status": "PASS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D6",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Consistent technical marketing and concrete API examples; leading framework and numerical customer outcomes require independent verification. A corpus-wide single voice and tense check was not run.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_8.txt"
+          ],
+          "owed": "Claim register, source corroboration and corpus voice/tense audit; may lower or confirm3, then earn4.",
+          "awarded_clauses": [
+            {
+              "clause": "Consistent voice",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "claims mostly supportable",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "some aspirational tense",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Single voice throughout",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "every claim verified or verifiable",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "tense discipline enforced",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D7",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "About names Sam Bhagwat, Shane Thomas, Abhi Aiyer and team. Homepage links named customer cases; recent research/blog activity is visible. Case claims are third-party-use reports, not independently inspected deployment artifacts.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_7.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/cohort_deep.json"
+          ],
+          "owed": "Resolve identities and independent artifacts, live metric source and security path; may lower3 or substantiate higher anchor.",
+          "awarded_clauses": [
+            {
+              "clause": "Named humans",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "some verifiable third-party use",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "activity visible",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Multiple independent adopters with linked artifacts",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "live metrics",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "security path",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "claims at or below true strength",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D8",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Contribution standards and public repository/Discord venue links exist; review process is informal maintainer review. No contributor ladder, CoC artifact, chartered groups or venue recency is demonstrated in this limited pack. Provisional3 does not mean those absent instruments passed.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_10.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt"
+          ],
+          "owed": "Governance-artifact inventory, actual role holders, venue-recency check. May lower3; formal process evidence could raise it.",
+          "awarded_clauses": [
+            {
+              "clause": "Ladder published",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "contribution standards published",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "CoC published",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "venue exists",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "process informal",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Numbered proposal process with public archive",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "chartered groups",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "named role-holders",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "live venue",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D9",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "Contribution guide contains setup/testing/PR workflow and templates are linked or referenced. No open-unassigned labelled-issue census, outsider trial or measured response median. Non-code docs contributions are explicitly named.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_10.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt"
+          ],
+          "owed": "Outsider contribution run, issue-label census and90-day response metric; may lower3 or lift ceiling.",
+          "awarded_clauses": [
+            {
+              "clause": "CONTRIBUTING",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "templates",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "some labelled issues",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "response time unmeasured",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "One-command dev setup",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "populated good-first-issues",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "median first response < 72h",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "non-code paths named",
+              "status": "PASS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D10",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Curated llms.txt and semantic text are fetched; robots advertises sitemap(s), but sitemap contents and RSS are not fetched in this bounded cohort pack. Rung3 is expressly provisional for those two clauses. llms map advertises .md twins and docs have Copy page; successful endpoint/corpus checks still owed.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_5.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_6.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt"
+          ],
+          "owed": "Fetch and inspect sitemap/RSS/twins/schema/catalogue, exercise corpus MCP; provisional3 may fall or rise. No claim missing fetch is a missing feature.",
+          "awarded_clauses": [
+            {
+              "clause": "llms.txt",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "sitemap",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "RSS",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "clean extraction",
+              "status": "PASS [D]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "llms.txt",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "sitemap",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "RSS",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "clean extraction",
+              "status": "PASS [D]"
+            },
+            {
+              "clause": "markdown twins",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "JSON-LD",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "machine-readable registry",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "documented agent entry point",
+              "status": "PASS [D]"
+            }
+          ]
+        },
+        {
+          "id": "D11",
+          "score": 0,
+          "state": "provisional",
+          "ceiling": 3,
+          "reason": "Mastra home has serious aria-hidden-focus. Automated-clean clause at2 fails; frozen data does not establish criticals, secondary-only confinement or actual keyboard traversal. No literal anchor fully fits. Required integer0 is an explicitly provisional floor placeholder, NOT a measured automated-critical/keyboard-broken verdict; this is an instrument coverage ambiguity.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/supplement_390.json",
+            "how/campaigns/campaign_garnier/evidence/p0/supplement_linked_390.json"
+          ],
+          "owed": "Manual keyboard/AT and impact adjudication. Can rise from0 if higher clauses establish; no unconditional AA pass. Ceiling3 until AT testing.",
+          "awarded_clauses": [
+            {
+              "clause": "Automated criticals",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "keyboard traversal broken",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "Automated criticals confined to secondary templates",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "keyboard traversal works",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "focus is unlabelled or invisible",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        },
+        {
+          "id": "D12",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Mastra lab desktop LCP1844.5ms versus mobile9225.8ms and TBT2889ms. These are lab observations, not field CWV. All p75 and whole-property internal-link clauses are untested. Provisional3 under5.1.4 preserves uncertainty; no green or red field gate is declared. A hard cap2 is not justified because no-monitoring clause is also untested.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/lighthouse_followup.json",
+            "how/campaigns/campaign_garnier/evidence/p0/cohort_expansion.json"
+          ],
+          "owed": "Collect p75 mobile+desktop five-template dataset and full internal-link/ops crawl;3 may move down or up. This number carries high uncertainty.",
+          "awarded_clauses": [
+            {
+              "clause": "CWV green at p75",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "no internal 404s",
+              "status": "UNEVIDENCED [A]"
+            }
+          ],
+          "next_clauses": [
+            {
+              "clause": "CWV green at p75",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "no internal 404s",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "budgets enforced in CI",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "redirect map maintained",
+              "status": "UNEVIDENCED [A]"
+            },
+            {
+              "clause": "security headers set",
+              "status": "UNEVIDENCED [A]"
+            }
+          ]
+        }
+      ],
+      "composite": 58.8
+    }
+  }
+}

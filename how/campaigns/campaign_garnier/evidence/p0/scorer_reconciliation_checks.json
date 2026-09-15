@@ -1,0 +1,25 @@
+{
+  "same_freeze": true,
+  "sites": {
+    "adna": {
+      "within_one": 12,
+      "required": 10,
+      "pass": true,
+      "identical": 11
+    },
+    "nous": {
+      "within_one": 12,
+      "required": 10,
+      "pass": true,
+      "identical": 8
+    },
+    "mastra": {
+      "within_one": 12,
+      "required": 10,
+      "pass": true,
+      "identical": 8
+    }
+  },
+  "no_averaging": true,
+  "mastra_D11_reference_rank": "inadmissible pending instrument clarification"
+}

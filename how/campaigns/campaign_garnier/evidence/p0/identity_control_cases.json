@@ -1,0 +1,27 @@
+{
+  "same_manifest_positive": "Both future scorers must receive identical freeze hash",
+  "mismatched_build_negative": {
+    "expected": "eda4cbfc2857a6d2d9df7d80a5db170957d45cab",
+    "candidate": "c38c6dc7ed283f5163604fedc67130776fc1d6c1",
+    "manual_verdict": "REJECT comparable production baseline: local source identifier is not the observed deployed identifier"
+  },
+  "version_negative": {
+    "expected": "1.1",
+    "candidate": "1.0",
+    "manual_verdict": "REJECT comparable event; preserve historical sheet separately"
+  },
+  "missing_capture_negative": {
+    "surface": "Nous desktop homepage",
+    "observed_status": 403,
+    "title": "Vercel Security Checkpoint",
+    "manual_verdict": "UNEVIDENCED website rendering; scanner result belongs to checkpoint and cannot be scored as Nous"
+  },
+  "scope_negative": {
+    "disposable_record": [
+      "site/src/data/vaults.json",
+      "HAUSSMANN mission update",
+      "DP2 accepted without event"
+    ],
+    "manual_verdict": "REJECT all three; no file mutated and no gate advanced"
+  }
+}

@@ -1,0 +1,189 @@
+[
+  {
+    "name": "link_extra_0",
+    "url": "https://adna.network/adna-install-linux.sh",
+    "final_url": "https://adna.network/adna-install-linux.sh",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:12:43.660133+00:00",
+    "sha256": "ff7ab2190ec98281a7060a409a7d2421965e0b13045ed300071d8fd4aede7bdb",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/link_extra_0.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 08:12:44 GMT",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
+      "Strict-Transport-Security": "max-age=63072000",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    }
+  },
+  {
+    "name": "link_extra_1",
+    "url": "https://adna.network/adna-install-mac.command",
+    "final_url": "https://adna.network/adna-install-mac.command",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:12:43.660561+00:00",
+    "sha256": "ff7ab2190ec98281a7060a409a7d2421965e0b13045ed300071d8fd4aede7bdb",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/link_extra_1.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 08:12:44 GMT",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
+      "Strict-Transport-Security": "max-age=63072000",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    }
+  },
+  {
+    "name": "link_extra_2",
+    "url": "https://adna.network/adna-install.exe",
+    "final_url": "https://adna.network/adna-install.exe",
+    "status": 200,
+    "content_type": "application/x-msdos-program",
+    "observed_at": "2026-09-15T08:12:43.660737+00:00",
+    "sha256": "3f26bf6a41ed40e2cf2c5f54c8036491fe2b90685c48d9dd88189a89b74ecce1",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/link_extra_2.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 08:12:44 GMT",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
+      "Strict-Transport-Security": "max-age=63072000",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    }
+  },
+  {
+    "name": "link_extra_3",
+    "url": "https://adna.network/api/registry.v1.json",
+    "final_url": "https://adna.network/api/registry.v1.json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "observed_at": "2026-09-15T08:12:43.660895+00:00",
+    "sha256": "2e02518ebe951ef505a6da0261866c2beb9b8b6da58195da27ddc342f99eb469",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/link_extra_3.body",
+    "headers": {
+      "Last-Modified": "Mon, 14 Sep 2026 12:29:05 GMT",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
+      "Strict-Transport-Security": "max-age=63072000",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    }
+  },
+  {
+    "name": "link_extra_4",
+    "url": "https://adna.network/community/proposals.json",
+    "final_url": "https://adna.network/community/proposals.json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "observed_at": "2026-09-15T08:12:43.741810+00:00",
+    "sha256": "c6e9e554a85e052c0b44631453900f2a5b9238dcaac1d146132a02aca001721a",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/link_extra_4.body",
+    "headers": {
+      "Last-Modified": "Sun, 13 Sep 2026 08:14:32 GMT",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
+      "Strict-Transport-Security": "max-age=63072000",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    }
+  },
+  {
+    "name": "link_extra_5",
+    "url": "https://adna.network/install.sh",
+    "final_url": "https://adna.network/install.sh",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:12:43.781736+00:00",
+    "sha256": "0f9a299d6a88093bd9b43a0d8d350825107d37f61b8af4048f917214fe407122",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/link_extra_5.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 08:12:44 GMT",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
+      "Strict-Transport-Security": "max-age=63072000",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    }
+  },
+  {
+    "name": "link_extra_6",
+    "url": "https://adna.network/llms-full.txt",
+    "final_url": "https://adna.network/llms-full.txt",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:12:43.986622+00:00",
+    "sha256": "7e4a93dffa14921d0db4c8e14c3dde4220b2b9921d1e8ec196ee0c73cff344bf",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/link_extra_6.body",
+    "headers": {
+      "Last-Modified": "Sun, 13 Sep 2026 01:32:10 GMT",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
+      "Strict-Transport-Security": "max-age=63072000",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    }
+  },
+  {
+    "name": "link_extra_7",
+    "url": "https://adna.network/llms.txt",
+    "final_url": "https://adna.network/llms.txt",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:12:44.002161+00:00",
+    "sha256": "978b0991d6938b8285311ce711ad5553dc0af9a99c7b9244ef9d9ea260d399b7",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/link_extra_7.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 08:04:18 GMT",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
+      "Strict-Transport-Security": "max-age=63072000",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    }
+  },
+  {
+    "name": "link_extra_8",
+    "url": "https://adna.network/rss.xml",
+    "final_url": "https://adna.network/rss.xml",
+    "status": 200,
+    "content_type": "application/xml",
+    "observed_at": "2026-09-15T08:12:44.047625+00:00",
+    "sha256": "2687000cd0ebd915c0b2d7234afdc183cb0f56b528a693d683f3c088426956b0",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/link_extra_8.body",
+    "headers": {
+      "Last-Modified": "Mon, 14 Sep 2026 11:46:03 GMT",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
+      "Strict-Transport-Security": "max-age=63072000",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    }
+  },
+  {
+    "name": "link_extra_9",
+    "url": "https://adna.network/sitemap-index.xml",
+    "final_url": "https://adna.network/sitemap-index.xml",
+    "status": 200,
+    "content_type": "application/xml",
+    "observed_at": "2026-09-15T08:12:44.117040+00:00",
+    "sha256": "f195e1b801c10415608483ce88cb0fc1dff90c232057583363af9329f1bb7f58",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/link_extra_9.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 08:04:19 GMT",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
+      "Strict-Transport-Security": "max-age=63072000",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    }
+  },
+  {
+    "name": "link_extra_10",
+    "url": "https://adna.network/vaults.json",
+    "final_url": "https://adna.network/vaults.json",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "observed_at": "2026-09-15T08:12:44.122871+00:00",
+    "sha256": "2e02518ebe951ef505a6da0261866c2beb9b8b6da58195da27ddc342f99eb469",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/link_extra_10.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 08:12:44 GMT",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
+      "Strict-Transport-Security": "max-age=63072000",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    }
+  }
+]

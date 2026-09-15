@@ -1,0 +1,98 @@
+{
+  "dist": "site/dist",
+  "measured": 7,
+  "missing": [],
+  "rows": [
+    {
+      "route": "/about",
+      "target": 12,
+      "prose_fkgl": 11.43,
+      "whole_fkgl": 13.53,
+      "delta": 2.1,
+      "passive_pct": 12.5,
+      "sentences": 24,
+      "words": 493,
+      "avg_wps": 20.5,
+      "dropped_lines": 25,
+      "low_confidence": false
+    },
+    {
+      "route": "/",
+      "target": 10,
+      "prose_fkgl": 9.98,
+      "whole_fkgl": 13.17,
+      "delta": 3.19,
+      "passive_pct": 10.6,
+      "sentences": 47,
+      "words": 766,
+      "avg_wps": 16.3,
+      "dropped_lines": 69,
+      "low_confidence": false
+    },
+    {
+      "route": "/community",
+      "target": 10,
+      "prose_fkgl": 9.28,
+      "whole_fkgl": 10.7,
+      "delta": 1.42,
+      "passive_pct": 15.2,
+      "sentences": 46,
+      "words": 633,
+      "avg_wps": 13.8,
+      "dropped_lines": 19,
+      "low_confidence": false
+    },
+    {
+      "route": "/network",
+      "target": 12,
+      "prose_fkgl": 8.89,
+      "whole_fkgl": 11.73,
+      "delta": 2.84,
+      "passive_pct": 5.6,
+      "sentences": 36,
+      "words": 611,
+      "avg_wps": 17,
+      "dropped_lines": 43,
+      "low_confidence": false
+    },
+    {
+      "route": "/commons",
+      "target": 12,
+      "prose_fkgl": 8.3,
+      "whole_fkgl": 14.97,
+      "delta": 6.67,
+      "passive_pct": 6.7,
+      "sentences": 30,
+      "words": 449,
+      "avg_wps": 15,
+      "dropped_lines": 29,
+      "low_confidence": false
+    },
+    {
+      "route": "/get-started",
+      "target": 10,
+      "prose_fkgl": 8.16,
+      "whole_fkgl": 9.79,
+      "delta": 1.63,
+      "passive_pct": 12.7,
+      "sentences": 55,
+      "words": 971,
+      "avg_wps": 17.7,
+      "dropped_lines": 55,
+      "low_confidence": false
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "target": 10,
+      "prose_fkgl": 7.11,
+      "whole_fkgl": 10.29,
+      "delta": 3.18,
+      "passive_pct": 0,
+      "sentences": 33,
+      "words": 508,
+      "avg_wps": 15.4,
+      "dropped_lines": 67,
+      "low_confidence": false
+    }
+  ]
+}

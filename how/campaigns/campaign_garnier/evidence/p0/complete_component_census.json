@@ -1,0 +1,5542 @@
+{
+  "version": "garnier_consumer_v1",
+  "population": 96,
+  "extensions": {
+    ".astro": 83,
+    ".css": 5,
+    ".ts": 8
+  },
+  "coverage_missing": [],
+  "coverage_extra": [],
+  "existing_astro_population": 32,
+  "rows": [
+    {
+      "file": "site/src/components/common/Footer.astro",
+      "sha256": "7f5ec1f350636c415cadda13372f24a4bf80b4162411ab261406b943fd3777ee",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 71,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 72,
+          "text": "padding: var(--space-12) var(--space-6) var(--space-8);"
+        },
+        {
+          "line": 75,
+          "text": "gap: var(--space-6);"
+        },
+        {
+          "line": 81,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 86,
+          "text": "font-weight: var(--font-weight-bold);"
+        },
+        {
+          "line": 87,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 93,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 100,
+          "text": "gap: var(--space-3) var(--space-6);"
+        },
+        {
+          "line": 106,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 116,
+          "text": "font-size: var(--text-xs);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/common/Header.astro",
+      "sha256": "a31e2ced79e24ff0190e28de8d0f16d2766288e810c00717d799218e12fd4956",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 159,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 161,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 162,
+          "text": "padding: var(--space-3) var(--space-6);"
+        },
+        {
+          "line": 181,
+          "text": "gap: 0;"
+        },
+        {
+          "line": 184,
+          "text": "font-weight: var(--font-weight-bold);"
+        },
+        {
+          "line": 185,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 202,
+          "text": "gap: 2px;"
+        },
+        {
+          "line": 217,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 241,
+          "text": "gap: var(--space-1);"
+        },
+        {
+          "line": 266,
+          "text": "gap: 2px;"
+        },
+        {
+          "line": 272,
+          "text": "padding: var(--space-2);"
+        },
+        {
+          "line": 275,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 276,
+          "text": "box-shadow: var(--shadow-md);"
+        },
+        {
+          "line": 282,
+          "text": "margin: var(--space-3) 0 0;"
+        },
+        {
+          "line": 283,
+          "text": "padding: 0 var(--space-4);"
+        },
+        {
+          "line": 285,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 286,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 293,
+          "text": "padding: var(--space-2);"
+        },
+        {
+          "line": 294,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 297,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 298,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 315,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 322,
+          "text": "padding: var(--space-2) var(--space-4);"
+        },
+        {
+          "line": 323,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 347,
+          "text": "padding: var(--space-2);"
+        },
+        {
+          "line": 358,
+          "text": "padding: var(--space-2) var(--space-6) var(--space-4);"
+        },
+        {
+          "line": 366,
+          "text": "padding: var(--space-3) var(--space-4);"
+        },
+        {
+          "line": 378,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 383,
+          "text": "gap: var(--space-2);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/common/SEOHead.astro",
+      "sha256": "8d5b1ebe7943db39662db2df6582d8504c1035500cfd5ab816c0e99fa0d9cf4a",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/common/SocialLinks.astro",
+      "sha256": "979689c11ac25735a11096eb1ae92b92cb2dd1fae4ae9fa19dbbaab6b9ce9dc7",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 22,
+          "text": "gap: var(--space-3);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/diagrams/ConvergenceFunnel.astro",
+      "sha256": "8f711ecb689c7d8aaeab2d1cfdb5f581fde7b554baf0a938370eee2716045ac1",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 149,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 150,
+          "text": "margin: var(--space-6) 0;"
+        },
+        {
+          "line": 161,
+          "text": "font-size: var(--text-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/diagrams/TriadDiagram.astro",
+      "sha256": "2993296192e7fa62038e4913739b488f6fa99aeb9deba893575de949435de094",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 110,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 111,
+          "text": "margin: var(--space-6) 0;"
+        },
+        {
+          "line": 122,
+          "text": "font-size: var(--text-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/islands/CourseCheck.astro",
+      "sha256": "5fd17c30ee1c7964807786a839dc1a944f1e22f0db2ec1f105037e77b7712619",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 116,
+          "text": "padding: var(--space-6);"
+        },
+        {
+          "line": 118,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 129,
+          "text": "padding: var(--space-3);"
+        },
+        {
+          "line": 131,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 141,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 156,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 173,
+          "text": "padding: var(--space-2);"
+        },
+        {
+          "line": 175,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 192,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 196,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 208,
+          "text": "font-weight: var(--font-weight-medium);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/islands/CourseProgress.astro",
+      "sha256": "3971bfc10b7dcb6a88d7972cf7a26b751342c80be380be1d863a7caf908c965a",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 43,
+          "text": "padding: var(--space-2) var(--space-4);"
+        },
+        {
+          "line": 45,
+          "text": "border-radius: var(--radius-full);"
+        },
+        {
+          "line": 48,
+          "text": "font-size: var(--text-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/islands/DarkModeToggle.astro",
+      "sha256": "916bb4b7db358d38b2fb79af155477b6f1196ba010230225d2be7abd71eed3d2",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 40,
+          "text": "padding: var(--space-1);"
+        },
+        {
+          "line": 45,
+          "text": "border-radius: var(--radius-md);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/islands/MermaidDiagram.astro",
+      "sha256": "a024e57372299152a64321a495f3e7c0bab48f78cc37bed5cb42015eaa490afa",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 79,
+          "text": "margin: var(--space-6) 0;"
+        },
+        {
+          "line": 85,
+          "text": "padding: var(--space-4);"
+        },
+        {
+          "line": 87,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 98,
+          "text": "font-size: var(--text-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/Breadcrumb.astro",
+      "sha256": "3429aac6b7226189ade7bd0669aee37c5108113d69c79d92aad44613a672fb11",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 86,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 102,
+          "text": "border-radius: 2px;"
+        },
+        {
+          "line": 106,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 113,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 114,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 118,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 122,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 123,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 132,
+          "text": "gap: var(--space-1);"
+        },
+        {
+          "line": 163,
+          "text": "border-radius: 2px;"
+        },
+        {
+          "line": 173,
+          "text": "font-weight: var(--font-weight-medium);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/Callout.astro",
+      "sha256": "491cfc785a14cf62940866e8b3c0a3adb44123c008cb8a47abf6eb7dcdd88c7b",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 39,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 40,
+          "text": "padding: var(--space-4);"
+        },
+        {
+          "line": 41,
+          "text": "margin: var(--space-6) 0;"
+        },
+        {
+          "line": 69,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 71,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 72,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 77,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 81,
+          "text": "font-size: var(--text-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/CardGrid.astro",
+      "sha256": "8a2ba7b2ca867d93599ecccad2262de861895e6b3fa070b058ebfe1c33ef277d",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 36,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 37,
+          "text": "margin: var(--space-6) 0;"
+        },
+        {
+          "line": 55,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 56,
+          "text": "padding: var(--space-4);"
+        },
+        {
+          "line": 58,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 65,
+          "text": "box-shadow: var(--shadow-md);"
+        },
+        {
+          "line": 71,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 76,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 77,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 79,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 83,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 84,
+          "text": "padding: 0.1em 0.5em;"
+        },
+        {
+          "line": 85,
+          "text": "border-radius: var(--radius-full);"
+        },
+        {
+          "line": 86,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 115,
+          "text": "font-size: 1.75rem;"
+        },
+        {
+          "line": 120,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 122,
+          "text": "margin: 0;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/ClosingCTA.astro",
+      "sha256": "3d9afe30c6f1f7d24360ac34711bf77b45186a31e5e5575c673ee5249c92abe7",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 58,
+          "text": "font-size: var(--text-2xl);"
+        },
+        {
+          "line": 60,
+          "text": "margin: 0 0 var(--space-3);"
+        },
+        {
+          "line": 67,
+          "text": "margin: 0 auto var(--space-6);"
+        },
+        {
+          "line": 74,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 75,
+          "text": "margin: 0;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/CodeBlock.astro",
+      "sha256": "08d01dbe1a791324097b9a40219b8bfefb7159f3f28430b4339854672158dd91",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 44,
+          "text": "margin: var(--space-6) 0;"
+        },
+        {
+          "line": 51,
+          "text": "border-radius: var(--radius-md) var(--radius-md) 0 0;"
+        },
+        {
+          "line": 52,
+          "text": "padding: var(--space-2) var(--space-3);"
+        },
+        {
+          "line": 54,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 59,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 60,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 79,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 80,
+          "text": "padding: var(--space-1);"
+        },
+        {
+          "line": 108,
+          "text": "padding: var(--space-2);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/EmptyStateMark.astro",
+      "sha256": "b0afa83c67e7b9d4a56a35896e954e50ec473f278fbe46545442c28167c17769",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 90,
+          "text": "margin: 0 auto var(--space-3, 0.75rem);"
+        },
+        {
+          "line": 95,
+          "text": "margin: var(--space-3, 0.75rem) 0 0;"
+        },
+        {
+          "line": 97,
+          "text": "font-size: var(--text-sm, 0.9rem);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/GlossaryTooltip.astro",
+      "sha256": "c226221e5aa0a58fa9b5493e9807d0602b8bfa99473665859c144752a8e9a9f0",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 49,
+          "text": "font-size: 0.7em;"
+        },
+        {
+          "line": 62,
+          "text": "padding: var(--space-3);"
+        },
+        {
+          "line": 66,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 67,
+          "text": "box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);"
+        },
+        {
+          "line": 68,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 81,
+          "text": "font-size: var(--text-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/HomeHero.astro",
+      "sha256": "08dc1b948cc8cff7966821bcde30ee4c49fcaaeff29e8a574291f1c9c6aac209",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 483,
+          "text": "dark: { g0: '#1b2740', g1: '#141a2b', g2: '#0b0b12', aura0: 'rgba(125,207,255,0.16)', aura1: 'rgba(157,124,216,0.06)',"
+        },
+        {
+          "line": 486,
+          "text": "part: 'rgba(210,235,255,0.95)', lab: '#e6f0ff', labSh: 'rgba(10,12,20,0.55)' },"
+        },
+        {
+          "line": 487,
+          "text": "light: { g0: '#dfe8fb', g1: '#eef2fd', g2: '#f6f8fe', aura0: 'rgba(31,131,201,0.12)', aura1: 'rgba(122,91,192,0.06)',"
+        },
+        {
+          "line": 490,
+          "text": "part: 'rgba(31,131,201,0.95)', lab: '#1a1b26', labSh: 'rgba(255,255,255,0.6)' },"
+        },
+        {
+          "line": 577,
+          "text": "og.addColorStop(0, isCore ? '#eaf7ff' : '#dfeaff'); og.addColorStop(0.6, isCore ? '#7dcfff' : `rgba(${rimHue},0.95)`);"
+        },
+        {
+          "line": 578,
+          "text": "og.addColorStop(1, isCore ? '#4aa8e6' : `rgba(${rimHue},0.7)`);"
+        },
+        {
+          "line": 645,
+          "text": "padding: var(--space-12) var(--space-6) var(--space-16);"
+        },
+        {
+          "line": 674,
+          "text": "margin: 0 auto var(--space-8);"
+        },
+        {
+          "line": 675,
+          "text": "border-radius: var(--radius-xl);"
+        },
+        {
+          "line": 678,
+          "text": "box-shadow: 0 12px 48px color-mix(in srgb, var(--brand-primary) 16%, transparent);"
+        },
+        {
+          "line": 694,
+          "text": "padding: clamp(var(--space-4), 4vw, var(--space-10)) var(--space-4) var(--space-12);"
+        },
+        {
+          "line": 697,
+          "text": "color-mix(in srgb, #1a1b26 78%, transparent) 0%,"
+        },
+        {
+          "line": 698,
+          "text": "color-mix(in srgb, #1a1b26 40%, transparent) 55%,"
+        },
+        {
+          "line": 706,
+          "text": "font-size: clamp(2.25rem, 7vw, 4.75rem);"
+        },
+        {
+          "line": 707,
+          "text": "font-weight: var(--font-weight-bold);"
+        },
+        {
+          "line": 710,
+          "text": "color: #f7f7fb;"
+        },
+        {
+          "line": 711,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 717,
+          "text": "0 0 30px color-mix(in srgb, #7dcfff 38%, transparent);"
+        },
+        {
+          "line": 721,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 724,
+          "text": "margin: 0 auto var(--space-6);"
+        },
+        {
+          "line": 735,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 738,
+          "text": "margin: calc(-1 * var(--space-3)) auto var(--space-6);"
+        },
+        {
+          "line": 750,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 752,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 754,
+          "text": "margin: calc(-1 * var(--space-2)) auto var(--space-6);"
+        },
+        {
+          "line": 762,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 763,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 767,
+          "text": "margin: 0 0 var(--space-3);"
+        },
+        {
+          "line": 777,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 782,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 783,
+          "text": "padding: var(--space-3);"
+        },
+        {
+          "line": 789,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 799,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 815,
+          "text": "margin: calc(-1 * var(--space-2)) calc(-1 * var(--space-1)) calc(-1 * var(--space-2)) 0;"
+        },
+        {
+          "line": 816,
+          "text": "padding: var(--space-1);"
+        },
+        {
+          "line": 819,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 841,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 849,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 851,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 857,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 872,
+          "text": "gap: var(--space-8);"
+        },
+        {
+          "line": 887,
+          "text": "gap: var(--space-1);"
+        },
+        {
+          "line": 892,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 893,
+          "text": "font-weight: var(--font-weight-bold);"
+        },
+        {
+          "line": 898,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 910,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 916,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 917,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 940,
+          "text": "gap: var(--space-1) var(--space-6);"
+        },
+        {
+          "line": 946,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 947,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 963,
+          "text": "shared child rules center by default (margin:auto / justify-content:center) \u2014 the"
+        },
+        {
+          "line": 1016,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 1020,
+          "text": "gap: clamp(var(--space-8), 4vw, var(--space-12));"
+        },
+        {
+          "line": 1072,
+          "text": "font-size: clamp(2.5rem, 5.4vw, 4.25rem);"
+        },
+        {
+          "line": 1074,
+          "text": "color: var(--color-text-heading, #f7f7fb);"
+        },
+        {
+          "line": 1080,
+          "text": "color: var(--color-text-heading, #f7f7fb);"
+        },
+        {
+          "line": 1094,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 1098,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 1104,
+          "text": "border-radius: var(--radius-xl);"
+        },
+        {
+          "line": 1107,
+          "text": "padding: clamp(var(--space-4), 2vw, var(--space-6));"
+        },
+        {
+          "line": 1108,
+          "text": "box-shadow: 0 16px 54px color-mix(in srgb, var(--brand-primary) 15%, transparent);"
+        },
+        {
+          "line": 1161,
+          "text": "margin: -1px; padding: 0; border: 0;"
+        },
+        {
+          "line": 1169,
+          "text": "margin: var(--space-2, 0.5rem) 0 0; padding: 0.75rem;"
+        },
+        {
+          "line": 1174,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 1177,
+          "text": "list-style: none; margin: 0; padding: 0;"
+        },
+        {
+          "line": 1178,
+          "text": "display: flex; flex-wrap: wrap; gap: 0.5rem 0.85rem;"
+        },
+        {
+          "line": 1183,
+          "text": "font-size: var(--text-sm, 0.9rem);"
+        },
+        {
+          "line": 1194,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 1195,
+          "text": "box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 25%, transparent);"
+        },
+        {
+          "line": 1208,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 1231,
+          "text": "gap: var(--space-8);"
+        },
+        {
+          "line": 1275,
+          "text": "padding: var(--space-10) var(--space-4) var(--space-12);"
+        },
+        {
+          "line": 1283,
+          "text": "gap: var(--space-6);"
+        },
+        {
+          "line": 1289,
+          "text": "padding: var(--space-8) var(--space-4) var(--space-8);"
+        },
+        {
+          "line": 1293,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 1299,
+          "text": "gap: var(--space-4);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/MediaPlaceholder.astro",
+      "sha256": "a4cb3dd62446b6a8fc667b3d4ee3affaa5b37e4b6f263a596673d060cbd7e46b",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 37,
+          "text": "margin: var(--space-6) 0;"
+        },
+        {
+          "line": 42,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 57,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 59,
+          "text": "padding: var(--space-4);"
+        },
+        {
+          "line": 64,
+          "text": "font-size: var(--text-2xl);"
+        },
+        {
+          "line": 69,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 70,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 75,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 81,
+          "text": "font-size: var(--text-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/NetworkDiagram.astro",
+      "sha256": "1ad60c9068ef2f95d2c220b23f2f329b5451a32680b464ed95d221522b6dbb95",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 160,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 177,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 184,
+          "text": ".netdiagram-svg--portrait .nd-label { font-size: 14px; }"
+        },
+        {
+          "line": 185,
+          "text": ".netdiagram-svg--portrait .nd-hub-mark { font-size: 20px; }"
+        },
+        {
+          "line": 186,
+          "text": ".netdiagram-svg--portrait .nd-hub-sub { font-size: 10px; }"
+        },
+        {
+          "line": 191,
+          "text": "(#6d4bb8 on light, #9d7cd8 on dark); at 0.8 that computes to \u22484:1 in each mode. \u2014\u2014\u2014 */"
+        },
+        {
+          "line": 221,
+          "text": "font-size: 13px;"
+        },
+        {
+          "line": 239,
+          "text": "fill: #ffffff;"
+        },
+        {
+          "line": 241,
+          "text": "font-weight: var(--font-weight-bold);"
+        },
+        {
+          "line": 242,
+          "text": "font-size: 22px;"
+        },
+        {
+          "line": 249,
+          "text": "font-size: 11px;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/PersonaPage.astro",
+      "sha256": "b49c19aab50bb8cc20fc29b13f7281c4c463378bb4711c1d6b0e32d617c02487",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 93,
+          "text": "font-size: var(--text-lg);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/PrevNextNav.astro",
+      "sha256": "1ef9e9388c4cab257036b797ebd73adbdeff081dfd876f94bfacf589b35fe95a",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 31,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 40,
+          "text": "gap: var(--space-1);"
+        },
+        {
+          "line": 41,
+          "text": "padding: var(--space-4);"
+        },
+        {
+          "line": 43,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 50,
+          "text": "box-shadow: var(--shadow-sm);"
+        },
+        {
+          "line": 67,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 69,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 74,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 76,
+          "text": "font-size: var(--text-base);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/RegistryCard.astro",
+      "sha256": "eef4a8e58cdb5ecd629899e9c494b2588eba2b6877e9322caf0016d815f917ff",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 66,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 67,
+          "text": "padding: var(--space-5) var(--space-5) var(--space-4);"
+        },
+        {
+          "line": 70,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 77,
+          "text": "box-shadow: var(--shadow-md);"
+        },
+        {
+          "line": 85,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 90,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 98,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 99,
+          "text": "padding: 0.1em 0.55em;"
+        },
+        {
+          "line": 100,
+          "text": "border-radius: var(--radius-full);"
+        },
+        {
+          "line": 124,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 125,
+          "text": "font-weight: var(--font-weight-bold);"
+        },
+        {
+          "line": 127,
+          "text": "margin: var(--space-1) 0 0;"
+        },
+        {
+          "line": 132,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 135,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 139,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 142,
+          "text": "margin: var(--space-1) 0 var(--space-2);"
+        },
+        {
+          "line": 147,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 148,
+          "text": "font-weight: var(--font-weight-semibold);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/SidebarNav.astro",
+      "sha256": "e9aaeb055791cab56a05f75ffa2a5590e5d2c1ed33f12cd8ff2609e4dc60098d",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 143,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 149,
+          "text": "margin: 0 0 var(--space-6);"
+        },
+        {
+          "line": 150,
+          "text": "padding: 0 0 var(--space-4);"
+        },
+        {
+          "line": 154,
+          "text": "gap: 2px;"
+        },
+        {
+          "line": 160,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 161,
+          "text": "padding: var(--space-1) var(--space-2);"
+        },
+        {
+          "line": 162,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 165,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 186,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 188,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 189,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 193,
+          "text": "padding: var(--space-1) var(--space-2);"
+        },
+        {
+          "line": 213,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 214,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 222,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 224,
+          "text": "padding: var(--space-1) var(--space-2);"
+        },
+        {
+          "line": 227,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 238,
+          "text": "font-size: 0.7em;"
+        },
+        {
+          "line": 248,
+          "text": "padding: var(--space-1) var(--space-2);"
+        },
+        {
+          "line": 251,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 263,
+          "text": "font-weight: var(--font-weight-medium);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/SubnetworkCard.astro",
+      "sha256": "82351e6ec9d2ed863b9fda7c12f6f84f237138774eceaeac487cf96cf1e81bfc",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 18,
+          "text": "* elevated card surface (#24283b), where purple `--color-primary` computes to 4.38:1 \u2014 below the"
+        },
+        {
+          "line": 88,
+          "text": "padding: var(--space-8) var(--space-6);"
+        },
+        {
+          "line": 93,
+          "text": "border-radius: var(--radius-xl);"
+        },
+        {
+          "line": 102,
+          "text": "box-shadow: var(--shadow-md);"
+        },
+        {
+          "line": 107,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 109,
+          "text": "margin: 0 0 var(--space-1);"
+        },
+        {
+          "line": 114,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 116,
+          "text": "margin: 0 0 var(--space-4);"
+        },
+        {
+          "line": 122,
+          "text": "margin: 0 0 var(--space-5);"
+        },
+        {
+          "line": 126,
+          "text": "margin: 0 0 var(--space-5);"
+        },
+        {
+          "line": 128,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 134,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 135,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 143,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 148,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 155,
+          "text": "margin: 0 0 var(--space-5);"
+        },
+        {
+          "line": 163,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 170,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 171,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 176,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 177,
+          "text": "padding: 0.25em 0.6em;"
+        },
+        {
+          "line": 179,
+          "text": "border-radius: var(--radius-full);"
+        },
+        {
+          "line": 198,
+          "text": "margin: auto 0 0;"
+        },
+        {
+          "line": 204,
+          "text": "gap: var(--space-5);"
+        },
+        {
+          "line": 205,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 212,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 213,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 225,
+          "text": "margin: var(--space-3) 0 0;"
+        },
+        {
+          "line": 226,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 235,
+          "text": "gap: 0;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/TOCPanel.astro",
+      "sha256": "b3b115b78f3df98898273258d896660d97591733175c016ad84488468547793e",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 58,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 63,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 64,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 73,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 74,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 79,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 88,
+          "text": "padding: var(--space-1) var(--space-3);"
+        },
+        {
+          "line": 91,
+          "text": "font-size: var(--text-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/TryInClaudeCode.astro",
+      "sha256": "5a72ee67b649d38b5fb9fb5a36bfc56b3c66448eaf4b1fdd148f1d220cf716db",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 51,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 52,
+          "text": "margin: var(--space-12) 0 var(--space-4);"
+        },
+        {
+          "line": 53,
+          "text": "padding: var(--space-6);"
+        },
+        {
+          "line": 56,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 68,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 79,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 80,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 82,
+          "text": "margin: 0 0 var(--space-2);"
+        },
+        {
+          "line": 86,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 88,
+          "text": "margin: 0 0 var(--space-4);"
+        },
+        {
+          "line": 95,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 98,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 99,
+          "text": "padding: var(--space-2) var(--space-3);"
+        },
+        {
+          "line": 106,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 118,
+          "text": "padding: var(--space-1);"
+        },
+        {
+          "line": 121,
+          "text": "border-radius: var(--radius-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/VaultCard.astro",
+      "sha256": "487de5968f4739bf9a7d5cb863db29abdd5b9cedbbfcf255c0f483862f537320",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 107,
+          "text": ".vault-card { padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-lg); transition: border-color var(--transition-fast); }"
+        },
+        {
+          "line": 110,
+          "text": ".vault-card-persona { color: var(--color-text-muted); font-size: 0.9em; margin: 0.25rem 0; }"
+        },
+        {
+          "line": 111,
+          "text": ".vault-card-tagline { font-style: italic; color: var(--color-text-muted); margin: 0.5rem 0; }"
+        },
+        {
+          "line": 117,
+          "text": "font-size: 0.9em;"
+        },
+        {
+          "line": 118,
+          "text": "margin: 0.4rem 0;"
+        },
+        {
+          "line": 127,
+          "text": ".vault-card-meta { font-size: 0.8em; margin-top: 0.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }"
+        },
+        {
+          "line": 129,
+          "text": ".vault-card-documented { font-size: 0.8em; margin: 0.4rem 0 0; color: var(--color-text-muted); }"
+        },
+        {
+          "line": 136,
+          "text": ".vault-tier { padding: 0.1rem 0.4rem; border-radius: var(--radius-full); }"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/VaultFacetChip.astro",
+      "sha256": "14538a0052ddd775e70fd1f17b03cc67adbf94385e3aa5018a599dcf71605558",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 19,
+          "text": "/* P4 cohesion fix: was hardcoded #f0f0f0/#333 (light-only \u2014 broke the dark-first default) plus a"
+        },
+        {
+          "line": 20,
+          "text": "rogue #4a86e8 blue hover (a third accent). Tokenized to the theme-aware brand surface + the cyan"
+        },
+        {
+          "line": 24,
+          "text": "padding: 0.4rem 0.8rem;"
+        },
+        {
+          "line": 25,
+          "text": "border-radius: 1rem;"
+        },
+        {
+          "line": 30,
+          "text": "font-size: 0.9em;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/components/sections/VaultRelationshipBlock.astro",
+      "sha256": "82b7c09ad7c762b8a15de743ccf7dd0993af717c72c7f83f990d0df1dd577daa",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 67,
+          "text": ".vault-relationships { margin: var(--space-6, 1.5rem) 0; }"
+        },
+        {
+          "line": 70,
+          "text": ".rel-intro { color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); line-height: 1.6; margin: 0 0 var(--space-4, 1rem); max-width: 65ch; }"
+        },
+        {
+          "line": 73,
+          "text": ".rel-count { color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }"
+        },
+        {
+          "line": 75,
+          "text": ".rel-key { color: var(--color-text-muted); font-size: var(--text-xs, 0.8rem); }"
+        },
+        {
+          "line": 77,
+          "text": ".rel-list { list-style: none; margin: var(--space-4, 1rem) 0; padding: 0; display: grid; gap: 0.5rem; }"
+        },
+        {
+          "line": 78,
+          "text": ".rel-list li { display: flex; align-items: baseline; gap: 0.5rem; line-height: 1.4; }"
+        },
+        {
+          "line": 80,
+          "text": ".rel-type { font-family: var(--font-mono); font-size: var(--text-xs, 0.8rem); color: var(--color-text); }"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/layouts/BaseLayout.astro",
+      "sha256": "bf7d7e6835a768e0a6f565afccdcca2d5410727a22436771400d4e292c976759",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/layouts/DocumentationLayout.astro",
+      "sha256": "3bf7b42a34c8b89899b85e091753680ebfc3e414e248b096bd29b23c4aacc384",
+      "role": "existing Astro census plus complete-source lexical review",
+      "existing_census": true,
+      "lexical_candidates": [
+        {
+          "line": 197,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 208,
+          "text": "padding: var(--space-6) var(--space-4);"
+        },
+        {
+          "line": 215,
+          "text": "margin: var(--space-4) var(--space-6) 0;"
+        },
+        {
+          "line": 217,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 229,
+          "text": "padding: var(--space-2) var(--space-4);"
+        },
+        {
+          "line": 231,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 232,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 244,
+          "text": "font-size: 0.7em;"
+        },
+        {
+          "line": 253,
+          "text": "padding: var(--space-2) var(--space-4) var(--space-4);"
+        },
+        {
+          "line": 259,
+          "text": "padding: var(--space-8) var(--space-6);"
+        },
+        {
+          "line": 271,
+          "text": "gap: var(--space-2) var(--space-4);"
+        },
+        {
+          "line": 275,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 280,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 289,
+          "text": "margin: 0 0 var(--space-6);"
+        },
+        {
+          "line": 292,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 303,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 304,
+          "text": "padding: var(--space-1);"
+        },
+        {
+          "line": 322,
+          "text": "padding: var(--space-2);"
+        },
+        {
+          "line": 332,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 341,
+          "text": "margin: calc(var(--space-6) * -1 + var(--space-3)) 0 var(--space-6);"
+        },
+        {
+          "line": 343,
+          "text": "font-size: var(--text-sm, 0.9rem);"
+        },
+        {
+          "line": 353,
+          "text": "padding: var(--space-6) var(--space-4);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/404.astro",
+      "sha256": "8e41671bde638647a763695e92f26a29808b174daeeeed52fbb5a063fc378500",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 27,
+          "text": "padding: var(--space-32) var(--space-6);"
+        },
+        {
+          "line": 32,
+          "text": "font-size: var(--text-4xl);"
+        },
+        {
+          "line": 39,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 45,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 51,
+          "text": "padding: var(--space-3) var(--space-6);"
+        },
+        {
+          "line": 52,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 54,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 66,
+          "text": "/* Dark mode: --color-primary flips to the lighter #9d7cd8 (3.3:1 vs white = fails AA)."
+        },
+        {
+          "line": 67,
+          "text": "Mirror the global .btn-primary fix \u2014 deep purple --brand-primary-dark #6d4bb8 \u2192 5.8:1."
+        },
+        {
+          "line": 74,
+          "text": "background: #7c5cc4;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/[...path].md.ts",
+      "sha256": "55cb805a245a86d19eda6ea10b72e5c722709b25b421a6c0fd20353bd8730ab9",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/about.astro",
+      "sha256": "795e97aa22d5e6cc076aed17d0d9195d3aa744dfc97879f3fa476e2f8e259c99",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 292,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 293,
+          "text": "padding: 0 var(--space-6);"
+        },
+        {
+          "line": 297,
+          "text": "font-size: var(--text-3xl);"
+        },
+        {
+          "line": 305,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 307,
+          "text": "margin: 0 auto var(--space-10);"
+        },
+        {
+          "line": 321,
+          "text": "padding: var(--space-24) 0 var(--space-16);"
+        },
+        {
+          "line": 329,
+          "text": "font-size: clamp(2.25rem, 6vw, 3.75rem);"
+        },
+        {
+          "line": 330,
+          "text": "font-weight: 700;"
+        },
+        {
+          "line": 333,
+          "text": "margin: 0 auto var(--space-5);"
+        },
+        {
+          "line": 340,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 342,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 348,
+          "text": "padding: var(--space-24) 0;"
+        },
+        {
+          "line": 354,
+          "text": "gap: var(--space-6);"
+        },
+        {
+          "line": 356,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 360,
+          "text": "padding: var(--space-8) var(--space-6);"
+        },
+        {
+          "line": 365,
+          "text": "border-radius: var(--radius-xl);"
+        },
+        {
+          "line": 369,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 371,
+          "text": "margin: 0 0 var(--space-1);"
+        },
+        {
+          "line": 376,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 378,
+          "text": "margin: 0 0 var(--space-4);"
+        },
+        {
+          "line": 384,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 388,
+          "text": "margin: var(--space-4) 0 0;"
+        },
+        {
+          "line": 393,
+          "text": "font-weight: 500;"
+        },
+        {
+          "line": 394,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 405,
+          "text": "padding: var(--space-24) 0;"
+        },
+        {
+          "line": 411,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 417,
+          "text": "margin: 0 0 var(--space-5);"
+        },
+        {
+          "line": 426,
+          "text": "padding: var(--space-24) 0;"
+        },
+        {
+          "line": 431,
+          "text": "margin: 0 auto var(--space-10);"
+        },
+        {
+          "line": 432,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 435,
+          "text": "gap: var(--space-6);"
+        },
+        {
+          "line": 441,
+          "text": "gap: var(--space-5);"
+        },
+        {
+          "line": 452,
+          "text": "border-radius: 50%;"
+        },
+        {
+          "line": 456,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 457,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 462,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 464,
+          "text": "margin: 0.3rem 0 var(--space-2);"
+        },
+        {
+          "line": 470,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 475,
+          "text": "margin: 0 auto var(--space-6);"
+        },
+        {
+          "line": 487,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 489,
+          "text": "font-weight: 500;"
+        },
+        {
+          "line": 490,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 496,
+          "text": "gap: var(--space-2) var(--space-6);"
+        },
+        {
+          "line": 510,
+          "text": "padding: var(--space-24) 0;"
+        },
+        {
+          "line": 516,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 517,
+          "text": "margin: 0 auto var(--space-10);"
+        },
+        {
+          "line": 520,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 525,
+          "text": "padding: var(--space-5) var(--space-6);"
+        },
+        {
+          "line": 529,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 536,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 538,
+          "text": "margin: 0 0 var(--space-1);"
+        },
+        {
+          "line": 543,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 544,
+          "text": "margin: 0 0 var(--space-1);"
+        },
+        {
+          "line": 550,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 551,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 559,
+          "text": "margin: auto 0 0;"
+        },
+        {
+          "line": 561,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 567,
+          "text": "font-weight: 500;"
+        },
+        {
+          "line": 587,
+          "text": "padding: 0 0 var(--space-32);"
+        },
+        {
+          "line": 600,
+          "text": "padding: var(--space-16) 0 var(--space-12);"
+        },
+        {
+          "line": 607,
+          "text": "padding: var(--space-12) 0;"
+        },
+        {
+          "line": 611,
+          "text": "padding: 0 0 var(--space-16);"
+        },
+        {
+          "line": 615,
+          "text": "font-size: var(--text-2xl);"
+        },
+        {
+          "line": 619,
+          "text": "font-size: var(--text-base);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/accessibility/index.astro",
+      "sha256": "0ee4682aeae49c4ee9fa0a2eb0b9bc0f0000b0bca1b9c864e802a9178ee39523",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 207,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 208,
+          "text": "padding: var(--space-16) var(--space-6) var(--space-24);"
+        },
+        {
+          "line": 214,
+          "text": "font-size: var(--text-3xl);"
+        },
+        {
+          "line": 219,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 223,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 224,
+          "text": "margin: var(--space-10) 0 var(--space-3);"
+        },
+        {
+          "line": 241,
+          "text": "font-size: 0.85em;"
+        },
+        {
+          "line": 244,
+          "text": "border-radius: 3px;"
+        },
+        {
+          "line": 245,
+          "text": "padding: 0.05em 0.3em;"
+        },
+        {
+          "line": 249,
+          "text": "font-size: 0.9em;"
+        },
+        {
+          "line": 251,
+          "text": "padding: 0.1em 0.35em;"
+        },
+        {
+          "line": 252,
+          "text": "border-radius: 3px;"
+        },
+        {
+          "line": 260,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 261,
+          "text": "margin: var(--space-2) 0;"
+        },
+        {
+          "line": 267,
+          "text": "font-size: var(--text-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/api/registry.v1.json.ts",
+      "sha256": "cf78f9797d9b7ba373fe0d13eff6606a33e2ae901638aa1dc5cc9ea76fc42d2f",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/canonical-properties/index.astro",
+      "sha256": "a35acef65d8a46e2acbefd9dd61ed1b372d95c128fcf1f72befcbc1f6c4b1a6d",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 213,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 214,
+          "text": "padding: var(--space-16) var(--space-6) var(--space-24);"
+        },
+        {
+          "line": 220,
+          "text": "font-size: var(--text-3xl);"
+        },
+        {
+          "line": 225,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 229,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 230,
+          "text": "margin: var(--space-10) 0 var(--space-3);"
+        },
+        {
+          "line": 245,
+          "text": "margin: 0 0 var(--space-4);"
+        },
+        {
+          "line": 256,
+          "text": "margin: 0 0 var(--space-6);"
+        },
+        {
+          "line": 257,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 259,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 262,
+          "text": "padding: var(--space-4) var(--space-5);"
+        },
+        {
+          "line": 264,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 272,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 274,
+          "text": "margin: 0 0 var(--space-2);"
+        },
+        {
+          "line": 279,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 284,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 285,
+          "text": "font-weight: 500;"
+        },
+        {
+          "line": 288,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 289,
+          "text": "padding: 0 var(--space-2);"
+        },
+        {
+          "line": 292,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 295,
+          "text": "gap: var(--space-1) var(--space-6);"
+        },
+        {
+          "line": 296,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 306,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 314,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 321,
+          "text": "gap: 0;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/changelog.astro",
+      "sha256": "87c0490f713977cf3bf268987035ca1ab190b1ddb83ba4bd95019686aec98207",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 68,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 70,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 75,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 86,
+          "text": "padding: 0.1em 0.5em;"
+        },
+        {
+          "line": 87,
+          "text": "border-radius: var(--radius-full);"
+        },
+        {
+          "line": 88,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 89,
+          "text": "font-weight: 500;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/commons.astro",
+      "sha256": "1f7a2ededd374a9ff5b4e0e2820ea247731dbf246814b60193374fc9c6b52bbf",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 337,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 338,
+          "text": "padding: 0 var(--space-6);"
+        },
+        {
+          "line": 342,
+          "text": "font-size: var(--text-3xl);"
+        },
+        {
+          "line": 350,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 352,
+          "text": "margin: 0 auto var(--space-12);"
+        },
+        {
+          "line": 360,
+          "text": "padding: var(--space-10) 0 0;"
+        },
+        {
+          "line": 373,
+          "text": "padding: var(--space-16) 0 var(--space-24);"
+        },
+        {
+          "line": 380,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 383,
+          "text": "gap: var(--space-6);"
+        },
+        {
+          "line": 385,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 396,
+          "text": "padding: var(--space-16) 0 var(--space-20);"
+        },
+        {
+          "line": 401,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 404,
+          "text": "gap: var(--space-6);"
+        },
+        {
+          "line": 406,
+          "text": "margin: 0 auto var(--space-12);"
+        },
+        {
+          "line": 410,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 412,
+          "text": "margin: 0 0 var(--space-2);"
+        },
+        {
+          "line": 418,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 419,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 436,
+          "text": "margin: 0 auto var(--space-4);"
+        },
+        {
+          "line": 438,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 444,
+          "text": "padding: var(--space-16) 0 var(--space-20);"
+        },
+        {
+          "line": 450,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 452,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 454,
+          "text": "margin: 0 auto var(--space-8);"
+        },
+        {
+          "line": 462,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 463,
+          "text": "padding: var(--space-4) var(--space-6);"
+        },
+        {
+          "line": 467,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 468,
+          "text": "margin: 0 0 var(--space-3);"
+        },
+        {
+          "line": 477,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 480,
+          "text": "gap: var(--space-1) var(--space-6);"
+        },
+        {
+          "line": 481,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 494,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 499,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 507,
+          "text": "margin: 0 auto var(--space-3);"
+        },
+        {
+          "line": 509,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 514,
+          "text": "margin: var(--space-8) auto 0;"
+        },
+        {
+          "line": 520,
+          "text": "padding: 0 0 var(--space-20);"
+        },
+        {
+          "line": 533,
+          "text": "gap: 0;"
+        },
+        {
+          "line": 545,
+          "text": "padding: var(--space-12) 0;"
+        },
+        {
+          "line": 549,
+          "text": "font-size: var(--text-2xl);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/community/[...slug].astro",
+      "sha256": "95e3811c87ef10b0de0d7840ed09d22da51548d215d38a505b1ef1563bd7767d",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/community/index.astro",
+      "sha256": "9f4a16952393d7da7e96735cf803932a6368388fd1d2064984570799ee4af0cf",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 156,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 157,
+          "text": "margin: 0 0 var(--space-8);"
+        },
+        {
+          "line": 159,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 165,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 166,
+          "text": "padding: var(--space-3) var(--space-4);"
+        },
+        {
+          "line": 171,
+          "text": "margin: 0 0 var(--space-1);"
+        },
+        {
+          "line": 176,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 184,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 189,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 192,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 197,
+          "text": "margin: var(--space-2) 0 0;"
+        },
+        {
+          "line": 202,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 203,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 207,
+          "text": "margin: 0 0 var(--space-4);"
+        },
+        {
+          "line": 210,
+          "text": "gap: var(--space-2) var(--space-6);"
+        },
+        {
+          "line": 211,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 221,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 225,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 231,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 238,
+          "text": "gap: 0;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/community/proposals.json.ts",
+      "sha256": "988764610e4e5c0b4adc5f5699c719894ccdd5f938966f4b7c1e4d80675dfe48",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/community/proposals/[...slug].astro",
+      "sha256": "771e4f60707b9b01abee12a439ae05174c9c32fc75fa48e6ceb895ab5d0305ec",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 153,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 159,
+          "text": "margin: 0 0 var(--space-6);"
+        },
+        {
+          "line": 165,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 171,
+          "text": "padding: var(--space-2) var(--space-3);"
+        },
+        {
+          "line": 178,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 186,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 187,
+          "text": "margin: 0 0 var(--space-8);"
+        },
+        {
+          "line": 188,
+          "text": "padding: var(--space-4);"
+        },
+        {
+          "line": 191,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 193,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 199,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 207,
+          "text": "gap: 0;"
+        },
+        {
+          "line": 213,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 221,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 240,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 241,
+          "text": "padding: 0.1em 0.5em;"
+        },
+        {
+          "line": 242,
+          "text": "border-radius: var(--radius-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/community/proposals/index.astro",
+      "sha256": "7ebf81b59c56be0bf67370ecdec35c2f27859e22dda31534664940e84282530e",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 156,
+          "text": "margin: 0 0 var(--space-6);"
+        },
+        {
+          "line": 162,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 168,
+          "text": "padding: var(--space-2) var(--space-3);"
+        },
+        {
+          "line": 175,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 200,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 201,
+          "text": "padding: 0.1em 0.5em;"
+        },
+        {
+          "line": 202,
+          "text": "border-radius: var(--radius-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/design-system.astro",
+      "sha256": "68abe40490b5de2fc058458b03726d409cd0baa1819a4559d0b6fa80b45428ac",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 215,
+          "text": "<span class=\"ds-type-sample\" style={`font-size: var(${t.name});`}>Aa knowledge architecture</span>"
+        },
+        {
+          "line": 232,
+          "text": "<li class=\"ds-weight-row\" style={`font-weight: var(${w.name});`}>"
+        },
+        {
+          "line": 259,
+          "text": "<span class=\"ds-radius-box\" style={`border-radius: var(${r.name});`}></span>"
+        },
+        {
+          "line": 270,
+          "text": "<span class=\"ds-shadow-box\" style={`box-shadow: var(${s});`}></span>"
+        },
+        {
+          "line": 647,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 654,
+          "text": "margin: var(--space-16) 0 0;"
+        },
+        {
+          "line": 660,
+          "text": "font-size: var(--text-2xl);"
+        },
+        {
+          "line": 661,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 663,
+          "text": "margin: 0 0 var(--space-4);"
+        },
+        {
+          "line": 667,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 668,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 670,
+          "text": "margin: var(--space-8) 0 var(--space-4);"
+        },
+        {
+          "line": 673,
+          "text": "code { font-family: var(--font-mono); font-size: 0.9em; color: var(--color-text); }"
+        },
+        {
+          "line": 677,
+          "text": "list-style: none; margin: 0; padding: 0;"
+        },
+        {
+          "line": 678,
+          "text": "display: grid; gap: var(--space-4);"
+        },
+        {
+          "line": 685,
+          "text": "column-gap: var(--space-3);"
+        },
+        {
+          "line": 691,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 694,
+          "text": ".ds-swatch-name { font-size: var(--text-sm); color: var(--color-text); align-self: end; }"
+        },
+        {
+          "line": 695,
+          "text": ".ds-swatch-role { font-size: var(--text-xs); color: var(--color-text-muted); align-self: start; }"
+        },
+        {
+          "line": 699,
+          "text": "list-style: none; margin: 0; padding: 0;"
+        },
+        {
+          "line": 703,
+          "text": "gap: var(--space-2) var(--space-4);"
+        },
+        {
+          "line": 704,
+          "text": "padding: var(--space-2) 0;"
+        },
+        {
+          "line": 708,
+          "text": ".ds-type-meta { font-size: var(--text-sm); color: var(--color-text-muted); }"
+        },
+        {
+          "line": 710,
+          "text": ".ds-font-row { padding: var(--space-3) 0; border-bottom: 1px solid var(--color-border); }"
+        },
+        {
+          "line": 711,
+          "text": ".ds-font-label { display: block; font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-1); }"
+        },
+        {
+          "line": 712,
+          "text": ".ds-font-sample { display: block; font-size: var(--text-lg); color: var(--color-text); }"
+        },
+        {
+          "line": 714,
+          "text": ".ds-weight-row { padding: var(--space-2) 0; color: var(--color-text); font-size: var(--text-lg); }"
+        },
+        {
+          "line": 717,
+          "text": ".ds-space-row { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-1) 0; }"
+        },
+        {
+          "line": 718,
+          "text": ".ds-space-bar { height: 1rem; background: var(--color-primary); border-radius: var(--radius-sm); }"
+        },
+        {
+          "line": 721,
+          "text": ".ds-two-col { display: grid; gap: var(--space-8); grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }"
+        },
+        {
+          "line": 722,
+          "text": ".ds-radii, .ds-shadows { display: flex; flex-wrap: wrap; gap: var(--space-6); }"
+        },
+        {
+          "line": 723,
+          "text": ".ds-radius, .ds-shadow { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); }"
+        },
+        {
+          "line": 733,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 737,
+          "text": ".ds-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; margin-bottom: var(--space-2); }"
+        },
+        {
+          "line": 742,
+          "text": ".ds-slot-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm, 0.9rem); }"
+        },
+        {
+          "line": 743,
+          "text": ".ds-slot-table th, .ds-slot-table td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-border); vertical-align: top; }"
+        },
+        {
+          "line": 745,
+          "text": ".ds-note { color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); max-width: 68ch; }"
+        },
+        {
+          "line": 748,
+          "text": "margin: var(--space-4) 0;"
+        },
+        {
+          "line": 749,
+          "text": "padding: var(--space-5, 1.5rem) var(--space-4);"
+        },
+        {
+          "line": 753,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 755,
+          "text": ".ds-slot-demo-block p { margin: 0; color: var(--color-text-muted); }"
+        },
+        {
+          "line": 758,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 759,
+          "text": "padding: 0.1em 0.5em;"
+        },
+        {
+          "line": 760,
+          "text": "border-radius: var(--radius-full);"
+        },
+        {
+          "line": 761,
+          "text": "font-weight: var(--font-weight-medium);"
+        },
+        {
+          "line": 771,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 772,
+          "text": "padding: 0.1em 0.55em;"
+        },
+        {
+          "line": 773,
+          "text": "border-radius: var(--radius-full);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/get-started.astro",
+      "sha256": "2854a6e44d250aa6eab2795332ef4501220f64d6d269f7025edf5d3e71e11ae3",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/get-started/what-your-agent-reads/[...slug].astro",
+      "sha256": "ee925a19f1c8d1350e4d9a4de91aace96af004365c5f2cea65b104ce2ab925c1",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 119,
+          "text": "font-size: 0.9rem;"
+        },
+        {
+          "line": 124,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 125,
+          "text": "margin: var(--space-5) 0 var(--space-3);"
+        },
+        {
+          "line": 126,
+          "text": "padding: var(--space-4);"
+        },
+        {
+          "line": 128,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 130,
+          "text": "font-size: 0.9rem;"
+        },
+        {
+          "line": 135,
+          "text": "gap: var(--space-1) var(--space-3);"
+        },
+        {
+          "line": 139,
+          "text": "font-weight: var(--font-weight-semibold);"
+        },
+        {
+          "line": 143,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 151,
+          "text": "font-size: 0.9rem;"
+        },
+        {
+          "line": 172,
+          "text": "font-size: 0.85rem;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/get-started/what-your-agent-reads/index.astro",
+      "sha256": "40400c2ca28c7c4306992c039811b4f24c87eba65a0305f2c802f7f031f499c6",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 136,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 137,
+          "text": "margin: var(--space-6) 0 0;"
+        },
+        {
+          "line": 141,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 142,
+          "text": "padding: var(--space-5) 0;"
+        },
+        {
+          "line": 151,
+          "text": "font-size: 1.25rem;"
+        },
+        {
+          "line": 152,
+          "text": "font-weight: var(--font-weight-bold);"
+        },
+        {
+          "line": 163,
+          "text": "font-size: 0.9rem;"
+        },
+        {
+          "line": 173,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 174,
+          "text": "margin: var(--space-5) 0;"
+        },
+        {
+          "line": 178,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 179,
+          "text": "padding: var(--space-4);"
+        },
+        {
+          "line": 186,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 188,
+          "text": "font-size: 0.9rem;"
+        },
+        {
+          "line": 191,
+          "text": "font-size: 0.95rem;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/glossary/[...slug].astro",
+      "sha256": "bfb54810f01d6ec8adbebb814dda7e4f89256049f191a57076b8456d56bd179a",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/glossary/index.astro",
+      "sha256": "b25d9480b7d61b359da00a42ad1f51a02f5084538301e6791598a1241d08b940",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/how/index.astro",
+      "sha256": "bac4e27f9c11916fbfd0b4f98dcfd16446d39c0e1140b13b4d937ffba7fee737",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/how/lattice-examples/[...slug].astro",
+      "sha256": "03a5ed808045c50007eae3d65323426b41da746705c7d747f9ca04b1c5c6b378",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/how/lattice-examples/index.astro",
+      "sha256": "e0ce5d6eebc04847b085e81b033c0d08ef16a505a08f4d5922d4c3693bac652c",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/how/publishing/[...slug].astro",
+      "sha256": "fdfc764088582554620fc2285a415656521b192ab08851c98a88e2b9093b151c",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/how/publishing/index.astro",
+      "sha256": "328848459078ab022db728215f6f5c4900c907d00ee6ed5b67a59949fc9552c7",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/how/workshops/[...slug].astro",
+      "sha256": "7ad48fcda48c445e59d299c5639f349dbcdcfa3909eb75c40153b2b8bfacef40",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/how/workshops/index.astro",
+      "sha256": "3be242b8cac7eaffd8e1d41ba59aca7417a83cac29b93b973c533da7901f71d8",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/index.astro",
+      "sha256": "e856a933a098a19c65add5a33226ca8bae2deae8c83bff1505f3bfded787cf57",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 459,
+          "text": "padding: var(--space-10) var(--space-6);"
+        },
+        {
+          "line": 466,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 469,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 470,
+          "text": "font-weight: 500;"
+        },
+        {
+          "line": 480,
+          "text": "margin: var(--space-5) auto 0;"
+        },
+        {
+          "line": 482,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 491,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 492,
+          "text": "padding: 0 var(--space-6);"
+        },
+        {
+          "line": 496,
+          "text": "font-size: var(--text-3xl);"
+        },
+        {
+          "line": 504,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 506,
+          "text": "margin: 0 auto var(--space-10);"
+        },
+        {
+          "line": 516,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 518,
+          "text": "margin: calc(var(--space-10) * -1 + var(--space-3)) auto var(--space-10);"
+        },
+        {
+          "line": 524,
+          "text": "padding: var(--space-24) 0;"
+        },
+        {
+          "line": 530,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 531,
+          "text": "margin: var(--space-8) auto 0;"
+        },
+        {
+          "line": 535,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 539,
+          "text": "padding: var(--space-4);"
+        },
+        {
+          "line": 542,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 552,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 565,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 567,
+          "text": "margin: var(--space-8) auto 0;"
+        },
+        {
+          "line": 573,
+          "text": "padding: var(--space-24) 0;"
+        },
+        {
+          "line": 579,
+          "text": "gap: var(--space-5);"
+        },
+        {
+          "line": 586,
+          "text": "font-weight: 500;"
+        },
+        {
+          "line": 587,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 589,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 610,
+          "text": "padding: var(--space-24) 0;"
+        },
+        {
+          "line": 618,
+          "text": "gap: var(--space-6);"
+        },
+        {
+          "line": 620,
+          "text": "padding: var(--space-6);"
+        },
+        {
+          "line": 623,
+          "text": "border-radius: var(--radius-xl);"
+        },
+        {
+          "line": 629,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 635,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 640,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 648,
+          "text": "gap: var(--space-8);"
+        },
+        {
+          "line": 653,
+          "text": "padding: var(--space-8) var(--space-6);"
+        },
+        {
+          "line": 655,
+          "text": "border-radius: var(--radius-xl);"
+        },
+        {
+          "line": 662,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 665,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 670,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 681,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 684,
+          "text": "background: #13131f;"
+        },
+        {
+          "line": 692,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 693,
+          "text": "padding: var(--space-2) var(--space-3);"
+        },
+        {
+          "line": 694,
+          "text": "background: #1c1c2e;"
+        },
+        {
+          "line": 700,
+          "text": "gap: 5px;"
+        },
+        {
+          "line": 707,
+          "text": "border-radius: 50%;"
+        },
+        {
+          "line": 710,
+          "text": ".demo-dots span:nth-child(1) { background: #ff5f57; }"
+        },
+        {
+          "line": 711,
+          "text": ".demo-dots span:nth-child(2) { background: #febc2e; }"
+        },
+        {
+          "line": 712,
+          "text": ".demo-dots span:nth-child(3) { background: #28c840; }"
+        },
+        {
+          "line": 715,
+          "text": "color: #aaa;"
+        },
+        {
+          "line": 717,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 722,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 723,
+          "text": "padding: var(--space-4);"
+        },
+        {
+          "line": 724,
+          "text": "color: #c9c9df;"
+        },
+        {
+          "line": 726,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 737,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 745,
+          "text": "font-weight: 500;"
+        },
+        {
+          "line": 756,
+          "text": "margin: var(--space-12) auto 0;"
+        },
+        {
+          "line": 757,
+          "text": "padding: var(--space-8) var(--space-6);"
+        },
+        {
+          "line": 761,
+          "text": "border-radius: var(--radius-xl);"
+        },
+        {
+          "line": 765,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 771,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 774,
+          "text": "margin: 0 auto var(--space-6);"
+        },
+        {
+          "line": 779,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 787,
+          "text": "padding: var(--space-24) 0;"
+        },
+        {
+          "line": 794,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 802,
+          "text": "padding: 0.25em 0.75em;"
+        },
+        {
+          "line": 804,
+          "text": "border-radius: var(--radius-full);"
+        },
+        {
+          "line": 806,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 814,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 823,
+          "text": "padding: var(--space-24) 0;"
+        },
+        {
+          "line": 829,
+          "text": "margin: var(--space-8) auto 0;"
+        },
+        {
+          "line": 830,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 833,
+          "text": "gap: var(--space-5);"
+        },
+        {
+          "line": 839,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 852,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 858,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 865,
+          "text": "font-size: 0.9em;"
+        },
+        {
+          "line": 873,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 879,
+          "text": "padding: var(--space-24) 0 var(--space-32);"
+        },
+        {
+          "line": 890,
+          "text": "margin: 0 auto var(--space-10);"
+        },
+        {
+          "line": 891,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 894,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 901,
+          "text": "gap: var(--space-1);"
+        },
+        {
+          "line": 902,
+          "text": "padding: var(--space-4) var(--space-5);"
+        },
+        {
+          "line": 905,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 911,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 922,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 929,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 937,
+          "text": "font-weight: 500;"
+        },
+        {
+          "line": 938,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 941,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 961,
+          "text": "padding: 0 0 var(--space-24);"
+        },
+        {
+          "line": 966,
+          "text": "margin: 0 auto var(--space-6);"
+        },
+        {
+          "line": 967,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 971,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 976,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 991,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 1003,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 1012,
+          "text": "font-weight: 500;"
+        },
+        {
+          "line": 1013,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 1015,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 1033,
+          "text": "font-size: var(--text-2xl);"
+        },
+        {
+          "line": 1037,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 1042,
+          "text": "padding: var(--space-12) 0;"
+        },
+        {
+          "line": 1046,
+          "text": "padding: var(--space-12) 0;"
+        },
+        {
+          "line": 1050,
+          "text": "padding: var(--space-12) 0;"
+        },
+        {
+          "line": 1054,
+          "text": "padding: var(--space-12) 0;"
+        },
+        {
+          "line": 1058,
+          "text": "padding: var(--space-12) 0 var(--space-16);"
+        },
+        {
+          "line": 1062,
+          "text": "padding: 0 0 var(--space-12);"
+        },
+        {
+          "line": 1066,
+          "text": "gap: var(--space-6);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/learn/comparisons/[...slug].astro",
+      "sha256": "c4bd9444b1d9056672910012028d71fb6844530a29d2717f5e444d4f55fe9c0d",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/learn/comparisons/index.astro",
+      "sha256": "357a2b59d7e39ba564365d91d66fe6cb2cbaad9b247aa3329c6d4823af875250",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/learn/concepts/[...slug].astro",
+      "sha256": "43a091cfc51c9ed5a6cb3b247ee8d917b1b1c5c08235ff9e3ac6e62398bc4380",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/learn/concepts/index.astro",
+      "sha256": "61dabfb518d32bce8c416fa04f538a55d175d8476746145e1791138d6c60d0f0",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/learn/course/[...slug].astro",
+      "sha256": "4f9bc1248e1bede557c72c63ac5d8a54c6ad5fa316d899fd7e5f636a6b9201c2",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/learn/course/index.astro",
+      "sha256": "68cd13b214c47a4ad7fce5e66847c9fe775eb28c2e613f2c79741da4f57d789b",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/learn/index.astro",
+      "sha256": "676bc81a6c0e6236d710ae4d6b1c2663f8db03045e216943d62533d2cfd8dfd2",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/learn/tutorials/[...slug].astro",
+      "sha256": "c22eed2dc182c3280b8f056fd86ede703f1049b5b637cf5c9efdc1f02e2653b4",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/learn/tutorials/index.astro",
+      "sha256": "0b8681d0ef6d313696414b41ce5e0f53a569ddc33486208330cd044763688dd7",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/learn/what-is-adna.astro",
+      "sha256": "c19b7792df27c17ebde0fe2c89b37eb44faef8df5264f5975668ef3cf6060040",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 203,
+          "text": "margin: var(--space-4) 0;"
+        },
+        {
+          "line": 205,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 214,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 215,
+          "text": "padding: var(--space-3) var(--space-4);"
+        },
+        {
+          "line": 217,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 218,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 230,
+          "text": "font-size: 0.8em;"
+        },
+        {
+          "line": 240,
+          "text": "padding: 0 var(--space-4) var(--space-2);"
+        },
+        {
+          "line": 245,
+          "text": "margin: var(--space-2) 0 0;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/llms-full.txt.ts",
+      "sha256": "deb814fa8de11f234f0cbfa23acf9807cdda750c4b5a9cc71ac91fec818ec932",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/llms.txt.ts",
+      "sha256": "c0af45651a5988bbe466f2e6c11646aeafbc7f1d82801882123938390e3793fc",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/network.astro",
+      "sha256": "d7f2caaea02fb319a8b020df13c36fcb5b8cf256cd53439ba2d11e3eb0e2264f",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 291,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 292,
+          "text": "padding: 0 var(--space-6);"
+        },
+        {
+          "line": 296,
+          "text": "font-size: var(--text-3xl);"
+        },
+        {
+          "line": 304,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 306,
+          "text": "margin: 0 auto var(--space-10);"
+        },
+        {
+          "line": 316,
+          "text": "padding: var(--space-24) 0;"
+        },
+        {
+          "line": 337,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 339,
+          "text": "margin: var(--space-8) auto 0;"
+        },
+        {
+          "line": 347,
+          "text": "gap: var(--space-6);"
+        },
+        {
+          "line": 352,
+          "text": "padding: var(--space-8) var(--space-6);"
+        },
+        {
+          "line": 355,
+          "text": "border-radius: var(--radius-xl);"
+        },
+        {
+          "line": 368,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 370,
+          "text": "margin: 0 0 var(--space-3);"
+        },
+        {
+          "line": 376,
+          "text": "margin: 0 0 var(--space-4);"
+        },
+        {
+          "line": 380,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 393,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 394,
+          "text": "padding: var(--space-5) var(--space-6);"
+        },
+        {
+          "line": 397,
+          "text": "gap: 0.7rem;"
+        },
+        {
+          "line": 400,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 406,
+          "text": "gap: 0.85rem;"
+        },
+        {
+          "line": 452,
+          "text": "border-radius: 50%;"
+        },
+        {
+          "line": 465,
+          "text": "font-size: 0.7rem;"
+        },
+        {
+          "line": 468,
+          "text": "padding: 0 0.2rem;"
+        },
+        {
+          "line": 476,
+          "text": "font-weight: 500;"
+        },
+        {
+          "line": 477,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 479,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 509,
+          "text": "margin: 0 auto var(--space-12);"
+        },
+        {
+          "line": 510,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 515,
+          "text": "gap: var(--space-2) var(--space-5);"
+        },
+        {
+          "line": 516,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 523,
+          "text": "gap: 0.5rem;"
+        },
+        {
+          "line": 532,
+          "text": "border-radius: 50%;"
+        },
+        {
+          "line": 538,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 539,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 542,
+          "text": "gap: var(--space-8);"
+        },
+        {
+          "line": 551,
+          "text": "gap: var(--space-5);"
+        },
+        {
+          "line": 566,
+          "text": "border-radius: 50%;"
+        },
+        {
+          "line": 570,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 571,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 576,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 578,
+          "text": "margin: 0.3rem 0 var(--space-3);"
+        },
+        {
+          "line": 584,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 588,
+          "text": "margin: var(--space-4) 0 0;"
+        },
+        {
+          "line": 589,
+          "text": "padding: var(--space-4) var(--space-5);"
+        },
+        {
+          "line": 592,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 595,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 606,
+          "text": "margin: var(--space-3) 0 0;"
+        },
+        {
+          "line": 608,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 637,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 641,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 665,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 674,
+          "text": "margin: 0 auto var(--space-10);"
+        },
+        {
+          "line": 675,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 680,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 686,
+          "text": "padding: 0.25em 0.75em;"
+        },
+        {
+          "line": 688,
+          "text": "border-radius: var(--radius-full);"
+        },
+        {
+          "line": 690,
+          "text": "font-size: var(--text-xs);"
+        },
+        {
+          "line": 698,
+          "text": "gap: var(--space-4);"
+        },
+        {
+          "line": 707,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 709,
+          "text": "margin: var(--space-12) auto 0;"
+        },
+        {
+          "line": 722,
+          "text": "font-size: var(--text-2xl);"
+        },
+        {
+          "line": 726,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 735,
+          "text": "padding: var(--space-12) 0;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/patterns/[...slug].astro",
+      "sha256": "ea106f091ad40e1963f8a44b490aa32815aca2b3e35c8ac22244423c4905f751",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/patterns/index.astro",
+      "sha256": "67fd29c9a1e8ff9d4441363217b5630d503182fb20952a6975dc15757efb26df",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/privacy/index.astro",
+      "sha256": "5a27730efe686bd244245adb353ef28c6152ff99a19157291befdc40f1b666fb",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 193,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 194,
+          "text": "padding: var(--space-16) var(--space-6) var(--space-24);"
+        },
+        {
+          "line": 200,
+          "text": "font-size: var(--text-3xl);"
+        },
+        {
+          "line": 205,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 209,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 210,
+          "text": "margin: var(--space-10) 0 var(--space-3);"
+        },
+        {
+          "line": 219,
+          "text": "font-size: 0.9em;"
+        },
+        {
+          "line": 221,
+          "text": "padding: 0.1em 0.35em;"
+        },
+        {
+          "line": 222,
+          "text": "border-radius: 3px;"
+        },
+        {
+          "line": 232,
+          "text": "font-size: var(--text-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/provenance-audit/index.astro",
+      "sha256": "f0e44fe98376514fbe6430a9af010e12ada2985d661526b1a03377d83f668a24",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 29,
+          "text": "<li><strong>Frontmatter attribution:</strong> <code>last_edited_by: agent_&#123;username&#125;</code> on every content file.</li>"
+        },
+        {
+          "line": 140,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 141,
+          "text": "padding: var(--space-3) var(--space-4);"
+        },
+        {
+          "line": 142,
+          "text": "margin: var(--space-6) 0 var(--space-4);"
+        },
+        {
+          "line": 148,
+          "text": "margin: var(--space-6) 0;"
+        },
+        {
+          "line": 149,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 164,
+          "text": "padding: var(--space-3) var(--space-4);"
+        },
+        {
+          "line": 170,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 176,
+          "text": "font-weight: 600;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/reference/[...slug].astro",
+      "sha256": "74679e23672dbc91a72abd645105d8c6eab3b3e3ecbcf853ca780c06d6e338ae",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 73,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 74,
+          "text": "padding: var(--space-3) var(--space-4);"
+        },
+        {
+          "line": 76,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 78,
+          "text": ".spec-orientation p { margin: 0; }"
+        },
+        {
+          "line": 80,
+          "text": ".spec-orientation a { color: var(--color-link); font-weight: 500; }"
+        },
+        {
+          "line": 85,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 87,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 96,
+          "text": "padding: 0.15em 0.6em;"
+        },
+        {
+          "line": 97,
+          "text": "border-radius: var(--radius-full);"
+        },
+        {
+          "line": 98,
+          "text": "font-weight: 500;"
+        },
+        {
+          "line": 125,
+          "text": ":global(.dark) .ref-stability.stable { color: #34C06E; }"
+        },
+        {
+          "line": 126,
+          "text": ":global(.dark) .ref-stability.beta { color: #5CB8E8; }"
+        },
+        {
+          "line": 127,
+          "text": ":global(.dark) .ref-stability.experimental { color: #E89545; }"
+        },
+        {
+          "line": 128,
+          "text": ":global(.dark) .ref-stability.deprecated { color: #E87070; }"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/reference/index.astro",
+      "sha256": "f0e76f2b6b079f3eba9ec9170f47230036d443b8caa5033ff793365a9d47b2de",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 105,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 106,
+          "text": "padding: var(--space-4) var(--space-6);"
+        },
+        {
+          "line": 107,
+          "text": "margin: var(--space-6) 0;"
+        },
+        {
+          "line": 114,
+          "text": "gap: var(--space-2) var(--space-4);"
+        },
+        {
+          "line": 126,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 134,
+          "text": "font-weight: 600;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/reference/specification/[...slug].astro",
+      "sha256": "e1a7f200d7232b6951eb58307922b7b40730c1f43c4dca5d0e3311bb1e0deec1",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 86,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 90,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 93,
+          "text": ".spec-section-meta a { color: var(--color-link); font-weight: 500; }"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/reference/specification/full.astro",
+      "sha256": "083fac4694bbb6c06e75e21f9105448117ddb2361992add69ea879e982b2a1e3",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 63,
+          "text": "gap: var(--space-2);"
+        },
+        {
+          "line": 67,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 70,
+          "text": ".spec-full-meta a { color: var(--color-link); font-weight: 500; }"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/reference/specification/index.astro",
+      "sha256": "7e0166361f5bf25440f547b92757729e5a480fb2dbf5b260dec293e2697eaaef",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 180,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 181,
+          "text": "padding: var(--space-3) var(--space-4);"
+        },
+        {
+          "line": 183,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 185,
+          "text": ".spec-orientation p { margin: 0; }"
+        },
+        {
+          "line": 187,
+          "text": ".spec-orientation a { color: var(--color-link); font-weight: 500; }"
+        },
+        {
+          "line": 193,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 195,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 202,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 203,
+          "text": "margin: var(--space-6) 0;"
+        },
+        {
+          "line": 205,
+          "text": "gap: var(--space-1);"
+        },
+        {
+          "line": 207,
+          "text": ".spec-toc li { margin: 0; }"
+        },
+        {
+          "line": 211,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 212,
+          "text": "padding: var(--space-2) var(--space-3);"
+        },
+        {
+          "line": 214,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 225,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 229,
+          "text": ".spec-toc-title { font-weight: 500; }"
+        },
+        {
+          "line": 232,
+          "text": ".spec-hub-full a { color: var(--color-link); font-weight: 500; }"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/rss.xml.ts",
+      "sha256": "7eee38ef321510255854e9435f265f8c480812d7db45fd9e5a7a5851c817cf57",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/security/index.astro",
+      "sha256": "6cc8b446ec814e3eb34c1e6bb1485ff2bdff0cba77d2edb09aa1c2a8cf943a71",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 87,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 88,
+          "text": "padding: var(--space-16) var(--space-6) var(--space-24);"
+        },
+        {
+          "line": 94,
+          "text": "font-size: var(--text-3xl);"
+        },
+        {
+          "line": 99,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 103,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 104,
+          "text": "margin: var(--space-10) 0 var(--space-3);"
+        },
+        {
+          "line": 121,
+          "text": "font-size: 0.9em;"
+        },
+        {
+          "line": 123,
+          "text": "padding: 0.1em 0.35em;"
+        },
+        {
+          "line": 124,
+          "text": "border-radius: 3px;"
+        },
+        {
+          "line": 132,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 133,
+          "text": "margin: var(--space-2) 0;"
+        },
+        {
+          "line": 139,
+          "text": "font-size: var(--text-sm);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/state-of-the-network/index.astro",
+      "sha256": "a5a73852573a9bcc287feafd3260a538b44d652b14ec7a2ae91f1a2ab81bdf8f",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 255,
+          "text": "margin: 0 auto;"
+        },
+        {
+          "line": 256,
+          "text": "padding: var(--space-16) var(--space-6) var(--space-24);"
+        },
+        {
+          "line": 262,
+          "text": "font-size: var(--text-3xl);"
+        },
+        {
+          "line": 267,
+          "text": "font-size: var(--text-lg);"
+        },
+        {
+          "line": 271,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 272,
+          "text": "margin: var(--space-10) 0 var(--space-3);"
+        },
+        {
+          "line": 281,
+          "text": "font-size: 0.9em;"
+        },
+        {
+          "line": 283,
+          "text": "padding: 0.1em 0.35em;"
+        },
+        {
+          "line": 284,
+          "text": "border-radius: 3px;"
+        },
+        {
+          "line": 294,
+          "text": "margin: 0 0 var(--space-4);"
+        },
+        {
+          "line": 306,
+          "text": "margin: 0 0 var(--space-6);"
+        },
+        {
+          "line": 307,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 309,
+          "text": "gap: var(--space-5);"
+        },
+        {
+          "line": 312,
+          "text": "padding: var(--space-4) var(--space-5);"
+        },
+        {
+          "line": 314,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 318,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 320,
+          "text": "margin: 0 0 var(--space-2);"
+        },
+        {
+          "line": 324,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 327,
+          "text": "gap: var(--space-1) var(--space-6);"
+        },
+        {
+          "line": 328,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 338,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 346,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 353,
+          "text": "gap: 0;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/use-cases/[...slug].astro",
+      "sha256": "e1b3b233f4653525fb6bb33b42deb08ff8bab69a3941b3b8344b443b16b57b91",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 58,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 62,
+          "text": "margin: 0 0 var(--space-6);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/use-cases/index.astro",
+      "sha256": "390d656f7e889c6d7a88da462a7f8bcaa8c6647d926740ec2a76ebed77acf5be",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/vaults.json.ts",
+      "sha256": "1ab0324ae39ba60cfc6bb7a7b1951dd8f1b45c306889707bc49a08c74627d7ba",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/vaults/[slug].astro",
+      "sha256": "f962e2c32b18246f216854215f2017ec7f736c2a59b7bba484a282b8dc15ce2b",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 194,
+          "text": "/* H-7/SP-4 (D4 C4): spec-sheet + reading composition. Tokens only \u2014 the prior #444/#555 greys failed"
+        },
+        {
+          "line": 196,
+          "text": ".vault-detail { max-width: var(--content-width); margin: 0 auto; padding: var(--space-8) var(--space-4); }"
+        },
+        {
+          "line": 203,
+          "text": ".vault-breadcrumb .crumb-sep { margin: 0 0.6rem; color: var(--color-text-muted); }"
+        },
+        {
+          "line": 206,
+          "text": ".vd-head h1 { margin: 0; font-size: var(--text-3xl); line-height: 1.1; }"
+        },
+        {
+          "line": 207,
+          "text": ".vd-canonical { margin: var(--space-2) 0 0; }"
+        },
+        {
+          "line": 208,
+          "text": ".vd-canonical code { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-muted); }"
+        },
+        {
+          "line": 209,
+          "text": ".vd-tagline { font-size: var(--text-lg); font-style: italic; color: var(--color-text-muted); margin: var(--space-3) 0 0; }"
+        },
+        {
+          "line": 210,
+          "text": ".vd-lede { font-size: var(--text-base); line-height: 1.65; color: var(--color-text); margin: var(--space-4) 0 0; }"
+        },
+        {
+          "line": 214,
+          "text": ".vd-grid { display: grid; gap: var(--space-8); }"
+        },
+        {
+          "line": 224,
+          "text": ".vd-selfdeclared { color: var(--color-text-muted); font-size: 0.85em; }"
+        },
+        {
+          "line": 228,
+          "text": ".vd-aside { display: grid; gap: var(--space-6); align-self: start; }"
+        },
+        {
+          "line": 230,
+          "text": "margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr);"
+        },
+        {
+          "line": 231,
+          "text": "gap: var(--space-2) var(--space-4);"
+        },
+        {
+          "line": 232,
+          "text": "padding: var(--space-5);"
+        },
+        {
+          "line": 233,
+          "text": "background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 234,
+          "text": "font-size: var(--text-sm); line-height: 1.5;"
+        },
+        {
+          "line": 239,
+          "text": ".vd-spec dt { color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.04em; font-size: var(--text-xs); white-space: nowrap; padding-top: 0.15em; }"
+        },
+        {
+          "line": 240,
+          "text": ".vd-spec dd { margin: 0; color: var(--color-text); min-width: 0; }"
+        },
+        {
+          "line": 241,
+          "text": ".vd-spec dd code { font-family: var(--font-mono); font-size: 0.9em; overflow-wrap: anywhere; }"
+        },
+        {
+          "line": 243,
+          "text": "display: inline-block; padding: 0.05rem 0.55rem; border-radius: var(--radius-full);"
+        },
+        {
+          "line": 245,
+          "text": "font-size: var(--text-xs); color: var(--color-text);"
+        },
+        {
+          "line": 247,
+          "text": ".vd-links .vd-aside-h { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-muted); margin: 0 0 var(--space-2); }"
+        },
+        {
+          "line": 248,
+          "text": ".vd-links ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }"
+        },
+        {
+          "line": 252,
+          "text": ".vd-main { display: grid; gap: var(--space-6); min-width: 0; }"
+        },
+        {
+          "line": 253,
+          "text": ".vd-main :global(.vault-relationships) { margin: 0; }"
+        },
+        {
+          "line": 254,
+          "text": ".vd-main :global(h2) { font-size: var(--text-lg); line-height: 1.3; margin: 0 0 var(--space-3); }"
+        },
+        {
+          "line": 256,
+          "text": ".vd-list { color: var(--color-text); line-height: 1.6; padding-left: var(--space-5); margin: 0; }"
+        },
+        {
+          "line": 257,
+          "text": ".vd-chiplist { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0; padding: 0; }"
+        },
+        {
+          "line": 258,
+          "text": ".vd-chiplist code { font-family: var(--font-mono); font-size: var(--text-sm); background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0.1rem 0.4rem; }"
+        },
+        {
+          "line": 261,
+          "text": ".mission-state { margin-left: var(--space-2); padding: 0.1rem 0.5rem; border-radius: var(--radius-sm); font-size: 0.85em; color: var(--color-badge-text); }"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/vaults/graph.astro",
+      "sha256": "d3c66b5c092a2238e1d029f31ce90d80a2b4c87b7bacb2b8cd74df8956489638",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 77,
+          "text": "color: classDefColors['class' + cls.replace(/_/g, '')] ?? '#888888',"
+        },
+        {
+          "line": 85,
+          "text": "const keyNeutral = classDefColors['classplatform'] ?? '#d3d5db';"
+        },
+        {
+          "line": 86,
+          "text": "const keyStandard = classDefColors['classstandarddev'] ?? '#7dcfff';"
+        },
+        {
+          "line": 87,
+          "text": "const keyRetired = classDefColors['classsuperseded'] ?? '#9ea3ad';"
+        },
+        {
+          "line": 394,
+          "text": ".vaults-graph { max-width: 100%; padding: var(--space-8, 2rem) 1rem; }"
+        },
+        {
+          "line": 395,
+          "text": ".vaults-graph-hero { max-width: 72ch; margin: 0 auto var(--space-6, 1.5rem); }"
+        },
+        {
+          "line": 401,
+          "text": ".crumb-sep { margin: 0 0.6rem; color: var(--color-text-muted); }"
+        },
+        {
+          "line": 403,
+          "text": ".graph-tip { max-width: 72ch; margin: 0 auto var(--space-4, 1rem); color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }"
+        },
+        {
+          "line": 410,
+          "text": ".mermaid-figure { margin: var(--space-6) 0; }"
+        },
+        {
+          "line": 414,
+          "text": "padding: var(--space-4);"
+        },
+        {
+          "line": 416,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 423,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 455,
+          "text": ".vaults-graph-hero h1 { margin: 0.25rem 0 0.75rem; }"
+        },
+        {
+          "line": 462,
+          "text": "margin: var(--space-5, 1.25rem) 0;"
+        },
+        {
+          "line": 463,
+          "text": "border-radius: var(--radius-xl, 1rem);"
+        },
+        {
+          "line": 466,
+          "text": "box-shadow: 0 8px 32px color-mix(in srgb, var(--brand-primary, #7aa2f7) 14%, transparent);"
+        },
+        {
+          "line": 475,
+          "text": ".lede-node { margin-top: 0.85rem; color: var(--color-text-muted); font-size: var(--text-sm, 0.95rem); }"
+        },
+        {
+          "line": 482,
+          "text": "margin: 0 auto var(--space-6, 1.5rem);"
+        },
+        {
+          "line": 483,
+          "text": "padding: var(--space-4, 1rem) var(--space-5, 1.25rem);"
+        },
+        {
+          "line": 486,
+          "text": "border-radius: var(--radius-md, 0.5rem);"
+        },
+        {
+          "line": 488,
+          "text": ".graph-legend h2 { font-size: var(--text-sm, 0.9rem); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin: 0 0 var(--space-3, 0.75rem); }"
+        },
+        {
+          "line": 490,
+          "text": ".legend-sub { font-size: var(--text-xs, 0.78rem); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; color: var(--color-text-muted); margin: var(--space-4, 1rem) 0 var(--space-2, 0.5rem); }"
+        },
+        {
+          "line": 492,
+          "text": ".legend-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }"
+        },
+        {
+          "line": 496,
+          "text": ".node-key { list-style: none; margin: 0 0 var(--space-3, 0.75rem); padding: 0; display: grid; gap: 0.5rem; }"
+        },
+        {
+          "line": 497,
+          "text": ".node-key li { display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.45; }"
+        },
+        {
+          "line": 501,
+          "text": ".class-census { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; }"
+        },
+        {
+          "line": 503,
+          "text": ".ne-swatch { flex: 0 0 auto; width: 0.85rem; height: 0.85rem; border-radius: 3px; border: 1px solid var(--color-border); }"
+        },
+        {
+          "line": 504,
+          "text": ".ne-text { color: var(--color-text); font-size: var(--text-sm, 0.9rem); }"
+        },
+        {
+          "line": 505,
+          "text": ".legend-list li { display: flex; align-items: center; gap: 0.75rem; line-height: 1.4; }"
+        },
+        {
+          "line": 538,
+          "text": "border-radius: 50%;"
+        },
+        {
+          "line": 550,
+          "text": "font-size: 0.7rem;"
+        },
+        {
+          "line": 553,
+          "text": "padding: 0 0.2rem;"
+        },
+        {
+          "line": 563,
+          "text": "padding: 0; margin: -1px;"
+        },
+        {
+          "line": 573,
+          "text": "margin: 0 auto var(--space-6, 1.5rem);"
+        },
+        {
+          "line": 574,
+          "text": "padding: var(--space-4, 1rem) var(--space-5, 1.25rem);"
+        },
+        {
+          "line": 582,
+          "text": "border-radius: var(--radius-md, 0.5rem);"
+        },
+        {
+          "line": 584,
+          "text": ".graph-node-list h2 { font-size: var(--text-sm, 0.9rem); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin: 0 0 var(--space-3, 0.75rem); }"
+        },
+        {
+          "line": 585,
+          "text": ".graph-node-list ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; }"
+        },
+        {
+          "line": 591,
+          "text": ".nodelist-intro { color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); margin: 0 0 var(--space-3, 0.75rem); }"
+        },
+        {
+          "line": 592,
+          "text": ".nodelist-group { margin: 0 0 var(--space-4, 1rem); }"
+        },
+        {
+          "line": 594,
+          "text": ".nodelist-group-label { font-size: var(--text-xs, 0.78rem); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; color: var(--color-text-muted); margin: 0 0 var(--space-2, 0.5rem); }"
+        },
+        {
+          "line": 595,
+          "text": ".nodelist-focus { outline: 2px solid var(--color-link); outline-offset: 2px; border-radius: 3px; }"
+        },
+        {
+          "line": 602,
+          "text": ".nodelist-rels { color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }"
+        },
+        {
+          "line": 614,
+          "text": "margin: 0 auto var(--space-6, 1.5rem);"
+        },
+        {
+          "line": 615,
+          "text": "padding: var(--space-4, 1rem) var(--space-5, 1.25rem);"
+        },
+        {
+          "line": 623,
+          "text": "border-radius: var(--radius-md, 0.5rem);"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/pages/vaults/index.astro",
+      "sha256": "118f224ad8dc2470673a20bad4da0a6337c89a2a182e32545429337da6e99a7f",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 363,
+          "text": ".vaults-index { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }"
+        },
+        {
+          "line": 364,
+          "text": ".vaults-facets { padding: 2rem 0 1rem; }"
+        },
+        {
+          "line": 365,
+          "text": ".facet-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }"
+        },
+        {
+          "line": 367,
+          "text": ".go-deeper { margin: 1.25rem 0 0; color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }"
+        },
+        {
+          "line": 376,
+          "text": "margin: 3rem auto;"
+        },
+        {
+          "line": 377,
+          "text": "padding: var(--space-6, 2rem) var(--space-4, 1rem);"
+        },
+        {
+          "line": 382,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 384,
+          "text": ".vaults-empty h2 { margin: 0 0 var(--space-2, 0.5rem); }"
+        },
+        {
+          "line": 385,
+          "text": ".vaults-empty p { margin: 0; color: var(--color-text-muted); }"
+        },
+        {
+          "line": 392,
+          "text": "gap: 0.15rem;"
+        },
+        {
+          "line": 393,
+          "text": "margin: 0 0 1.5rem;"
+        },
+        {
+          "line": 397,
+          "text": ".vaults-tier-section { margin: 2rem 0; }"
+        },
+        {
+          "line": 398,
+          "text": ".vaults-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }"
+        },
+        {
+          "line": 399,
+          "text": ".tier-count { font-size: 0.85em; color: var(--color-text-muted); }"
+        },
+        {
+          "line": 402,
+          "text": ".tier-meaning { margin: 0.15rem 0 1rem; color: var(--color-text-muted); font-size: var(--text-sm, 0.9rem); }"
+        },
+        {
+          "line": 408,
+          "text": "margin: 0 0 1.5rem;"
+        },
+        {
+          "line": 409,
+          "text": "padding: 0.85rem 1.1rem;"
+        },
+        {
+          "line": 413,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 414,
+          "text": "font-size: var(--text-sm, 0.9rem);"
+        },
+        {
+          "line": 422,
+          "text": "margin: 0 0 1.5rem;"
+        },
+        {
+          "line": 423,
+          "text": "padding: 0.85rem 1.1rem;"
+        },
+        {
+          "line": 426,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 427,
+          "text": "font-size: var(--text-sm, 0.9rem);"
+        },
+        {
+          "line": 432,
+          "text": "font-size: 0.95em;"
+        },
+        {
+          "line": 437,
+          "text": ".vaults-filter { padding: 1.5rem 0 0.5rem; }"
+        },
+        {
+          "line": 439,
+          "text": ".vaults-search-label { display: block; font-size: var(--text-sm, 0.9rem); color: var(--color-text-muted); margin-bottom: 0.35rem; }"
+        },
+        {
+          "line": 443,
+          "text": "padding: 0.55rem 0.85rem;"
+        },
+        {
+          "line": 448,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 451,
+          "text": ".vaults-filter-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }"
+        },
+        {
+          "line": 459,
+          "text": "font-size: var(--text-sm, 0.9rem);"
+        },
+        {
+          "line": 460,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 466,
+          "text": "gap: 0.25rem;"
+        },
+        {
+          "line": 467,
+          "text": "padding: 0.4rem 0.8rem;"
+        },
+        {
+          "line": 469,
+          "text": "font-size: 0.9em;"
+        },
+        {
+          "line": 474,
+          "text": "border-radius: var(--radius-full, 1rem);"
+        },
+        {
+          "line": 483,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 488,
+          "text": ".vaults-result-count { margin: 0.85rem 0 0; font-size: var(--text-sm, 0.9rem); color: var(--color-text-muted); }"
+        },
+        {
+          "line": 493,
+          "text": "gap: 1rem; margin: 0.5rem 0 1.5rem; padding: 1rem 1.25rem;"
+        },
+        {
+          "line": 494,
+          "text": "background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 496,
+          "text": ".vaults-rail-text { margin: 0; color: var(--color-text); max-width: 48ch; }"
+        },
+        {
+          "line": 497,
+          "text": ".vaults-rail-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/styles/branding.css",
+      "sha256": "9c011721364eb02702802489d3055044dc0e2e4e0b752f28ed15a7a06467e082",
+      "role": "token definition or intentional JS palette mirror",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 5,
+          "text": "* Primary: Purple #9d7cd8 | Links: Cyan #7dcfff | Accent: warm Amber #e0a84c"
+        },
+        {
+          "line": 6,
+          "text": "* Base (neutrals, tokens.css): Tokyo Night #1a1b26 / #24283b \u2014 dark-first"
+        },
+        {
+          "line": 12,
+          "text": "*   Dark mode (on base #1a1b26):"
+        },
+        {
+          "line": 13,
+          "text": "*     --brand-link  #7dcfff (cyan link)        \u2192 ~10.3:1 \u2713"
+        },
+        {
+          "line": 14,
+          "text": "*     --brand-primary #9d7cd8 (purple, large/accent) \u2192 ~6.9:1 \u2713 (large text/UI; 3.3:1 vs white = NOT for white body text)"
+        },
+        {
+          "line": 15,
+          "text": "*     --color-text  #c0caf5                     \u2192 ~11.8:1 \u2713"
+        },
+        {
+          "line": 16,
+          "text": "*   Dark-mode primary button (white text): bg --brand-primary-dark #6d4bb8 \u2192 5.8:1 \u2713"
+        },
+        {
+          "line": 18,
+          "text": "*     --color-primary --brand-primary-dark #6d4bb8 \u2192 5.8:1 \u2713"
+        },
+        {
+          "line": 19,
+          "text": "*     --color-link    --brand-link-dark    #1f6f9e \u2192 5.4:1 \u2713"
+        },
+        {
+          "line": 20,
+          "text": "*     --brand-accent  #e0a84c \u2192 large/decorative only (not body text), same rule as v2 amber"
+        },
+        {
+          "line": 25,
+          "text": "--brand-primary: #9d7cd8;        /* purple \u2014 brand/primary (large text, accents, glow) */"
+        },
+        {
+          "line": 26,
+          "text": "--brand-primary-dark: #6d4bb8;   /* deeper purple \u2014 light-mode primary + dark-mode button bg (AA on white/with white text) */"
+        },
+        {
+          "line": 27,
+          "text": "--brand-primary-light: #bb9af7;  /* lighter purple \u2014 dark-mode primary accent / hover */"
+        },
+        {
+          "line": 28,
+          "text": "--brand-accent: #e0a84c;         /* warm amber \u2014 accent/lighting, sparing (never body text) */"
+        },
+        {
+          "line": 29,
+          "text": "--brand-accent-light: #f0c674;   /* soft amber \u2014 dark-mode accent */"
+        },
+        {
+          "line": 30,
+          "text": "--brand-link: #7dcfff;           /* cyan \u2014 links / data / connections (dark mode) */"
+        },
+        {
+          "line": 31,
+          "text": "--brand-link-dark: #1f6f9e;      /* deep cyan-blue \u2014 light-mode link (AA on white) */"
+        },
+        {
+          "line": 32,
+          "text": "--brand-link-light: #a9d8ff;     /* light cyan \u2014 dark-mode link hover */"
+        },
+        {
+          "line": 36,
+          "text": "--color-primary-hover: #58399c;"
+        },
+        {
+          "line": 39,
+          "text": "--color-link-hover: #14567c;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/styles/global.css",
+      "sha256": "88d99374fb03d0b4b40f241258eaa066ae6e7cd09e9ea4324a17658f55f38a70",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 55,
+          "text": "font-size: 0.9em;"
+        },
+        {
+          "line": 66,
+          "text": "font-size: var(--text-3xl);"
+        },
+        {
+          "line": 74,
+          "text": "font-size: var(--text-2xl);"
+        },
+        {
+          "line": 80,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 86,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 87,
+          "text": "font-weight: 700;"
+        },
+        {
+          "line": 101,
+          "text": "margin: var(--space-12) 0;"
+        },
+        {
+          "line": 115,
+          "text": "padding: var(--space-4);"
+        },
+        {
+          "line": 116,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 118,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 123,
+          "text": "padding: 0.15em 0.35em;"
+        },
+        {
+          "line": 124,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 125,
+          "text": "font-size: 0.875em;"
+        },
+        {
+          "line": 146,
+          "text": "padding: var(--space-2) var(--space-3);"
+        },
+        {
+          "line": 152,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 157,
+          "text": "/* Shiki github-dark uses #6A737D for comments (3.04:1 on #24292E \u2014 fails AA)."
+        },
+        {
+          "line": 158,
+          "text": "Override to #8B949E (4.65:1 on #24292E \u2014 passes AA). */"
+        },
+        {
+          "line": 159,
+          "text": ".prose pre span[style*=\"color:#6A737D\"],"
+        },
+        {
+          "line": 160,
+          "text": ".prose pre span[style*=\"color: #6A737D\"] {"
+        },
+        {
+          "line": 161,
+          "text": "color: #8B949E !important;"
+        },
+        {
+          "line": 168,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 179,
+          "text": "box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 25%, transparent);"
+        },
+        {
+          "line": 186,
+          "text": "padding: var(--space-3) var(--space-6);"
+        },
+        {
+          "line": 187,
+          "text": "border-radius: var(--radius-lg);"
+        },
+        {
+          "line": 189,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 190,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 206,
+          "text": "(--brand-primary #9d7cd8 is too light for white body text: 3.3:1)."
+        },
+        {
+          "line": 207,
+          "text": "Base #6d4bb8 \u2192 5.8:1; hover #7c5cc4 \u2192 4.7:1 (lightens slightly, still AA). */"
+        },
+        {
+          "line": 213,
+          "text": "background: #7c5cc4;"
+        },
+        {
+          "line": 250,
+          "text": "padding: var(--space-3) var(--space-5);"
+        },
+        {
+          "line": 252,
+          "text": "color: #ffffff;"
+        },
+        {
+          "line": 254,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 255,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 257,
+          "text": "border-radius: var(--radius-md);"
+        },
+        {
+          "line": 258,
+          "text": "box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 35%, transparent);"
+        },
+        {
+          "line": 304,
+          "text": "font-weight: var(--shiki-dark-font-weight) !important;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/styles/glossary.css",
+      "sha256": "44db54a55ab6c03066c84e87b02481de395844d33164c306e1eac29be0225a86",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 9,
+          "text": "font-size: var(--text-xl);"
+        },
+        {
+          "line": 18,
+          "text": "padding: 0;"
+        },
+        {
+          "line": 19,
+          "text": "margin: 0;"
+        },
+        {
+          "line": 37,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 38,
+          "text": "padding: var(--space-3) var(--space-2);"
+        },
+        {
+          "line": 52,
+          "text": "font-size: 1.1em;"
+        },
+        {
+          "line": 67,
+          "text": "border-radius: var(--radius-sm);"
+        },
+        {
+          "line": 71,
+          "text": "font-weight: 600;"
+        },
+        {
+          "line": 72,
+          "text": "font-size: var(--text-base);"
+        },
+        {
+          "line": 79,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 92,
+          "text": "padding: var(--space-2) var(--space-2) var(--space-4) calc(var(--space-2) + 1em + var(--space-3));"
+        },
+        {
+          "line": 96,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 99,
+          "text": "margin: 0 0 var(--space-3);"
+        },
+        {
+          "line": 103,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 104,
+          "text": "font-weight: 500;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/styles/palette.ts",
+      "sha256": "fcfea5694342acd564537b060339e29e5d99ec05b1fb9d8e97e1156d020e657d",
+      "role": "token definition or intentional JS palette mirror",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 18,
+          "text": "base: '#1a1b26', //        --color-bg (dark)"
+        },
+        {
+          "line": 19,
+          "text": "surface: '#24283b', //     --color-surface (dark)"
+        },
+        {
+          "line": 20,
+          "text": "surfaceAlt: '#414868', //  elevated secondary surface"
+        },
+        {
+          "line": 21,
+          "text": "text: '#c0caf5', //        --color-text (dark)"
+        },
+        {
+          "line": 22,
+          "text": "cyan: '#7dcfff', //        edge / link accent"
+        },
+        {
+          "line": 23,
+          "text": "purple: '#9d7cd8', //      brand primary (dark)"
+        },
+        {
+          "line": 28,
+          "text": "primary: '#6d4bb8', //        --brand-primary-dark (AA on white)"
+        },
+        {
+          "line": 29,
+          "text": "primaryBorder: '#58399c', //  deeper border"
+        },
+        {
+          "line": 30,
+          "text": "line: '#1f6f9e', //           light-mode edge"
+        },
+        {
+          "line": 31,
+          "text": "amber: '#e0a84c', //          secondary accent"
+        },
+        {
+          "line": 32,
+          "text": "offWhite: '#f5f5f5', //       light tertiary surface"
+        },
+        {
+          "line": 33,
+          "text": "white: '#ffffff',"
+        },
+        {
+          "line": 50,
+          "text": "// (mermaid's default #585858 gives only 4.43:1). E4 cycle 154."
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/styles/tokens.css",
+      "sha256": "6079b20c7ac63dc15e08a89e908ef8c8cdaef4291521b933325d3947a5746211",
+      "role": "token definition or intentional JS palette mirror",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 100,
+          "text": "--color-badge-text: #1a1b26;"
+        },
+        {
+          "line": 101,
+          "text": "--color-badge-in-progress: #fef1d1;"
+        },
+        {
+          "line": 102,
+          "text": "--color-badge-completed: #b9e4d0;"
+        },
+        {
+          "line": 103,
+          "text": "--color-badge-planned: #e7e7e7;"
+        },
+        {
+          "line": 113,
+          "text": "--color-bg: #1a1b26;          /* Tokyo Night base */"
+        },
+        {
+          "line": 114,
+          "text": "--color-bg-alt: #1f2335;      /* elevated */"
+        },
+        {
+          "line": 115,
+          "text": "--color-surface: #24283b;     /* surface/cards */"
+        },
+        {
+          "line": 116,
+          "text": "--color-border: #2f334d;"
+        },
+        {
+          "line": 117,
+          "text": "--color-text: #c0caf5;        /* TN foreground \u2192 ~11.8:1 on base \u2713 */"
+        },
+        {
+          "line": 118,
+          "text": "--color-text-muted: #9aa5ce;  /* ~6.3:1 on base \u2713 */"
+        },
+        {
+          "line": 119,
+          "text": "--color-text-heading: #ffffff;"
+        },
+        {
+          "line": 141,
+          "text": "font-weight: 100 800;"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    },
+    {
+      "file": "site/src/styles/tutorial-meta.css",
+      "sha256": "dfd82f037b299937cfb41a1cc46abdc7cf7757c7ca50fb0cf357e25b915d156e",
+      "role": "supplemental complete-source lexical review",
+      "existing_census": false,
+      "lexical_candidates": [
+        {
+          "line": 7,
+          "text": "gap: var(--space-3);"
+        },
+        {
+          "line": 9,
+          "text": "font-size: var(--text-sm);"
+        },
+        {
+          "line": 13,
+          "text": "padding: 0.15em 0.6em;"
+        },
+        {
+          "line": 14,
+          "text": "border-radius: var(--radius-full);"
+        },
+        {
+          "line": 15,
+          "text": "font-weight: 500;"
+        },
+        {
+          "line": 40,
+          "text": "* which left the light-mode green (#147b3a, 2.34:1) rendering in dark mode. */"
+        },
+        {
+          "line": 42,
+          "text": "color: #34C06E; /* 5.85:1 on dark green bg */"
+        },
+        {
+          "line": 46,
+          "text": "color: #5CB8E8; /* 6.53:1 on dark blue bg */"
+        },
+        {
+          "line": 50,
+          "text": "color: #E89545; /* 5.83:1 on dark orange bg */"
+        }
+      ],
+      "review_status": "candidate inventory; semantic adjudication P3.1",
+      "limitations": "Lexical lines include comments, strings and declarations; not a parser, computed-style proof or automatic defect count."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "### Result\n{\"events\":[{\"kind\":\"request\",\"url\":\"https://adna.network/_vercel/speed-insights/script.js\",\"method\":\"GET\",\"bodyKeys\":[]},{\"kind\":\"response\",\"url\":\"https://adna.network/_vercel/speed-insights/script.js\",\"status\":200},{\"kind\":\"request\",\"url\":\"https://adna.network/_vercel/speed-insights/script.js\",\"method\":\"GET\",\"bodyKeys\":[]},{\"kind\":\"response\",\"url\":\"https://adna.network/_vercel/speed-insights/script.js\",\"status\":200}],\"scope\":\"ordinary public browsing; payload values omitted; no backend record or field sample retrieved\"}\n### Ran Playwright code\n```js\nawait (async (page) => { const events=[]; const onReq=q=>{if(q.url().includes('/speed-insights/'))events.push({kind:'request',url:q.url(),method:q.method(),bodyKeys:(()=>{try{return Object.keys(JSON.parse(q.postData()||'{}'))}catch{return ['non-json']}})()});}; const onResp=r=>{if(r.url().includes('/speed-insights/'))events.push({kind:'response',url:r.url(),status:r.status()});};page.on('request',onReq);page.on('response',onResp);await page.goto('https://adna.network/privacy',{waitUntil:'networkidle'});await page.waitForTimeout(1500);await page.goto('https://adna.network/about',{waitUntil:'networkidle'});await page.waitForTimeout(1500);page.off('request',onReq);page.off('response',onResp);return {events,scope:'ordinary public browsing; payload values omitted; no backend record or field sample retrieved'};})(page);\n```\n### Page\n- Page URL: https://adna.network/about\n- Page Title: Who's behind aDNA"
+    }
+  ]
+}

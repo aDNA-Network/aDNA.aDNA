@@ -1,0 +1,10 @@
+{
+  "built_routes": 229,
+  "sitemap_routes": 228,
+  "sitemap_only": [],
+  "built_only": [
+    "/install"
+  ],
+  "extra_link_probes": 11,
+  "extra_link_errors": []
+}

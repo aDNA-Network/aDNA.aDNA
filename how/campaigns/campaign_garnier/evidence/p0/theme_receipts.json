@@ -1,0 +1,1801 @@
+{
+  "version": "garnier_consumer_v1",
+  "observed_at": "2026-09-15T08:45:31.461Z",
+  "rows": [
+    {
+      "route": "/",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/community",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/community",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/community",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/about",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/about",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/about",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/commons",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/commons",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/commons",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/network",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/network",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/network",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "light",
+      "observedTheme": "light",
+      "status": 200,
+      "darkClass": false,
+      "preferredDark": false,
+      "background": "rgb(255, 255, 255)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/get-started"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/what-is-adna"
+    },
+    {
+      "route": "/community",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/community",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/community",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/community"
+    },
+    {
+      "route": "/about",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/about",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/about",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/about"
+    },
+    {
+      "route": "/commons",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/commons",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/commons",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/commons"
+    },
+    {
+      "route": "/network",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/network",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/network",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/network"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "fresh390",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "mobile",
+      "dimensions": {
+        "width": 320,
+        "height": 720
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "mobile-lg",
+      "dimensions": {
+        "width": 375,
+        "height": 812
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "tablet",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "laptop-sm",
+      "dimensions": {
+        "width": 900,
+        "height": 700
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "laptop",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    },
+    {
+      "route": "/learn/concepts/triad",
+      "viewport": "desktop",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "requestedTheme": "dark",
+      "observedTheme": "dark",
+      "status": 200,
+      "darkClass": true,
+      "preferredDark": true,
+      "background": "rgb(26, 27, 38)",
+      "main": true,
+      "url": "https://adna.network/learn/concepts/triad"
+    }
+  ],
+  "wrong_theme": [],
+  "wrong_surface": [],
+  "limits": "DOM theme receipt only; not a screenshot or computed-style audit of all components. Eight routes, fresh390 followed by six resizes."
+}

@@ -1,0 +1,1184 @@
+{
+  "created": "2026-09-15T08:25:20.081154+00:00",
+  "commands": [
+    {
+      "argv": [
+        "npx",
+        "astro",
+        "build"
+      ],
+      "exit": 0,
+      "log": "how/campaigns/campaign_garnier/evidence/p0/raw/preflight_0.log",
+      "passed": null,
+      "skipped": null
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/inject_headers.mjs",
+        "."
+      ],
+      "exit": 0,
+      "log": "how/campaigns/campaign_garnier/evidence/p0/raw/preflight_1.log",
+      "passed": null,
+      "skipped": null
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/inject_installer_headers.mjs",
+        "."
+      ],
+      "exit": 0,
+      "log": "how/campaigns/campaign_garnier/evidence/p0/raw/preflight_2.log",
+      "passed": null,
+      "skipped": null
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/inject_redirects.mjs",
+        "."
+      ],
+      "exit": 0,
+      "log": "how/campaigns/campaign_garnier/evidence/p0/raw/preflight_3.log",
+      "passed": null,
+      "skipped": null
+    },
+    {
+      "argv": [
+        "npm",
+        "run",
+        "check:markup"
+      ],
+      "exit": 0,
+      "log": "how/campaigns/campaign_garnier/evidence/p0/raw/preflight_4.log",
+      "passed": null,
+      "skipped": null
+    },
+    {
+      "argv": [
+        "npm",
+        "run",
+        "test:gates:fast"
+      ],
+      "exit": 0,
+      "log": "how/campaigns/campaign_garnier/evidence/p0/raw/preflight_5.log",
+      "passed": 580,
+      "skipped": 1
+    },
+    {
+      "argv": [
+        "npm",
+        "run",
+        "test:gates"
+      ],
+      "exit": 0,
+      "log": "how/campaigns/campaign_garnier/evidence/p0/raw/preflight_6.log",
+      "passed": 698,
+      "skipped": 1
+    }
+  ],
+  "local_origin": "http://127.0.0.1:4465",
+  "local_source": "c38c6dc7ed283f5163604fedc67130776fc1d6c1",
+  "production": {
+    "commit": "eda4cbfc2857a6d2d9df7d80a5db170957d45cab",
+    "built_at": "2026-09-11T19:22:47.036Z",
+    "mode": "prod"
+  },
+  "build_pages": 229,
+  "advertised_twins": 226,
+  "visual_container_passed": 26,
+  "canonical_capture_summary": {
+    "adna": {
+      "rows": 588,
+      "missing_png": 0,
+      "statuses": {
+        "200": 576,
+        "404": 12
+      },
+      "axe_violations": 0,
+      "missing_axe": 0,
+      "console_error_rows": 12
+    },
+    "mastra": {
+      "rows": 48,
+      "missing_png": 0,
+      "statuses": {
+        "200": 48
+      },
+      "axe_violations": 12,
+      "missing_axe": 0,
+      "console_error_rows": 48
+    },
+    "nous": {
+      "rows": 36,
+      "missing_png": 0,
+      "statuses": {
+        "403": 36
+      },
+      "axe_violations": 58,
+      "missing_axe": 0,
+      "console_error_rows": 36
+    },
+    "nous_hermes": {
+      "rows": 48,
+      "missing_png": 0,
+      "statuses": {
+        "200": 48
+      },
+      "axe_violations": 178,
+      "missing_axe": 0,
+      "console_error_rows": 0
+    },
+    "nous_releases": {
+      "rows": 24,
+      "missing_png": 0,
+      "statuses": {
+        "403": 24
+      },
+      "axe_violations": 38,
+      "missing_axe": 0,
+      "console_error_rows": 24
+    }
+  },
+  "adna_390": {
+    "rows": 98,
+    "violations": 0,
+    "incomplete_rows": 44,
+    "overflow_rows": 0
+  },
+  "lighthouse_initial": [
+    {
+      "route": "/",
+      "form": "mobile",
+      "exit": 0,
+      "final_url": "http://127.0.0.1:4465/",
+      "runtime_error": null,
+      "lighthouse": "13.4.1",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "config": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "categories": {
+        "performance": 0.92,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 2408.8767,
+        "cumulative-layout-shift": 0.004812540270078844,
+        "total-blocking-time": 246
+      }
+    },
+    {
+      "route": "/",
+      "form": "desktop",
+      "exit": 0,
+      "final_url": "http://127.0.0.1:4465/",
+      "runtime_error": null,
+      "lighthouse": "13.4.1",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "config": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "categories": {
+        "performance": 1,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 532.2088,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "route": "/get-started",
+      "form": "mobile",
+      "exit": 0,
+      "final_url": "http://127.0.0.1:4465/get-started",
+      "runtime_error": null,
+      "lighthouse": "13.4.1",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "config": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "categories": {
+        "performance": 0.98,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 2106.5118,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "route": "/get-started",
+      "form": "desktop",
+      "exit": 0,
+      "final_url": "http://127.0.0.1:4465/get-started",
+      "runtime_error": null,
+      "lighthouse": "13.4.1",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "config": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "categories": {
+        "performance": 1,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 486.61664999999994,
+        "cumulative-layout-shift": 5.233417587327339e-05,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "form": "mobile",
+      "exit": 0,
+      "final_url": "http://127.0.0.1:4465/learn/what-is-adna",
+      "runtime_error": null,
+      "lighthouse": "13.4.1",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "config": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "categories": {
+        "performance": 0.98,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 2117.71335,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "form": "desktop",
+      "exit": 0,
+      "final_url": "http://127.0.0.1:4465/learn/what-is-adna",
+      "runtime_error": null,
+      "lighthouse": "13.4.1",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "config": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "categories": {
+        "performance": 1,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 445.83725000000004,
+        "cumulative-layout-shift": 5.233417587327339e-05,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "route": "/vaults",
+      "form": "mobile",
+      "exit": 0,
+      "final_url": "http://127.0.0.1:4465/vaults",
+      "runtime_error": null,
+      "lighthouse": "13.4.1",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "config": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "categories": {
+        "performance": 0.97,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 2406.3256499999998,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "route": "/vaults",
+      "form": "desktop",
+      "exit": 0,
+      "final_url": "http://127.0.0.1:4465/vaults",
+      "runtime_error": null,
+      "lighthouse": "13.4.1",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "config": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "categories": {
+        "performance": 1,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 527.9912,
+        "cumulative-layout-shift": 0.00011090639860287,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "route": "/vaults/graph",
+      "form": "mobile",
+      "exit": 0,
+      "final_url": "http://127.0.0.1:4465/vaults/graph",
+      "runtime_error": null,
+      "lighthouse": "13.4.1",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "config": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "categories": {
+        "performance": 0.99,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 2106.9789,
+        "cumulative-layout-shift": 0.0001960871806471929,
+        "total-blocking-time": 0
+      }
+    },
+    {
+      "route": "/vaults/graph",
+      "form": "desktop",
+      "exit": 0,
+      "final_url": "http://127.0.0.1:4465/vaults/graph",
+      "runtime_error": null,
+      "lighthouse": "13.4.1",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "config": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "categories": {
+        "performance": 1,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 484.3002,
+        "cumulative-layout-shift": 5.233417587327339e-05,
+        "total-blocking-time": 0
+      }
+    }
+  ],
+  "lighthouse_followup": [
+    {
+      "name": "home_repeat_0",
+      "url": "http://127.0.0.1:4465/",
+      "form": "mobile",
+      "exit": 0,
+      "argv": [
+        "node",
+        "/Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/cli/index.js",
+        "http://127.0.0.1:4465/",
+        "--output=json",
+        "--output-path=/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/home_repeat_0.json",
+        "--quiet",
+        "--chrome-flags=--headless=new --no-sandbox",
+        "--only-categories=performance,accessibility,best-practices,seo"
+      ],
+      "runtime_error": null,
+      "final_url": "http://127.0.0.1:4465/",
+      "categories": {
+        "performance": 0.96,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 2405.40315,
+        "cumulative-layout-shift": 0.004812540270078844,
+        "total-blocking-time": 0
+      },
+      "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/home_repeat_0.json"
+    },
+    {
+      "name": "home_repeat_1",
+      "url": "http://127.0.0.1:4465/",
+      "form": "mobile",
+      "exit": 0,
+      "argv": [
+        "node",
+        "/Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/cli/index.js",
+        "http://127.0.0.1:4465/",
+        "--output=json",
+        "--output-path=/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/home_repeat_1.json",
+        "--quiet",
+        "--chrome-flags=--headless=new --no-sandbox",
+        "--only-categories=performance,accessibility,best-practices,seo"
+      ],
+      "runtime_error": null,
+      "final_url": "http://127.0.0.1:4465/",
+      "categories": {
+        "performance": 0.96,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 2404.73475,
+        "cumulative-layout-shift": 0.004812540270078844,
+        "total-blocking-time": 0
+      },
+      "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/home_repeat_1.json"
+    },
+    {
+      "name": "home_repeat_2",
+      "url": "http://127.0.0.1:4465/",
+      "form": "mobile",
+      "exit": 0,
+      "argv": [
+        "node",
+        "/Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/cli/index.js",
+        "http://127.0.0.1:4465/",
+        "--output=json",
+        "--output-path=/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/home_repeat_2.json",
+        "--quiet",
+        "--chrome-flags=--headless=new --no-sandbox",
+        "--only-categories=performance,accessibility,best-practices,seo"
+      ],
+      "runtime_error": null,
+      "final_url": "http://127.0.0.1:4465/",
+      "categories": {
+        "performance": 0.96,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 2404.91865,
+        "cumulative-layout-shift": 0.004812540270078844,
+        "total-blocking-time": 0
+      },
+      "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/home_repeat_2.json"
+    },
+    {
+      "name": "unreachable_control",
+      "url": "http://127.0.0.1:4466/",
+      "form": "mobile",
+      "exit": 1,
+      "argv": [
+        "node",
+        "/Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/cli/index.js",
+        "http://127.0.0.1:4466/",
+        "--output=json",
+        "--output-path=/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/unreachable_control.json",
+        "--quiet",
+        "--chrome-flags=--headless=new --no-sandbox",
+        "--only-categories=performance,accessibility,best-practices,seo"
+      ],
+      "runtime_error": {
+        "code": "CHROME_INTERSTITIAL_ERROR",
+        "message": "Chrome prevented page load with an interstitial. Make sure you are testing the correct URL and that the server is properly responding to all requests.",
+        "errorStack": "LighthouseError: CHROME_INTERSTITIAL_ERROR\n    at getInterstitialError (file:///Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/core/lib/navigation-error.js:97:10)\n    at getPageLoadError (file:///Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/core/lib/navigation-error.js:166:29)\n    at _computeNavigationResult (file:///Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/core/gather/navigation-runner.js:146:7)\n    at async gatherFn (file:///Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/core/gather/navigation-runner.js:297:23)\n    at async Runner.gather (file:///Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/core/runner.js:211:25)\n    at async navigationGather (file:///Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/core/gather/navigation-runner.js:303:21)\n    at async navigation (file:///Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/core/index.js:58:24)\n    at async runLighthouse (file:///Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/cli/run.js:210:26)\n    at async file:///Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/cli/index.js:10:1",
+        "artifactKey": "PageLoadError"
+      },
+      "final_url": "chrome-error://chromewebdata/",
+      "categories": {
+        "performance": null,
+        "accessibility": null,
+        "best-practices": null,
+        "seo": null
+      },
+      "metrics": {
+        "largest-contentful-paint": null,
+        "cumulative-layout-shift": null,
+        "total-blocking-time": null
+      },
+      "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/unreachable_control.json"
+    },
+    {
+      "name": "nous_hermes_mobile",
+      "url": "https://hermes-agent.nousresearch.com/",
+      "form": "mobile",
+      "exit": 0,
+      "argv": [
+        "node",
+        "/Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/cli/index.js",
+        "https://hermes-agent.nousresearch.com/",
+        "--output=json",
+        "--output-path=/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/nous_hermes_mobile.json",
+        "--quiet",
+        "--chrome-flags=--headless=new --no-sandbox",
+        "--only-categories=performance,accessibility,best-practices,seo"
+      ],
+      "runtime_error": null,
+      "final_url": "https://hermes-agent.nousresearch.com/",
+      "categories": {
+        "performance": 0.71,
+        "accessibility": 0.97,
+        "best-practices": 0.77,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 13580.15,
+        "cumulative-layout-shift": 0.001009261012187263,
+        "total-blocking-time": 102
+      },
+      "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/nous_hermes_mobile.json"
+    },
+    {
+      "name": "nous_hermes_desktop",
+      "url": "https://hermes-agent.nousresearch.com/",
+      "form": "desktop",
+      "exit": 0,
+      "argv": [
+        "node",
+        "/Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/cli/index.js",
+        "https://hermes-agent.nousresearch.com/",
+        "--output=json",
+        "--output-path=/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/nous_hermes_desktop.json",
+        "--quiet",
+        "--chrome-flags=--headless=new --no-sandbox",
+        "--only-categories=performance,accessibility,best-practices,seo",
+        "--preset=desktop"
+      ],
+      "runtime_error": null,
+      "final_url": "https://hermes-agent.nousresearch.com/",
+      "categories": {
+        "performance": 0.93,
+        "accessibility": 1,
+        "best-practices": 0.73,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 1793.9,
+        "cumulative-layout-shift": 0.000129657390803385,
+        "total-blocking-time": 0
+      },
+      "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/nous_hermes_desktop.json"
+    },
+    {
+      "name": "mastra_mobile",
+      "url": "https://mastra.ai/",
+      "form": "mobile",
+      "exit": 0,
+      "argv": [
+        "node",
+        "/Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/cli/index.js",
+        "https://mastra.ai/",
+        "--output=json",
+        "--output-path=/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/mastra_mobile.json",
+        "--quiet",
+        "--chrome-flags=--headless=new --no-sandbox",
+        "--only-categories=performance,accessibility,best-practices,seo"
+      ],
+      "runtime_error": null,
+      "final_url": "https://mastra.ai/",
+      "categories": {
+        "performance": 0.36,
+        "accessibility": 0.97,
+        "best-practices": 0.77,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 9225.801150000008,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 2888.9999999999973
+      },
+      "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/mastra_mobile.json"
+    },
+    {
+      "name": "mastra_desktop",
+      "url": "https://mastra.ai/",
+      "form": "desktop",
+      "exit": 0,
+      "argv": [
+        "node",
+        "/Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/cli/index.js",
+        "https://mastra.ai/",
+        "--output=json",
+        "--output-path=/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/mastra_desktop.json",
+        "--quiet",
+        "--chrome-flags=--headless=new --no-sandbox",
+        "--only-categories=performance,accessibility,best-practices,seo",
+        "--preset=desktop"
+      ],
+      "runtime_error": null,
+      "final_url": "https://mastra.ai/",
+      "categories": {
+        "performance": 0.85,
+        "accessibility": 1,
+        "best-practices": 0.77,
+        "seo": 1
+      },
+      "metrics": {
+        "largest-contentful-paint": 1844.457100000001,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 124.87070000000017
+      },
+      "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/lighthouse_followup/mastra_desktop.json"
+    }
+  ],
+  "field_status": "COLLECTION_UNVERIFIED \u2014 script GETs observed; no collector receipt/backend record/p75 dataset",
+  "manual_human_status": "not performed in this event"
+}

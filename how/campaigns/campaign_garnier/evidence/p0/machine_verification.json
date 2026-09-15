@@ -1,0 +1,12 @@
+{
+  "origin": "https://adna.network",
+  "negotiation": {
+    "status": 200,
+    "final_url": "https://adna.network/get-started",
+    "content_type": "text/markdown; charset=utf-8",
+    "vary": "Accept",
+    "byte_equal_twin": true,
+    "sha256": "23e74ac1633bae661eeed89e47789c927990dcd459c1b53fa4fd863270f26f29"
+  },
+  "mcp": "Check raw public inventory; do not infer live from source"
+}

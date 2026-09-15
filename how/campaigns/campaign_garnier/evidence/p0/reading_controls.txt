@@ -1,0 +1,1 @@
+reading_census selftest: 18/18 (10 keep-cases, 8 drop-cases)

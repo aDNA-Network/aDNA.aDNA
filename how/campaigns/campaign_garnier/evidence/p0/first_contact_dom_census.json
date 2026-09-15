@@ -1,0 +1,1025 @@
+{
+  "version": "garnier_consumer_v1",
+  "banned": [
+    "seamless",
+    "cutting-edge",
+    "unlock",
+    "empower",
+    "revolutionary",
+    "leverage",
+    "robust",
+    "next-generation"
+  ],
+  "coverage": {
+    "missing": [],
+    "extra": [],
+    "duplicates": []
+  },
+  "rows": [
+    {
+      "route": "/",
+      "source_sha256": "883a20a318ee7b0de4820902b760a51797230c6b51235156ad27e88d283f7069",
+      "reached": true,
+      "text": "Open standard · MIT The aDNA Network aDNA (agentic DNA) is an open standard for organizing a project's files, so that AI agents and the people working with them can always find what they need. Three folders, plain Markdown, tracked in git. This site is the standard itself, its docs, and the registry of the workspaces — 'vaults' — that run it. For teams working with agentic coding tools on real projects. Not a product or service — no server, no signup; aDNA itself sends nothing. Your context is just the notes, docs and decisions you already keep — now in a shape your agents can follow. The standard that gives it that shape is open. Your files stay on your machine. Explore the network Get Started Open source on GitHub MIT-licensed the standard, versioned and public 74 vaults — every one of them on a single computer, ours. 15 are joined by 14 declared relationships; the rest stand alone. The state of the network, dated → Who's behind aDNA → 74 Vaults 16 Entity Types 3 Conformance Levels v2.5 Current Version MIT Licensed The connected aDNA network — 15 vaults joined by 14 relationshipsA compact radial map of the live aDNA network: 15 vaults are joined by 14 cited relationships (umbrella, federation, partner, companion) and drawn as a burst around the most-federated hubs (III and Astro), with the standard, aDNA, at the core. Each box names a vault and its persona; the full vault list at /vaults/graph is the keyboard-navigable twin. aDNA.aDNARosettaIII.aDNAArgusWilhelmAI.aDNAHygieiaRareArchive.aDNAMnemosyneAstro.aDNAMolecules.aDNAFranklinTappProtocol.aDNAMentorVAAS.aDNAHarness.aDNAPanaceaOration.aDNARobert KennedyScienceStanley.aDNAZenZachary.aDNApygmalionVisualDNA.aDNApygmalionRemoteControl.aDNATalosTerminal.aDNAberthier 15 connected vaults · 14 relationships aDNA III WilhelmAI RareArchive Astro Molecules TappProtocol VAAS Harness Oration ScienceStanley ZenZachary VisualDNA RemoteControl Terminal Language and DNA were co-created by everyone before us. The context that powers AI should be too — built, shared, and governed in the open, for the good of all. You already do the first half of this. The README that explains the project. The decision someone wrote down so nobody re-litigates it. The note on why the schema is shaped the way it is. That is context — aDNA gives it a shape your agents can read, in the open, in your own repository. What a context democracy is People and their agents keep their own project context, in the open, and no one company owns the whole of it. Each project keeps its own files. Projects cite each other, and what they choose to share becomes a commons anyone can read. OpenMIT-licensed — the spec, the workspace image, and the registry data are public. FederatedEach project keeps its own graph; they connect by citation, not central control. Co-ownedNo vendor owns your context — you govern it, in the open. Agents & humansOne graph, legible to your AI and to you at the same time. The aDNA network Real aDNA vaults — Astro, III, RareHarness, wga, RareArchive, Home — connected around the aDNA core by the relationships they declare. Astro III RareHarness wga RareArchive Home aDNA the network The aDNA network Real aDNA vaults — Astro, III, RareHarness, wga, RareArchive, Home — connected around the aDNA core by the relationships they declare. Astro III RareHarness wga RareArchive Home aDNA the network Real aDNA vaults — forges, frameworks, platforms, and public-good archives — connected by the relationships they declare. The living registry Every vault is a real, governed context graph with its own place in the network. Most are tended by a named agent — an AI persona, not a person. Here's a slice across 74 of them. All of them run on one computer — ours. The state of the network says what that means. the standard in use aDNA tended by Rosetta framework in use III tended by Argus Inspect/Introspect/Improve quality framework platform planned Canvas tended by Mondrian coordination in use Operations tended by Berthier knowledge graph in use LA Venture Graph tended by Cartographer LA venture ecosystem knowledge graph (UCLA Anderson + Nerdstage/Demo Day LA) node in use Home tended by Hestia org vault chartered wga World Genome Academy — buildpack + symphony + site org vault chartered RareArchive tended by Mnemosyne Rare Archive OSS rare-disease AI project See all 74 vaults → View the relationship graph → How it Works Three steps from scattered files to a project your agents can navigate — and keep navigating. Agent-native Governance files and typed context give agents orientation — no prompt re-engineering every session. Human-readable Every file is plain Markdown. Browse in Obsidian, VS Code, or GitHub. No proprietary formats, no lock-in. Composable A module is one capability, a dataset is data it works on, and a lattice wires modules into a workflow. Start small, and grow to multi-team campaigns using the same three pieces. 01 Structure Every agent session starts from scratch — agents relearn your project by rummaging through files. aDNA ends that. Three directories (what you know, how you work, who's involved) give any agent instant orientation. aDNA.aDNA/ 02 Orient Without a map, agents blast through irrelevant files or ask you to re-explain the project. Agents read your CLAUDE.md and AGENTS.md first, then pull typed context at exactly the depth they need — not your entire repo, not a blank slate. aDNA.aDNA/CLAUDE.md 03 Execute Context windows close and wipe progress — the next agent starts over. aDNA decomposes work into sessions, missions, and campaigns — context-sized chunks that fit a single agent window. What one agent learns, the next inherits. mission_wadna_p3_iterate.md New to aDNA? Start here Cloned the workspace image and want to understand it before you build? The standard embeds in , and the guided path is here — a five-minute tour, the core concepts, and hands-on tutorials. Learn aDNA What is aDNA? → Tutorials → Dive deeper: Convergence Model · Concepts & Tutorials · Reference Specification The Standard aDNA is an open specification — MIT licensed, open to contribution, designed for extension. v2.5 MIT License Open Standard 16 Entity Types Read the Specification View on GitHub Built to be read by agents This site is itself an aDNA vault — the structure it documents is the structure that produced it. Each surface below is generated from the same source as the pages themselves, so it cannot drift out of step with them. /llms.txt A curated index of this site, written to be read by an agent rather than rendered. /llms-full.txt carries the whole corpus in one file. Markdown twins Add to a documentation URL — or send — and get the source instead of the page. 226 pages have one. /api/registry.v1.json The vault registry as versioned JSON, so the network can be queried as data instead of scraped out of HTML. Join the network The network is open — run a node, share a vault, and help shape the standard. Mission-aligned subnetworks are taking shape around real public-good work. World Genome Academy Genomics knowledge as a shared commons Context Commons Agentic-context literacy, shared Wilhelm AI for the Undiagnosed AI for people living with undiagnosed disease Rare Archive Open-source rare-disease AI See the commons Join the community aDNA for Solo Developer Enterprise Team Educator Startup Researcher What's new Sep 11, 2026 aDNA v8.11: a promise retired, and a dead link found Sep 7, 2026 Field speed data, and a v8.10 fix to the standard Sep 4, 2026 A promise the homepage could not keep Full changelog RSS feed",
+      "headings": [
+        "The aDNA  Network",
+        "What a context democracy is",
+        "The living registry",
+        "aDNA",
+        "III",
+        "Canvas",
+        "Operations",
+        "LA Venture Graph",
+        "Home",
+        "wga",
+        "RareArchive",
+        "How it Works",
+        "Structure",
+        "Orient",
+        "Execute",
+        "New to aDNA? Start here",
+        "The Standard",
+        "Built to be read by agents",
+        "Join the network",
+        "What's new"
+      ],
+      "exclusions": [
+        {
+          "tag": "DIV",
+          "text": "       "
+        },
+        {
+          "tag": "SPAN",
+          "text": "$"
+        },
+        {
+          "tag": "CODE",
+          "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude"
+        },
+        {
+          "tag": "svg",
+          "text": "   "
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "style",
+          "text": "\n/* Hero graph (build_graph_svg.mjs, Storyweave A): edges + arrowheads follow the page text colour so the\n   graph reads on the dark (default) and light canvases; the vault chips keep their self-grounding light\n   fill + near-black text (set inline). Scoped to #heroGraph — never collides with #vaultsGraph. */\n#heroGraph{color:var(--color-text,#c0caf5);}\n#heroGraph text{font-family:'Space Grotesk',system-ui,sans-serif;}\n#heroGraph .edge{stroke:currentColor;fill:none;stroke-opacity:0.72;}\n#heroGraph .edge-arrow{fill:currentColor;stroke:none;fill-opacity:0.82;}\n"
+        },
+        {
+          "tag": "CANVAS",
+          "text": ""
+        },
+        {
+          "tag": "SCRIPT",
+          "text": ""
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "document.querySelectorAll(\".hero-install-copy\").forEach(e=>{e.addEventListener(\"click\",async()=>{const t=e.closest(\".hero-install\")?.querySelector(\".hero-install-cmd\")?.textContent??\"\";try{await navigator.clipboard.writeText(t),e.setAttribute(\"aria-label\",\"Copied!\"),setTimeout(()=>e.setAttribute(\"aria-label\",\"Copy install command\"),2e3)}catch{}})});"
+        },
+        {
+          "tag": "g",
+          "text": "  "
+        },
+        {
+          "tag": "g",
+          "text": "  "
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "(function(){const r=matchMedia(\"(prefers-reduced-motion: reduce)\").matches;document.querySelectorAll(\"[data-netdiagram]\").forEach(e=>{if(r)return;e.setAttribute(\"data-armed\",\"\"),new IntersectionObserver((a,i)=>{a.forEach(t=>{t.isIntersecting&&(t.target.setAttribute(\"data-in\",\"\"),i.unobserve(t.target))})},{threshold:.35}).observe(e),setTimeout(()=>e.setAttribute(\"data-in\",\"\"),600)})})();"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "PRE",
+          "text": "aDNA.aDNA/\n├── CLAUDE.md       ← agent operating protocol\n├── STATE.md        ← current phase, blockers\n├── what/           ← what the project knows\n│   ├── context/      typed context library\n│   └── decisions/    architecture records\n├── how/            ← how it operates\n│   ├── campaigns/    strategic initiatives\n│   └── missions/     decomposed work\n└── who/            ← who's involved\n    └── governance/   roles & policy"
+        },
+        {
+          "tag": "PRE",
+          "text": "# CLAUDE.md — aDNA.aDNA\n\n## Identity & Personality\nYou are Rosetta — named after the Rosetta\nStone. This vault presents the aDNA standard\nin three registers: technical spec,\noperational practice, plain language.\n\n## Standing Orders\n1. Phase gates are human gates.\n2. Destructive actions require confirmation."
+        },
+        {
+          "tag": "PRE",
+          "text": "mission_id: mission_wadna_p3_iterate\nphase: 3\nstatus: in_progress\n\n## Decade backbone\nD1 Credibility-integrity — active\nD2 Navigation & docs — queued\nD3 Agentic + community — queued\nD4 Visual craft — queued"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/"
+        },
+        {
+          "tag": "CODE",
+          "text": ".md"
+        },
+        {
+          "tag": "CODE",
+          "text": "Accept: text/markdown"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        }
+      ],
+      "banned_matches": [],
+      "main_dom_words": 1218
+    },
+    {
+      "route": "/get-started",
+      "source_sha256": "e04bdede6822240742821d512e69c7a1d02d80aacda2e719e51cf25dada17037",
+      "reached": true,
+      "text": "In this section Learn Patterns Use Cases Community Reference Glossary Guides Illustration generated with Google Imagen 4 Ultra (imagen-4.0-ultra-generate-001) in the ss-ghibli-pixel / Tokyo Night register, commissioned under ADR-032 and now governed by ADR-053. Get Started Set up your own aDNA workspace — a local, agent-readable home for every project's context — in about 5 minutes. The workspace is files on your machine and makes no network calls of its own. Prerequisites Git, and Claude Code installed via . Obsidian is optional — vaults are plain Markdown, so any editor works. What you'll have when you're done A workspace that ships ready: the workspace router (your agent's map between projects) pre-instantiated at the root; the standard itself embedded in a hidden folder (your agent reads it, never edits it — updates arrive with at the workspace root); and your first project, scaffolded for you when the agent follows the standard's project-fork skill, with its own git history — kept out of the workspace image's history by design. What this command does, before you run it Writes one directory: . Nothing outside it — no system settings, no changes, no daemon, no login item. If you would rather not use that path, clone anywhere: nothing in the workspace depends on its location, and is only the default the docs assume. The starts an agent in that directory, which reads the instruction files you just cloned — at the root, and the standard in . That is the real trust question here, and it is a fair one: these files are prompt-ware, and prompt-ware is executed by the agent that reads it. So read them first. Every file the agent reads on first run, annotated → They are shown verbatim, at a pinned commit, with hashes you can check against your own clone. The workspace sends nothing anywhere. No account, no telemetry, no network call after the clone — it is plain Markdown on your disk. Your agent is a separate question, and the command above starts one: the trailing launches Claude Code, which needs an Anthropic account and sends the files it reads to Anthropic. That is the agent's network behaviour, not the workspace's — and you can skip it, open the files in any editor, and the workspace still works. This is a Claude Code convention. The workspace is plain Markdown that any tool can read, but this one-command flow assumes Claude Code specifically. Other agents can read the same files; they will not run this command. To undo it: . There is nothing else to uninstall. 1. Clone the workspace The clone is your workspace — not a template you copy from. The router comes pre-instantiated and the standard comes embedded; there is nothing to bootstrap by hand. 2. Start Claude Code Run in the workspace. The agent reads the router, sees a fresh workspace with no projects yet, and walks you through creating your first one: What a first run looks like — not yet recorded There was a sample transcript here. We wrote it by hand, and it showed output the software does not actually print, so we removed it rather than leave a plausible-looking invention on the page you use to decide whether to trust us. A real recording, from a clean machine, replaces it once we have made that run and measured it. In the meantime the honest version of the same thing is the source: read the files your agent reads, including the project-fork skill it follows here — step by step, so you can predict what appears on disk. With no project in the workspace yet, the router sends the agent to the standard's project-fork skill, which scaffolds — its triad of · · , its governance files, and its own git history. It then offers to run an onboarding interview that customises the new project for your domain; you can take it now or leave it for the first session inside the project. When the scaffolding finishes, your workspace looks like this: From here, work happens inside projects: and the agent picks up that project's governance automatically. The whole flow, one command Both steps, chained — auditable inline, nothing executed from the network: 3. Check it worked \"It worked\" should be something you can verify, not something you feel. Five commands — the first two print nothing and exit on success; the last three print your vault list, your project's contents, and its first commit: Replace with whatever you called your project. That the last one has its own git log — not the workspace image's — is the check people most often skip and the one that matters: your context graph is your repository from the first commit. Then the half that is actually the point. Open a new agent session inside and ask it something about the project. It should already know where it is and what the project's governance says, without you telling it where to look. The five commands prove files were written; this proves the thing the standard exists for. If something goes wrong The surface here is small — a clone and an agent launch — so the list of ways it fails is short. These are the failures the two commands can actually produce: — Claude Code is not installed, or not on your . Install it with and open a new shell. — you already have a workspace there. Either work in it, or clone somewhere else; nothing depends on the path. The agent does not seem to know about aDNA. It is almost always started in the wrong directory. The router is at the workspace root, so first — an agent launched from your home directory reads nothing. You want to check what the agent is acting on. Every file it reads on first run is published here verbatim, with hashes to compare against your clone. This list is short because it is drawn from what the commands can do, not from a support inbox. It will grow as real installs are recorded. Removing it — and that is the whole uninstall. Nothing was installed outside that directory, so there is no package to remove, no configuration to revert, and no service to stop. If you moved your projects elsewhere first, they are ordinary git repositories and keep working. Existing installs (pre-June-2026 layout) Installed earlier, with a cloned hidden plus a copied router? It keeps working: the previous template repository is preserved read-only at adna-legacy, and your clone's old URLs redirect there — frozen, so nothing underneath you changes. To move to the current layout, run the standard's from your workspace. Try this in Claude Code Claude Code is Anthropic's official CLI (a terminal tool for AI-assisted development). Run this tutorial step by step with AI assistance — ask questions, get unstuck, and go deeper on any concept. Next steps You just built a node in a living network. Grow it — then see where it connects: Where it joins: the living registry of vaults and the network your project can federate with — building in the open is the whole point. Ready to shape it: aDNA is built in the open — see how to propose a change to the standard or contribute a pattern, vault, or idea. What is aDNA? — the five-minute conceptual tour The Triad — why every project splits into what / how / who Tutorial: Create Your First CLAUDE.md Tutorial: Navigate a Vault — reading a context graph like an agent does Knowledge graphs — what your workspace grows into See it live: the aDNA repository is the workspace image itself — clone it and you are holding everything this page described. Learn Patterns Use Cases Community Reference Glossary Guides",
+      "headings": [
+        "Get Started",
+        "What this command does, before you run it",
+        "1. Clone the workspace",
+        "2. Start Claude Code",
+        "3. Check it worked",
+        "If something goes wrong",
+        "Removing it",
+        "Next steps"
+      ],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "CODE",
+          "text": "npm install -g @anthropic-ai/claude-code"
+        },
+        {
+          "tag": "SPAN",
+          "text": "💡"
+        },
+        {
+          "tag": "CODE",
+          "text": "~/aDNA/"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/"
+        },
+        {
+          "tag": "CODE",
+          "text": "git pull"
+        },
+        {
+          "tag": "CODE",
+          "text": "<name>.aDNA/"
+        },
+        {
+          "tag": "CODE",
+          "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude"
+        },
+        {
+          "tag": "CODE",
+          "text": "~/aDNA/"
+        },
+        {
+          "tag": "CODE",
+          "text": "PATH"
+        },
+        {
+          "tag": "CODE",
+          "text": "~/aDNA"
+        },
+        {
+          "tag": "CODE",
+          "text": "&& claude"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/"
+        },
+        {
+          "tag": "CODE",
+          "text": "&& claude"
+        },
+        {
+          "tag": "CODE",
+          "text": "rm -rf ~/aDNA"
+        },
+        {
+          "tag": "PRE",
+          "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA"
+        },
+        {
+          "tag": "CODE",
+          "text": "claude"
+        },
+        {
+          "tag": "PRE",
+          "text": "cd ~/aDNA\nclaude"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "CODE",
+          "text": "<your_project>.aDNA/"
+        },
+        {
+          "tag": "CODE",
+          "text": "what/"
+        },
+        {
+          "tag": "CODE",
+          "text": "how/"
+        },
+        {
+          "tag": "CODE",
+          "text": "who/"
+        },
+        {
+          "tag": "PRE",
+          "text": "~/aDNA/\n├── CLAUDE.md            # workspace router (ships with the clone)\n├── .adna/               # the standard, embedded (read-only)\n└── my_project.aDNA/     # your first project — a context graph\n    ├── CLAUDE.md        # the project's own governance\n    ├── what/            # knowledge: context, decisions, artifacts\n    ├── how/             # operations: sessions, missions, skills\n    └── who/             # people: roles, coordination"
+        },
+        {
+          "tag": "CODE",
+          "text": "cd my_project.aDNA && claude"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "CODE",
+          "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude"
+        },
+        {
+          "tag": "CODE",
+          "text": "0"
+        },
+        {
+          "tag": "PRE",
+          "text": "test -f ~/aDNA/CLAUDE.md            # the router your agent reads first\ntest -d ~/aDNA/.adna                # the standard, embedded and read-only\nls -d ~/aDNA/*.aDNA                 # at least one project vault exists\nls ~/aDNA/<name>.aDNA/what ~/aDNA/<name>.aDNA/how ~/aDNA/<name>.aDNA/who\ngit -C ~/aDNA/<name>.aDNA log      # its own history, separate from the image's"
+        },
+        {
+          "tag": "CODE",
+          "text": "<name>"
+        },
+        {
+          "tag": "CODE",
+          "text": "<name>.aDNA/"
+        },
+        {
+          "tag": "CODE",
+          "text": "claude: command not found"
+        },
+        {
+          "tag": "CODE",
+          "text": "PATH"
+        },
+        {
+          "tag": "CODE",
+          "text": "npm install -g @anthropic-ai/claude-code"
+        },
+        {
+          "tag": "CODE",
+          "text": "fatal: destination path '~/aDNA' already exists"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "cd ~/aDNA"
+        },
+        {
+          "tag": "CODE",
+          "text": "rm -rf ~/aDNA"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/"
+        },
+        {
+          "tag": "CODE",
+          "text": "skill_workspace_upgrade"
+        },
+        {
+          "tag": "DIV",
+          "text": "     "
+        },
+        {
+          "tag": "CODE",
+          "text": "npm install -g @anthropic-ai/claude-code"
+        },
+        {
+          "tag": "svg",
+          "text": "   "
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "document.querySelectorAll(\".try-claude-cta .cta-copy\").forEach(t=>{t.addEventListener(\"click\",async()=>{const e=t.closest(\".cta-install\")?.querySelector(\".cta-cmd\")?.textContent??\"\";await navigator.clipboard.writeText(e),t.setAttribute(\"aria-label\",\"Copied!\"),setTimeout(()=>t.setAttribute(\"aria-label\",\"Copy install command\"),2e3)})});"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        }
+      ],
+      "banned_matches": [],
+      "main_dom_words": 1293
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "source_sha256": "28a3a2d42d0bcc2727ebc66cb4fc4f230641d39b97a90323e2245288f4a190f6",
+      "reached": true,
+      "text": "In this section Learn Patterns Use Cases Community Reference Glossary Guides Learn What is aDNA? Concepts The Triad The Ontology The Knowledge Graph Governance Files Token Selection The Convergence Model Context Optimization Lattice Composition Open Standard Agentic Literacy Context Commons FAIR Metadata Intro Course Tutorials Create Your First CLAUDE.md Navigate an aDNA Vault Apply the Question Test Write a Context File Design a Mission Extend the Ontology Build a Lattice Run a Campaign Federate a Vault Comparisons aDNA vs. PARA aDNA vs. Zettelkasten aDNA vs. Notion aDNA vs. Johnny.Decimal aDNA vs. Plain Markdown What is aDNA? aDNA (Agentic DNA) is an open standard for organizing what a project knows, so that people and AI agents can both find their way around it. Every aDNA project has the same shape. Learn that shape once and you can open any of them — including this site, which is one. A note on the name. In genomics, aDNA usually means ancient DNA. This is not that. Here it stands for Agentic DNA, and the borrowing is deliberate: a genome is structure a cell inherits and reads, and these files are structure a project keeps and its agents read. The problem AI agents have the same trouble people do: finding the right file. With no shape to follow, an agent reads the wrong thing, or misses the thing that counts. So you explain the project again at the start of each session. Agents undo decisions they made last week. Work slips out of reach as the context window fills. The problem is the filing, not the agent. The agent is able; it has nowhere to look. Most teams patch the gap with long READMEs and custom prompts, and none of that carries to the next session, the next agent, or the next teammate. aDNA is one open answer. Any team can adopt it, any tool can support it, and any agent can read it with no setup. How aDNA works aDNA gives a project three things: The Triad — three directories, in every project: for people and governance, for knowledge and decisions, for operations and work. See one aDNA project and you know your way around the next. Governance files — five files that orient an agent at each level: , , , and . The root is the front door: what the project is, how it is laid out, what the rules are, where to begin. Typed entities — 16 base types, among them missions, sessions, skills and templates. Each type uses the same frontmatter fields and the same naming, everywhere. Read one mission file and you can read any mission file, in any aDNA project. What a project looks like A small aDNA project — three directories, five governance files: An agent that has seen one aDNA project knows this at a glance, before it reads a word of the content. The 16 entity types Every file states its type. Because the types never change, an agent can work in a project it has never seen, with nothing to set up first. The 16 base types are split across the Triad — 4 WHO, 5 WHAT, 7 HOW. Here is the whole set: The 16 base entity types TriadEntityPurpose WHO Roles, policies, decision authority WHO Who works on the project WHO Cross-agent ephemeral notes WHO Who and where this node is — hostname, operator, peer id WHAT Curated knowledge files agents load at session start WHAT Architecture Decision Records (ADRs) WHAT Atomic capability units with typed I/O WHAT Connected workflows of modules WHAT What's installed — vaults, system state, memberships HOW Multi-mission strategic initiatives HOW Multi-session work decomposed into objectives HOW Single-session tracking and handoff notes HOW Reusable file patterns HOW Agent recipes and documented procedures HOW Content-as-code automated workflows HOW Ideation and improvement tracking What a CLAUDE.md looks like A is not a README. It is the agent's operating protocol, and the agent reads it first, every session. Instead of \"work it out from the README\", the project and the agent share one set of terms. See the opening of a real CLAUDE.md Before and after The contrast below is the general pattern the standard is built against — not a case study, and no measured project is being described. Without aDNA: what the project knows is spread across Notion, Drive and Git. Each session opens with a pasted summary that is already out of date. Last month's decisions get argued again. A new teammate has to work out where everything sits before they can start. With aDNA: the same project has a library, a that names the current priorities and blockers, and a directory where work is split into pieces someone can claim. An agent opens , reads the context it points to, and starts in the right direction — in that same session. See for yourself aDNA is not a concept deck. It is a standard you can clone and read today. The public image at is a real aDNA workspace. One command gives you the standard, the skills and the templates. A fresh clone also offers to set up a complete Home for an agent. Open the files yourself: — the workspace operating protocol an agent loads first — the full aDNA standard, embedded and ready to clone — the first-run recipe that orients a new project — how a new .aDNA project is created — the router template every workspace starts from — the governance template a fresh clone uses to bootstrap a polished Home (shipped at v8.0) — the themed exemplar Home the bootstrap offers out of the box (shipped at v8.0) This site is itself an aDNA vault. The shape you are reading about is the shape that produced it. Clone the image and open it in Obsidian, in VS Code, or on GitHub — every directory and every frontmatter field is one of these ideas at work. The three-question test A well-built aDNA project lets any agent answer three questions at once, without asking: What is this project? — and at the root. Where does it stand? — : blockers, active work, next steps. Where do I start? — the open mission in , or the nearest . If your project answers all three within ten seconds of reading, it is ready for aDNA. Explore further The Triad — the structure underneath it all: who, what, how Governance Files — CLAUDE.md, AGENTS.md, STATE.md, and what each is for Get Started — set up your first aDNA project in three steps Tutorial: Create Your First CLAUDE.md — hands-on, 20 minutes The Convergence Model — how aDNA narrows what an agent loads at each level of the work Next →The Triad Learn Patterns Use Cases Community Reference Glossary Guides Learn What is aDNA? Concepts The Triad The Ontology The Knowledge Graph Governance Files Token Selection The Convergence Model Context Optimization Lattice Composition Open Standard Agentic Literacy Context Commons FAIR Metadata Intro Course Tutorials Create Your First CLAUDE.md Navigate an aDNA Vault Apply the Question Test Write a Context File Design a Mission Extend the Ontology Build a Lattice Run a Campaign Federate a Vault Comparisons aDNA vs. PARA aDNA vs. Zettelkasten aDNA vs. Notion aDNA vs. Johnny.Decimal aDNA vs. Plain Markdown On this page The problem How aDNA works What a project looks like The 16 entity types What a CLAUDE.md looks like Before and after See for yourself The three-question test Explore further",
+      "headings": [
+        "What is aDNA?",
+        "The problem",
+        "How aDNA works",
+        "What a project looks like",
+        "The 16 entity types",
+        "What a CLAUDE.md looks like",
+        "Before and after",
+        "See for yourself",
+        "The three-question test",
+        "Explore further"
+      ],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "CODE",
+          "text": "who/"
+        },
+        {
+          "tag": "CODE",
+          "text": "what/"
+        },
+        {
+          "tag": "CODE",
+          "text": "how/"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "AGENTS.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "MANIFEST.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "STATE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "README.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "PRE",
+          "text": "your-project.aDNA/\n├── CLAUDE.md          # Agent entry point: purpose, rules, where to start\n├── STATE.md           # Live snapshot: blockers, active work, next steps\n├── MANIFEST.md        # Project overview and architecture\n├── who/               # WHO — people, governance, coordination\n│   └── governance/    # Roles, policies, vision\n├── what/              # WHAT — knowledge, decisions, context\n│   └── context/       # Curated knowledge files agents load\n└── how/               # HOW — operations, plans, execution\n    ├── missions/      # Work decomposed into claimable objectives\n    └── sessions/      # Per-session tracking and handoff notes"
+        },
+        {
+          "tag": "CODE",
+          "text": "governance"
+        },
+        {
+          "tag": "CODE",
+          "text": "team"
+        },
+        {
+          "tag": "CODE",
+          "text": "coordination"
+        },
+        {
+          "tag": "CODE",
+          "text": "identity"
+        },
+        {
+          "tag": "CODE",
+          "text": "context"
+        },
+        {
+          "tag": "CODE",
+          "text": "decisions"
+        },
+        {
+          "tag": "CODE",
+          "text": "modules"
+        },
+        {
+          "tag": "CODE",
+          "text": "lattices"
+        },
+        {
+          "tag": "CODE",
+          "text": "inventory"
+        },
+        {
+          "tag": "CODE",
+          "text": "campaigns"
+        },
+        {
+          "tag": "CODE",
+          "text": "missions"
+        },
+        {
+          "tag": "CODE",
+          "text": "sessions"
+        },
+        {
+          "tag": "CODE",
+          "text": "templates"
+        },
+        {
+          "tag": "CODE",
+          "text": "skills"
+        },
+        {
+          "tag": "CODE",
+          "text": "pipelines"
+        },
+        {
+          "tag": "CODE",
+          "text": "backlog"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "PRE",
+          "text": "# CLAUDE.md — aDNA.aDNA\n\nYou are Rosetta — named after the Rosetta Stone, the artifact that decoded\nEgyptian hieroglyphics by presenting the same text in three scripts. This\nvault does the same: it presents the aDNA standard in three registers —\ntechnical specification, operational practice, and plain-language explanation.\n\n## Project Map\n\naDNA.aDNA/\n├── CLAUDE.md     ← You are here — agent master context (this file)\n├── STATE.md      ← Operational snapshot: current phase, blockers, next steps\n├── what/         ← Knowledge objects, context library, lattice definitions\n├── how/          ← Operations, sessions, missions, campaigns, skills\n└── who/          ← Governance, community, coordination\n\n## Standing Orders\n\n1. Phase gates are human gates — never auto-advance between phases.\n2. Every mission gets an AAR before marking it completed.\n3. Upstream spec is source of truth — cite adna_standard.md for normative claims."
+        },
+        {
+          "tag": "CODE",
+          "text": "what/context/"
+        },
+        {
+          "tag": "CODE",
+          "text": "STATE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "how/missions/"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "github.com/aDNA-Network/aDNA"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/how/skills/skill_onboarding.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/how/skills/skill_project_fork.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/how/templates/template_workspace_claude.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/how/templates/template_home_claude.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/how/templates/template_node_adna_exemplar/"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "MANIFEST.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "STATE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "how/missions/"
+        },
+        {
+          "tag": "CODE",
+          "text": "AGENTS.md"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "const o=getComputedStyle(document.documentElement).scrollPaddingTop,n=/^[\\d.]+px$/.test(o)?o:\"80px\",r=new IntersectionObserver(t=>{for(const e of t)e.isIntersecting&&(document.querySelectorAll(\".toc-link\").forEach(c=>c.classList.remove(\"active\")),document.querySelector(`.toc-link[data-slug=\"${e.target.id}\"]`)?.classList.add(\"active\"))},{rootMargin:`-${n} 0px -70% 0px`,threshold:0});document.querySelectorAll(\".doc-content h2[id], .doc-content h3[id]\").forEach(t=>{r.observe(t)});"
+        }
+      ],
+      "banned_matches": [],
+      "main_dom_words": 1238
+    },
+    {
+      "route": "/community",
+      "source_sha256": "4e5acfc64b12bb158170c7b6fa9c25483a670fa0c2574adf3cb2e7951f489240",
+      "reached": true,
+      "text": "In this section Learn Patterns Use Cases Community Reference Glossary Guides Community aDNA is built by people and agents together, in the open. The community is arranged as a ladder, from someone running a single vault to a steward of the standard itself. Everything it decides is a public record, not a claim. Here is how it works today. The participation ladder Each level stands on its own. You get the full value at Level 0 without joining in at all. Each step up adds one more kind of contribution, and one more say in what happens. Level 0 User Clone the standard and use it for your own projects. No community interaction required — you get the full value locally. Get started → Level 1 Contributor Approve the improvements your agents surface and send them upstream through the public repository. Contribution standards → Level 2 Quest Runner Run structured community experiments and submit results that turn standard questions into evidence, not opinion. How the processes work → Level 3 Steward Shape the standard's direction — design quests, review contributions, write migrations. Recognized by maintainers, never self-appointed. The steward role → How the commons is governed The community isn't asserted here; it's a record. This is how the standard is actually run, today: Chartered Operator-chartered — decisions are explicit and gated, never silent. Open standard MIT-licensed and versioned in public; the spec is the source of truth. Change process Public. A change to what the standard requires runs as a numbered proposal, with a permanent number and a status anyone can check. Everything else runs as an ordinary issue or pull request. Code of conduct Contributor Covenant v2.1, in the repository. Enforcement is by the maintainers; there is no separate committee yet, and saying so is more useful than implying one. AI-assisted contribution Welcome, and disclosed. Agents may draft proposals and open pull requests; every proposal names the agent that drafted it, and only a human can ratify one. Attribution By convention, content files record who last edited them — humans and agents alike. Accountability Every unit of work closes with a written after-action report. What you won't find here: member counts, follower numbers, or activity feeds. The record doesn't track them, so this page doesn't show them. The horizon Member profiles, follows, activity feeds, and shared governance-voting surfaces are not built yet. They are being designed on the network's opt-in, local-first membership substrate — the same machinery the network page describes. Until they ship, the participation ladder, the governance record on this page, and the early community space below are the community layer. The network builds toward that horizon rather than implying it arrived. The community space A real-time community space is open at community.adna.network — a self-hosted Fluxer instance in its early days. Honest state, as of 2026-08-22: registration is approval-gated, so joining is a request an operator reviews, not a click. Its rules are published, short, and explicitly interim — worth reading before you join: the terms of service, the privacy notice, and the space's own code of conduct, which sits under the project-wide Contributor Covenant named above. Two commitments in them are worth naming here: your content is not used to train or evaluate AI models, and every agent in the space is labeled as an agent — no undisclosed automation, in either direction. Conversation happens there. Anything that should leave a durable record — a bug, a fix, a change to the standard — goes through the repository instead, where it can be cited later. How the standard changes Changes to the standard are proposed as numbered aDNA Enhancement Proposals. Numbers are permanent, so a proposal that gets rejected keeps its number and stays in the archive — what the project turned down is as readable as what it adopted. Anyone may file one. Agents may author proposals and every proposal discloses whether one did; only a human can ratify. A proposal is only called final once a check in aDNA's own tooling fails when the rule is violated, which keeps the archive from becoming a wishlist. Explore further The roles, processes, and shared-knowledge commons in depth: Community Roles & Progression The aDNA community is organized around a four-level participation ladder. Each level is self-contained — no level requires the next. Community Processes Concrete workflows for participating in the aDNA community. Each process maps to a level on the participation ladder. Context Commons Connection The shared knowledge pool that emerges when individual aDNA vaults publish their best context files, patterns, and lattices for community reuse. Contribution Standards Naming conventions, quality gates, and submission workflows for contributing to the aDNA standard and community. Contribute The standard is built in the open. Agents draft the changes; only a person can ratify one. A change to what the standard requires goes through the numbered proposal process. Anything else — a bug, a fix, a question — goes through the repository's issue templates, which is faster for everyone. The contribution guide and the code of conduct are both in the repository. AI-assisted contributions are welcome, as long as they say so. Contribute on GitHub File a proposal Learn Patterns Use Cases Community Reference Glossary Guides",
+      "headings": [
+        "Community",
+        "The participation ladder",
+        "How the commons is governed",
+        "The community space",
+        "How the standard changes",
+        "Explore further",
+        "Contribute"
+      ],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        }
+      ],
+      "banned_matches": [],
+      "main_dom_words": 866
+    },
+    {
+      "route": "/about",
+      "source_sha256": "df246145de8e00b5dc61189b3c0adebd2660c06fd913354b81a3513bdd9526f3",
+      "reached": true,
+      "text": "Who's behind aDNA aDNA is early — and honest about it. Here are the real people behind the network today, the agents that tend it, and how real leadership grows as the network does. The people today A small, real founding core — named plainly, with nothing claimed we don't yet have. Stanley Bishop Founding Architect, aDNA · Head of AI, Wilhelm Foundation · AI-Scientist in Residence, UCLA Anderson Venture Accelerator aDNA is stewarded today by one person, who holds decision authority over the standard while the network is young. That's the honest current state — not a council we haven't formed. The whole point of the roadmap below is to hand that authority to stewardship as trusted stewards arrive. stanley.science ↗ The Wilhelm Foundation Anchor partner · Helene & Mikk Cederroth The network's anchor partner carries a real rare- and undiagnosed-disease mission. Their work grounds two of the public-good subnetworks on aDNA — Wilhelm AI for the Undiagnosed and the open Rare Archive. Note the overlap named above: aDNA's Founding Architect also holds a role at the Foundation, so read this as a close relationship rather than an independent organisation vouching for us. See the open Rare Archive ↗ The agent-stewards, honestly Most vaults are “tended by” a named agent — and we name them as exactly that. Rosetta tends this documentation. Argus tends the quality framework. Hestia tends the node itself. These are AI personas — the agent-stewards of the current build. They are a real, distinctive feature of an agent-native network, not a stand-in for people and not a claim of a team we don't have. They hold the seat. As real stewards join, they take the roles the agents keep — which is the same trajectory as the governance roadmap below: humanization and decentralization are the same curve. Why name the agents at all? Because it's true, and because it's how the work actually gets done here. Hiding it would be less honest, not more credible. What you should not read into the personas is a larger organization than the founding core above — there isn't one yet, and this page says so plainly. Where leadership is going aDNA is committed to progressive decentralization. Governance and real leadership grow along the same curve — earned as stewards arrive, not asserted before. Founding Architect today A single steward holds decision authority while the network is young. Increasing trusted stewards Mission-aligned stewards take on real decisions — as far as is helpful and positive, at the Founding Architect's discretion. Discretion turned over to stewardship The authority itself passes to the stewards, not held back by any one architect. Steward-led, democratic, public The destination: a protocol and network governed by the communities closest to it. We look for stewards among the people closest to the network's core missions — rare disease, undiagnosed disease, and biodiversity protection (via conservation genomics, coherent with the genome/DNA framing). Read the full governance roadmap → The public-good work, and what you can check 4 subnetworks are declared on this network. 2 have something you can open today; the rest do not yet. Each row says which. World Genome Academy Genomics education & research Open it ↗ Context Commons Community agentic-literacy & enablement No public site yet — this subnetwork is still being set up. Wilhelm AI for the Undiagnosed People & families living with undiagnosed disease Wilhelm Foundation (Helene & Mikk Cederroth) No public site yet — this subnetwork is still being set up. Rare Archive Rare-disease diagnosis acceleration Wilhelm Foundation (Helene & Mikk Cederroth) Open it ↗ — one contributor so far, ours. The state of the network → See the public-good commons → Grow the network with us The honest starting point is the one above: one named architect, one anchor partner whose closeness to this project we named rather than hid, public-good work shown row by row with what you can open today, and a roadmap that hands leadership to the communities closest to the mission as stewards arrive. See the commons Read the governance model",
+      "headings": [
+        "Who's behind aDNA",
+        "The people today",
+        "Stanley Bishop",
+        "The Wilhelm Foundation",
+        "The agent-stewards, honestly",
+        "Where leadership is going",
+        "Founding Architect today",
+        "Increasing trusted stewards",
+        "Discretion turned over to stewardship",
+        "Steward-led, democratic, public",
+        "The public-good work, and what you can check",
+        "World Genome Academy",
+        "Context Commons",
+        "Wilhelm AI for the Undiagnosed",
+        "Rare Archive",
+        "Grow the network with us"
+      ],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "SPAN",
+          "text": "1"
+        },
+        {
+          "tag": "SPAN",
+          "text": "2"
+        },
+        {
+          "tag": "SPAN",
+          "text": "3"
+        },
+        {
+          "tag": "SPAN",
+          "text": "4"
+        }
+      ],
+      "banned_matches": [],
+      "main_dom_words": 675
+    },
+    {
+      "route": "/commons",
+      "source_sha256": "2743616ebb90eeb081025ab9d4395598282ca5abe3118c7c6ef278e73ab1f46c",
+      "reached": true,
+      "text": "A commons, not a catalog. Mission-aligned subnetworks are taking shape here — so the abundance AI creates belongs to everyone. See them, check them, connect to them. Connect a subnetwork Read the standard Open source on GitHub MIT-licensed the standard, versioned and public A note on the name In genomics, aDNA usually means ancient DNA. This is not that. Here it stands for Agentic DNA — a shared way to file what a project knows, so people and AI agents can both find their way around it. What aDNA is → The subnetworks Real public-good missions on the aDNA network — each one named, cited, and honest about its stage. A curated set, not an exhaustive one: it grows as aligned subnetworks join. World Genome Academy Genomics knowledge as a shared commons The World Genome Academy is building genomics education and research programs — so the science is stewarded, not enclosed. Serves Genomics education & research Stewarded by Founding stewards · governance being formalized Governance on record wga.aDNA Visit ↗ Connect ↓ Context Commons Agentic-context literacy, shared A community program for agentic-context literacy and enablement — and the shared pool that forms when vaults publish their best context, patterns, and lattices for others to discover and reuse. Serves Community agentic-literacy & enablement Stewarded by Founding-steward today — community governance as it grows Governance on record ContextCommons.aDNA Connect ↓ Wilhelm AI for the Undiagnosed AI for people living with undiagnosed disease The Wilhelm AI Initiative for the Undiagnosed (AI4U) — the Wilhelm Foundation's umbrella over AI initiatives for people and families living with undiagnosed disease, including the open Rare-AI Archive. Serves People & families living with undiagnosed disease Stewarded by Hygieia · anchor Wilhelm Foundation Governance on record WilhelmAI.aDNA Connect ↓ Wilhelm Foundation (Helene & Mikk Cederroth) · Apache-2.0 + CC-BY-4.0 Rare Archive Open-source rare-disease AI Rare Archive is an open-source rare-disease AI project — the diagnosis-acceleration pillar of AI4U — governed under the Wilhelm Foundation, with a canonical home at Wilhelm-Foundation/rare-archive. Serves Rare-disease diagnosis acceleration Stewarded by Mnemosyne · anchor Wilhelm Foundation Governance on record RareArchive.aDNA Visit ↗ Connect ↓ Wilhelm Foundation (Helene & Mikk Cederroth) · Apache-2.0 + CC-BY-4.0 Connect to a subnetwork Three paths, in increasing depth — no account, no waitlist. Follow the work Where a subnetwork has a public face, its card links it — the Rare Archive repository and the World Genome Academy site are followable today; the others are still building theirs. The open record is the front door. Connect to a subnetwork Read a subnetwork's shared context from inside your own vault. You add a small directory that points at theirs — a block — and nothing is copied, so their context stays theirs. Federation readiness covers what to check before you connect, and before you share your own context back. Contribute Join the work itself. The community ladder runs from vault user to standard steward, and the contribution standards spell out what a good contribution carries. The boundary from the network holds here too: everything stays local by default. Connecting is opt-in per vault — each node decides what it shares with a subnetwork, and what never leaves the machine. This is the whole connect surface today: the three paths above. What the commons already knows about itself — and the horizon past it — is laid out plainly in the band below. The commons, today There is no activity feed here yet — the governance record is the social surface. This is what the network's registry knows about who tends each subnetwork, shown plainly, with nothing it doesn't. World Genome Academy Stewarded by Founding stewards · governance being formalized Governance record Context Commons Stewarded by Founding-steward today — community governance as it grows Governance record Wilhelm AI for the Undiagnosed Stewarded by Hygieia · anchor Wilhelm Foundation Carries the work of Wilhelm Foundation (Helene & Mikk Cederroth) Shared under Apache-2.0 + CC-BY-4.0 Governance record Declared relationships umbrellas RareArchive · federates Astro, III Rare Archive Stewarded by Mnemosyne · anchor Wilhelm Foundation Carries the work of Wilhelm Foundation (Helene & Mikk Cederroth) Shared under Apache-2.0 + CC-BY-4.0 Governance record Declared relationships under the WilhelmAI umbrella Registry regenerated 2026-08-17 from the node inventory · member records last synced 2026-05-24. Honest activity, today, is exactly this: the dates above and the relationships each vault declares. What you won't find here: contributor counts, stars, or follower numbers. The registry doesn't record them, so this page doesn't display them. The horizon Profiles, follows, feeds, and shared governance surfaces are not built yet. They're being designed on the network's membership and federation substrate — the same opt-in, local-by-default machinery the boundary above describes. Until they ship, the registry and the open governance record you're reading are the whole social layer. The network builds toward that horizon rather than implying it arrived. Join & steward Language and DNA are our shared heritage. So is context — held in common, stewarded in the open, and put to work for the good of all. Bring a subnetwork, or connect to one that's already here. Add your subnetwork How federation works",
+      "headings": [
+        "A commons, not a catalog.",
+        "The subnetworks",
+        "World Genome Academy",
+        "Context Commons",
+        "Wilhelm AI for the Undiagnosed",
+        "Rare Archive",
+        "Connect to a subnetwork",
+        "Follow the work",
+        "Connect to a subnetwork",
+        "Contribute",
+        "The commons, today",
+        "World Genome Academy",
+        "Context Commons",
+        "Wilhelm AI for the Undiagnosed",
+        "Rare Archive",
+        "Join & steward"
+      ],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "document.querySelectorAll(\".hero-install-copy\").forEach(e=>{e.addEventListener(\"click\",async()=>{const t=e.closest(\".hero-install\")?.querySelector(\".hero-install-cmd\")?.textContent??\"\";try{await navigator.clipboard.writeText(t),e.setAttribute(\"aria-label\",\"Copied!\"),setTimeout(()=>e.setAttribute(\"aria-label\",\"Copy install command\"),2e3)}catch{}})});"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "CODE",
+          "text": "federation_ref"
+        },
+        {
+          "tag": "CODE",
+          "text": "wga.aDNA/CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "ContextCommons.aDNA/CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "WilhelmAI.aDNA/CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "RareArchive.aDNA/CLAUDE.md"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        }
+      ],
+      "banned_matches": [],
+      "main_dom_words": 850
+    },
+    {
+      "route": "/network",
+      "source_sha256": "c299c4a2fc3b9a9e9e2c7ca9e031242fea1b27adc77d9ccb72382c37f25397a9",
+      "reached": true,
+      "text": "The network of aDNA computers An aDNA computer is one machine — laptop, server, or cloud box — carrying many context vaults (self-governing folders of project knowledge) under a single Home.aDNA. Vaults connect through real, directed relationships, and each node decides what stays local and what it shares. See the relationship graph Browse the vaults Open source on GitHub MIT-licensed the standard, versioned and public A network of real relationships The connections are not decorative. Each line is a relationship a vault actually declares — drawn here as a simple hub around the shared core, not an invented peer-to-peer mesh. The aDNA network Real aDNA vaults — Astro, III, RareHarness, wga, RareArchive, Home — connected around the aDNA core by the relationships they declare. Astro III RareHarness wga RareArchive Home aDNA the network The aDNA network Real aDNA vaults — Astro, III, RareHarness, wga, RareArchive, Home — connected around the aDNA core by the relationships they declare. Astro III RareHarness wga RareArchive Home aDNA the network Six representative aDNA vaults — forges, frameworks, platforms, and public-good archives — federating around the shared aDNA core. (See all 74 in the full graph below.) What is an aDNA computer? A node on the network is one machine, governed by a single vault that knows every other vault living on it. What that machine shares is always your choice. Stays on your machine By default, everything. A node is local-first — its vaults, their full history, the machine’s inventory, and its credentials never leave the computer unless you send them (Standing Rule 4). Your project vaults and their history The node’s inventory and machine state Identity and credentials You opt to federate Only what you choose. Publishing a vault, declaring a relationship to another vault, or joining a shared lattice is an explicit, reviewable act — never a silent default. A vault published to the shared registry A relationship declared to another vault Membership in a federated lattice The topology at a glance 74 vaults, 14 relationships. Every edge is real and directed, drawn from each vault’s governance, across five kinds of relationship. umbrella · 1 — an org-vault contains its pillar children federation · 9 — a consumer depends on the forge or framework it is built from partner · 0 — a platform ships with its default partner companion · 4 — a sibling persona-pair or thematic family supersedes · 0 — a successor replaced its predecessor See the full relationship graph → Browse all 74 vaults → Run a node A node is a workspace on your own machine. Three steps take you from nothing to a governed node that decides what it shares — the same local-by-default boundary, made concrete. About five minutes Needs + the Claude Code CLI Local-first — your vault files never leave until you choose Bootstrap your node Clone the workspace image — the agent router ships pre-instantiated at the root and the standard comes embedded in a hidden folder — then start the agent: it detects a fresh workspace, scaffolds your first project, and can bootstrap , the vault that governs your machine. See Get started for the full walkthrough — installing and the Claude Code CLI, and what each step does. Everything stays local by default Your node is local-first. Its vaults, their full history, the machine’s inventory, and your credentials stay on the computer until you choose to send them (Standing Rule 4). Opt into federation Joining the commons is always explicit and reviewable — a change you author and inspect before you push it. By design, what crosses the boundary is a curated slice of your registry — which vaults exist and the relationships they declare — never their contents. See how federation works → Run your first node → Read the standard → Running a model on your own machine Your files stay on your node today. Your prompts do not. Closing that gap is planned work, not shipped work — nothing here runs yet. A node needs a coding agent to do its work. That agent sends your prompts to its provider. Your vaults, their history and your credentials stay put. The prompts leave. Running the model on the same machine would close that gap. It is not built. Two vaults hold the plan, and the registry lists both of them as planned — a name, an owner, and no code behind it yet. Inference — the plan for serving a local model to a node. LlamaCppForge — the plan for building the model files it would serve. No date is set, and none is promised. When there is something to run, it will ship as a step in Get started, and this section will say so. Governed in the open The network is a commons, not a silo. The standard that holds it is openly specified and openly governed — a named steward, a public process for proposing change, and the load-bearing decisions on the record as public ADRs. Founding-Architect stewardship Open spec · MIT Public change process Versioned releases · v2.5 current Read the governance model → Join the community → Language and DNA are our shared heritage. So is context — the accumulated understanding of a civilization, held in common and stewarded for the generations that inherit it.",
+      "headings": [
+        "The network of aDNA computers",
+        "A network of real relationships",
+        "What is an aDNA computer?",
+        "Stays on your machine",
+        "You opt to federate",
+        "The topology at a glance",
+        "Run a node",
+        "Bootstrap your node",
+        "Everything stays local by default",
+        "Opt into federation",
+        "Running a model on your own machine",
+        "Governed in the open"
+      ],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "document.querySelectorAll(\".hero-install-copy\").forEach(e=>{e.addEventListener(\"click\",async()=>{const t=e.closest(\".hero-install\")?.querySelector(\".hero-install-cmd\")?.textContent??\"\";try{await navigator.clipboard.writeText(t),e.setAttribute(\"aria-label\",\"Copied!\"),setTimeout(()=>e.setAttribute(\"aria-label\",\"Copy install command\"),2e3)}catch{}})});"
+        },
+        {
+          "tag": "g",
+          "text": "  "
+        },
+        {
+          "tag": "g",
+          "text": "  "
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "(function(){const r=matchMedia(\"(prefers-reduced-motion: reduce)\").matches;document.querySelectorAll(\"[data-netdiagram]\").forEach(e=>{if(r)return;e.setAttribute(\"data-armed\",\"\"),new IntersectionObserver((a,i)=>{a.forEach(t=>{t.isIntersecting&&(t.target.setAttribute(\"data-in\",\"\"),i.unobserve(t.target))})},{threshold:.35}).observe(e),setTimeout(()=>e.setAttribute(\"data-in\",\"\"),600)})})();"
+        },
+        {
+          "tag": "CODE",
+          "text": "Home.aDNA"
+        },
+        {
+          "tag": "SPAN",
+          "text": ""
+        },
+        {
+          "tag": "SPAN",
+          "text": ""
+        },
+        {
+          "tag": "SPAN",
+          "text": ""
+        },
+        {
+          "tag": "SPAN",
+          "text": ""
+        },
+        {
+          "tag": "SPAN",
+          "text": ""
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "CODE",
+          "text": "git"
+        },
+        {
+          "tag": "SPAN",
+          "text": "1"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/"
+        },
+        {
+          "tag": "CODE",
+          "text": "Home.aDNA"
+        },
+        {
+          "tag": "PRE",
+          "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA\ncd ~/aDNA\nclaude"
+        },
+        {
+          "tag": "CODE",
+          "text": "git"
+        },
+        {
+          "tag": "SPAN",
+          "text": "2"
+        },
+        {
+          "tag": "SPAN",
+          "text": "3"
+        },
+        {
+          "tag": "CODE",
+          "text": "Home.aDNA"
+        }
+      ],
+      "banned_matches": [],
+      "main_dom_words": 882
+    }
+  ]
+}

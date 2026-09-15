@@ -1,0 +1,1376 @@
+[
+  {
+    "route": "/install",
+    "main_text_equal": true,
+    "local_sha256": "db1e4515474a747d0b8541e8f512308904927986f39d885ff4ba895aa3563337",
+    "live_sha256": "db1e4515474a747d0b8541e8f512308904927986f39d885ff4ba895aa3563337"
+  },
+  {
+    "route": "/",
+    "main_text_equal": true,
+    "local_sha256": "c3896ca732c590dfcea49dc9151f6b60b8781d931e68e2b4f26bc9508c9d3c6e",
+    "live_sha256": "c3896ca732c590dfcea49dc9151f6b60b8781d931e68e2b4f26bc9508c9d3c6e"
+  },
+  {
+    "route": "/learn",
+    "main_text_equal": true,
+    "local_sha256": "bb9c336dbc875938bb74c13972bd7fd296e15a20394f6161582a4e12abf968b8",
+    "live_sha256": "bb9c336dbc875938bb74c13972bd7fd296e15a20394f6161582a4e12abf968b8"
+  },
+  {
+    "route": "/privacy",
+    "main_text_equal": true,
+    "local_sha256": "012ebbb6e6e6abbd3623407f5654c3fd93b8c3d9b07e380f50343d725a09ba97",
+    "live_sha256": "012ebbb6e6e6abbd3623407f5654c3fd93b8c3d9b07e380f50343d725a09ba97"
+  },
+  {
+    "route": "/patterns",
+    "main_text_equal": true,
+    "local_sha256": "2a357f94a127bf312d59278ae7ed911f0aab3061126abf528e98e30f1fb16d4f",
+    "live_sha256": "2a357f94a127bf312d59278ae7ed911f0aab3061126abf528e98e30f1fb16d4f"
+  },
+  {
+    "route": "/how",
+    "main_text_equal": true,
+    "local_sha256": "7781355057987cf3c4fbe5e437f7e828f93de739523550a189fdb7f7e54939a8",
+    "live_sha256": "7781355057987cf3c4fbe5e437f7e828f93de739523550a189fdb7f7e54939a8"
+  },
+  {
+    "route": "/changelog",
+    "main_text_equal": true,
+    "local_sha256": "1a55a29830677ec0fae067220a40c56ce83cfa4526e6cdfbcf206a62e536088e",
+    "live_sha256": "1a55a29830677ec0fae067220a40c56ce83cfa4526e6cdfbcf206a62e536088e"
+  },
+  {
+    "route": "/security",
+    "main_text_equal": true,
+    "local_sha256": "f60e01dab9d6b6314ecaa65f1bc08903fef653a81595493324fecd0a2e85f084",
+    "live_sha256": "f60e01dab9d6b6314ecaa65f1bc08903fef653a81595493324fecd0a2e85f084"
+  },
+  {
+    "route": "/commons",
+    "main_text_equal": true,
+    "local_sha256": "c6e57e24a60ca104723e5b704551bd03f8d16e6828eaf21ddece29e44e5027dc",
+    "live_sha256": "c6e57e24a60ca104723e5b704551bd03f8d16e6828eaf21ddece29e44e5027dc"
+  },
+  {
+    "route": "/network",
+    "main_text_equal": true,
+    "local_sha256": "c8f65d25f0d7b69acac74ffd0acc2e78697471ebed488ef4e74bd82f1ee38045",
+    "live_sha256": "c8f65d25f0d7b69acac74ffd0acc2e78697471ebed488ef4e74bd82f1ee38045"
+  },
+  {
+    "route": "/provenance-audit",
+    "main_text_equal": true,
+    "local_sha256": "ae8e6b14924e4914bde8453c6c25bb368c630f3151d14bd0ca2979e817d88985",
+    "live_sha256": "ae8e6b14924e4914bde8453c6c25bb368c630f3151d14bd0ca2979e817d88985"
+  },
+  {
+    "route": "/state-of-the-network",
+    "main_text_equal": true,
+    "local_sha256": "9a7db1a9e07b012f4c619cf70ac6edc31845ddad176a4469856dc9eb08f99557",
+    "live_sha256": "9a7db1a9e07b012f4c619cf70ac6edc31845ddad176a4469856dc9eb08f99557"
+  },
+  {
+    "route": "/about",
+    "main_text_equal": true,
+    "local_sha256": "431ec1150cb85b6f62245a1da57ae3d8e1e2928e22de98770abd5fa3185a3eeb",
+    "live_sha256": "431ec1150cb85b6f62245a1da57ae3d8e1e2928e22de98770abd5fa3185a3eeb"
+  },
+  {
+    "route": "/use-cases",
+    "main_text_equal": true,
+    "local_sha256": "dfd50ca77041a9c49027e5bc7569f69f995df7372fa9d92f3c3f855489280bac",
+    "live_sha256": "dfd50ca77041a9c49027e5bc7569f69f995df7372fa9d92f3c3f855489280bac"
+  },
+  {
+    "route": "/vaults",
+    "main_text_equal": true,
+    "local_sha256": "1edb3407eab1a16289bb12f0189006f706fe3e96dd30adbc90146ad9c5f93513",
+    "live_sha256": "1edb3407eab1a16289bb12f0189006f706fe3e96dd30adbc90146ad9c5f93513"
+  },
+  {
+    "route": "/glossary",
+    "main_text_equal": true,
+    "local_sha256": "f57a8d7d6f8df01ee7ab9551b33cef23e98fa68155f7aa74e168f8d1f7cd121c",
+    "live_sha256": "f57a8d7d6f8df01ee7ab9551b33cef23e98fa68155f7aa74e168f8d1f7cd121c"
+  },
+  {
+    "route": "/canonical-properties",
+    "main_text_equal": true,
+    "local_sha256": "b700207b8af932367bd3219791e9c9086862a57f8bc0faf8814a253bf09c988a",
+    "live_sha256": "b700207b8af932367bd3219791e9c9086862a57f8bc0faf8814a253bf09c988a"
+  },
+  {
+    "route": "/community",
+    "main_text_equal": true,
+    "local_sha256": "51d664fb9e1a0e8e3f27b9625ff622fd67b0a06946e2748ef0ae4e071833425d",
+    "live_sha256": "51d664fb9e1a0e8e3f27b9625ff622fd67b0a06946e2748ef0ae4e071833425d"
+  },
+  {
+    "route": "/accessibility",
+    "main_text_equal": true,
+    "local_sha256": "a9222adaac2872067cd9070a51ca44b9ceb3df82410260b42ead078c9451fe8a",
+    "live_sha256": "a9222adaac2872067cd9070a51ca44b9ceb3df82410260b42ead078c9451fe8a"
+  },
+  {
+    "route": "/design-system",
+    "main_text_equal": true,
+    "local_sha256": "9023419a78cbdbbb773c9a05b5a05ddfb266806e3388f75d6e1e87c498a02577",
+    "live_sha256": "9023419a78cbdbbb773c9a05b5a05ddfb266806e3388f75d6e1e87c498a02577"
+  },
+  {
+    "route": "/reference",
+    "main_text_equal": true,
+    "local_sha256": "58882c54106ca6cb75616454db8ca5e46103f01e8ba895b4ec930dc166741bfe",
+    "live_sha256": "58882c54106ca6cb75616454db8ca5e46103f01e8ba895b4ec930dc166741bfe"
+  },
+  {
+    "route": "/get-started",
+    "main_text_equal": true,
+    "local_sha256": "27045e7a8f45028fe6caf68d29be92370d501a647a9dd2d6a16e3486031b20e5",
+    "live_sha256": "27045e7a8f45028fe6caf68d29be92370d501a647a9dd2d6a16e3486031b20e5"
+  },
+  {
+    "route": "/get-started/what-your-agent-reads",
+    "main_text_equal": true,
+    "local_sha256": "38ed2d2b922ffc0d229dd3f8b501254602fed1397a5823e881dbe4356a4293bb",
+    "live_sha256": "38ed2d2b922ffc0d229dd3f8b501254602fed1397a5823e881dbe4356a4293bb"
+  },
+  {
+    "route": "/get-started/what-your-agent-reads/skill-project-fork",
+    "main_text_equal": true,
+    "local_sha256": "d701b27e733eb7b29e1055a7d53467e21d7a2837ffccf848049b036b69cb76cf",
+    "live_sha256": "d701b27e733eb7b29e1055a7d53467e21d7a2837ffccf848049b036b69cb76cf"
+  },
+  {
+    "route": "/get-started/what-your-agent-reads/standard-governance",
+    "main_text_equal": true,
+    "local_sha256": "291a1421a8392acb5e94c70d9cc41c7f9ebe00bc61a349a6174452e1ca75ccb4",
+    "live_sha256": "291a1421a8392acb5e94c70d9cc41c7f9ebe00bc61a349a6174452e1ca75ccb4"
+  },
+  {
+    "route": "/get-started/what-your-agent-reads/skill-onboarding",
+    "main_text_equal": true,
+    "local_sha256": "8d0f9122a2416bd8181d0a1722c1249ba5a7d83d028656fec0992a0d68781d49",
+    "live_sha256": "8d0f9122a2416bd8181d0a1722c1249ba5a7d83d028656fec0992a0d68781d49"
+  },
+  {
+    "route": "/get-started/what-your-agent-reads/workspace-router",
+    "main_text_equal": true,
+    "local_sha256": "3a91d0fb8cbc19805ae5785170e19c66dfb93b4460a6ce8613eec5e6ca04b4c4",
+    "live_sha256": "3a91d0fb8cbc19805ae5785170e19c66dfb93b4460a6ce8613eec5e6ca04b4c4"
+  },
+  {
+    "route": "/reference/reading-guide",
+    "main_text_equal": true,
+    "local_sha256": "6dcfe1897882f8227eedb54da384a4cb41c238a18078ca0d82df1a3f34926f0b",
+    "live_sha256": "6dcfe1897882f8227eedb54da384a4cb41c238a18078ca0d82df1a3f34926f0b"
+  },
+  {
+    "route": "/reference/tool-setup",
+    "main_text_equal": true,
+    "local_sha256": "69f5465d8ec02bb8d277942458164443005c6b75faf8c5f59af1066474822f9a",
+    "live_sha256": "69f5465d8ec02bb8d277942458164443005c6b75faf8c5f59af1066474822f9a"
+  },
+  {
+    "route": "/reference/writing-guidelines",
+    "main_text_equal": true,
+    "local_sha256": "a87187a6bbf34f71850a22596bde7294f3dc10444fcb75bc986021a5ef79f8e0",
+    "live_sha256": "a87187a6bbf34f71850a22596bde7294f3dc10444fcb75bc986021a5ef79f8e0"
+  },
+  {
+    "route": "/reference/registry-api",
+    "main_text_equal": true,
+    "local_sha256": "13e379fd5995c2c7dcd379892f79e995aaea950b6cd64bc1a8fdfd7d00872ac6",
+    "live_sha256": "13e379fd5995c2c7dcd379892f79e995aaea950b6cd64bc1a8fdfd7d00872ac6"
+  },
+  {
+    "route": "/reference/specification",
+    "main_text_equal": true,
+    "local_sha256": "fb78e4a24ae07be7688ad55a65af6240c12d9504499f2a9c7fd6b8d52201cdf4",
+    "live_sha256": "fb78e4a24ae07be7688ad55a65af6240c12d9504499f2a9c7fd6b8d52201cdf4"
+  },
+  {
+    "route": "/reference/migration-guide",
+    "main_text_equal": true,
+    "local_sha256": "ef1ec7b0255f5bf0632becf5c963d8968327d40b2e4d832494cb4160540f2fa2",
+    "live_sha256": "ef1ec7b0255f5bf0632becf5c963d8968327d40b2e4d832494cb4160540f2fa2"
+  },
+  {
+    "route": "/reference/visual-identity-v2",
+    "main_text_equal": true,
+    "local_sha256": "238d67594c3d410b779dae95ea91c9ae8905607b8e0cedd0e3a47c60192108f6",
+    "live_sha256": "238d67594c3d410b779dae95ea91c9ae8905607b8e0cedd0e3a47c60192108f6"
+  },
+  {
+    "route": "/reference/agent-first-guide",
+    "main_text_equal": true,
+    "local_sha256": "66a0730c38f196da3f2554b105a33ce590ecf0b55340a6a58c92b12a85998725",
+    "live_sha256": "66a0730c38f196da3f2554b105a33ce590ecf0b55340a6a58c92b12a85998725"
+  },
+  {
+    "route": "/reference/governance-model",
+    "main_text_equal": true,
+    "local_sha256": "87b3601ce5fa423e7232cdd5696f468268a092005f9f570e4c228bd73aae1eed",
+    "live_sha256": "87b3601ce5fa423e7232cdd5696f468268a092005f9f570e4c228bd73aae1eed"
+  },
+  {
+    "route": "/reference/design-rationale",
+    "main_text_equal": true,
+    "local_sha256": "ed8d5201aee6f66afc43f92ebde818b463e194fab5fdefb1d55d66255b5ebaf2",
+    "live_sha256": "ed8d5201aee6f66afc43f92ebde818b463e194fab5fdefb1d55d66255b5ebaf2"
+  },
+  {
+    "route": "/reference/quality-rubric",
+    "main_text_equal": true,
+    "local_sha256": "bbb11675ed8485cccdff8552ba1fc15a3ee86b856279fdf996817128a09407ab",
+    "live_sha256": "bbb11675ed8485cccdff8552ba1fc15a3ee86b856279fdf996817128a09407ab"
+  },
+  {
+    "route": "/reference/specification/18-success-criteria",
+    "main_text_equal": true,
+    "local_sha256": "ffa7b02d7a2b612cdf84a454b8a8d0ae5846b025a4777d9d11ffa92cb915cb18",
+    "live_sha256": "ffa7b02d7a2b612cdf84a454b8a8d0ae5846b025a4777d9d11ffa92cb915cb18"
+  },
+  {
+    "route": "/reference/specification/full",
+    "main_text_equal": true,
+    "local_sha256": "1ba6ac5367e8d66ff7898945a65c44dbb07a39539ea436c911ff4503451deb6a",
+    "live_sha256": "1ba6ac5367e8d66ff7898945a65c44dbb07a39539ea436c911ff4503451deb6a"
+  },
+  {
+    "route": "/reference/specification/8-session-model",
+    "main_text_equal": true,
+    "local_sha256": "49661621dee40d09f42b2886eea00abba7be5d1122e4cf8918099ee346b8ccf1",
+    "live_sha256": "49661621dee40d09f42b2886eea00abba7be5d1122e4cf8918099ee346b8ccf1"
+  },
+  {
+    "route": "/reference/specification/4-governance-files",
+    "main_text_equal": true,
+    "local_sha256": "c2a84237fbbdf941ec568a1f273d6c08205a070a09c8ec5e1a4919a18cfd2492",
+    "live_sha256": "c2a84237fbbdf941ec568a1f273d6c08205a070a09c8ec5e1a4919a18cfd2492"
+  },
+  {
+    "route": "/reference/specification/13-collision-prevention",
+    "main_text_equal": true,
+    "local_sha256": "e15c5eb7dcc2e71a83198a8be4cf3558df13f06b9103be273cee263e794fec2d",
+    "live_sha256": "e15c5eb7dcc2e71a83198a8be4cf3558df13f06b9103be273cee263e794fec2d"
+  },
+  {
+    "route": "/reference/specification/5-directory-structure",
+    "main_text_equal": true,
+    "local_sha256": "f5a12af7922c51fdcb30dbfb60d697d89ccac1e5642a9093ef347b7d468efdfd",
+    "live_sha256": "f5a12af7922c51fdcb30dbfb60d697d89ccac1e5642a9093ef347b7d468efdfd"
+  },
+  {
+    "route": "/reference/specification/17-error-recovery-protocol",
+    "main_text_equal": true,
+    "local_sha256": "d68399e25212d7ac17aa91b62fa7afedd4bd6f6e47a21890cb45296d0f78fbdf",
+    "live_sha256": "d68399e25212d7ac17aa91b62fa7afedd4bd6f6e47a21890cb45296d0f78fbdf"
+  },
+  {
+    "route": "/reference/specification/7-frontmatter-system",
+    "main_text_equal": true,
+    "local_sha256": "f3de832d68def07bb2c7e625abc0185cef2025b1163154fd5ded26acaade7740",
+    "live_sha256": "f3de832d68def07bb2c7e625abc0185cef2025b1163154fd5ded26acaade7740"
+  },
+  {
+    "route": "/reference/specification/10-context-library",
+    "main_text_equal": true,
+    "local_sha256": "650ceef8ae6a30aaf17296fce94c3348a28c2d42da2b1a6538f7109d1d8272f4",
+    "live_sha256": "650ceef8ae6a30aaf17296fce94c3348a28c2d42da2b1a6538f7109d1d8272f4"
+  },
+  {
+    "route": "/reference/specification/1-introduction-scope",
+    "main_text_equal": true,
+    "local_sha256": "7e7c4cee076f8b4f3d3ec5c41e09195e9444925fe30a6d99c92e11ecd90ce19e",
+    "live_sha256": "7e7c4cee076f8b4f3d3ec5c41e09195e9444925fe30a6d99c92e11ecd90ce19e"
+  },
+  {
+    "route": "/reference/specification/15-archive-versioning",
+    "main_text_equal": true,
+    "local_sha256": "45bfaa18f940987336e6af7153b7b676733d0914ce4becf2bf9c17b49da22827",
+    "live_sha256": "45bfaa18f940987336e6af7153b7b676733d0914ce4becf2bf9c17b49da22827"
+  },
+  {
+    "route": "/reference/specification/16-tool-integration-tiers",
+    "main_text_equal": true,
+    "local_sha256": "a97033c9851e90d6c0aaa745262e5c45bd9f216554708e418a10f466fd54e9e4",
+    "live_sha256": "a97033c9851e90d6c0aaa745262e5c45bd9f216554708e418a10f466fd54e9e4"
+  },
+  {
+    "route": "/reference/specification/6-naming-conventions",
+    "main_text_equal": true,
+    "local_sha256": "66b2ee4739aacd69ad2c34ff7b51a8152999d2033934c957674fd5d28da1400c",
+    "live_sha256": "66b2ee4739aacd69ad2c34ff7b51a8152999d2033934c957674fd5d28da1400c"
+  },
+  {
+    "route": "/reference/specification/2-terminology",
+    "main_text_equal": true,
+    "local_sha256": "0764f37a27553ab7fec051ab7db859530d876079ec81baa1f3b33c2f4f18b9dd",
+    "live_sha256": "0764f37a27553ab7fec051ab7db859530d876079ec81baa1f3b33c2f4f18b9dd"
+  },
+  {
+    "route": "/reference/specification/11-coordination-protocol",
+    "main_text_equal": true,
+    "local_sha256": "28a64d6397f2737bc91a0a356e6bf90b965b450aa8f81a27c91f5c77abbde156",
+    "live_sha256": "28a64d6397f2737bc91a0a356e6bf90b965b450aa8f81a27c91f5c77abbde156"
+  },
+  {
+    "route": "/reference/specification/12-template-system",
+    "main_text_equal": true,
+    "local_sha256": "e0a13ea762825e27c545cdd830328debe9299b7015af9df5bdbe68c305aac9b1",
+    "live_sha256": "e0a13ea762825e27c545cdd830328debe9299b7015af9df5bdbe68c305aac9b1"
+  },
+  {
+    "route": "/reference/specification/9-mission-system",
+    "main_text_equal": true,
+    "local_sha256": "f7dfc9c37f2a0a35c8fc6394faff7522de18a8d1c4e561bf980e269081a09dc2",
+    "live_sha256": "f7dfc9c37f2a0a35c8fc6394faff7522de18a8d1c4e561bf980e269081a09dc2"
+  },
+  {
+    "route": "/reference/specification/20-appendices",
+    "main_text_equal": true,
+    "local_sha256": "3492064fbf12d2d5c9d6b0c6535fa1c9c788d01fcd5812d40c5d6b2a39800db8",
+    "live_sha256": "3492064fbf12d2d5c9d6b0c6535fa1c9c788d01fcd5812d40c5d6b2a39800db8"
+  },
+  {
+    "route": "/reference/specification/14-content-as-code-pipelines",
+    "main_text_equal": true,
+    "local_sha256": "584d3d19ed579d70ddb02c6f6674aa5d91f8e3bd6e1d2037088b4a61361698c1",
+    "live_sha256": "584d3d19ed579d70ddb02c6f6674aa5d91f8e3bd6e1d2037088b4a61361698c1"
+  },
+  {
+    "route": "/reference/specification/3-triad-architecture",
+    "main_text_equal": true,
+    "local_sha256": "f2854cee45edfe695f93d03a8780fff192e1483c95f579766f3655545886bba8",
+    "live_sha256": "f2854cee45edfe695f93d03a8780fff192e1483c95f579766f3655545886bba8"
+  },
+  {
+    "route": "/reference/specification/19-optional-extensions",
+    "main_text_equal": true,
+    "local_sha256": "59134fdd15c401b1a316b0f60d4e6bad23f841105796f7932e414a7b9fa0746a",
+    "live_sha256": "59134fdd15c401b1a316b0f60d4e6bad23f841105796f7932e414a7b9fa0746a"
+  },
+  {
+    "route": "/community/community-processes",
+    "main_text_equal": false,
+    "local_sha256": "8a9673352de4a679d73f6cb34e2b08074d69dc333c58057f47718098d5bf2a51",
+    "live_sha256": "6c7c203f8a4899300a341e9333778462bd10f81a455c2a461985e2772ae7ecae"
+  },
+  {
+    "route": "/community/community-context-commons",
+    "main_text_equal": false,
+    "local_sha256": "cc74cdd0cdae1c232ac3d49b4c2ced2a3188185ce2c69951feea7aa2aee36cab",
+    "live_sha256": "f039d818353a75e5b7f0199c60458d21b0da64a3c8dd3155f683320ba2769d50"
+  },
+  {
+    "route": "/community/community-roles",
+    "main_text_equal": false,
+    "local_sha256": "678fbb56bc4cd948a2ff6169af4cabb6636d86c19cbf0fe8f5c60a9059822424",
+    "live_sha256": "bf3964693bc7305867a62353f7962e1510c198f9c358ab8d19a2744b0cba535b"
+  },
+  {
+    "route": "/community/community-contribution-standards",
+    "main_text_equal": true,
+    "local_sha256": "264877805e3689f598a36c4c86269d0a21c47b240acd02de3337c69c285029b0",
+    "live_sha256": "264877805e3689f598a36c4c86269d0a21c47b240acd02de3337c69c285029b0"
+  },
+  {
+    "route": "/community/proposals",
+    "main_text_equal": true,
+    "local_sha256": "a5626fd930c85a3e0f741092935ec39470cfb60632e996413a2d953800a64081",
+    "live_sha256": "a5626fd930c85a3e0f741092935ec39470cfb60632e996413a2d953800a64081"
+  },
+  {
+    "route": "/community/proposals/aep-2",
+    "main_text_equal": true,
+    "local_sha256": "1d3ca05a7c1569cab1da2c28b36c1e243f0bc695df9aa51fbf89c29747c6d31d",
+    "live_sha256": "1d3ca05a7c1569cab1da2c28b36c1e243f0bc695df9aa51fbf89c29747c6d31d"
+  },
+  {
+    "route": "/community/proposals/aep-1",
+    "main_text_equal": true,
+    "local_sha256": "a8306ee252788798253702cef162b1ebf20fa332b5d74c039a09eef700ccb65c",
+    "live_sha256": "a8306ee252788798253702cef162b1ebf20fa332b5d74c039a09eef700ccb65c"
+  },
+  {
+    "route": "/glossary/glossary-adna",
+    "main_text_equal": true,
+    "local_sha256": "f8633a1558aa5f704e2af3f0f5501ef8f66a13fe1b29cb5f9961242b8d96162c",
+    "live_sha256": "f8633a1558aa5f704e2af3f0f5501ef8f66a13fe1b29cb5f9961242b8d96162c"
+  },
+  {
+    "route": "/glossary/glossary-bare-triad",
+    "main_text_equal": true,
+    "local_sha256": "0ea2a282cbce3febf4745ca538528ab85421aab99de6fdfc2bb8ade1b0102783",
+    "live_sha256": "0ea2a282cbce3febf4745ca538528ab85421aab99de6fdfc2bb8ade1b0102783"
+  },
+  {
+    "route": "/glossary/glossary-collision-prevention",
+    "main_text_equal": true,
+    "local_sha256": "c461df471e2e02ee68cf9386b744adfdf1572a7746f93b2f4abb0e46da61e64c",
+    "live_sha256": "c461df471e2e02ee68cf9386b744adfdf1572a7746f93b2f4abb0e46da61e64c"
+  },
+  {
+    "route": "/glossary/glossary-governance-file",
+    "main_text_equal": true,
+    "local_sha256": "90114d1b5ced5aa5c9ed933d82a46cc9592506ef0b82edcf73eba2d12c787566",
+    "live_sha256": "90114d1b5ced5aa5c9ed933d82a46cc9592506ef0b82edcf73eba2d12c787566"
+  },
+  {
+    "route": "/glossary/glossary-mission",
+    "main_text_equal": false,
+    "local_sha256": "57eb50ae40e0057f48e6038e6c82b012583ac0a06ca7174052b2562e5fd2442a",
+    "live_sha256": "411e3d59017eb1c198df9b5ed6cbcb6b7dc5c7543aefbc550dca32a0fc954af0"
+  },
+  {
+    "route": "/glossary/glossary-question-test",
+    "main_text_equal": true,
+    "local_sha256": "6c95022a944b02316b5dca020c466315f914ee542f667440e990658d49b57005",
+    "live_sha256": "6c95022a944b02316b5dca020c466315f914ee542f667440e990658d49b57005"
+  },
+  {
+    "route": "/glossary/glossary-what",
+    "main_text_equal": true,
+    "local_sha256": "7c9b89593e9c48ec7e2b3c529bd1062efd16da3e338d03df5983e074e33555a2",
+    "live_sha256": "7c9b89593e9c48ec7e2b3c529bd1062efd16da3e338d03df5983e074e33555a2"
+  },
+  {
+    "route": "/glossary/glossary-coordination-note",
+    "main_text_equal": true,
+    "local_sha256": "d75baf13d1609012c79ae55f5b3a3fa507cd5c6bd4052b276c3570b955423cb0",
+    "live_sha256": "d75baf13d1609012c79ae55f5b3a3fa507cd5c6bd4052b276c3570b955423cb0"
+  },
+  {
+    "route": "/glossary/glossary-session",
+    "main_text_equal": true,
+    "local_sha256": "51e63f65f54628e52106e5c37b1d1bdc9a759bac788d7aaa9842cf75067bd08b",
+    "live_sha256": "51e63f65f54628e52106e5c37b1d1bdc9a759bac788d7aaa9842cf75067bd08b"
+  },
+  {
+    "route": "/glossary/glossary-content-as-code",
+    "main_text_equal": true,
+    "local_sha256": "9392217ed78a12144308f18a9dbb0744203d72cc9a3c0f4813f58ad163a044a6",
+    "live_sha256": "9392217ed78a12144308f18a9dbb0744203d72cc9a3c0f4813f58ad163a044a6"
+  },
+  {
+    "route": "/glossary/glossary-how",
+    "main_text_equal": true,
+    "local_sha256": "b73f2bf970d6b165fcf9bc147241aea00417d7866d24f0b4f35276901aafe5d8",
+    "live_sha256": "b73f2bf970d6b165fcf9bc147241aea00417d7866d24f0b4f35276901aafe5d8"
+  },
+  {
+    "route": "/glossary/glossary-ontology-extension",
+    "main_text_equal": false,
+    "local_sha256": "95a532a9a8208bc1a187bd2855bf2c6965bf1f7483e91f1fdbc9ffb11459a774",
+    "live_sha256": "56b2241c1f4dcf8c0a675bc9168958f336d86451b095d26b42db6ecb64e78052"
+  },
+  {
+    "route": "/glossary/glossary-conformance-level",
+    "main_text_equal": true,
+    "local_sha256": "3604dccd93a76f6935d44cfc247b5e084c5cdf8ef6f01b9e1e8c80aa6f5f0227",
+    "live_sha256": "3604dccd93a76f6935d44cfc247b5e084c5cdf8ef6f01b9e1e8c80aa6f5f0227"
+  },
+  {
+    "route": "/glossary/glossary-sitrep",
+    "main_text_equal": true,
+    "local_sha256": "695fd58fcaffd13c5aae743defe4a65b083f61c792b82a3cdf5fd233ce856e99",
+    "live_sha256": "695fd58fcaffd13c5aae743defe4a65b083f61c792b82a3cdf5fd233ce856e99"
+  },
+  {
+    "route": "/glossary/glossary-readme-md",
+    "main_text_equal": true,
+    "local_sha256": "7018fd4b3e2385e613d77fc6b4f820fcb6a26159cbbfa010d0e71a7b44ab4d29",
+    "live_sha256": "7018fd4b3e2385e613d77fc6b4f820fcb6a26159cbbfa010d0e71a7b44ab4d29"
+  },
+  {
+    "route": "/glossary/glossary-conformant-instance",
+    "main_text_equal": true,
+    "local_sha256": "51d0eed295cdcb7ab557d7521843424467d191794aad90ae7b14811f7b6b10e6",
+    "live_sha256": "51d0eed295cdcb7ab557d7521843424467d191794aad90ae7b14811f7b6b10e6"
+  },
+  {
+    "route": "/glossary/glossary-frontmatter",
+    "main_text_equal": true,
+    "local_sha256": "cdfbbe2875c2f618d98d997a0bf138df02362959f00f32afd8eaff3def9fcd2c",
+    "live_sha256": "cdfbbe2875c2f618d98d997a0bf138df02362959f00f32afd8eaff3def9fcd2c"
+  },
+  {
+    "route": "/glossary/glossary-context-library",
+    "main_text_equal": true,
+    "local_sha256": "2fa671eb39655006dd333a576ae86fbafd3310603fd9903b559be9fcc31786a4",
+    "live_sha256": "2fa671eb39655006dd333a576ae86fbafd3310603fd9903b559be9fcc31786a4"
+  },
+  {
+    "route": "/glossary/glossary-triad",
+    "main_text_equal": true,
+    "local_sha256": "943204e388761962449e13630fa9fb281a252e1e7b600cfb339ad7f5ebe45ffa",
+    "live_sha256": "943204e388761962449e13630fa9fb281a252e1e7b600cfb339ad7f5ebe45ffa"
+  },
+  {
+    "route": "/glossary/glossary-template",
+    "main_text_equal": false,
+    "local_sha256": "7cb4cf307a982ae66e9811e4c84baaaa623aab595637f021930a2e7b48b34a77",
+    "live_sha256": "237b917d41edff91693fdf5cc46af5f81458eda0df23900bee626da044e5e41e"
+  },
+  {
+    "route": "/glossary/glossary-deployment-form",
+    "main_text_equal": true,
+    "local_sha256": "5bc328cb3a608005541e9817116cd169ec5991699af02d8a8ba7d86954c8c781",
+    "live_sha256": "5bc328cb3a608005541e9817116cd169ec5991699af02d8a8ba7d86954c8c781"
+  },
+  {
+    "route": "/glossary/glossary-agents-md",
+    "main_text_equal": true,
+    "local_sha256": "371a3b07ab0924f7e91ad4ff2701226a600d52b1b7f590e47ccbb551550bb9e2",
+    "live_sha256": "371a3b07ab0924f7e91ad4ff2701226a600d52b1b7f590e47ccbb551550bb9e2"
+  },
+  {
+    "route": "/glossary/glossary-skill",
+    "main_text_equal": false,
+    "local_sha256": "e5199d38c78d84b7c9565ceadb00eb7a2096630648ac1aed7da8b6240ccc21e4",
+    "live_sha256": "7f5fd511ed03f2f7de9fab9b824b29222e7b1c301bf5f96bed3ee388d5748e54"
+  },
+  {
+    "route": "/glossary/glossary-embedded-triad",
+    "main_text_equal": true,
+    "local_sha256": "95c20ea71970e412fd54688efb9abaeb166f45ba0acd4337de29f65c3806a4a4",
+    "live_sha256": "95c20ea71970e412fd54688efb9abaeb166f45ba0acd4337de29f65c3806a4a4"
+  },
+  {
+    "route": "/glossary/glossary-who",
+    "main_text_equal": true,
+    "local_sha256": "dcd7ebeec41a77e9d87b1d7bd31270b04e763c845833b53f47ee171e784b4ecb",
+    "live_sha256": "dcd7ebeec41a77e9d87b1d7bd31270b04e763c845833b53f47ee171e784b4ecb"
+  },
+  {
+    "route": "/vaults/organization",
+    "main_text_equal": true,
+    "local_sha256": "154c5680b7c4065b9fe9f4a53e5106f3f0bbdad4a9cb9f8a244eba115fc05e8a",
+    "live_sha256": "154c5680b7c4065b9fe9f4a53e5106f3f0bbdad4a9cb9f8a244eba115fc05e8a"
+  },
+  {
+    "route": "/vaults/nextcloud",
+    "main_text_equal": true,
+    "local_sha256": "2f853b22c5ac87b9ca9bcc18ab79d098e8453e4eedc7a44295bff469c1347c02",
+    "live_sha256": "2f853b22c5ac87b9ca9bcc18ab79d098e8453e4eedc7a44295bff469c1347c02"
+  },
+  {
+    "route": "/vaults/regenesis",
+    "main_text_equal": true,
+    "local_sha256": "1851f463ed37ddf8cf3776bd89b2c38dc89dcd5fc812e631eaee32a413172717",
+    "live_sha256": "1851f463ed37ddf8cf3776bd89b2c38dc89dcd5fc812e631eaee32a413172717"
+  },
+  {
+    "route": "/vaults/neo4j",
+    "main_text_equal": true,
+    "local_sha256": "34075d82a9f8b364e58c78740af0bcfd635dbfba930cc9f04abd921b7b2f69cc",
+    "live_sha256": "34075d82a9f8b364e58c78740af0bcfd635dbfba930cc9f04abd921b7b2f69cc"
+  },
+  {
+    "route": "/vaults/home",
+    "main_text_equal": true,
+    "local_sha256": "4d1b3d44fa145586258c16938fe4fb95e462caab1a2a2c6d847cc2de76a1929d",
+    "live_sha256": "4d1b3d44fa145586258c16938fe4fb95e462caab1a2a2c6d847cc2de76a1929d"
+  },
+  {
+    "route": "/vaults/zeta",
+    "main_text_equal": true,
+    "local_sha256": "c3b2443abf60140cfe85291fec5c7c45669bf2741c05ba9b03ca9c6be42acdba",
+    "live_sha256": "c3b2443abf60140cfe85291fec5c7c45669bf2741c05ba9b03ca9c6be42acdba"
+  },
+  {
+    "route": "/vaults/visualdna",
+    "main_text_equal": true,
+    "local_sha256": "f75db60e8a2b060554b3922cbe0443d2181fc6d81f05cccbffbaca2c150745fe",
+    "live_sha256": "f75db60e8a2b060554b3922cbe0443d2181fc6d81f05cccbffbaca2c150745fe"
+  },
+  {
+    "route": "/vaults/molecules",
+    "main_text_equal": true,
+    "local_sha256": "49864894d6fbf518a1cf609e725c20d46d39ddc965fb0c906d8db2b0b358270a",
+    "live_sha256": "49864894d6fbf518a1cf609e725c20d46d39ddc965fb0c906d8db2b0b358270a"
+  },
+  {
+    "route": "/vaults/llamacppforge",
+    "main_text_equal": true,
+    "local_sha256": "d904a395a523a13e4011455253fb0bbf718af2def177c2d3c80ce8f0f4753aa7",
+    "live_sha256": "d904a395a523a13e4011455253fb0bbf718af2def177c2d3c80ce8f0f4753aa7"
+  },
+  {
+    "route": "/vaults/exchange",
+    "main_text_equal": true,
+    "local_sha256": "84577aab261de6c26d2566bfd48c2064b359fb71a29355e7d5b9e8a14894b7ff",
+    "live_sha256": "84577aab261de6c26d2566bfd48c2064b359fb71a29355e7d5b9e8a14894b7ff"
+  },
+  {
+    "route": "/vaults/cakeprotocol",
+    "main_text_equal": true,
+    "local_sha256": "aa8f21ece7b456394f65f98c0637f989af40a1cad91740a08ffaf92c5f6319ed",
+    "live_sha256": "aa8f21ece7b456394f65f98c0637f989af40a1cad91740a08ffaf92c5f6319ed"
+  },
+  {
+    "route": "/vaults/wga",
+    "main_text_equal": true,
+    "local_sha256": "f39c4b0860d10694441d6bf110a4e012f579e400fcf9f5a962139647ad2bc49b",
+    "live_sha256": "f39c4b0860d10694441d6bf110a4e012f579e400fcf9f5a962139647ad2bc49b"
+  },
+  {
+    "route": "/vaults/context",
+    "main_text_equal": true,
+    "local_sha256": "b719320ad942108088f123cf63d7ee8262f78f9853a8b94e70fec717bcc646d0",
+    "live_sha256": "b719320ad942108088f123cf63d7ee8262f78f9853a8b94e70fec717bcc646d0"
+  },
+  {
+    "route": "/vaults/vercel",
+    "main_text_equal": true,
+    "local_sha256": "7a692b4f896d614cfa3543660ccf210be7ce53e43f8e66f26669a38716a3982d",
+    "live_sha256": "7a692b4f896d614cfa3543660ccf210be7ce53e43f8e66f26669a38716a3982d"
+  },
+  {
+    "route": "/vaults/contextcommons",
+    "main_text_equal": true,
+    "local_sha256": "26b9cd8c7a433b431a5df06f70186aace6436f6a072ece167cb2d769cbdaf86f",
+    "live_sha256": "26b9cd8c7a433b431a5df06f70186aace6436f6a072ece167cb2d769cbdaf86f"
+  },
+  {
+    "route": "/vaults/latticeprotocol",
+    "main_text_equal": true,
+    "local_sha256": "2ba013bda7711f80aac514826b49cd3465f2544f50b1df66728cbaaa86db77c9",
+    "live_sha256": "2ba013bda7711f80aac514826b49cd3465f2544f50b1df66728cbaaa86db77c9"
+  },
+  {
+    "route": "/vaults/comfyui",
+    "main_text_equal": true,
+    "local_sha256": "4805e1210e5a64a9cdfd6f3beada2c429def5157d3c371404a672199ba2e430f",
+    "live_sha256": "4805e1210e5a64a9cdfd6f3beada2c429def5157d3c371404a672199ba2e430f"
+  },
+  {
+    "route": "/vaults/nebula",
+    "main_text_equal": true,
+    "local_sha256": "18903c2de34784d7c5bf23ed434dca604ca851df6568d6af352c03f9af7df451",
+    "live_sha256": "18903c2de34784d7c5bf23ed434dca604ca851df6568d6af352c03f9af7df451"
+  },
+  {
+    "route": "/vaults/rareanthropic",
+    "main_text_equal": true,
+    "local_sha256": "a29baa4a1bf9ffe5ba484f3a76072ea1cb0d084a1c36da74f0699f7db68f0c13",
+    "live_sha256": "a29baa4a1bf9ffe5ba484f3a76072ea1cb0d084a1c36da74f0699f7db68f0c13"
+  },
+  {
+    "route": "/vaults/fluxer",
+    "main_text_equal": true,
+    "local_sha256": "838260715c71e277755ea1ff81df1ceec6a7cfe2f59fd428cd6ebb64ea898f91",
+    "live_sha256": "838260715c71e277755ea1ff81df1ceec6a7cfe2f59fd428cd6ebb64ea898f91"
+  },
+  {
+    "route": "/vaults/typescript",
+    "main_text_equal": true,
+    "local_sha256": "9175327115f91773866f6890106d7016771ce2af9f228f2d94e5ebb43eec8207",
+    "live_sha256": "9175327115f91773866f6890106d7016771ce2af9f228f2d94e5ebb43eec8207"
+  },
+  {
+    "route": "/vaults/laventuregraph",
+    "main_text_equal": true,
+    "local_sha256": "5a266190f033e933075df617f72b7cedbe3d4e97102b84ea4494336f50d1cc7d",
+    "live_sha256": "5a266190f033e933075df617f72b7cedbe3d4e97102b84ea4494336f50d1cc7d"
+  },
+  {
+    "route": "/vaults/gotfn",
+    "main_text_equal": true,
+    "local_sha256": "e78b8be94659c72d5f007bdf853bf9404de2ec22987d813386cff88fcdda8a79",
+    "live_sha256": "e78b8be94659c72d5f007bdf853bf9404de2ec22987d813386cff88fcdda8a79"
+  },
+  {
+    "route": "/vaults/sciencestanley",
+    "main_text_equal": true,
+    "local_sha256": "40ca9909a5bcb6c17154355d24cce15791695b18483a88d68a0ebadf8d5a174f",
+    "live_sha256": "40ca9909a5bcb6c17154355d24cce15791695b18483a88d68a0ebadf8d5a174f"
+  },
+  {
+    "route": "/vaults/network",
+    "main_text_equal": true,
+    "local_sha256": "86f4477ec7ee741de66721a3b1629cea1340cb553e8ce9f37082d8033bc32de7",
+    "live_sha256": "86f4477ec7ee741de66721a3b1629cea1340cb553e8ce9f37082d8033bc32de7"
+  },
+  {
+    "route": "/vaults/datasets",
+    "main_text_equal": true,
+    "local_sha256": "62128394ef90de4b047bc2f2e1c8fa144995aabf567f340ed7a21ed85519a04a",
+    "live_sha256": "62128394ef90de4b047bc2f2e1c8fa144995aabf567f340ed7a21ed85519a04a"
+  },
+  {
+    "route": "/vaults/graph",
+    "main_text_equal": true,
+    "local_sha256": "f0ebca2934a6e0f95a28224bec852430ee3ee566ef2ba0de37c101aa42dbab05",
+    "live_sha256": "f0ebca2934a6e0f95a28224bec852430ee3ee566ef2ba0de37c101aa42dbab05"
+  },
+  {
+    "route": "/vaults/percysleep",
+    "main_text_equal": true,
+    "local_sha256": "1b58667e47d6c58d7ff87387b84a068a22544d4bd2dd0d53a7a2f799be45799b",
+    "live_sha256": "1b58667e47d6c58d7ff87387b84a068a22544d4bd2dd0d53a7a2f799be45799b"
+  },
+  {
+    "route": "/vaults/terminal",
+    "main_text_equal": true,
+    "local_sha256": "40a5ba9cdabe99e69fc3becf18826eb787570665479284f17e8bb840ccc49591",
+    "live_sha256": "40a5ba9cdabe99e69fc3becf18826eb787570665479284f17e8bb840ccc49591"
+  },
+  {
+    "route": "/vaults/worldgenome",
+    "main_text_equal": true,
+    "local_sha256": "410d76e5aa567fa9da5349414ed5e896dbe1b108532e85eb3e14a1e906b9378b",
+    "live_sha256": "410d76e5aa567fa9da5349414ed5e896dbe1b108532e85eb3e14a1e906b9378b"
+  },
+  {
+    "route": "/vaults/wilhelmai",
+    "main_text_equal": true,
+    "local_sha256": "efe75d0a63b97b4c2fdbd758d2ec9385b9c084604a90d188f395c23b0aba1d95",
+    "live_sha256": "efe75d0a63b97b4c2fdbd758d2ec9385b9c084604a90d188f395c23b0aba1d95"
+  },
+  {
+    "route": "/vaults/tappprotocol",
+    "main_text_equal": true,
+    "local_sha256": "4d2000c6a0dfde6a40e2d12b46b690d70b9a444cf32f74f31db49098d395d2b4",
+    "live_sha256": "4d2000c6a0dfde6a40e2d12b46b690d70b9a444cf32f74f31db49098d395d2b4"
+  },
+  {
+    "route": "/vaults/operations",
+    "main_text_equal": true,
+    "local_sha256": "b3c380738c793312f4bcc55aab80659235c400334deeb74d7f1742cde820a910",
+    "live_sha256": "b3c380738c793312f4bcc55aab80659235c400334deeb74d7f1742cde820a910"
+  },
+  {
+    "route": "/vaults/emacs",
+    "main_text_equal": true,
+    "local_sha256": "07e9345f7cd5376360176dca648f20f901b35f4c8e11f24f1d085ec1eddbd4e2",
+    "live_sha256": "07e9345f7cd5376360176dca648f20f901b35f4c8e11f24f1d085ec1eddbd4e2"
+  },
+  {
+    "route": "/vaults/canvas",
+    "main_text_equal": true,
+    "local_sha256": "7e5d69f977452b8e74b46eaa9e9becf027635e73eb261e167784a89baa0fd067",
+    "live_sha256": "7e5d69f977452b8e74b46eaa9e9becf027635e73eb261e167784a89baa0fd067"
+  },
+  {
+    "route": "/vaults/adnalabs",
+    "main_text_equal": true,
+    "local_sha256": "e779419d46837e2dd5246c86dcfb1160977c32e05d2738ddf0246dea4087424f",
+    "live_sha256": "e779419d46837e2dd5246c86dcfb1160977c32e05d2738ddf0246dea4087424f"
+  },
+  {
+    "route": "/vaults/tailwind",
+    "main_text_equal": true,
+    "local_sha256": "cdafb46fc23398dc016e1ef7863a18af37468dfb47b2011f381f0402912f99ae",
+    "live_sha256": "cdafb46fc23398dc016e1ef7863a18af37468dfb47b2011f381f0402912f99ae"
+  },
+  {
+    "route": "/vaults/container",
+    "main_text_equal": true,
+    "local_sha256": "d9a2755a032b7ce6c65928c9b5abb4a03cba9151676b3def6e3cbcbac955b092",
+    "live_sha256": "d9a2755a032b7ce6c65928c9b5abb4a03cba9151676b3def6e3cbcbac955b092"
+  },
+  {
+    "route": "/vaults/harness",
+    "main_text_equal": true,
+    "local_sha256": "20c5374ddf07f88f0490a7a793c72b8abe65afe4d427aef322e2b8a5b8d52212",
+    "live_sha256": "20c5374ddf07f88f0490a7a793c72b8abe65afe4d427aef322e2b8a5b8d52212"
+  },
+  {
+    "route": "/vaults/oration",
+    "main_text_equal": true,
+    "local_sha256": "fe44f6f8bd2f34db5e9dde12c59ad54fd9db4f81ed954c9b1eaf97c933a8dc72",
+    "live_sha256": "fe44f6f8bd2f34db5e9dde12c59ad54fd9db4f81ed954c9b1eaf97c933a8dc72"
+  },
+  {
+    "route": "/vaults/rarearchive",
+    "main_text_equal": true,
+    "local_sha256": "2b5ee50be0b7b61cf86e019f3c0c14a7523f403784209b5c8b271370781f2350",
+    "live_sha256": "2b5ee50be0b7b61cf86e019f3c0c14a7523f403784209b5c8b271370781f2350"
+  },
+  {
+    "route": "/vaults/videos",
+    "main_text_equal": true,
+    "local_sha256": "af68e5a2ba0dfefcae1988d53003857e09040f0884a668730c5211097213631c",
+    "live_sha256": "af68e5a2ba0dfefcae1988d53003857e09040f0884a668730c5211097213631c"
+  },
+  {
+    "route": "/vaults/cakehealth",
+    "main_text_equal": true,
+    "local_sha256": "dbce948e4d01833d12cda9b760b1cacf79e0e291811124c5b24e23e11a0f09c9",
+    "live_sha256": "dbce948e4d01833d12cda9b760b1cacf79e0e291811124c5b24e23e11a0f09c9"
+  },
+  {
+    "route": "/vaults/dashboards",
+    "main_text_equal": true,
+    "local_sha256": "43e871cb54496923eb5e4110d22e3966e73994348ec25fc1bc0da01e8fc86a5a",
+    "live_sha256": "43e871cb54496923eb5e4110d22e3966e73994348ec25fc1bc0da01e8fc86a5a"
+  },
+  {
+    "route": "/vaults/realityscan",
+    "main_text_equal": true,
+    "local_sha256": "89560e60b74f96bd65ffc053b05157bdc539a128625873439f2e81bb58381ed0",
+    "live_sha256": "89560e60b74f96bd65ffc053b05157bdc539a128625873439f2e81bb58381ed0"
+  },
+  {
+    "route": "/vaults/bitwarden",
+    "main_text_equal": true,
+    "local_sha256": "2e09f6d7dcb6c5d67ec59bdaa4351a2f662ea623e4e4c52fe38ffa30d13ea593",
+    "live_sha256": "2e09f6d7dcb6c5d67ec59bdaa4351a2f662ea623e4e4c52fe38ffa30d13ea593"
+  },
+  {
+    "route": "/vaults/d3",
+    "main_text_equal": true,
+    "local_sha256": "87df46aa38a82b72b46213f387b22cce70db99b5c4e51c5ca4c104ac31dcd2c3",
+    "live_sha256": "87df46aa38a82b72b46213f387b22cce70db99b5c4e51c5ca4c104ac31dcd2c3"
+  },
+  {
+    "route": "/vaults/fastapi",
+    "main_text_equal": true,
+    "local_sha256": "772a3f834257ae1148a4edc27487ca0268fde33999a0f369792fa3c946dc68c8",
+    "live_sha256": "772a3f834257ae1148a4edc27487ca0268fde33999a0f369792fa3c946dc68c8"
+  },
+  {
+    "route": "/vaults/zenzachary",
+    "main_text_equal": true,
+    "local_sha256": "83378494a963b226b32573e2ba7825e8f7401bd580f05c46dad8b86497ed0608",
+    "live_sha256": "83378494a963b226b32573e2ba7825e8f7401bd580f05c46dad8b86497ed0608"
+  },
+  {
+    "route": "/vaults/ailp-dataroom",
+    "main_text_equal": true,
+    "local_sha256": "c0f637bb581b27a81bf1a81154837aa42dd54547ae995bc645bb462b66aef263",
+    "live_sha256": "c0f637bb581b27a81bf1a81154837aa42dd54547ae995bc645bb462b66aef263"
+  },
+  {
+    "route": "/vaults/warp",
+    "main_text_equal": true,
+    "local_sha256": "131388a7441fcaa2045cae48ed0f58d61c2dfa34d705c6a2bbbeef87a37b6fbb",
+    "live_sha256": "131388a7441fcaa2045cae48ed0f58d61c2dfa34d705c6a2bbbeef87a37b6fbb"
+  },
+  {
+    "route": "/vaults/superleague",
+    "main_text_equal": true,
+    "local_sha256": "8d319b8bade8a14308830f7d32cbe8ba54e5f2912e956da1edb9b35f3930d92e",
+    "live_sha256": "8d319b8bade8a14308830f7d32cbe8ba54e5f2912e956da1edb9b35f3930d92e"
+  },
+  {
+    "route": "/vaults/inference",
+    "main_text_equal": true,
+    "local_sha256": "52c31a11ac60cf955b55ae5434762e4cd7f86eca32705f92f741c8503e784242",
+    "live_sha256": "52c31a11ac60cf955b55ae5434762e4cd7f86eca32705f92f741c8503e784242"
+  },
+  {
+    "route": "/vaults/awsbootstrap",
+    "main_text_equal": true,
+    "local_sha256": "caacf995ad2735f2ce4d39e348b6a180d4482de5c35d8caf2159958e5975af4d",
+    "live_sha256": "caacf995ad2735f2ce4d39e348b6a180d4482de5c35d8caf2159958e5975af4d"
+  },
+  {
+    "route": "/vaults/datarooms",
+    "main_text_equal": true,
+    "local_sha256": "f1f453cc140c852f0d213978b0546587e34c4936d848ed4241b81f04be16fe8c",
+    "live_sha256": "f1f453cc140c852f0d213978b0546587e34c4936d848ed4241b81f04be16fe8c"
+  },
+  {
+    "route": "/vaults/spacemacs",
+    "main_text_equal": true,
+    "local_sha256": "687f11d2de562c95d5f3f1aafa970544d1b2a03d7904e387376e618f0f789c70",
+    "live_sha256": "687f11d2de562c95d5f3f1aafa970544d1b2a03d7904e387376e618f0f789c70"
+  },
+  {
+    "route": "/vaults/lighthouse",
+    "main_text_equal": true,
+    "local_sha256": "65adbb55ff83d70d5f8365db45ebb274bfe3dbbaeac1a10985c701c305c0a905",
+    "live_sha256": "65adbb55ff83d70d5f8365db45ebb274bfe3dbbaeac1a10985c701c305c0a905"
+  },
+  {
+    "route": "/vaults/vaas",
+    "main_text_equal": true,
+    "local_sha256": "2bb5388c1ef0b35b9c4c1c3b68b94890b5bbab19f6e1b23731f89a2a5b10ab74",
+    "live_sha256": "2bb5388c1ef0b35b9c4c1c3b68b94890b5bbab19f6e1b23731f89a2a5b10ab74"
+  },
+  {
+    "route": "/vaults/obsidian",
+    "main_text_equal": true,
+    "local_sha256": "9ef4f3449f11217696766f9285d1951ac6a89dd8b69b2f7b22c7045bc4db2fe8",
+    "live_sha256": "9ef4f3449f11217696766f9285d1951ac6a89dd8b69b2f7b22c7045bc4db2fe8"
+  },
+  {
+    "route": "/vaults/groupware",
+    "main_text_equal": true,
+    "local_sha256": "1a96d86a3ea134d40bcf279e963a670b7fe3785ac3d757ba01d95063512bea94",
+    "live_sha256": "1a96d86a3ea134d40bcf279e963a670b7fe3785ac3d757ba01d95063512bea94"
+  },
+  {
+    "route": "/vaults/astro",
+    "main_text_equal": true,
+    "local_sha256": "237a726d3a8964f88ff68f667a0b2eed11248ed48b5fced6f95cd8976e6eddcd",
+    "live_sha256": "237a726d3a8964f88ff68f667a0b2eed11248ed48b5fced6f95cd8976e6eddcd"
+  },
+  {
+    "route": "/vaults/prefect",
+    "main_text_equal": true,
+    "local_sha256": "adf8bbd204bcac32b722218a6c152bf969532a9c10bfc2af4da02d3b1bc4e852",
+    "live_sha256": "adf8bbd204bcac32b722218a6c152bf969532a9c10bfc2af4da02d3b1bc4e852"
+  },
+  {
+    "route": "/vaults/magnapetra",
+    "main_text_equal": true,
+    "local_sha256": "d229d7bce910cab9ddb4bf8ba2128d53d9bea08b9d5d91c984ebff0e13314c7d",
+    "live_sha256": "d229d7bce910cab9ddb4bf8ba2128d53d9bea08b9d5d91c984ebff0e13314c7d"
+  },
+  {
+    "route": "/vaults/remotecontrol",
+    "main_text_equal": true,
+    "local_sha256": "7bb4910c6d9884e11e6320777f46d1f3ad9b171015400fd63e3e8da6f162352f",
+    "live_sha256": "7bb4910c6d9884e11e6320777f46d1f3ad9b171015400fd63e3e8da6f162352f"
+  },
+  {
+    "route": "/vaults/webforge",
+    "main_text_equal": true,
+    "local_sha256": "5aa6dbe9e825378f6c8c14d6b0ae102f81de29b3a2f63e39f6b80929f1ebc77c",
+    "live_sha256": "5aa6dbe9e825378f6c8c14d6b0ae102f81de29b3a2f63e39f6b80929f1ebc77c"
+  },
+  {
+    "route": "/vaults/forgejo",
+    "main_text_equal": true,
+    "local_sha256": "0178715df52859deeca6d82ee824ae11d230a63ebad2c9c247d24506dbb31a06",
+    "live_sha256": "0178715df52859deeca6d82ee824ae11d230a63ebad2c9c247d24506dbb31a06"
+  },
+  {
+    "route": "/vaults/react",
+    "main_text_equal": true,
+    "local_sha256": "268802d5c24bbf7cac79588c0046c023843dd98860fb661d8f046dd5b2918148",
+    "live_sha256": "268802d5c24bbf7cac79588c0046c023843dd98860fb661d8f046dd5b2918148"
+  },
+  {
+    "route": "/vaults/apscheduler",
+    "main_text_equal": true,
+    "local_sha256": "8d14fbe5f0f2eb958bd259cba51377590f443e3bcc0e12bcead4121d3b8cd648",
+    "live_sha256": "8d14fbe5f0f2eb958bd259cba51377590f443e3bcc0e12bcead4121d3b8cd648"
+  },
+  {
+    "route": "/vaults/jupyter",
+    "main_text_equal": true,
+    "local_sha256": "b9edf705e249540c74a511dd358c6d4618a5d5826f25c2d528875a12908a2b25",
+    "live_sha256": "b9edf705e249540c74a511dd358c6d4618a5d5826f25c2d528875a12908a2b25"
+  },
+  {
+    "route": "/vaults/caddy",
+    "main_text_equal": true,
+    "local_sha256": "8e738fea9e7cce6f3f2d9e5047523f88d82d13790159466ea01c820b1ee3a7eb",
+    "live_sha256": "8e738fea9e7cce6f3f2d9e5047523f88d82d13790159466ea01c820b1ee3a7eb"
+  },
+  {
+    "route": "/vaults/adna",
+    "main_text_equal": true,
+    "local_sha256": "7f341bdc5b684b54adba12ffe361560cc3b4c2154c2ebd02603794a9477fbc86",
+    "live_sha256": "7f341bdc5b684b54adba12ffe361560cc3b4c2154c2ebd02603794a9477fbc86"
+  },
+  {
+    "route": "/vaults/git",
+    "main_text_equal": true,
+    "local_sha256": "7f653893e852cb5c7f9c5a73bda7fc3b274dff3cb385116e8daa34bdfe1b2b91",
+    "live_sha256": "7f653893e852cb5c7f9c5a73bda7fc3b274dff3cb385116e8daa34bdfe1b2b91"
+  },
+  {
+    "route": "/vaults/iii",
+    "main_text_equal": true,
+    "local_sha256": "d73e7f7502ff207846be6b7e0910f03dcede643ae77cc80f8751195e8e599b87",
+    "live_sha256": "d73e7f7502ff207846be6b7e0910f03dcede643ae77cc80f8751195e8e599b87"
+  },
+  {
+    "route": "/vaults/threejs",
+    "main_text_equal": true,
+    "local_sha256": "d561669dc6dac47fcef2de1337185c99b1e5c63fc5c03bb2b2702136751d7b94",
+    "live_sha256": "d561669dc6dac47fcef2de1337185c99b1e5c63fc5c03bb2b2702136751d7b94"
+  },
+  {
+    "route": "/vaults/store",
+    "main_text_equal": true,
+    "local_sha256": "f147c98097d18a41abad640e34dd630ca6a2660217cd7c1e4179828921ee746b",
+    "live_sha256": "f147c98097d18a41abad640e34dd630ca6a2660217cd7c1e4179828921ee746b"
+  },
+  {
+    "route": "/use-cases/open-source-project",
+    "main_text_equal": true,
+    "local_sha256": "6da43fe92a8c9b13c3c5309f890dd300c259da57d73ccc3913bf663f83baa358",
+    "live_sha256": "6da43fe92a8c9b13c3c5309f890dd300c259da57d73ccc3913bf663f83baa358"
+  },
+  {
+    "route": "/use-cases/enterprise-team",
+    "main_text_equal": true,
+    "local_sha256": "5867803f7152eaa42053f712d5e715438e0dce1f605600e2de2bc06b5531bae4",
+    "live_sha256": "5867803f7152eaa42053f712d5e715438e0dce1f605600e2de2bc06b5531bae4"
+  },
+  {
+    "route": "/use-cases/educator",
+    "main_text_equal": true,
+    "local_sha256": "31370b86a79368a5072f1a9979b219c45c034f4cc66bc7c12b4474968bd667dc",
+    "live_sha256": "31370b86a79368a5072f1a9979b219c45c034f4cc66bc7c12b4474968bd667dc"
+  },
+  {
+    "route": "/use-cases/research-lab",
+    "main_text_equal": true,
+    "local_sha256": "14143cf3e5f6ac7d101c257e6f0433d5b3d32d59bf5eca5213e0fd05bdacda42",
+    "live_sha256": "14143cf3e5f6ac7d101c257e6f0433d5b3d32d59bf5eca5213e0fd05bdacda42"
+  },
+  {
+    "route": "/use-cases/solo-developer",
+    "main_text_equal": true,
+    "local_sha256": "d1ab95a30682a73c2f977894139bc863c75e132314515793aa11915430f46df5",
+    "live_sha256": "d1ab95a30682a73c2f977894139bc863c75e132314515793aa11915430f46df5"
+  },
+  {
+    "route": "/use-cases/startup",
+    "main_text_equal": true,
+    "local_sha256": "a74b505fe0efaa4a8a29cf24594613cc18370ec66f257adb2ebbb87dc41ae924",
+    "live_sha256": "a74b505fe0efaa4a8a29cf24594613cc18370ec66f257adb2ebbb87dc41ae924"
+  },
+  {
+    "route": "/how/publishing",
+    "main_text_equal": true,
+    "local_sha256": "34873dff76df2985a5c8d67c07816a6716085347b95c4574f47e498865211cc1",
+    "live_sha256": "34873dff76df2985a5c8d67c07816a6716085347b95c4574f47e498865211cc1"
+  },
+  {
+    "route": "/how/workshops",
+    "main_text_equal": true,
+    "local_sha256": "6f1bc99ccabd79ea2c1e500c632866d83f188edc26dca5f321f0d6af205e061f",
+    "live_sha256": "6f1bc99ccabd79ea2c1e500c632866d83f188edc26dca5f321f0d6af205e061f"
+  },
+  {
+    "route": "/how/lattice-examples",
+    "main_text_equal": true,
+    "local_sha256": "528dc213a446af4064a1a7661db310d58701132a57352eb61082d9fc60318bb0",
+    "live_sha256": "528dc213a446af4064a1a7661db310d58701132a57352eb61082d9fc60318bb0"
+  },
+  {
+    "route": "/how/lattice-examples/lattice-campaign-execution",
+    "main_text_equal": true,
+    "local_sha256": "39c49ffe8d07e11074530657ae3c4e119a8f2449938e2f407aaa005648bbce14",
+    "live_sha256": "39c49ffe8d07e11074530657ae3c4e119a8f2449938e2f407aaa005648bbce14"
+  },
+  {
+    "route": "/how/lattice-examples/lattice-dual-audience-review",
+    "main_text_equal": true,
+    "local_sha256": "73a2503436c584f8d314142417d418a43687c079113b8b3c6d9d9061de694ba4",
+    "live_sha256": "73a2503436c584f8d314142417d418a43687c079113b8b3c6d9d9061de694ba4"
+  },
+  {
+    "route": "/how/lattice-examples/lattice-context-serving",
+    "main_text_equal": true,
+    "local_sha256": "a117776e399729ff58f99425e3bb27de439c9adad8fe59335e46906a3ae0d107",
+    "live_sha256": "a117776e399729ff58f99425e3bb27de439c9adad8fe59335e46906a3ae0d107"
+  },
+  {
+    "route": "/how/lattice-examples/lattice-content-pipeline",
+    "main_text_equal": true,
+    "local_sha256": "bf3c7d9e6827af585e8b575b84673b9c2e10186fffd08e63af7cb955e003e147",
+    "live_sha256": "bf3c7d9e6827af585e8b575b84673b9c2e10186fffd08e63af7cb955e003e147"
+  },
+  {
+    "route": "/how/workshops/facilitation-guide",
+    "main_text_equal": true,
+    "local_sha256": "37b7827dc8496c692a450f54928082419c1d34462be5189d919e2c32374d0e61",
+    "live_sha256": "37b7827dc8496c692a450f54928082419c1d34462be5189d919e2c32374d0e61"
+  },
+  {
+    "route": "/how/workshops/vault-exploration",
+    "main_text_equal": true,
+    "local_sha256": "c6fb9e1a3e4f241d336713c6b1c1f8c73b778ab032275781b05993aa7e187369",
+    "live_sha256": "c6fb9e1a3e4f241d336713c6b1c1f8c73b778ab032275781b05993aa7e187369"
+  },
+  {
+    "route": "/how/workshops/build-your-first-vault",
+    "main_text_equal": true,
+    "local_sha256": "e7ee68563ff936fd6b273e185bc7e1e71ddae2ab0e8e25f09c0dec2dad882a7c",
+    "live_sha256": "e7ee68563ff936fd6b273e185bc7e1e71ddae2ab0e8e25f09c0dec2dad882a7c"
+  },
+  {
+    "route": "/how/workshops/lattice-design",
+    "main_text_equal": true,
+    "local_sha256": "0900ef4e880bfd327e296b76319f8fb5c7318526a00f9c210fe2739edc99b4e0",
+    "live_sha256": "0900ef4e880bfd327e296b76319f8fb5c7318526a00f9c210fe2739edc99b4e0"
+  },
+  {
+    "route": "/how/publishing/social-sharing",
+    "main_text_equal": true,
+    "local_sha256": "d8df964067420f53da5f939428fe65d64d6ac64b0fc4211ae7571122707c2b51",
+    "live_sha256": "d8df964067420f53da5f939428fe65d64d6ac64b0fc4211ae7571122707c2b51"
+  },
+  {
+    "route": "/how/publishing/vault-to-site",
+    "main_text_equal": true,
+    "local_sha256": "ff43d4c9009a4f18493ca0acb282781953bbc85a794509490afbaee9ca186e3d",
+    "live_sha256": "ff43d4c9009a4f18493ca0acb282781953bbc85a794509490afbaee9ca186e3d"
+  },
+  {
+    "route": "/how/publishing/content-mapping",
+    "main_text_equal": true,
+    "local_sha256": "506dfb93cdbea2fc95e2894913e844bef611adee90103d2f8e1f65eec292f573",
+    "live_sha256": "506dfb93cdbea2fc95e2894913e844bef611adee90103d2f8e1f65eec292f573"
+  },
+  {
+    "route": "/patterns/dual-audience-writing",
+    "main_text_equal": true,
+    "local_sha256": "637159060a26bad29c59911c8a467f9ff57546dec03ec1d64295e63a40f1140c",
+    "live_sha256": "637159060a26bad29c59911c8a467f9ff57546dec03ec1d64295e63a40f1140c"
+  },
+  {
+    "route": "/patterns/base-extension",
+    "main_text_equal": true,
+    "local_sha256": "296fd3687cc6b902e383bfcb914576a68b072d8913d8213648d9c50aa9f8ed36",
+    "live_sha256": "296fd3687cc6b902e383bfcb914576a68b072d8913d8213648d9c50aa9f8ed36"
+  },
+  {
+    "route": "/patterns/context-recipe",
+    "main_text_equal": true,
+    "local_sha256": "a93657adb17fe34957c73b759f3cf332ae3164060177027e473a4eb55c033f9e",
+    "live_sha256": "a93657adb17fe34957c73b759f3cf332ae3164060177027e473a4eb55c033f9e"
+  },
+  {
+    "route": "/patterns/fair-envelope",
+    "main_text_equal": true,
+    "local_sha256": "9ec2e8f548187369c347d657b84bc9ec71f5e65fa8f124baa27ae8a011517ff3",
+    "live_sha256": "9ec2e8f548187369c347d657b84bc9ec71f5e65fa8f124baa27ae8a011517ff3"
+  },
+  {
+    "route": "/patterns/federation-readiness",
+    "main_text_equal": true,
+    "local_sha256": "8af01fcc9a02474fd392ec4a97cb2db98aebf0d52bcf62335835a28036e1eb3d",
+    "live_sha256": "8af01fcc9a02474fd392ec4a97cb2db98aebf0d52bcf62335835a28036e1eb3d"
+  },
+  {
+    "route": "/patterns/mission-decomposition",
+    "main_text_equal": true,
+    "local_sha256": "3b91d5a57f297b9b651e16a8fe16b4a2739df4c05227d60179fb44f13867f491",
+    "live_sha256": "3b91d5a57f297b9b651e16a8fe16b4a2739df4c05227d60179fb44f13867f491"
+  },
+  {
+    "route": "/patterns/agents-md",
+    "main_text_equal": true,
+    "local_sha256": "a7a4f0ee0c54088af797838f0f8bb194f04c42ad528cf88e3056166aed97929b",
+    "live_sha256": "a7a4f0ee0c54088af797838f0f8bb194f04c42ad528cf88e3056166aed97929b"
+  },
+  {
+    "route": "/patterns/question-test",
+    "main_text_equal": true,
+    "local_sha256": "a2ba5621258ede7f7020832746dcebeafffaae8e2775dbe84a6106466e58b7a5",
+    "live_sha256": "a2ba5621258ede7f7020832746dcebeafffaae8e2775dbe84a6106466e58b7a5"
+  },
+  {
+    "route": "/learn/course",
+    "main_text_equal": true,
+    "local_sha256": "79fa106656283ec3d126e1146b0ff26939e7219baeb8c5800c857589d515f047",
+    "live_sha256": "79fa106656283ec3d126e1146b0ff26939e7219baeb8c5800c857589d515f047"
+  },
+  {
+    "route": "/learn/comparisons",
+    "main_text_equal": true,
+    "local_sha256": "0939867707b501c74588ba1fb63ba5a574824f50d5dddf3b22a78adde57ba620",
+    "live_sha256": "0939867707b501c74588ba1fb63ba5a574824f50d5dddf3b22a78adde57ba620"
+  },
+  {
+    "route": "/learn/what-is-adna",
+    "main_text_equal": true,
+    "local_sha256": "215747a0b0e802dc1fbfe00359bc04d92989b0fd4592e72993f9109c6b017ba0",
+    "live_sha256": "215747a0b0e802dc1fbfe00359bc04d92989b0fd4592e72993f9109c6b017ba0"
+  },
+  {
+    "route": "/learn/concepts",
+    "main_text_equal": true,
+    "local_sha256": "cb08b379e78776c886d495955f75a2160db75732a02d5ea215c4be03354fc8f9",
+    "live_sha256": "cb08b379e78776c886d495955f75a2160db75732a02d5ea215c4be03354fc8f9"
+  },
+  {
+    "route": "/learn/tutorials",
+    "main_text_equal": true,
+    "local_sha256": "1bcc65562fa8c98bf9df5624b8a0a0ecf565ac0174dacde8d83edcc1d987a969",
+    "live_sha256": "1bcc65562fa8c98bf9df5624b8a0a0ecf565ac0174dacde8d83edcc1d987a969"
+  },
+  {
+    "route": "/learn/tutorials/write-a-context-file",
+    "main_text_equal": true,
+    "local_sha256": "fd89d98cfcffd2e9b40b9be176a2e7ac5d50bba1220a50b09f922b611fb6c3d6",
+    "live_sha256": "fd89d98cfcffd2e9b40b9be176a2e7ac5d50bba1220a50b09f922b611fb6c3d6"
+  },
+  {
+    "route": "/learn/tutorials/first-claude-md",
+    "main_text_equal": true,
+    "local_sha256": "4c8cd0c0508cdaa461bb583def673f2124fd2de1e25663b1370ada96e381fa54",
+    "live_sha256": "4c8cd0c0508cdaa461bb583def673f2124fd2de1e25663b1370ada96e381fa54"
+  },
+  {
+    "route": "/learn/tutorials/federate-a-vault",
+    "main_text_equal": true,
+    "local_sha256": "554137610ac55d11740f4553296edae7ed3b90934f2b7b223bafc7376e162a7c",
+    "live_sha256": "554137610ac55d11740f4553296edae7ed3b90934f2b7b223bafc7376e162a7c"
+  },
+  {
+    "route": "/learn/tutorials/build-a-lattice",
+    "main_text_equal": true,
+    "local_sha256": "30201c5ab16da797233bdb8bc615176fa769816f46854e47ee950adf49458bb1",
+    "live_sha256": "30201c5ab16da797233bdb8bc615176fa769816f46854e47ee950adf49458bb1"
+  },
+  {
+    "route": "/learn/tutorials/extend-the-ontology",
+    "main_text_equal": true,
+    "local_sha256": "15f9c39a128b7faf5a6217876522976edcee08d4c8d2baaf0b2a7a707be9fbec",
+    "live_sha256": "15f9c39a128b7faf5a6217876522976edcee08d4c8d2baaf0b2a7a707be9fbec"
+  },
+  {
+    "route": "/learn/tutorials/navigate-a-vault",
+    "main_text_equal": true,
+    "local_sha256": "358b7414b002ebb61ec5133d580ca86ca01b208451441d484906f51e90c441c1",
+    "live_sha256": "358b7414b002ebb61ec5133d580ca86ca01b208451441d484906f51e90c441c1"
+  },
+  {
+    "route": "/learn/tutorials/exchange-adoption-path",
+    "main_text_equal": true,
+    "local_sha256": "676c69aaf8e5f7083e0c9ffb32e9de80d3939c757dcbc8bceda476f4d6d2bc3d",
+    "live_sha256": "676c69aaf8e5f7083e0c9ffb32e9de80d3939c757dcbc8bceda476f4d6d2bc3d"
+  },
+  {
+    "route": "/learn/tutorials/question-test",
+    "main_text_equal": true,
+    "local_sha256": "b903c586c98f448b84e48657c9ae2ef09cc19c2d0a199407ec4cbe458f4914d0",
+    "live_sha256": "b903c586c98f448b84e48657c9ae2ef09cc19c2d0a199407ec4cbe458f4914d0"
+  },
+  {
+    "route": "/learn/tutorials/run-a-campaign",
+    "main_text_equal": true,
+    "local_sha256": "95b5f9a922f5c029682d2f992ced2581bd3bbc8fee88fe3836bffaacb6752ce8",
+    "live_sha256": "95b5f9a922f5c029682d2f992ced2581bd3bbc8fee88fe3836bffaacb6752ce8"
+  },
+  {
+    "route": "/learn/tutorials/design-a-mission",
+    "main_text_equal": true,
+    "local_sha256": "e15278b7bc3f370d183e714b0f07572ccc11834a65b7faf102364c6cf4dbc6ab",
+    "live_sha256": "e15278b7bc3f370d183e714b0f07572ccc11834a65b7faf102364c6cf4dbc6ab"
+  },
+  {
+    "route": "/learn/concepts/fair-metadata",
+    "main_text_equal": true,
+    "local_sha256": "92fd9d560a216eaf3ca9e97b0bcc17c4bd4ff890540e4374697ab5d388df9266",
+    "live_sha256": "92fd9d560a216eaf3ca9e97b0bcc17c4bd4ff890540e4374697ab5d388df9266"
+  },
+  {
+    "route": "/learn/concepts/knowledge-graph",
+    "main_text_equal": true,
+    "local_sha256": "ea72e762d6ee20e10790c1cbd24ed2270b6d5d6decbac82fc59213fe58899726",
+    "live_sha256": "ea72e762d6ee20e10790c1cbd24ed2270b6d5d6decbac82fc59213fe58899726"
+  },
+  {
+    "route": "/learn/concepts/agentic-literacy",
+    "main_text_equal": true,
+    "local_sha256": "228dc35071861a8e7301290e87824dce1c8e854b898744b3d442e26bd51f5b3e",
+    "live_sha256": "228dc35071861a8e7301290e87824dce1c8e854b898744b3d442e26bd51f5b3e"
+  },
+  {
+    "route": "/learn/concepts/triad",
+    "main_text_equal": true,
+    "local_sha256": "10da31a6910dc821a2ba429829efcb3102eb88e1236b50370993efb9c6ee1b03",
+    "live_sha256": "10da31a6910dc821a2ba429829efcb3102eb88e1236b50370993efb9c6ee1b03"
+  },
+  {
+    "route": "/learn/concepts/dual-audience",
+    "main_text_equal": true,
+    "local_sha256": "8de3ac20e423b02d4c4bf217908bd226478e9fe1e8e9af2469c544a0174c7c9d",
+    "live_sha256": "8de3ac20e423b02d4c4bf217908bd226478e9fe1e8e9af2469c544a0174c7c9d"
+  },
+  {
+    "route": "/learn/concepts/ontology",
+    "main_text_equal": true,
+    "local_sha256": "4fd9e19f653698b111426d0ff5180bd83524c63719e404df634dcdf8a2426c4b",
+    "live_sha256": "4fd9e19f653698b111426d0ff5180bd83524c63719e404df634dcdf8a2426c4b"
+  },
+  {
+    "route": "/learn/concepts/convergence",
+    "main_text_equal": true,
+    "local_sha256": "eac8210f61f3d577b59e711e9d0335d93b2d1f82ec4912532c559130fb0cd5ce",
+    "live_sha256": "eac8210f61f3d577b59e711e9d0335d93b2d1f82ec4912532c559130fb0cd5ce"
+  },
+  {
+    "route": "/learn/concepts/lattice-composition",
+    "main_text_equal": true,
+    "local_sha256": "2a6069f91649d89925cc91b90e46ea37fc5e0db3a82a9c132d512f203bce07d2",
+    "live_sha256": "2a6069f91649d89925cc91b90e46ea37fc5e0db3a82a9c132d512f203bce07d2"
+  },
+  {
+    "route": "/learn/concepts/token-selection",
+    "main_text_equal": true,
+    "local_sha256": "1f9527bc84fa3676540890bdea0c68bd7c4a3acf79f15cd42de36b624e9b6951",
+    "live_sha256": "1f9527bc84fa3676540890bdea0c68bd7c4a3acf79f15cd42de36b624e9b6951"
+  },
+  {
+    "route": "/learn/concepts/context-optimization",
+    "main_text_equal": true,
+    "local_sha256": "7ad2265e460c1bc8ad61271d7a3ddc2a49596f2c1031bebc212c3b4d1b18a494",
+    "live_sha256": "7ad2265e460c1bc8ad61271d7a3ddc2a49596f2c1031bebc212c3b4d1b18a494"
+  },
+  {
+    "route": "/learn/concepts/governance-files",
+    "main_text_equal": true,
+    "local_sha256": "03b81fbb6b480d49995ecea3b2b00dffa84a9b8af1f752f3d69a13ff482a2df1",
+    "live_sha256": "03b81fbb6b480d49995ecea3b2b00dffa84a9b8af1f752f3d69a13ff482a2df1"
+  },
+  {
+    "route": "/learn/concepts/context-commons",
+    "main_text_equal": true,
+    "local_sha256": "27128655b84489c3af5f7b961f695e9f77535e77752b439ce867278ffb96ca78",
+    "live_sha256": "27128655b84489c3af5f7b961f695e9f77535e77752b439ce867278ffb96ca78"
+  },
+  {
+    "route": "/learn/concepts/open-standard",
+    "main_text_equal": true,
+    "local_sha256": "9bc9266f7247d507f93c15604c3da90e5ab252f067ef7e3d6ffd1a751ac729d2",
+    "live_sha256": "9bc9266f7247d507f93c15604c3da90e5ab252f067ef7e3d6ffd1a751ac729d2"
+  },
+  {
+    "route": "/learn/comparisons/adna-vs-para",
+    "main_text_equal": true,
+    "local_sha256": "6cb5c1af083697b0972f9f55fdde59cb723a8d3355a0c0fef02132626da54536",
+    "live_sha256": "6cb5c1af083697b0972f9f55fdde59cb723a8d3355a0c0fef02132626da54536"
+  },
+  {
+    "route": "/learn/comparisons/adna-vs-notion",
+    "main_text_equal": true,
+    "local_sha256": "383967f055761afb312379f85eb3de275791e86614dfe2a95ff35205f0c871e8",
+    "live_sha256": "383967f055761afb312379f85eb3de275791e86614dfe2a95ff35205f0c871e8"
+  },
+  {
+    "route": "/learn/comparisons/adna-vs-plain-markdown",
+    "main_text_equal": true,
+    "local_sha256": "9f0b4ff1d0cbe1a60f75a76167d784aec91a422dffe0e12c48659c8f06b9ab90",
+    "live_sha256": "9f0b4ff1d0cbe1a60f75a76167d784aec91a422dffe0e12c48659c8f06b9ab90"
+  },
+  {
+    "route": "/learn/comparisons/adna-vs-zettelkasten",
+    "main_text_equal": true,
+    "local_sha256": "141640aab75bf7f9f9b561b6dab099f17fa13ebd1fa970a953ea745b8171877a",
+    "live_sha256": "141640aab75bf7f9f9b561b6dab099f17fa13ebd1fa970a953ea745b8171877a"
+  },
+  {
+    "route": "/learn/comparisons/adna-vs-johnny-decimal",
+    "main_text_equal": true,
+    "local_sha256": "72f24b0eef4b4bd7e551f6f719ce1c632466aa0e48241e1bd714ad2353553822",
+    "live_sha256": "72f24b0eef4b4bd7e551f6f719ce1c632466aa0e48241e1bd714ad2353553822"
+  },
+  {
+    "route": "/learn/course/four-files-your-agent-reads-first",
+    "main_text_equal": true,
+    "local_sha256": "1432e20495c238b7a1b12eb894d8ef27255d6147aa39c9eada6f9e61bd210a70",
+    "live_sha256": "1432e20495c238b7a1b12eb894d8ef27255d6147aa39c9eada6f9e61bd210a70"
+  },
+  {
+    "route": "/learn/course/what-is-an-adna-graph",
+    "main_text_equal": true,
+    "local_sha256": "7eb82d45b9be15d626c2f2d19db1115aba3943493f2187014a5c692fa8110bc8",
+    "live_sha256": "7eb82d45b9be15d626c2f2d19db1115aba3943493f2187014a5c692fa8110bc8"
+  }
+]

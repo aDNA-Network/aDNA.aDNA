@@ -1,0 +1,53 @@
+{
+  "adna": {
+    "rows": 588,
+    "missing_png": 0,
+    "statuses": {
+      "200": 576,
+      "404": 12
+    },
+    "axe_violations": 0,
+    "missing_axe": 0,
+    "console_error_rows": 12
+  },
+  "mastra": {
+    "rows": 48,
+    "missing_png": 0,
+    "statuses": {
+      "200": 48
+    },
+    "axe_violations": 12,
+    "missing_axe": 0,
+    "console_error_rows": 48
+  },
+  "nous": {
+    "rows": 36,
+    "missing_png": 0,
+    "statuses": {
+      "403": 36
+    },
+    "axe_violations": 58,
+    "missing_axe": 0,
+    "console_error_rows": 36
+  },
+  "nous_hermes": {
+    "rows": 48,
+    "missing_png": 0,
+    "statuses": {
+      "200": 48
+    },
+    "axe_violations": 178,
+    "missing_axe": 0,
+    "console_error_rows": 0
+  },
+  "nous_releases": {
+    "rows": 24,
+    "missing_png": 0,
+    "statuses": {
+      "403": 24
+    },
+    "axe_violations": 38,
+    "missing_axe": 0,
+    "console_error_rows": 24
+  }
+}

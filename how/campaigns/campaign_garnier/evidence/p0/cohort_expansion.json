@@ -1,0 +1,1151 @@
+[
+  {
+    "name": "cohort_extra_0",
+    "url": "https://nousresearch.com/releases/",
+    "final_url": "https://nousresearch.com/releases",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:55.447097+00:00",
+    "sha256": "144ed37ba824fef1e1e1c191161e05f8893937021df0062274975a145271e8f7",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_0.body",
+    "headers": {
+      "Last-Modified": "Sat, 12 Sep 2026 21:38:31 GMT",
+      "Strict-Transport-Security": "max-age=63072000"
+    },
+    "title": "Releases - NOUS RESEARCH",
+    "canonical": "https://nousresearch.com/releases/",
+    "headings": [
+      [
+        "h2",
+        " NOUS RELEASES"
+      ]
+    ],
+    "links": [
+      "#content",
+      "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjE3NjEiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
+      "/",
+      "https://hermes-agent.nousresearch.com/",
+      "https://portal.nousresearch.com/",
+      "/careers/",
+      "/releases/",
+      "https://shop.nousresearch.com",
+      "/blog/",
+      "/",
+      "https://hermes-agent.nousresearch.com/",
+      "https://portal.nousresearch.com/",
+      "https://chat.nousresearch.com",
+      "/careers/",
+      "/releases/",
+      "https://shop.nousresearch.com",
+      "/blog/",
+      "https://hermes-agent.nousresearch.com/",
+      "https://huggingface.co/NousResearch/NousCoder-14B",
+      "https://huggingface.co/NousResearch/nomos-1",
+      "https://huggingface.co/NousResearch/Hermes-4.3-36B",
+      "/wp-content/uploads/2025/08/Hermes_4_Technical_Report.pdf",
+      "https://huggingface.co/collections/NousResearch/hermes-4-collection-68a731bfd452e20816725728",
+      "https://huggingface.co/collections/NousResearch/hermes-4-collection-68a731bfd452e20816725728",
+      "https://huggingface.co/collections/NousResearch/hermes-4-collection-68a731bfd452e20816725728",
+      "/measuring-thinking-efficiency-in-reasoning-models-the-missing-benchmark/",
+      "https://huggingface.co/datasets/NousResearch/Hermes-3-Dataset",
+      "/hermes-agent//",
+      "https://psyche.network/",
+      "https://github.com/NousResearch/atropos",
+      "https://huggingface.co/NousResearch/DeepHermes-3-Llama-3-8B-Preview",
+      "https://huggingface.co/NousResearch/Hermes-3-Llama-3.2-3B",
+      "https://x.com/god",
+      "https://x.com/s8n",
+      "https://arxiv.org/pdf/2411.19870",
+      "https://hermes.nousresearch.com",
+      "https://x.com/tee_hee_he",
+      "https://github.com/NousResearch/DisTrO/blob/main/A_Preliminary_Report_on_DisTrO.pdf",
+      "https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B",
+      "https://x.com/karan4d/status/1768836844207378463",
+      "/wp-content/uploads/2024/08/Hermes-3-Technical-Report.pdf",
+      "https://huggingface.co/NousResearch/Hermes-2-Pro-Llama-3-70B",
+      "https://huggingface.co/NousResearch/Hermes-2-Theta-Llama-3-70B-GGUF",
+      "https://huggingface.co/datasets/NousResearch/CharacterCodex",
+      "https://worldsim.nousresearch.com/",
+      "https://huggingface.co/NousResearch/Hermes-2-Pro-Mistral-7B",
+      "https://huggingface.co/NousResearch/Genstruct-7B",
+      "/wp-content/uploads/2024/03/NOUS-BRAND-BOOKLET-firstedition_1.pdf",
+      "https://huggingface.co/NousResearch/Nous-Hermes-2-Mistral-7B-DPO",
+      "https://github.com/NousResearch/finetuning-subnet",
+      "https://huggingface.co/NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO",
+      "https://huggingface.co/NousResearch/Nous-Hermes-2-Mixtral-8x7B-SFT",
+      "https://huggingface.co/NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO-GGUF",
+      "https://huggingface.co/NousResearch/Nous-Hermes-2-Yi-34B",
+      "https://huggingface.co/NousResearch/Nous-Capybara-34B",
+      "https://huggingface.co/NousResearch/Yarn-Mistral-7b-128k",
+      "https://huggingface.co/NousResearch/Obsidian-3B-V0.5",
+      "https://github.com/NousResearch/Obsidian",
+      "https://arxiv.org/abs/2309.00071",
+      "https://huggingface.co/NousResearch/Nous-Hermes-Llama2-13b",
+      "/",
+      "/",
+      "https://hermes-agent.nousresearch.com/",
+      "https://portal.nousresearch.com/",
+      "/careers/",
+      "/releases/",
+      "/careers/",
+      "https://shop.nousresearch.com",
+      "/blog/",
+      "/",
+      "https://hermes-agent.nousresearch.com/",
+      "https://portal.nousresearch.com/",
+      "https://chat.nousresearch.com",
+      "/careers/",
+      "/releases/",
+      "/careers/",
+      "https://shop.nousresearch.com",
+      "/blog/",
+      "https://huggingface.co/NousResearch",
+      "https://discord.gg/jqVphNsB4H",
+      "https://www.linkedin.com/company/nousresearch/",
+      "https://twitter.com/nousresearch",
+      "/cdn-cgi/l/email-protection#5b303a293a351b35342e28293e283e3a29383375383436",
+      "https://github.com/NousResearch",
+      "/careers/",
+      "/",
+      "https://sims.nousresearch.com",
+      "/blog",
+      "https://huggingface.co/NousResearch",
+      "https://discord.gg/jqVphNsB4H",
+      "https://www.linkedin.com/company/nousresearch/",
+      "https://twitter.com/nousresearch",
+      "/cdn-cgi/l/email-protection#660d071407082608091315140315030714050e4805090b",
+      "https://github.com/NousResearch"
+    ],
+    "main_words": 0,
+    "body_words": 553,
+    "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_0.txt"
+  },
+  {
+    "name": "cohort_extra_1",
+    "url": "https://nousresearch.com/blog/",
+    "final_url": "https://nousresearch.com/blog",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:55.447849+00:00",
+    "sha256": "0c423b835c8c7195d3ae1bc683253cb3455b327d642fcaae5b59c092e8b6c9be",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_1.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 02:30:59 GMT",
+      "Strict-Transport-Security": "max-age=63072000"
+    },
+    "title": "Blog - NOUS RESEARCH",
+    "canonical": "https://nousresearch.com/blog/",
+    "headings": [
+      [
+        "h2",
+        " NOUS BLOG"
+      ],
+      [
+        "h1",
+        " Model Neuroscience: Dissecting Behavioral Change With Targeted Contrastive Neuron Attribution"
+      ],
+      [
+        "h1",
+        " Lighthouse Attention"
+      ],
+      [
+        "h1",
+        " Efficient pretraining with token superposition"
+      ],
+      [
+        "h1",
+        " Field Notes on Scaling MoE Expert Parallelism with DeepEP"
+      ],
+      [
+        "h1",
+        " NousCoder-14B: A Competitive Olympiad Programming Model"
+      ],
+      [
+        "h1",
+        " Introducing Hermes 4.3: Local Intelligence Globally Trained"
+      ],
+      [
+        "h1",
+        " tinker-atropos: An Integration Layer for the Tinker API and Atropos RL Framework"
+      ],
+      [
+        "h1",
+        " The Next Phase of Psyche"
+      ],
+      [
+        "h1",
+        " Measuring Thinking Efficiency in Reasoning Models: The Missing Benchmark"
+      ],
+      [
+        "h1",
+        " Steering the Shoggoth: Taming LLMs with Sequential Monte Carlo"
+      ],
+      [
+        "h1",
+        " Democratizing AI: The Psyche Network Architecture"
+      ],
+      [
+        "h1",
+        " Introducing Atropos"
+      ],
+      [
+        "h1",
+        " Introducing the Forge Reasoning API Beta and Nous Chat: An Evolution in LLM Inference"
+      ],
+      [
+        "h1",
+        " Setting Your Pet Rock Free."
+      ],
+      [
+        "h1",
+        " From Black Box to Glass House: The Imperative For Transparent AI Development"
+      ],
+      [
+        "h1",
+        " Freedom at the Frontier: Hermes 3"
+      ],
+      [
+        "h1",
+        " The Instruct Monomyth: why base models matter"
+      ],
+      [
+        "h1",
+        " DSJJJJ: Simulacra in the Stupor of Becoming"
+      ]
+    ],
+    "links": [
+      "#content",
+      "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjE3NjEiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
+      "/",
+      "https://hermes-agent.nousresearch.com/",
+      "https://portal.nousresearch.com/",
+      "/careers/",
+      "/releases/",
+      "https://shop.nousresearch.com",
+      "/blog/",
+      "/",
+      "https://hermes-agent.nousresearch.com/",
+      "https://portal.nousresearch.com/",
+      "https://chat.nousresearch.com",
+      "/careers/",
+      "/releases/",
+      "https://shop.nousresearch.com",
+      "/blog/",
+      "/neuron-steering/",
+      "/lighthouse-attention/",
+      "/token-superposition/",
+      "/moe-scaling-field-notes/",
+      "/nouscoder-14b-a-competitive-olympiad-programming-model/",
+      "/introducing-hermes-4-3/",
+      "/tinker-atropos-blog/",
+      "/the-next-phase-of-psyche/",
+      "/measuring-thinking-efficiency-in-reasoning-models-the-missing-benchmark/",
+      "/steering-the-shoggoth-taming-llms-with-sequential-monte-carlo/",
+      "/nous-psyche/",
+      "/introducing-atropos/",
+      "/introducing-the-forge-reasoning-api-beta-and-nous-chat-an-evolution-in-llm-inference/",
+      "/setting-your-pet-rock-free/",
+      "/from-black-box-to-glass-house-the-imperative-for-transparent-ai-development/",
+      "/freedom-at-the-frontier-hermes-3/",
+      "/the-instruct-monomyth/",
+      "/dsjjjj-simulacra-in-the-stupor-of-becoming/",
+      "/",
+      "/",
+      "https://hermes-agent.nousresearch.com/",
+      "https://portal.nousresearch.com/",
+      "/careers/",
+      "/releases/",
+      "https://shop.nousresearch.com",
+      "/blog/",
+      "/",
+      "https://hermes-agent.nousresearch.com/",
+      "https://portal.nousresearch.com/",
+      "https://chat.nousresearch.com",
+      "/careers/",
+      "/releases/",
+      "https://shop.nousresearch.com",
+      "/blog/",
+      "https://huggingface.co/NousResearch",
+      "https://discord.gg/jqVphNsB4H",
+      "https://www.linkedin.com/company/nousresearch/",
+      "https://twitter.com/nousresearch",
+      "/cdn-cgi/l/email-protection#aec5cfdccfc0eec0c1dbdddccbddcbcfdccdc680cdc1c3",
+      "https://github.com/NousResearch",
+      "/careers/",
+      "/",
+      "https://sims.nousresearch.com",
+      "/blog",
+      "https://huggingface.co/NousResearch",
+      "https://discord.gg/jqVphNsB4H",
+      "https://www.linkedin.com/company/nousresearch/",
+      "https://twitter.com/nousresearch",
+      "/cdn-cgi/l/email-protection#f893998a9996b896978d8b8a9d8b9d998a9b90d69b9795",
+      "https://github.com/NousResearch"
+    ],
+    "main_words": 0,
+    "body_words": 892,
+    "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_1.txt"
+  },
+  {
+    "name": "cohort_extra_2",
+    "url": "https://hermes-agent.nousresearch.com/",
+    "final_url": "https://hermes-agent.nousresearch.com/",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:55.449113+00:00",
+    "sha256": "4bd4d23456499ea4f7793a0c54867139b3a312877d50ec3fb8d4c7d73eb3db56",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_2.body",
+    "headers": {
+      "Strict-Transport-Security": "max-age=63072000",
+      "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+    },
+    "title": "Hermes Agent \u2014 Open-Source AI Agent That Grows With You | Nous Research",
+    "canonical": "https://hermes-agent.nousresearch.com",
+    "headings": [
+      [
+        "h1",
+        " The Agent That Grows With You"
+      ],
+      [
+        "h2",
+        " Hermes Desktop App"
+      ],
+      [
+        "h3",
+        " Mac OS"
+      ],
+      [
+        "h3",
+        " Windows"
+      ],
+      [
+        "h3",
+        " Linux"
+      ],
+      [
+        "h2",
+        " Features"
+      ],
+      [
+        "h3",
+        " Lives Everywhere"
+      ],
+      [
+        "h3",
+        " Persistent Memory"
+      ],
+      [
+        "h3",
+        " Focused Automation"
+      ],
+      [
+        "h3",
+        " Tasks Multiplied"
+      ],
+      [
+        "h3",
+        " Browse the Web"
+      ],
+      [
+        "h3",
+        " Isolated Sandboxing"
+      ],
+      [
+        "h2",
+        " FAQs"
+      ],
+      [
+        "h3",
+        " How does pricing work?"
+      ],
+      [
+        "h3",
+        " How do I get started?"
+      ],
+      [
+        "h3",
+        " How do I chat with my agent?"
+      ],
+      [
+        "h3",
+        " Does my agent keep its data between sessions?"
+      ],
+      [
+        "h3",
+        " What happens when I stop my agent?"
+      ],
+      [
+        "h2",
+        " Nous Portal"
+      ]
+    ],
+    "links": [
+      "https://nousresearch.com",
+      "/",
+      "/docs",
+      "/",
+      "https://discord.gg/nousresearch",
+      "https://github.com/NousResearch/hermes-agent",
+      "https://x.com/NousResearch",
+      "https://discord.gg/nousresearch",
+      "https://portal.nousresearch.com",
+      "#install",
+      "https://nousresearch.com",
+      "/",
+      "/docs",
+      "/",
+      "https://discord.gg/nousresearch",
+      "https://portal.nousresearch.com",
+      "#install",
+      "#install",
+      "#downloads",
+      "https://portal.nousresearch.com/cloud",
+      "https://hermes-assets.nousresearch.com/Hermes-Setup.dmg?build=4d55ca91656a",
+      "https://hermes-assets.nousresearch.com/Hermes-Setup.exe?build=4d55ca91656a",
+      "#install",
+      "/docs",
+      "/docs",
+      "https://portal.nousresearch.com/",
+      "https://portal.nousresearch.com/login",
+      "https://portal.nousresearch.com/manage-subscription",
+      "https://portal.nousresearch.com/manage-subscription",
+      "https://portal.nousresearch.com/manage-subscription",
+      "https://portal.nousresearch.com/manage-subscription",
+      "https://portal.nousresearch.com/manage-subscription",
+      "https://portal.nousresearch.com/terms",
+      "https://portal.nousresearch.com/privacy",
+      "mailto:contact@nousresearch.com",
+      "https://nousresearch.com",
+      "https://nousresearch.com/releases",
+      "https://nousresearch.com/careers",
+      "https://nousresearch.com/blog",
+      "https://shop.nousresearch.com",
+      "mailto:contact@nousresearch.com",
+      "/",
+      "https://portal.nousresearch.com/business",
+      "https://portal.nousresearch.com/business#hermes-pro",
+      "#install",
+      "#downloads",
+      "#downloads",
+      "#install",
+      "https://portal.nousresearch.com/cloud",
+      "https://discord.gg/nousresearch",
+      "https://github.com/NousResearch/hermes-agent",
+      "https://x.com/NousResearch",
+      "https://www.youtube.com/@Nousresearch",
+      "https://portal.nousresearch.com/login",
+      "https://portal.nousresearch.com/login",
+      "https://portal.nousresearch.com/manage-subscription",
+      "https://discord.gg/nousresearch",
+      "https://github.com/NousResearch/hermes-agent",
+      "https://x.com/NousResearch",
+      "https://portal.nousresearch.com/terms",
+      "https://portal.nousresearch.com/privacy"
+    ],
+    "main_words": 0,
+    "body_words": 637,
+    "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_2.txt"
+  },
+  {
+    "name": "cohort_extra_3",
+    "url": "https://nousresearch.com/llms.txt",
+    "final_url": "https://nousresearch.com/llms.txt",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:55.449247+00:00",
+    "sha256": "3785c8d0b91b668078aaa2bf41f2668c08d0a4c94f142146bbe324b11ea7c00b",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_3.body",
+    "headers": {
+      "Last-Modified": "Thu, 10 Sep 2026 19:53:46 GMT",
+      "Strict-Transport-Security": "max-age=63072000"
+    }
+  },
+  {
+    "name": "cohort_extra_4",
+    "url": "https://nousresearch.com/robots.txt",
+    "final_url": "https://nousresearch.com/robots.txt",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:55.502489+00:00",
+    "sha256": "a7f20c29fdf53e450a5e08a93511fa860450af4d96aab58e2a7fb8e4283d9471",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_4.body",
+    "headers": {
+      "Last-Modified": "Thu, 10 Sep 2026 00:46:35 GMT",
+      "Strict-Transport-Security": "max-age=63072000"
+    }
+  },
+  {
+    "name": "cohort_extra_5",
+    "url": "https://mastra.ai/llms.txt",
+    "final_url": "https://mastra.ai/llms.txt",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:55.531975+00:00",
+    "sha256": "a1c0f1b71631c655900b0b2b4eeeb1aa3b3805f0482f4fb155f30188b70b5c0c",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_5.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 08:01:42 GMT",
+      "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload"
+    }
+  },
+  {
+    "name": "cohort_extra_6",
+    "url": "https://mastra.ai/robots.txt",
+    "final_url": "https://mastra.ai/robots.txt",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:55.559886+00:00",
+    "sha256": "0b61ab5fbd6c6cee1f2b2fabdd82502e5203253e00e69478325bfda13cd7b735",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_6.body",
+    "headers": {
+      "Last-Modified": "Mon, 14 Sep 2026 16:23:18 GMT",
+      "Strict-Transport-Security": "max-age=63072000"
+    }
+  },
+  {
+    "name": "cohort_extra_7",
+    "url": "https://mastra.ai/about",
+    "final_url": "https://mastra.ai/about",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:55.566368+00:00",
+    "sha256": "87ac407a911ba7153740c55d47135e23a97da767740d271ec6614fc51f236050",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_7.body",
+    "headers": {
+      "Strict-Transport-Security": "max-age=63072000",
+      "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+    },
+    "title": "About Mastra: The Team Behind the TypeScript Agent Framework | Mastra",
+    "canonical": "https://mastra.ai/about",
+    "headings": [
+      [
+        "h1",
+        " The team building the TypeScript agent framework"
+      ],
+      [
+        "h2",
+        " Our story"
+      ],
+      [
+        "h2",
+        " Backed by the world's top investors"
+      ],
+      [
+        "h2",
+        " The team"
+      ],
+      [
+        "h2",
+        " Interested in joining the team?"
+      ],
+      [
+        "h2",
+        " Framework"
+      ],
+      [
+        "h2",
+        " Product"
+      ],
+      [
+        "h2",
+        " Developers"
+      ],
+      [
+        "h2",
+        " Resources"
+      ],
+      [
+        "h2",
+        " Company"
+      ],
+      [
+        "h2",
+        " Connect"
+      ]
+    ],
+    "links": [
+      "/",
+      "https://luma.com/mastra-gogz",
+      "/",
+      "https://luma.com/mastra-gogz",
+      "/pricing",
+      "/customers",
+      "/docs",
+      "/ai-agent-framework",
+      "/factory",
+      "/platform-observability",
+      "/studio",
+      "/agent-builder",
+      "/ai-agent-deployment",
+      "/internal-agents",
+      "/customer-facing-agents",
+      "/developer-platform-agents",
+      "/docs",
+      "/templates",
+      "/learn",
+      "/blog",
+      "/research",
+      "https://github.com/mastra-ai/mastra/releases",
+      "/books/principles-of-building-ai-agents",
+      "/books/patterns-of-building-ai-agents",
+      "/workshops",
+      "/podcasts",
+      "https://github.com/mastra-ai/mastra",
+      "/ai-agent-framework",
+      "/factory",
+      "/platform-observability",
+      "/studio",
+      "/agent-builder",
+      "/ai-agent-deployment",
+      "/internal-agents",
+      "/customer-facing-agents",
+      "/developer-platform-agents",
+      "/docs",
+      "/templates",
+      "/learn",
+      "/blog",
+      "/research",
+      "https://github.com/mastra-ai/mastra/releases",
+      "/books/principles-of-building-ai-agents",
+      "/books/patterns-of-building-ai-agents",
+      "/workshops",
+      "/podcasts",
+      "/pricing",
+      "/customers",
+      "/docs",
+      "/contact",
+      "https://github.com/mastra-ai/mastra",
+      "/careers",
+      "/careers",
+      "/docs",
+      "#top",
+      "/ai-agents",
+      "/rag-pipeline",
+      "/ai-workflows",
+      "/ai-agent-observability",
+      "/ai-agent-framework",
+      "/platform-observability",
+      "/studio",
+      "/agent-builder",
+      "/ai-agent-deployment",
+      "/docs",
+      "https://github.com/mastra-ai/mastra/releases",
+      "/templates",
+      "/learn",
+      "/blog",
+      "/research",
+      "/articles",
+      "/books/principles-of-building-ai-agents",
+      "/books/patterns-of-building-ai-agents",
+      "/podcasts",
+      "/about",
+      "/customers",
+      "/careers",
+      "/contact",
+      "/newsletter",
+      "/contact",
+      "https://github.com/mastra-ai/mastra",
+      "https://discord.gg/mastra-ai",
+      "https://www.youtube.com/@mastra-ai",
+      "https://x.com/@mastra",
+      "https://trust.mastra.ai",
+      "https://statuspage.incident.io/mastra-platform",
+      "/privacy-policy",
+      "/terms-of-service",
+      "/legal/dpa",
+      "/llms.txt"
+    ],
+    "main_words": 332,
+    "body_words": 693,
+    "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_7.txt"
+  },
+  {
+    "name": "cohort_extra_8",
+    "url": "https://mastra.ai/guides/getting-started/quickstart",
+    "final_url": "https://mastra.ai/docs",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:55.572320+00:00",
+    "sha256": "901ee0cff2f191d63e91fb381df0ae0e1a24244d23cc81ae6d2904923f5a6d7a",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_8.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 07:51:47 GMT",
+      "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload"
+    },
+    "title": "Get started with Mastra | Mastra Docs",
+    "canonical": "https://mastra.ai/docs",
+    "headings": [
+      [
+        "h1",
+        " Get started"
+      ],
+      [
+        "h2",
+        " Quickstart Direct link to Quickstart"
+      ],
+      [
+        "h2",
+        " Integrate with your framework Direct link to Integrate with your framework"
+      ],
+      [
+        "h2",
+        " Templates Direct link to Templates"
+      ],
+      [
+        "h2",
+        " Use cases Direct link to Use cases"
+      ]
+    ],
+    "links": [
+      "#__docusaurus_skipToContent_fallback",
+      "/docs",
+      "/docs",
+      "/models",
+      "/integrations",
+      "/reference",
+      "/learn",
+      "/docs/mastra-platform/overview",
+      "https://github.com/mastra-ai/mastra",
+      "/docs",
+      "/docs/develop",
+      "/docs/agents/overview",
+      "/docs/workflows/overview",
+      "/docs/harness/overview",
+      "/docs/memory/overview",
+      "/docs/subagents",
+      "/docs/skills",
+      "/docs/channels",
+      "/docs/sandbox/overview",
+      "/docs/browser",
+      "/docs/connections/overview",
+      "/docs/storage",
+      "/docs/server/overview",
+      "/docs/studio/overview",
+      "/docs/auth/overview",
+      "/docs/deployment/overview",
+      "/docs/observability/overview",
+      "/docs/observability/metrics/overview",
+      "/docs/evals/overview",
+      "/docs/guides/multi-agent-systems",
+      "https://mastra.ai/models/environment-variables",
+      "https://mastra.ai/models",
+      "https://mastra.ai/models",
+      "#quickstart",
+      "/docs/studio/overview",
+      "#integrate-with-your-framework",
+      "/integrations/frameworks/next-js",
+      "/integrations/frameworks/vite-react",
+      "/integrations/frameworks/astro",
+      "/integrations/frameworks/express",
+      "/integrations/frameworks/sveltekit",
+      "/integrations/frameworks/hono",
+      "/integrations",
+      "#templates",
+      "https://mastra.ai/templates",
+      "#use-cases",
+      "/customers/replit",
+      "/customers/fireworks-xml-prompting",
+      "/customers/medusa-ecommerce",
+      "/customers/vetnio",
+      "/customers/lua-scaling",
+      "/templates/docs-chatbot",
+      "/templates/slack-agent",
+      "https://factory.mastra.ai/",
+      "/customers/factorial",
+      "/customers/counsel-health",
+      "/customers/cedar",
+      "/customers/softbank",
+      "/templates/chat-with-pdf",
+      "/templates/google-sheets-analysis",
+      "/customers/index",
+      "/customers/plaid",
+      "/templates/text-to-sql",
+      "/templates/csv-to-questions",
+      "/customers/sanity",
+      "/templates/chat-with-youtube",
+      "/templates/flash-cards-from-pdf",
+      "/customers/starsling",
+      "/templates/github-pr-code-review-agent",
+      "/templates/browsing-agent",
+      "/customers/kestral",
+      "/customers/orange-collective-vc-operating-system",
+      "/customers/workos",
+      "/templates/customer-feedback-summarization",
+      "https://www.youtube.com/watch?v=NosES9aJxCc",
+      "https://github.com/mastra-ai/mastra/tree/main/docs/src/content/en/docs/index.mdx",
+      "/docs/develop",
+      "#quickstart",
+      "#integrate-with-your-framework",
+      "#templates",
+      "#use-cases",
+      "https://kapa.ai",
+      "https://mastra.ai/ai-agent-framework",
+      "https://mastra.ai/platform-observability",
+      "https://mastra.ai/studio",
+      "https://mastra.ai/factory",
+      "https://mastra.ai/agent-builder",
+      "/docs",
+      "https://factory.mastra.ai",
+      "https://code.mastra.ai",
+      "https://agent-builder.mastra.ai",
+      "https://mastra.ai/blog",
+      "https://github.com/mastra-ai/mastra/releases",
+      "https://mastra.ai/research",
+      "https://mastra.ai/podcasts",
+      "/docs/license",
+      "https://mastra.ai/about",
+      "https://mastra.ai/customers",
+      "https://mastra.ai/careers",
+      "https://mastra.ai/newsletter",
+      "https://mastra.ai/contact",
+      "https://github.com/mastra-ai/mastra",
+      "https://discord.gg/mastra-ai",
+      "https://www.youtube.com/@mastra-ai",
+      "https://x.com/@mastra"
+    ],
+    "main_words": 1472,
+    "body_words": 1523,
+    "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_8.txt"
+  },
+  {
+    "name": "cohort_extra_9",
+    "url": "https://mastra.ai/research/observational-memory",
+    "final_url": "https://mastra.ai/research/observational-memory",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:55.596319+00:00",
+    "sha256": "4f927cbfd2db7695b4a2bb114864ccf9c78e165082c137ef9220556cb3b67a29",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_9.body",
+    "headers": {
+      "Strict-Transport-Security": "max-age=63072000",
+      "Vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+    },
+    "title": "Observational Memory: 95% on LongMemEval | Mastra Research",
+    "canonical": "https://mastra.ai/research/observational-memory",
+    "headings": [
+      [
+        "h1",
+        " Observational Memory: 95% on LongMemEval"
+      ],
+      [
+        "h2",
+        " What is Observational Memory?"
+      ],
+      [
+        "h2",
+        " Results"
+      ],
+      [
+        "h3",
+        " gpt-4o comparison"
+      ],
+      [
+        "h3",
+        " gemini-3-pro comparison"
+      ],
+      [
+        "h3",
+        " gpt-5-mini comparison"
+      ],
+      [
+        "h3",
+        " Leaderboard"
+      ],
+      [
+        "h3",
+        " Scaling"
+      ],
+      [
+        "h3",
+        " Context window economics"
+      ],
+      [
+        "h2",
+        " Methodology: Observational Memory architecture"
+      ],
+      [
+        "h3",
+        " 1. Three-tier system"
+      ],
+      [
+        "h3",
+        " 2. The Observer"
+      ],
+      [
+        "h3",
+        " 3. The Reflector"
+      ],
+      [
+        "h3",
+        " 4. Temporal anchoring"
+      ],
+      [
+        "h3",
+        " 5. Token budgets"
+      ],
+      [
+        "h3",
+        " 6. Observation format"
+      ],
+      [
+        "h2",
+        " How to reproduce"
+      ],
+      [
+        "h2",
+        " Limitations"
+      ],
+      [
+        "h3",
+        " Where OM struggles"
+      ],
+      [
+        "h2",
+        " Backstory"
+      ],
+      [
+        "h3",
+        " Why LongMemEval?"
+      ],
+      [
+        "h3",
+        " Why not LoCoMo?"
+      ],
+      [
+        "h3",
+        " Isn't this compaction?"
+      ],
+      [
+        "h2",
+        " Conclusion"
+      ],
+      [
+        "h2",
+        " Citations"
+      ],
+      [
+        "h2",
+        " Framework"
+      ],
+      [
+        "h2",
+        " Product"
+      ],
+      [
+        "h2",
+        " Developers"
+      ],
+      [
+        "h2",
+        " Resources"
+      ],
+      [
+        "h2",
+        " Company"
+      ],
+      [
+        "h2",
+        " Connect"
+      ]
+    ],
+    "links": [
+      "/",
+      "https://luma.com/mastra-gogz",
+      "/",
+      "https://luma.com/mastra-gogz",
+      "/pricing",
+      "/customers",
+      "/docs",
+      "/ai-agent-framework",
+      "/factory",
+      "/platform-observability",
+      "/studio",
+      "/agent-builder",
+      "/ai-agent-deployment",
+      "/internal-agents",
+      "/customer-facing-agents",
+      "/developer-platform-agents",
+      "/docs",
+      "/templates",
+      "/learn",
+      "/blog",
+      "/research",
+      "https://github.com/mastra-ai/mastra/releases",
+      "/books/principles-of-building-ai-agents",
+      "/books/patterns-of-building-ai-agents",
+      "/workshops",
+      "/podcasts",
+      "https://github.com/mastra-ai/mastra",
+      "/ai-agent-framework",
+      "/factory",
+      "/platform-observability",
+      "/studio",
+      "/agent-builder",
+      "/ai-agent-deployment",
+      "/internal-agents",
+      "/customer-facing-agents",
+      "/developer-platform-agents",
+      "/docs",
+      "/templates",
+      "/learn",
+      "/blog",
+      "/research",
+      "https://github.com/mastra-ai/mastra/releases",
+      "/books/principles-of-building-ai-agents",
+      "/books/patterns-of-building-ai-agents",
+      "/workshops",
+      "/podcasts",
+      "/pricing",
+      "/customers",
+      "/docs",
+      "/contact",
+      "https://github.com/mastra-ai/mastra",
+      "/research",
+      "/authors/tyler-barnes",
+      "/docs/memory/observational-memory",
+      "https://github.com/mastra-ai/mastra/tree/main/explorations/longmemeval",
+      "https://github.com/mastra-ai/mastra/tree/main/packages/memory/src/processors/observational-memory",
+      "#what-is-observational-memory",
+      "#results",
+      "#gpt-4o-comparison",
+      "#gemini-3-pro-comparison",
+      "#gpt-5-mini-comparison",
+      "#leaderboard",
+      "#scaling",
+      "#context-window-economics",
+      "#methodology-observational-memory-architecture",
+      "#1-three-tier-system",
+      "#2-the-observer",
+      "#3-the-reflector",
+      "#4-temporal-anchoring",
+      "#5-token-budgets",
+      "#6-observation-format",
+      "#how-to-reproduce",
+      "https://github.com/mastra-ai/mastra/tree/main/packages/memory/src/processors/observational-memory",
+      "https://github.com/mastra-ai/mastra/tree/main/explorations/longmemeval",
+      "#limitations",
+      "#where-om-struggles",
+      "#backstory",
+      "#why-longmemeval",
+      "https://arxiv.org/abs/2410.10813",
+      "#why-not-locomo",
+      "https://arxiv.org/abs/2402.09076",
+      "https://supermemory.ai/research",
+      "https://blog.getzep.com/lies-damn-lies-statistics-is-mem0-really-sota-in-agent-memory/",
+      "#isnt-this-compaction",
+      "#conclusion",
+      "/docs/memory/observational-memory",
+      "#citations",
+      "https://arxiv.org/abs/2410.10813",
+      "https://arxiv.org/abs/2307.03172",
+      "https://arxiv.org/abs/2402.09076",
+      "https://arxiv.org/abs/2501.13956",
+      "https://www.emergence.ai/blog/emergence-is-the-new-new-state-of-the-art-in-agent-memory",
+      "https://supermemory.ai/research",
+      "https://blog.getzep.com/lies-damn-lies-statistics-is-mem0-really-sota-in-agent-memory/",
+      "https://arxiv.org/abs/2512.12818",
+      "https://twitter.com/intent/tweet?url=https%3A%2F%2Fmastra.ai%2Fresearch%2Fobservational-memory&text=%22Observational%20Memory%3A%2095%25%20on%20LongMemEval%22%20by%20%40maaboroshi",
+      "https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmastra.ai%2Fresearch%2Fobservational-memory",
+      "/authors/tyler-barnes",
+      "/authors/tyler-barnes",
+      "https://www.linkedin.com/in/tyler-barnes-882a61193/",
+      "https://x.com/tylbar",
+      "/authors/tyler-barnes",
+      "#what-is-observational-memory",
+      "#results",
+      "#methodology-observational-memory-architecture",
+      "#how-to-reproduce",
+      "#limitations",
+      "#backstory",
+      "#conclusion",
+      "#citations",
+      "#top",
+      "/ai-agents",
+      "/rag-pipeline",
+      "/ai-workflows",
+      "/ai-agent-observability",
+      "/ai-agent-framework",
+      "/platform-observability",
+      "/studio",
+      "/agent-builder",
+      "/ai-agent-deployment",
+      "/docs",
+      "https://github.com/mastra-ai/mastra/releases",
+      "/templates",
+      "/learn",
+      "/blog",
+      "/research",
+      "/articles",
+      "/books/principles-of-building-ai-agents",
+      "/books/patterns-of-building-ai-agents",
+      "/podcasts",
+      "/about",
+      "/customers",
+      "/careers",
+      "/contact",
+      "/newsletter",
+      "/contact",
+      "https://github.com/mastra-ai/mastra",
+      "https://discord.gg/mastra-ai",
+      "https://www.youtube.com/@mastra-ai",
+      "https://x.com/@mastra",
+      "https://trust.mastra.ai",
+      "https://statuspage.incident.io/mastra-platform",
+      "/privacy-policy",
+      "/terms-of-service",
+      "/legal/dpa",
+      "/llms.txt"
+    ],
+    "main_words": 2787,
+    "body_words": 3145,
+    "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_9.txt"
+  },
+  {
+    "name": "cohort_extra_10",
+    "url": "https://raw.githubusercontent.com/mastra-ai/mastra/main/CONTRIBUTING.md",
+    "final_url": "https://raw.githubusercontent.com/mastra-ai/mastra/main/CONTRIBUTING.md",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:55.615278+00:00",
+    "sha256": "899014c548dd3b82e77eba73439d888cacf97036e470820bef8da502e5b0b2ff",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_10.body",
+    "headers": {
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+      "Strict-Transport-Security": "max-age=31536000",
+      "Vary": "Authorization,Accept-Encoding",
+      "X-Content-Type-Options": "nosniff"
+    }
+  },
+  {
+    "name": "cohort_extra_11",
+    "url": "https://raw.githubusercontent.com/mastra-ai/mastra/main/README.md",
+    "final_url": "https://raw.githubusercontent.com/mastra-ai/mastra/main/README.md",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:55.728332+00:00",
+    "sha256": "3cf7ca8d2c00593f8f452fc1ac1f75f8269f1df9c98cbaca59409271a4ffa7e8",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_11.body",
+    "headers": {
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+      "Strict-Transport-Security": "max-age=31536000",
+      "Vary": "Authorization,Accept-Encoding",
+      "X-Content-Type-Options": "nosniff"
+    }
+  },
+  {
+    "name": "cohort_extra_12",
+    "url": "https://raw.githubusercontent.com/mastra-ai/mastra/main/LICENSE",
+    "final_url": "https://raw.githubusercontent.com/mastra-ai/mastra/main/LICENSE",
+    "status": 404,
+    "content_type": "text/plain; charset=utf-8",
+    "observed_at": "2026-09-15T08:05:56.020311+00:00",
+    "sha256": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_12.body",
+    "headers": {
+      "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+      "Strict-Transport-Security": "max-age=31536000",
+      "Vary": "Authorization,Accept-Encoding",
+      "X-Content-Type-Options": "nosniff"
+    }
+  }
+]

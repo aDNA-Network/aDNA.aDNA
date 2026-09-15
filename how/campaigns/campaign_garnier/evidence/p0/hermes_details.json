@@ -1,0 +1,985 @@
+[
+  {
+    "name": "hermes_detail_0",
+    "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+    "final_url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "observed_at": "2026-09-15T08:11:34.513880+00:00",
+    "sha256": "bb39f5fe62ab52f118377900eea8a2e33b4be8a265756ed85ab3ac1cb4d7f384",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_0.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 07:03:30 GMT",
+      "Strict-Transport-Security": "max-age=31556952",
+      "Vary": "Accept-Encoding"
+    },
+    "title": "Hermes Agent Quickstart | Hermes Agent",
+    "canonical": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+    "headings": [
+      [
+        "h1",
+        " Hermes Agent Quickstart"
+      ],
+      [
+        "h2",
+        " Prefer to watch? \u200b"
+      ],
+      [
+        "h2",
+        " Who this is for \u200b"
+      ],
+      [
+        "h2",
+        " The fastest path \u200b"
+      ],
+      [
+        "h2",
+        " 1. Install Hermes Agent \u200b"
+      ],
+      [
+        "h3",
+        " With the Hermes Desktop installer on macOS or Windows (recommended) \u200b"
+      ],
+      [
+        "h3",
+        " Without Hermes Desktop: \u200b"
+      ],
+      [
+        "h4",
+        " Linux / macOS / WSL2 / Android (Termux) \u200b"
+      ],
+      [
+        "h4",
+        " Windows (native) \u200b"
+      ],
+      [
+        "h2",
+        " 2. Choose a Provider \u200b"
+      ],
+      [
+        "h3",
+        " How settings are stored \u200b"
+      ],
+      [
+        "h2",
+        " 3. Run Your First Chat \u200b"
+      ],
+      [
+        "h2",
+        " 4. Verify Sessions Work \u200b"
+      ],
+      [
+        "h2",
+        " 5. Try Key Features \u200b"
+      ],
+      [
+        "h3",
+        " Use the terminal \u200b"
+      ],
+      [
+        "h3",
+        " Slash commands \u200b"
+      ],
+      [
+        "h3",
+        " Multi-line input \u200b"
+      ],
+      [
+        "h3",
+        " Interrupt the agent \u200b"
+      ],
+      [
+        "h2",
+        " 6. Add the Next Layer \u200b"
+      ],
+      [
+        "h3",
+        " Bot or shared assistant \u200b"
+      ],
+      [
+        "h3",
+        " Automation and tools \u200b"
+      ],
+      [
+        "h3",
+        " Sandboxed terminal \u200b"
+      ],
+      [
+        "h3",
+        " Voice mode \u200b"
+      ],
+      [
+        "h3",
+        " Skills \u200b"
+      ],
+      [
+        "h3",
+        " MCP servers \u200b"
+      ],
+      [
+        "h3",
+        " Editor integration (ACP) \u200b"
+      ],
+      [
+        "h2",
+        " Common Failure Modes \u200b"
+      ],
+      [
+        "h2",
+        " Recovery Toolkit \u200b"
+      ],
+      [
+        "h2",
+        " Quick Reference \u200b"
+      ],
+      [
+        "h2",
+        " Next Steps \u200b"
+      ]
+    ],
+    "links": [
+      "#__docusaurus_skipToContent_fallback",
+      "/docs/",
+      "/docs/user-stories",
+      "/docs/skills",
+      "/docs/plugins",
+      "https://hermes-agent.nousresearch.com/",
+      "#",
+      "/docs/getting-started/quickstart",
+      "/docs/zh-Hans/getting-started/quickstart",
+      "https://hermes-agent.nousresearch.com",
+      "https://github.com/NousResearch/hermes-agent",
+      "https://discord.gg/NousResearch",
+      "/docs/user-stories",
+      "/docs/getting-started/quickstart",
+      "/docs/getting-started/quickstart",
+      "/docs/getting-started/installation",
+      "/docs/getting-started/platform-support",
+      "/docs/getting-started/termux",
+      "/docs/getting-started/nix-setup",
+      "/docs/getting-started/updating",
+      "/docs/getting-started/learning-path",
+      "/docs/user-guide/cli",
+      "/docs/user-guide/features/overview",
+      "/docs/user-guide/messaging/",
+      "/docs/integrations/",
+      "/docs/guides/run-nemotron-3-ultra-free",
+      "/docs/developer-guide/contributing",
+      "/docs/reference/cli-commands",
+      "/docs/",
+      "#prefer-to-watch",
+      "https://www.youtube.com/playlist?list=PLmpUb_PWAkDxewld5ZYyKifuHxgIbiq2d",
+      "#who-this-is-for",
+      "#the-fastest-path",
+      "#1-install-hermes-agent",
+      "#with-the-hermes-desktop-installer-on-macos-or-windows-recommended",
+      "https://hermes-agent.nousresearch.com/",
+      "#without-hermes-desktop",
+      "#linux--macos--wsl2--android-termux",
+      "#windows-native",
+      "/docs/getting-started/termux",
+      "/docs/getting-started/installation",
+      "#2-choose-a-provider",
+      "/docs/user-guide/features/tool-gateway",
+      "/docs/integrations/nous-portal",
+      "/docs/guides/aws-bedrock",
+      "/docs/integrations/providers",
+      "/docs/integrations/providers",
+      "#how-settings-are-stored",
+      "#3-run-your-first-chat",
+      "/docs/user-guide/tui",
+      "#4-verify-sessions-work",
+      "#5-try-key-features",
+      "#use-the-terminal",
+      "#slash-commands",
+      "#multi-line-input",
+      "#interrupt-the-agent",
+      "#6-add-the-next-layer",
+      "#bot-or-shared-assistant",
+      "/docs/user-guide/messaging/telegram",
+      "/docs/user-guide/messaging/discord",
+      "/docs/user-guide/messaging/slack",
+      "/docs/user-guide/messaging/whatsapp",
+      "/docs/user-guide/messaging/signal",
+      "/docs/user-guide/messaging/email",
+      "/docs/user-guide/messaging/homeassistant",
+      "/docs/user-guide/messaging/teams",
+      "#automation-and-tools",
+      "#sandboxed-terminal",
+      "/docs/user-guide/egress/iron-proxy",
+      "#voice-mode",
+      "/docs/user-guide/features/voice-mode",
+      "#skills",
+      "/docs/user-guide/features/skills",
+      "#mcp-servers",
+      "#editor-integration-acp",
+      "/docs/user-guide/features/acp",
+      "#common-failure-modes",
+      "#recovery-toolkit",
+      "#quick-reference",
+      "#next-steps",
+      "/docs/user-guide/cli",
+      "/docs/user-guide/configuration",
+      "/docs/user-guide/messaging/",
+      "/docs/user-guide/features/tools",
+      "/docs/integrations/providers",
+      "/docs/user-guide/features/skills",
+      "/docs/guides/tips",
+      "/docs/reference/faq#exporting-hermes-to-another-machine",
+      "/docs/reference/faq#moving-a-single-profile-to-another-machine",
+      "https://github.com/NousResearch/hermes-agent/edit/main/website/docs/getting-started/quickstart.md",
+      "/docs/user-stories",
+      "/docs/getting-started/installation",
+      "#prefer-to-watch",
+      "#who-this-is-for",
+      "#the-fastest-path",
+      "#1-install-hermes-agent",
+      "#with-the-hermes-desktop-installer-on-macos-or-windows-recommended",
+      "#without-hermes-desktop",
+      "#2-choose-a-provider",
+      "#how-settings-are-stored",
+      "#3-run-your-first-chat",
+      "#4-verify-sessions-work",
+      "#5-try-key-features",
+      "#use-the-terminal",
+      "#slash-commands",
+      "#multi-line-input",
+      "#interrupt-the-agent",
+      "#6-add-the-next-layer",
+      "#bot-or-shared-assistant",
+      "#automation-and-tools",
+      "#sandboxed-terminal",
+      "#voice-mode",
+      "#skills",
+      "#mcp-servers",
+      "#editor-integration-acp",
+      "#common-failure-modes",
+      "#recovery-toolkit",
+      "#quick-reference",
+      "#next-steps",
+      "/docs/getting-started/quickstart",
+      "/docs/user-guide/cli",
+      "/docs/developer-guide/architecture",
+      "/docs/reference/cli-commands",
+      "https://discord.gg/NousResearch",
+      "https://github.com/NousResearch/hermes-agent/issues",
+      "https://agentskills.io",
+      "https://hermes-agent.nousresearch.com/",
+      "https://github.com/NousResearch/hermes-agent",
+      "https://nousresearch.com",
+      "https://nousresearch.com"
+    ],
+    "main_words": 2721,
+    "body_words": 2810,
+    "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_0.txt"
+  },
+  {
+    "name": "hermes_detail_1",
+    "url": "https://hermes-agent.nousresearch.com/docs/developer-guide/contributing",
+    "final_url": "https://hermes-agent.nousresearch.com/docs/developer-guide/contributing",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "observed_at": "2026-09-15T08:11:34.514526+00:00",
+    "sha256": "9df56c0d32b7422f51053057fc06ad3f12207e6f6c75c591770656a18d1c627c",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_1.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 07:03:29 GMT",
+      "Strict-Transport-Security": "max-age=31556952",
+      "Vary": "Accept-Encoding"
+    },
+    "title": "Contributing | Hermes Agent",
+    "canonical": "https://hermes-agent.nousresearch.com/docs/developer-guide/contributing",
+    "headings": [
+      [
+        "h1",
+        " Contributing"
+      ],
+      [
+        "h2",
+        " Contribution Priorities \u200b"
+      ],
+      [
+        "h2",
+        " Common contribution paths \u200b"
+      ],
+      [
+        "h2",
+        " Development Setup \u200b"
+      ],
+      [
+        "h3",
+        " Prerequisites \u200b"
+      ],
+      [
+        "h3",
+        " Install with the standard installer \u200b"
+      ],
+      [
+        "h3",
+        " Manual clone fallback \u200b"
+      ],
+      [
+        "h3",
+        " Configure for Development \u200b"
+      ],
+      [
+        "h3",
+        " Run \u200b"
+      ],
+      [
+        "h3",
+        " Run Tests \u200b"
+      ],
+      [
+        "h2",
+        " Code Style \u200b"
+      ],
+      [
+        "h2",
+        " Cross-Platform Compatibility \u200b"
+      ],
+      [
+        "h3",
+        " 1. File encoding \u200b"
+      ],
+      [
+        "h3",
+        " 2. Process management \u200b"
+      ],
+      [
+        "h3",
+        " 3. Path separators \u200b"
+      ],
+      [
+        "h2",
+        " Security Considerations \u200b"
+      ],
+      [
+        "h3",
+        " Existing Protections \u200b"
+      ],
+      [
+        "h3",
+        " Contributing Security-Sensitive Code \u200b"
+      ],
+      [
+        "h2",
+        " Pull Request Process \u200b"
+      ],
+      [
+        "h3",
+        " Branch Naming \u200b"
+      ],
+      [
+        "h3",
+        " Before Submitting \u200b"
+      ],
+      [
+        "h3",
+        " PR Description \u200b"
+      ],
+      [
+        "h3",
+        " Commit Messages \u200b"
+      ],
+      [
+        "h3",
+        " Repo-local review checklists: .agents/checks/*.md \u200b"
+      ],
+      [
+        "h2",
+        " Reporting Issues \u200b"
+      ],
+      [
+        "h2",
+        " Community \u200b"
+      ],
+      [
+        "h2",
+        " License \u200b"
+      ]
+    ],
+    "links": [
+      "#__docusaurus_skipToContent_fallback",
+      "/docs/",
+      "/docs/user-stories",
+      "/docs/skills",
+      "/docs/plugins",
+      "https://hermes-agent.nousresearch.com/",
+      "#",
+      "/docs/developer-guide/contributing",
+      "/docs/zh-Hans/developer-guide/contributing",
+      "https://hermes-agent.nousresearch.com",
+      "https://github.com/NousResearch/hermes-agent",
+      "https://discord.gg/NousResearch",
+      "/docs/user-stories",
+      "/docs/getting-started/quickstart",
+      "/docs/user-guide/cli",
+      "/docs/user-guide/features/overview",
+      "/docs/user-guide/messaging/",
+      "/docs/integrations/",
+      "/docs/guides/run-nemotron-3-ultra-free",
+      "/docs/developer-guide/contributing",
+      "/docs/developer-guide/contributing",
+      "/docs/developer-guide/worktree-ui-dev",
+      "/docs/developer-guide/architecture",
+      "/docs/developer-guide/adding-tools",
+      "/docs/developer-guide/tools-runtime",
+      "/docs/reference/cli-commands",
+      "/docs/",
+      "#contribution-priorities",
+      "/docs/developer-guide/creating-skills",
+      "#common-contribution-paths",
+      "/docs/developer-guide/plugins",
+      "/docs/developer-guide/adding-tools",
+      "/docs/developer-guide/creating-skills",
+      "/docs/developer-guide/adding-providers",
+      "#development-setup",
+      "#prerequisites",
+      "https://docs.astral.sh/uv/",
+      "#install-with-the-standard-installer",
+      "#manual-clone-fallback",
+      "#configure-for-development",
+      "#run",
+      "#run-tests",
+      "#code-style",
+      "https://github.com/NousResearch/hermes-agent/blob/main/AGENTS.md#profiles-multi-instance-support",
+      "#cross-platform-compatibility",
+      "/docs/getting-started/platform-support",
+      "https://git-scm.com/download/win",
+      "#1-file-encoding",
+      "#2-process-management",
+      "#3-path-separators",
+      "#security-considerations",
+      "#existing-protections",
+      "#contributing-security-sensitive-code",
+      "#pull-request-process",
+      "#branch-naming",
+      "#before-submitting",
+      "#pr-description",
+      "#commit-messages",
+      "https://www.conventionalcommits.org/",
+      "#repo-local-review-checklists-agentschecksmd",
+      "#reporting-issues",
+      "https://github.com/NousResearch/hermes-agent/issues",
+      "#community",
+      "https://discord.gg/NousResearch",
+      "#license",
+      "https://github.com/NousResearch/hermes-agent/blob/main/LICENSE",
+      "https://github.com/NousResearch/hermes-agent/edit/main/website/docs/developer-guide/contributing.md",
+      "/docs/guides/operate-teams-meeting-pipeline",
+      "/docs/developer-guide/worktree-ui-dev",
+      "#contribution-priorities",
+      "#common-contribution-paths",
+      "#development-setup",
+      "#prerequisites",
+      "#install-with-the-standard-installer",
+      "#manual-clone-fallback",
+      "#configure-for-development",
+      "#run",
+      "#run-tests",
+      "#code-style",
+      "#cross-platform-compatibility",
+      "#1-file-encoding",
+      "#2-process-management",
+      "#3-path-separators",
+      "#security-considerations",
+      "#existing-protections",
+      "#contributing-security-sensitive-code",
+      "#pull-request-process",
+      "#branch-naming",
+      "#before-submitting",
+      "#pr-description",
+      "#commit-messages",
+      "#repo-local-review-checklists-agentschecksmd",
+      "#reporting-issues",
+      "#community",
+      "#license",
+      "/docs/getting-started/quickstart",
+      "/docs/user-guide/cli",
+      "/docs/developer-guide/architecture",
+      "/docs/reference/cli-commands",
+      "https://discord.gg/NousResearch",
+      "https://github.com/NousResearch/hermes-agent/issues",
+      "https://agentskills.io",
+      "https://hermes-agent.nousresearch.com/",
+      "https://github.com/NousResearch/hermes-agent",
+      "https://nousresearch.com",
+      "https://nousresearch.com"
+    ],
+    "main_words": 1681,
+    "body_words": 1759,
+    "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_1.txt"
+  },
+  {
+    "name": "hermes_detail_2",
+    "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp",
+    "final_url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "observed_at": "2026-09-15T08:11:34.514642+00:00",
+    "sha256": "5ba9d588f7fa7196b0933d7b08d4a9083afd40d399ccb0c26db0121d4a68fba4",
+    "raw": "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_2.body",
+    "headers": {
+      "Last-Modified": "Tue, 15 Sep 2026 06:31:10 GMT",
+      "Strict-Transport-Security": "max-age=31556952",
+      "Vary": "Accept-Encoding"
+    },
+    "title": "MCP (Model Context Protocol) | Hermes Agent",
+    "canonical": "https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp",
+    "headings": [
+      [
+        "h1",
+        " MCP (Model Context Protocol)"
+      ],
+      [
+        "h2",
+        " What MCP gives you \u200b"
+      ],
+      [
+        "h2",
+        " Quick start \u200b"
+      ],
+      [
+        "h2",
+        " Catalog: one-click install for Nous-approved MCPs \u200b"
+      ],
+      [
+        "h3",
+        " Tool selection at install time \u200b"
+      ],
+      [
+        "h3",
+        " Trust model \u200b"
+      ],
+      [
+        "h3",
+        " Manifest version compatibility \u200b"
+      ],
+      [
+        "h3",
+        " Runtime ${ENV_VAR} substitution \u200b"
+      ],
+      [
+        "h3",
+        " Updating tool selection later \u200b"
+      ],
+      [
+        "h3",
+        " Updating the catalog manifest \u200b"
+      ],
+      [
+        "h3",
+        " Suggestion metadata ( suggest: ) \u200b"
+      ],
+      [
+        "h2",
+        " Two kinds of MCP servers \u200b"
+      ],
+      [
+        "h3",
+        " Stdio servers \u200b"
+      ],
+      [
+        "h3",
+        " HTTP servers \u200b"
+      ],
+      [
+        "h3",
+        " OAuth-authenticated HTTP servers \u200b"
+      ],
+      [
+        "h2",
+        " mTLS / client certificates \u200b"
+      ],
+      [
+        "h2",
+        " Per-user identity header \u200b"
+      ],
+      [
+        "h2",
+        " Basic configuration reference \u200b"
+      ],
+      [
+        "h3",
+        " Common keys \u200b"
+      ],
+      [
+        "h3",
+        " Minimal stdio example \u200b"
+      ],
+      [
+        "h3",
+        " Recycling memory-heavy stdio servers \u200b"
+      ],
+      [
+        "h3",
+        " Minimal HTTP example \u200b"
+      ],
+      [
+        "h2",
+        " Built-in presets \u200b"
+      ],
+      [
+        "h2",
+        " How Hermes registers MCP tools \u200b"
+      ],
+      [
+        "h3",
+        " Tool-result sanitization and _meta \u200b"
+      ],
+      [
+        "h2",
+        " MCP utility tools \u200b"
+      ],
+      [
+        "h3",
+        " Important \u200b"
+      ],
+      [
+        "h2",
+        " Per-server filtering \u200b"
+      ],
+      [
+        "h3",
+        " Disable a server entirely \u200b"
+      ],
+      [
+        "h3",
+        " Whitelist server tools \u200b"
+      ],
+      [
+        "h3",
+        " Blacklist server tools \u200b"
+      ],
+      [
+        "h3",
+        " Glob patterns \u200b"
+      ],
+      [
+        "h3",
+        " Precedence rule \u200b"
+      ],
+      [
+        "h3",
+        " Filter utility tools too \u200b"
+      ],
+      [
+        "h3",
+        " Full example \u200b"
+      ],
+      [
+        "h2",
+        " What happens if everything is filtered out? \u200b"
+      ],
+      [
+        "h2",
+        " Runtime behavior \u200b"
+      ],
+      [
+        "h3",
+        " Discovery time \u200b"
+      ],
+      [
+        "h3",
+        " Dynamic Tool Discovery \u200b"
+      ],
+      [
+        "h3",
+        " Reloading \u200b"
+      ],
+      [
+        "h3",
+        " Toolsets \u200b"
+      ],
+      [
+        "h2",
+        " Security model \u200b"
+      ],
+      [
+        "h3",
+        " Stdio env filtering \u200b"
+      ],
+      [
+        "h3",
+        " Config-level exposure control \u200b"
+      ],
+      [
+        "h2",
+        " Example use cases \u200b"
+      ],
+      [
+        "h3",
+        " GitHub server with a minimal issue-management surface \u200b"
+      ],
+      [
+        "h3",
+        " Stripe server with dangerous actions removed \u200b"
+      ],
+      [
+        "h3",
+        " Filesystem server for a single project root \u200b"
+      ],
+      [
+        "h2",
+        " Troubleshooting \u200b"
+      ],
+      [
+        "h3",
+        " MCP server not connecting \u200b"
+      ],
+      [
+        "h3",
+        " Tools not appearing \u200b"
+      ],
+      [
+        "h3",
+        " Why didn't resource or prompt utilities appear? \u200b"
+      ],
+      [
+        "h2",
+        " Parallel Tool Calls \u200b"
+      ],
+      [
+        "h2",
+        " MCP Sampling Support \u200b"
+      ],
+      [
+        "h2",
+        " MCP Elicitation Support \u200b"
+      ],
+      [
+        "h2",
+        " Running Hermes as an MCP server \u200b"
+      ],
+      [
+        "h3",
+        " When to use this \u200b"
+      ],
+      [
+        "h3",
+        " Quick start \u200b"
+      ],
+      [
+        "h3",
+        " MCP client configuration \u200b"
+      ],
+      [
+        "h3",
+        " Available tools \u200b"
+      ],
+      [
+        "h3",
+        " Event system \u200b"
+      ],
+      [
+        "h3",
+        " Options \u200b"
+      ],
+      [
+        "h3",
+        " How it works \u200b"
+      ],
+      [
+        "h3",
+        " Current limits \u200b"
+      ],
+      [
+        "h2",
+        " Related docs \u200b"
+      ]
+    ],
+    "links": [
+      "#__docusaurus_skipToContent_fallback",
+      "/docs/",
+      "/docs/user-stories",
+      "/docs/skills",
+      "/docs/plugins",
+      "https://hermes-agent.nousresearch.com/",
+      "#",
+      "/docs/user-guide/features/mcp",
+      "/docs/zh-Hans/user-guide/features/mcp",
+      "https://hermes-agent.nousresearch.com",
+      "https://github.com/NousResearch/hermes-agent",
+      "https://discord.gg/NousResearch",
+      "/docs/user-stories",
+      "/docs/getting-started/quickstart",
+      "/docs/user-guide/cli",
+      "/docs/user-guide/features/overview",
+      "/docs/user-guide/messaging/",
+      "/docs/integrations/",
+      "/docs/integrations/",
+      "/docs/integrations/nous-portal",
+      "/docs/integrations/providers",
+      "/docs/integrations/buzz",
+      "/docs/user-guide/features/mcp",
+      "/docs/user-guide/features/acp",
+      "/docs/user-guide/features/provider-routing",
+      "/docs/user-guide/features/fallback-providers",
+      "/docs/user-guide/features/credential-pools",
+      "/docs/guides/run-nemotron-3-ultra-free",
+      "/docs/developer-guide/contributing",
+      "/docs/reference/cli-commands",
+      "/docs/",
+      "/docs/user-guide/import-from-other-agents",
+      "#what-mcp-gives-you",
+      "#quick-start",
+      "#catalog-one-click-install-for-nous-approved-mcps",
+      "#tool-selection-at-install-time",
+      "#trust-model",
+      "https://github.com/NousResearch/hermes-agent/tree/main/optional-mcps",
+      "#manifest-version-compatibility",
+      "#runtime-env_var-substitution",
+      "/docs/reference/mcp-config-reference",
+      "#updating-tool-selection-later",
+      "#updating-the-catalog-manifest",
+      "https://github.com/NousResearch/hermes-agent/tree/main/optional-mcps",
+      "#suggestion-metadata-suggest",
+      "#two-kinds-of-mcp-servers",
+      "#stdio-servers",
+      "#http-servers",
+      "#oauth-authenticated-http-servers",
+      "/docs/reference/mcp-config-reference#client-identification-cimd-and-dcr",
+      "/docs/reference/mcp-config-reference#device-code-login-rfc-8628",
+      "/docs/user-guide/skills/optional/mcp/mcp-mcp-oauth-remote-gateway",
+      "/docs/guides/oauth-over-ssh#mcp-servers",
+      "#mtls--client-certificates",
+      "#per-user-identity-header",
+      "#basic-configuration-reference",
+      "#common-keys",
+      "#minimal-stdio-example",
+      "#recycling-memory-heavy-stdio-servers",
+      "#minimal-http-example",
+      "#built-in-presets",
+      "#how-hermes-registers-mcp-tools",
+      "#tool-result-sanitization-and-_meta",
+      "#mcp-utility-tools",
+      "#important",
+      "#per-server-filtering",
+      "#disable-a-server-entirely",
+      "#whitelist-server-tools",
+      "#blacklist-server-tools",
+      "#glob-patterns",
+      "#precedence-rule",
+      "#filter-utility-tools-too",
+      "#full-example",
+      "#what-happens-if-everything-is-filtered-out",
+      "#runtime-behavior",
+      "#discovery-time",
+      "#dynamic-tool-discovery",
+      "#reloading",
+      "#dynamic-tool-discovery",
+      "#toolsets",
+      "#security-model",
+      "#stdio-env-filtering",
+      "#config-level-exposure-control",
+      "#example-use-cases",
+      "#github-server-with-a-minimal-issue-management-surface",
+      "#stripe-server-with-dangerous-actions-removed",
+      "#filesystem-server-for-a-single-project-root",
+      "#troubleshooting",
+      "#mcp-server-not-connecting",
+      "#tools-not-appearing",
+      "#why-didnt-resource-or-prompt-utilities-appear",
+      "#parallel-tool-calls",
+      "#mcp-sampling-support",
+      "#mcp-elicitation-support",
+      "#running-hermes-as-an-mcp-server",
+      "#when-to-use-this",
+      "#quick-start-1",
+      "#mcp-client-configuration",
+      "#available-tools",
+      "#event-system",
+      "#options",
+      "#how-it-works",
+      "#current-limits",
+      "#http-servers",
+      "#related-docs",
+      "/docs/guides/use-mcp-with-hermes",
+      "/docs/reference/cli-commands",
+      "/docs/reference/slash-commands",
+      "/docs/reference/faq",
+      "https://github.com/NousResearch/hermes-agent/edit/main/website/docs/user-guide/features/mcp.md",
+      "/docs/integrations/buzz",
+      "/docs/user-guide/features/acp",
+      "#what-mcp-gives-you",
+      "#quick-start",
+      "#catalog-one-click-install-for-nous-approved-mcps",
+      "#tool-selection-at-install-time",
+      "#trust-model",
+      "#manifest-version-compatibility",
+      "#runtime-env_var-substitution",
+      "#updating-tool-selection-later",
+      "#updating-the-catalog-manifest",
+      "#suggestion-metadata-suggest",
+      "#two-kinds-of-mcp-servers",
+      "#stdio-servers",
+      "#http-servers",
+      "#oauth-authenticated-http-servers",
+      "#mtls--client-certificates",
+      "#per-user-identity-header",
+      "#basic-configuration-reference",
+      "#common-keys",
+      "#minimal-stdio-example",
+      "#recycling-memory-heavy-stdio-servers",
+      "#minimal-http-example",
+      "#built-in-presets",
+      "#how-hermes-registers-mcp-tools",
+      "#tool-result-sanitization-and-_meta",
+      "#mcp-utility-tools",
+      "#important",
+      "#per-server-filtering",
+      "#disable-a-server-entirely",
+      "#whitelist-server-tools",
+      "#blacklist-server-tools",
+      "#glob-patterns",
+      "#precedence-rule",
+      "#filter-utility-tools-too",
+      "#full-example",
+      "#what-happens-if-everything-is-filtered-out",
+      "#runtime-behavior",
+      "#discovery-time",
+      "#dynamic-tool-discovery",
+      "#reloading",
+      "#toolsets",
+      "#security-model",
+      "#stdio-env-filtering",
+      "#config-level-exposure-control",
+      "#example-use-cases",
+      "#github-server-with-a-minimal-issue-management-surface",
+      "#stripe-server-with-dangerous-actions-removed",
+      "#filesystem-server-for-a-single-project-root",
+      "#troubleshooting",
+      "#mcp-server-not-connecting",
+      "#tools-not-appearing",
+      "#why-didnt-resource-or-prompt-utilities-appear",
+      "#parallel-tool-calls",
+      "#mcp-sampling-support",
+      "#mcp-elicitation-support",
+      "#running-hermes-as-an-mcp-server",
+      "#when-to-use-this",
+      "#quick-start-1",
+      "#mcp-client-configuration",
+      "#available-tools",
+      "#event-system",
+      "#options",
+      "#how-it-works",
+      "#current-limits",
+      "#related-docs",
+      "/docs/getting-started/quickstart",
+      "/docs/user-guide/cli",
+      "/docs/developer-guide/architecture",
+      "/docs/reference/cli-commands",
+      "https://discord.gg/NousResearch",
+      "https://github.com/NousResearch/hermes-agent/issues",
+      "https://agentskills.io",
+      "https://hermes-agent.nousresearch.com/",
+      "https://github.com/NousResearch/hermes-agent",
+      "https://nousresearch.com",
+      "https://nousresearch.com"
+    ],
+    "main_words": 5825,
+    "body_words": 5917,
+    "text": "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_2.txt"
+  }
+]

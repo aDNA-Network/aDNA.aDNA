@@ -1,0 +1,722 @@
+[
+  {
+    "name": "nous_releases",
+    "origin": "https://nousresearch.com",
+    "routes": [
+      "/releases/",
+      "/blog/"
+    ],
+    "viewport": "mobile",
+    "theme": "light",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://nousresearch.com",
+      "--routes",
+      "/releases/,/blog/",
+      "--viewports",
+      "mobile",
+      "--themes",
+      "light",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/mobile_light"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/mobile_light/capture_report.json"
+  },
+  {
+    "name": "nous_releases",
+    "origin": "https://nousresearch.com",
+    "routes": [
+      "/releases/",
+      "/blog/"
+    ],
+    "viewport": "mobile",
+    "theme": "dark",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://nousresearch.com",
+      "--routes",
+      "/releases/,/blog/",
+      "--viewports",
+      "mobile",
+      "--themes",
+      "dark",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/mobile_dark"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/mobile_dark/capture_report.json"
+  },
+  {
+    "name": "nous_releases",
+    "origin": "https://nousresearch.com",
+    "routes": [
+      "/releases/",
+      "/blog/"
+    ],
+    "viewport": "mobile-lg",
+    "theme": "light",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://nousresearch.com",
+      "--routes",
+      "/releases/,/blog/",
+      "--viewports",
+      "mobile-lg",
+      "--themes",
+      "light",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/mobile-lg_light"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/mobile-lg_light/capture_report.json"
+  },
+  {
+    "name": "nous_releases",
+    "origin": "https://nousresearch.com",
+    "routes": [
+      "/releases/",
+      "/blog/"
+    ],
+    "viewport": "mobile-lg",
+    "theme": "dark",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://nousresearch.com",
+      "--routes",
+      "/releases/,/blog/",
+      "--viewports",
+      "mobile-lg",
+      "--themes",
+      "dark",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/mobile-lg_dark"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/mobile-lg_dark/capture_report.json"
+  },
+  {
+    "name": "nous_releases",
+    "origin": "https://nousresearch.com",
+    "routes": [
+      "/releases/",
+      "/blog/"
+    ],
+    "viewport": "tablet",
+    "theme": "light",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://nousresearch.com",
+      "--routes",
+      "/releases/,/blog/",
+      "--viewports",
+      "tablet",
+      "--themes",
+      "light",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/tablet_light"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/tablet_light/capture_report.json"
+  },
+  {
+    "name": "nous_releases",
+    "origin": "https://nousresearch.com",
+    "routes": [
+      "/releases/",
+      "/blog/"
+    ],
+    "viewport": "tablet",
+    "theme": "dark",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://nousresearch.com",
+      "--routes",
+      "/releases/,/blog/",
+      "--viewports",
+      "tablet",
+      "--themes",
+      "dark",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/tablet_dark"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/tablet_dark/capture_report.json"
+  },
+  {
+    "name": "nous_releases",
+    "origin": "https://nousresearch.com",
+    "routes": [
+      "/releases/",
+      "/blog/"
+    ],
+    "viewport": "laptop-sm",
+    "theme": "light",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://nousresearch.com",
+      "--routes",
+      "/releases/,/blog/",
+      "--viewports",
+      "laptop-sm",
+      "--themes",
+      "light",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/laptop-sm_light"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/laptop-sm_light/capture_report.json"
+  },
+  {
+    "name": "nous_releases",
+    "origin": "https://nousresearch.com",
+    "routes": [
+      "/releases/",
+      "/blog/"
+    ],
+    "viewport": "laptop-sm",
+    "theme": "dark",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://nousresearch.com",
+      "--routes",
+      "/releases/,/blog/",
+      "--viewports",
+      "laptop-sm",
+      "--themes",
+      "dark",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/laptop-sm_dark"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/laptop-sm_dark/capture_report.json"
+  },
+  {
+    "name": "nous_releases",
+    "origin": "https://nousresearch.com",
+    "routes": [
+      "/releases/",
+      "/blog/"
+    ],
+    "viewport": "laptop",
+    "theme": "light",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://nousresearch.com",
+      "--routes",
+      "/releases/,/blog/",
+      "--viewports",
+      "laptop",
+      "--themes",
+      "light",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/laptop_light"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/laptop_light/capture_report.json"
+  },
+  {
+    "name": "nous_releases",
+    "origin": "https://nousresearch.com",
+    "routes": [
+      "/releases/",
+      "/blog/"
+    ],
+    "viewport": "laptop",
+    "theme": "dark",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://nousresearch.com",
+      "--routes",
+      "/releases/,/blog/",
+      "--viewports",
+      "laptop",
+      "--themes",
+      "dark",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/laptop_dark"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/laptop_dark/capture_report.json"
+  },
+  {
+    "name": "nous_releases",
+    "origin": "https://nousresearch.com",
+    "routes": [
+      "/releases/",
+      "/blog/"
+    ],
+    "viewport": "desktop",
+    "theme": "light",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://nousresearch.com",
+      "--routes",
+      "/releases/,/blog/",
+      "--viewports",
+      "desktop",
+      "--themes",
+      "light",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/desktop_light"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/desktop_light/capture_report.json"
+  },
+  {
+    "name": "nous_releases",
+    "origin": "https://nousresearch.com",
+    "routes": [
+      "/releases/",
+      "/blog/"
+    ],
+    "viewport": "desktop",
+    "theme": "dark",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://nousresearch.com",
+      "--routes",
+      "/releases/,/blog/",
+      "--viewports",
+      "desktop",
+      "--themes",
+      "dark",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/desktop_dark"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_releases/desktop_dark/capture_report.json"
+  },
+  {
+    "name": "nous_hermes",
+    "origin": "https://hermes-agent.nousresearch.com",
+    "routes": [
+      "/",
+      "/docs",
+      "/docs/getting-started/quickstart",
+      "/docs/developer-guide/contributing"
+    ],
+    "viewport": "mobile",
+    "theme": "light",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://hermes-agent.nousresearch.com",
+      "--routes",
+      "/,/docs,/docs/getting-started/quickstart,/docs/developer-guide/contributing",
+      "--viewports",
+      "mobile",
+      "--themes",
+      "light",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/mobile_light"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/mobile_light/capture_report.json"
+  },
+  {
+    "name": "nous_hermes",
+    "origin": "https://hermes-agent.nousresearch.com",
+    "routes": [
+      "/",
+      "/docs",
+      "/docs/getting-started/quickstart",
+      "/docs/developer-guide/contributing"
+    ],
+    "viewport": "mobile",
+    "theme": "dark",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://hermes-agent.nousresearch.com",
+      "--routes",
+      "/,/docs,/docs/getting-started/quickstart,/docs/developer-guide/contributing",
+      "--viewports",
+      "mobile",
+      "--themes",
+      "dark",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/mobile_dark"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/mobile_dark/capture_report.json"
+  },
+  {
+    "name": "nous_hermes",
+    "origin": "https://hermes-agent.nousresearch.com",
+    "routes": [
+      "/",
+      "/docs",
+      "/docs/getting-started/quickstart",
+      "/docs/developer-guide/contributing"
+    ],
+    "viewport": "mobile-lg",
+    "theme": "light",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://hermes-agent.nousresearch.com",
+      "--routes",
+      "/,/docs,/docs/getting-started/quickstart,/docs/developer-guide/contributing",
+      "--viewports",
+      "mobile-lg",
+      "--themes",
+      "light",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/mobile-lg_light"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/mobile-lg_light/capture_report.json"
+  },
+  {
+    "name": "nous_hermes",
+    "origin": "https://hermes-agent.nousresearch.com",
+    "routes": [
+      "/",
+      "/docs",
+      "/docs/getting-started/quickstart",
+      "/docs/developer-guide/contributing"
+    ],
+    "viewport": "mobile-lg",
+    "theme": "dark",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://hermes-agent.nousresearch.com",
+      "--routes",
+      "/,/docs,/docs/getting-started/quickstart,/docs/developer-guide/contributing",
+      "--viewports",
+      "mobile-lg",
+      "--themes",
+      "dark",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/mobile-lg_dark"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/mobile-lg_dark/capture_report.json"
+  },
+  {
+    "name": "nous_hermes",
+    "origin": "https://hermes-agent.nousresearch.com",
+    "routes": [
+      "/",
+      "/docs",
+      "/docs/getting-started/quickstart",
+      "/docs/developer-guide/contributing"
+    ],
+    "viewport": "tablet",
+    "theme": "light",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://hermes-agent.nousresearch.com",
+      "--routes",
+      "/,/docs,/docs/getting-started/quickstart,/docs/developer-guide/contributing",
+      "--viewports",
+      "tablet",
+      "--themes",
+      "light",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/tablet_light"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/tablet_light/capture_report.json"
+  },
+  {
+    "name": "nous_hermes",
+    "origin": "https://hermes-agent.nousresearch.com",
+    "routes": [
+      "/",
+      "/docs",
+      "/docs/getting-started/quickstart",
+      "/docs/developer-guide/contributing"
+    ],
+    "viewport": "tablet",
+    "theme": "dark",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://hermes-agent.nousresearch.com",
+      "--routes",
+      "/,/docs,/docs/getting-started/quickstart,/docs/developer-guide/contributing",
+      "--viewports",
+      "tablet",
+      "--themes",
+      "dark",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/tablet_dark"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/tablet_dark/capture_report.json"
+  },
+  {
+    "name": "nous_hermes",
+    "origin": "https://hermes-agent.nousresearch.com",
+    "routes": [
+      "/",
+      "/docs",
+      "/docs/getting-started/quickstart",
+      "/docs/developer-guide/contributing"
+    ],
+    "viewport": "laptop-sm",
+    "theme": "light",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://hermes-agent.nousresearch.com",
+      "--routes",
+      "/,/docs,/docs/getting-started/quickstart,/docs/developer-guide/contributing",
+      "--viewports",
+      "laptop-sm",
+      "--themes",
+      "light",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/laptop-sm_light"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/laptop-sm_light/capture_report.json"
+  },
+  {
+    "name": "nous_hermes",
+    "origin": "https://hermes-agent.nousresearch.com",
+    "routes": [
+      "/",
+      "/docs",
+      "/docs/getting-started/quickstart",
+      "/docs/developer-guide/contributing"
+    ],
+    "viewport": "laptop-sm",
+    "theme": "dark",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://hermes-agent.nousresearch.com",
+      "--routes",
+      "/,/docs,/docs/getting-started/quickstart,/docs/developer-guide/contributing",
+      "--viewports",
+      "laptop-sm",
+      "--themes",
+      "dark",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/laptop-sm_dark"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/laptop-sm_dark/capture_report.json"
+  },
+  {
+    "name": "nous_hermes",
+    "origin": "https://hermes-agent.nousresearch.com",
+    "routes": [
+      "/",
+      "/docs",
+      "/docs/getting-started/quickstart",
+      "/docs/developer-guide/contributing"
+    ],
+    "viewport": "laptop",
+    "theme": "light",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://hermes-agent.nousresearch.com",
+      "--routes",
+      "/,/docs,/docs/getting-started/quickstart,/docs/developer-guide/contributing",
+      "--viewports",
+      "laptop",
+      "--themes",
+      "light",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/laptop_light"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/laptop_light/capture_report.json"
+  },
+  {
+    "name": "nous_hermes",
+    "origin": "https://hermes-agent.nousresearch.com",
+    "routes": [
+      "/",
+      "/docs",
+      "/docs/getting-started/quickstart",
+      "/docs/developer-guide/contributing"
+    ],
+    "viewport": "laptop",
+    "theme": "dark",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://hermes-agent.nousresearch.com",
+      "--routes",
+      "/,/docs,/docs/getting-started/quickstart,/docs/developer-guide/contributing",
+      "--viewports",
+      "laptop",
+      "--themes",
+      "dark",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/laptop_dark"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/laptop_dark/capture_report.json"
+  },
+  {
+    "name": "nous_hermes",
+    "origin": "https://hermes-agent.nousresearch.com",
+    "routes": [
+      "/",
+      "/docs",
+      "/docs/getting-started/quickstart",
+      "/docs/developer-guide/contributing"
+    ],
+    "viewport": "desktop",
+    "theme": "light",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://hermes-agent.nousresearch.com",
+      "--routes",
+      "/,/docs,/docs/getting-started/quickstart,/docs/developer-guide/contributing",
+      "--viewports",
+      "desktop",
+      "--themes",
+      "light",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/desktop_light"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/desktop_light/capture_report.json"
+  },
+  {
+    "name": "nous_hermes",
+    "origin": "https://hermes-agent.nousresearch.com",
+    "routes": [
+      "/",
+      "/docs",
+      "/docs/getting-started/quickstart",
+      "/docs/developer-guide/contributing"
+    ],
+    "viewport": "desktop",
+    "theme": "dark",
+    "exit": 0,
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "https://hermes-agent.nousresearch.com",
+      "--routes",
+      "/,/docs,/docs/getting-started/quickstart,/docs/developer-guide/contributing",
+      "--viewports",
+      "desktop",
+      "--themes",
+      "dark",
+      "--axe",
+      "--timeout",
+      "20000",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/desktop_dark"
+    ],
+    "report": "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/desktop_dark/capture_report.json"
+  }
+]

@@ -1,0 +1,995 @@
+{
+  "scorer": "b",
+  "freeze_sha256": "04d28711834eca943cd8774ddaf0f34641e20629317f698eefd07c56314c053b",
+  "instrument_sha256": "e4a5ebf64ce95d6be7b00bf6998ffc874ec75c64247bf11c04b9e2932e28cf5c",
+  "sites": {
+    "adna": {
+      "weights": [
+        12,
+        8,
+        12,
+        12,
+        8,
+        8,
+        14,
+        10,
+        6,
+        6,
+        2,
+        2
+      ],
+      "dimensions": [
+        {
+          "id": "D1",
+          "score": 4,
+          "state": "provisional",
+          "ceiling": 4,
+          "reason": "Audience and category explicit in hero; thirty-second comprehension remains unmeasured.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/adna_home_desktop_light.png",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/contact_390_light_0.jpg"
+          ],
+          "owed": "Cold-reader panel at three widths; may confirm 4, reduce it, or lift ceiling to 5.",
+          "awarded_clauses": [
+            "U Correct summary in ~30s at all three viewports: reviewer can read the definition, but no cold reader timed.",
+            "D audience explicit: teams working with agentic coding tools."
+          ],
+          "next_anchor_clauses": [
+            "U As 4: inherits unmeasured timing.",
+            "U reader can state what it is not: negative-space copy exists, recall untested.",
+            "U correctly name a use case not shown: no panel."
+          ],
+          "weight": 12,
+          "contribution": 9.6
+        },
+        {
+          "id": "D2",
+          "score": 3,
+          "state": "graded",
+          "ceiling": null,
+          "reason": "Coherent learning/reference/community taxonomy; graph depth and lack of site search prevent 4.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/link_graph.json",
+            "how/campaigns/campaign_garnier/evidence/p0/inventory_coverage.json",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference.txt"
+          ],
+          "owed": "No missing instrument for refusal; search and reachability work can raise score. Intentional utility exclusion would remove one refusal, not the other two.",
+          "awarded_clauses": [
+            "D Coherent but deep: stable taxonomy and section links.",
+            "D several high-value pages >=3 clicks: context-recipe, mission-decomposition, course and annotated first-read files."
+          ],
+          "next_anchor_clauses": [
+            "F <=2 clicks to all high-value pages: named paths need 3.",
+            "F search present and scoped: navigation has no site search; browser find is not scoped search.",
+            "F no orphans: /install has only its self-edge in collected graph; it is an intentional utility exception, not an unmapped content defect."
+          ],
+          "weight": 8,
+          "contribution": 4.8
+        },
+        {
+          "id": "D3",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "The written flow is auditable, prerequisites and cleanup explicit, but no execution evidence exists.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/run_summary.json"
+          ],
+          "owed": "Clean VM, outsider operator, stopwatch and screen recording; can move either direction. Ceiling 3 follows \u00a75.1.4; confirmed timing alone is measurement change.",
+          "awarded_clauses": [
+            "U Completes as written: not run on a clean machine.",
+            "U TTFS 10\u201330 min: no measured time; this number is a provisional holding score, not a 10\u201330 minute observation.",
+            "D troubleshooting thin: bounded command errors covered; explicitly not based on an install support record."
+          ],
+          "next_anchor_clauses": [
+            "U TTFS <10 min: no stopwatch.",
+            "D prerequisites stated up front: Git, Claude Code, account/network distinction.",
+            "D troubleshooting and escape hatches present: command failures and source-reading route."
+          ],
+          "weight": 12,
+          "contribution": 7.2
+        },
+        {
+          "id": "D4",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Clear tutorial/concept/reference organization and full version-labelled spec; historical-version navigation and breaking-version migrations not demonstrated.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_migration-guide.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/preflight_6.log"
+          ],
+          "owed": "Reference entity census, historical-version retrieval and runnable-example CI audit; may reduce 3 or permit 4.",
+          "awarded_clauses": [
+            "D Clear types: tutorials, concepts, reference and operational guides named.",
+            "U complete reference: full 20-section specification exists, but field-by-field completeness not audited.",
+            "D versioning weak: v2.5 visible without a historical version selector in sampled navigation."
+          ],
+          "next_anchor_clauses": [
+            "F Four types cleanly separated in IA: migration/how-to and explanatory material share Rationale & guides.",
+            "U versioned: label is observed; version-specific corpus access not tested.",
+            "U migrations documented: adoption migration is not evidence for every breaking version boundary.",
+            "U examples tested: gates test site behavior, not every documentation example."
+          ],
+          "weight": 12,
+          "contribution": 7.2
+        },
+        {
+          "id": "D5",
+          "score": 3,
+          "state": "graded",
+          "ceiling": null,
+          "reason": "Token system exists and mostly conforms; the Triad diagram is visibly tiny inside a largely empty frame.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_design-system.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/token_census.json",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/token_aa.json",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/triad_390_t1_ready.png",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/adna_learn-concepts-triad_desktop_light.png",
+            "how/campaigns/campaign_garnier/evidence/p0/triad_t1_observation.json",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/preflight_6.log"
+          ],
+          "owed": "Repair diagram sizing then recapture across widths/themes; no additional instrument needed to refuse 4.",
+          "awarded_clauses": [
+            "D Tokenised system: published live swatches and token census.",
+            "D mostly conformant: consistent type, spacing and color across inspected templates.",
+            "D some drift: Triad labels render at about 3.87px high at 390px; large empty diagram frame at desktop too."
+          ],
+          "next_anchor_clauses": [
+            "D Published system: /design-system.",
+            "D enforced in build: token/visual gates in frozen local test receipts.",
+            "F responsive integrity verified: no horizontal overflow does not repair illegible diagram labels; fresh-load image reproduces defect.",
+            "D states designed: useful 404 control and documented registry empty states."
+          ],
+          "weight": 8,
+          "contribution": 4.8
+        },
+        {
+          "id": "D6",
+          "score": 2,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Competent explanatory writing, but false absolute privacy wording and stale governance/reference summaries prevent a consistent verifiable corpus.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_privacy.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_state-of-the-network.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_governance-model.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/source_fact_inventory.json",
+            "how/campaigns/campaign_garnier/evidence/p0/transport_observation.json"
+          ],
+          "owed": "Full claim audit and corpus review; may move either way. Script request proves loading only, not actual beacon payload receipt. Correct privacy prose using its own disclosed transport.",
+          "awarded_clauses": [
+            "D Competent: concrete files, commands and examples.",
+            "D register breaks common across sampled pages: categorical privacy/no-collection language adjacent to qualified performance disclosure; rhetorical certainty contrasts with procedural caveats.",
+            "D unsupported claims present: no analytics/nothing collected conflicts with performance sent to Vercel on same page."
+          ],
+          "next_anchor_clauses": [
+            "F Consistent voice: contradiction between no collection and transmitted timing remains.",
+            "U claims mostly supportable: complete current claim register not supplied.",
+            "D some aspirational tense: governance future is often labelled but absolute capability statements remain."
+          ],
+          "weight": 8,
+          "contribution": 3.2
+        },
+        {
+          "id": "D7",
+          "score": 2,
+          "state": "graded",
+          "ceiling": null,
+          "reason": "Named operator and frank single-node disclosure; no independent adopter demonstrated.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_about.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_state-of-the-network.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_.txt"
+          ],
+          "owed": "Independent user artifact would raise 3; privacy discrepancy remains separately D6, and does not convert related-party disclosure into adoption.",
+          "awarded_clauses": [
+            "D Named humans: Stanley Bishop, linked profile and affiliations.",
+            "D no independent adoption: explicitly says all 74 vaults on one machine; Rare Archive contributor is same operator.",
+            "D claims at strength ceiling: relationship control and related-party caveats named; registry expressly not adoption proof."
+          ],
+          "next_anchor_clauses": [
+            "D Named humans: same evidence.",
+            "F some verifiable third-party use: related foundation repository is not independent user evidence; current page says none.",
+            "D activity visible: dated homepage release stream."
+          ],
+          "weight": 14,
+          "contribution": 5.6
+        },
+        {
+          "id": "D8",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Published ladder, contribution standards, CoC and venue; numbered AEP archive exceeds rung 3, but chartered groups and live venue evidence missing.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_proposals.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_governance-model.txt"
+          ],
+          "owed": "Venue recency observation and role/group verification; 4 requires actual chartered groups, not just new measurement.",
+          "awarded_clauses": [
+            "D Ladder published: User, Contributor, Quest Runner, Steward.",
+            "D contribution standards published: linked standards and contribution guide.",
+            "D CoC published: Contributor Covenant and named maintainer enforcement route.",
+            "D venue exists: public repository and approval-gated community address.",
+            "D process informal at community scale: operator-centered; numbered AEPs are recorded excess."
+          ],
+          "next_anchor_clauses": [
+            "D Numbered proposal process with public archive: two AEPs and explicit states.",
+            "F chartered groups: governance says working groups are future.",
+            "D named role-holders: founding architect named; other seats honestly unfilled.",
+            "U live venue: linked space is not message recency evidence."
+          ],
+          "weight": 10,
+          "contribution": 6.0
+        },
+        {
+          "id": "D9",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "Contribution guide and issue routes exist; issue population, outsider experience and responsiveness unmeasured.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_community_proposals.txt"
+          ],
+          "owed": "Outsider contribution run plus issue/response census; can lower holding score or raise ceiling. Explicitly provisional within ceiling.",
+          "awarded_clauses": [
+            "D CONTRIBUTING: linked from site.",
+            "D templates: advertised bug/fix/question/proposal routes.",
+            "U some labelled issues: no live approachable issue census in pack.",
+            "D response time unmeasured: proposal page explicitly says no median measured."
+          ],
+          "next_anchor_clauses": [
+            "U One-command dev setup: install command is not contributor dev-build proof.",
+            "U populated good-first-issues: no census.",
+            "U median first response <72h: no 90-day data.",
+            "D non-code paths named: patterns, proposals and community learning contributions."
+          ],
+          "weight": 6,
+          "contribution": 3.6
+        },
+        {
+          "id": "D10",
+          "score": 4,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Strong machine surface directly fetched; live corpus MCP and complete self-conformance not shown.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/machine_1.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/machine_5.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/machine_6.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/machine_7.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/machine_8.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/machine_9.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/machine_verification.json",
+            "how/campaigns/campaign_garnier/evidence/p0/jsonld_canonical.json",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_.txt"
+          ],
+          "owed": "Exercise documented corpus MCP if one exists, copy-page control, and independently run self-conformance; 5 may become available. Discovery 404 is bounded evidence.",
+          "awarded_clauses": [
+            "D llms.txt: annotated map fetched.",
+            "D sitemap: live sitemap collection reconciles.",
+            "D RSS: fetched machine_6.",
+            "D clean extraction: human-readable semantic content in raw texts.",
+            "D markdown twins: representative fetched, 226 advertised; content negotiation byte-equal.",
+            "D JSON-LD: live HTML includes structured blocks; local census 228/229 and zero parse failures, not conflated with exhaustive live validation.",
+            "D machine-readable registry: versioned JSON and caveats.",
+            "D documented agent entry point: homepage advertises llms.txt."
+          ],
+          "next_anchor_clauses": [
+            "D As 4: the eight above.",
+            "U MCP server over corpus: discovery request 404; one missing discovery endpoint does not prove no server anywhere.",
+            "U copy-as-context affordances: command copy observed, corpus context copy not independently exercised.",
+            "D stable resolvable URIs: stable paths, twins and versioned registry.",
+            "U demonstrated self-conformance: build gates do not establish complete standard conformance of published corpus."
+          ],
+          "weight": 6,
+          "contribution": 4.8
+        },
+        {
+          "id": "D11",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "Automated target scans clean; AA at primary templates remains provisional pending manual testing and incomplete contrast nodes.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/run_summary.json",
+            "how/campaigns/campaign_garnier/evidence/p0/supplement_390.json",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/token_aa.json",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_accessibility.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/triad_390_t1_ready.png"
+          ],
+          "owed": "Manual keyboard, 200/400% zoom, contrast incompletes, graphics-equivalence and VoiceOver/NVDA; may lower 3 or lift ceiling. No critical target axe violation observed.",
+          "awarded_clauses": [
+            "U AA on primary templates: automation and selected keyboard gate receipts do not verify all AA criteria.",
+            "D complex graphics partially covered: semantic text/graph alternatives present; tiny labels remain visible limitation."
+          ],
+          "next_anchor_clauses": [
+            "U Verified AA across all templates including graphics and registry: incomplete contrast and manual zoom/keyboard debt.",
+            "U screen-reader tested: no current VoiceOver/NVDA run."
+          ],
+          "weight": 2,
+          "contribution": 1.2
+        },
+        {
+          "id": "D12",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Lab is encouraging and links resolve; no field p75 can establish the performance gate.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/run_summary.json",
+            "how/campaigns/campaign_garnier/evidence/p0/inventory_coverage.json",
+            "how/campaigns/campaign_garnier/evidence/p0/transport_observation.json",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/preflight_6.log"
+          ],
+          "owed": "Field p75 on five templates mobile/desktop, redirect and security-header audit; can move both directions. Initial local mobile LCP 2408.9ms, TBT246ms retained; repeats are diagnostics and TBT is not INP.",
+          "awarded_clauses": [
+            "U CWV green at p75: no field LCP/INP/CLS sample.",
+            "D no internal 404s: graph inventory plus 11 extra probes; /404 is intentional control."
+          ],
+          "next_anchor_clauses": [
+            "U As 3: inherits unmeasured p75.",
+            "D budgets enforced in CI: frozen local gate receipts show fixture budgets; not fresh field enforcement.",
+            "U redirect map maintained: published fragment map documented, complete historical URL map not audited.",
+            "U security headers set: bounded headers observed, complete four-header policy not established here."
+          ],
+          "weight": 2,
+          "contribution": 1.2
+        }
+      ],
+      "composite": 59.2
+    },
+    "nous": {
+      "weights": [
+        12,
+        8,
+        15,
+        8,
+        8,
+        8,
+        8,
+        14,
+        10,
+        5,
+        2,
+        2
+      ],
+      "dimensions": [
+        {
+          "id": "D1",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": 4,
+          "reason": "Lab explains open language models; linked Hermes provides mechanism, audience and costs after navigation/scroll.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/nous_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_2.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous/instrument_390_light/_.png",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/nous_hermes_home_desktop_light.png"
+          ],
+          "owed": "Cold-reader panel plus accessible lab captures; may move either way; 5 barred pre-panel.",
+          "awarded_clauses": [
+            "U Correct summary: reviewer-readable lab/product definition, no cold reader.",
+            "D only after scrolling past fold: mobile lab begins with image, then language-model definition; Hermes detail on linked property."
+          ],
+          "next_anchor_clauses": [
+            "U Correct summary in ~30s at all three viewports: checkpoints prevent lab comparison, no panel.",
+            "F audience explicit: lab homepage describes research mission but does not explicitly name intended user."
+          ],
+          "weight": 12,
+          "contribution": 7.2
+        },
+        {
+          "id": "D2",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Lab/releases/docs are coherent, Hermes sidebar has clear tasks; full combined-property reachability not crawled.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/nous_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/instrument_390_light/_docs.png"
+          ],
+          "owed": "Combined Nous/Hermes navigation crawl and search tasks; can rise or fall. Checkpoints are access limits, not navigation defects.",
+          "awarded_clauses": [
+            "D Coherent: lab product/research routes and docs sections.",
+            "U deep/several high-value pages >=3 clicks: bounded link samples only."
+          ],
+          "next_anchor_clauses": [
+            "U <=2 clicks to all high-value pages: full graph missing.",
+            "U search present and scoped: docs search icon visible, index scope untested.",
+            "U no orphans: no exhaustive crawl."
+          ],
+          "weight": 8,
+          "contribution": 4.8
+        },
+        {
+          "id": "D3",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "Detailed Hermes quickstart and recovery toolkit are strong written evidence, not a timed installation.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_3.body"
+          ],
+          "owed": "Clean-machine outsider TTFS; score provisional within ceiling, can move both directions.",
+          "awarded_clauses": [
+            "U Completes as written: no clean VM.",
+            "U TTFS10\u201330min: no stopwatch, not inferred from install claims.",
+            "D troubleshooting thin: exceeds this descriptor with common failures and recovery; no deduction for exceeding it."
+          ],
+          "next_anchor_clauses": [
+            "U TTFS<10min: not timed.",
+            "D prerequisites stated up front: installation/platform and provider steps named.",
+            "D troubleshooting and escape hatches present: recovery, doctor and linked guides."
+          ],
+          "weight": 15,
+          "contribution": 9.0
+        },
+        {
+          "id": "D4",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Hermes separates user/developer/reference content; reference completeness and docs versions unverified.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_1.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_2.txt"
+          ],
+          "owed": "Full Diataxis/reference/version/example audit; may lower or raise.",
+          "awarded_clauses": [
+            "D Clear types: quickstart, developer guide and reference paths.",
+            "U complete reference: detailed MCP/CLI/config references but no entity census.",
+            "U versioning weak: no historical corpus navigation verified."
+          ],
+          "next_anchor_clauses": [
+            "U Four types cleanly separated: sample supports several, explanation coverage not audited.",
+            "U versioned: no version retrieval.",
+            "U migrations documented: no breaking-boundary census.",
+            "U examples tested: repo claims tests, no docs-example execution receipt."
+          ],
+          "weight": 8,
+          "contribution": 4.8
+        },
+        {
+          "id": "D5",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Strong blue Hermes visual voice, restrained lab and conventional docs; token enforcement not supplied.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/nous_hermes_home_desktop_light.png",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous/instrument_390_light/_.png",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/nous_hermes/instrument_390_light/_docs.png"
+          ],
+          "owed": "Design tokens/build enforcement, state and full breakpoint inspection; can move either direction.",
+          "awarded_clauses": [
+            "U Tokenised system: visual regularity does not prove source tokens.",
+            "D mostly conformant: layout/type coherent within each property.",
+            "D some drift: blue condensed display marketing and gold/neutral docs have markedly different registers; not assumed a defect by itself."
+          ],
+          "next_anchor_clauses": [
+            "U Published system: branding booklet linked in releases, contents unexamined.",
+            "U enforced in build: no token/build audit.",
+            "U responsive integrity verified: successful Hermes/mobile docs samples only, lab desktop inaccessible.",
+            "U states designed: error/loading states untested."
+          ],
+          "weight": 8,
+          "contribution": 4.8
+        },
+        {
+          "id": "D6",
+          "score": 2,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Readable technical docs coexist with strong unverified absolutes in marketing.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_2.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_2.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_1.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_0.txt"
+          ],
+          "owed": "Claim register with reproduction/link verification and editorial audit; score may change.",
+          "awarded_clauses": [
+            "D Competent: concrete install/recovery prose.",
+            "D register breaks common: research-lab statements, promotional grows-with-you voice and task docs.",
+            "D unsupported claims present: only agent with built-in learning loop and never forgets not established by pack."
+          ],
+          "next_anchor_clauses": [
+            "F Consistent voice: distinct lab/product/docs registers in sampled text.",
+            "U claims mostly supportable: benchmarks and exclusivity not independently audited.",
+            "D some aspirational tense: perfect recall phrasing overstates the bounded persistence mechanism."
+          ],
+          "weight": 8,
+          "contribution": 3.2
+        },
+        {
+          "id": "D7",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Named researchers, live repository and linked outside tutorial give bounded corroboration; independent adopter breadth unproved.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_1.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_0.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_6.body"
+          ],
+          "owed": "External adopter and claim verification; could reduce3 or reach4. Lab checkpoints confer no credibility penalty.",
+          "awarded_clauses": [
+            "D Named humans: Joe Li and Phuc Nguyen author credits.",
+            "D some verifiable third-party use: linked Onchain AI Garage installation walkthrough, not claimed independently reproduced.",
+            "D activity visible: research/release output and current repo API timestamps."
+          ],
+          "next_anchor_clauses": [
+            "U Multiple independent adopters with linked artifacts: tutorial is one bounded external artifact, not a census.",
+            "U live metrics: repository API captured, frontend live sourcing not audited.",
+            "D security path: contribution security section and repo report route.",
+            "U claims at/below true strength: unique-agent and never-forgets claims unverified."
+          ],
+          "weight": 8,
+          "contribution": 4.8
+        },
+        {
+          "id": "D8",
+          "score": 2,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Contribution policies and Discord are explicit; governance ladder, role progression and CoC coverage not demonstrated.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_3.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_1.txt"
+          ],
+          "owed": "Role/CoC/governance artifact inspection and venue recency; can move either way. No inference that community is inactive.",
+          "awarded_clauses": [
+            "D Governance described in prose: contributor priorities and acceptance rules.",
+            "U no process artifacts: no governance archive supplied; PR procedures exist as excess.",
+            "D no venue: exceeded by linked Discord and repository, not penalized."
+          ],
+          "next_anchor_clauses": [
+            "U Ladder published: no role progression artifact supplied.",
+            "D contribution standards: extensive guide.",
+            "U CoC published: not verified in frozen scope.",
+            "D venue exists: Discord link and GitHub.",
+            "D process informal: maintainer-reviewed PR route."
+          ],
+          "weight": 14,
+          "contribution": 5.6
+        },
+        {
+          "id": "D9",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "CONTRIBUTING and PR-template references explicit; approachable issue population and responsiveness not measured.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_3.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/hermes_detail_1.txt"
+          ],
+          "owed": "Outsider PR run, issue census and 90-day first-response metrics; can move both directions. Provisional within ceiling.",
+          "awarded_clauses": [
+            "D CONTRIBUTING: fetched full guide.",
+            "D templates: PR-template duplicate check described.",
+            "U some labelled issues: no current issue census.",
+            "U response time unmeasured: not measured by this pack."
+          ],
+          "next_anchor_clauses": [
+            "D One-command dev setup: standard installer provided, actual dev-build success untested.",
+            "U populated good-first-issues: no census.",
+            "U median first response<72h: no time series.",
+            "D non-code paths named: documentation and skills."
+          ],
+          "weight": 10,
+          "contribution": 6.0
+        },
+        {
+          "id": "D10",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Curated llms indexes and clean extracted docs verified; sitemap advertised but RSS not fetched.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_3.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_1.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_4.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_0.txt"
+          ],
+          "owed": "Fetch sitemap/RSS/twins/registry and validate metadata; 3 may lower or4 unlock. Hermes runtime MCP support is not corpus MCP proof.",
+          "awarded_clauses": [
+            "D llms.txt: both lab and Hermes curated maps.",
+            "U sitemap: robots advertises three sitemap URLs, contents not verified.",
+            "U RSS: feed not retrieved.",
+            "D clean extraction: docs and homepage raw text readable."
+          ],
+          "next_anchor_clauses": [
+            "U As3: sitemap and RSS unresolved.",
+            "U markdown twins: full-corpus/index links do not verify all twins.",
+            "U JSON-LD: no complete structured-data verification.",
+            "U machine-readable registry: skills marketplace/API not fetched.",
+            "D documented agent entry point: docs has For LLMs and coding agents."
+          ],
+          "weight": 5,
+          "contribution": 3.0
+        },
+        {
+          "id": "D11",
+          "score": 0,
+          "state": "provisional",
+          "ceiling": 3,
+          "reason": "A real automated critical is reported in the embedded quickstart video; keyboard traversal untested.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/supplement_linked_390.json",
+            "how/campaigns/campaign_garnier/evidence/p0/supplement_390.json"
+          ],
+          "owed": "Manual keyboard/AT and iframe investigation; can raise numerical holding floor. Critical belongs to successful Hermes quickstart render, never the lab checkpoint.",
+          "awarded_clauses": [
+            "D Automated criticals: aria-allowed-attr on quickstart YouTube iframe video title in both themes.",
+            "U keyboard traversal broken: no manual traversal; not asserted as an observed defect."
+          ],
+          "next_anchor_clauses": [
+            "F Automated criticals confined to secondary templates: quickstart is primary.",
+            "U keyboard traversal works: not tested.",
+            "U focus unlabelled/invisible: not tested."
+          ],
+          "weight": 2,
+          "contribution": 0.0
+        },
+        {
+          "id": "D12",
+          "score": 2,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Successful Hermes lab test passes desktop LCP and is slow mobile; monitoring and field data unobserved.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/run_summary.json"
+          ],
+          "owed": "Field p75, monitoring and internal-link census; can move either direction. No phase gate declared failed from lab results.",
+          "awarded_clauses": [
+            "U Passes desktop: lab LCP1793.9ms, not field p75.",
+            "U fails mobile: lab LCP13580.2ms suggests risk, not field verdict.",
+            "U no monitoring: monitoring not inspected, absence not asserted."
+          ],
+          "next_anchor_clauses": [
+            "U CWV green at p75: no LCP/INP/CLS field data.",
+            "U no internal404s: bounded property crawl only; guessed lab routes excluded."
+          ],
+          "weight": 2,
+          "contribution": 0.8
+        }
+      ],
+      "composite": 54.0
+    },
+    "mastra": {
+      "weights": [
+        12,
+        8,
+        18,
+        15,
+        6,
+        5,
+        8,
+        5,
+        6,
+        10,
+        4,
+        3
+      ],
+      "dimensions": [
+        {
+          "id": "D1",
+          "score": 4,
+          "state": "provisional",
+          "ceiling": 4,
+          "reason": "Hero directly says Build AI agents and TypeScript framework; precise reader recall not tested.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/mastra_home_desktop_light.png",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/mastra/instrument_390_light/_.png"
+          ],
+          "owed": "Cold-reader panel may lower4, confirm it, or lift ceiling5.",
+          "awarded_clauses": [
+            "U Correct summary in ~30s at all three viewports: visually readable, no timed humans.",
+            "D audience explicit: developer TypeScript framework and quickstart."
+          ],
+          "next_anchor_clauses": [
+            "U As4: human timing unmeasured.",
+            "U reader states what it is not: no recall test.",
+            "U novel use case: no panel."
+          ],
+          "weight": 12,
+          "contribution": 9.6
+        },
+        {
+          "id": "D2",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Clear product/docs routing and docs search, but whole-site depth/orphans not established.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/mastra/instrument_390_light/_docs.png"
+          ],
+          "owed": "Link graph, scoped search tasks and orphan audit can move score either way.",
+          "awarded_clauses": [
+            "D Coherent: documentation, resources, company routes.",
+            "U deep/several high-value pages>=3clicks: no complete graph."
+          ],
+          "next_anchor_clauses": [
+            "U <=2clicks all high-value pages: no depth audit.",
+            "U search present and scoped: icon/Ask AI visible, reference retrieval not tested.",
+            "U no orphans: no full crawl."
+          ],
+          "weight": 8,
+          "contribution": 4.8
+        },
+        {
+          "id": "D3",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "One command and Studio path are obvious; clean-machine success and prerequisite honesty need execution.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_8.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt"
+          ],
+          "owed": "Clean VM outsider recording; may lower3. Prerequisite/failure-help edits plus timing needed for4.",
+          "awarded_clauses": [
+            "U Completes as written: not run.",
+            "U TTFS10\u201330min: unmeasured.",
+            "D troubleshooting thin: sampled quickstart lacks a dedicated failure section."
+          ],
+          "next_anchor_clauses": [
+            "U TTFS<10min: unmeasured.",
+            "F prerequisites stated up front: visible first command appears without explicit Node version/provider-account prerequisite list; machine-only instructions mention keys farther within text.",
+            "F troubleshooting and escape hatches present: no dedicated command-failure help in quickstart; general docs/support links do not supply troubleshooting."
+          ],
+          "weight": 18,
+          "contribution": 10.8
+        },
+        {
+          "id": "D4",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Substantial categorized reference and guide surfaces; complete entity coverage/version history unverified.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_5.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_10.body"
+          ],
+          "owed": "Reference completeness, historical-version/migrations and docs-example CI audit; may move either direction.",
+          "awarded_clauses": [
+            "D Clear types: docs/guides/reference sections in llms map.",
+            "U complete reference: no API entity census.",
+            "U versioning weak: historical versions not fetched."
+          ],
+          "next_anchor_clauses": [
+            "U Four types cleanly separated: map substantial but Diataxis corpus census missing.",
+            "U versioned: no historical retrieval.",
+            "U migrations documented: no breaking-boundary audit.",
+            "U examples tested: no example CI receipts."
+          ],
+          "weight": 15,
+          "contribution": 9.0
+        },
+        {
+          "id": "D5",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Coherent black marketing surface and clear light docs; source enforcement and state coverage unavailable.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/captures_curated/mastra_home_desktop_light.png",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/mastra/instrument_390_light/_.png",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/mastra/instrument_390_light/_docs.png"
+          ],
+          "owed": "Source tokens, system publication/build enforcement and states inspection; could lower3 or raise4.",
+          "awarded_clauses": [
+            "U Tokenised system: consistent surface is not source proof.",
+            "D mostly conformant: repeated rounded components, type hierarchy and code controls.",
+            "D some drift: homepage and docs differ intentionally in theme; no broad visual break observed."
+          ],
+          "next_anchor_clauses": [
+            "U Published system: no system artifact in pack.",
+            "U enforced in build: no source gate audit.",
+            "U responsive integrity verified: sampled images coherent; complete key-template population/1920 not inspected.",
+            "U states designed: primary error/loading/empty cases not captured."
+          ],
+          "weight": 6,
+          "contribution": 3.6
+        },
+        {
+          "id": "D6",
+          "score": 2,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Technical copy is competent; repeated marketing superlatives and mixed marketing/docs registers remain unverified.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_7.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_9.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt"
+          ],
+          "owed": "Claim corpus and benchmark verification; score can move either way; customer names are evidence of attribution, not proof of every numerical outcome.",
+          "awarded_clauses": [
+            "D Competent: framework and use-case descriptions concrete.",
+            "D register breaks common: promotional best-in-class/leading vs precise reference voice.",
+            "D unsupported claims present: leading open-source framework not supported by a market denominator in pack."
+          ],
+          "next_anchor_clauses": [
+            "F Consistent voice: promotion and task instructions use different registers.",
+            "U claims mostly supportable: outcomes/benchmark reproduction not performed.",
+            "D some aspirational tense: ready-to-production breadth exceeds directly tested evidence."
+          ],
+          "weight": 5,
+          "contribution": 2.0
+        },
+        {
+          "id": "D7",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Named founders, named customer outcomes and dated product activity create concrete trust surface.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_7.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_.txt",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_deep_7.body"
+          ],
+          "owed": "Audit metric sourcing, security path and customer claims; may reduce3 or reach4.",
+          "awarded_clauses": [
+            "D Named humans: Sam Bhagwat, Shane Thomas, Abhi Aiyer.",
+            "D some verifiable third-party use: linked named Replit/Brex/SoftBank customer artifacts.",
+            "D activity visible: dated Sept2026 product updates and repo timestamps."
+          ],
+          "next_anchor_clauses": [
+            "D Multiple independent adopters with linked artifacts: named customer case surfaces.",
+            "U live metrics: API repo receipt is not proof every displayed metric is source-live.",
+            "U security path: trust/security route not independently fetched in allowed scope.",
+            "U claims at/below true strength: market leadership and numerical customer outcomes unaudited."
+          ],
+          "weight": 8,
+          "contribution": 4.8
+        },
+        {
+          "id": "D8",
+          "score": 2,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Clear contributor policy and maintainer review; no evidenced contributor ladder.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_10.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_7.txt"
+          ],
+          "owed": "Governance/role/CoC inspection and live venue observation; can change both ways.",
+          "awarded_clauses": [
+            "D Governance described in prose: issues/PR acceptance and maintainer review.",
+            "U no process artifacts: no governance archive inspected.",
+            "D no venue: exceeded by Discord and GitHub links, not penalized."
+          ],
+          "next_anchor_clauses": [
+            "U Ladder published: no advancement criteria in pack.",
+            "D contribution standards: guide and review expectations.",
+            "U CoC published: not fetched.",
+            "D venue exists: repo/Discord.",
+            "D process informal: maintainer decision on issues/PRs."
+          ],
+          "weight": 5,
+          "contribution": 2.0
+        },
+        {
+          "id": "D9",
+          "score": 3,
+          "state": "ceiling",
+          "ceiling": 3,
+          "reason": "CONTRIBUTING and concrete issue templates fetched; first-contributor path not executed.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_10.body"
+          ],
+          "owed": "Outsider PR run, dev setup, issue population and response-time audit; may lower3 or lift ceiling.",
+          "awarded_clauses": [
+            "D CONTRIBUTING: full guide.",
+            "D templates: bug_report.yml and feature_request.yml links.",
+            "U some labelled issues: labels mentioned but approachable open population unmeasured.",
+            "U response time unmeasured: no pack measurement."
+          ],
+          "next_anchor_clauses": [
+            "U One-command dev setup: DEVELOPMENT.md linked but not run.",
+            "U populated good-first-issues: no issue census.",
+            "U median first response<72h: no timestamps sample.",
+            "D non-code paths named: docs and quality issue reports."
+          ],
+          "weight": 6,
+          "contribution": 3.6
+        },
+        {
+          "id": "D10",
+          "score": 3,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "llms map and no-JS extraction work; feeds, twins and registry not fully fetched.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_5.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/cohort_extra_6.body",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/public/mastra_docs.txt"
+          ],
+          "owed": "Fetch/validate feeds, all representative twins, JSON-LD and registry. Can lower3 or raise4. Copy prompt alone does not earn5.",
+          "awarded_clauses": [
+            "D llms.txt: structured documentation map.",
+            "U sitemap: advertised by robots, not retrieved.",
+            "U RSS: not fetched.",
+            "D clean extraction: documentation and homepage content readable."
+          ],
+          "next_anchor_clauses": [
+            "U As3: sitemap/RSS debt inherited.",
+            "U markdown twins: llms links .md paths but resolution not verified.",
+            "U JSON-LD: no structured-data census.",
+            "U machine-readable registry: not fetched.",
+            "D documented agent entry point: machine-specific instructions and copy prompt visible."
+          ],
+          "weight": 10,
+          "contribution": 6.0
+        },
+        {
+          "id": "D11",
+          "score": 0,
+          "state": "provisional",
+          "ceiling": 3,
+          "reason": "Rubric-gap numeric floor: serious primary-template aria-hidden-focus blocks automated-clean rung2, but critical-level/keyboard clauses at0/1 are not established.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/supplement_390.json",
+            "how/campaigns/campaign_garnier/evidence/p0/raw/captures/mastra/instrument_390_light/_.png"
+          ],
+          "owed": "Reconciliation must resolve non-exhaustive 0/1/2 anchors for serious-only automation failures; manual keyboard/AT and fix/retest marquee. Numeric score can rise; no WCAG-critical gate declared from axe serious alone.",
+          "awarded_clauses": [
+            "U Automated criticals: none observed; serious aria-hidden-focus is a different axe impact, not relabelled critical.",
+            "U keyboard traversal broken: no manual test. Numeric0 is a conservative unresolved rubric-gap placeholder, not a literal defect verdict."
+          ],
+          "next_anchor_clauses": [
+            "U Automated criticals confined to secondary templates: none established; cannot claim1 literally.",
+            "U keyboard traversal works: no manual test.",
+            "U focus unlabelled/invisible: not tested. Rung2 FAILS automated clean due aria-hidden-focus in home logo marquee."
+          ],
+          "weight": 4,
+          "contribution": 0.0
+        },
+        {
+          "id": "D12",
+          "score": 2,
+          "state": "provisional",
+          "ceiling": null,
+          "reason": "Desktop lab LCP good; mobile LCP/TBT concerning, but field and monitoring are missing.",
+          "evidence": [
+            "how/campaigns/campaign_garnier/evidence/p0/run_summary.json"
+          ],
+          "owed": "Field p75, monitoring and link audit; can move either way; lab red alone cannot close/fail field signoff.",
+          "awarded_clauses": [
+            "U Passes desktop: lab LCP1844.5ms, not p75.",
+            "U fails mobile: lab LCP9225.8ms/TBT2889ms, not field INP.",
+            "U no monitoring: not inspected, absence not asserted."
+          ],
+          "next_anchor_clauses": [
+            "U CWV green at p75: no field distribution.",
+            "U no internal404s: full graph not crawled."
+          ],
+          "weight": 3,
+          "contribution": 1.2
+        }
+      ],
+      "composite": 57.4
+    }
+  }
+}

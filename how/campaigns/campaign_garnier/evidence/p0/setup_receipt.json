@@ -1,0 +1,8 @@
+{
+  "install": "PUPPETEER_SKIP_DOWNLOAD=true npm install --prefix <campaign>/evidence/p0/raw/tools --save-exact --ignore-scripts pa11y@8.0.0",
+  "pa11y_version": "8.0.0",
+  "scope": "campaign-local gitignored tools; no downloaded browser; installed 123 packages",
+  "lock_sha256": "88657c7f3ef1bc9bd9ac858aa5514ce96eeabfc9aa0c90b760106bafb477b6a1",
+  "warning": "dependency puppeteer@22.15.0 deprecated (<24.15 unsupported); no service or deployment installed",
+  "existing_chromium": "site Playwright chromium executable; exact version recorded at freeze"
+}
