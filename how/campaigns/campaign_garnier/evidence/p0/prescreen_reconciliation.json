@@ -1,0 +1,78 @@
+{
+  "judgments": [
+    {
+      "scorer": "a",
+      "role": "engineer",
+      "window": "short",
+      "result": "PASS"
+    },
+    {
+      "scorer": "a",
+      "role": "engineer",
+      "window": "long",
+      "result": "PASS"
+    },
+    {
+      "scorer": "a",
+      "role": "funder",
+      "window": "short",
+      "result": "PASS"
+    },
+    {
+      "scorer": "a",
+      "role": "funder",
+      "window": "long",
+      "result": "PASS"
+    },
+    {
+      "scorer": "a",
+      "role": "scientist",
+      "window": "short",
+      "result": "PASS"
+    },
+    {
+      "scorer": "a",
+      "role": "scientist",
+      "window": "long",
+      "result": "PASS"
+    },
+    {
+      "scorer": "b",
+      "role": "engineer",
+      "window": "short",
+      "result": "PASS"
+    },
+    {
+      "scorer": "b",
+      "role": "engineer",
+      "window": "long",
+      "result": "PASS"
+    },
+    {
+      "scorer": "b",
+      "role": "funder",
+      "window": "short",
+      "result": "PASS"
+    },
+    {
+      "scorer": "b",
+      "role": "funder",
+      "window": "long",
+      "result": "PASS"
+    },
+    {
+      "scorer": "b",
+      "role": "scientist",
+      "window": "short",
+      "result": "PASS"
+    },
+    {
+      "scorer": "b",
+      "role": "scientist",
+      "window": "long",
+      "result": "PASS"
+    }
+  ],
+  "agreement": true,
+  "scope": "Untimed synthetic task answers only; no timed human inference."
+}

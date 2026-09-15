@@ -20,6 +20,9 @@ executor_tier: opus
 executor_runtime: codex
 token_budget_estimated: 63
 token_budget_unit: kT_content_load
+token_budget_reforecast_proposed: 80
+reforecast_status: proposed_DP2
+reforecast_basis: {"orientation": 20, "four_surface_editorial_work": 35, "evidence_and_formative_feedback_disposition": 25}
 estimated_sessions: 1
 calibrated_sessions: null
 estimation_class: content-novel
@@ -161,3 +164,7 @@ Deliverables: pending execution. Descoped: none. Key findings: pending. Scope ch
 - **Finding:** pending execution.
 - **Change:** pending execution.
 - **Follow-up:** pending execution.
+
+## P0-derived budget proposal — DP2 pending
+
+[I] The original estimate remains above. Proposed reforecast 80 kT includes {"orientation": 20, "four_surface_editorial_work": 35, "evidence_and_formative_feedback_disposition": 25}. This is not committed until DP2; human waiting time and billing currency are excluded. See [[p0_estimation_retrospective]].

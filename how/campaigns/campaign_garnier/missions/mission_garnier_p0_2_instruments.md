@@ -3,7 +3,7 @@ plan_id: mission_garnier_p0_2_instruments
 type: plan
 title: Calibrate the added instruments
 owner: stanley
-status: in_progress
+status: completed
 campaign_id: campaign_garnier
 campaign: campaign_garnier
 campaign_phase: 0
@@ -20,6 +20,9 @@ executor_tier: opus
 executor_runtime: codex
 token_budget_estimated: 53
 token_budget_unit: kT_content_load
+token_budget_actual: 210
+token_budget_actual_basis: rough content-load estimate, uncertainty plus_or_minus 80 kT; includes calibration and clean readers
+api_billing_actual: partial CLI token receipts only; whole mission unavailable
 estimated_sessions: 1
 calibrated_sessions: null
 estimation_class: governance-tight
@@ -151,16 +154,18 @@ Previous: [[mission_garnier_p0_1_baseline]]. Next: [[mission_garnier_p1_1_homepa
 
 ## Progress
 
-[D] P0.1 is complete with a paired provisional baseline. Instrument contract and controls were prepared independently while scoring finished, committed before prescreen outcomes. Twenty consumer controls and eighteen existing reading controls pass; complete tracked-source and first-contact censuses are recorded. Two key calibrators have returned; clean synthetic prescreens are running outside the vault after governance priming was detected and excluded.
+[D] Completed on 2026-09-15. C1/V1: [[instrument_contract]] versions seven first-contact routes and all96 tracked source files, exclusions/semantics and provider hash; old Astro checker’s32-file boundary stays explicit. C2/V2: twenty consumer controls, eighteen reading controls and24 independent calibration label checks pass; three clean synthetic contexts and independent graders are retained in [[prescreen_pack]]. C3/V3: no reserved-path/publication change; [[phase_exit]] renders pending DP2 and final scope receipt. All nine method×criterion pair limitations remain unchanged; no census substitutes for behavioral/authority evidence.
 
 ## Completion Summary
 
-Deliverables: pending execution. Descoped: none. Key findings: pending. Scope changes: approved charter amendments; exact tranche assignment where applicable.
+[D] Delivered instrument_contract.md, instrument_controls.md, consumer_bar_manifest.json and prescreen_pack.md with raw positive/negative receipts and scoped populations. Generic-word zeros do not clear contextual voice or truth; word overage remains advisory. No adjective/claim ratio is fabricated: its v1 blocking use is explicitly rejected as unvalidated. Token candidates need semantic adjudication at P3.1; no provider implementation/bar fork or CI checker install occurred. Observed-theme receipts supplement the frozen baseline without modifying it.
+
+[I] Actual roughly210±80kT versus53 estimated, including coordinator, two calibrators/two graders, three clean contexts and excluded primed diagnostic. See [[p0_estimation_retrospective]] for the required >2× retrospective and proposed P1 reforecast. Billing is only partially observable in six CLI turns, not a whole-mission invoice.
 
 ## AAR
 
-- **Worked:** pending execution.
-- **Did not:** pending execution.
-- **Finding:** pending execution.
-- **Change:** pending execution.
-- **Follow-up:** pending execution.
+- **Worked:** [D] Explicit populations, receipt-preserving exclusions, passing and failing controls, pre-frozen key, independent calibration and public-only reader contexts.
+- **Did not:** [D] Private governance primed one diagnostic and delegated thread limits complicated isolation; model browsing does not simulate a human clock.
+- **Finding:** [D-syn] Readers find the mechanism but retain setup, funding-ask and evaluation questions; a keyed answer can pass while the site still needs clearer presentation.
+- **Change:** [I] Keep cold-reader contexts outside private vault context; separately price every independent role and preserve confusion after PASS.
+- **Follow-up:** [I] DP2 commits P1 scope/budget; real formative humans precede visual production. Provider/instrument proposals stay staged; no publication authority inferred.

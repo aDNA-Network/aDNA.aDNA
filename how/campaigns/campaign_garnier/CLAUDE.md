@@ -12,7 +12,7 @@ tags:
 
 ## Campaign Identity
 
-Campaign `campaign_garnier`; owner Stanley Bishop (`stanley`); Rosetta executor `agent_codex`; commissioned through Berthier. Status active. DP1 accepted with amendments on 2026-09-15; P0 is available after amendment verification, and later phase gates remain human. Read root governance before this file.
+Campaign `campaign_garnier`; owner Stanley Bishop (`stanley`); Rosetta executor `agent_codex`; commissioned through Berthier. Status active. DP1 accepted with amendments on 2026-09-15; P0 is completed; DP2 phase exit/P1 budget is pending, and later phase gates remain human. Read root governance before this file.
 
 ## Quick Start
 

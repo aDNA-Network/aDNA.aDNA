@@ -1,0 +1,248 @@
+{
+  "type": "synthetic_prescreen_grading",
+  "created": "2026-09-15",
+  "updated": "2026-09-15",
+  "status": "completed",
+  "last_edited_by": "agent_codex",
+  "scorer": "a",
+  "provenance": "[D-syn] Independent grading of untimed synthetic task simulations. These results cannot predict timed human success and are not human comprehension evidence.",
+  "key": "how/campaigns/campaign_garnier/artifacts/amendments/reader_protocol.md#answer-key",
+  "method": "Applied short and role-specific long criteria separately to actual answer text. No peer grades or coordinator conclusions read. PASS means supplied answer satisfies this key; it does not resolve recorded confusion or establish conversion, practical execution or timing.",
+  "timing_limit": "The source headings sometimes say three-minute; neither timing label is a measured human window. Short is the frozen first-fold response and long is subsequent self-directed browsing.",
+  "read_context": {
+    "primary": [
+      "how/campaigns/campaign_garnier/evidence/p0/coldread_SYNTHETIC_engineer_garnier_p0.md",
+      "how/campaigns/campaign_garnier/evidence/p0/coldread_SYNTHETIC_funder_garnier_p0.md",
+      "how/campaigns/campaign_garnier/evidence/p0/coldread_SYNTHETIC_scientist_garnier_p0.md"
+    ],
+    "key_and_reused_facts": "Same published key and permitted frozen Get Started/About/Community/State/Canonical Properties/What is aDNA text read during prior calibration.",
+    "additional_spot_checks": [
+      "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_design-rationale.txt",
+      "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_specification_18-success-criteria.txt",
+      "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_reference_quality-rubric.txt",
+      "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_learn_concepts_convergence.txt",
+      "how/campaigns/campaign_garnier/evidence/p0/raw/public/adna_get-started_what-your-agent-reads_workspace-router.txt"
+    ],
+    "scope_limit": "Additional spot checks support criterion assessment, not exhaustive fact checking of every sentence or verification of the project’s asserted measurements."
+  },
+  "results": [
+    {
+      "role": "engineer",
+      "source": "how/campaigns/campaign_garnier/evidence/p0/coldread_SYNTHETIC_engineer_garnier_p0.md",
+      "short": {
+        "result": "PASS",
+        "criteria": [
+          {
+            "criterion": "Reusable standard or structure for agent context",
+            "result": "PASS",
+            "reason": "Identifies an open standard organizing project files so agents and people can find context.",
+            "answer_evidence": "open standard for organizing project files"
+          },
+          {
+            "criterion": "Present available action",
+            "result": "PASS",
+            "reason": "Names inspect/read/Get Started or cloning the visible repository.",
+            "answer_evidence": "clone the repository"
+          },
+          {
+            "criterion": "No disqualifying assertion",
+            "result": "PASS",
+            "reason": "Does not assert a frontier model, established independent federation or current democratic ownership.",
+            "answer_evidence": "Standard, Markdown and git are described rather than model hosting."
+          }
+        ],
+        "inability_to_answer": false,
+        "incorrect_disqualifying_claim": false
+      },
+      "long": {
+        "result": "PASS",
+        "criteria": [
+          {
+            "criterion": "Exact initial runnable command or local file example",
+            "result": "PASS",
+            "reason": "Exact clone destination, repository and shell chain match the frozen Get Started stimulus.",
+            "answer_evidence": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude"
+          },
+          {
+            "criterion": "Prerequisite",
+            "result": "PASS",
+            "reason": "Names Git, installed Claude Code and the agent’s Anthropic account; marks Obsidian optional.",
+            "answer_evidence": "Git and Claude Code installed; launching Claude Code also requires an Anthropic account."
+          },
+          {
+            "criterion": "Context and governance locations",
+            "result": "PASS",
+            "reason": "Locates workspace CLAUDE.md, embedded .adna, authoritative project CLAUDE.md and context/governance subdirectories.",
+            "answer_evidence": "what/context/; what/decisions/; who/governance/; ~/aDNA/<name>.aDNA/"
+          }
+        ],
+        "inability_to_answer": false
+      },
+      "confusion_preserved": [
+        {
+          "stage": "short",
+          "text": "What are the three folders, what makes a workspace a vault, and is adoption inside an existing project or a separate workspace?",
+          "interpretation": "Questions about implementation remain despite identifying the category and a present action."
+        },
+        {
+          "stage": "long",
+          "text": "Get Started says the router ships at the root, but the displayed template says to copy it there and update a separate .adna clone. Are those template instructions obsolete?",
+          "interpretation": "Source/setup consistency remains unresolved in the answer; passing the located-artifact key does not resolve it."
+        }
+      ],
+      "missing_evidence_preserved": [
+        "No executed install or demonstrated clean-machine first run; answer correctly identifies the recording as absent."
+      ]
+    },
+    {
+      "role": "funder",
+      "source": "how/campaigns/campaign_garnier/evidence/p0/coldread_SYNTHETIC_funder_garnier_p0.md",
+      "short": {
+        "result": "PASS",
+        "criteria": [
+          {
+            "criterion": "Reusable standard or structure for agent context",
+            "result": "PASS",
+            "reason": "Identifies an open standard organizing project files so agents and people can find context.",
+            "answer_evidence": "open standard for organizing project files"
+          },
+          {
+            "criterion": "Present available action",
+            "result": "PASS",
+            "reason": "Names inspect/read/Get Started or cloning the visible repository.",
+            "answer_evidence": "clone the repository"
+          },
+          {
+            "criterion": "No disqualifying assertion",
+            "result": "PASS",
+            "reason": "Does not assert a frontier model, established independent federation or current democratic ownership.",
+            "answer_evidence": "Standard, Markdown and git are described rather than model hosting."
+          }
+        ],
+        "inability_to_answer": false,
+        "incorrect_disqualifying_claim": false
+      },
+      "long": {
+        "result": "PASS",
+        "criteria": [
+          {
+            "criterion": "Named steward",
+            "result": "PASS",
+            "reason": "Correctly names Stanley Bishop and current decision authority.",
+            "answer_evidence": "Stanley Bishop, Founding Architect, currently holds decision authority over the standard."
+          },
+          {
+            "criterion": "Available versus planned",
+            "result": "PASS",
+            "reason": "Distinguishes available clone-and-run workspace from planned second independent node and unbuilt feeds.",
+            "answer_evidence": "all 74 registered vaults run on one computer, and federation has not been exercised between two operators"
+          },
+          {
+            "criterion": "Present contribution or contact ask",
+            "result": "PASS",
+            "reason": "Locates second-node invitation, repository contribution, numbered proposals and approval-gated community contact.",
+            "answer_evidence": "community.adna.network; registration requires operator approval"
+          },
+          {
+            "criterion": "No invented endorsement or adoption",
+            "result": "PASS",
+            "reason": "Notes the related-party role at Wilhelm Foundation and treats network statements as snapshot claims rather than independent verification.",
+            "answer_evidence": "Bishop also holds a role there; These are the snapshot’s claims; I did not independently test them."
+          }
+        ],
+        "inability_to_answer": false
+      },
+      "confusion_preserved": [
+        {
+          "stage": "short",
+          "text": "Will getting started provide a folder template, software or membership, and what does the network add beyond local file organization?",
+          "interpretation": "The precise deliverable and benefit of participation are still unclear."
+        },
+        {
+          "stage": "long",
+          "text": "What specific work would foundation support fund, who would receive it, and what milestones would that support buy? What must a second independent node commit to?",
+          "interpretation": "Funding readiness and the node commitment remain unanswered; the key asks for a present contribution/contact ask, not a fundable proposal."
+        }
+      ],
+      "missing_evidence_preserved": [
+        "No foundation-specific contact, funding amount or dated milestones located in the inspected pages.",
+        "External repositories and community service were not inspected."
+      ]
+    },
+    {
+      "role": "scientist",
+      "source": "how/campaigns/campaign_garnier/evidence/p0/coldread_SYNTHETIC_scientist_garnier_p0.md",
+      "short": {
+        "result": "PASS",
+        "criteria": [
+          {
+            "criterion": "Reusable standard or structure for agent context",
+            "result": "PASS",
+            "reason": "Identifies an open standard organizing project files so agents and people can find context.",
+            "answer_evidence": "open standard for organizing project files"
+          },
+          {
+            "criterion": "Present available action",
+            "result": "PASS",
+            "reason": "Names inspect/read/Get Started or cloning the visible repository.",
+            "answer_evidence": "clone the repository"
+          },
+          {
+            "criterion": "No disqualifying assertion",
+            "result": "PASS",
+            "reason": "Does not assert a frontier model, established independent federation or current democratic ownership.",
+            "answer_evidence": "Standard, Markdown and git are described rather than model hosting."
+          }
+        ],
+        "inability_to_answer": false,
+        "incorrect_disqualifying_claim": false
+      },
+      "long": {
+        "result": "PASS",
+        "criteria": [
+          {
+            "criterion": "Mechanism",
+            "result": "PASS",
+            "reason": "Explains governance/state, triad directories, routing indexes, selective context loading and session handoffs rather than relying on the DNA metaphor.",
+            "answer_evidence": "structured files and instructions that an agent follows"
+          },
+          {
+            "criterion": "Source or lineage",
+            "result": "PASS",
+            "reason": "Locates specification source Markdown, pinned startup instructions and the stated development-history account; does not pretend to have fetched GitHub.",
+            "answer_evidence": "source Markdown; startup tour pinned to v8.11; specification v2.5"
+          },
+          {
+            "criterion": "Evaluation available or explicitly absent",
+            "result": "PASS",
+            "reason": "Separates acceptance criteria, reported internal checks, document-quality calibration and token-reduction claims from controlled performance evidence. Correctly identifies absent first-run recording and limits absence claims to the inspected route.",
+            "answer_evidence": "requirements, not reported experimental results; no corresponding task-quality comparison; not measured evidence of improved agent performance"
+          }
+        ],
+        "inability_to_answer": false
+      },
+      "confusion_preserved": [
+        {
+          "stage": "short",
+          "text": "How do agents find the right context, what are the folders and lineage, what benefit can be reproduced, and is the graph real or illustrative?",
+          "interpretation": "Category comprehension coexists with mechanism, evidence and graph-meaning questions."
+        },
+        {
+          "stage": "long",
+          "text": "How was the 85% reduction measured and was answer quality preserved? What makes routing reliable and where are failures measured? Which historical claims still apply given .agentic versus .adna?",
+          "interpretation": "Evaluation provenance, reliability and version/deployment interpretation remain unresolved. The last question is not by itself proof of an error: the inspected rationale describes .agentic as an embedded deployment form."
+        }
+      ],
+      "missing_evidence_preserved": [
+        "No controlled baseline, reproducible benchmark package, raw agent runs, independent replication or supporting research paper found along the reported route. This is a scoped search result, not a corpus-wide absence proof.",
+        "No external GitHub inspection or actual reproduction."
+      ]
+    }
+  ],
+  "estimated_effort": {
+    "incremental_content_load_tokens_rough": 12000,
+    "basis": "Three synthetic responses, bounded frozen-source excerpts and authored grading; excludes prior calibration and aborted baseline work.",
+    "billing": "unavailable"
+  },
+  "human_panel_status": "No human success percentage calculated or implied. Actual timed human panel remains owed."
+}

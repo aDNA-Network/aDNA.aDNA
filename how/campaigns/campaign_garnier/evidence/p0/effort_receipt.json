@@ -1,0 +1,35 @@
+{
+  "unit": "kT_content_load",
+  "basis": "rough retrospective estimate, not metered API tokens",
+  "p0_1": {
+    "estimated": 70,
+    "actual_rough": 380,
+    "uncertainty_plus_or_minus": 130,
+    "components": {
+      "coordinator": 125,
+      "final_scorer_a": 65,
+      "final_scorer_b": 75,
+      "excluded_scorer_a": 45,
+      "excluded_scorer_b": 70
+    }
+  },
+  "p0_2": {
+    "estimated": 53,
+    "actual_rough": 210,
+    "uncertainty_plus_or_minus": 80,
+    "components": {
+      "coordinator_and_protocol_work": 56,
+      "two_calibrators": 26,
+      "two_prescreen_graders": 16,
+      "excluded_engineer": 12,
+      "three_clean_reader_contexts": 100
+    }
+  },
+  "total_estimated": 123,
+  "total_actual_rough": 590,
+  "uncertainty_plus_or_minus": 210,
+  "delta_rough": 467,
+  "ratio_rough": 4.8,
+  "whole_session_api_billing": "unavailable; six CLI turn token totals only in reader_runtime_receipts.json",
+  "double_count_rule": "Each subtask counted once; no repeated full transcript or cached-input summation as content-load."
+}

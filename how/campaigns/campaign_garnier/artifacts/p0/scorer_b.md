@@ -872,3 +872,5 @@ Uncertainty-bearing dimensions: D1 provisional, D2 provisional, D3 ceiling, D4 p
 [D] Mastra home hidden-focus conflict: D11/S2 pending manual impact verification; homepage duplicate logo marquee is `aria-hidden=true` yet contains focusable descendants, axe serious. Recommendation: remove clones from focus order or make hidden clone inert; effort S; owner marketing UI; verification keyboard/AT plus axe. Status open. Numeric-score ambiguity described above remains unresolved.
 
 Related: [[baseline_manifest]] · [[mission_garnier_p0_1_baseline]].
+
+Related: [[baseline_manifest]] · [[baseline_reconciliation]].

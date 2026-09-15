@@ -19,3 +19,7 @@ Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
 ## P0.1 — 2026-09-15
 
 [D] O1/C1: baseline_manifest + baseline_freeze identities. O2/C2: replacement scorer_a/b + baseline_reconciliation; three properties × twelve dimensions × two scorers; no average. O3/C3: scoped local evidence and five-line mission AAR, final session close pending. Findings FG-P0-001…004 remain open. patterns_to_author: bounded instrument excerpt/anchor clarification staged with consumer patterns, no delivery. [I] Estimate70kT; rough actual380±130kT, billing unavailable; retrospective required. Follow-up Rosetta P0.2 and operator DP2.
+
+## P0.2 — 2026-09-15
+
+[D] O1/C1: instrument_contract + complete component/first-contact censuses + consumer_bar_manifest. O2/C2: instrument_controls + calibration/prescreen receipts; actual human windows remain owed. O3/C3: phase_exit pendingDP2, final scope receipt and session AAR. Findings FG-P0-001…005 open, carried to P1/P2/P3/P4 owners; no source fix claimed. patterns_to_author staged in provider_pattern_proposal. [I] Estimate53kT; rough actual210±80kT; partial CLI usage only, total billing unavailable. P6 consumes this trail; Rosetta owns follow-up, Stanley owns DP2.

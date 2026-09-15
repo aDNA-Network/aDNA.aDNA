@@ -1,0 +1,160 @@
+{
+  "runtime_version": "codex-cli 0.154.0",
+  "model": "CLI configured default; no model override or provider billing-price assumption",
+  "fresh_contexts": true,
+  "working_directory": "/tmp/garnier_reader_public_20260915",
+  "private_vault_context_supplied": false,
+  "answer_key_supplied": false,
+  "first_stage_tools_used": 0,
+  "stages": [
+    {
+      "role": "engineer",
+      "window": "first",
+      "thread_id": "01a0a43a-e284-7da3-b890-af4378e2fafe",
+      "prompt_sha256": "dfe1d46f295afe91c904f2e0aba46f9a40e372ba757d1e0d7d56c23bfe996fa5",
+      "response_sha256": "0a90295fd27902d58c6eb6e42929c5be6d895905f59e110d0f0f3c6311f5e6a1",
+      "raw_response": "how/campaigns/campaign_garnier/evidence/p0/raw/readers/engineer_first.txt",
+      "raw_prompt": "how/campaigns/campaign_garnier/evidence/p0/raw/readers/first_prompt_engineer.txt",
+      "raw_events": "how/campaigns/campaign_garnier/evidence/p0/raw/reader_engineer_first.jsonl",
+      "usage": {
+        "input_tokens": 20819,
+        "cached_input_tokens": 12928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 291,
+        "reasoning_output_tokens": 145
+      },
+      "commands": []
+    },
+    {
+      "role": "engineer",
+      "window": "second",
+      "thread_id": "01a0a43a-e284-7da3-b890-af4378e2fafe",
+      "prompt_sha256": "d71b52b676f9a428a4e65c3e32c341f42692041a520f72829e97ba5a87fef3fa",
+      "response_sha256": "58ea058d06dfdd8cdf75af2cf3a3a820d97b0f345bde2845142408fec3d508b0",
+      "raw_response": "how/campaigns/campaign_garnier/evidence/p0/raw/readers/engineer_second.txt",
+      "raw_prompt": "how/campaigns/campaign_garnier/evidence/p0/raw/readers/engineer_second_prompt.txt",
+      "raw_events": "how/campaigns/campaign_garnier/evidence/p0/raw/reader_engineer_second.jsonl",
+      "usage": {
+        "input_tokens": 311871,
+        "cached_input_tokens": 254976,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3065,
+        "reasoning_output_tokens": 875
+      },
+      "commands": [
+        "/bin/zsh -lc 'cat public_index.json'",
+        "/bin/zsh -lc 'nl -ba adna_.txt'",
+        "/bin/zsh -lc \"python3 -B -c 'from html.parser import HTMLParser\nfrom pathlib import Path\nclass Links(HTMLParser):\n    def handle_starttag(self, tag, attrs):\n        if tag == \\\"a\\\":\n            href = dict(attrs).get(\\\"href\\\", \\\"\\\")\n            if href: print(href)\nLinks().feed(Path(\\\"adna_.body\\\").read_text())'\"",
+        "/bin/zsh -lc 'nl -ba adna_get-started.txt'",
+        "/bin/zsh -lc \"python3 -B -c 'from html.parser import HTMLParser\nfrom pathlib import Path\nclass Links(HTMLParser):\n    def handle_starttag(self, tag, attrs):\n        if tag == \\\"a\\\":\n            href = dict(attrs).get(\\\"href\\\", \\\"\\\")\n            if href: print(href)\nLinks().feed(Path(\\\"adna_get-started.body\\\").read_text())'\"",
+        "/bin/zsh -lc 'nl -ba adna_get-started_what-your-agent-reads.txt'",
+        "/bin/zsh -lc \"python3 -B -c 'from html.parser import HTMLParser\nfrom pathlib import Path\nclass Links(HTMLParser):\n    def handle_starttag(self, tag, attrs):\n        if tag == \\\"a\\\":\n            href = dict(attrs).get(\\\"href\\\", \\\"\\\")\n            if href: print(href)\nLinks().feed(Path(\\\"adna_get-started_what-your-agent-reads.body\\\").read_text())'\"",
+        "/bin/zsh -lc 'nl -ba adna_get-started_what-your-agent-reads_workspace-router.txt'",
+        "/bin/zsh -lc \"python3 -B -c 'from html.parser import HTMLParser\nfrom pathlib import Path\nclass Links(HTMLParser):\n    def handle_starttag(self, tag, attrs):\n        if tag == \\\"a\\\":\n            href = dict(attrs).get(\\\"href\\\", \\\"\\\")\n            if href: print(href)\nLinks().feed(Path(\\\"adna_get-started_what-your-agent-reads_workspace-router.body\\\").read_text())'\"",
+        "/bin/zsh -lc \"python3 -B -c 'from html.parser import HTMLParser\nfrom pathlib import Path\nclass Page(HTMLParser):\n    def __init__(self):\n        super().__init__(); self.in_pre = False; self.blocks = []; self.current = []; self.links = []\n    def handle_starttag(self, tag, attrs):\n        if tag == \\\"pre\\\": self.in_pre = True; self.current = []\n        if tag == \\\"a\\\":\n            href = dict(attrs).get(\\\"href\\\", \\\"\\\")\n            if \\\"what-your-agent-reads\\\" in href: self.links.append(href)\n    def handle_endtag(self, tag):\n        if tag == \\\"pre\\\": self.blocks.append(\\\"\\\".join(self.current)); self.in_pre = False\n    def handle_data(self, data):\n        if self.in_pre: self.current.append(data)\np = Page(); p.feed(Path(\\\"adna_get-started_what-your-agent-reads_standard-governance.body\\\").read_text())\nfor block in p.blocks:\n    for n,line in enumerate(block.splitlines(),1): print(f\\\"{n}: {line}\\\")\nprint(\\\"PUBLIC LINKS:\\\", *p.links, sep=\\\"\\\\n\\\")'\""
+      ]
+    },
+    {
+      "role": "funder",
+      "window": "first",
+      "thread_id": "01a0a43d-5cb3-7cc0-9b64-f09dc7afb42b",
+      "prompt_sha256": "bcf4ff427b5d564e60d0c48551fa6300d0b62c6e92aa6c68401008e802fc602a",
+      "response_sha256": "628ee50b3ec3e15fa77754ac681b20a652497bf07545e0af8208d996a5d4cd8a",
+      "raw_response": "how/campaigns/campaign_garnier/evidence/p0/raw/readers/funder_first.txt",
+      "raw_prompt": "how/campaigns/campaign_garnier/evidence/p0/raw/readers/first_prompt_funder.txt",
+      "raw_events": "how/campaigns/campaign_garnier/evidence/p0/raw/reader_funder_first.jsonl",
+      "usage": {
+        "input_tokens": 20823,
+        "cached_input_tokens": 12928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 310,
+        "reasoning_output_tokens": 158
+      },
+      "commands": []
+    },
+    {
+      "role": "funder",
+      "window": "second",
+      "thread_id": "01a0a43d-5cb3-7cc0-9b64-f09dc7afb42b",
+      "prompt_sha256": "9169310fda2a7208a84f989081ae8478964932c265fc1ba95af73f1104187917",
+      "response_sha256": "2ac19e16bef5716575a813941f29860a162c122faee74d01e3246ecee59f439a",
+      "raw_response": "how/campaigns/campaign_garnier/evidence/p0/raw/readers/funder_second.txt",
+      "raw_prompt": "how/campaigns/campaign_garnier/evidence/p0/raw/readers/funder_second_prompt.txt",
+      "raw_events": "how/campaigns/campaign_garnier/evidence/p0/raw/reader_funder_second.jsonl",
+      "usage": {
+        "input_tokens": 266616,
+        "cached_input_tokens": 235136,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2853,
+        "reasoning_output_tokens": 726
+      },
+      "commands": [
+        "/bin/zsh -lc 'cat public_index.json'",
+        "/bin/zsh -c \"python3 -B -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nentries=json.loads(Path(\\\"public_index.json\\\").read_text())\ne=next(e for e in entries if e[\\\"url\\\"]==\\\"https://adna.network/\\\")\nprint(\\\"URL:\\\",e[\\\"url\\\"],\\\"ARTIFACT:\\\",e[\\\"text\\\"])\nfor n,line in enumerate(Path(e[\\\"text\\\"]).read_text().splitlines(),1): print(f\\\"{n}: {line}\\\")\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   a=dict(attrs)\n   if \\\"href\\\" in a and a[\\\"href\\\"] not in links: links.append(a[\\\"href\\\"])\nlinks=[]\nLinks().feed(Path(e[\\\"html\\\"]).read_text())\nprint(\\\"LINKS:\\\",json.dumps(links,indent=2))'\"",
+        "/bin/zsh -c \"python3 -B -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nentries=json.loads(Path(\\\"public_index.json\\\").read_text())\ne=next(e for e in entries if e[\\\"url\\\"]==\\\"https://adna.network/about\\\")\nprint(\\\"URL:\\\",e[\\\"url\\\"],\\\"ARTIFACT:\\\",e[\\\"text\\\"])\nfor n,line in enumerate(Path(e[\\\"text\\\"]).read_text().splitlines(),1): print(f\\\"{n}: {line}\\\")\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   a=dict(attrs)\n   if \\\"href\\\" in a and a[\\\"href\\\"] not in links: links.append(a[\\\"href\\\"])\nlinks=[]\nLinks().feed(Path(e[\\\"html\\\"]).read_text())\nprint(\\\"LINKS:\\\",json.dumps(links,indent=2))'\"",
+        "/bin/zsh -c \"python3 -B -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nentries=json.loads(Path(\\\"public_index.json\\\").read_text())\ne=next(e for e in entries if e[\\\"url\\\"]==\\\"https://adna.network/state-of-the-network\\\")\nprint(\\\"URL:\\\",e[\\\"url\\\"],\\\"ARTIFACT:\\\",e[\\\"text\\\"])\nfor n,line in enumerate(Path(e[\\\"text\\\"]).read_text().splitlines(),1): print(f\\\"{n}: {line}\\\")\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   a=dict(attrs)\n   if \\\"href\\\" in a and a[\\\"href\\\"] not in links: links.append(a[\\\"href\\\"])\nlinks=[]\nLinks().feed(Path(e[\\\"html\\\"]).read_text())\nprint(\\\"LINKS:\\\",json.dumps(links,indent=2))'\"",
+        "/bin/zsh -c \"python3 -B -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nentries=json.loads(Path(\\\"public_index.json\\\").read_text())\ne=next(e for e in entries if e[\\\"url\\\"]==\\\"https://adna.network/community\\\")\nprint(\\\"URL:\\\",e[\\\"url\\\"],\\\"ARTIFACT:\\\",e[\\\"text\\\"])\nfor n,line in enumerate(Path(e[\\\"text\\\"]).read_text().splitlines(),1): print(f\\\"{n}: {line}\\\")\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   a=dict(attrs)\n   if \\\"href\\\" in a and a[\\\"href\\\"] not in links: links.append(a[\\\"href\\\"])\nlinks=[]\nLinks().feed(Path(e[\\\"html\\\"]).read_text())\nprint(\\\"LINKS:\\\",json.dumps(links,indent=2))\nexternal=[e for e in entries if not e[\\\"url\\\"].startswith(\\\"https://adna.network/\\\")]\nprint(\\\"EXTERNAL URLS IN INDEX:\\\",[e[\\\"url\\\"] for e in external])'\""
+      ]
+    },
+    {
+      "role": "scientist",
+      "window": "first",
+      "thread_id": "01a0a43e-d3e3-7613-b213-19b6359343ef",
+      "prompt_sha256": "514267c6486c7120245d734f8c66158bf03d931dace4fa1af263794384e17b5e",
+      "response_sha256": "6c9d305447a71d1d91934422b10a7e178f35414ac0a155ceeff7e669d4f9e32a",
+      "raw_response": "how/campaigns/campaign_garnier/evidence/p0/raw/readers/scientist_first.txt",
+      "raw_prompt": "how/campaigns/campaign_garnier/evidence/p0/raw/readers/first_prompt_scientist.txt",
+      "raw_events": "how/campaigns/campaign_garnier/evidence/p0/raw/reader_scientist_first.jsonl",
+      "usage": {
+        "input_tokens": 20829,
+        "cached_input_tokens": 12928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 345,
+        "reasoning_output_tokens": 188
+      },
+      "commands": []
+    },
+    {
+      "role": "scientist",
+      "window": "second",
+      "thread_id": "01a0a43e-d3e3-7613-b213-19b6359343ef",
+      "prompt_sha256": "aea4b260c09d307214e6032deec51c6c11c9cd2114ff52a7a5ecfee8f367a04d",
+      "response_sha256": "dbd8a1d9f48b45efe46c86e3b11502984bf1fd37f39af79c35a9819a6d35ebbe",
+      "raw_response": "how/campaigns/campaign_garnier/evidence/p0/raw/readers/scientist_second.txt",
+      "raw_prompt": "how/campaigns/campaign_garnier/evidence/p0/raw/readers/scientist_second_prompt.txt",
+      "raw_events": "how/campaigns/campaign_garnier/evidence/p0/raw/reader_scientist_second.jsonl",
+      "usage": {
+        "input_tokens": 935096,
+        "cached_input_tokens": 854784,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 6277,
+        "reasoning_output_tokens": 1331
+      },
+      "commands": [
+        "/bin/zsh -lc 'cat public_index.json'",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"URL:\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    url=urljoin(u,d[\\\"href\\\"])\n    if url not in seen:\n     seen.add(url); print(url)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/reference\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"URL:\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/reference/specification\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"URL:\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/reference/specification/10-context-library\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"URL:\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/reference/design-rationale\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"URL:\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/provenance-audit\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"URL:\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/about\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"URL:\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/state-of-the-network\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"URL:\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/changelog\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"URL:\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/reference/specification/18-success-criteria\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"ROUTE: /changelog -> /reference/specification (revisit) ->\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/reference/quality-rubric\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"URL:\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/learn/concepts/convergence\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"ROUTE: /reference/quality-rubric -> / (revisit) ->\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/get-started\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"URL:\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\"",
+        "/bin/zsh -c \"python3 -c 'import json\nfrom pathlib import Path\nfrom html.parser import HTMLParser\nfrom urllib.parse import urljoin\nidx=json.loads(Path(\\\"public_index.json\\\").read_text())\nu=\\\"https://adna.network/get-started/what-your-agent-reads\\\"\ne=next(x for x in idx if x[\\\"url\\\"]==u)\nprint(\\\"URL:\\\",u)\nprint(Path(e[\\\"text\\\"]).read_text())\nclass Links(HTMLParser):\n def handle_starttag(self,tag,attrs):\n  if tag==\\\"a\\\":\n   d=dict(attrs)\n   if \\\"href\\\" in d:\n    v=urljoin(u,d[\\\"href\\\"])\n    if v not in seen:\n     seen.add(v); print(v)\nseen=set()\nprint(\\\"\\\\nLINKS:\\\")\nLinks().feed(Path(e[\\\"html\\\"]).read_text())'\""
+      ]
+    }
+  ],
+  "partial_api_token_totals": {
+    "input_tokens": 1576054,
+    "cached_input_tokens": 1383680,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 13141,
+    "reasoning_output_tokens": 3423
+  },
+  "billing_limit": "These six CLI turns only, not total campaign usage. Cached input is included in input_tokens; do not add it again. Reasoning output is reported separately by runtime; no currency conversion."
+}

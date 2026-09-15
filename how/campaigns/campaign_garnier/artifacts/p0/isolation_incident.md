@@ -19,3 +19,7 @@ Related: [[baseline_manifest]] · [[mission_garnier_p0_1_baseline]].
 ## Second disclosure
 
 [D] The first B context also disclosed an initial whole-instrument read that exposed historical §8 and changelog figures. Its outputs are archived under artifacts/p0/excluded_isolation and evidence/p0/excluded_isolation, excluded from reconciliation. A fresh replacement receives only the bounded normative ranges. The coordinator saw the excluded summary; final reconciliation therefore must be clause-based and preserve both replacement sheets, not import an excluded number.
+
+## Reader isolation correction
+
+[D] A fresh engineer delegate was initially instructed to read private root governance. That document itself explains the project, so the result is retained only under evidence/p0/excluded_isolation as a primed diagnostic. Two further spawn attempts hit the thread limit. Three new CLI contexts were then opened outside the vault in a public-files-only temporary directory; each first-fold turn used no tools, and the second turn could follow only indexed public captures. Six prompts/responses and tool receipts are retained. No context saw the answer key. Publicly linked governance pages discovered during the second window are legitimate stimulus, unlike private pre-reading.

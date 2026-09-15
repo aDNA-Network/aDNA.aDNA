@@ -1,0 +1,61 @@
+{
+  "results_not_policy": true,
+  "rows": [
+    {
+      "route": "/about",
+      "words": 493,
+      "target_owner": "artifacts/genesis/word_budgets.md",
+      "target": 450,
+      "excess": 43,
+      "disposition": "WARN: P1 preserves prerequisites and qualifiers while editing repetition"
+    },
+    {
+      "route": "/",
+      "words": 766,
+      "target_owner": "artifacts/genesis/word_budgets.md",
+      "target": 600,
+      "excess": 166,
+      "disposition": "WARN: P1 preserves prerequisites and qualifiers while editing repetition"
+    },
+    {
+      "route": "/community",
+      "words": 633,
+      "target_owner": "artifacts/genesis/word_budgets.md",
+      "target": 500,
+      "excess": 133,
+      "disposition": "WARN: P1 preserves prerequisites and qualifiers while editing repetition"
+    },
+    {
+      "route": "/network",
+      "words": 611,
+      "target_owner": "artifacts/genesis/word_budgets.md",
+      "target": 550,
+      "excess": 61,
+      "disposition": "WARN: P1 preserves prerequisites and qualifiers while editing repetition"
+    },
+    {
+      "route": "/commons",
+      "words": 449,
+      "target_owner": "artifacts/genesis/word_budgets.md",
+      "target": 450,
+      "excess": 0,
+      "disposition": "PASS advisory target"
+    },
+    {
+      "route": "/get-started",
+      "words": 971,
+      "target_owner": "artifacts/genesis/word_budgets.md",
+      "target": 900,
+      "excess": 71,
+      "disposition": "WARN: P1 preserves prerequisites and qualifiers while editing repetition"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "words": 508,
+      "target_owner": "artifacts/genesis/word_budgets.md",
+      "target": 500,
+      "excess": 8,
+      "disposition": "WARN: P1 preserves prerequisites and qualifiers while editing repetition"
+    }
+  ]
+}

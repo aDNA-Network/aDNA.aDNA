@@ -1,0 +1,199 @@
+{
+  "all_pass": true,
+  "checks": [
+    {
+      "scorer": "a",
+      "id": "K17",
+      "window": "short",
+      "observed": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "scorer": "a",
+      "id": "K17",
+      "window": "long",
+      "observed": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "scorer": "a",
+      "id": "K04",
+      "window": "short",
+      "observed": "FAIL",
+      "expected": "FAIL",
+      "pass": true
+    },
+    {
+      "scorer": "a",
+      "id": "K04",
+      "window": "long",
+      "observed": "FAIL",
+      "expected": "FAIL",
+      "pass": true
+    },
+    {
+      "scorer": "a",
+      "id": "K22",
+      "window": "short",
+      "observed": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "scorer": "a",
+      "id": "K22",
+      "window": "long",
+      "observed": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "scorer": "a",
+      "id": "K09",
+      "window": "short",
+      "observed": "FAIL",
+      "expected": "FAIL",
+      "pass": true
+    },
+    {
+      "scorer": "a",
+      "id": "K09",
+      "window": "long",
+      "observed": "FAIL",
+      "expected": "FAIL",
+      "pass": true
+    },
+    {
+      "scorer": "a",
+      "id": "K31",
+      "window": "short",
+      "observed": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "scorer": "a",
+      "id": "K31",
+      "window": "long",
+      "observed": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "scorer": "a",
+      "id": "K13",
+      "window": "short",
+      "observed": "FAIL",
+      "expected": "FAIL",
+      "pass": true
+    },
+    {
+      "scorer": "a",
+      "id": "K13",
+      "window": "long",
+      "observed": "FAIL",
+      "expected": "FAIL",
+      "pass": true
+    },
+    {
+      "scorer": "b",
+      "id": "K17",
+      "window": "short",
+      "observed": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "scorer": "b",
+      "id": "K17",
+      "window": "long",
+      "observed": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "scorer": "b",
+      "id": "K04",
+      "window": "short",
+      "observed": "FAIL",
+      "expected": "FAIL",
+      "pass": true
+    },
+    {
+      "scorer": "b",
+      "id": "K04",
+      "window": "long",
+      "observed": "FAIL",
+      "expected": "FAIL",
+      "pass": true
+    },
+    {
+      "scorer": "b",
+      "id": "K22",
+      "window": "short",
+      "observed": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "scorer": "b",
+      "id": "K22",
+      "window": "long",
+      "observed": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "scorer": "b",
+      "id": "K09",
+      "window": "short",
+      "observed": "FAIL",
+      "expected": "FAIL",
+      "pass": true
+    },
+    {
+      "scorer": "b",
+      "id": "K09",
+      "window": "long",
+      "observed": "FAIL",
+      "expected": "FAIL",
+      "pass": true
+    },
+    {
+      "scorer": "b",
+      "id": "K31",
+      "window": "short",
+      "observed": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "scorer": "b",
+      "id": "K31",
+      "window": "long",
+      "observed": "PASS",
+      "expected": "PASS",
+      "pass": true
+    },
+    {
+      "scorer": "b",
+      "id": "K13",
+      "window": "short",
+      "observed": "FAIL",
+      "expected": "FAIL",
+      "pass": true
+    },
+    {
+      "scorer": "b",
+      "id": "K13",
+      "window": "long",
+      "observed": "FAIL",
+      "expected": "FAIL",
+      "pass": true
+    }
+  ],
+  "criterion": "Two scorers independently match every frozen fixture/window expected label before grading prescreens.",
+  "not_human_evidence": true
+}

@@ -21,8 +21,8 @@ predecessor_campaigns:
 absorbs_prospective_scope:
 - campaign_vitrine
 governing_instrument: VITRUVIUS v1.1
-baseline_score: unmeasured on v1.1; historic v1.0 breakdown in instrument_boundary
-evidence_pack: /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/genesis
+baseline_score: paired provisional v1.1; full breakdowns and limitations in artifacts/p0/baseline_reconciliation.md
+evidence_pack: /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0
 created: '2026-09-14'
 updated: '2026-09-15'
 last_edited_by: agent_codex
@@ -69,7 +69,7 @@ VITRINE's proposed website craft and docs work is absorbed prospectively into P1
 | [[mission_garnier_p0_1_baseline]] | Freeze baseline and reconcile authority | 2 | opus / codex | DP1 |
 | [[mission_garnier_p0_2_instruments]] | Calibrate the added instruments | 1 | opus / codex | mission_garnier_p0_1_baseline |
 
-**⛩ DP2 exit:** Pinned target/exemplar baseline; two isolated v1.1 scorers; added instruments have passing/failing controls; P1 budget presented for operator commitment. Named artifact: `artifacts/p0/phase_exit.md`. Estimated agent sittings: 3; budget: 123 kT (committed at DP1). Missions remain queued.
+**⛩ DP2 exit:** Pinned target/exemplar baseline; two isolated v1.1 scorers; added instruments have passing/failing controls; P1 budget presented for operator commitment. Named artifact: `artifacts/p0/phase_exit.md`. Estimated agent sittings: 3; budget: 123 kT (committed at DP1). Both missions completed on 2026-09-15; rough actual 590±210kT, retrospective filed. DP2 pending.
 
 ### P1 — Voice and concision
 
@@ -79,7 +79,7 @@ VITRINE's proposed website craft and docs work is absorbed prospectively into P1
 | [[mission_garnier_p1_2_quickstart_voice]] | Bring the first task into focus | 1 | opus / codex | mission_garnier_p1_1_homepage_voice |
 | [[mission_garnier_p1_3_mission_voice]] | Make the public-good invitation concise | 1 | opus / codex | mission_garnier_p1_2_quickstart_voice |
 
-**⛩ DP3 exit:** Four-part homepage storyboard and all seven surface word-target dispositions complete; unsupported claims and banned prose zero; formative human feedback recorded for all three decisive classes; P2 tranche scope/budget presented. Named artifact: `artifacts/p1/phase_exit.md`. Estimated agent sittings: 3; budget: 186 kT (provisional until DP2). Missions remain queued.
+**⛩ DP3 exit:** Four-part homepage storyboard and all seven surface word-target dispositions complete; unsupported claims and banned prose zero; formative human feedback recorded for all three decisive classes; P2 tranche scope/budget presented. Named artifact: `artifacts/p1/phase_exit.md`. Estimated agent sittings: 3; budget: 186 kT original;320kT proposed reforecast derived from additive mission fields (uncommitted until DP2). Missions remain queued.
 
 ### P2 — Proof, fidelity and midpoint
 
@@ -231,3 +231,7 @@ Deliverables: pending campaign execution. Descoped: none approved. Key findings:
 - **Finding:** pending.
 - **Change:** pending.
 - **Follow-up:** pending P6.5.
+
+## P0 execution close — 2026-09-15
+
+[D] Both P0 missions completed; [[phase_exit]] is the next live decision. [[baseline_reconciliation]] preserves the paired v1.1 breakdowns and uncertainty; [[prescreen_pack]] records synthetic-only observations. [[p0_estimation_retrospective]] records the budget miss and uncommitted P1 proposal. No phase transition or publication occurred.

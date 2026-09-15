@@ -21,6 +21,16 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
+### 2026-09-15 — GARNIER P0 completed; DP2 exit and P1 budget pending
+
+[D] `last_edited_by: agent_codex`; runtime Codex; [[campaign_garnier]] remains active in phase0. Both P0 missions completed. [[how/campaigns/campaign_garnier/artifacts/p0/phase_exit|DP2 evidence and budget gate]] is the next live decision. Two clean replacement scorers share a frozen v1.1 pack; paired breakdowns/ceilings and excluded attempts are preserved in [[baseline_reconciliation]]. Production still serves `eda4cbfc`; local build source was `c38c6dc`. No composite is promoted as a launch score.
+
+[D] Local full gates698 pass/one existing skip; visual container26 pass; target captures/controls and three clean synthetic prescreens are filed. Human timing, clean-machine TTFS, manual AT and field p75 remain owed; collection is unverified. Five findings route to P1–P4, including stale counts, privacy wording and fresh-mobile diagram legibility. No site/src, registry, .adna, predecessor/peer write, push, deploy or delivery occurred.
+
+[I] Rough P0 content-load590±210kT versus123 forecast; retrospective filed. P1 original186kT is preserved, with an additive proposed320kT reforecast derived from its three mission cards. No P1 budget or phase transition is accepted by this block.
+
+**Resume / next session:** Read root/campaign governance, active leases and [[how/campaigns/campaign_garnier/artifacts/p0/phase_exit|DP2]]. Obtain Stanley’s phase-exit/P1-budget ruling; do not ask for DP1 again. On explicit DP2 acceptance, record the exact choice and begin [[mission_garnier_p1_1_homepage_voice]] under that budget, with [[prescreen_pack]] confusions and the source-tour finding carried forward. Retain HAUSSMANN P5.1/P5.2/GR-7 ownership, H1/G4/counsel and publication holds. Session: [[session_stanley_20260915_080004_garnier_p0]].
+
 ### 2026-09-15 — GARNIER DP1 accepted with amendments; P0 ready
 
 [D] `last_edited_by: agent_codex`; runtime Codex. Stanley approved the five charter amendments and then instructed their implementation. [[how/campaigns/campaign_garnier/artifacts/amendments/charter_ratification_20260915|DP1 ratification]] is **accepted with amendments**; [[campaign_garnier]] is active. This supersedes the pending GARNIER decision in the historical block below. The original proposal is archived, the pending marker archived, and the current HTML gate is a read-only receipt.

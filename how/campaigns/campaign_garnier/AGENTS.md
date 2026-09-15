@@ -10,7 +10,7 @@ tags:
 ---
 # GARNIER campaign index
 
-[D] The charter is active; DP1 was accepted with amendments on 2026-09-15. Start at [[artifacts/amendments/charter_ratification_20260915]] and [[artifacts/amendments/amendment_verification]]. P0 is next; later phase budgets and gates remain human. Read [[CLAUDE]] before execution. This index is derived from current GARNIER-owned Markdown paths; the original packet and archived pending marker are historical artifacts.
+[D] The charter is active; DP1 was accepted with amendments on 2026-09-15. Start at [[artifacts/amendments/charter_ratification_20260915]] and [[artifacts/amendments/amendment_verification]]. P0 is completed; [[artifacts/p0/phase_exit|DP2]] is pending. P1 remains queued and its 320kT reforecast is proposed; later gates remain human. Read [[CLAUDE]] before execution. This index is derived from current GARNIER-owned Markdown paths; the original packet and archived pending marker are historical artifacts.
 
 - [[CLAUDE]]
 - [[artifacts/amendments/amendment_aar]]
@@ -41,11 +41,27 @@ tags:
 - [[artifacts/genesis/tool_and_context_arsenal]]
 - [[artifacts/genesis/verification_report]]
 - [[artifacts/genesis/word_budgets]]
+- [[artifacts/p0/baseline_manifest]]
+- [[artifacts/p0/baseline_reconciliation]]
+- [[artifacts/p0/contextual_voice_review]]
+- [[artifacts/p0/finding_register_p0]]
+- [[artifacts/p0/instrument_contract]]
+- [[artifacts/p0/instrument_controls]]
+- [[artifacts/p0/isolation_incident]]
+- [[artifacts/p0/p0_estimation_retrospective]]
+- [[artifacts/p0/phase_exit]]
+- [[artifacts/p0/prescreen_pack]]
+- [[artifacts/p0/provider_pattern_proposal]]
+- [[artifacts/p0/scorer_a]]
+- [[artifacts/p0/scorer_b]]
 - [[campaign_garnier]]
 - [[directives/CODEX_DIRECTIVE_operation_garnier_genesis]]
 - [[evidence/genesis/coldread_SYNTHETIC_engineer_garnier_s3]]
 - [[evidence/genesis/coldread_SYNTHETIC_funder_garnier_s3]]
 - [[evidence/genesis/coldread_SYNTHETIC_scientist_garnier_s3]]
+- [[evidence/p0/coldread_SYNTHETIC_engineer_garnier_p0]]
+- [[evidence/p0/coldread_SYNTHETIC_funder_garnier_p0]]
+- [[evidence/p0/coldread_SYNTHETIC_scientist_garnier_p0]]
 - [[missions/_mission_template_garnier]]
 - [[missions/mission_garnier_p0_1_baseline]]
 - [[missions/mission_garnier_p0_2_instruments]]
@@ -86,5 +102,7 @@ tags:
 - [[missions/mission_garnier_p6_5_followup]]
 - [[missions/mission_garnier_p6_6_close]]
 - [[missions/session_prompts_garnier]]
+
+Excluded isolation attempts are archived under artifacts/p0/excluded_isolation and evidence/p0/excluded_isolation, not current scoring or reader inputs.
 
 Related: [[campaign_garnier]] · [[missions/session_prompts_garnier]].

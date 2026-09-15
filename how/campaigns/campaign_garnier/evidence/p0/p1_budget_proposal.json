@@ -1,0 +1,38 @@
+{
+  "status": "proposed_DP2",
+  "derived_from_mission_frontmatter": true,
+  "original_phase_budget": 186,
+  "proposed_phase_budget": 320,
+  "estimated_lead_sittings": 3,
+  "rows": [
+    {
+      "mission": "mission_garnier_p1_1_homepage_voice",
+      "phase": 1,
+      "estimated_sessions": 1,
+      "original_budget": 62,
+      "proposed_reforecast": 150,
+      "status": "queued"
+    },
+    {
+      "mission": "mission_garnier_p1_2_quickstart_voice",
+      "phase": 1,
+      "estimated_sessions": 1,
+      "original_budget": 61,
+      "proposed_reforecast": 90,
+      "status": "queued"
+    },
+    {
+      "mission": "mission_garnier_p1_3_mission_voice",
+      "phase": 1,
+      "estimated_sessions": 1,
+      "original_budget": 63,
+      "proposed_reforecast": 80,
+      "status": "queued"
+    }
+  ],
+  "campaign_original_totals": {
+    "missions": 38,
+    "sessions": 47,
+    "budget": 2310
+  }
+}

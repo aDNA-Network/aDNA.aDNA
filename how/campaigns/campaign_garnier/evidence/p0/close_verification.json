@@ -1,0 +1,36 @@
+{
+  "created": "2026-09-15T09:02:55.736157+00:00",
+  "base": "c38c6dc7ed283f5163604fedc67130776fc1d6c1",
+  "frozen_files_rehashed": 1692,
+  "frozen_mismatches": [],
+  "same_state_previous_bytes": true,
+  "state_before_sha256": "e2a5b95cf7c8629cca9c89876129ba8071e9acc3c1d53153196f6828ecd97c74",
+  "one_state_block_added": true,
+  "mission_count": 38,
+  "completed_p0": 2,
+  "later_missions_queued": true,
+  "original_sessions": 47,
+  "original_budget": 2310,
+  "p1_proposed_budget": 320,
+  "current_count": 1,
+  "reserved_path_diff": [],
+  "new_markdown_frontmatter_checked": 16,
+  "consumer_owner_hashes_match": true,
+  "structural_checks": "structural_checks.json",
+  "structural_controls": "structural_controls.json",
+  "site_retest": "Not repeated: no site source changed since recorded full/visual lanes. New consumer controls and metadata checks executed.",
+  "authority": "DP2 pending; no push/deploy/delivery",
+  "commands": [
+    "python3 how/campaigns/campaign_garnier/evidence/amendments/verify_amendments.py",
+    "python3 how/campaigns/campaign_garnier/evidence/amendments/verify_amendments.py --selftest",
+    "git diff c38c6dc --name-only -- site/src .adna how/campaigns/campaign_haussmann how/campaigns/campaign_vitrine",
+    "SHA256 rehash each allowed_files entry from baseline_freeze.json",
+    "Remove sole exact state_queue_append.txt bytes; require equality with raw/state_before.bin",
+    "Parse mission YAML and sum estimated_sessions/token_budget_estimated; count status and CURRENT"
+  ],
+  "diff_check": {
+    "result": "one intentional CommonMark hard line break",
+    "path": "evidence/p0/coldread_SYNTHETIC_funder_garnier_p0.md:26",
+    "reason": "Two trailing spaces preserve the recorded reader response formatting and its grading input hash; not an accidental source whitespace defect."
+  }
+}

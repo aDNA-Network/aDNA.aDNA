@@ -879,3 +879,5 @@ Evidence: `how/campaigns/campaign_garnier/evidence/p0/lighthouse_followup.json` 
 Owed / movement: Collect p75 mobile+desktop five-template dataset and full internal-link/ops crawl;3 may move down or up. This number carries high uncertainty.
 
 Related: [[baseline_manifest]] · [[OPERATION_VITRUVIUS_review_instrument]].
+
+Related: [[baseline_manifest]] · [[baseline_reconciliation]].

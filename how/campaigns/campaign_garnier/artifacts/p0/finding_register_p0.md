@@ -119,3 +119,27 @@ tags: [garnier, p0, evidence]
 [D] Pa11y’s 15 decorative-dot contrast reports remain scanner disagreements requiring interpretation; they are not recorded as 15 confirmed WCAG failures. Checkpoint responses are excluded from reference-quality judgments. Aesthetic findings name accessible reading/zoom consequences; this record itself makes no aesthetic change.
 
 Related: [[baseline_manifest]] · [[mission_garnier_p0_1_baseline]].
+
+## FG-P0-005 — follow-up from clean prescreen
+
+```json
+{
+  "id": "FG-P0-005",
+  "dimension": "D3",
+  "severity": "S2",
+  "provenance": "D",
+  "location": {
+    "url": "https://adna.network/get-started/what-your-agent-reads/workspace-router/",
+    "selector": "main rendered source comment",
+    "viewport": "frozen HTTP text",
+    "capture": "evidence/p0/raw/public/adna_get-started_what-your-agent-reads_workspace-router.txt"
+  },
+  "observation": "Get Started says the root router ships pre-instantiated; the linked annotated router contains a template comment telling the reader to copy it to the root and update via a separate .adna clone. The clean synthetic engineer independently noticed the discrepancy.",
+  "why_it_matters": "The proof tour leaves a reader unsure which setup instructions apply to the current workspace image. A pinned historical source can be legitimate, but its relationship to the current command must be explicit.",
+  "recommendation": "P1.2 should reconcile the entire annotated first-read tour with its stated pin/current setup, explain any historical template comments, and execute the documented initial flow in a clean disposable environment; preserve source provenance and accessible code/explanations.",
+  "effort": "M",
+  "owner": "Rosetta P1.2",
+  "verification": "Compare every tour source/HTML/twin against the declared pin, then record exact command/prerequisites/result on a clean disposable setup; no synthetic success substitution.",
+  "status": "open"
+}
+```
