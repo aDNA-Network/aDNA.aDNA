@@ -1,0 +1,96 @@
+[
+  {
+    "event": "start",
+    "at": "2026-09-15T11:32:22.277797+00:00",
+    "argv": [
+      "docker",
+      "exec",
+      "-it",
+      "garnier-p1-repro-20260915-112428",
+      "bash",
+      "-lc",
+      "stty -echo; printf \"__AUTH_INPUT__\\n\"; IFS= read -r ANTHROPIC_API_KEY; export ANTHROPIC_API_KEY; printf \"__AUTH_LOADED__\\n\"; stty echo; exec bash -l"
+    ],
+    "secret_route": "inherited broker environment -> echo-disabled PTY -> child environment; no persisted secret"
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T11:32:33.268694+00:00",
+    "input": {
+      "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T11:33:23.966838+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T11:33:40.467272+00:00",
+    "input": {
+      "key": "up"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T11:33:40.467425+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T11:33:57.383262+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T11:34:36.955646+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T11:35:11.927664+00:00",
+    "input": {
+      "text": "Create a new aDNA project for my work.",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T11:36:40.798499+00:00",
+    "input": {
+      "text": "/exit",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T11:37:29.802936+00:00",
+    "input": {
+      "text": "printf 'CLAUDE_LAUNCHER_EXIT=%s\\n' \"$?\"",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T11:38:28.823217+00:00",
+    "input": {
+      "text": "exit",
+      "enter": true
+    }
+  },
+  {
+    "event": "exit",
+    "at": "2026-09-15T11:38:28.836436+00:00",
+    "exit_code": 0
+  }
+]

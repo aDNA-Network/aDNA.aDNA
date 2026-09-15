@@ -9,5 +9,11 @@
   "claude_code_version": "2.1.223",
   "source_commit": "b1cf040",
   "cloned_image_commit": "dea4ab9d4eb7242c832a6311a6e08d85a5791f8c",
-  "status": "running; authentication not yet proven"
+  "status": "blocked_insufficient_api_credit",
+  "completed_first_project": false,
+  "launcher_exit_code": 0,
+  "runtime_displayed_model": "Opus 5 (1M context)",
+  "api_error": "Credit balance too low",
+  "container_disposition": "stopped; retained as failed-run evidence",
+  "finished": "2026-09-15T11:40:20.911754+00:00"
 }

@@ -21,6 +21,18 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
+### 2026-09-15 — GARNIER P1 retry reached the API; funded execution and humans remain owed
+
+[D] `last_edited_by: agent_codex`; runtime Codex. [[how/campaigns/campaign_garnier/artifacts/p1/first_task_continuation|Evidence continuation]] restored source `b1cf040` at `http://127.0.0.1:4465/` (15/15 served hashes). The exact copied command cloned `dea4ab9`; Claude Code 2.1.223 launched, but the first project request returned **Credit balance too low**. Router/standard checks pass; project/triad/history checks fail. No first project or fresh-session success. P1.1 completed; P1.2/P1.3 in_progress; DP3 pending.
+
+[D] Stanley chose three local formative sessions; the [[how/campaigns/campaign_garnier/artifacts/p1/formative_reader_pack|worksheet]] is ready, but zero human records arrived. All 1,692 frozen P0 hashes preserved. No site source, registry, .adna, predecessor or peer edits; no push/deploy/delivery. The disposable container is stopped and retained; preview remains local.
+
+[I] Continuation70±30kT including preceding planning; phase implementation/evidence330±120kT vs320 committed, with prior wind-down30±15kT separately additional. Remaining20–35kT after external inputs; billing unavailable.
+
+**Intake:** 2026-09-15 · GARNIER P1 evidence · identified preview and reader worksheet ready; installed-CLI task failure retained; missing funded execution and human records named.
+
+**Resume-Here:** Read [[how/campaigns/campaign_garnier/artifacts/p1/first_task_continuation]] and the CURRENT P1.2 prompt. Obtain a funded broker credential or completed authenticated disposable transcript, plus consenting engineer/funder/scientist observations; no secrets in chat. Retry in a fresh disposable environment because the retained failed container already contains the clone. Keep the candidate stable and DP3 pending while evidence is absent. No repeat DP1/DP2, P0/P1.1 replay or P2 entry. Session: [[session_stanley_20260915_112428_garnier_p1_evidence]].
+
 ### 2026-09-15 — GARNIER wind-down reconciled; resume at remaining P1 evidence
 
 [D] `last_edited_by: agent_codex`; runtime Codex. Implementation and evidence closure are committed through `f34f9c2` (website source `b1cf040`, synthetic stimulus `5b92495`). P1.1 is completed; P1.2/P1.3 remain in progress; DP1/DP2 accepted, DP3 pending. The session AAR, final verification and frozen baseline remain preserved. This is a records-only handoff, not a fresh website verification or phase transition.

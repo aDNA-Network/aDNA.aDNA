@@ -1,0 +1,16 @@
+{
+  "created": "2026-09-15T11:40:20.912840+00:00",
+  "source_commit": "b1cf040",
+  "files": {
+    "how/campaigns/campaign_garnier/evidence/p1/resume_baseline_integrity.json": "a3d1407105246146245f7e96e16128854c12c20ea04e2110f0a9492b1c45a784",
+    "how/campaigns/campaign_garnier/evidence/p1/resume_copied_command.json": "663a6cf89816139579c8136101ab5c6ff70c476b9450ba9239725de08e786853",
+    "how/campaigns/campaign_garnier/evidence/p1/resume_preview_identity.json": "370c09daadd98d02c01d765c00c0d3c7888de8f521136371c945a9b9aa1df738",
+    "how/campaigns/campaign_garnier/evidence/p1/resume_project_checks.json": "f7fd4a132177a75cf9d9d9c7f6ee3ceed2f718cc5f2e6dcf3de1a97d1d4ec166",
+    "how/campaigns/campaign_garnier/evidence/p1/resume_reproduction_environment.json": "9ea21efdab3fed1c72d4468f677055dffab8fcd3855e0836baf37d63bb37cf5a",
+    "how/campaigns/campaign_garnier/evidence/p1/resume_secret_storage_check.json": "fb584fe67096b63b68e02e65ba170bf6ebd96bc78cf36baedbdb4c4c3a008a3d",
+    "how/campaigns/campaign_garnier/evidence/p1/resume_terminal_events.json": "b96021434ed4aee0a916768c60cac141fe08322560b6cdb346ddba10f8d2bffc",
+    "how/campaigns/campaign_garnier/evidence/p1/resume_terminal_transcript.txt": "8bcae1a1914d58c880a690b630ea9d85e79c45a021dd83e5a6b4a08da330dc90"
+  },
+  "raw_recorder": "raw/repro_20260915/terminal_bridge.py",
+  "raw_attempts": "raw/repro_20260915/; attempt_2 is the task run; earlier terminal setup excluded"
+}

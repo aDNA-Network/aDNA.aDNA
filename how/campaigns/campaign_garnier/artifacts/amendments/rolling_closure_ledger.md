@@ -41,3 +41,7 @@ Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
 ## Records-only wind-down — 2026-09-15
 
 [D] Implementation closure `f34f9c2` reconciled: session inventory/timestamp corrected additively, CURRENT prompt narrowed to remaining evidence, preview identity/restart documented, STATE resume appended. P1.1 completed; P1.2/P1.3 in progress; DP3 pending. Existing AAR and 260±90 kT implementation estimate preserved; wind-down overhead reported separately in [[session_stanley_20260915_110717_garnier_winddown]]. Rosetta owns evidence intake and bounded corrections; Stanley supplies participants and owns DP3. No new site behavior, human result, phase acceptance or publication.
+
+## P1 evidence continuation — 2026-09-15
+
+[D] P1.2 C2: exact copied command and installed Claude Code 2.1.223 reached the first project request, rejected for insufficient credit; no project/history/new-session success. P1.3 C2: local preview and worksheet ready, zero supplied human records. Both missions remain in_progress; DP3 pending. [[first_task_continuation]] and [[session_stanley_20260915_112428_garnier_p1_evidence]] carry receipts, failed attempts, scope and AAR. No new provider pattern or site changes. [I] Continuation70±30kT (P1.2:60; P1.3:10), including preceding planning; cumulative implementation/evidence330±120kT vs320 committed, plus separately booked prior wind-down30±15kT. Remaining20–35kT after external inputs. Billing unavailable. Rosetta owns retry/intake; Stanley supplies funded execution and human records and owns DP3.

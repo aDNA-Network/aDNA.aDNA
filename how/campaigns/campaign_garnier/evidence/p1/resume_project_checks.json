@@ -1,0 +1,58 @@
+{
+  "created": "2026-09-15T11:36:42.607409+00:00",
+  "source_commit": "b1cf040",
+  "container": "garnier-p1-repro-20260915-112428",
+  "checks": [
+    {
+      "check": "router",
+      "command": "test -f ~/aDNA/CLAUDE.md",
+      "started": "2026-09-15T11:36:42.125632+00:00",
+      "finished": "2026-09-15T11:36:42.245279+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "check": "standard",
+      "command": "test -d ~/aDNA/.adna",
+      "started": "2026-09-15T11:36:42.245319+00:00",
+      "finished": "2026-09-15T11:36:42.334055+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "check": "project",
+      "command": "ls -d ~/aDNA/*.aDNA",
+      "started": "2026-09-15T11:36:42.334110+00:00",
+      "finished": "2026-09-15T11:36:42.424702+00:00",
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "ls: cannot access '/root/aDNA/*.aDNA': No such file or directory\n"
+    },
+    {
+      "check": "triad",
+      "command": "ls ~/aDNA/garnier_repro.aDNA/what ~/aDNA/garnier_repro.aDNA/how ~/aDNA/garnier_repro.aDNA/who",
+      "started": "2026-09-15T11:36:42.424757+00:00",
+      "finished": "2026-09-15T11:36:42.516368+00:00",
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "ls: cannot access '/root/aDNA/garnier_repro.aDNA/what': No such file or directory\nls: cannot access '/root/aDNA/garnier_repro.aDNA/how': No such file or directory\nls: cannot access '/root/aDNA/garnier_repro.aDNA/who': No such file or directory\n"
+    },
+    {
+      "check": "history",
+      "command": "git -C ~/aDNA/garnier_repro.aDNA log",
+      "started": "2026-09-15T11:36:42.516426+00:00",
+      "finished": "2026-09-15T11:36:42.607333+00:00",
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: cannot change to '/root/aDNA/garnier_repro.aDNA': No such file or directory\n"
+    }
+  ],
+  "new_session_check": {
+    "status": "not_run",
+    "reason": "No project directory exists: first model request rejected for insufficient API credit."
+  },
+  "completed_first_project": false,
+  "human_ttfs": null
+}

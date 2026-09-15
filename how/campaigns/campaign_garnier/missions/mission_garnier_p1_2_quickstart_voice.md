@@ -21,10 +21,10 @@ executor_runtime: codex
 token_budget_estimated: 90
 token_budget_original: 61
 token_budget_unit: kT_content_load
-token_budget_actual: 75
-token_budget_actual_uncertainty: 25
-token_budget_actual_basis: rough_content_load_including_independent_reviews_and_reruns
-actual_sessions: 1
+token_budget_actual: 135
+token_budget_actual_uncertainty: 50
+token_budget_actual_basis: rough_content_load_including_reviews_planning_and_evidence_continuation
+actual_sessions: 2
 token_budget_reforecast_proposed: 90
 reforecast_status: accepted_DP2
 reforecast_basis: {"orientation": 30, "source_and_clean_reproduction": 35, "copy_checks": 25}
@@ -179,3 +179,9 @@ Previous: [[mission_garnier_p1_1_homepage_voice]]. Next: [[mission_garnier_p1_3_
 ## DP2 execution discipline
 
 [D] [[dp2_ratification_20260915]] governs this scope. Reuse the frozen P0 findings; bound and record reviewer inputs, linked-page allowance and stop conditions before any prescreen. Account for independent work and reruns once. Report actual workload and remaining phase forecast at each close. Keep human, synthetic, local and deployed evidence distinct.
+
+## Evidence continuation — 2026-09-15
+
+[D] C2 reached the installed CLI and first model request, then failed for insufficient API credit. No project was created; the first two file checks pass, the remaining three fail, and fresh-session recognition is untested. A funded broker credential or actual completed transcript is the next input. See [[first_task_continuation]] and [[session_stanley_20260915_112428_garnier_p1_evidence]]. Status remains in_progress; historical implementation and AAR above are preserved.
+
+[I] Allocated continuation workload 60 kT; cumulative mission rough actual 135±50 kT. The shared sitting is counted once in phase totals. Remaining phase estimate 20–35 kT after inputs arrive; billing unavailable. Latest phase actuals and limitations are in [[first_task_continuation]].

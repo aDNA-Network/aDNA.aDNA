@@ -20,3 +20,7 @@ tags: [garnier, p1, evidence]
 
 
 Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
+
+## Later run — 2026-09-15
+
+[D] Clone/entry and installed CLI are now reproduced. The first model request failed for insufficient API credit, so project creation and new-session recognition remain owed. See [[first_task_continuation]]. This continuation changes evidence, not the displayed instructions.

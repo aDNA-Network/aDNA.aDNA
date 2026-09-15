@@ -60,6 +60,7 @@ tags:
 - [[artifacts/p1/aar_homepage]]
 - [[artifacts/p1/claim_evidence_map]]
 - [[artifacts/p1/command_transcripts]]
+- [[artifacts/p1/first_task_continuation]]
 - [[artifacts/p1/formative_reader_pack]]
 - [[artifacts/p1/homepage_claim_map]]
 - [[artifacts/p1/homepage_copy_diff]]
@@ -125,3 +126,5 @@ tags:
 Excluded isolation attempts are archived under artifacts/p0/excluded_isolation and evidence/p0/excluded_isolation, not current scoring or reader inputs.
 
 Related: [[campaign_garnier]] · [[missions/session_prompts_garnier]].
+
+[D] Latest continuation: [[artifacts/p1/first_task_continuation]] — installed CLI reached the API, which rejected the first task for insufficient credit. Local reader worksheet ready; zero human observations. CURRENT still points to P1.2; obtain the specific missing inputs before retrying. DP3 remains pending.

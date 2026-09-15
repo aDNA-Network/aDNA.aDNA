@@ -21,10 +21,10 @@ executor_runtime: codex
 token_budget_estimated: 80
 token_budget_original: 63
 token_budget_unit: kT_content_load
-token_budget_actual: 40
-token_budget_actual_uncertainty: 20
-token_budget_actual_basis: rough_content_load_including_independent_reviews_and_reruns
-actual_sessions: 1
+token_budget_actual: 50
+token_budget_actual_uncertainty: 25
+token_budget_actual_basis: rough_content_load_including_reviews_planning_and_evidence_continuation
+actual_sessions: 2
 token_budget_reforecast_proposed: 80
 reforecast_status: accepted_DP2
 reforecast_basis: {"orientation": 20, "four_surface_editorial_work": 35, "evidence_and_formative_feedback_disposition": 25}
@@ -183,3 +183,9 @@ Previous: [[mission_garnier_p1_2_quickstart_voice]]. Next: [[mission_garnier_p2_
 [D] [[dp2_ratification_20260915]] governs this scope. Reuse the frozen P0 findings; bound and record reviewer inputs, linked-page allowance and stop conditions before any prescreen. Account for independent work and reruns once. Report actual workload and remaining phase forecast at each close. Keep human, synthetic, local and deployed evidence distinct.
 
 [D] DP2 pair-audit supplement: V1×C1 now reaches all six routes and their twins, including privacy/state assertions against transport evidence; it rejects unsupported collection or non-collection claims. V2×C1 adds captures for those routes but cannot prove collector receipt. V3×C1 checks the six-route disposition ledger. V1×C2/C3, V2×C2/C3 and V3×C2/C3 retain their recorded roles. P4.1 owns collector/field verification; no collection success is inferred from script delivery. The 80 kT working envelope includes this bounded disclosure correction; report forecast drift before expanding.
+
+## Evidence continuation — 2026-09-15
+
+[D] The local preview and de-identified worksheet are ready; Stanley chose local collection under the existing protocol. No human observation or consent record has arrived, so C2 remains owed. Calibration/scoring will run only when actual records exist. See [[first_task_continuation]] and [[session_stanley_20260915_112428_garnier_p1_evidence]]. Status remains in_progress; historical implementation and AAR above are preserved.
+
+[I] Allocated continuation workload 10 kT; cumulative mission rough actual 50±25 kT. The shared sitting is counted once in phase totals. Remaining phase estimate 20–35 kT after inputs arrive; billing unavailable. Latest phase actuals and limitations are in [[first_task_continuation]].

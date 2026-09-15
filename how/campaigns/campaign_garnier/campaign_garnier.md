@@ -244,3 +244,7 @@ Deliverables: pending campaign execution. Descoped: none approved. Key findings:
 ## P1 execution sitting — 2026-09-15
 
 [D] Source candidate b1cf040 implements the approved five-section homepage, AI DNA/Agentic DNA bridge, voluntary inheritance invitation, quickstart/source-tour fixes and six-route public-good/privacy work. P1.1 complete; P1.2 full authenticated first project and P1.3 formative humans remain owed. [[artifacts/p1/verification_report]] records local 698/one-skip gates,26 container checks,180 capture cells and synthetic-only prescreens. No deployment or DP3 acceptance. [I] Rough260±90kT against320 committed;25–50kT follow-up estimate, excluding human waiting and unknown billing. Next: [[artifacts/p1/formative_reader_pack]].
+
+## P1 evidence continuation — 2026-09-15
+
+[D] [[first_task_continuation]] records source-stable preview restoration and a real first-task attempt with the installed CLI. The model request returned Credit balance too low; project creation and fresh-session checks remain owed. Stanley selected local formative collection; the worksheet is ready and zero human records have arrived. P1.1 completed; P1.2/P1.3 in_progress; DP3 pending. [I] Latest implementation/evidence actual330±120kT vs320 committed, prior wind-down30±15kT additional, remaining20–35kT after inputs. No P2 budget was committed and no publication or peer delivery occurred.

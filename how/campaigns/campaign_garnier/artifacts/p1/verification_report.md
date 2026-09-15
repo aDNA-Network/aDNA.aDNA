@@ -33,3 +33,7 @@ tags: [garnier, p1, verification]
 Related: [[how/campaigns/campaign_garnier/artifacts/p1/phase_exit|P1 review packet]] · [[formative_reader_pack]].
 
 [D] Final navigation expectation reuses the same publishable subnetwork set as /commons; a future withholding decision must not force hidden entries back onto a page to satisfy the test. Native Node JSON loading first failed collection (`raw/nav_close.log`, `raw/nav_close_rerun.log`); using the site’s Vite loader plus an explicit JSON import attribute resolved it. Final focused verification: all ten passed in `raw/nav_close_final.log`.
+
+## Evidence continuation — 2026-09-15
+
+[D] [[first_task_continuation]] records a fresh 15-route served-hash match, copied-button equality, real installed-CLI failure for insufficient API credit, five individual file/history checks and all 1,692 frozen P0 hashes preserved. The original full-suite/capture results above were not rerun. No site source changed, no humans were supplied and no phase exit occurred.

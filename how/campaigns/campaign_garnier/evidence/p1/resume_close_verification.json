@@ -1,0 +1,26 @@
+{
+  "created": "2026-09-15T11:45:22.327803+00:00",
+  "base_commit": "73b3802",
+  "source_commit": "b1cf040",
+  "checks": {
+    "session_completed": true,
+    "owned_inventory_unique": true,
+    "frontmatter_valid": true,
+    "json_valid": true,
+    "evidence_hashes": true,
+    "copied_payload_exact": true,
+    "honest_task_failure": true,
+    "direct_error_and_exit": true,
+    "missions_remain_open": true,
+    "one_current_pointer": true,
+    "prior_prompt_preserved": true,
+    "state_append_only": true,
+    "baseline_receipt": true,
+    "reserved_tracked_diff_empty": true,
+    "full_credential_absent_from_owned_files": true,
+    "container_stopped": true
+  },
+  "parsed_markdown_files": 13,
+  "primitive_evidence_hashes_checked": 8,
+  "limits": "Record/evidence audit only; no fresh full site suite, capture population, human evidence or production assessment. P1.2/P1.3 and DP3 remain open."
+}
