@@ -1,0 +1,9 @@
+{
+  "scope": "active campaign documents and original proposal archive; not site behavior",
+  "missions": 38,
+  "errors": [],
+  "selftest": {
+    "positive_controls": 1,
+    "negative_controls": 12
+  }
+}

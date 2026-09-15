@@ -1,0 +1,46 @@
+[
+  {
+    "width": 375,
+    "title": "GARNIER — accepted with amendments",
+    "decisions": 10,
+    "forms": 0,
+    "overflow": false,
+    "errors": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          [
+            "a:nth-child(1)"
+          ],
+          [
+            "a[href$=\"campaign_garnier.md\"]"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "title": "GARNIER — accepted with amendments",
+    "decisions": 10,
+    "forms": 0,
+    "overflow": false,
+    "errors": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": [
+          [
+            "a:nth-child(1)"
+          ],
+          [
+            "a[href$=\"campaign_garnier.md\"]"
+          ]
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,83 @@
+{
+  "type": "ratification_record",
+  "created": "2026-09-15",
+  "updated": "2026-09-15",
+  "last_edited_by": "agent_codex",
+  "status": "accepted",
+  "disposition": "approved_with_amendments",
+  "ratified_by": "Stanley Bishop, Founding Architect",
+  "owner": "stanley",
+  "date": "2026-09-15",
+  "source": "operator_chat",
+  "source_events": [
+    {
+      "quote": "Approved with amendents.",
+      "context": "Approval of the preceding five-amendment charter recommendation."
+    },
+    {
+      "quote": "Implement the plan.",
+      "context": "Implementation of the complete five-amendment plan presented immediately before this message."
+    }
+  ],
+  "decisions": {
+    "D-1": {
+      "disposition": "accepted",
+      "decision": "Use GARNIER as the working codename."
+    },
+    "D-2": {
+      "disposition": "accepted",
+      "decision": "No GARNIER site change ships before HAUSSMANN P5.2 evidence is frozen; predecessor panel, rescore and GR-7 remain separately owned."
+    },
+    "D-3": {
+      "disposition": "accepted",
+      "decision": "Evolve the five-slot Ghibli-pixel program under ADR-053 and ADR-059; preserve semantic order, theme contrast and equivalent text."
+    },
+    "D-4": {
+      "disposition": "accepted",
+      "decision": "Generated imagery, if used, is abstract-only, VisualDNA-governed and documented with provenance and accessible alt/decorative treatment."
+    },
+    "D-5": {
+      "disposition": "accepted",
+      "decision": "Serve funders through people, lineage, operational state and participation evidence; no dedicated investors page."
+    },
+    "D-6": {
+      "disposition": "accepted_with_amendments",
+      "decision": "Fresh-context synthetic prescreens; operator-supplied formative humans before visual production; predeclared final answer key and retest policy; at least five per decisive class and at least 80% passing in each window. Human elapsed time is separate."
+    },
+    "D-7": {
+      "disposition": "accepted",
+      "decision": "Keep executor_tier within fable/opus/sonnet; executor_runtime remains codex. Allocate judgment classes by actual mission work under amended D-9."
+    },
+    "D-8": {
+      "disposition": "accepted",
+      "decision": "Setup remains local, reversible and pinned; raw evidence ignored where appropriate. No outward installs or credential values in records."
+    },
+    "D-9": {
+      "disposition": "accepted_with_amendments",
+      "decision": "Phase-by-phase budget commitment. Initial P0 envelope stays 123 kT; later phase estimates are provisional until their preceding human gate. Original 1,637 kT estimate preserved. Amended forecast 2,310 kT across 38 missions and 47 agent sittings is uncalibrated and is not blanket spending authority."
+    },
+    "D-10": {
+      "disposition": "accepted_with_amendments",
+      "decision": "Keep measured word targets as editorial guidance. Exceeding a target requires a written reason; comprehension, prerequisite/consent meaning and accessibility outrank reduction. Unsupported claims remain blocking."
+    }
+  },
+  "amendments": [
+    "Early mechanism/example/heritage/participation storyboard with accessible reading order.",
+    "Specific mission verification and complete, bounded documentation tranches.",
+    "Workload-derived estimates, explicit uncalibrated status, suitable tiers and phase budgets.",
+    "Fresh-context prescreens, early humans, explicit final rubrics/retests and advisory word targets.",
+    "Insufficient field data may qualify for a separately recorded launch exception only with passing lab budgets, verified collection and launch+30-day/monthly follow-up."
+  ],
+  "authority": {
+    "campaign_execution": "P0 available after amendment integrity verification; later phase entry/exit gates remain human",
+    "publication": false,
+    "push": false,
+    "peer_delivery": false,
+    "new_budget_commitment": "P0 123 kT only; other phase forecasts pending their gates"
+  },
+  "tags": [
+    "garnier",
+    "ratification",
+    "operator_chat"
+  ]
+}

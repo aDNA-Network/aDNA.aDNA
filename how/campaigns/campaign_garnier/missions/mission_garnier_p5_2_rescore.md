@@ -7,10 +7,10 @@ status: queued
 campaign_id: campaign_garnier
 campaign: campaign_garnier
 campaign_phase: 5
-campaign_mission_number: 19
+campaign_mission_number: 31
 mission_class: verification
 created: '2026-09-14'
-updated: '2026-09-14'
+updated: '2026-09-15'
 last_edited_by: agent_codex
 tags:
 - plan
@@ -18,10 +18,10 @@ tags:
 - garnier
 executor_tier: opus
 executor_runtime: codex
-token_budget_estimated: 65
+token_budget_estimated: 76
 token_budget_unit: kT_content_load
-estimated_sessions: 1
-calibrated_sessions: 1
+estimated_sessions: 2
+calibrated_sessions: null
 estimation_class: governance-tight
 decade_status: provisional_until_DP4
 vitruvius_dimensions:
@@ -39,94 +39,120 @@ depends_on:
 blocks:
 - mission_garnier_p5_3_publication
 acceptance_criteria:
-- capstone_scorecard.md and staged integration handoff is complete and internally
-  consistent
-- No composite without full breakdown, ceilings and provenance; all protected invariants
-  have evidence and all S1/S2 findings have dispositions accepted at gate.
-- Protected paths, gates, accessibility consequences and AAR are verified
+- 'C1: Final v1.1 score retains two independent sheets, target and both exemplar breakdowns, human evidence and
+  all ceilings.'
+- 'C2: Every protected invariant and S1/S2 finding has an evidence-backed disposition; integration handoff names
+  candidate hash and remains staged for GR-7.'
+- 'C3: mission_garnier_p5_2_rescore closes with a scoped diff, cited evidence and five-line AAR; DP7 remains a human
+  gate and no reserved path/outward action is inferred.'
 verification_method:
-- surface: capstone_scorecard.md and staged integration handoff
-  method: Inspect artifact against objectives and linked evidence
-  red_test: Omit a required score clause or substitute an older build pack; reconciliation
-    must refuse sign-off.
-- surface: Freeze evidence, run two isolated v1.1 scorers and cohort exemplars, reconcile
-    clause-level differences and prepare a staged integration packet for HAUSSMANN
-    GR-7.
-  method: No composite without full breakdown, ceilings and provenance; all protected
-    invariants have evidence and all S1/S2 findings have dispositions accepted at
-    gate.
-  red_test: Omit a required score clause or substitute an older build pack; reconciliation
-    must refuse sign-off.
-- surface: git diff, capture/evidence manifest and mission AAR
-  method: Explicit-path scope review and applicable protected-invariant checks
-  red_test: Introduce a reserved-path change in a disposable diff; scope review rejects
-    it
-human_gate: DP7 phase exit; DP1 charter prerequisite
+- id: V1
+  surface: final human panel; P0/midpoint packs; frozen candidate; HAUSSMANN boundary/GR-7
+  method: Final v1.1 score retains two independent sheets, target and both exemplar breakdowns, human evidence and
+    all ceilings.
+  command: 'P0.1 sealed-scoring protocol on final pack; manual: reconcile every dimension and anchor against baseline/midpoint
+    evidence.'
+  red_test: 'Swap a local report for a deployed claim or omit a dimension: reconciliation must reject the conclusion.'
+- id: V2
+  surface: capstone_scorecard.md; integration_handoff_staged.md
+  method: Every protected invariant and S1/S2 finding has an evidence-backed disposition; integration handoff names
+    candidate hash and remains staged for GR-7.
+  command: 'Manual: full reconciliation against haussmann_reconciliation_ledger and finding register; R-CLOSE; no
+    peer/predecessor edits.'
+  red_test: 'Remove a held G4/counsel item or assert a memo was delivered from a staged file: integration readiness
+    must fail.'
+- id: V3
+  surface: mission_garnier_p5_2_rescore base-to-final diff, evidence manifest and AAR
+  method: mission_garnier_p5_2_rescore closes with a scoped diff, cited evidence and five-line AAR; DP7 remains
+    a human gate and no reserved path/outward action is inferred.
+  command: R-CLOSE; inspect capstone_scorecard.md; integration_handoff_staged.md and the DP7 disposition.
+  red_test: Place a registry/predecessor write or an unsigned DP7 approval in a disposable mission_garnier_p5_2_rescore
+    closure record; scope/authority review must reject it.
+human_gate: DP6 phase entry/budget; DP7 phase exit. DP1 accepted with amendments on 2026-09-15.
 verification_surface: operator
 verification_check_set: custom
+calibration_status: uncalibrated
+calibration_basis: Judgment estimate with stated workload; no measured GARNIER execution calibration.
+budget_breakdown_kT:
+  transition: 46
+  bounded_objective_work: 30
+budget_status: provisional_until_DP6
+human_elapsed_time: phase-gate response time excluded
+input_manifest: final human panel; P0/midpoint packs; frozen candidate; HAUSSMANN boundary/GR-7
+output_artifacts:
+- capstone_scorecard.md
+- integration_handoff_staged.md
+contract_version: garnier_amendment_20260915
 ---
+# Rescore and prepare the integration handoff
 
-# P5.2 — Rescore and prepare the integration handoff
-
-> **Read cold.** Act as Rosetta's executor for Stanley through Berthier. Read root and [[../CLAUDE|campaign governance]], [[campaign_garnier]], [[instrument_boundary]] and this mission before claiming a session. Status queued is not authorization to cross a human gate.
+> **Read cold.** Act as Rosetta's executor for Stanley through Berthier. Read root and [[../CLAUDE|campaign governance]], [[campaign_garnier]], [[charter_ratification_20260915]], [[verification_recipes]] and this mission. DP1 is accepted; verify the named later phase gate before execution.
 
 ## Why
 
-[I] Freeze evidence, run two isolated v1.1 scorers and cohort exemplars, reconcile clause-level differences and prepare a staged integration packet for HAUSSMANN GR-7.
+[I] Final v1.1 score retains two independent sheets, target and both exemplar breakdowns, human evidence and all ceilings. Every protected invariant and S1/S2 finding has an evidence-backed disposition; integration handoff names candidate hash and remains staged for GR-7.
 
 ## Where we are
 
-[D] Genesis on 2026-09-14 built 229 pages and 226 twins; full gates passed 698 with one existing skip, container snapshots 26. Live identity and limitations are in [[situation_report]]. These are dated starting evidence, not a promise that the tree is unchanged when this mission opens. Refresh the relevant pin before work. Dependencies: [[mission_garnier_p5_1_human_panel]].
+[D] This is a specification amended on 2026-09-15 against the genesis packet at 5a0849a. The existing local build and source inventory are dated inputs; no new site behavior or human evidence was verified by this amendment. Read [[verification_report]] for genesis limitations and [[docs_review_scope]] for the assigned population. Refresh source/build identity at mission open.
 
 ## Scope
 
-Freeze evidence, run two isolated v1.1 scorers and cohort exemplars, reconcile clause-level differences and prepare a staged integration packet for HAUSSMANN GR-7.
+[I] Inputs: final human panel; P0/midpoint packs; frozen candidate; HAUSSMANN boundary/GR-7. Outputs: capstone_scorecard.md; integration_handoff_staged.md. Use the command contexts and output-path precautions in [[verification_recipes]]. No future verification is claimed passed by authoring this specification.
 
 ## Objectives
 
 | # | Objective | Output | Gate |
-|---|---|---|---|
-| 1 | Establish scope, pins and method before mutation | Input manifest and disposable negative control | ⛩ prior phase and authority confirmed |
-| 2 | Deliver the bounded mission | capstone_scorecard.md and staged integration handoff | P5.2 acceptance review |
-| 3 | Reach the actual surface, reconcile and close | Evidence, SITREP, five-line AAR | ⛩ phase exit remains human |
+|---|-----------|--------|------|
+| 1 | Final v1.1 score retains two independent sheets, target and both exemplar breakdowns, human evidence and all ceilings. | capstone_scorecard.md | ⛩ DP6 entry and C1 |
+| 2 | Every protected invariant and S1/S2 finding has an evidence-backed disposition; integration handoff names candidate hash and remains staged for GR-7. | capstone_scorecard.md; integration_handoff_staged.md | C2 reached-surface evidence |
+| 3 | Reconcile the actual diff, limitations and AAR | Mission evidence manifest and five-line AAR | ⛩ DP7 remains human |
 
 ## Constraints & gates
 
-[I] Any aesthetic adjustment must preserve semantic reading order, body readability, focus visibility, reduced-motion parity and text equivalents, verified on the touched routes at six viewports in both themes. If the mission has no aesthetic change, record not applicable with its scope; do not imply a visual pass.
+[I] Every hierarchy, typography, art or motion change must preserve semantic reading order, readable body text, focus, reduced-motion parity and equivalent text, checked on the actual affected routes in both themes; record not-applicable when no aesthetic change occurs. The storyboard and formative human review precede visual production. Word targets are advisory with written overage reasons; unsupported claims remain blocking.
 
-No edits to `site/src/data/vaults.json`, `.adna/`, HAUSSMANN/VITRINE files or peer vaults. Registry requests go to Hestia by staged memo. Missing provider patterns go to Vitruvius through the consumer wrapper, never a local fork. No publish or push from an implementation or measurement mission. P5.3 prepares the separate publication decision. Respect G4/counsel, the panel freeze, ADR-048/049/053/057/059 and Operations ADR-025 §D5. Check the single-writer lease before each shared-file mutation.
+[D] No edits to site/src/data/vaults.json, .adna, HAUSSMANN/VITRINE records or peer vaults. Registry asks are staged to Hestia. Provider pattern gaps are staged through the WebForge wrapper. Claim deltas stay GARNIER-owned for GR-7; read the predecessor register without editing it. No push, deploy or memo delivery is authorized here. Preserve ADR-048/049/053/057/059, Operations ADR-025 §D5, conditional H1/G4, counsel and the predecessor evidence freeze. Site changes are authorized for P1–P4 within the named mission scope after phase entry, including scoped hardening repairs; P0 and record-only closure work do not rewrite public copy.
 
 ## Goal and exit gate
 
-No composite without full breakdown, ceilings and provenance; all protected invariants have evidence and all S1/S2 findings have dispositions accepted at gate.
+[I] C1: Final v1.1 score retains two independent sheets, target and both exemplar breakdowns, human evidence and all ceilings. C2: Every protected invariant and S1/S2 finding has an evidence-backed disposition; integration handoff names candidate hash and remains staged for GR-7. C3: mission_garnier_p5_2_rescore closes with a scoped diff, cited evidence and five-line AAR; DP7 remains a human gate and no reserved path/outward action is inferred.
 
 ## Verification and convention-13 pair audit
 
-V1 reads the named output and reconciles it with objective 2. V2 reaches the stated execution surface: No composite without full breakdown, ceilings and provenance; all protected invariants have evidence and all S1/S2 findings have dispositions accepted at gate. V3 reads the actual diff, evidence manifest and AAR for scope/closure. C1 is complete output, C2 is behavioral/evidence acceptance, C3 is protection and closure.
+[I] This is a method-feasibility assessment, not executed acceptance. V1 and V2 are defined in frontmatter with concrete command/protocol references and controls; V3 uses R-CLOSE on this mission's actual diff. All nine pairs were assessed for the amended scope:
 
-Checked pairs: V1×C1 yes, all named outputs; V1×C2 insufficient alone, requires V2; V1×C3 insufficient alone, requires V3. V2×C1 supplies evidence but does not prove document completeness; V2×C2 yes, the named surface is the claimed surface; V2×C3 checks applicable runtime protections but cannot establish authorization. V3×C1 verifies listed paths exist, not their truth; V3×C2 cannot replace execution; V3×C3 yes, reserved-path diff plus gate/AAR records. The three methods together cover all three criteria. This avoids accepting a green source scan as a rendered or human result.
+- V1×C1: covers the input/population contract by P0.1 sealed-scoring protocol on final pack; manual: reconcile every dimension and anchor against baseline/midpoint evidence.
+- V1×C2: insufficient; inspecting final human panel; P0/midpoint packs; frozen candidate; HAUSSMANN boundary/GR-7 cannot establish the behavior in C2; V2 must reach its named output.
+- V1×C3: insufficient; input inspection does not prove the actual mission_garnier_p5_2_rescore diff or a human gate event.
+- V2×C1: supplementary; producing capstone_scorecard.md; integration_handoff_staged.md does not prove the original input set was complete; retain V1.
+- V2×C2: covers the behavior through Manual: full reconciliation against haussmann_reconciliation_ledger and finding register; R-CLOSE; no peer/predecessor edits.
+- V2×C3: supplies behavioral evidence for mission_garnier_p5_2_rescore, but V3 must independently inspect scope and closure authority.
+- V3×C1: checks that capstone_scorecard.md; integration_handoff_staged.md are present in the delivered set, not the truth or coverage of their contents.
+- V3×C2: cannot replace Manual: full reconciliation against haussmann_reconciliation_ledger and finding register; R-CLOSE; no peer/predecessor edits.; a clean diff is not a runtime, reader or measurement result.
+- V3×C3: covers the mission_garnier_p5_2_rescore changed paths, linked evidence, AAR and explicitly separate DP7 event via R-CLOSE.
 
-Negative control to run before trusting V2: **Omit a required score clause or substitute an older build pack; reconciliation must refuse sign-off.** V1 must reject an output with one promised section removed; V3 must reject a disposable reserved-path diff. Controls are isolated, never planted into production or peer files.
+The three methods jointly cover the three criteria; no individual method proves all three. Run controls before trusting their verdicts. V1 negative control: Swap a local report for a deployed claim or omit a dimension: reconciliation must reject the conclusion. V2 negative control: Remove a held G4/counsel item or assert a memo was delivered from a staged file: integration readiness must fail. V3 negative control: reject a disposable reserved-path change or unsigned phase acceptance. Controls are isolated, never planted into production or peer files. New reusable checkers are provider contributions, authored early with their red-tests in the same commit.
 
 ## Budget
 
-[I] ADR-016: 23 kT transition + 42 kT bounded work = **65 kT content-load**, one context window proposed. Re-estimate on entry. At a projected >80 kT, split or narrow at a recorded gate; never mark unreviewed pages reviewed. API-billing actuals are a separate measurement, not inferred from this figure.
+[I] ADR-016 content-load estimate: {"transition": 46, "bounded_objective_work": 30} = **76 kT**. Estimated agent sittings: **2**; calibration is **unmeasured**, not a repeated estimate presented as measured data. The work allowance is a judgment forecast, not a limit on honest reporting. Human recruitment/response time is excluded. Independent scoring work must be included in actuals rather than disappearing from the coordinator's accounting. See [[budget_basis]] for uncertainty and phase commitment. Re-scope at the next gate if projected work exceeds the bounded contract; do not silently skip routes. Billing is separately measured or reported unavailable.
 
 ## Definition of done
 
-All three objectives are satisfied, the named artifacts exist with provenance and linked evidence, V1/V2/V3 and their controls have been run on the declared surfaces, the touched-site checks and accessibility consequences are recorded, no protected path or prerequisite was bypassed, and the session SITREP, next prompt and five-line AAR are filed. A human-only activity remains owed until a human actually performs it. The mission may recommend phase exit but cannot sign it.
+C1/C2/C3 are satisfied on their stated surfaces with evidence and controls, every output is linked, changed claims and accessibility consequences are documented, scope stays within authority, and the SITREP, next prompt and AAR are filed. A manual or human item remains owed until performed. Append this mission's objective/finding/budget evidence to the rolling closure ledger during work; P6 reconciles it rather than reconstructing the campaign at the end. A human phase gate remains pending until the operator rules.
 
-## Campaign Context
+## Campaign context
 
-Previous outputs: [[mission_garnier_p5_1_human_panel]]. Next inputs: [[mission_garnier_p5_3_publication]]. Detailed phases and risks are in [[campaign_architecture]].
+Previous: [[mission_garnier_p5_1_human_panel]]. Next: [[mission_garnier_p5_3_publication]]. [[campaign_architecture]] and [[charter_ratification_20260915]] govern scope/budgets.
 
 ## Progress
 
-Queued; no campaign work executed during genesis. No acceptance criterion is claimed met by authoring this file.
+Queued. Specification amended; no campaign acceptance criterion has been executed by this records-only sitting.
 
 ## Completion Summary
 
-Deliverables: pending. Descoped: none approved. Key findings: pending execution. Scope changes: none approved.
+Deliverables: pending execution. Descoped: none. Key findings: pending. Scope changes: approved charter amendments; exact tranche assignment where applicable.
 
 ## AAR
 

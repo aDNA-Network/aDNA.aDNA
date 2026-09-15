@@ -1,0 +1,56 @@
+{
+  "missions": 38,
+  "estimated_sessions": 47,
+  "calibrated_sessions": null,
+  "calibration_status": "uncalibrated",
+  "content_load_kT": 2310,
+  "tiers": {
+    "opus": 34,
+    "sonnet": 4,
+    "fable": 0
+  },
+  "phases": [
+    {
+      "phase": 0,
+      "missions": 2,
+      "sessions": 3,
+      "content_load_kT": 123
+    },
+    {
+      "phase": 1,
+      "missions": 3,
+      "sessions": 3,
+      "content_load_kT": 186
+    },
+    {
+      "phase": 2,
+      "missions": 17,
+      "sessions": 18,
+      "content_load_kT": 991
+    },
+    {
+      "phase": 3,
+      "missions": 4,
+      "sessions": 6,
+      "content_load_kT": 290
+    },
+    {
+      "phase": 4,
+      "missions": 3,
+      "sessions": 5,
+      "content_load_kT": 218
+    },
+    {
+      "phase": 5,
+      "missions": 3,
+      "sessions": 5,
+      "content_load_kT": 199
+    },
+    {
+      "phase": 6,
+      "missions": 6,
+      "sessions": 7,
+      "content_load_kT": 303
+    }
+  ]
+}

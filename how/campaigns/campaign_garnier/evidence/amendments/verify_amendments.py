@@ -4,13 +4,14 @@ import argparse
 import copy
 import hashlib
 import json
+import re
 import tarfile
 import yaml
 
 BASE = Path(__file__).resolve().parents[2]
 
 def frontmatter(path):
-    return yaml.safe_load(path.read_text().split('---', 2)[1])
+    return yaml.safe_load(re.split(r'^---\s*$', path.read_text(), maxsplit=2, flags=re.M)[1])
 
 def check_model(model):
     errors = []

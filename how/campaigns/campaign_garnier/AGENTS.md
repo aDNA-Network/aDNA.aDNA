@@ -1,17 +1,27 @@
 ---
 type: directory_index
 created: 2026-09-14
-updated: 2026-09-14
-status: proposed
+updated: '2026-09-15'
+status: active
 last_edited_by: agent_codex
-tags: [garnier, genesis]
+tags:
+- garnier
+- genesis
 ---
-
 # GARNIER campaign index
 
-Read [[CLAUDE]] before work. The charter is planning; [[charter_gate]] is proposed. This index is derived from GARNIER-owned Markdown paths; raw evidence is ignored. [[evidence_index]] explains executable evidence and its limits.
+[D] The charter is active; DP1 was accepted with amendments on 2026-09-15. Start at [[artifacts/amendments/charter_ratification_20260915]] and [[artifacts/amendments/amendment_verification]]. P0 is next; later phase budgets and gates remain human. Read [[CLAUDE]] before execution. This index is derived from current GARNIER-owned Markdown paths; the original packet and archived pending marker are historical artifacts.
 
 - [[CLAUDE]]
+- [[artifacts/amendments/amendment_aar]]
+- [[artifacts/amendments/amendment_verification]]
+- [[artifacts/amendments/budget_basis]]
+- [[artifacts/amendments/charter_ratification_20260915]]
+- [[artifacts/amendments/docs_review_scope]]
+- [[artifacts/amendments/field_performance_policy]]
+- [[artifacts/amendments/reader_protocol]]
+- [[artifacts/amendments/rolling_closure_ledger]]
+- [[artifacts/amendments/verification_recipes]]
 - [[artifacts/genesis/campaign_architecture]]
 - [[artifacts/genesis/charter_gate]]
 - [[artifacts/genesis/decisive_readers]]
@@ -29,6 +39,7 @@ Read [[CLAUDE]] before work. The charter is planning; [[charter_gate]] is propos
 - [[artifacts/genesis/setup_plan]]
 - [[artifacts/genesis/situation_report]]
 - [[artifacts/genesis/tool_and_context_arsenal]]
+- [[artifacts/genesis/verification_report]]
 - [[artifacts/genesis/word_budgets]]
 - [[campaign_garnier]]
 - [[directives/CODEX_DIRECTIVE_operation_garnier_genesis]]
@@ -44,6 +55,18 @@ Read [[CLAUDE]] before work. The charter is planning; [[charter_gate]] is propos
 - [[missions/mission_garnier_p2_1_proof_lineage]]
 - [[missions/mission_garnier_p2_2_source_fidelity]]
 - [[missions/mission_garnier_p2_3_docs_review]]
+- [[missions/mission_garnier_p2_3_t01_docs_review]]
+- [[missions/mission_garnier_p2_3_t02_docs_review]]
+- [[missions/mission_garnier_p2_3_t03_docs_review]]
+- [[missions/mission_garnier_p2_3_t04_docs_review]]
+- [[missions/mission_garnier_p2_3_t05_docs_review]]
+- [[missions/mission_garnier_p2_3_t06_docs_review]]
+- [[missions/mission_garnier_p2_3_t07_docs_review]]
+- [[missions/mission_garnier_p2_3_t08_docs_review]]
+- [[missions/mission_garnier_p2_3_t09_docs_review]]
+- [[missions/mission_garnier_p2_3_t10_docs_review]]
+- [[missions/mission_garnier_p2_3_t11_docs_review]]
+- [[missions/mission_garnier_p2_3_t12_docs_review]]
 - [[missions/mission_garnier_p2_4_trust_surfaces]]
 - [[missions/mission_garnier_p2_5_midpoint]]
 - [[missions/mission_garnier_p3_1_design_system]]
@@ -64,7 +87,4 @@ Read [[CLAUDE]] before work. The charter is planning; [[charter_gate]] is propos
 - [[missions/mission_garnier_p6_6_close]]
 - [[missions/session_prompts_garnier]]
 
-
-Related: [[campaign_garnier]] · [[mission_garnier_genesis]].
-
-- [[artifacts/genesis/verification_report]]
+Related: [[campaign_garnier]] · [[missions/session_prompts_garnier]].

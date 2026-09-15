@@ -1,17 +1,18 @@
 ---
 type: governance
 created: 2026-09-14
-updated: 2026-09-14
-status: proposed
+updated: '2026-09-15'
+status: active
 last_edited_by: agent_codex
-tags: [garnier, genesis]
+tags:
+- garnier
+- genesis
 ---
-
 # CLAUDE.md — Campaign GARNIER
 
 ## Campaign Identity
 
-Campaign `campaign_garnier`; owner Stanley Bishop (`stanley`); Rosetta executor `agent_codex`; commissioned through Berthier. Status planning. Genesis is authorized; campaign implementation awaits DP1. Read root governance before this file.
+Campaign `campaign_garnier`; owner Stanley Bishop (`stanley`); Rosetta executor `agent_codex`; commissioned through Berthier. Status active. DP1 accepted with amendments on 2026-09-15; P0 is available after amendment verification, and later phase gates remain human. Read root governance before this file.
 
 ## Quick Start
 
@@ -25,7 +26,7 @@ Charter: `campaign_garnier.md`. Missions and opening prompts: `missions/`. Genes
 
 [D] Root standing orders remain binding. [D] The following twenty predecessor conventions are inherited verbatim from the read source, including its historical examples; those examples do not reopen resolved decisions. Convention 11's historical checkpoint remains historical. ADR-059 preserves the validators-only token choice; ADR-053 remains the five-slot art lineage. Conditional H1 consent does not close G4. Settled operator preferences retain Agentic DNA, place mechanism before the shared-heritage mission, and absorb VITRINE's prospective scope without editing its history.
 
-Genesis may write only its own campaign, mission/session records and one STATE QUEUED block. No site/src changes, publishing, pushes, peer delivery, registry mutation, .adna changes or HAUSSMANN/VITRINE edits. During the future campaign, these reserved paths remain excluded; template release is a separate gate-fired handoff. Every external write requires its own recorded authority. Single-writer lease and explicit-path commits apply. Preserve unrelated changes.
+The genesis and charter-amendment sittings are records-only. P1–P4 site changes, including scoped hardening repairs, require their phase-entry authority and must stay within the executing mission. Registry data, .adna, HAUSSMANN/VITRINE and peer files remain reserved; template release is a separate gate-fired handoff. No push, deploy or peer delivery is granted by DP1. Every external write requires its own recorded authority. Single-writer lease and explicit-path commits apply. Preserve unrelated changes.
 
 ## Standing conventions (every session, every mission)
 
@@ -321,7 +322,7 @@ Always: root CLAUDE, STATE head, active leases, mission, this file and instrumen
 
 ## Delegation Notes
 
-This is one Codex genesis sitting spanning work packages S0–S7, not eight fabricated sessions. The campaign is planning, with Decade 2 provisional. Future scoring requires two isolated scorers; synthetic decisive readers in genesis are a disclosed single-author prescreen. Shared files require a lease. All proposed budgets are judgment-class opus with additive runtime codex; the governed enum is unchanged.
+This is one Codex genesis sitting spanning work packages S0–S7, not eight fabricated sessions. The campaign is active under DP1, with Decade 2 architecture provisional until DP4 and later phase budgets uncommitted. Future scoring requires two isolated scorers; synthetic decisive readers in genesis are a disclosed single-author prescreen. Shared files require a lease. Mission tiers now distinguish judgment from mechanical verification. Runtime remains codex, the enum is unchanged, and calibration remains unknown until evidenced.
 
 ## Mission index
 
@@ -329,3 +330,7 @@ See [[session_prompts_garnier]] for the sole CURRENT pointer and [[campaign_garn
 
 
 Related: [[campaign_garnier]] · [[mission_garnier_genesis]].
+
+## DP1 approved amendment contract — 2026-09-15
+
+[D] [[charter_ratification_20260915]] records Stanley's accepted D-1–D-10 dispositions. Follow [[reader_protocol]], [[field_performance_policy]], [[docs_review_scope]], [[budget_basis]] and [[verification_recipes]]. The storyboard and formative humans precede visual production; word budgets are advisory with reasons for overage; unsupported claims remain blocking. Preserve original synthetic evidence and its limitations. P0 envelope is 123 kT; each later phase budget is committed at its preceding human gate. Append evidence/actuals to [[rolling_closure_ledger]] during each mission. No new checker at sitting tail, no provider fork, no implicit phase or publication advance.

@@ -1,12 +1,13 @@
 ---
 type: artifact
 created: 2026-09-14
-updated: 2026-09-14
+updated: '2026-09-15'
 status: proposed
 last_edited_by: agent_codex
-tags: [garnier, genesis]
+tags:
+- garnier
+- genesis
 ---
-
 # GARNIER genesis situation report
 
 ## Believed versus observed
@@ -35,3 +36,7 @@ Related: [[campaign_garnier]] · [[mission_garnier_genesis]].
 ## Execution update — 2026-09-14
 
 [D] Full local suite now passed 698 with one existing skip; container visual suite 26. The seven-route live matrix reached 84 combinations with zero reported axe violations. See [[evidence_index]] for scope, local Lighthouse metrics and limitations. [D] MCP remains built/not-live; Operations ADR-025 §D5 is the actual community authority. [I] Campaign proposal: 26 missions, 26 sessions, 1,637 kT content-load; Decade 2 provisional. Charter and ISS are proposed at [[charter_gate]]. No publication authority is implied.
+
+## 2026-09-15 — charter review correction and ratification
+
+[D] DP1 is accepted with the five amendments in [[charter_ratification_20260915]]. The prior “complete” wording concerned packet authoring and the checks explicitly recorded; it did not establish comprehensive site validation, independent/blind reader evidence, human success, a current v1.1 score or field p75. Existing synthetic reads remain single-author primed simulations and are preserved unchanged. The initial 26-session/1,637 kT estimate is historical, not measured calibration. [[budget_basis]] and [[docs_review_scope]] replace its execution forecast. This amendment sitting updates documents only; no new website test result is claimed.
