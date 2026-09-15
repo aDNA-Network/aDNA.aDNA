@@ -3,7 +3,7 @@ plan_id: mission_garnier_p0_1_baseline
 type: plan
 title: Freeze baseline and reconcile authority
 owner: stanley
-status: queued
+status: in_progress
 campaign_id: campaign_garnier
 campaign: campaign_garnier
 campaign_phase: 0
@@ -150,7 +150,7 @@ Previous: DP1 accepted charter. Next: [[mission_garnier_p0_2_instruments]]. [[ca
 
 ## Progress
 
-Queued. Specification amended; no campaign acceptance criterion has been executed by this records-only sitting.
+[D] Execution opened 2026-09-15; baseline evidence collection in progress. No score claimed.
 
 ## Completion Summary
 

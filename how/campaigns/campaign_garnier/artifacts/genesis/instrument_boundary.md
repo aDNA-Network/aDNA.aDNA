@@ -1,7 +1,7 @@
 ---
 type: artifact
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 status: proposed
 last_edited_by: agent_codex
 tags: [garnier, genesis]
@@ -46,3 +46,7 @@ No new full score, human panel, valid field-p75 dataset or clean-machine TTFS wa
 
 
 Related: [[campaign_garnier]] · [[mission_garnier_genesis]].
+
+## 2026-09-15 execution clarification
+
+[D] DP1 amended contract fixes Nous and Mastra as the P0/P2/P5 exemplars. The earlier MCP/Mastra sentence above is superseded for GARNIER scoring, preserved as historical proposal text. VITRUVIUS v1.1 remains unchanged; source, local build and production are separately identified in [[baseline_manifest]].

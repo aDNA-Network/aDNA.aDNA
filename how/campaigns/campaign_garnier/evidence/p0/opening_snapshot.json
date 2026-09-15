@@ -1,0 +1,7 @@
+{
+  "session_id": "session_stanley_20260915_080004_garnier_p0",
+  "started": "2026-09-15T08:00:04.339922+00:00",
+  "base": "c38c6dc7ed283f5163604fedc67130776fc1d6c1",
+  "status": " M .obsidian/appearance.json\n M .obsidian/core-plugins.json\n M .obsidian/plugins/notebook-navigator/data.json\n M .obsidian/workspace.json\n?? .astro/\n?? .codex/\n?? .obsidian/plugins/obsidian-meta-bind-plugin/data.json\n?? .obsidian/plugins/obsidian42-brat/brat-migrations.json\n?? .obsidian/plugins/terminal/data.json\n?? how/campaigns/campaign_garnier/evidence/p0/\n?? how/campaigns/campaign_haussmann/artifacts/grande_revue/evidence/captures_deep/capture_report.json\n?? how/sessions/active/session_stanley_20260915_080004_garnier_p0.md\n?? who/coordination/coord_2026_09_13_cassiodorus_to_rosetta_vitrine_codex_readiness.md\n?? who/coordination/inbox/coord_2026_09_13_vitruvius_to_rosetta_fleet_persona_vs_vault_addressing.md\n",
+  "state_sha256": "e2a5b95cf7c8629cca9c89876129ba8071e9acc3c1d53153196f6828ecd97c74"
+}

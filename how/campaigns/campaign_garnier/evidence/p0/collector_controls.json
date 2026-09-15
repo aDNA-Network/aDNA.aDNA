@@ -1,0 +1,6 @@
+{
+  "positive_main_and_title": true,
+  "script_excluded": true,
+  "missing_main_detectable": true,
+  "scope": "HTML extraction only; no production quality verdict"
+}
