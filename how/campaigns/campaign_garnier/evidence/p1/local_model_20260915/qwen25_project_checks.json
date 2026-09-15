@@ -1,0 +1,50 @@
+{
+  "container": "garnier-p1-local-20260915-1234",
+  "model": "local-qwen2.5-7b",
+  "candidate": "b1cf040",
+  "checks": [
+    {
+      "check": "router",
+      "command": "test -f ~/aDNA/CLAUDE.md",
+      "at": "2026-09-15T12:46:17.382001+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "check": "standard",
+      "command": "test -d ~/aDNA/.adna",
+      "at": "2026-09-15T12:46:17.425069+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "check": "project",
+      "command": "ls -d ~/aDNA/*.aDNA",
+      "at": "2026-09-15T12:46:17.473882+00:00",
+      "exit_code": 0,
+      "stdout": "/root/aDNA/garnier_repro.aDNA\n",
+      "stderr": ""
+    },
+    {
+      "check": "triad",
+      "command": "ls ~/aDNA/garnier_repro.aDNA/what ~/aDNA/garnier_repro.aDNA/how ~/aDNA/garnier_repro.aDNA/who",
+      "at": "2026-09-15T12:46:17.525265+00:00",
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "ls: cannot access '/root/aDNA/garnier_repro.aDNA/what': No such file or directory\nls: cannot access '/root/aDNA/garnier_repro.aDNA/how': No such file or directory\nls: cannot access '/root/aDNA/garnier_repro.aDNA/who': No such file or directory\n"
+    },
+    {
+      "check": "history",
+      "command": "git -C ~/aDNA/garnier_repro.aDNA log",
+      "at": "2026-09-15T12:46:17.580752+00:00",
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: your current branch 'master' does not have any commits yet\n"
+    }
+  ],
+  "completed_first_project": false,
+  "new_session_check": "not_run_incomplete_project",
+  "human_ttfs": null
+}

@@ -1,0 +1,55 @@
+{
+  "recorded_at": "2026-09-15T12:35:29.803141+00:00",
+  "broker_inventory": "Home.aDNA/what/inventory/inventory_credentials.yaml",
+  "subscription_route": {
+    "broker_id": "C41",
+    "access_pattern": "claude_code_internal",
+    "portable_environment_route_registered": false,
+    "credential_values_read": false
+  },
+  "local_gateway": {
+    "broker_id": "C69",
+    "access_pattern": "keychain_direct_read",
+    "origin": "http://127.0.0.1:4000",
+    "liveliness_http": 200,
+    "model_listing_authenticated": true,
+    "qwen36_probe": {
+      "model": "local-qwen3.6-35b-a3b",
+      "endpoint": "/v1/messages",
+      "status": "timeout",
+      "timeout_seconds": 45.01
+    },
+    "qwen25_probe": {
+      "model": "local-qwen2.5-7b",
+      "endpoint": "/v1/messages",
+      "reply": "OK",
+      "input_tokens": 34,
+      "output_tokens": 2,
+      "elapsed_seconds": 0.13
+    },
+    "mcp_probe": {
+      "model": "local-qwen2.5-7b",
+      "reply": "OK",
+      "input_tokens": 34,
+      "output_tokens": 2
+    },
+    "container_reachability": {
+      "container": "garnier-p1-local-20260915-1234",
+      "gateway_origin": "http://host.docker.internal:4000",
+      "liveliness_http": 200
+    },
+    "project_creation": "in_progress",
+    "qwen36_recheck": {
+      "surface": "local_chat MCP",
+      "model": "local-qwen3.6-35b-a3b",
+      "reply": "OK",
+      "input_tokens": 15,
+      "output_tokens": 107
+    },
+    "qwen25_project_creation": "failed_triad_and_history",
+    "qwen36_project_creation": "in_progress"
+  },
+  "host_account_status_receipt": "account_status.json",
+  "quota_verified": false,
+  "billing_currency": "unavailable"
+}

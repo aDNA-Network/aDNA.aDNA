@@ -9,6 +9,16 @@ tags: [garnier, p1, authentication, research]
 
 # Account-based options for the disposable P1 task
 
+## Verified local route — later 2026-09-15 continuation
+
+[D] Broker inventory C41 identifies the existing Claude session store with `access_pattern: claude_code_internal`. It does not register a portable subscription environment credential for a container. No C41 credential values or host login cache were read. The earlier host sign-in remains valid evidence at its recorded time; disposable subscription access is still unverified.
+
+[D] A separate existing route is available: broker C69 (`INFERENCE_GATEWAY_TOKEN`) authorizes the node's local inference gateway. Its health endpoint and authenticated model listing responded. Qwen2.5-7B returned “OK” through both the local-chat tool and `/v1/messages`, and the fresh disposable container reached the gateway. Qwen3.6's separate 45-second probe timed out; that single probe does not establish that the model is generally unavailable. Receipt: `evidence/research/next_build_account_routes.json`.
+
+[D/R] Claude Code 2.1.223 reached Qwen2.5-7B through this route. Its first task request was rejected because that model does not support the supplied thinking parameter. Setting `CLAUDE_CODE_DISABLE_THINKING=1` only in the disposable process enabled an actual response; the model then supplied invalid `Skill` arguments and fallback instructions. A response is not project creation. [Claude Code compatibility setting](https://code.claude.com/docs/en/env-vars). [[local_model_continuation]] carries the final task and file-check disposition.
+
+[I] This is an observed local-provider route, not a Claude subscription run or evidence that every listed model supports the complete workflow. The broker credential entered an echo-disabled PTY and child environment; no token was placed in Docker configuration. Remaining runtime assistance and scan limitations belong with the run receipt.
+
 ## Correction to the blocker
 
 [D] The observed failure was an insufficient-credit response from the selected Anthropic API account. It does not establish that the operator's Claude subscription is unavailable, or that an API top-up is necessary. Earlier funded-API-only wording in the continuation is too narrow. No successful project run is implied by this correction.

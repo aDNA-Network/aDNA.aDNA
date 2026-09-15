@@ -1,0 +1,212 @@
+[
+  {
+    "event": "start",
+    "at": "2026-09-15T12:34:27.463787+00:00",
+    "argv": [
+      "docker",
+      "exec",
+      "-it",
+      "garnier-p1-local-20260915-1234",
+      "bash",
+      "-lc",
+      "stty -echo; printf \"__AUTH_INPUT__\\n\"; IFS= read -r ANTHROPIC_API_KEY; export ANTHROPIC_API_KEY; export ANTHROPIC_BASE_URL=http://host.docker.internal:4000; export ANTHROPIC_MODEL=local-qwen2.5-7b; export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1; export DISABLE_AUTOUPDATER=1; printf \"__AUTH_LOADED__\\n\"; stty echo; exec bash -l"
+    ],
+    "secret_route": "inherited broker environment -> echo-disabled PTY -> child environment; no persisted secret"
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:34:44.652858+00:00",
+    "input": {
+      "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:35:05.063714+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:35:28.623735+00:00",
+    "input": {
+      "key": "up"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:35:28.623784+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:35:56.693791+00:00",
+    "input": {
+      "text": "2"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:36:19.879065+00:00",
+    "input": {
+      "key": "escape"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:36:41.231773+00:00",
+    "input": {
+      "key": "ctrl-c"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:37:01.620132+00:00",
+    "input": {
+      "key": "ctrl-c"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:37:11.274598+00:00",
+    "input": {
+      "text": "claude",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:37:30.805537+00:00",
+    "input": {
+      "text": "claude",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:37:43.014916+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:37:55.477618+00:00",
+    "input": {
+      "text": "1"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:38:17.296988+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:38:28.925482+00:00",
+    "input": {
+      "text": "1"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:38:43.000727+00:00",
+    "input": {
+      "text": "Create a new aDNA project for my work.",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:39:23.841489+00:00",
+    "input": {
+      "text": "/exit",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:39:33.696725+00:00",
+    "input": {
+      "text": "export CLAUDE_CODE_DISABLE_THINKING=1; claude",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:39:44.084232+00:00",
+    "input": {
+      "text": "Create a new aDNA project for my work.",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:41:21.578308+00:00",
+    "input": {
+      "text": "Yes. Name it garnier_repro. This is a disposable test project with no real data.",
+      "enter": true
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:42:10.971333+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:42:53.070084+00:00",
+    "input": {
+      "text": "Yes, execute the project creation now."
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:43:07.413491+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:44:23.006853+00:00",
+    "input": {
+      "text": "1"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:45:16.054921+00:00",
+    "input": {
+      "text": "/exit"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:45:43.623451+00:00",
+    "input": {
+      "key": "enter"
+    }
+  },
+  {
+    "event": "input",
+    "at": "2026-09-15T12:45:54.627008+00:00",
+    "input": {
+      "text": "exit",
+      "enter": true
+    }
+  },
+  {
+    "event": "exit",
+    "at": "2026-09-15T12:45:54.639606+00:00",
+    "exit_code": 0
+  }
+]
