@@ -1,0 +1,13 @@
+{
+  "created": "2026-09-15T11:34:38.250538+00:00",
+  "container": "garnier-p1-repro-20260915-112428",
+  "image": "mcr.microsoft.com/playwright:v1.59.1-noble",
+  "mount_count": 0,
+  "broker_secret_in_container_config": false,
+  "credential_transport": "echo-disabled PTY into child environment; credential values never logged",
+  "git_version": "2.43.0",
+  "claude_code_version": "2.1.223",
+  "source_commit": "b1cf040",
+  "cloned_image_commit": "dea4ab9d4eb7242c832a6311a6e08d85a5791f8c",
+  "status": "running; authentication not yet proven"
+}

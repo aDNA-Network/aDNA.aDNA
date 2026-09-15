@@ -33,6 +33,28 @@ tags: [garnier, p1, evidence]
 
 Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
 
+## Local collection setup — 2026-09-15 continuation
+
+[D] Stanley selected collection under the existing protocol, with all three reader sessions on this machine. The preview was restarted at `http://127.0.0.1:4465/`; all 15 served route hashes match source `b1cf040` (`evidence/p1/resume_preview_identity.json`). The browser-control tool could not open a visible browser; Stanley opens the local URL directly. This does not change the stimulus or authorize remote publication.
+
+[D] No observations have been supplied. The entries below are an unfilled intake worksheet, not participant records. Copy the fields once per consenting reader; use role labels such as `engineer_01`, never names or contact details. Keep the answer key out of the participant's view.
+
+```text
+Record ID / role:
+Consent to this review and to recording de-identified quotations:
+Prior familiarity:
+Candidate source / URL: b1cf040 / http://127.0.0.1:4465/
+Date / device / viewport / theme:
+Assistive technology or timing accommodations:
+Three-second answer (verbatim):
+Three-minute role-task answers (verbatim):
+Confusions (verbatim):
+Clarification or navigation assistance, after original answers:
+Timing deviations:
+```
+
+[I] Return the three records or their local paths to the executing agent. The two calibrated scorers apply the frozen key only after intake; record their disagreement and adjudication. No scorer or synthetic reader fills missing human fields. Every material confusion receives a correction or explicit DP3 disposition.
+
 ## Fresh-context preview restart
 
 [D] Source identity is `b1cf040`; final evidence/test records are at `f34f9c2`; synthetic-reader inputs were captured at `5b92495`. These are separate evidence populations. A running preview alone does not prove which source it serves.

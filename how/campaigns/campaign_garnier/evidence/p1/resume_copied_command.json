@@ -1,0 +1,9 @@
+{
+  "created": "2026-09-15T11:29:15.734Z",
+  "origin": "http://127.0.0.1:4465/",
+  "source_commit": "b1cf040",
+  "copied": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+  "expected": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+  "exact": true,
+  "surface": "rendered button clipboard API boundary; not OS clipboard"
+}
