@@ -1,0 +1,16 @@
+{
+  "created": "2026-09-15T10:12:34.197308+00:00",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "mcr.microsoft.com/playwright:v1.59.1-noble",
+    "bash",
+    "-lc",
+    "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude\nresult=$?\nprintf \"COMMAND_EXIT=%s\\n\" \"$result\"\ngit --version\ngit -C ~/aDNA rev-parse HEAD\ntest -f ~/aDNA/CLAUDE.md && test -f ~/aDNA/.adna/MANIFEST.md && echo CLONE_FILES_PRESENT\ngit -C ~/aDNA show v8.11:CLAUDE.md | sha256sum\nfind ~/aDNA -maxdepth 1 -name \"*.aDNA\" -type d\nexit \"$result\"\n"
+  ],
+  "exit": 127,
+  "stdout": "COMMAND_EXIT=127\ngit version 2.43.0\ndea4ab9d4eb7242c832a6311a6e08d85a5791f8c\nCLONE_FILES_PRESENT\nc501063673c1232215b5742d02f828389e8112f538e4fb9065aa10a3095ce4cd  -\n",
+  "stderr": "Cloning into '/root/aDNA'...\nbash: line 1: claude: command not found\n",
+  "classification": "automated clean-container clone and entry; Claude Code prerequisite absent, agent launch and first project creation NOT reproduced; not human TTFS"
+}

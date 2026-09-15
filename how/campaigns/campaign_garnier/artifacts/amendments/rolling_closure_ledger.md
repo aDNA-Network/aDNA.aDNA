@@ -27,3 +27,13 @@ Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
 ## DP2 ratification — 2026-09-15
 
 [D] Stanley accepted the six amendments in [[dp2_ratification_20260915]]. Campaign phase 1 authorized; three P1 forecasts updated to 150/90/80 kT, originals preserved. Specifications now assign privacy/state and fresh-mobile triad fixes, count-release ownership and gate-adoption controls. This is a records-only ratification, not P1 acceptance evidence. Baseline pack is unchanged. Actuals and verification: [[session_stanley_20260915_092248_garnier_dp2_ratification]]. Next owner: Rosetta P1.1; next human phase gate: Stanley DP3.
+
+## P1 execution — 2026-09-15
+
+[D] P1.1 C1–C4 complete: storyboard, source/twin and claim maps, fresh public-only readers, calibrated graders, C4 process failures and final180-cell matrix; [[artifacts/p1/verification_report]], [[artifacts/p1/aar_homepage]]. [I] Rough145±55kT vs150 estimate.
+
+[D] P1.2 C1 implemented; C2 partial (clean clone/entry, no authenticated agent creation); C3 sitting evidence/AAR recorded, closure owed. [[artifacts/p1/instruction_ledger]] and [[artifacts/p1/command_transcripts]]. FG-P0-005 misleading template/current-router description corrected, complete first task remains owed. [I] Rough75±25kT vs90 estimate.
+
+[D] P1.3 C1 six-route local copy/disclosure correction complete; C2 formative human evidence absent; C3 sitting evidence/AAR filed, closure owed. FG-P0-002 contradictory privacy/state language corrected; field collector remains P4.1. [[artifacts/p1/claim_evidence_map]] and [[artifacts/p1/formative_reader_pack]]. [I] Rough40±20kT vs80 estimate.
+
+[D] All records retain source b1cf040 versus prescreen5b92495. No peer delivery; patterns_to_author remain staged, augmented with the prose-extraction population caveat. P6 must graduate and reconcile these records. [I] Phase actual roughly260±90kT including independent work/reruns;25–50kT future follow-up, billing unavailable. Stanley owns human inputs and DP3; Rosetta owns bounded corrections. No field, human, independent-adoption or launch-score claim.

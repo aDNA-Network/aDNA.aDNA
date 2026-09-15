@@ -1,0 +1,63 @@
+{
+  "created": "2026-09-15T10:15:43.721389+00:00",
+  "head": "5b9249530fa3e6a4f9db549c3fadf2928210ab09",
+  "surfaces": {
+    "/": {
+      "public_text_sha256": "5d46fd8131e04cd09c9c5b2a8f4d19c1041394c842a59102e67c1294a5638382"
+    },
+    "/get-started": {
+      "public_text_sha256": "364d5d2b0d7c53a45242958be206ca661576afb344923c34864aaff06056e3dd"
+    },
+    "/learn/what-is-adna": {
+      "public_text_sha256": "ce302a6450a76488c16dea05ba10cb65c91e4703f22fb5375eb487b16e5e176f"
+    },
+    "/about": {
+      "public_text_sha256": "b9b77621ac3a1bc0c9234b63664d080e79fcdb3010d6b67e743880961dfe74bf"
+    },
+    "/community": {
+      "public_text_sha256": "138b26503be7b3c24b6d64525ee459ffc4d2f2ea01dc118e4742c4d5b753afe5"
+    },
+    "/state-of-the-network": {
+      "public_text_sha256": "ff3ec31045f4e19273a809f6a771c8ce3bf900731e969063b9fe730ea16d7be1"
+    },
+    "/reference/specification": {
+      "public_text_sha256": "1de891bc55c0153f33325c701fc426ce51723ee3c74c3948122b286bac8cd870"
+    },
+    "/canonical-properties": {
+      "public_text_sha256": "f887c6541da7d863612934135e1a156bb17dcdc7d244a137b624b08366df1014"
+    }
+  },
+  "source_hashes": {
+    "site/src/components/sections/HomeHero.astro": "e9758046a08190dea907f02953f4fd99dd1bb8d6297bea7a98d343415b139717",
+    "site/src/data/home.ts": "511489408bae1b83d4b5abd62de0ab3cbfdc73c89694621fa07842cc154c1561",
+    "site/src/data/tour_annotations.ts": "b57bed369f14e1308e939ec07b1469de8cc736b415a90f557c4b297fc91cc535",
+    "site/src/pages/about.astro": "daaee8ff0b1c2fa97198a1e076e0bcd5cf4ef4f90c1eb11d57cbba89d5f3e0bc",
+    "site/src/pages/commons.astro": "dd88ffd998b2b39297e08a032fee14ee40ff991bf0e07c09af5ba787a66185b9",
+    "site/src/pages/community/index.astro": "3b6253956922f8093bf9919378f3168d54463fa8a16e5c7c56930594163a6045",
+    "site/src/pages/get-started.astro": "3730a38fadaa3b2355cf9e16a87517ca9e2f9006a3e2411fbb8249501d0c54e0",
+    "site/src/pages/get-started/what-your-agent-reads/[...slug].astro": "59e792b4b2a4428bebf3983664796479e6cf7f4bed9574f66b039b5f09a82ef4",
+    "site/src/pages/get-started/what-your-agent-reads/index.astro": "d6f04f9e7518085be52f1c21524caf7108e27c626b09c68f84620620563a7d7e",
+    "site/src/pages/index.astro": "db8c8eb904b2c5c49e238b819104960f3fd7ea577fa0651187b4c83283f93d75",
+    "site/src/pages/learn/what-is-adna.astro": "beb48944f71068ad3278d05612da4d08c8384a005a7e736d61f5c9bd36bd1cf5",
+    "site/src/pages/network.astro": "cde772f989e7d0d956aff7c45278e576fdbf043ab6c18de58b44ccd9de4e0a36",
+    "site/src/pages/privacy/index.astro": "46984ed78987de73f13f534e463f270341af6ec3b7cc18580e84519ea4c1d87d",
+    "site/src/pages/state-of-the-network/index.astro": "03cc647ebc985c47e03c0bf3284948c1af318e728a659396f8993a4c2673fd3a"
+  },
+  "html_sha256": {
+    "/": "35a9f9528c39effcab41039c2dda38ec1651a9023c6090ee8dfae3f7739d6712",
+    "/get-started": "8c02389462880cd28e97312c1c316b7201e9c3ccded5f5be50b49c5d2434d4c4",
+    "/learn/what-is-adna": "386eab5b051a4176ea7d6c94b50bf64b2d98ec120a1d3065368de11bbd3ef1c1",
+    "/about": "51f9c91457771d729999d079768c9e5026d2598bf9446996b29bc4f69e19b04f",
+    "/community": "ab66d288c274a185cdbecc8f90f14dabe9bf8877966e12b2c3804aab17649684",
+    "/commons": "748f3061874c6966356e7614eb1365c80a2d1121dd87a1c54a7639e4cc52c629",
+    "/network": "27af42611346ab0c8c04a51a639b36416a4754b28d3f6acd540aa8899b39fb81",
+    "/privacy": "d3ac55ec215f9b67b6ac7b464c3559e587fec4ce012236cc47fabe0a75597a9d",
+    "/state-of-the-network": "da621470febeedda5bf9d212717ed6e9c13faaabe047dbf739825780a949257c",
+    "/vaults": "c1542013e7e2f00f94740b26605fea0f6e5299bda9952033ffc1ab113a7eed9f",
+    "/get-started/what-your-agent-reads": "d8713904da3f132167da83002b7972792f18c0c4ef01f3a0ebe469d5eef38fad",
+    "/get-started/what-your-agent-reads/workspace-router": "187d841e094464e95df996867c4fb0ff1ad2f40dfdffb63c2b3c372760aeee9d",
+    "/get-started/what-your-agent-reads/standard-governance": "b8b7a5266fa2d47ddd8ec0f471328b6866b150827db453a53230d760c5ed6e3f",
+    "/get-started/what-your-agent-reads/skill-project-fork": "1fe730ef2f066aa6306dcdc3245657ef548606a76e9a8c489d2673faff1c5457",
+    "/get-started/what-your-agent-reads/skill-onboarding": "4dda86dd7653fe4d2d550b013a28e43049f3aa669e6f9449580963015025e724"
+  }
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "route": "/about",
+    "prose_words": 503,
+    "prior_prose_words": 493,
+    "target": 450,
+    "disposition": "Retain current authority, affiliations, related-party disclosure and roadmap qualifiers."
+  },
+  {
+    "route": "/community",
+    "prose_words": 620,
+    "prior_prose_words": 633,
+    "target": 500,
+    "disposition": "Retain venue rules, approval-gated access and planned-versus-current governance."
+  },
+  {
+    "route": "/privacy",
+    "prose_words": 656,
+    "prior_prose_words": null,
+    "target": null,
+    "disposition": "No P0 word target assigned; disclosure reviewed"
+  },
+  {
+    "route": "/network",
+    "prose_words": 613,
+    "prior_prose_words": 611,
+    "target": 550,
+    "disposition": "Retain the declared-edge mechanism, local sharing boundary and present-versus-planned disclosures."
+  },
+  {
+    "route": "/commons",
+    "prose_words": 434,
+    "prior_prose_words": 449,
+    "target": 450,
+    "disposition": "Within advisory target"
+  },
+  {
+    "route": "/state-of-the-network",
+    "prose_words": 1052,
+    "prior_prose_words": null,
+    "target": null,
+    "disposition": "No P0 word target assigned; disclosure reviewed"
+  },
+  {
+    "route": "/learn/what-is-adna",
+    "prose_words": 471,
+    "prior_prose_words": 508,
+    "target": 500,
+    "disposition": "Within advisory target"
+  },
+  {
+    "route": "/get-started",
+    "prose_words": 886,
+    "prior_prose_words": 971,
+    "target": 900,
+    "disposition": "Retain prerequisite, agent-data, recovery and backup-before-removal instructions."
+  },
+  {
+    "route": "/",
+    "prose_words": 130,
+    "prior_prose_words": 766,
+    "target": 600,
+    "disposition": "Extractor coverage exception; do not claim comparative word reduction"
+  }
+]

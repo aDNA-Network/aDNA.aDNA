@@ -1,0 +1,54 @@
+{
+  "method": "Concrete specimens reviewed by agent_codex; recorded judgment controls, not an automated classifier or human test",
+  "evidence_class": "D",
+  "controls": [
+    {
+      "criterion": "P1.1 C1",
+      "specimen": "Hero: aDNA is an already-trained frontier model.",
+      "verdict": "REJECT",
+      "reason": "No model artifact or evaluation supports this; contradicts the disclosed file-layout mechanism."
+    },
+    {
+      "criterion": "P1.1 C1",
+      "specimen": "Storyboard begins with cultural inheritance and omits the file example.",
+      "verdict": "REJECT",
+      "reason": "Does not show the mechanism required by the accepted storyboard."
+    },
+    {
+      "criterion": "P1.1 C2",
+      "specimen": "HTML includes the agent-data caveat while the twin omits it.",
+      "verdict": "REJECT",
+      "reason": "A machine reader loses a material qualifier; source/twin agreement is required."
+    },
+    {
+      "criterion": "P1.2 C1",
+      "specimen": "A rendered git-clone && claude command has no Claude Code prerequisite, although the source comment names one.",
+      "verdict": "REJECT",
+      "reason": "The reached instruction surface omits a dependency; a comment cannot satisfy the criterion."
+    },
+    {
+      "criterion": "P1.3 C1",
+      "specimen": "All users must publish their project context to join aDNA.",
+      "verdict": "REJECT",
+      "reason": "Contradicts the accepted voluntary-sharing boundary."
+    },
+    {
+      "criterion": "P1.3 C2",
+      "specimen": "A record marked D-syn is relabeled human and the scientist class is omitted.",
+      "verdict": "REJECT",
+      "reason": "Neither human provenance nor the required participant population is satisfied."
+    },
+    {
+      "criterion": "P1 C3",
+      "specimen": "A proposed closure diff includes site/src/data/vaults.json and a predecessor mission.",
+      "verdict": "REJECT",
+      "reason": "Both paths are reserved from this mission."
+    },
+    {
+      "criterion": "P1 C3",
+      "specimen": "DP3 accepted; ratified_by: agent_codex; operator event absent.",
+      "verdict": "REJECT",
+      "reason": "An agent signature cannot provide the required human gate."
+    }
+  ]
+}

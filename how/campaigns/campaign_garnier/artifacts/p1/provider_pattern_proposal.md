@@ -15,3 +15,7 @@ tags: [garnier, p1, webforge, consumer]
 [D] Positive and negative CLI fixtures are implemented together in --selftest; receipts: evidence/p1/instrument_controls.json. Frozen P0 files are unchanged. Exact candidate invocation and matrix receipts are owed during capture, not inferred from fixture passes.
 
 Related: [[dp2_ratification_20260915]] · [[mission_garnier_p1_1_homepage_voice]].
+
+## Post-execution note — 2026-09-15
+
+[D] The existing reading census reported 130 homepage prose words while the main-DOM census reported 688 and a paragraph-only companion reported 369. Different populations; no reduction percentage is claimed. [I] Stage an extractor-coverage investigation and a reported-exclusion population contract through WebForge; do not silently replace the canonical instrument or transfer this into provider governance. No memo delivered. The exact failure mode remains unisolated.

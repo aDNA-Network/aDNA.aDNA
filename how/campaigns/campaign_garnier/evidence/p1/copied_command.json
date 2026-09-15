@@ -1,0 +1,7 @@
+{
+  "copied": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+  "expected": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+  "exact": true,
+  "source": "rendered homepage button; clipboard write boundary intercepted, not OS clipboard",
+  "created": "2026-09-15T10:12:11.334Z"
+}

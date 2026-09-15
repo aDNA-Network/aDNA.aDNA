@@ -1,0 +1,4507 @@
+{
+  "expected": [
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/about",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/about",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/about",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/about",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/community",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/community",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/community",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/community",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/commons",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/commons",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/commons",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/commons",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/network",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/network",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/network",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/network",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "desktop",
+      "theme": "light"
+    }
+  ],
+  "rows": [
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/home__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/get-started__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/learn-what-is-adna__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/about__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/community__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/commons__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/network__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/privacy__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/state-of-the-network__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/vaults",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/vaults__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/get-started-what-your-agent-reads__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/get-started-what-your-agent-reads-workspace-router__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/get-started-what-your-agent-reads-standard-governance__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/get-started-what-your-agent-reads-skill-project-fork__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "mobile",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_dark/get-started-what-your-agent-reads-skill-onboarding__mobile__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/home__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/get-started__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/learn-what-is-adna__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/about__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/community__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/commons__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/network__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/privacy__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/state-of-the-network__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/vaults",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/vaults__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/get-started-what-your-agent-reads__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/get-started-what-your-agent-reads-workspace-router__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/get-started-what-your-agent-reads-standard-governance__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/get-started-what-your-agent-reads-skill-project-fork__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "mobile-lg",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_dark/get-started-what-your-agent-reads-skill-onboarding__mobile-lg__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/home__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/get-started__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/learn-what-is-adna__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/about",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/about__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/community",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/community__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/commons",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/commons__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/network",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/network__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/privacy",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/privacy__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/state-of-the-network__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/vaults",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/vaults__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/get-started-what-your-agent-reads__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/get-started-what-your-agent-reads-workspace-router__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/get-started-what-your-agent-reads-standard-governance__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/get-started-what-your-agent-reads-skill-project-fork__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "tablet",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_dark/get-started-what-your-agent-reads-skill-onboarding__tablet__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/home__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/get-started__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/learn-what-is-adna__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/about__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/community__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/commons__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/network__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/privacy",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/privacy__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/state-of-the-network__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/vaults",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/vaults__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/get-started-what-your-agent-reads__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/get-started-what-your-agent-reads-workspace-router__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/get-started-what-your-agent-reads-standard-governance__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/get-started-what-your-agent-reads-skill-project-fork__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "laptop-sm",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_dark/get-started-what-your-agent-reads-skill-onboarding__laptop-sm__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/home__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/get-started__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/learn-what-is-adna__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/about__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/community__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/commons__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/network__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/privacy",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/privacy__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/state-of-the-network__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/vaults",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/vaults__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/get-started-what-your-agent-reads__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/get-started-what-your-agent-reads-workspace-router__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/get-started-what-your-agent-reads-standard-governance__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/get-started-what-your-agent-reads-skill-project-fork__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "laptop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_dark/get-started-what-your-agent-reads-skill-onboarding__laptop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/home__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/get-started__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/learn-what-is-adna__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/about",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/about__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/community",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/community__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/commons",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/commons__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/network",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/network__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/privacy",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/privacy__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/state-of-the-network__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/vaults",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/vaults__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/get-started-what-your-agent-reads__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/get-started-what-your-agent-reads-workspace-router__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/get-started-what-your-agent-reads-standard-governance__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/get-started-what-your-agent-reads-skill-project-fork__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "desktop",
+      "theme": "dark",
+      "status": 200,
+      "observedTheme": "dark",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_dark/get-started-what-your-agent-reads-skill-onboarding__desktop__dark.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/home__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/get-started__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/learn-what-is-adna__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/about__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/community__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/commons__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/network__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/privacy__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/state-of-the-network__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/vaults",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/vaults__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/get-started-what-your-agent-reads__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/get-started-what-your-agent-reads-workspace-router__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/get-started-what-your-agent-reads-standard-governance__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/get-started-what-your-agent-reads-skill-project-fork__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "mobile",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile_light/get-started-what-your-agent-reads-skill-onboarding__mobile__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/home__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/get-started__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/learn-what-is-adna__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/about__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/community__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/commons__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/network__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/privacy__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/state-of-the-network__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/vaults",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/vaults__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/get-started-what-your-agent-reads__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/get-started-what-your-agent-reads-workspace-router__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/get-started-what-your-agent-reads-standard-governance__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/get-started-what-your-agent-reads-skill-project-fork__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "mobile-lg",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/mobile-lg_light/get-started-what-your-agent-reads-skill-onboarding__mobile-lg__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/home__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/get-started__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/learn-what-is-adna__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/about",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/about__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/community",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/community__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/commons",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/commons__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/network",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/network__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/privacy",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/privacy__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/state-of-the-network__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/vaults",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/vaults__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/get-started-what-your-agent-reads__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/get-started-what-your-agent-reads-workspace-router__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/get-started-what-your-agent-reads-standard-governance__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/get-started-what-your-agent-reads-skill-project-fork__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "tablet",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/tablet_light/get-started-what-your-agent-reads-skill-onboarding__tablet__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/home__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/get-started__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/learn-what-is-adna__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/about__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/community__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/commons__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/network__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/privacy",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/privacy__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/state-of-the-network__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/vaults",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/vaults__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/get-started-what-your-agent-reads__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/get-started-what-your-agent-reads-workspace-router__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/get-started-what-your-agent-reads-standard-governance__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/get-started-what-your-agent-reads-skill-project-fork__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "laptop-sm",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop-sm_light/get-started-what-your-agent-reads-skill-onboarding__laptop-sm__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/home__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/get-started__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/learn-what-is-adna__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/about__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/community__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/commons__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/network__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/privacy",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/privacy__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/state-of-the-network__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/vaults",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/vaults__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/get-started-what-your-agent-reads__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/get-started-what-your-agent-reads-workspace-router__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/get-started-what-your-agent-reads-standard-governance__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/get-started-what-your-agent-reads-skill-project-fork__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "laptop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/laptop_light/get-started-what-your-agent-reads-skill-onboarding__laptop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/home__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/get-started__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/learn-what-is-adna__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/about",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/about__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/community",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/community__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/commons",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/commons__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/network",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/network__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/privacy",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/privacy__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/state-of-the-network__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/vaults",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/vaults__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/get-started-what-your-agent-reads__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/get-started-what-your-agent-reads-workspace-router__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/get-started-what-your-agent-reads-standard-governance__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/get-started-what-your-agent-reads-skill-project-fork__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "desktop",
+      "theme": "light",
+      "status": 200,
+      "observedTheme": "light",
+      "png": "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/captures/desktop_light/get-started-what-your-agent-reads-skill-onboarding__desktop__light.png",
+      "axeReached": true,
+      "axeViolations": [],
+      "t0_console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "companion_http_errors": [
+        {
+          "url": "http://localhost:4465/_vercel/speed-insights/script.js",
+          "status": 404
+        }
+      ],
+      "unexplained_http_errors": []
+    }
+  ],
+  "scope": "T0 PNG/axe at each exact cell; observed root theme/status/request URLs from a separate same-build companion navigation. Local preview has no Vercel Speed Insights script service."
+}

@@ -1,0 +1,33 @@
+{
+  "created": "2026-09-15T10:10:42.175941+00:00",
+  "rows": [
+    {
+      "slug": "workspace-router",
+      "url": "https://raw.githubusercontent.com/aDNA-Network/aDNA/v8.11/.adna/how/templates/template_workspace_claude.md",
+      "sha256": "dac6ea82437103986416b23ec487fe3f4ac6f5ebd912321db51f1699aa887d2b",
+      "expected": "dac6ea82437103986416b23ec487fe3f4ac6f5ebd912321db51f1699aa887d2b",
+      "match": true
+    },
+    {
+      "slug": "standard-governance",
+      "url": "https://raw.githubusercontent.com/aDNA-Network/aDNA/v8.11/.adna/CLAUDE.md",
+      "sha256": "8b9e85c7952a501324dce5300fcfaeac571868bec5d439067779a59cf677190b",
+      "expected": "8b9e85c7952a501324dce5300fcfaeac571868bec5d439067779a59cf677190b",
+      "match": true
+    },
+    {
+      "slug": "skill-project-fork",
+      "url": "https://raw.githubusercontent.com/aDNA-Network/aDNA/v8.11/.adna/how/skills/skill_project_fork.md",
+      "sha256": "50240c92842ebe2dbc203f650aaec80d8638f4bc82fe45247f739833e296262b",
+      "expected": "50240c92842ebe2dbc203f650aaec80d8638f4bc82fe45247f739833e296262b",
+      "match": true
+    },
+    {
+      "slug": "skill-onboarding",
+      "url": "https://raw.githubusercontent.com/aDNA-Network/aDNA/v8.11/.adna/how/skills/skill_onboarding.md",
+      "sha256": "f06458baafdc22ab4f1cc727413b3d8a07b7acf359b12323bc174e9e45cbee61",
+      "expected": "f06458baafdc22ab4f1cc727413b3d8a07b7acf359b12323bc174e9e45cbee61",
+      "match": true
+    }
+  ]
+}

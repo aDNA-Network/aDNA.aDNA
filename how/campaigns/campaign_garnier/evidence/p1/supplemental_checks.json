@@ -1,0 +1,34 @@
+{
+  "supplements": [
+    {
+      "theme": "dark",
+      "viewport": "390x844 fresh context",
+      "axeViolations": [],
+      "pre": {
+        "color": "rgb(192, 202, 245)",
+        "background": "rgb(26, 27, 38)",
+        "fontSize": "12.975px"
+      },
+      "main_paragraph_words": 369,
+      "art_disabled_mechanism_visible": true
+    },
+    {
+      "theme": "light",
+      "viewport": "390x844 fresh context",
+      "axeViolations": [],
+      "pre": {
+        "color": "rgb(192, 202, 245)",
+        "background": "rgb(26, 27, 38)",
+        "fontSize": "12.975px"
+      },
+      "main_paragraph_words": 369,
+      "art_disabled_mechanism_visible": true
+    }
+  ],
+  "noJS": {
+    "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+    "detailsOpen": true,
+    "primary": "/get-started",
+    "governance": "# CLAUDE.md — aDNA.aDNA\n\n## Standing Orders\n\n1. **Phase gates are human gates.** Never auto-advance between campaign phases without explicit user approval."
+  }
+}

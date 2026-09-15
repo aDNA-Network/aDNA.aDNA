@@ -80,7 +80,7 @@ VITRINE's proposed website craft and docs work is absorbed prospectively into P1
 | [[mission_garnier_p1_2_quickstart_voice]] | Bring the first task into focus | 1 | opus / codex | mission_garnier_p1_1_homepage_voice |
 | [[mission_garnier_p1_3_mission_voice]] | Make the public-good invitation concise | 1 | opus / codex | mission_garnier_p1_2_quickstart_voice |
 
-**⛩ DP3 exit:** Four-part homepage storyboard and all seven surface word-target dispositions complete; unsupported claims and banned prose zero; formative human feedback recorded for all three decisive classes; P2 tranche scope/budget presented. Named artifact: `artifacts/p1/phase_exit.md`. Estimated agent sittings: 3; budget: 320 kT committed at DP2 (186 kT original preserved). Missions are authorized and queued for execution under [[dp2_ratification_20260915]].
+**⛩ DP3 exit:** Mechanism-first homepage storyboard and all seven surface word-target dispositions complete; unsupported claims and banned prose zero; formative human feedback recorded for all three decisive classes; P2 tranche scope/budget presented. Named artifact: `artifacts/p1/phase_exit.md`. Estimated agent sittings: 3; budget: 320 kT committed at DP2 (186 kT original preserved). P1.1 is completed; P1.2/P1.3 are in progress with implementation delivered and first-task/human evidence owed. See [[artifacts/p1/phase_exit]] under [[dp2_ratification_20260915]].
 
 ### P2 — Proof, fidelity and midpoint
 
@@ -240,3 +240,7 @@ Deliverables: pending campaign execution. Descoped: none approved. Key findings:
 ## DP2 ratification — 2026-09-15
 
 [D] Stanley accepted P0 with the six amendments in [[dp2_ratification_20260915]]. P1 is authorized at 320 kT; the first output is a reviewable homepage mechanism/example/action. P1.3 owns privacy/state disclosure consistency and the formative human checkpoint. P2.2 owns stale-count release fidelity; P3.3 owns fresh-mobile triad readability. P1.1 must prove experimental gate failure behavior before adoption. Preserve AI DNA as an explanatory bridge to Agentic DNA, opt-in knowledge sharing and the public-good mission. No human, field, comparative-rank or publication claim is added by this ratification. DP3 remains the next phase gate.
+
+## P1 execution sitting — 2026-09-15
+
+[D] Source candidate b1cf040 implements the approved five-section homepage, AI DNA/Agentic DNA bridge, voluntary inheritance invitation, quickstart/source-tour fixes and six-route public-good/privacy work. P1.1 complete; P1.2 full authenticated first project and P1.3 formative humans remain owed. [[artifacts/p1/verification_report]] records local 698/one-skip gates,26 container checks,180 capture cells and synthetic-only prescreens. No deployment or DP3 acceptance. [I] Rough260±90kT against320 committed;25–50kT follow-up estimate, excluding human waiting and unknown billing. Next: [[artifacts/p1/formative_reader_pack]].

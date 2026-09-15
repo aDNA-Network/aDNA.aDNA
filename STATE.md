@@ -21,6 +21,18 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
+### 2026-09-15 — GARNIER P1 candidate implemented; formative evidence next
+
+[D] `last_edited_by: agent_codex`; runtime Codex. Candidate source `b1cf040` implements the approved homepage file example/AI DNA bridge, quickstart/source-tour corrections and six-route public-good/privacy work. P1.1 completed; P1.2 remains in progress pending authenticated first-project reproduction; P1.3 remains in progress pending operator-supplied formative humans. [[how/campaigns/campaign_garnier/artifacts/p1/phase_exit|P1 review packet]] and [[how/campaigns/campaign_garnier/artifacts/p1/formative_reader_pack|human protocol]] are the next live inputs. DP1/DP2 remain accepted; DP3 is not yet ready for acceptance.
+
+[D] Local full suite 698 passed / one existing skip; container visuals 26 passed; final capture population 180 cells with zero axe violations. Three bounded synthetic readers and two calibrated graders passed keyed tasks; no human timing or outcome is claimed. Clone/entry succeeded in a disposable container, then Claude Code was absent (exit 127); no first project is claimed. All 1,692 frozen P0 hashes are preserved. No push, deploy, registry/.adna/predecessor/peer mutation or outward delivery.
+
+[I] Rough phase content-load 260±90kT against 320 committed, independent reviews/reruns included; 25–50kT follow-up estimate. Human waiting and unknown API billing excluded. Homepage word-extractor undercoverage is recorded; no percentage reduction claimed.
+
+**Intake:** 2026-09-15 · GARNIER P1 · implemented local candidate, verification and review packet; human/first-task evidence owed.
+
+**Resume / next session:** Read the P1 packet, root/campaign governance and active leases. Keep the candidate stable; finish P1.2’s authenticated disposable first task and collect consenting engineer/funder/scientist formative observations under the accepted protocol. Resolve or disposition confusions, then assemble DP3. Do not restart P0/P1.1, repeat existing approvals, enter P2 or visual production, push, deploy or deliver memos without the applicable gate. Session: [[session_stanley_20260915_094410_garnier_p1]].
+
 ### 2026-09-15 — GARNIER DP2 accepted with six amendments; P1 authorized
 
 [D] `last_edited_by: agent_codex`; runtime Codex. Stanley’s “I accept with those amendments.” ratifies [[how/campaigns/campaign_garnier/artifacts/amendments/dp2_ratification_20260915|DP2]]. P0 is accepted as the planning baseline with its evidence limits. P1 is authorized at 320 kT (150/90/80), original 186 kT preserved; campaign forecast derives to 2,444 kT across 38 missions/47 estimated sittings. Later phase budgets remain provisional.

@@ -1,0 +1,35 @@
+[
+  {
+    "mode": "mobile",
+    "args": [
+      "/Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/cli/index.js",
+      "http://localhost:4465/",
+      "--chrome-flags=--headless --no-sandbox",
+      "--only-categories=performance,accessibility,best-practices,seo",
+      "--output=json",
+      "--output-path=/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/lighthouse_mobile.json",
+      "--quiet"
+    ],
+    "chromePath": "/Users/stanley/Library/Caches/ms-playwright/chromium-1217/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+    "version": "13.4.1",
+    "exit": 0,
+    "stderr": ""
+  },
+  {
+    "mode": "desktop",
+    "args": [
+      "/Users/stanley/.npm/_npx/0f94ee7615faf582/node_modules/lighthouse/cli/index.js",
+      "http://localhost:4465/",
+      "--chrome-flags=--headless --no-sandbox",
+      "--only-categories=performance,accessibility,best-practices,seo",
+      "--output=json",
+      "--output-path=/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p1/raw/lighthouse_desktop.json",
+      "--quiet",
+      "--preset=desktop"
+    ],
+    "chromePath": "/Users/stanley/Library/Caches/ms-playwright/chromium-1217/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+    "version": "13.4.1",
+    "exit": 0,
+    "stderr": ""
+  }
+]

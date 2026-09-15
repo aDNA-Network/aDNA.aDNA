@@ -1,0 +1,46 @@
+{
+  "initial_answer": "The project provides an MIT-licensed open standard and a cloneable local workspace for organizing project knowledge for AI agents. I can clone it, start Claude Code, and use three Markdown-based folders (what, how, who), with CLAUDE.md for instructions and STATE.md for work in progress. The structure and instructions are inspectable; they do not themselves enforce agent behavior.",
+  "runtime": "codex",
+  "evidence_class": "D-syn",
+  "task_answer": {
+    "initial_runnable_command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+    "prerequisites": [
+      "Git installed",
+      "Claude Code installed, on PATH, and authenticated with a supported account or API access",
+      "A POSIX terminal shell on macOS, Linux, or WSL",
+      "An available destination directory; if ~/aDNA already exists, use the existing workspace or clone somewhere else"
+    ],
+    "optional_tools": "Obsidian is optional; plain Markdown can be read with any editor.",
+    "local_file_examples": [
+      "~/aDNA/CLAUDE.md \u2014 workspace router supplied by the clone",
+      "~/aDNA/.adna/how/skills/skill_project_fork.md \u2014 instructions for scaffolding the first project",
+      "~/aDNA/.adna/how/skills/skill_onboarding.md \u2014 onboarding recipe",
+      "~/aDNA/<name>.aDNA/CLAUDE.md \u2014 project governance after scaffolding"
+    ],
+    "where_context_and_governance_live": "The workspace router is CLAUDE.md at the clone root; the embedded standard is in .adna/. Each project has its own CLAUDE.md entry point for purpose and rules, STATE.md for live priorities and blockers, MANIFEST.md for overview, and AGENTS.md for routing. Curated knowledge lives in what/context/, policies and roles in who/governance/, and objectives/session handoffs in how/missions/ and how/sessions/. The text names README.md among five governance files. These are instructions an agent must read, not enforcement machinery.",
+    "expected_result_and_verification": "The instructions say the fresh-workspace router sends Claude Code to the project-fork skill, which creates <name>.aDNA/ with what/, how/, who/ and independent Git history. The setup page gives test/ls/git commands to verify files and history, then asks for a fresh agent session inside the project. I found this path in the supplied pages but did not run it.",
+    "data_handling": "The workspace itself is Markdown and makes no network calls after cloning. The command launches Claude Code, whose separate behavior includes sending files it reads to Anthropic according to the setup page."
+  },
+  "verbatim_confusions": [
+    "Will the first Claude Code launch actually scaffold the project without a prompt, or do I need to ask it? The setup page describes that behavior, but says the real first-run recording has not yet been made.",
+    "The conceptual page calls its diagram three directories and five governance files, but only draws three governance files. Where should AGENTS.md and README.md appear in the smallest project?",
+    "What is the relationship between the v2.5 specification and the v8.11 release on the homepage? I infer separate standard and workspace versions, but that distinction is not spelled out in the pages I read."
+  ],
+  "pages_read": [
+    "home_first_screen.png",
+    "home.txt",
+    "pages.json",
+    "get-started.txt",
+    "learn_what-is-adna.txt",
+    "reference_specification.txt"
+  ],
+  "limitations": [
+    "Synthetic engineer-lens cold read by Codex, evidence class D-syn; not a human participant.",
+    "Untimed simulation of the requested 3-second and 3-minute tasks; no measured perception, reading time, or completion time.",
+    "Initial answer saved after viewing the supplied first-screen image and before reading page text.",
+    "Read only the supplied first-screen image, home text, page index, and three linked-page text files. No network, live site, repository, governance files, hidden context, or other reader output inspected.",
+    "No commands executed against the proposed workspace; prerequisites, generated files, first-run behavior, and data handling are reported from the supplied text, not independently validated.",
+    "Flattened page text does not establish the exact behavior of links or collapsed examples.",
+    "One bounded review; no grading key used and no revision against author intent."
+  ]
+}

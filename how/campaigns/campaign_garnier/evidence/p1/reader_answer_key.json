@@ -1,0 +1,34 @@
+{
+  "version": "reader_protocol_v1",
+  "freeze_before_outcomes": "2026-09-15T08:39:21.847486+00:00",
+  "expected": {
+    "K17": {
+      "short": "PASS",
+      "long": "PASS"
+    },
+    "K04": {
+      "short": "FAIL",
+      "long": "FAIL"
+    },
+    "K22": {
+      "short": "PASS",
+      "long": "PASS"
+    },
+    "K09": {
+      "short": "FAIL",
+      "long": "FAIL"
+    },
+    "K31": {
+      "short": "PASS",
+      "long": "PASS"
+    },
+    "K13": {
+      "short": "FAIL",
+      "long": "FAIL"
+    }
+  },
+  "answer_sha256": "2f7e31dd79bdcf1bd26b58cd4141051bfe973a78a5954b20bc2b465c560eaead",
+  "protocol_sha256": "609bfd8cea1db2835fc57545a4d70bf9a5d05b90e495e9271636d718b3ece30b",
+  "production_commit": "eda4cbfc2857a6d2d9df7d80a5db170957d45cab",
+  "notes": "Synthetic calibration examples, no human responses; valid scientist answer credits explicit missing first-run evaluation without claiming a site-wide absence of every evaluation."
+}

@@ -1,0 +1,32 @@
+{
+  "initial_answer": "aDNA provides an open, MIT-licensed standard for organizing project knowledge into three folders and Markdown so people and AI agents can navigate the same files. I can clone its repository, start a local workspace with Git and Claude Code, read the standard, and inspect the project\u2019s own instructions. The structure supplies written guidance, not enforcement of agent behavior.",
+  "verbatim_confusions": [
+    "What evidence shows that this organization improves agent performance compared with ordinary project files?",
+    "Where did this standard come from, and which parts are conventions versus mechanisms that tools actually execute?",
+    "Does the Success Criteria section specify a reproducible agent-performance evaluation, or only conformance checks?",
+    "Does the field-speed changelog concern webpage speed or the effectiveness of agents using this structure?"
+  ],
+  "task_answer": {
+    "mechanism": "A shared filesystem convention: who/ holds people and governance, what/ knowledge and decisions, and how/ operations. Five governance files orient readers; CLAUDE.md is the agent entry point, STATE.md supplies live work state, and typed Markdown frontmatter standardizes 16 base entity types. Context libraries, missions, and session notes provide material an agent can deliberately read and carry forward. Claude Code supports CLAUDE.md; other tools require entry-point configuration. The structure itself neither trains the model nor guarantees instruction compliance or retrieval correctness.",
+    "source_and_lineage": "The supplied pages identify Stanley Bishop as founding architect and current sole decision authority. The public clone-and-run source is github.com/aDNA-Network/aDNA; github.com/aDNA-Network/aDNA.aDNA is the site workspace, and aDNA-Network/adna-legacy is archived history preceding the current repository layout. The standard is MIT-licensed. Its specification landing page identifies v2.5, last updated 2026-07-02, and points to full-text and section views generated from the same source. It directs citations to include section URL plus version. The pages give project/repository lineage and explain the DNA metaphor, but I did not encounter research antecedents or a derivation from a cited scientific method in these surfaces.",
+    "evaluation_available_or_absent": "Available here are an inspectable example workspace, a three-question navigability self-check, and dated operational inventory/URL-check reporting. The state page gives counts with public data-file provenance and reports outside logged-out link checks dated 2026-08-18; I did not perform those checks. These are evidence of inspectability and reported deployment state, not comparative agent effectiveness. The learn page explicitly says its before/after is not a measured case study. The network page explicitly says its registry graph is not adoption evidence, all 74 vaults share one operator and machine, no second independent node exists, and federation has not been exercised between two operators. It also says performance collector receipt is not yet verified. I found no controlled agent-performance benchmark or measured benefit in the four selected pages and homepage. The specification index includes Success Criteria, but its contents are outside this read; the homepage links a field-speed changelog entry whose contents I also did not read."
+  },
+  "pages_read": [
+    "home_first_screen.png",
+    "home.txt",
+    "pages.json",
+    "learn_what-is-adna.txt",
+    "about.txt",
+    "state-of-the-network.txt",
+    "reference_specification.txt"
+  ],
+  "limitations": [
+    "Synthetic AI-scientist lens, not a human participant or independent adoption study.",
+    "Untimed simulation of the requested 3-second initial impression and 3-minute task; no measured human perception or completion time is claimed.",
+    "Initial answer and initial questions were saved after viewing only the supplied screenshot and before reading text.",
+    "Used only supplied screenshot, homepage, page manifest, and four linked-page text exports. No live site, repository, governance files, research search, or other reader output was inspected.",
+    "Absence statements apply only to these supplied surfaces. Linked full specification, Success Criteria section, changelog, source repositories, and external properties were not opened."
+  ],
+  "runtime": "codex",
+  "evidence_class": "D-syn"
+}

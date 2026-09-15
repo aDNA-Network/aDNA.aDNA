@@ -1,0 +1,34 @@
+---
+type: artifact
+created: 2026-09-15
+updated: 2026-09-15
+status: active
+last_edited_by: agent_codex
+tags: [garnier, p1, evidence]
+---
+# P1 formative review pack — awaiting people
+
+[D] Candidate source: b1cf040, local preview at http://localhost:4465/. Homepage [first screen](../../evidence/p1/home_first_screen.png), [390px light](../../evidence/p1/home_390_light.png), [390px dark](../../evidence/p1/home_390_dark.png). These show a local candidate, not the deployed website. Start the same candidate from `site/` with `npx astro preview --port 4465` if the preview is no longer running. [[how/campaigns/campaign_garnier/artifacts/p1/phase_exit|P1 review packet]] lists verification and open work.
+
+## Operator-supplied participants
+
+[I] Stanley supplies at least one consenting newcomer from each class: senior/frontier engineer, investor/foundation program officer, AI scientist. Agents do not recruit or contact people. Use de-identified records; keep contact details out of this public vault. Confirm consent before recording quotations. Do not reuse formative participants in the final cold-reader cohort.
+
+## Procedure
+
+1. Record role, prior familiarity, device, viewport, theme, candidate identity and consent status. Accommodate assistive technology and record timing differences.
+2. Show the loaded homepage for three seconds, conceal it, and ask: “What does this project provide, and what can you do with it now?” Record the answer without coaching.
+3. Restore the same candidate for three minutes of self-directed browsing. Engineer: find the initial command/file example, prerequisites and context/governance locations. Funder: name the steward, distinguish available work from plans and find the contribution/contact ask. Scientist: explain the mechanism, find source/lineage and identify what evaluation is available or explicitly absent.
+4. Record answers and confusions verbatim, followed by any clarification. Preserve the original response. These are three individual observations, not an aggregate success rate.
+5. Apply the frozen reader protocol; correct each material confusion or give it an explicit disposition before DP3. Synthetic passes do not fill this record.
+
+## Additional quickstart evidence
+
+[I] In a genuinely disposable environment with Git and authenticated Claude Code, copy the candidate’s exact command, complete the first project and run its displayed success checks. Record versions, argv, outputs, actual timestamps and any assistance. Never run a clone/removal command over an existing personal workspace. The agent’s previous container run proves only clone/entry; C2 remains owed. Do not publish credentials or personal project content.
+
+## What to return
+
+[I] For each participant: de-identified role, consent, candidate/device/theme, initial answer, role-task answer, confusions and timing deviations. For the clean first task: environment, successful project/file/history checks and any failure. No approval is inferred from silence, and DP3 remains pending until Stanley rules on a complete packet.
+
+
+Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].

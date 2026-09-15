@@ -1,0 +1,952 @@
+{
+  "created": "2026-09-15T10:06:33.661311+00:00",
+  "routes": [
+    "/",
+    "/get-started",
+    "/learn/what-is-adna",
+    "/about",
+    "/community",
+    "/commons",
+    "/network",
+    "/privacy",
+    "/state-of-the-network",
+    "/vaults",
+    "/get-started/what-your-agent-reads",
+    "/get-started/what-your-agent-reads/workspace-router",
+    "/get-started/what-your-agent-reads/standard-governance",
+    "/get-started/what-your-agent-reads/skill-project-fork",
+    "/get-started/what-your-agent-reads/skill-onboarding"
+  ],
+  "viewports": {
+    "mobile": {
+      "width": 320,
+      "height": 720
+    },
+    "mobile-lg": {
+      "width": 375,
+      "height": 812
+    },
+    "tablet": {
+      "width": 768,
+      "height": 1024
+    },
+    "laptop-sm": {
+      "width": 900,
+      "height": 700
+    },
+    "laptop": {
+      "width": 1024,
+      "height": 768
+    },
+    "desktop": {
+      "width": 1440,
+      "height": 900
+    }
+  },
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "expected": [
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/about",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/about",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/about",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/about",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/about",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/community",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/community",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/community",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/community",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/community",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/community",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/commons",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/commons",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/commons",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/commons",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/commons",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/commons",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/network",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/network",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/network",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/network",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/network",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/network",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/state-of-the-network",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/vaults",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "viewport": "desktop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "mobile",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "mobile",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "mobile-lg",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "mobile-lg",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "tablet",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "tablet",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "laptop-sm",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "laptop-sm",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "laptop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "laptop",
+      "theme": "light"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "desktop",
+      "theme": "dark"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "viewport": "desktop",
+      "theme": "light"
+    }
+  ]
+}

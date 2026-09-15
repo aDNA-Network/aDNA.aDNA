@@ -10,7 +10,7 @@ tags:
 ---
 # GARNIER campaign index
 
-[D] The charter is active; DP1 was accepted with amendments on 2026-09-15. Start at [[artifacts/amendments/charter_ratification_20260915]] and [[artifacts/amendments/amendment_verification]]. P0 is completed; [[artifacts/amendments/dp2_ratification_20260915|DP2]] is accepted with six amendments. P1 is authorized at 320 kT and queued for execution; DP3 and later gates remain human. Read [[CLAUDE]] before execution. This index is derived from current GARNIER-owned Markdown paths; the original packet and archived pending marker are historical artifacts.
+[D] The charter is active; DP1 was accepted with amendments on 2026-09-15. Start at [[artifacts/amendments/charter_ratification_20260915]] and [[artifacts/amendments/amendment_verification]]. P0 is completed; [[artifacts/amendments/dp2_ratification_20260915|DP2]] is accepted with six amendments. P1 is authorized at 320 kT; implementation is delivered locally, P1.1 is complete and P1.2/P1.3 owe first-task/human evidence; DP3 and later gates remain human. Read [[CLAUDE]] before execution. This index is derived from current GARNIER-owned Markdown paths; the original packet and archived pending marker are historical artifacts.
 
 - [[CLAUDE]]
 - [[artifacts/amendments/amendment_aar]]
@@ -55,6 +55,22 @@ tags:
 - [[artifacts/p0/provider_pattern_proposal]]
 - [[artifacts/p0/scorer_a]]
 - [[artifacts/p0/scorer_b]]
+- [[artifacts/p1/aar_homepage]]
+- [[artifacts/p1/claim_evidence_map]]
+- [[artifacts/p1/command_transcripts]]
+- [[artifacts/p1/formative_reader_pack]]
+- [[artifacts/p1/homepage_claim_map]]
+- [[artifacts/p1/homepage_copy_diff]]
+- [[artifacts/p1/homepage_storyboard]]
+- [[artifacts/p1/instruction_ledger]]
+- [[artifacts/p1/instrument_adoption_controls]]
+- [[artifacts/p1/mission_copy_diff]]
+- [[artifacts/p1/phase_exit]]
+- [[artifacts/p1/provider_pattern_proposal]]
+- [[artifacts/p1/quickstart_copy_diff]]
+- [[artifacts/p1/reader_review]]
+- [[artifacts/p1/verification_report]]
+- [[artifacts/p1/word_budget_dispositions]]
 - [[campaign_garnier]]
 - [[directives/CODEX_DIRECTIVE_operation_garnier_genesis]]
 - [[evidence/genesis/coldread_SYNTHETIC_engineer_garnier_s3]]

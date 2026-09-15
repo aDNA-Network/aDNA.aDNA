@@ -3,7 +3,7 @@ plan_id: mission_garnier_p1_1_homepage_voice
 type: plan
 title: Make the homepage demonstrate the mechanism
 owner: stanley
-status: in_progress
+status: completed
 campaign_id: campaign_garnier
 campaign: campaign_garnier
 campaign_phase: 1
@@ -21,6 +21,10 @@ executor_runtime: codex
 token_budget_estimated: 150
 token_budget_original: 62
 token_budget_unit: kT_content_load
+token_budget_actual: 145
+token_budget_actual_uncertainty: 55
+token_budget_actual_basis: rough_content_load_including_independent_reviews_and_reruns
+actual_sessions: 1
 token_budget_reforecast_proposed: 150
 reforecast_status: accepted_DP2
 reforecast_basis: {"coordinator_copy_storyboard_checks": 70, "three_fresh_prescreens": 60, "two_keyed_graders": 20}
@@ -162,19 +166,19 @@ Previous: [[mission_garnier_p0_2_instruments]]. Next: [[mission_garnier_p1_2_qui
 
 ## Progress
 
-Queued. Specification amended; no campaign acceptance criterion has been executed by this records-only sitting.
+[D] C1–C4 completed locally. Storyboard, source/twin, claim map, bounded synthetic reads, matrix/word controls, AAR and scoped evidence are filed. See [[how/campaigns/campaign_garnier/artifacts/p1/verification_report]] and [[aar_homepage]]. DP3 is pending, not auto-accepted.
 
 ## Completion Summary
 
-Deliverables: pending execution. Descoped: none. Key findings: pending. Scope changes: approved charter amendments; exact tranche assignment where applicable.
+[D] Source candidate b1cf040. Evidence: [[how/campaigns/campaign_garnier/artifacts/p1/verification_report]]. Mission criteria satisfied; full AAR at [[aar_homepage]]. No publication, predecessor mutation or peer delivery. [I] Rough actual 145±55kT; API billing unavailable. Remaining P1 follow-up estimate25–50kT across the phase, excluding human waiting.
 
 ## AAR
 
-- **Worked:** pending execution.
-- **Did not:** pending execution.
-- **Finding:** pending execution.
-- **Change:** pending execution.
-- **Follow-up:** pending execution.
+- **Worked:** [D] Concrete file mechanisms, scoped disclosures and complete local checks retained the honest boundaries.
+- **Did not:** [D] Early build/selector/theme defects and a missing clean-container agent prerequisite prevented treating the first attempts as complete evidence.
+- **Finding:** [D] Synthetic comprehension, rendered source correctness and authenticated task completion are separate surfaces.
+- **Change:** [D] Corrected source/copy, process controls and explicit evidence populations; preserved failed attempts.
+- **Follow-up:** [I] Complete P1.2/P1.3 evidence and obtain the human DP3 ruling.
 
 ## P0-derived budget proposal — historical, accepted at DP2
 

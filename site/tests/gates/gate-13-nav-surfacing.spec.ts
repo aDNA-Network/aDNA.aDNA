@@ -8,6 +8,7 @@
  * the "For you" sidebar group with a breadcrumb (orphan findings discharged).
  */
 import { test, expect } from '@playwright/test';
+import { createServer } from 'vite';
 import subnetworksData from '../../src/data/subnetworks.json' with { type: 'json' };
 import { audiences } from '../../src/data/home';
 
@@ -82,12 +83,22 @@ test('G13 §5: home "Build with us" hands off to the live /commons', async ({ pa
 });
 
 // GARNIER DP2: the concise homepage hands off to /commons instead of duplicating its cards.
-// The destination still must expose every data-sourced name and tagline.
+// The destination must expose each publishable data-sourced name and tagline.
+// Reuse the publication seam so withholding a record never forces its return to pass this gate.
 test('G13 §5: public-good handoff reaches the data-sourced commons', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
   await page.locator('section.join-network .join-cta a[href="/commons/"]').click();
   await expect(page).toHaveURL(/\/commons\/?$/);
-  for (const s of subnetworksData.subnetworks) {
+  // Use the site's module loader: native Node cannot import its transitive JSON modules.
+  const loader = await createServer({ configFile: false, server: { middlewareMode: true } });
+  let publishable;
+  try {
+    const { subnetworkIsPublishable } = await loader.ssrLoadModule('/src/data/network_state.ts');
+    publishable = subnetworksData.subnetworks.filter(subnetworkIsPublishable);
+  } finally {
+    await loader.close();
+  }
+  for (const s of publishable) {
     await expect(page.locator('main')).toContainText(s.display_name);
     await expect(page.locator('main')).toContainText(s.tagline);
   }

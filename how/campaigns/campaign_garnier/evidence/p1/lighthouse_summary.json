@@ -1,0 +1,61 @@
+{
+  "scope": "single local homepage lab run per form factor; diagnostic only, no field p75 or before/after performance conclusion",
+  "runs": [
+    {
+      "mode": "mobile",
+      "requestedUrl": "http://localhost:4465/",
+      "finalDisplayedUrl": "http://localhost:4465/",
+      "fetchTime": "2026-09-15T10:22:22.427Z",
+      "version": "13.4.1",
+      "scores": {
+        "performance": 0.98,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "audits": {
+        "largest-contentful-paint": {
+          "value": 2254.6836,
+          "unit": "millisecond"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "unit": "unitless"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "unit": "millisecond"
+        }
+      },
+      "warnings": []
+    },
+    {
+      "mode": "desktop",
+      "requestedUrl": "http://localhost:4465/",
+      "finalDisplayedUrl": "http://localhost:4465/",
+      "fetchTime": "2026-09-15T10:22:32.351Z",
+      "version": "13.4.1",
+      "scores": {
+        "performance": 1,
+        "accessibility": 1,
+        "best-practices": 0.96,
+        "seo": 1
+      },
+      "audits": {
+        "largest-contentful-paint": {
+          "value": 484.447,
+          "unit": "millisecond"
+        },
+        "cumulative-layout-shift": {
+          "value": 8e-05,
+          "unit": "unitless"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "unit": "millisecond"
+        }
+      },
+      "warnings": []
+    }
+  ]
+}

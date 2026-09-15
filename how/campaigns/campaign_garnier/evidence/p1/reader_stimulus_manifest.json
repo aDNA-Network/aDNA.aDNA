@@ -1,0 +1,42 @@
+[
+  {
+    "route": "/",
+    "file": "home.txt",
+    "sha256": "5d46fd8131e04cd09c9c5b2a8f4d19c1041394c842a59102e67c1294a5638382"
+  },
+  {
+    "route": "/get-started",
+    "file": "get-started.txt",
+    "sha256": "364d5d2b0d7c53a45242958be206ca661576afb344923c34864aaff06056e3dd"
+  },
+  {
+    "route": "/learn/what-is-adna",
+    "file": "learn_what-is-adna.txt",
+    "sha256": "ce302a6450a76488c16dea05ba10cb65c91e4703f22fb5375eb487b16e5e176f"
+  },
+  {
+    "route": "/about",
+    "file": "about.txt",
+    "sha256": "b9b77621ac3a1bc0c9234b63664d080e79fcdb3010d6b67e743880961dfe74bf"
+  },
+  {
+    "route": "/community",
+    "file": "community.txt",
+    "sha256": "138b26503be7b3c24b6d64525ee459ffc4d2f2ea01dc118e4742c4d5b753afe5"
+  },
+  {
+    "route": "/state-of-the-network",
+    "file": "state-of-the-network.txt",
+    "sha256": "ff3ec31045f4e19273a809f6a771c8ce3bf900731e969063b9fe730ea16d7be1"
+  },
+  {
+    "route": "/reference/specification",
+    "file": "reference_specification.txt",
+    "sha256": "1de891bc55c0153f33325c701fc426ce51723ee3c74c3948122b286bac8cd870"
+  },
+  {
+    "route": "/canonical-properties",
+    "file": "canonical-properties.txt",
+    "sha256": "f887c6541da7d863612934135e1a156bb17dcdc7d244a137b624b08366df1014"
+  }
+]

@@ -1,0 +1,896 @@
+{
+  "version": 1,
+  "prose": [
+    {
+      "file": "site/dist/index.html",
+      "main_dom_words": 688,
+      "banned_hits": [],
+      "exclusions": [
+        {
+          "tag": "DIV",
+          "text": "       "
+        },
+        {
+          "tag": "SPAN",
+          "text": "$"
+        },
+        {
+          "tag": "CODE",
+          "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude"
+        },
+        {
+          "tag": "svg",
+          "text": "   "
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "PRE",
+          "text": "aDNA.aDNA/\n├── CLAUDE.md      Agent instructions\n├── STATE.md       Work in progress\n├── what/          Knowledge and decisions\n├── how/           Plans and procedures\n└── who/           People and roles"
+        },
+        {
+          "tag": "PRE",
+          "text": "# CLAUDE.md — aDNA.aDNA\n\n## Standing Orders\n\n1. **Phase gates are human gates.** Never auto-advance between campaign phases without explicit user approval."
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "document.querySelectorAll(\".hero-install-copy\").forEach(e=>{e.addEventListener(\"click\",async()=>{const t=e.closest(\".hero-install\")?.querySelector(\".hero-install-cmd\")?.textContent??\"\";try{await navigator.clipboard.writeText(t),e.setAttribute(\"aria-label\",\"Copied!\"),setTimeout(()=>e.setAttribute(\"aria-label\",\"Copy install command\"),2e3)}catch{}})});"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "SPAN",
+          "text": "Open vault →"
+        },
+        {
+          "tag": "style",
+          "text": "\n/* Hero graph (build_graph_svg.mjs, Storyweave A): edges + arrowheads follow the page text colour so the\n   graph reads on the dark (default) and light canvases; the vault chips keep their self-grounding light\n   fill + near-black text (set inline). Scoped to #heroGraph — never collides with #vaultsGraph. */\n#heroGraph{color:var(--color-text,#c0caf5);}\n#heroGraph text{font-family:'Space Grotesk',system-ui,sans-serif;}\n#heroGraph .edge{stroke:currentColor;fill:none;stroke-opacity:0.72;}\n#heroGraph .edge-arrow{fill:currentColor;stroke:none;fill-opacity:0.82;}\n"
+        },
+        {
+          "tag": "g",
+          "text": "  "
+        },
+        {
+          "tag": "g",
+          "text": "  "
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "(function(){const r=matchMedia(\"(prefers-reduced-motion: reduce)\").matches;document.querySelectorAll(\"[data-netdiagram]\").forEach(e=>{if(r)return;e.setAttribute(\"data-armed\",\"\"),new IntersectionObserver((a,i)=>{a.forEach(t=>{t.isIntersecting&&(t.target.setAttribute(\"data-in\",\"\"),i.unobserve(t.target))})},{threshold:.35}).observe(e),setTimeout(()=>e.setAttribute(\"data-in\",\"\"),600)})})();"
+        },
+        {
+          "tag": "CODE",
+          "text": ".md"
+        },
+        {
+          "tag": "CODE",
+          "text": "Accept: text/markdown"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        }
+      ]
+    },
+    {
+      "file": "site/dist/get-started/index.html",
+      "main_dom_words": 1372,
+      "banned_hits": [],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "SPAN",
+          "text": "💡"
+        },
+        {
+          "tag": "CODE",
+          "text": "~/aDNA/"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/"
+        },
+        {
+          "tag": "CODE",
+          "text": "git pull"
+        },
+        {
+          "tag": "CODE",
+          "text": "<name>.aDNA/"
+        },
+        {
+          "tag": "CODE",
+          "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude"
+        },
+        {
+          "tag": "CODE",
+          "text": "~/aDNA/"
+        },
+        {
+          "tag": "CODE",
+          "text": "PATH"
+        },
+        {
+          "tag": "CODE",
+          "text": "~/aDNA"
+        },
+        {
+          "tag": "CODE",
+          "text": "&& claude"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/"
+        },
+        {
+          "tag": "CODE",
+          "text": "&& claude"
+        },
+        {
+          "tag": "PRE",
+          "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA"
+        },
+        {
+          "tag": "CODE",
+          "text": "claude"
+        },
+        {
+          "tag": "PRE",
+          "text": "cd ~/aDNA\nclaude"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "CODE",
+          "text": "<your_project>.aDNA/"
+        },
+        {
+          "tag": "CODE",
+          "text": "what/"
+        },
+        {
+          "tag": "CODE",
+          "text": "how/"
+        },
+        {
+          "tag": "CODE",
+          "text": "who/"
+        },
+        {
+          "tag": "PRE",
+          "text": "~/aDNA/\n├── CLAUDE.md            # workspace router (ships with the clone)\n├── .adna/               # the standard, embedded (read-only)\n└── my_project.aDNA/     # your first project — a context graph\n    ├── CLAUDE.md        # the project's own governance\n    ├── what/            # knowledge: context, decisions, artifacts\n    ├── how/             # operations: sessions, missions, skills\n    └── who/             # people: roles, coordination"
+        },
+        {
+          "tag": "CODE",
+          "text": "cd my_project.aDNA && claude"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "CODE",
+          "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude"
+        },
+        {
+          "tag": "CODE",
+          "text": "0"
+        },
+        {
+          "tag": "PRE",
+          "text": "test -f ~/aDNA/CLAUDE.md            # the router your agent reads first\ntest -d ~/aDNA/.adna                # the standard, embedded and read-only\nls -d ~/aDNA/*.aDNA                 # at least one project vault exists\nls ~/aDNA/<name>.aDNA/what ~/aDNA/<name>.aDNA/how ~/aDNA/<name>.aDNA/who\ngit -C ~/aDNA/<name>.aDNA log      # its own history, separate from the image's"
+        },
+        {
+          "tag": "CODE",
+          "text": "<name>"
+        },
+        {
+          "tag": "CODE",
+          "text": "<name>.aDNA/"
+        },
+        {
+          "tag": "CODE",
+          "text": "claude: command not found"
+        },
+        {
+          "tag": "CODE",
+          "text": "PATH"
+        },
+        {
+          "tag": "CODE",
+          "text": "fatal: destination path '~/aDNA' already exists"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "cd ~/aDNA"
+        },
+        {
+          "tag": "CODE",
+          "text": "~/aDNA"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/"
+        },
+        {
+          "tag": "CODE",
+          "text": "skill_workspace_upgrade"
+        },
+        {
+          "tag": "DIV",
+          "text": "     "
+        },
+        {
+          "tag": "CODE",
+          "text": "npm install -g @anthropic-ai/claude-code"
+        },
+        {
+          "tag": "svg",
+          "text": "   "
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "document.querySelectorAll(\".try-claude-cta .cta-copy\").forEach(t=>{t.addEventListener(\"click\",async()=>{const e=t.closest(\".cta-install\")?.querySelector(\".cta-cmd\")?.textContent??\"\";await navigator.clipboard.writeText(e),t.setAttribute(\"aria-label\",\"Copied!\"),setTimeout(()=>t.setAttribute(\"aria-label\",\"Copy install command\"),2e3)})});"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        }
+      ]
+    },
+    {
+      "file": "site/dist/learn/what-is-adna/index.html",
+      "main_dom_words": 1234,
+      "banned_hits": [],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "CODE",
+          "text": "who/"
+        },
+        {
+          "tag": "CODE",
+          "text": "what/"
+        },
+        {
+          "tag": "CODE",
+          "text": "how/"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "AGENTS.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "MANIFEST.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "STATE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "README.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "PRE",
+          "text": "your-project.aDNA/\n├── CLAUDE.md          # Agent entry point: purpose, rules, where to start\n├── STATE.md           # Live snapshot: blockers, active work, next steps\n├── MANIFEST.md        # Project overview and architecture\n├── AGENTS.md          # Directory routing and reading order\n├── README.md          # Human introduction and getting started\n├── who/               # WHO — people, governance, coordination\n│   └── governance/    # Roles, policies, vision\n├── what/              # WHAT — knowledge, decisions, context\n│   └── context/       # Curated knowledge files agents load\n└── how/               # HOW — operations, plans, execution\n    ├── missions/      # Work decomposed into claimable objectives\n    └── sessions/      # Per-session tracking and handoff notes"
+        },
+        {
+          "tag": "CODE",
+          "text": "governance"
+        },
+        {
+          "tag": "CODE",
+          "text": "team"
+        },
+        {
+          "tag": "CODE",
+          "text": "coordination"
+        },
+        {
+          "tag": "CODE",
+          "text": "identity"
+        },
+        {
+          "tag": "CODE",
+          "text": "context"
+        },
+        {
+          "tag": "CODE",
+          "text": "decisions"
+        },
+        {
+          "tag": "CODE",
+          "text": "modules"
+        },
+        {
+          "tag": "CODE",
+          "text": "lattices"
+        },
+        {
+          "tag": "CODE",
+          "text": "inventory"
+        },
+        {
+          "tag": "CODE",
+          "text": "campaigns"
+        },
+        {
+          "tag": "CODE",
+          "text": "missions"
+        },
+        {
+          "tag": "CODE",
+          "text": "sessions"
+        },
+        {
+          "tag": "CODE",
+          "text": "templates"
+        },
+        {
+          "tag": "CODE",
+          "text": "skills"
+        },
+        {
+          "tag": "CODE",
+          "text": "pipelines"
+        },
+        {
+          "tag": "CODE",
+          "text": "backlog"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "PRE",
+          "text": "# CLAUDE.md — aDNA.aDNA\n\nYou are Rosetta — named after the Rosetta Stone, the artifact that decoded\nEgyptian hieroglyphics by presenting the same text in three scripts. This\nvault does the same: it presents the aDNA standard in three registers —\ntechnical specification, operational practice, and plain-language explanation.\n\n## Project Map\n\naDNA.aDNA/\n├── CLAUDE.md     ← You are here — agent master context (this file)\n├── STATE.md      ← Operational snapshot: current phase, blockers, next steps\n├── what/         ← Knowledge objects, context library, lattice definitions\n├── how/          ← Operations, sessions, missions, campaigns, skills\n└── who/          ← Governance, community, coordination\n\n## Standing Orders\n\n1. Phase gates are human gates — never auto-advance between phases.\n2. Every mission gets an AAR before marking it completed.\n3. Upstream spec is source of truth — cite adna_standard.md for normative claims."
+        },
+        {
+          "tag": "CODE",
+          "text": "what/context/"
+        },
+        {
+          "tag": "CODE",
+          "text": "STATE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "how/missions/"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "github.com/aDNA-Network/aDNA"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/how/skills/skill_onboarding.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/how/skills/skill_project_fork.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/how/templates/template_workspace_claude.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/how/templates/template_home_claude.md"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/how/templates/template_node_adna_exemplar/"
+        },
+        {
+          "tag": "CODE",
+          "text": "CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "MANIFEST.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "STATE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "how/missions/"
+        },
+        {
+          "tag": "CODE",
+          "text": "AGENTS.md"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "const o=getComputedStyle(document.documentElement).scrollPaddingTop,n=/^[\\d.]+px$/.test(o)?o:\"80px\",r=new IntersectionObserver(t=>{for(const e of t)e.isIntersecting&&(document.querySelectorAll(\".toc-link\").forEach(c=>c.classList.remove(\"active\")),document.querySelector(`.toc-link[data-slug=\"${e.target.id}\"]`)?.classList.add(\"active\"))},{rootMargin:`-${n} 0px -70% 0px`,threshold:0});document.querySelectorAll(\".doc-content h2[id], .doc-content h3[id]\").forEach(t=>{r.observe(t)});"
+        }
+      ]
+    },
+    {
+      "file": "site/dist/about/index.html",
+      "main_dom_words": 684,
+      "banned_hits": [],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "SPAN",
+          "text": "1"
+        },
+        {
+          "tag": "SPAN",
+          "text": "2"
+        },
+        {
+          "tag": "SPAN",
+          "text": "3"
+        },
+        {
+          "tag": "SPAN",
+          "text": "4"
+        }
+      ]
+    },
+    {
+      "file": "site/dist/community/index.html",
+      "main_dom_words": 852,
+      "banned_hits": [],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        },
+        {
+          "tag": "SPAN",
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n\n"
+        }
+      ]
+    },
+    {
+      "file": "site/dist/commons/index.html",
+      "main_dom_words": 833,
+      "banned_hits": [],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "document.querySelectorAll(\".hero-install-copy\").forEach(e=>{e.addEventListener(\"click\",async()=>{const t=e.closest(\".hero-install\")?.querySelector(\".hero-install-cmd\")?.textContent??\"\";try{await navigator.clipboard.writeText(t),e.setAttribute(\"aria-label\",\"Copied!\"),setTimeout(()=>e.setAttribute(\"aria-label\",\"Copy install command\"),2e3)}catch{}})});"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "CODE",
+          "text": "federation_ref"
+        },
+        {
+          "tag": "CODE",
+          "text": "wga.aDNA/CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "ContextCommons.aDNA/CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "WilhelmAI.aDNA/CLAUDE.md"
+        },
+        {
+          "tag": "CODE",
+          "text": "RareArchive.aDNA/CLAUDE.md"
+        },
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        }
+      ]
+    },
+    {
+      "file": "site/dist/network/index.html",
+      "main_dom_words": 884,
+      "banned_hits": [],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "document.querySelectorAll(\".hero-install-copy\").forEach(e=>{e.addEventListener(\"click\",async()=>{const t=e.closest(\".hero-install\")?.querySelector(\".hero-install-cmd\")?.textContent??\"\";try{await navigator.clipboard.writeText(t),e.setAttribute(\"aria-label\",\"Copied!\"),setTimeout(()=>e.setAttribute(\"aria-label\",\"Copy install command\"),2e3)}catch{}})});"
+        },
+        {
+          "tag": "g",
+          "text": "  "
+        },
+        {
+          "tag": "g",
+          "text": "  "
+        },
+        {
+          "tag": "SCRIPT",
+          "text": "(function(){const r=matchMedia(\"(prefers-reduced-motion: reduce)\").matches;document.querySelectorAll(\"[data-netdiagram]\").forEach(e=>{if(r)return;e.setAttribute(\"data-armed\",\"\"),new IntersectionObserver((a,i)=>{a.forEach(t=>{t.isIntersecting&&(t.target.setAttribute(\"data-in\",\"\"),i.unobserve(t.target))})},{threshold:.35}).observe(e),setTimeout(()=>e.setAttribute(\"data-in\",\"\"),600)})})();"
+        },
+        {
+          "tag": "CODE",
+          "text": "Home.aDNA"
+        },
+        {
+          "tag": "SPAN",
+          "text": ""
+        },
+        {
+          "tag": "SPAN",
+          "text": ""
+        },
+        {
+          "tag": "SPAN",
+          "text": ""
+        },
+        {
+          "tag": "SPAN",
+          "text": ""
+        },
+        {
+          "tag": "SPAN",
+          "text": ""
+        },
+        {
+          "tag": "SPAN",
+          "text": "·"
+        },
+        {
+          "tag": "CODE",
+          "text": "git"
+        },
+        {
+          "tag": "SPAN",
+          "text": "1"
+        },
+        {
+          "tag": "CODE",
+          "text": ".adna/"
+        },
+        {
+          "tag": "CODE",
+          "text": "Home.aDNA"
+        },
+        {
+          "tag": "PRE",
+          "text": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA\ncd ~/aDNA\nclaude"
+        },
+        {
+          "tag": "CODE",
+          "text": "git"
+        },
+        {
+          "tag": "SPAN",
+          "text": "2"
+        },
+        {
+          "tag": "SPAN",
+          "text": "3"
+        },
+        {
+          "tag": "CODE",
+          "text": "Home.aDNA"
+        }
+      ]
+    },
+    {
+      "file": "site/dist/privacy/index.html",
+      "main_dom_words": 706,
+      "banned_hits": [],
+      "exclusions": [
+        {
+          "tag": "CODE",
+          "text": "theme"
+        },
+        {
+          "tag": "CODE",
+          "text": "adna:course:v1"
+        },
+        {
+          "tag": "CODE",
+          "text": "localStorage"
+        }
+      ]
+    },
+    {
+      "file": "site/dist/state-of-the-network/index.html",
+      "main_dom_words": 1255,
+      "banned_hits": [],
+      "exclusions": [
+        {
+          "tag": "SPAN",
+          "text": "ℹ"
+        },
+        {
+          "tag": "CODE",
+          "text": "site/src/data/vaults.json"
+        },
+        {
+          "tag": "CODE",
+          "text": "site/src/data/subnetworks.json"
+        },
+        {
+          "tag": "CODE",
+          "text": "site/src/data/verified_links.json"
+        }
+      ]
+    }
+  ]
+}

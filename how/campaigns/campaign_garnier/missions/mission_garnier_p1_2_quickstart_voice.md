@@ -21,6 +21,10 @@ executor_runtime: codex
 token_budget_estimated: 90
 token_budget_original: 61
 token_budget_unit: kT_content_load
+token_budget_actual: 75
+token_budget_actual_uncertainty: 25
+token_budget_actual_basis: rough_content_load_including_independent_reviews_and_reruns
+actual_sessions: 1
 token_budget_reforecast_proposed: 90
 reforecast_status: accepted_DP2
 reforecast_basis: {"orientation": 30, "source_and_clean_reproduction": 35, "copy_checks": 25}
@@ -154,19 +158,19 @@ Previous: [[mission_garnier_p1_1_homepage_voice]]. Next: [[mission_garnier_p1_3_
 
 ## Progress
 
-[D] 2026-09-15: scoped candidate copy implemented under DP2. Validation is in progress alongside the homepage; dependencies are not claimed complete. See [[claim_evidence_map]]. Human observations remain owed before DP3.
+[D] C1 implemented and verified locally, including source-tour correction and explicit first task. C2 partial: exact rendered command cloned/entered the public image in a disposable container, then exited127 because Claude Code was absent. Authenticated project creation is owed. C3 sitting evidence is filed; mission closure remains pending. See [[instruction_ledger]] and [[command_transcripts]].
 
 ## Completion Summary
 
-Deliverables: pending execution. Descoped: none. Key findings: pending. Scope changes: approved charter amendments; exact tranche assignment where applicable.
+[D] Source candidate b1cf040. Evidence: [[how/campaigns/campaign_garnier/artifacts/p1/verification_report]]. Implementation delivered; the named evidence gap above prevents completion. No publication, predecessor mutation or peer delivery. [I] Rough actual 75±25kT; API billing unavailable. Remaining P1 follow-up estimate25–50kT across the phase, excluding human waiting.
 
 ## AAR
 
-- **Worked:** pending execution.
-- **Did not:** pending execution.
-- **Finding:** pending execution.
-- **Change:** pending execution.
-- **Follow-up:** pending execution.
+- **Worked:** [D] Concrete file mechanisms, scoped disclosures and complete local checks retained the honest boundaries.
+- **Did not:** [D] Early build/selector/theme defects and a missing clean-container agent prerequisite prevented treating the first attempts as complete evidence.
+- **Finding:** [D] Synthetic comprehension, rendered source correctness and authenticated task completion are separate surfaces.
+- **Change:** [D] Corrected source/copy, process controls and explicit evidence populations; preserved failed attempts.
+- **Follow-up:** [I] Supply the owed first-task/human evidence, correct observations and close only when the stated criteria hold.
 
 ## P0-derived budget proposal — historical, accepted at DP2
 

@@ -1,0 +1,80 @@
+{
+  "evidence_class": "D-syn",
+  "rows": [
+    {
+      "role": "engineer",
+      "short": "PASS",
+      "long": "PASS",
+      "criteria": {
+        "reusable_agent_context_structure": "PASS",
+        "present_action": "PASS",
+        "exact_initial_command_or_local_example": "PASS",
+        "prerequisite": "PASS",
+        "context_and_governance_locations": "PASS"
+      },
+      "reasons": [
+        "Identifies an open standard and local Markdown workspace for AI-agent context and a present clone/start action.",
+        "Supplies the same exact clone/cd/claude command as the calibration key, identifies Git and authenticated Claude Code prerequisites, and locates workspace/project CLAUDE.md plus context folders.",
+        "Reports the setup route without claiming to have executed it; remaining first-run and diagram/version questions do not negate the required located artifacts."
+      ],
+      "remaining_confusions": [
+        "Will the first Claude Code launch actually scaffold the project without a prompt, or do I need to ask it? The setup page describes that behavior, but says the real first-run recording has not yet been made.",
+        "The conceptual page calls its diagram three directories and five governance files, but only draws three governance files. Where should AGENTS.md and README.md appear in the smallest project?",
+        "What is the relationship between the v2.5 specification and the v8.11 release on the homepage? I infer separate standard and workspace versions, but that distinction is not spelled out in the pages I read."
+      ]
+    },
+    {
+      "role": "funder",
+      "short": "PASS",
+      "long": "PASS",
+      "criteria": {
+        "reusable_agent_context_structure": "PASS",
+        "present_action": "PASS",
+        "named_steward": "PASS",
+        "available_vs_plan": "PASS",
+        "present_contribution_or_contact_ask": "PASS",
+        "no_invented_endorsement_or_adoption": "PASS"
+      },
+      "reasons": [
+        "Identifies the context standard and present inspect/read/clone actions.",
+        "Names Stanley Bishop as current decision authority, distinguishes published workspace/specification from second-node and democratic-stewardship plans, and identifies issues, pull requests, proposals and community contribution routes.",
+        "Explicitly avoids treating related-party affiliation as endorsement or one-operator vault count as adoption. The key requires a contribution/contact ask, which is present; absence of a funding-specific proposition is a remaining confusion rather than failure of that criterion."
+      ],
+      "remaining_confusions": [
+        "Who is accountable for maintaining this standard, and what support or funding do they want now?",
+        "What specifically would a grant fund now, and what outcome would demonstrate that the work helped people beyond the founding operator?",
+        "If I want to discuss funding or a foundation partnership, should I approach Stanley through his personal site or request access to the community space?",
+        "What exactly is expected from a second independent node operator, and how much support would that pilot require?"
+      ]
+    },
+    {
+      "role": "scientist",
+      "short": "PASS",
+      "long": "PASS",
+      "criteria": {
+        "reusable_agent_context_structure": "PASS",
+        "present_action": "PASS",
+        "mechanism": "PASS",
+        "source_or_lineage": "PASS",
+        "available_or_explicitly_absent_evaluation": "PASS"
+      },
+      "reasons": [
+        "Identifies the Markdown context standard and present clone/read/inspect actions.",
+        "Explains the filesystem/governance mechanism and its limits, locates named author and repository/specification lineage, and distinguishes inspectability/conformance/operational reporting from comparative performance evidence.",
+        "Absence claims are scoped to the supplied pages and unread linked sections are acknowledged; no DNA-metaphor proof or measured intelligence gains are asserted."
+      ],
+      "remaining_confusions": [
+        "What evidence shows that this organization improves agent performance compared with ordinary project files?",
+        "Where did this standard come from, and which parts are conventions versus mechanisms that tools actually execute?",
+        "Does the Success Criteria section specify a reproducible agent-performance evaluation, or only conformance checks?",
+        "Does the field-speed changelog concern webpage speed or the effectiveness of agents using this structure?"
+      ]
+    }
+  ],
+  "limitations": [
+    "Independent scorer B applied the previously read decisive-reader protocol in one bounded pass to the three supplied answer records after calibration.",
+    "These are synthetic untimed responses, not measured three-second perception or three-minute human task performance; no human result or threshold is inferred.",
+    "Only the protocol, calibration records and these three answer records were read. Source snapshots were not independently re-opened, so exact source fidelity beyond the frozen calibration exemplars is not separately validated.",
+    "Passing answer content does not establish executed setup, empirical efficacy, independent adoption, or resolution of the recorded confusions."
+  ]
+}
