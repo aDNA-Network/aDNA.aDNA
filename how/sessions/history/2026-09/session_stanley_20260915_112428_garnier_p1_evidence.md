@@ -16,7 +16,7 @@ executor_runtime: codex
 executor_tier: opus
 tier: 2
 started: 2026-09-15 11:24:28+00:00
-heartbeat: '2026-09-15T11:44:27.517890+00:00'
+heartbeat: '2026-09-15T11:46:56.556507+00:00'
 intent: Complete the approved P1 disposable first-project run and prepare operator-led
   local formative sessions.
 base_commit: 73b3802030f8c03b03049c69a50b64181110a543
@@ -60,7 +60,7 @@ files_created:
 - how/campaigns/campaign_garnier/evidence/p1/resume_terminal_transcript.txt
 - how/sessions/history/2026-09/session_stanley_20260915_112428_garnier_p1_evidence.md
 - how/campaigns/campaign_garnier/evidence/p1/resume_close_verification.json
-completed: '2026-09-15T11:44:27.517890+00:00'
+completed: '2026-09-15T11:46:56.556507+00:00'
 token_budget_actual: 70
 token_budget_actual_uncertainty: 30
 token_budget_actual_basis: rough_content_load_including_preceding_planning_and_terminal_recorder_setup
@@ -111,3 +111,7 @@ Related: [[campaign_garnier]] · [[how/campaigns/campaign_garnier/artifacts/p1/p
 ## Next Session Prompt
 
 Run from ~/aDNA/aDNA.aDNA. Read root/campaign governance, the newest GARNIER STATE block, active leases, artifacts/p1/phase_exit.md, artifacts/p1/first_task_continuation.md, formative_reader_pack.md and P1.2/P1.3 cards. Resolve artifacts from the campaign root. DP1/DP2 are accepted; P1.1 is complete. Source b1cf040 and prior evidence f34f9c2 remain distinct from synthetic stimulus 5b92495. The 2026-09-15 continuation restored all 15 matching preview routes and ran the copied command with Claude Code 2.1.223 in a disposable container. The first project request failed with Credit balance too low: no project or fresh-session success exists, despite launcher exit 0. Before another model attempt, obtain a funded broker credential or a completed authenticated disposable transcript; never request a secret in chat. Reproduce in a fresh disposable environment, not the retained stopped container whose clone already exists. Recheck preview identity at http://127.0.0.1:4465/ and use the documented restart only if needed. Stanley supplies consenting engineer/funder/scientist observations from local sessions; the worksheet is ready but no records have arrived. Intake actual records and use the frozen calibrated two-scorer protocol only when they exist. Keep both C2 criteria open while inputs are absent; do not repeat P0/P1.1, redesign the candidate, enter P2 or infer DP3 approval. Open a scoped session before writing; preserve failed attempts and frozen baseline evidence. After evidence arrives, correct or disposition material confusions, run affected checks and full R-SITE at phase exit, then assemble DP3 with P2's separately provisional scope/budget. Report workload and remaining forecast, including the recorded overrun, and close with AAR, SITREP, updated tracking and explicit-path local commits. Reserved paths, no push/deploy/peer delivery and predecessor holds remain in force.
+
+## Final staging correction
+
+[D] The first staged diff check found trailing terminal padding in the newly added readable transcript. The orchestration still issued the local commit (5b9c9c5) after that failure; this was a sequencing error. A follow-up normalizes only the derived transcript, preserves the raw sanitized recording, refreshes its evidence hash and reruns the staged check with commit conditional on success. No task result or source claim changes.

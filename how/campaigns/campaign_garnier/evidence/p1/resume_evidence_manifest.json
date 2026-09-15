@@ -9,8 +9,9 @@
     "how/campaigns/campaign_garnier/evidence/p1/resume_reproduction_environment.json": "9ea21efdab3fed1c72d4468f677055dffab8fcd3855e0836baf37d63bb37cf5a",
     "how/campaigns/campaign_garnier/evidence/p1/resume_secret_storage_check.json": "fb584fe67096b63b68e02e65ba170bf6ebd96bc78cf36baedbdb4c4c3a008a3d",
     "how/campaigns/campaign_garnier/evidence/p1/resume_terminal_events.json": "b96021434ed4aee0a916768c60cac141fe08322560b6cdb346ddba10f8d2bffc",
-    "how/campaigns/campaign_garnier/evidence/p1/resume_terminal_transcript.txt": "8bcae1a1914d58c880a690b630ea9d85e79c45a021dd83e5a6b4a08da330dc90"
+    "how/campaigns/campaign_garnier/evidence/p1/resume_terminal_transcript.txt": "61b4c9362f297ff55f9e400eb6f1b84bb6a7a9b64041e886abee25fba432dd5a"
   },
   "raw_recorder": "raw/repro_20260915/terminal_bridge.py",
-  "raw_attempts": "raw/repro_20260915/; attempt_2 is the task run; earlier terminal setup excluded"
+  "raw_attempts": "raw/repro_20260915/; attempt_2 is the task run; earlier terminal setup excluded",
+  "normalization_note": "Derived readable transcript: terminal padding removed at final staged whitespace check; raw recording retained."
 }

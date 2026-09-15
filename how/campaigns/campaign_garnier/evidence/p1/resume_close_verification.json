@@ -1,5 +1,5 @@
 {
-  "created": "2026-09-15T11:45:22.327803+00:00",
+  "created": "2026-09-15T11:46:56.556507+00:00",
   "base_commit": "73b3802",
   "source_commit": "b1cf040",
   "checks": {
@@ -18,9 +18,11 @@
     "baseline_receipt": true,
     "reserved_tracked_diff_empty": true,
     "full_credential_absent_from_owned_files": true,
-    "container_stopped": true
+    "container_stopped": true,
+    "derived_transcript_padding_normalized": true
   },
   "parsed_markdown_files": 13,
   "primitive_evidence_hashes_checked": 8,
-  "limits": "Record/evidence audit only; no fresh full site suite, capture population, human evidence or production assessment. P1.2/P1.3 and DP3 remain open."
+  "limits": "Record/evidence audit only; no fresh full site suite, capture population, human evidence or production assessment. P1.2/P1.3 and DP3 remain open.",
+  "correction": "Initial staged check caught transcript padding; follow-up revalidated hashes and whitespace. Raw terminal recording unchanged."
 }
