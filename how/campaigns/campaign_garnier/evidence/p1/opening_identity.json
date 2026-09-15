@@ -1,0 +1,14 @@
+{
+  "head": "b5b07cf5b308ea79cd5cebaa5c382096c630cee1",
+  "site_sources": {
+    "site/src/pages/index.astro": "e856a933a098a19c65add5a33226ca8bae2deae8c83bff1505f3bfded787cf57",
+    "site/src/data/home.ts": "71f615b2d192991cb22ee36d284a6e7574a5a6c056daf4823cbc00467c112dc7",
+    "site/src/components/sections/HomeHero.astro": "08dc1b948cc8cff7966821bcde30ee4c49fcaaeff29e8a574291f1c9c6aac209",
+    "site/src/data/vaults.json": "3674d2b3ea52878506a1203ebddbd960ca53cb30cec4c2344dbb91c6001cff24"
+  },
+  "siblings": {
+    "network": "how/campaigns/campaign_garnier/evidence/p1/raw/before_network.html",
+    "commons": "how/campaigns/campaign_garnier/evidence/p1/raw/before_commons.html",
+    "vaults": "how/campaigns/campaign_garnier/evidence/p1/raw/before_vaults.html"
+  }
+}

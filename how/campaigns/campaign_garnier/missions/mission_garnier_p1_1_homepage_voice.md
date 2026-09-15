@@ -3,7 +3,7 @@ plan_id: mission_garnier_p1_1_homepage_voice
 type: plan
 title: Make the homepage demonstrate the mechanism
 owner: stanley
-status: queued
+status: in_progress
 campaign_id: campaign_garnier
 campaign: campaign_garnier
 campaign_phase: 1
@@ -117,7 +117,6 @@ contract_version: garnier_amendment_20260915
 | 1 | Low-fidelity storyboard orders mechanism, working example, shared-cultural-heritage rationale and participation before visual production, with text/DOM reading order preserved. | homepage_storyboard.md | ⛩ DP2 entry and C1 |
 | 2 | Rendered home/twin agree, claims cite evidence, word-target exceptions are justified, and fresh-context synthetic reads record confusions before DP3 formative humans. | homepage_storyboard.md; homepage_copy_diff.md; homepage_claim_map.md | C2 reached-surface evidence |
 | 3 | Reconcile the actual diff, limitations and AAR | Mission evidence manifest and five-line AAR | ⛩ DP3 remains human |
-
 | 4 | Prove blocking behavior before experimental gate adoption; preserve P0 evidence | instrument_adoption_controls.md | C4 before approval use |
 
 ## Constraints & gates

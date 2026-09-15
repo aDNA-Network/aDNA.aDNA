@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "scope": "process-level disposable fixtures",
+  "controls": [
+    {
+      "name": "complete",
+      "expected": 0,
+      "exit": 0,
+      "pass": true,
+      "output": "{\n  \"version\": 1,\n  \"matrix\": {\n    \"expected\": 2,\n    \"actual\": 2\n  }\n}"
+    },
+    {
+      "name": "empty",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "empty population"
+    },
+    {
+      "name": "empty_manifest",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "empty population"
+    },
+    {
+      "name": "missing",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "incomplete or unexpected population"
+    },
+    {
+      "name": "duplicate",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "duplicate cell"
+    },
+    {
+      "name": "wrong_theme",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "wrong surface/theme or axe failure"
+    },
+    {
+      "name": "missing_png",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "missing PNG"
+    },
+    {
+      "name": "checkpoint",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "wrong surface/theme or axe failure"
+    },
+    {
+      "name": "axe_not_reached",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "wrong surface/theme or axe failure"
+    },
+    {
+      "name": "axe_violation",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "wrong surface/theme or axe failure"
+    },
+    {
+      "name": "clean",
+      "expected": 0,
+      "exit": 0,
+      "pass": true,
+      "output": "{\n  \"version\": 1,\n  \"prose\": [\n    {\n      \"file\": \"/var/folders/nv/zrz6sfzs0vxfz60kxmsy55rw0000gn/T/garnier-controls-hUyiZL/clean.html\",\n      \"main_dom_words\": 5,\n      \"banned_hits\": [],\n      \"exclusions\": []\n    }\n  ]\n}"
+    },
+    {
+      "name": "actual_banned",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "blocking vocabulary: [{\"file\":\"/var/folders/nv/zrz6sfzs0vxfz60kxmsy55rw0000gn/T/garnier-controls-hUyiZL/actual_banned.html\",\"main_dom_words\":2,\"banned_hits\":[\"unlock\"],\"exclusions\":[]}]"
+    },
+    {
+      "name": "split_heading",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "blocking vocabulary: [{\"file\":\"/var/folders/nv/zrz6sfzs0vxfz60kxmsy55rw0000gn/T/garnier-controls-hUyiZL/split_heading.html\",\"main_dom_words\":2,\"banned_hits\":[\"next-generation\"],\"exclusions\":[]}]"
+    },
+    {
+      "name": "excluded_code",
+      "expected": 0,
+      "exit": 0,
+      "pass": true,
+      "output": "{\n  \"version\": 1,\n  \"prose\": [\n    {\n      \"file\": \"/var/folders/nv/zrz6sfzs0vxfz60kxmsy55rw0000gn/T/garnier-controls-hUyiZL/excluded_code.html\",\n      \"main_dom_words\": 2,\n      \"banned_hits\": [],\n      \"exclusions\": [\n        {\n          \"tag\": \"PRE\",\n          \"text\": \"unlock()\"\n        },\n        {\n          \"tag\": \"BLOCKQUOTE\",\n          \"text\": \"seamless\"\n        }\n      ]\n    }\n  ]\n}"
+    },
+    {
+      "name": "missing_main",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "missing or empty main: /var/folders/nv/zrz6sfzs0vxfz60kxmsy55rw0000gn/T/garnier-controls-hUyiZL/missing_main.html"
+    },
+    {
+      "name": "empty_main",
+      "expected": "nonzero",
+      "exit": 1,
+      "pass": true,
+      "output": "missing or empty main: /var/folders/nv/zrz6sfzs0vxfz60kxmsy55rw0000gn/T/garnier-controls-hUyiZL/empty_main.html"
+    }
+  ]
+}

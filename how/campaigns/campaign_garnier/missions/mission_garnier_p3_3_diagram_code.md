@@ -114,7 +114,6 @@ contract_version: garnier_amendment_20260915
 | 1 | Diagram semantics have a text/keyboard equivalent matching source nodes/edges; registry template labels are reviewed read-only, data corrections staged to Hestia. | diagram_grammar.md | ⛩ DP4 entry and C1 |
 | 2 | Every executable code action copies the displayed runnable string; clipboard denial has accessible recovery, and code remains readable without page overflow. | diagram_grammar.md; code_state_pack.md; registry_template_review.md | C2 reached-surface evidence |
 | 3 | Reconcile the actual diff, limitations and AAR | Mission evidence manifest and five-line AAR | ⛩ DP5 remains human |
-
 | 4 | Resolve FG-P0-003 with legible fresh-mobile labels and text/keyboard equivalence | diagram_grammar.md | C4 at DP5 |
 
 ## Constraints & gates
