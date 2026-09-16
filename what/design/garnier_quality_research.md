@@ -2,7 +2,7 @@
 type: artifact
 artifact_class: design_research
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-09-16
 last_edited_by: agent_codex
 status: proposed
 campaign: campaign_garnier
@@ -117,3 +117,14 @@ tags: [design, research, garnier, quality, accessibility]
 [D] No human sessions, task conversion, screen-reader use, real-device interaction, normal-motion behavior or field performance were measured. No foreign site's authenticated product or research claims were verified. The forty native frames cover first and subsequent views, not exhaustive pages or interaction states. Nous was blocked. The page's appearance under a light preference does not prove native theme support. Heuristic applications above remain [I], even when motivated by authoritative [R] guidance.
 
 Related: [[reference_set_garnier_20260915]] · [[front_page_doctrine]] · [[design_doctrine_delta]] · [[campaign_garnier]].
+
+
+## Accepted visual-review practice — 2026-09-16
+
+[D] Stanley selected clean text with contained art only when useful, whole-homepage composition, and independent vision review for **each substantial visual change**. [[clean_homepage_revision]] records the accepted scope and correction. The prior inspection missed the faint illustration competing behind the homepage's reading areas; its old receipt remains preserved.
+
+[I] **Simplicity is an acceptance criterion.** Keep imagery, texture, scrims and decorative glow outside reading areas. An allowed illustration slot is permission to use purposeful art, not a requirement to fill it. Every visual must explain something or establish useful identity; if neither purpose survives inspection, remove it. The actual project files provide distinctive identity without inventing institutional imagery. Assess both native themes as complete compositions, not merely passing color pairs.
+
+[I] **Independent perspectives:** enterprise composition/restraint/credibility ([[reviewer_design_critic]] + [[reviewer_visual_designer]]); cognitive load/access/task order ([[reviewer_anti_bloat_editor]] + [[reviewer_accessibility_auditor]]); brand/information meaning and truthfulness ([[reviewer_brand_strategist]] + [[reviewer_information_architect]]). Use three separate vision-capable agents on the same immutable first-screen and full-page captures. They receive audience, constraints and evidence identity before seeing builder rationale or peer findings. Be demanding and constructive: preserve specific strengths, name visible evidence and consequences, and propose the smallest useful correction. No finding quota, performative harshness, invented user reactions or role-played consent.
+
+[I] Each finding records screenshot/region, observation versus inference, severity, consequence, minimal fix, owner/disposition and reinspection condition. Resolve major issues before calling the visual increment complete. Record minor deferrals with reasons; inspect affected captures again. Green automated tests cannot certify composition. Agent critique cannot substitute for the three actual formative readers or VITRUVIUS's official scoring. Follow [[verification_recipes]] §R-VISUAL; retain the source/DOM/twin checks and frozen stimulus identity.

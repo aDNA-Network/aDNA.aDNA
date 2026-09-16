@@ -1,7 +1,7 @@
 ---
 type: directory_index
 created: 2026-09-14
-updated: '2026-09-15'
+updated: '2026-09-16'
 status: active
 last_edited_by: agent_codex
 tags:
@@ -14,6 +14,9 @@ tags:
 
 [D] Fresh-context entry: [[artifacts/p1/phase_exit]] → [[artifacts/p1/formative_reader_pack]] → the CURRENT P1.3 evidence-intake prompt. Closure `f34f9c2` preserves the implementation evidence; do not replay the original P1.2 opening pass. Wind-down: [[session_stanley_20260915_110717_garnier_winddown]].
 
+- [[artifacts/research/clean_homepage_revision]]
+- [[artifacts/research/clean_homepage_visual_review]]
+- [[artifacts/research/clean_homepage_verification]]
 - [[artifacts/p1/local_model_continuation]]
 - [[artifacts/research/next_build_scope]]
 - [[CLAUDE]]

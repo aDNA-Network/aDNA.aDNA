@@ -10,7 +10,7 @@ campaign_phase: 3
 campaign_mission_number: 24
 mission_class: implementation
 created: '2026-09-14'
-updated: '2026-09-15'
+updated: '2026-09-16'
 last_edited_by: agent_codex
 tags:
 - plan
@@ -40,7 +40,7 @@ acceptance_criteria:
 - 'C1: Every art asset belongs to an approved slot and has provenance, clearance/abstract-only generation classification
   and an alt/decorative decision.'
 - 'C2: All slot-containing routes retain readable mechanism and actions with art disabled, at narrow widths and
-  200/400% reflow in both themes.'
+  200/400% reflow in both themes, with clean reading surfaces and independent R-VISUAL findings resolved or explicitly dispositioned.'
 - 'C3: mission_garnier_p3_2_hero_slots closes with a scoped diff, cited evidence and five-line AAR; DP5 remains
   a human gate and no reserved path/outward action is inferred.'
 verification_method:
@@ -54,8 +54,8 @@ verification_method:
 - id: V2
   surface: slot_contact_sheet.md; asset_provenance_ledger.md
   method: All slot-containing routes retain readable mechanism and actions with art disabled, at narrow widths and
-    200/400% reflow in both themes.
-  command: R-CAPTURE all slot routes; R-SITE; manual art-disabled and browser zoom inspection of the same text/action
+    200/400% reflow in both themes, with clean reading surfaces and independent R-VISUAL findings resolved or explicitly dispositioned.
+  command: R-VISUAL; R-CAPTURE all slot routes; R-SITE; manual art-disabled and browser zoom inspection of the same text/action
     paths.
   red_test: 'Hide a required command inside artwork: art-disabled task completion must fail.'
 - id: V3
@@ -87,7 +87,7 @@ contract_version: garnier_amendment_20260915
 
 ## Why
 
-[I] Every art asset belongs to an approved slot and has provenance, clearance/abstract-only generation classification and an alt/decorative decision. All slot-containing routes retain readable mechanism and actions with art disabled, at narrow widths and 200/400% reflow in both themes.
+[I] Every art asset belongs to an approved slot and has provenance, clearance/abstract-only generation classification and an alt/decorative decision. All slot-containing routes retain readable mechanism and actions with art disabled, at narrow widths and 200/400% reflow in both themes, with clean reading surfaces and independent R-VISUAL findings resolved or explicitly dispositioned.
 
 ## Where we are
 
@@ -102,7 +102,7 @@ contract_version: garnier_amendment_20260915
 | # | Objective | Output | Gate |
 |---|-----------|--------|------|
 | 1 | Every art asset belongs to an approved slot and has provenance, clearance/abstract-only generation classification and an alt/decorative decision. | slot_contact_sheet.md | ⛩ DP4 entry and C1 |
-| 2 | All slot-containing routes retain readable mechanism and actions with art disabled, at narrow widths and 200/400% reflow in both themes. | slot_contact_sheet.md; asset_provenance_ledger.md | C2 reached-surface evidence |
+| 2 | All slot-containing routes retain readable mechanism and actions with art disabled, at narrow widths and 200/400% reflow in both themes, with clean reading surfaces and independent R-VISUAL findings resolved or explicitly dispositioned. | slot_contact_sheet.md; asset_provenance_ledger.md | C2 reached-surface evidence |
 | 3 | Reconcile the actual diff, limitations and AAR | Mission evidence manifest and five-line AAR | ⛩ DP5 remains human |
 
 ## Constraints & gates
@@ -113,7 +113,7 @@ contract_version: garnier_amendment_20260915
 
 ## Goal and exit gate
 
-[I] C1: Every art asset belongs to an approved slot and has provenance, clearance/abstract-only generation classification and an alt/decorative decision. C2: All slot-containing routes retain readable mechanism and actions with art disabled, at narrow widths and 200/400% reflow in both themes. C3: mission_garnier_p3_2_hero_slots closes with a scoped diff, cited evidence and five-line AAR; DP5 remains a human gate and no reserved path/outward action is inferred.
+[I] C1: Every art asset belongs to an approved slot and has provenance, clearance/abstract-only generation classification and an alt/decorative decision. C2: All slot-containing routes retain readable mechanism and actions with art disabled, at narrow widths and 200/400% reflow in both themes, with clean reading surfaces and independent R-VISUAL findings resolved or explicitly dispositioned. C3: mission_garnier_p3_2_hero_slots closes with a scoped diff, cited evidence and five-line AAR; DP5 remains a human gate and no reserved path/outward action is inferred.
 
 ## Verification and convention-13 pair audit
 
@@ -158,3 +158,10 @@ Deliverables: pending execution. Descoped: none. Key findings: pending. Scope ch
 - **Finding:** pending execution.
 - **Change:** pending execution.
 - **Follow-up:** pending execution.
+
+
+## Accepted review-context amendment — 2026-09-16
+
+[D] [[clean_homepage_revision]] authorizes a bounded homepage implementation and this prospective acceptance refinement; this mission remains queued and its phase gates remain open. C2/V2 now include [[verification_recipes]] §R-VISUAL: independent enterprise, cognitive/access and brand/information reviewers inspect immutable pixels before builder/peer rationale, with versioned findings and reinspection. V2 remains feasible with the expanded method; V1 population/provenance and V3 scope/authority remain necessary and cannot replace it. Update the provisional workload at DP4 to include the actual review rounds; no silent commitment of the old estimate.
+
+[I] Review visual relevance and restraint, not merely legibility. No vague translucent artwork, scrims or glow behind reading areas; use contained art only when it adds meaning. Slot permission does not mandate image presence. A red control is an archived known-busy homepage capture: reviewers must inspect it and explain their judgment, rather than auto-accept a green test report. No finding count is required and no human result is inferred. Real-reader and formal scoring obligations survive.

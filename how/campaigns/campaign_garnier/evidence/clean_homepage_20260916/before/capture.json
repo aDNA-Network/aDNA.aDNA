@@ -1,0 +1,34 @@
+{
+  "source": "0c77b615730c1df0451e40a8afca4951076fe9b0",
+  "origin": "http://127.0.0.1:4466",
+  "rows": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "theme": "dark",
+      "root": "dark"
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "root": ""
+    },
+    {
+      "name": "mobile",
+      "width": 375,
+      "height": 812,
+      "theme": "dark",
+      "root": "dark"
+    },
+    {
+      "name": "mobile",
+      "width": 375,
+      "height": 812,
+      "theme": "light",
+      "root": ""
+    }
+  ]
+}

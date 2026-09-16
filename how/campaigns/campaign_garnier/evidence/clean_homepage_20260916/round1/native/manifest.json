@@ -1,0 +1,325 @@
+{
+  "recordedAt": "2026-09-16T05:43:34.157Z",
+  "origin": "http://127.0.0.1:4466",
+  "baseCommit": "afa3f2a",
+  "sources": {
+    "site/src/pages/index.astro": "9be0a4738f89c4b117d717d692b7e2d60bbc6ffe7cce8858c470f42c0d862b1a",
+    "site/src/components/sections/HomeHero.astro": "8b15c9bf0aeb5dcd5609ad8cdb6d979c0b0cd358691b8d4bfd4d469be1e98dd0",
+    "site/src/components/sections/RegistryCard.astro": "dc9c9d6b017489e92e2ac8b3dcc65fa5065a486d662c5e68bbe4cf936bbdac10",
+    "site/src/data/home.ts": "6fc9f73ec38f19c7ec127f1b0854d3f5dd9a270f216fa2e8fbb6bee08cdd67f2"
+  },
+  "rows": [
+    {
+      "name": "mobile",
+      "width": 320,
+      "height": 720,
+      "scrollWidth": 320,
+      "theme": "dark",
+      "heroBackground": "rgb(26, 27, 38)",
+      "bodyBackground": "rgb(26, 27, 38)",
+      "treeClipped": [],
+      "status": 200,
+      "errors": [],
+      "files": [
+        {
+          "file": "mobile_dark_first.png",
+          "sha256": "8cf2792280ff4880cf4d02910605bdcf0efb06530464f0d94e21b885891a5646"
+        },
+        {
+          "file": "mobile_dark_full.png",
+          "sha256": "695435ad2c0a83ca3c3d1ae061961c754e6d79fed93d23935f414d03e0317edf"
+        },
+        {
+          "file": "mobile_dark_hero.png",
+          "sha256": "491ee7d8017df823f3e103b644ebc6953de2986b4c1ab9266cbf44c1c9167159"
+        }
+      ]
+    },
+    {
+      "name": "mobile",
+      "width": 320,
+      "height": 720,
+      "scrollWidth": 320,
+      "theme": "light",
+      "heroBackground": "rgb(255, 255, 255)",
+      "bodyBackground": "rgb(255, 255, 255)",
+      "treeClipped": [],
+      "status": 200,
+      "errors": [],
+      "files": [
+        {
+          "file": "mobile_light_first.png",
+          "sha256": "50dfe642de6ca1f391eacf9dd7db5ddf01357870af9895b0e09cc35678411485"
+        },
+        {
+          "file": "mobile_light_full.png",
+          "sha256": "5c6797077dff30786c6853b20a64e08ce5819bdeebcc8f4ec8d198a3034731de"
+        },
+        {
+          "file": "mobile_light_hero.png",
+          "sha256": "c29b74bd5f03a9f0736c2598a91536eac55fcf5a4094d9dead7231d27bce7d25"
+        }
+      ]
+    },
+    {
+      "name": "mobile-lg",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "theme": "dark",
+      "heroBackground": "rgb(26, 27, 38)",
+      "bodyBackground": "rgb(26, 27, 38)",
+      "treeClipped": [],
+      "status": 200,
+      "errors": [],
+      "files": [
+        {
+          "file": "mobile-lg_dark_first.png",
+          "sha256": "48865338a3530ae2f24eab1ff877bccb7b70ea16058875209a8415869d6b9b09"
+        },
+        {
+          "file": "mobile-lg_dark_full.png",
+          "sha256": "7b654fc8153a3d0ee2dca2d49cd614efba0869a903b2a23f9ca137d5f610f774"
+        },
+        {
+          "file": "mobile-lg_dark_hero.png",
+          "sha256": "c44e889ef64deeb6ea905772b09cd4aa6bab67b036170ef5674defd8c8f6db3a"
+        }
+      ]
+    },
+    {
+      "name": "mobile-lg",
+      "width": 375,
+      "height": 812,
+      "scrollWidth": 375,
+      "theme": "light",
+      "heroBackground": "rgb(255, 255, 255)",
+      "bodyBackground": "rgb(255, 255, 255)",
+      "treeClipped": [],
+      "status": 200,
+      "errors": [],
+      "files": [
+        {
+          "file": "mobile-lg_light_first.png",
+          "sha256": "b5634f55b7baa2df9a79859ab3da504740f4974a1c315af9fe72994561bd211b"
+        },
+        {
+          "file": "mobile-lg_light_full.png",
+          "sha256": "5081513c82a4d4611aae8d472c80c418ed39b4f153da03da77dae66a3793927e"
+        },
+        {
+          "file": "mobile-lg_light_hero.png",
+          "sha256": "4b89eaad661b955c03bd89e0ceb9dde1f604d6cf39eedb240fa0cbbd012cf71b"
+        }
+      ]
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "theme": "dark",
+      "heroBackground": "rgb(26, 27, 38)",
+      "bodyBackground": "rgb(26, 27, 38)",
+      "treeClipped": [],
+      "status": 200,
+      "errors": [],
+      "files": [
+        {
+          "file": "tablet_dark_first.png",
+          "sha256": "520fdc83e8de1597cd8bdaea621105c7903be4c76207afd70e9424203c4547d4"
+        },
+        {
+          "file": "tablet_dark_full.png",
+          "sha256": "82629f06b6258a62b03a8dac5fdcf8bcfe024ae37fa637a95c76cb3ce9f0d9e3"
+        },
+        {
+          "file": "tablet_dark_hero.png",
+          "sha256": "02d0dec86ff51fbea78ff83bee0bb50c433ec79bba121db4b3518498888330cd"
+        }
+      ]
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "theme": "light",
+      "heroBackground": "rgb(255, 255, 255)",
+      "bodyBackground": "rgb(255, 255, 255)",
+      "treeClipped": [],
+      "status": 200,
+      "errors": [],
+      "files": [
+        {
+          "file": "tablet_light_first.png",
+          "sha256": "4b789d131dc2bab34f69d2886c01669995d4ce283fe4705089bba0cd83fdbc4d"
+        },
+        {
+          "file": "tablet_light_full.png",
+          "sha256": "fb955d24ac57db91bbf87585fd81a47cda2b5a82e0c7dd53ed259feb6a1962e4"
+        },
+        {
+          "file": "tablet_light_hero.png",
+          "sha256": "dc75139b4aff65021f42fc8f25f42b10177b91801700723d419bc3b1aa3c1d1d"
+        }
+      ]
+    },
+    {
+      "name": "laptop-sm",
+      "width": 900,
+      "height": 700,
+      "scrollWidth": 900,
+      "theme": "dark",
+      "heroBackground": "rgb(26, 27, 38)",
+      "bodyBackground": "rgb(26, 27, 38)",
+      "treeClipped": [],
+      "status": 200,
+      "errors": [],
+      "files": [
+        {
+          "file": "laptop-sm_dark_first.png",
+          "sha256": "9ee1f86e156e66d13d7d4624a69646042f078a4e44dfd99f4c4f0ce92dbe239a"
+        },
+        {
+          "file": "laptop-sm_dark_full.png",
+          "sha256": "2fb5bd9b576591081cf961d9a0605156341c48e21e9e54906daca2cc58ca124c"
+        },
+        {
+          "file": "laptop-sm_dark_hero.png",
+          "sha256": "41d2b04cc9a46bba670d1bd0a388aa575fbebda2bc44f7c387c8e463493e4076"
+        }
+      ]
+    },
+    {
+      "name": "laptop-sm",
+      "width": 900,
+      "height": 700,
+      "scrollWidth": 900,
+      "theme": "light",
+      "heroBackground": "rgb(255, 255, 255)",
+      "bodyBackground": "rgb(255, 255, 255)",
+      "treeClipped": [],
+      "status": 200,
+      "errors": [],
+      "files": [
+        {
+          "file": "laptop-sm_light_first.png",
+          "sha256": "7cf0c96ee88910586fae5c3f01610a1e8fe9fa6ac385d3a96b70e26d6d129381"
+        },
+        {
+          "file": "laptop-sm_light_full.png",
+          "sha256": "dd158cf021a1e37bb705b5524337dec3e16d931285ccafd62b49d4e8ffbc2304"
+        },
+        {
+          "file": "laptop-sm_light_hero.png",
+          "sha256": "f1d68e87caae69c4a7e44e2a7fd60d0feffbaed30ba6fd485d683b8a9c3817aa"
+        }
+      ]
+    },
+    {
+      "name": "laptop",
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "theme": "dark",
+      "heroBackground": "rgb(26, 27, 38)",
+      "bodyBackground": "rgb(26, 27, 38)",
+      "treeClipped": [],
+      "status": 200,
+      "errors": [],
+      "files": [
+        {
+          "file": "laptop_dark_first.png",
+          "sha256": "10213f957804fbeaa743b6bcc0da0118aaed3347d652f40132500bfca534bc50"
+        },
+        {
+          "file": "laptop_dark_full.png",
+          "sha256": "ca52854abf0681a07f43ac092143dc2714cc4fb39253e409acc28679027724f1"
+        },
+        {
+          "file": "laptop_dark_hero.png",
+          "sha256": "ba5c968fbca5daacea8ddc0ce5976cb2f22a009a8b5a4db8fa53d7762646eb62"
+        }
+      ]
+    },
+    {
+      "name": "laptop",
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "theme": "light",
+      "heroBackground": "rgb(255, 255, 255)",
+      "bodyBackground": "rgb(255, 255, 255)",
+      "treeClipped": [],
+      "status": 200,
+      "errors": [],
+      "files": [
+        {
+          "file": "laptop_light_first.png",
+          "sha256": "29f9f7b959d0fc87df3d3457b176b4888f53983669a69522e17fc1270d1acb5a"
+        },
+        {
+          "file": "laptop_light_full.png",
+          "sha256": "96fea008f32367cedf3b2dd1969407c48ed95b6d9be0808c21bf6d9e05c4fb5b"
+        },
+        {
+          "file": "laptop_light_hero.png",
+          "sha256": "28c989f0e4057c7fb6cf89d9c76fa68e2d3f254e379bfd5e7609177420ff99d1"
+        }
+      ]
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "theme": "dark",
+      "heroBackground": "rgb(26, 27, 38)",
+      "bodyBackground": "rgb(26, 27, 38)",
+      "treeClipped": [],
+      "status": 200,
+      "errors": [],
+      "files": [
+        {
+          "file": "desktop_dark_first.png",
+          "sha256": "31e293efb5e8f55703ccd39bff1311a6c642c0d15cba845d2a18e39d7eba12ca"
+        },
+        {
+          "file": "desktop_dark_full.png",
+          "sha256": "9d83204f2de0ce558fee514e8b8d4488a68a4008f1a30a0d488d20a6d5a9f504"
+        },
+        {
+          "file": "desktop_dark_hero.png",
+          "sha256": "0d28818cfcac856341571ea8f9890ecce11e07ed440b8cc9fc69762d27fa14a2"
+        }
+      ]
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "theme": "light",
+      "heroBackground": "rgb(255, 255, 255)",
+      "bodyBackground": "rgb(255, 255, 255)",
+      "treeClipped": [],
+      "status": 200,
+      "errors": [],
+      "files": [
+        {
+          "file": "desktop_light_first.png",
+          "sha256": "28e9bda0c355c66537a00db494eab9fd75773e5df3aaa17460cf5e1a5902fd47"
+        },
+        {
+          "file": "desktop_light_full.png",
+          "sha256": "5b74dfb8b248627a57f513d412ea486829296113d3d756a0c870bb0c9fa157ae"
+        },
+        {
+          "file": "desktop_light_hero.png",
+          "sha256": "48534bfba721756dc7da25e3365b3bc2386e0323c75c26dcece378c4cab9a6ed"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+npm warn exec The following package was not found and will be installed: astro@7.3.2
+13:51:50 [WARN] Missing pages directory: src/pages
+13:51:50 [WARN] Missing pages directory: src/pages
+13:51:51 [WARN] [vite] Failed to resolve dependency: astro > aria-query, present in client 'optimizeDeps.include'
+13:51:51 [WARN] [vite] Failed to resolve dependency: astro > axobject-query, present in client 'optimizeDeps.include'
+13:51:51 [WARN] [vite] Failed to resolve dependency: astro > html-escaper, present in client 'optimizeDeps.include'
+13:51:51 [WARN] [vite] Failed to resolve dependency: astro/runtime/client/dev-toolbar/entrypoint.js, present in client 'optimizeDeps.include'
+13:51:51 [types] Generated 327ms
+13:51:51 [build] output: "static"
+13:51:51 [build] mode: "static"
+13:51:51 [build] directory: /Users/stanley/.cache/garnier-homepage-20260916/dist/
+13:51:51 [build] Collecting build info...
+13:51:51 [build] ✓ Completed in 365ms.
+13:51:51 [build] Building static entrypoints...
+13:51:51 [ERROR] [vite] ✗ Build failed in 184ms
+[UNRESOLVED_ENTRY] Cannot resolve entry module astro/entrypoints/prerender.
+

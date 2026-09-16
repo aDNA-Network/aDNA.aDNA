@@ -1,0 +1,442 @@
+{
+  "recordedAt": "2026-09-16T06:01:55.896Z",
+  "native": [],
+  "shared": [
+    {
+      "route": "/network",
+      "name": "mobile-lg",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "0eef4afc261227c53c111ed634495aac5d7a114ff2c446f7785027fed0d4055d",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "0eef4afc261227c53c111ed634495aac5d7a114ff2c446f7785027fed0d4055d",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "mobile-lg",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "0eef4afc261227c53c111ed634495aac5d7a114ff2c446f7785027fed0d4055d",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "0eef4afc261227c53c111ed634495aac5d7a114ff2c446f7785027fed0d4055d",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "laptop-sm",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "582de76d5dd076e51d45ea1abec8a28db96235058badd4ce5549e266960710ab",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "582de76d5dd076e51d45ea1abec8a28db96235058badd4ce5549e266960710ab",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "laptop-sm",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "582de76d5dd076e51d45ea1abec8a28db96235058badd4ce5549e266960710ab",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "582de76d5dd076e51d45ea1abec8a28db96235058badd4ce5549e266960710ab",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "desktop",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "0a0bfcb1a6979c786cd04982d866fcd0832acd43fb5ba9c2a0877e744fd19d5a",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "0a0bfcb1a6979c786cd04982d866fcd0832acd43fb5ba9c2a0877e744fd19d5a",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "desktop",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "0a0bfcb1a6979c786cd04982d866fcd0832acd43fb5ba9c2a0877e744fd19d5a",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "0a0bfcb1a6979c786cd04982d866fcd0832acd43fb5ba9c2a0877e744fd19d5a",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "mobile-lg",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "f16b7264d48dc1ed9c72fc5f384a58dff0c6031dd4a2a6facf894c207737df3a",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "f16b7264d48dc1ed9c72fc5f384a58dff0c6031dd4a2a6facf894c207737df3a",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "mobile-lg",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "f16b7264d48dc1ed9c72fc5f384a58dff0c6031dd4a2a6facf894c207737df3a",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "f16b7264d48dc1ed9c72fc5f384a58dff0c6031dd4a2a6facf894c207737df3a",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "laptop-sm",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "6396515c10a9472e47989ff0dc3d371d98ae0ae2755e1da8e5c4fe0c57f0ec33",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "6396515c10a9472e47989ff0dc3d371d98ae0ae2755e1da8e5c4fe0c57f0ec33",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "laptop-sm",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "6396515c10a9472e47989ff0dc3d371d98ae0ae2755e1da8e5c4fe0c57f0ec33",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "6396515c10a9472e47989ff0dc3d371d98ae0ae2755e1da8e5c4fe0c57f0ec33",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "desktop",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "69223c8a275fe07372e5416180777e5533e988cab7c8ab3c0031e72ea5d5c5f5",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "69223c8a275fe07372e5416180777e5533e988cab7c8ab3c0031e72ea5d5c5f5",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "desktop",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "69223c8a275fe07372e5416180777e5533e988cab7c8ab3c0031e72ea5d5c5f5",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "69223c8a275fe07372e5416180777e5533e988cab7c8ab3c0031e72ea5d5c5f5",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    }
+  ],
+  "interaction": {
+    "copy": {
+      "exactCommandCopied": true,
+      "failure": "Copy unavailable. Select and copy the command above.",
+      "liveRegion": "status",
+      "buttonStillEnabled": true
+    },
+    "keyboard": [
+      {
+        "tag": "A",
+        "text": "Get Started",
+        "class": "btn btn-primary",
+        "outline": "solid",
+        "outlineWidth": "3px",
+        "rect": {
+          "x": 144,
+          "y": 481.578125,
+          "width": 146.953125,
+          "height": 54.140625
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "Read the standard",
+        "class": "btn btn-secondary",
+        "outline": "solid",
+        "outlineWidth": "3px",
+        "rect": {
+          "x": 306.953125,
+          "y": 481.578125,
+          "width": 207.84375,
+          "height": 54.140625
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "Read the short introduction",
+        "class": "",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 245.859375,
+          "y": 554.71875,
+          "width": 184.796875,
+          "height": 17
+        },
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Copy",
+        "class": "hero-install-copy",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 606.734375,
+          "y": 607.515625,
+          "width": 74.796875,
+          "height": 44
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "Read the full instruction file",
+        "class": "example-source",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 763.53125,
+          "y": 686.78125,
+          "width": 185.65625,
+          "height": 44
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "Open source on GitHub",
+        "class": "trust-link",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 749.453125,
+          "y": 864.3125,
+          "width": 160.71875,
+          "height": 23.046875
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "the standard, versioned and public",
+        "class": "trust-link",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 1040.15625,
+          "y": 864.3125,
+          "width": 238.359375,
+          "height": 23.046875
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "Stanley Bishop stewards the project today",
+        "class": "",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 638.390625,
+          "y": 484.34375,
+          "width": 285.25,
+          "height": 17
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "vault",
+        "class": "",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 185.09375,
+          "y": 712.578125,
+          "width": 40.375,
+          "height": 21
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "The state of the network, dated",
+        "class": "",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 310.765625,
+          "y": 819.875,
+          "width": 213.84375,
+          "height": 17
+        },
+        "visible": true
+      }
+    ],
+    "wrappedTree": {
+      "clientWidth": 245,
+      "scrollWidth": 245,
+      "files": 5,
+      "descriptions": 5
+    },
+    "textSpacing": {
+      "width": 320,
+      "scrollWidth": 320,
+      "actions": [
+        {
+          "text": "Get Started",
+          "width": 161.640625,
+          "height": 48
+        },
+        {
+          "text": "Read the standard",
+          "width": 231.25,
+          "height": 50
+        },
+        {
+          "text": "Copy",
+          "width": 76.953125,
+          "height": 44
+        },
+        {
+          "text": "Read the full instruction file",
+          "width": 219.296875,
+          "height": 44
+        }
+      ]
+    },
+    "no_js": {
+      "kind": "no_js",
+      "title": "Project knowledge, organized for AI.",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "copyVisible": false,
+      "text": "Open standard · MIT\n\nProject knowledge, organized for AI.\n\naDNA (Agentic DNA) is an open standard for organizing a project's files. Three folders and plain Markdown give people and AI agents a shared map.\n\nStart a local workspace with Git and Claude Code.\n\nGet Started\nRead the standard\n\nNew to aDNA? Read the short introduction.\n\n$\ngit clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude\n\nA project you can inspect\naDNA.aDNA/\nThis site's project folder\nCLAUDE.md\nFile\nAgent instructions\nSTATE.md\nFile\nWork in progress\nwhat/\nFolder\nKnowledge and decisions\nhow/\nFolder\nPlans and procedures\nwho/\nFolder\nPeople and roles\nCLAUDE.md excerpt\n\nPhase gates are human gates. Never auto-advance between campaign phases without explicit user approval.\n\nRead the full instruction file\n\nThese are written instructions. The structure does not enforce an agent’s behavior.\n\nNot a product or service — no server, no signup; aDNA itself sends nothing.\n\nThe standard that gives it that shape is open. Your files stay on your machine. Your AI tool has its own data handling.\n\nOpen source on GitHub\nMIT-licensed\nthe standard, versioned and public"
+    },
+    "art_disabled": {
+      "kind": "art_disabled",
+      "title": "Project knowledge, organized for AI.",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "copyVisible": true,
+      "text": "Open standard · MIT\n\nProject knowledge, organized for AI.\n\naDNA (Agentic DNA) is an open standard for organizing a project's files. Three folders and plain Markdown give people and AI agents a shared map.\n\nStart a local workspace with Git and Claude Code.\n\nGet Started\nRead the standard\n\nNew to aDNA? Read the short introduction.\n\n$\ngit clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude\nCopy\n\nA project you can inspect\naDNA.aDNA/\nThis site's project folder\nCLAUDE.md\nFile\nAgent instructions\nSTATE.md\nFile\nWork in progress\nwhat/\nFolder\nKnowledge and decisions\nhow/\nFolder\nPlans and procedures\nwho/\nFolder\nPeople and roles\nCLAUDE.md excerpt\n\nPhase gates are human gates. Never auto-advance between campaign phases without explicit user approval.\n\nRead the full instruction file\n\nThese are written instructions. The structure does not enforce an agent’s behavior.\n\nNot a product or service — no server, no signup; aDNA itself sends nothing.\n\nThe standard that gives it that shape is open. Your files stay on your machine. Your AI tool has its own data handling.\n\nOpen source on GitHub\nMIT-licensed\nthe standard, versioned and public"
+    },
+    "normal_motion": {
+      "kind": "normal_motion",
+      "title": "Project knowledge, organized for AI.",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "copyVisible": true,
+      "text": "Open standard · MIT\n\nProject knowledge, organized for AI.\n\naDNA (Agentic DNA) is an open standard for organizing a project's files. Three folders and plain Markdown give people and AI agents a shared map.\n\nStart a local workspace with Git and Claude Code.\n\nGet Started\nRead the standard\n\nNew to aDNA? Read the short introduction.\n\n$\ngit clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude\nCopy\n\nA project you can inspect\naDNA.aDNA/\nThis site's project folder\nCLAUDE.md\nFile\nAgent instructions\nSTATE.md\nFile\nWork in progress\nwhat/\nFolder\nKnowledge and decisions\nhow/\nFolder\nPlans and procedures\nwho/\nFolder\nPeople and roles\nCLAUDE.md excerpt\n\nPhase gates are human gates. Never auto-advance between campaign phases without explicit user approval.\n\nRead the full instruction file\n\nThese are written instructions. The structure does not enforce an agent’s behavior.\n\nNot a product or service — no server, no signup; aDNA itself sends nothing.\n\nThe standard that gives it that shape is open. Your files stay on your machine. Your AI tool has its own data handling.\n\nOpen source on GitHub\nMIT-licensed\nthe standard, versioned and public"
+    }
+  },
+  "limits": [
+    "Single builder Chromium QA; no human reader observations.",
+    "Native light preference retains dark-first default; light states use the shipped toggle.",
+    "Local preview lacks Vercel speed-insights adapter script."
+  ]
+}

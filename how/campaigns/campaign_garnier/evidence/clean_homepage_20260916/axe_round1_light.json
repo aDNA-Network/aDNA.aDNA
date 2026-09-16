@@ -1,0 +1,13 @@
+[
+  {
+    "id": "color-contrast",
+    "nodes": [
+      {
+        "target": [
+          ".hero-eyebrow"
+        ],
+        "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.12 (foreground color: #e0a84c, background color: #ffffff, font size: 10.8pt (14.4px), font weight: normal). Expected contrast ratio of 4.5:1"
+      }
+    ]
+  }
+]

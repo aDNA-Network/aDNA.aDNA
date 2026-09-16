@@ -5,7 +5,7 @@ status: active
 tags:
 - garnier
 - amendments
-updated: '2026-09-15'
+updated: '2026-09-16'
 last_edited_by: agent_codex
 ---
 # Reached-surface verification recipes
@@ -19,6 +19,18 @@ Run sequentially from `site/`, saving separate exit codes and logs: `npx astro b
 ## R-CAPTURE — rendered route matrix
 
 Read `scripts/viewports.json` for the six names. From the vault root, run `node scripts/visual_capture.mjs --base http://localhost:4465 --routes <mission-routes> --viewports <one-name> --themes <one-theme> --axe --out <mission-evidence>/<viewport>_<theme>` once per viewport/theme pair. Start the isolated preview from `site/` with `npx astro preview --port 4465`; verify the actual bound port and build stamp before the first capture. Stop it before another tool owns the port. One viewport and one theme per invocation closes the genesis axe coverage gap. Compare expected route×viewport×theme rows with successful reports and PNGs; inspect every cited capture. Non-200, missing rows, console errors, or wrong theme are failures, not empty successes. Light and dark plus art-disabled/reflow checks preserve accessible information and legibility.
+
+## R-VISUAL — independent composition review
+
+[D] Accepted by Stanley on2026-09-16 through [[clean_homepage_revision]]. This is consumer-specific review acceptance, not a fork of provider gates or an official score. Reusable process proposal: [[coord_2026_09_16_rosetta_to_vitruvius_independent_visual_review]] (staged only).
+
+[I] Trigger on every substantial layout, imagery, typography, color or motion change. Preserve source/build identity and pre-change captures. After R-CAPTURE, save immutable, versioned **full-page and first-screen** captures in both native themes, including desktop and narrow reading order; include the complete six-width matrix and relevant interaction/reflow states. Check image dimensions and source identity before review. Do not overwrite a pack being reviewed.
+
+[I] Run three separate vision-capable agents using the existing reviewer library: enterprise design critic (design critic + visual designer), cognitive/access critic (anti-bloat editor + accessibility auditor), brand/information critic (brand strategist + information architect). Supply the same audience, constraints, screenshot manifest and factual boundaries; withhold builder explanations and other reviews until each submits. Inspect pixels first. Use constructive adversarial questions: What competes with the main task? What would undermine trust? What meaning does each visual add? Is any essential evidence delayed, hidden or dwarfed? Preserve strengths. Do not impose a number of findings.
+
+[I] Record each finding with visible evidence/region, observation versus inference, consequence, severity, minimal fix and reinspection condition. Builder records disposition and owner. Major issues require correction and another independent look at affected versioned captures; minor deferrals require a reason. Include real-reader limitations. No agent may manufacture comprehension, consent, familiarity or timing observations. Automated green checks and builder opinion do not settle visual acceptance; these critiques also do not certify WCAG or constitute a formal VITRUVIUS rescore.
+
+[I] Reflow receipts distinguish actual browser zoom from CSS zoom, text enlargement, pinch scaling and equivalent CSS viewport narrowing. Test200% and400% and state the mechanism used; never label a resized viewport as observed native browser zoom. Preserve keyboard/focus, copy success/rejection, JS-off, text-spacing and normal/reduced-motion evidence where applicable. P1 readers remain on4465 until an explicit stimulus disposition; candidate work uses4466.
 
 ## R-VOICE — prose, claims and machine twin
 

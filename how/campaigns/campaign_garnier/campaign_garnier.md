@@ -39,6 +39,12 @@ current_phase: 1
 ---
 # Campaign GARNIER
 
+## 2026-09-16 clean-homepage expansion completed
+
+[D] [[clean_homepage_revision]] records the accepted expansion and sourcee745990 at isolated4466. [[clean_homepage_visual_review]]: three independent perspectives, three implementation rounds, no remaining blocking visual finding. [[clean_homepage_verification]]: full696passed/3skipped;12zero-axe cells;12shared comparisons exact; all15frozenP1 hashes unchanged. R-VISUAL is now required for substantial visual changes; prospective P3.1/P3.2 acceptance updated, missions still queued. P1.3 actual readers and DP3 remain open; no general phase entry or publication.
+
+[I] Additional actual160±50kT content-load versus120±40forecast, including reviewers; billing unavailable. Separately booked from earlier65±25kT design and P1/research totals. Session/AAR: [[session_stanley_20260916_052556_garnier_clean_homepage]].
+
 ## 2026-09-16 bounded homepage increment
 
 [D] Stanley accepted [[next_build_scope]], the narrow early-visual exception. [[homepage_design_pass]] delivers source0c77b61 on isolated branch `garnier/homepage-20260916`, preview http://127.0.0.1:4466/. P1 source b1cf040 and all15 route hashes at port4465 remain unchanged. P1.3 readers and DP3 are still open; no general P2/P3 entry or publication. [I] Additional design workload65±25kT against60±25forecast, separately booked from P1; billing unavailable.

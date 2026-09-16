@@ -1,0 +1,16 @@
+[
+  {
+    "theme": "dark",
+    "width": 320,
+    "scroll": 320,
+    "clipped": [],
+    "copy": "exact command success + injected rejection recovery"
+  },
+  {
+    "theme": "light",
+    "width": 320,
+    "scroll": 320,
+    "clipped": [],
+    "copy": "exact command success + injected rejection recovery"
+  }
+]

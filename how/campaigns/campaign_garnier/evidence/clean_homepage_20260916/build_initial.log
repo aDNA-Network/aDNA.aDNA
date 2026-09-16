@@ -1,0 +1,32 @@
+(node:39412) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+13:36:53 [vite] Re-optimizing dependencies because vite config has changed
+13:36:53 [content] Syncing content
+13:36:53 [content] Synced content
+13:36:53 [types] Generated 551ms
+13:36:53 [build] output: "static"
+13:36:53 [build] mode: "static"
+13:36:53 [build] directory: /Users/stanley/.cache/garnier-homepage-20260916/site/dist/
+13:36:53 [build] adapter: @astrojs/vercel
+13:36:53 [build] Collecting build info...
+13:36:53 [build] ✓ Completed in 715ms.
+13:36:53 [build] Building static entrypoints...
+13:36:56 [ERROR] [vite] ✗ Build failed in 2.48s
+src/pages/index.astro (7:39): "projectTree" is not exported by "src/data/home.ts", imported by "src/pages/index.astro".
+file: /Users/stanley/.cache/garnier-homepage-20260916/site/src/pages/index.astro:7:39
+
+5: import RegistryCard from '../components/sections/RegistryCard.astro';
+6: import { buildWebSiteJsonLD } from '../utils/seo';
+7: import { audiences, governanceExample, projectTree } from '../data/home';
+                                          ^
+8: import { STANDARD_VERSION, ENTITY_TYPE_COUNT, STANDARD_LICENSE } from '../data/standard';
+9: import vaultsData, { canonicalVaultSlug } from '../data/vaults';
+
+  Location:
+    /Users/stanley/.cache/garnier-homepage-20260916/site/src/pages/index.astro:7:39
+  Stack trace:
+    at getRollupError (file:///Users/stanley/.cache/garnier-homepage-20260916/site/node_modules/rollup/dist/es/shared/parseAst.js:406:41)
+    at Module.error (file:///Users/stanley/.cache/garnier-homepage-20260916/site/node_modules/rollup/dist/es/shared/node-entry.js:17380:16)
+    at ModuleScope.findVariable (file:///Users/stanley/.cache/garnier-homepage-20260916/site/node_modules/rollup/dist/es/shared/node-entry.js:15403:39)
+    at FunctionBodyScope.findVariable (file:///Users/stanley/.cache/garnier-homepage-20260916/site/node_modules/rollup/dist/es/shared/node-entry.js:5676:38)
+    at FunctionBodyScope.findVariable (file:///Users/stanley/.cache/garnier-homepage-20260916/site/node_modules/rollup/dist/es/shared/node-entry.js:5676:38)

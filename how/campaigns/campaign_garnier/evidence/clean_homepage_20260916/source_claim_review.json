@@ -1,0 +1,43 @@
+{
+  "recordedAt": "2026-09-16T06:13:39.305Z",
+  "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+  "rule": "Phase gates are human gates. Never auto-advance between campaign phases without explicit user approval.",
+  "registryDestinations": [
+    "/vaults/adna/",
+    "/vaults/canvas/",
+    "/vaults/home/",
+    "/vaults/iii/",
+    "/vaults/laventuregraph/",
+    "/vaults/operations/",
+    "/vaults/rarearchive/",
+    "/vaults/wga/"
+  ],
+  "groups": [
+    {
+      "label": "in use",
+      "slugs": [
+        "adna",
+        "iii",
+        "operations",
+        "laventuregraph",
+        "home"
+      ]
+    },
+    {
+      "label": "chartered",
+      "slugs": [
+        "wga",
+        "rarearchive"
+      ]
+    },
+    {
+      "label": "planned",
+      "slugs": [
+        "canvas"
+      ]
+    }
+  ],
+  "sourceHtmlTwinChecks": "passed",
+  "illustrationCount": 0,
+  "limitation": "Builder source/DOM review; no participant-comprehension or formal score claim."
+}

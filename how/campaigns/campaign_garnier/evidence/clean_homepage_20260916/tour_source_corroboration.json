@@ -1,0 +1,34 @@
+{
+  "recorded_at": "2026-09-16T06:13:01.713197+00:00",
+  "rows": [
+    {
+      "path": "site/src/data/tour_manifest.json",
+      "sha256": "9c707b25cbee79921a409a43ef66a8687337e938ffa7cd513394f3f0311c0310",
+      "matches_primary": true
+    },
+    {
+      "path": "site/src/data/tour/workspace-router.txt",
+      "sha256": "dac6ea82437103986416b23ec487fe3f4ac6f5ebd912321db51f1699aa887d2b",
+      "matches_primary": true
+    },
+    {
+      "path": "site/src/data/tour/standard-governance.txt",
+      "sha256": "8b9e85c7952a501324dce5300fcfaeac571868bec5d439067779a59cf677190b",
+      "matches_primary": true
+    },
+    {
+      "path": "site/src/data/tour/skill-project-fork.txt",
+      "sha256": "50240c92842ebe2dbc203f650aaec80d8638f4bc82fe45247f739833e296262b",
+      "matches_primary": true
+    },
+    {
+      "path": "site/src/data/tour/skill-onboarding.txt",
+      "sha256": "f06458baafdc22ab4f1cc727413b3d8a07b7acf359b12323bc174e9e45cbee61",
+      "matches_primary": true
+    }
+  ],
+  "local_sync_sha": "81b1220a2980c468c875f190e78880cefa4a9834",
+  "object_type": "commit",
+  "read_only_check_log": "tour_source_check.log",
+  "limits": "Separate corroboration of the two missing-sibling-checkout skips; skipped tests remain skipped."
+}

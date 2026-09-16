@@ -16,6 +16,8 @@ Campaign `campaign_garnier`; owner Stanley Bishop (`stanley`); Rosetta executor 
 
 ## Quick Start
 
+[D] **2026-09-16 accepted expansion, completed:** Stanley's “Implement the plan” ratifies [[clean_homepage_revision]]: whole-homepage clean composition plus independent enterprise, cognitive/access and brand/information review for substantial visual changes. Decision accepted; ratified-by Stanley Bishop; date2026-09-16; status accepted. Candidate sourcee745990/port4466; [[clean_homepage_visual_review]] and [[clean_homepage_verification]] carry final evidence. `R-VISUAL` in [[verification_recipes]] is current acceptance practice; future P3.1/P3.2 remain queued. FrozenP1b1cf040/4465 and open humans/DP3 are preserved. The earlier narrower authorization below remains historical, not the current candidate identity.
+
 [D] **2026-09-16 limited sequence exception:** Stanley explicitly approved [[next_build_scope]]: homepage-only hierarchy, connected file examples and interaction finish in a separate preview, forecast60±25kT. This permits that early visual increment while P1 b1cf040/port4465 remains frozen. It does not accept DP3 or waive the real-reader requirements, and grants no general P2/P3 entry. Decision accepted; ratified-by Stanley Bishop; date2026-09-16; status accepted. Implementation and verification: [[homepage_design_pass]].
 
 Read [[campaign_garnier]], [[instrument_boundary]], [[haussmann_reconciliation_ledger]], and the current mission in [[session_prompts_garnier]]. Check active sessions, inbox and git status; open a scoped session before writing. Do not execute queued campaign missions until their human gates are ratified.

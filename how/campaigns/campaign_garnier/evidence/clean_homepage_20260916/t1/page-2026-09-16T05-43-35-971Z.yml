@@ -1,0 +1,345 @@
+- generic [active] [ref=f1e1]:
+  - link "Skip to main content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - link "aDNA home" [ref=f1e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f1e6]: a
+        - generic [ref=f1e7]: DNA
+      - generic [ref=f1e8]:
+        - link "Get Started" [ref=f1e9] [cursor=pointer]:
+          - /url: /get-started
+        - link "GitHub repository" [ref=f1e10] [cursor=pointer]:
+          - /url: https://github.com/aDNA-Network/aDNA
+        - button "Toggle dark mode" [ref=f1e13] [cursor=pointer]
+        - button "Toggle menu" [ref=f1e20] [cursor=pointer]
+  - main [ref=f1e22]:
+    - generic [ref=f1e24]:
+      - generic [ref=f1e25]:
+        - paragraph [ref=f1e26]: Open standard · MIT
+        - heading "Project knowledge, organized for AI." [level=1] [ref=f1e27]
+        - paragraph [ref=f1e28]: aDNA (Agentic DNA) is an open standard for organizing a project's files. Three folders and plain Markdown give people and AI agents a shared map.
+        - paragraph [ref=f1e29]: Start a local workspace with Git and Claude Code.
+        - generic [ref=f1e30]:
+          - link "Get Started" [ref=f1e31] [cursor=pointer]:
+            - /url: /get-started
+          - link "Read the standard" [ref=f1e32] [cursor=pointer]:
+            - /url: /reference/specification
+        - generic [ref=f1e33]:
+          - generic [ref=f1e34]:
+            - generic [ref=f1e35]: $
+            - code [ref=f1e36]: git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude
+            - button "Copy install command" [ref=f1e37] [cursor=pointer]:
+              - generic [ref=f1e41]: Copy
+          - status [ref=f1e42]
+      - generic [ref=f1e44]:
+        - heading "A project you can inspect" [level=2] [ref=f1e45]
+        - generic [ref=f1e46]:
+          - heading [level=3] [ref=f1e47]:
+            - code [ref=f1e48]: aDNA.aDNA/
+          - generic "aDNA.aDNA/" [ref=f1e49]:
+            - generic [ref=f1e50]:
+              - term [ref=f1e51]:
+                - code [ref=f1e52]: CLAUDE.md
+              - definition [ref=f1e53]: Agent instructions
+            - generic [ref=f1e54]:
+              - term [ref=f1e55]:
+                - code [ref=f1e56]: STATE.md
+              - definition [ref=f1e57]: Work in progress
+            - generic [ref=f1e58]:
+              - term [ref=f1e59]:
+                - code [ref=f1e60]: what/
+              - definition [ref=f1e61]: Knowledge and decisions
+            - generic [ref=f1e62]:
+              - term [ref=f1e63]:
+                - code [ref=f1e64]: how/
+              - definition [ref=f1e65]: Plans and procedures
+            - generic [ref=f1e66]:
+              - term [ref=f1e67]:
+                - code [ref=f1e68]: who/
+              - definition [ref=f1e69]: People and roles
+        - generic [ref=f1e70]:
+          - heading [level=3] [ref=f1e71]:
+            - code [ref=f1e72]: CLAUDE.md
+            - text: excerpt
+          - paragraph [ref=f1e73]: "This site uses the structure above. Its instruction file includes this rule:"
+          - blockquote "CLAUDE.md excerpt" [ref=f1e74]:
+            - paragraph [ref=f1e75]: Phase gates are human gates. Never auto-advance between campaign phases without explicit user approval.
+          - link "Read the full instruction file" [ref=f1e76] [cursor=pointer]:
+            - /url: https://github.com/aDNA-Network/aDNA.aDNA/blob/main/CLAUDE.md
+          - paragraph [ref=f1e77]: These are written instructions. The structure does not enforce an agent’s behavior.
+      - generic [ref=f1e78]:
+        - generic [ref=f1e79]:
+          - paragraph [ref=f1e80]: Not a product or service — no server, no signup; aDNA itself sends nothing.
+          - paragraph [ref=f1e81]: The standard that gives it that shape is open. Your files stay on your machine. Your AI tool has its own data handling.
+        - generic [ref=f1e82]:
+          - link "Open source on GitHub" [ref=f1e83] [cursor=pointer]:
+            - /url: https://github.com/aDNA-Network/aDNA
+          - generic [ref=f1e84]: MIT-licensed
+          - link "the standard, versioned and public" [ref=f1e85] [cursor=pointer]:
+            - /url: /reference/specification
+    - region [ref=f1e86]:
+      - generic [ref=f1e87]:
+        - heading "Knowledge worth passing on" [level=2] [ref=f1e88]
+        - generic [ref=f1e89]:
+          - paragraph [ref=f1e90]: "Think of it as AI DNA: the instructions, decisions and knowledge an agent can read."
+          - paragraph [ref=f1e91]: DNA carries our biological inheritance. The knowledge we choose to share can become a cultural inheritance for AI. We want people to build, question and improve it together, for the good of all.
+          - paragraph [ref=f1e92]:
+            - text: Share what you choose. Keep the rest private. Democratic stewardship is the goal;
+            - link "Stanley Bishop stewards the project today" [ref=f1e93] [cursor=pointer]:
+              - /url: /about/
+            - text: .
+    - region [ref=f1e94]:
+      - generic [ref=f1e95]:
+        - heading "What exists today" [level=2] [ref=f1e96]
+        - paragraph [ref=f1e97]:
+          - text: A
+          - link "vault" [ref=f1e98] [cursor=pointer]:
+            - /url: /learn/what-is-adna/
+          - text: is a project folder that follows the standard. Here is a selection from the registry.
+        - paragraph [ref=f1e99]:
+          - text: 74 vaults — every one of them on a single computer, ours. 15 are joined by 14 declared relationships; the rest stand alone.
+          - link "The state of the network, dated" [ref=f1e100] [cursor=pointer]:
+            - /url: /state-of-the-network/
+          - text: .
+        - paragraph [ref=f1e101]:
+          - text: “Tended by” names an
+          - link "AI persona" [ref=f1e102] [cursor=pointer]:
+            - /url: /about/#agent-stewards
+          - text: ", not a person."
+          - link "Who’s behind aDNA" [ref=f1e103] [cursor=pointer]:
+            - /url: /about/
+          - text: .
+        - generic [ref=f1e104]:
+          - region [ref=f1e105]:
+            - generic [ref=f1e106]:
+              - heading "in use" [level=3] [ref=f1e107]
+              - paragraph [ref=f1e108]: Being worked in today.
+            - generic [ref=f1e109]:
+              - link "aDNA the standard in use Tended by Rosetta" [ref=f1e110] [cursor=pointer]:
+                - /url: /vaults/adna/
+                - generic [ref=f1e111]:
+                  - heading "aDNA" [level=4] [ref=f1e112]
+                  - generic [ref=f1e113]: the standard
+                - generic [ref=f1e114]: in use
+                - paragraph [ref=f1e115]: Tended by Rosetta
+              - link "III framework in use Inspect/Introspect/Improve quality framework Tended by Argus" [ref=f1e116] [cursor=pointer]:
+                - /url: /vaults/iii/
+                - generic [ref=f1e117]:
+                  - heading "III" [level=4] [ref=f1e118]
+                  - generic [ref=f1e119]: framework
+                - generic [ref=f1e120]: in use
+                - paragraph [ref=f1e121]: Inspect/Introspect/Improve quality framework
+                - paragraph [ref=f1e122]: Tended by Argus
+              - link "Operations coordination in use Tended by Berthier" [ref=f1e123] [cursor=pointer]:
+                - /url: /vaults/operations/
+                - generic [ref=f1e124]:
+                  - heading "Operations" [level=4] [ref=f1e125]
+                  - generic [ref=f1e126]: coordination
+                - generic [ref=f1e127]: in use
+                - paragraph [ref=f1e128]: Tended by Berthier
+              - link "LA Venture Graph knowledge graph in use LA venture ecosystem knowledge graph (UCLA Anderson + Nerdstage/Demo Day LA) Tended by Cartographer" [ref=f1e129] [cursor=pointer]:
+                - /url: /vaults/laventuregraph/
+                - generic [ref=f1e130]:
+                  - heading "LA Venture Graph" [level=4] [ref=f1e131]
+                  - generic [ref=f1e132]: knowledge graph
+                - generic [ref=f1e133]: in use
+                - paragraph [ref=f1e134]: LA venture ecosystem knowledge graph (UCLA Anderson + Nerdstage/Demo Day LA)
+                - paragraph [ref=f1e135]: Tended by Cartographer
+              - link "Home node in use Tended by Hestia" [ref=f1e136] [cursor=pointer]:
+                - /url: /vaults/home/
+                - generic [ref=f1e137]:
+                  - heading "Home" [level=4] [ref=f1e138]
+                  - generic [ref=f1e139]: node
+                - generic [ref=f1e140]: in use
+                - paragraph [ref=f1e141]: Tended by Hestia
+          - region [ref=f1e142]:
+            - generic [ref=f1e143]:
+              - heading "chartered" [level=3] [ref=f1e144]
+              - paragraph [ref=f1e145]: Scoped and opened; substantive work has not begun.
+            - generic [ref=f1e146]:
+              - link "wga org vault chartered World Genome Academy — buildpack + symphony + site" [ref=f1e147] [cursor=pointer]:
+                - /url: /vaults/wga/
+                - generic [ref=f1e148]:
+                  - heading "wga" [level=4] [ref=f1e149]
+                  - generic [ref=f1e150]: org vault
+                - generic [ref=f1e151]: chartered
+                - paragraph [ref=f1e152]: World Genome Academy — buildpack + symphony + site
+              - link "RareArchive org vault chartered Rare Archive OSS rare-disease AI project Tended by Mnemosyne" [ref=f1e153] [cursor=pointer]:
+                - /url: /vaults/rarearchive/
+                - generic [ref=f1e154]:
+                  - heading "RareArchive" [level=4] [ref=f1e155]
+                  - generic [ref=f1e156]: org vault
+                - generic [ref=f1e157]: chartered
+                - paragraph [ref=f1e158]: Rare Archive OSS rare-disease AI project
+                - paragraph [ref=f1e159]: Tended by Mnemosyne
+          - region [ref=f1e160]:
+            - generic [ref=f1e161]:
+              - heading "planned" [level=3] [ref=f1e162]
+              - paragraph [ref=f1e163]: A named place in the network with a governance skeleton and little else.
+            - link "Canvas platform planned Tended by Mondrian" [ref=f1e165] [cursor=pointer]:
+              - /url: /vaults/canvas/
+              - generic [ref=f1e166]:
+                - heading "Canvas" [level=4] [ref=f1e167]
+                - generic [ref=f1e168]: platform
+              - generic [ref=f1e169]: planned
+              - paragraph [ref=f1e170]: Tended by Mondrian
+        - generic [ref=f1e171]:
+          - link "See all 74 vaults" [ref=f1e172] [cursor=pointer]:
+            - /url: /vaults/
+          - link "Inspect the declared relationships" [ref=f1e173] [cursor=pointer]:
+            - /url: /vaults/graph/
+    - region [ref=f1e174]:
+      - generic [ref=f1e175]:
+        - generic [ref=f1e176]:
+          - heading "Inspect the standard" [level=2] [ref=f1e177]
+          - paragraph [ref=f1e178]: The specification describes the file structure and its rules. Your notes are plain Markdown. Read them in Obsidian, VS Code or GitHub. The workspace gives you a starting point.
+          - generic [ref=f1e179]:
+            - generic [ref=f1e180]: v2.5
+            - generic [ref=f1e181]: MIT License
+            - link "16 Entity Types" [ref=f1e182] [cursor=pointer]:
+              - /url: /learn/what-is-adna#entity-types
+          - generic [ref=f1e183]:
+            - link "Read the Specification" [ref=f1e184] [cursor=pointer]:
+              - /url: /reference/specification
+            - link "View on GitHub" [ref=f1e185] [cursor=pointer]:
+              - /url: https://github.com/aDNA-Network/aDNA
+          - generic [ref=f1e186]:
+            - heading "New to aDNA? Start here" [level=3] [ref=f1e187]
+            - paragraph [ref=f1e188]:
+              - text: Explore the
+              - link "short introduction" [ref=f1e189] [cursor=pointer]:
+                - /url: /learn/what-is-adna
+              - text: ","
+              - link "concepts" [ref=f1e190] [cursor=pointer]:
+                - /url: /learn
+              - text: or
+              - link "tutorials" [ref=f1e191] [cursor=pointer]:
+                - /url: /learn/tutorials
+              - text: .
+        - generic [ref=f1e192]:
+          - heading "Built to be read by agents" [level=3] [ref=f1e193]
+          - paragraph [ref=f1e194]: "This site provides text and data alongside its pages:"
+          - list [ref=f1e195]:
+            - listitem [ref=f1e196]:
+              - link "/llms.txt" [ref=f1e197] [cursor=pointer]:
+                - /url: /llms.txt
+              - generic [ref=f1e198]:
+                - text: A curated index.
+                - link "/llms-full.txt" [ref=f1e199] [cursor=pointer]:
+                  - /url: /llms-full.txt
+                - text: contains the full corpus.
+            - listitem [ref=f1e200]:
+              - generic [ref=f1e201]: Markdown twins
+              - generic [ref=f1e202]:
+                - text: 226 pages have a text version. Add
+                - code [ref=f1e203]: .md
+                - text: to a documentation URL, or request
+                - code [ref=f1e204]: "Accept: text/markdown"
+                - text: .
+            - listitem [ref=f1e205]:
+              - link "/api/registry.v1.json" [ref=f1e206] [cursor=pointer]:
+                - /url: /api/registry.v1.json
+              - generic [ref=f1e207]: The registry as versioned JSON.
+    - region [ref=f1e208]:
+      - generic [ref=f1e209]:
+        - generic [ref=f1e210]:
+          - heading "Build with us" [level=2] [ref=f1e211]
+          - paragraph [ref=f1e212]:
+            - text: Try the workspace. Report a confusing instruction. Propose a change to the
+            - link "standard" [ref=f1e213] [cursor=pointer]:
+              - /url: /reference/governance-model/
+            - text: . Each is a way to help.
+          - generic [ref=f1e214]:
+            - link "Find a way to contribute" [ref=f1e215] [cursor=pointer]:
+              - /url: /community/
+            - link "See the public-good work" [ref=f1e216] [cursor=pointer]:
+              - /url: /commons/
+          - paragraph [ref=f1e217]:
+            - generic [ref=f1e218]: aDNA for
+            - link "Solo Developer" [ref=f1e219] [cursor=pointer]:
+              - /url: /use-cases/solo-developer/
+            - generic [ref=f1e220]: ·
+            - link "Enterprise Team" [ref=f1e221] [cursor=pointer]:
+              - /url: /use-cases/enterprise-team/
+            - generic [ref=f1e222]: ·
+            - link "Educator" [ref=f1e223] [cursor=pointer]:
+              - /url: /use-cases/educator/
+            - generic [ref=f1e224]: ·
+            - link "Startup" [ref=f1e225] [cursor=pointer]:
+              - /url: /use-cases/startup/
+            - generic [ref=f1e226]: ·
+            - link "Researcher" [ref=f1e227] [cursor=pointer]:
+              - /url: /use-cases/research-lab/
+        - generic [ref=f1e228]:
+          - heading "What's new" [level=2] [ref=f1e229]
+          - list [ref=f1e230]:
+            - listitem [ref=f1e231]:
+              - link [ref=f1e232] [cursor=pointer]:
+                - /url: /changelog
+                - time [ref=f1e233]: Sep 11, 2026
+              - generic [ref=f1e234]: "aDNA v8.11: a promise retired, and a dead link found"
+            - listitem [ref=f1e235]:
+              - link [ref=f1e236] [cursor=pointer]:
+                - /url: /changelog
+                - time [ref=f1e237]: Sep 7, 2026
+              - generic [ref=f1e238]: Field speed data, and a v8.10 fix to the standard
+            - listitem [ref=f1e239]:
+              - link [ref=f1e240] [cursor=pointer]:
+                - /url: /changelog
+                - time [ref=f1e241]: Sep 4, 2026
+              - generic [ref=f1e242]: A promise the homepage could not keep
+          - paragraph [ref=f1e243]:
+            - link "Full changelog" [ref=f1e244] [cursor=pointer]:
+              - /url: /changelog
+            - generic [ref=f1e245]: ·
+            - link "RSS feed" [ref=f1e246] [cursor=pointer]:
+              - /url: /rss.xml
+  - contentinfo [ref=f1e247]:
+    - generic [ref=f1e248]:
+      - generic [ref=f1e249]:
+        - generic [ref=f1e250]: aDNA
+        - paragraph [ref=f1e251]: Give your project a knowledge architecture that both humans and AI agents can navigate.
+      - navigation "Footer navigation" [ref=f1e252]:
+        - link "Network" [ref=f1e253] [cursor=pointer]:
+          - /url: /network
+        - link "Vaults" [ref=f1e254] [cursor=pointer]:
+          - /url: /vaults
+        - link "Commons" [ref=f1e255] [cursor=pointer]:
+          - /url: /commons
+        - link "Community" [ref=f1e256] [cursor=pointer]:
+          - /url: /community
+        - link "Proposals" [ref=f1e257] [cursor=pointer]:
+          - /url: /community/proposals/
+        - link "About" [ref=f1e258] [cursor=pointer]:
+          - /url: /about
+        - link "State of the network" [ref=f1e259] [cursor=pointer]:
+          - /url: /state-of-the-network
+        - link "Canonical properties" [ref=f1e260] [cursor=pointer]:
+          - /url: /canonical-properties
+        - link "Security" [ref=f1e261] [cursor=pointer]:
+          - /url: /security
+        - link "Privacy" [ref=f1e262] [cursor=pointer]:
+          - /url: /privacy
+        - link "Accessibility" [ref=f1e263] [cursor=pointer]:
+          - /url: /accessibility
+        - link "Specification" [ref=f1e264] [cursor=pointer]:
+          - /url: /reference/specification
+        - link "Glossary" [ref=f1e265] [cursor=pointer]:
+          - /url: /glossary
+        - link "Guides" [ref=f1e266] [cursor=pointer]:
+          - /url: /how
+        - link "Get Started" [ref=f1e267] [cursor=pointer]:
+          - /url: /get-started
+        - link "Changelog" [ref=f1e268] [cursor=pointer]:
+          - /url: /changelog
+        - link "Design system" [ref=f1e269] [cursor=pointer]:
+          - /url: /design-system
+        - link "RSS" [ref=f1e270] [cursor=pointer]:
+          - /url: /rss.xml
+        - link "llms.txt" [ref=f1e271] [cursor=pointer]:
+          - /url: /llms.txt
+        - link "GitHub" [ref=f1e272] [cursor=pointer]:
+          - /url: https://github.com/aDNA-Network/aDNA
+      - paragraph [ref=f1e273]: © 2026 aDNA Network. Released under the MIT License.

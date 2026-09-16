@@ -1,0 +1,74 @@
+{
+  "at": "2026-09-16T06:19:38.031153+00:00",
+  "rows": [
+    {
+      "path": "STATE.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/campaigns/campaign_garnier/AGENTS.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/campaigns/campaign_garnier/CLAUDE.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/campaigns/campaign_garnier/campaign_garnier.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/campaigns/campaign_garnier/artifacts/amendments/rolling_closure_ledger.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/campaigns/campaign_garnier/artifacts/amendments/verification_recipes.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/campaigns/campaign_garnier/artifacts/research/next_build_scope.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/campaigns/campaign_garnier/artifacts/research/clean_homepage_revision.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/campaigns/campaign_garnier/artifacts/research/clean_homepage_visual_review.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/campaigns/campaign_garnier/artifacts/research/clean_homepage_verification.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/campaigns/campaign_garnier/missions/mission_garnier_p3_1_design_system.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/campaigns/campaign_garnier/missions/mission_garnier_p3_2_hero_slots.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/campaigns/campaign_garnier/missions/session_prompts_garnier.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "what/design/garnier_quality_research.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "how/sessions/history/2026-09/session_stanley_20260916_052556_garnier_clean_homepage.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "who/coordination/coord_2026_09_16_rosetta_to_vitruvius_independent_visual_review.md",
+      "metadata_and_links": "passed"
+    },
+    {
+      "path": "who/coordination/coord_2026_09_16_rosetta_to_hestia_homepage_purpose_descriptions.md",
+      "metadata_and_links": "passed"
+    }
+  ],
+  "limited_to": "Structure/metadata/scope; not source correctness or human evidence."
+}

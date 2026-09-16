@@ -1,0 +1,104 @@
+{
+  "recorded_at": "2026-09-16T06:16:31.624594+00:00",
+  "source_commit": "e745990a77bc685bd3674f6e40fa2e04c3d781f5",
+  "branch": "garnier/homepage-20260916",
+  "checkout": "/Users/stanley/.cache/garnier-homepage-20260916",
+  "origin": "http://127.0.0.1:4466",
+  "sources": {
+    "site/src/components/sections/HomeHero.astro": "83de8f29b11f22845f9c8b0b44a8153b51626fc6c03787f7c8d990f60cda852d",
+    "site/src/components/sections/RegistryCard.astro": "7ebc497eddcbd8fb92454447a22c8d0a9d2d0485b9894c145ffce0305fab8e73",
+    "site/src/data/home.ts": "3e2a9c1411a0db38ab936b67e32d4b3015dd5345a3ec06d53207b029d3d8e1b6",
+    "site/src/pages/index.astro": "6702aff600e495a48597950d3c1978fc9544b460dd9da3f4b9a59f4dac348a17",
+    "site/tests/gates/gate-10-perf.spec.ts": "9d0b67d4ea38f8ab165a98574f54f2c84289d4b365e642b318698e3ab69f8cc8",
+    "site/tests/gates/gate-11-hero-banner.spec.ts": "5435ce86bc3de75bb56564b0109ce0962e58eedf1553ecf3a36486c8ce2a91f5",
+    "site/tests/gates/gate-23-hero-claims.spec.ts": "6476ca82c5eab574b05e4415dd33e4e8fc6c3c59bc5352a45824c2b3a1e9ee2d",
+    "site/tests/gates/gate-39-figure-typeset.spec.ts": "a9bf4461f6014cf20ab0855b153bfd714e0957f8fef5c74e90ecaade26441027"
+  },
+  "round3_source_hashes_match": true,
+  "round3_image_hashes_match": true,
+  "built_homepage_sha256": "88d55ab664b43bb8e783a921295db7ca04d22beef3bb01efb42827b4586e7517",
+  "built_twin_sha256": "b63a000a4a6ef1f2c2964c1e3df5924749fece5111be0f771e9eed863960b6c3",
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "sha256": "88d55ab664b43bb8e783a921295db7ca04d22beef3bb01efb42827b4586e7517"
+    },
+    {
+      "route": "/get-started",
+      "status": 200,
+      "sha256": "e3584c5a4ddb01ee4328ccbc684689a2b13629906acd8f87af1f41b5411a870f"
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "status": 200,
+      "sha256": "3ebb7205f16934627ef15092716f5ceb7a5b96629a0165f50cd2f792e40d1c8e"
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "sha256": "51f9c91457771d729999d079768c9e5026d2598bf9446996b29bc4f69e19b04f"
+    },
+    {
+      "route": "/community",
+      "status": 200,
+      "sha256": "ab66d288c274a185cdbecc8f90f14dabe9bf8877966e12b2c3804aab17649684"
+    },
+    {
+      "route": "/commons",
+      "status": 200,
+      "sha256": "c13e5a055a8e38e8c008cb5bf9aa8a8daa73669bd7e249b6fef45e6f789457be"
+    },
+    {
+      "route": "/network",
+      "status": 200,
+      "sha256": "93c88c26657a3237252b5c34c25c080eb2fbef36bb7e3cfb4836c09ddeab8ed5"
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "sha256": "d3ac55ec215f9b67b6ac7b464c3559e587fec4ce012236cc47fabe0a75597a9d"
+    },
+    {
+      "route": "/state-of-the-network",
+      "status": 200,
+      "sha256": "da621470febeedda5bf9d212717ed6e9c13faaabe047dbf739825780a949257c"
+    },
+    {
+      "route": "/vaults",
+      "status": 200,
+      "sha256": "12b3165e7576278da9b771cafe44273626b54a12972c0d68f72d60e47bc78657"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "status": 200,
+      "sha256": "d8713904da3f132167da83002b7972792f18c0c4ef01f3a0ebe469d5eef38fad"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "status": 200,
+      "sha256": "187d841e094464e95df996867c4fb0ff1ad2f40dfdffb63c2b3c372760aeee9d"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "status": 200,
+      "sha256": "b8b7a5266fa2d47ddd8ec0f471328b6866b150827db453a53230d760c5ed6e3f"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "status": 200,
+      "sha256": "1fe730ef2f066aa6306dcdc3245657ef548606a76e9a8c489d2673faff1c5457"
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "status": 200,
+      "sha256": "4dda86dd7653fe4d2d550b013a28e43049f3aa669e6f9449580963015025e724"
+    }
+  ],
+  "build_log": "build_final.log",
+  "build_pages": 229,
+  "limits": [
+    "Local candidate, not deployed.",
+    "Native Chrome zoom capture is Round2; final Round3 changes separately covered by six-width matrix and expanded text spacing."
+  ]
+}

@@ -1,0 +1,1495 @@
+diff --git a/site/src/components/sections/HomeHero.astro b/site/src/components/sections/HomeHero.astro
+index f402f79..92cf996 100644
+--- a/site/src/components/sections/HomeHero.astro
++++ b/site/src/components/sections/HomeHero.astro
+@@ -12,7 +12,9 @@ interface Stat {
+ }
+ 
+ interface Props {
+-  heroImage: ImageMetadata;
++  heroImage?: ImageMetadata;
++  /** Plain reading surface, opt-in. Illustrated consumers keep their existing presentation. */
++  presentation?: 'illustrated' | 'plain';
+   heroAlt?: string;
+   title?: string;
+   lead?: string;
+@@ -94,6 +96,7 @@ interface Props {
+ 
+ const {
+   heroImage,
++  presentation = 'illustrated',
+   heroAlt = "A bird's-eye pixel-art map of cozy vault-buildings linked by glowing cyan and purple conduits — the aDNA network sharing context, AI, and DNA",
+   title = 'The aDNA Network',
+   /* HAUSSMANN P1.1 / ADR-048 §Direction-picked — the ratified definition-as-hero lead.
+@@ -148,6 +151,9 @@ const {
+ // agent_codex · 2026-09-15: named example slot is opt-in; other hero consumers retain their output.
+ const exampleLed = Astro.slots.has('example');
+ const graphLed = Boolean(heroGraph) || exampleLed;
++const plain = presentation === 'plain';
++if (!plain && !heroImage) throw new Error('HomeHero: illustrated presentation requires heroImage');
++if (plain && !exampleLed) throw new Error('HomeHero: plain presentation requires the concrete example slot');
+ 
+ // HAUSSMANN P1.2 — the proof block used to require `proofNames`; home now passes a disclosure
+ // SENTENCE with no name list, so either alone is enough to render it. Consumers that pass neither
+@@ -172,27 +178,16 @@ const heroNodes = heroGraph
+   : [];
+ ---
+ 
+-<section class:list={['hero', 'dark', { 'hero--graph-led': graphLed, 'hero--example-led': exampleLed }]}>
++<section class:list={['hero', { dark: !plain, 'hero--plain': plain, 'hero--graph-led': graphLed, 'hero--example-led': exampleLed }]}>
+   {graphLed ? (
+     <Fragment>
+-      {/* GRAPH-LED variant (Storyweave direction A, home only): the rebuilt connected graph becomes
+-          the hero — copy LEFT, graph RIGHT, so the fold reads as "a real, running network." The
+-          pixel-art asset is demoted to a dimmed full-bleed GROUND behind the whole hero (kept VISIBLE
+-          + 16:9 + <picture> AVIF/WebP so gate-11 still passes; it grounds the warm register without
+-          competing with the copy). A scrim over it guarantees AA text contrast (gate-4). */}
+-      <div class="hero-ground" aria-hidden="true">
+-        <Picture
+-          src={heroImage}
+-          alt={heroAlt}
+-          widths={[768, 1024, 1408]}
+-          formats={["avif", "webp"]}
+-          sizes="100vw"
+-          class="hero-stage-img"
+-          loading="eager"
+-          fetchpriority="high"
+-        />
++      {/* Art is optional presentation, never a requirement imposed by an image-presence test. */}
++      {!plain && heroImage && <div class="hero-ground" aria-hidden="true">
++        <Picture src={heroImage!} alt={heroAlt} widths={[768, 1024, 1408]}
++          formats={["avif", "webp"]} sizes="100vw" class="hero-stage-img"
++          loading="eager" fetchpriority="high" />
+         <div class="hero-ground-scrim"></div>
+-      </div>
++      </div>}
+ 
+       <div class="hero-grid">
+         <div class="hero-copy">
+@@ -228,6 +223,8 @@ const heroNodes = heroGraph
+             <a href={secondaryHref} class="btn btn-secondary" data-astro-prefetch>{secondaryLabel}</a>
+           </div>
+ 
++          {plain && <slot name="orientation" />}
++
+           {/* R2 hero-level install (Storyweave M5.1a): the clone-and-run one-liner as a copy-pill,
+               a tertiary "or start now" affordance under the CTAs (Get Started stays the fuller CTA).
+               Command is the SINGLE SOURCE (install_truth.json one_liner) passed from index.astro —
+@@ -249,6 +246,7 @@ const heroNodes = heroGraph
+             </div>
+           )}
+ 
++          {!plain && <Fragment>
+           {exampleLed && (notLine || reframe) && (
+             <div class="hero-privacy">
+               {notLine && <p>{notLine}</p>}
+@@ -273,6 +271,8 @@ const heroNodes = heroGraph
+             <a href="/reference/specification" class="trust-link" data-astro-prefetch>the standard, versioned and public</a>
+           </div>
+ 
++          </Fragment>}
++
+           {/* HAUSSMANN P1.2 — proof BEFORE the stat strip (Berthier: the hero was leading with
+               insider stats rather than the compelling number). */}
+           {showProof && (
+@@ -320,6 +320,19 @@ const heroNodes = heroGraph
+           <figcaption class="hero-graph-caption">{heroGraphCaption}</figcaption>
+         </figure>
+         )}
++        {plain && (
++          <div class="hero-notes">
++            <div class="hero-privacy">
++              {notLine && <p>{notLine}</p>}
++              {reframe && <p class="hero-reframe">{reframe}</p>}
++            </div>
++            <div class="hero-trust-links">
++              <a href={githubHref} target="_blank" rel="noopener" class="trust-link">Open source on GitHub</a>
++              <span class="trust-link trust-static">{STANDARD_LICENSE}-licensed</span>
++              <a href="/reference/specification" class="trust-link" data-astro-prefetch>the standard, versioned and public</a>
++            </div>
++          </div>
++        )}
+         {/* Storyweave P3 / M3.1 — the hero graph's keyboard/AT/no-JS deep-link twin. Visually hidden;
+             revealed on keyboard focus. Each connected vault opens its own /vaults/[slug] page. */}
+         {heroNodes.length > 0 && (
+@@ -343,7 +356,7 @@ const heroNodes = heroGraph
+          ratifies. UNCHANGED from before the graph-led variant — /network + /commons render this. */}
+       <div class="hero-stage">
+         <Picture
+-          src={heroImage}
++          src={heroImage!}
+           alt={heroAlt}
+           widths={[768, 1024, 1408]}
+           formats={["avif", "webp"]}
+@@ -786,7 +799,7 @@ const heroNodes = heroGraph
+   }
+ 
+   /* R3 license eyebrow (Storyweave M5.1a) — a small tracked label above the title. The hero is
+-     always `.dark`, so the warm accent ink sits on the dark ground at AAA contrast (gate-4). */
++     illustrated by default; the opt-in plain presentation overrides this with native-theme text ink. */
+   .hero-eyebrow {
+     font-size: var(--text-sm);
+     font-weight: var(--font-weight-semibold);
+@@ -1396,4 +1409,34 @@ const heroNodes = heroGraph
+   @media (max-width: 1024px) {
+     .hero--example-led .hero-grid { grid-template-columns: 1fr; max-width: 44rem; gap: var(--space-10); }
+   }
++  /* agent_codex · 2026-09-16: native theme and quiet surfaces for the opt-in homepage. */
++  .hero--plain { padding-block: var(--space-16) var(--space-10); }
++  .hero--plain::before { content: none; background: none; }
++  .hero--plain .hero-grid { column-gap: var(--space-12); row-gap: var(--space-8); }
++  .hero--plain .hero-title { margin-top: 0; }
++  .hero--plain .hero-eyebrow, .hero--plain .hero-install-prompt { color: var(--color-text-muted); }
++  .hero--plain .hero-notes {
++    grid-column: 1 / -1;
++    display: grid;
++    grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
++    column-gap: var(--space-12);
++    padding-top: var(--space-6);
++    border-top: 1px solid var(--color-border);
++  }
++  .hero--plain .hero-privacy { margin: 0; max-width: none; }
++  .hero--plain .hero-trust-links {
++    margin: 0;
++    align-content: start;
++    align-items: flex-start;
++    gap: var(--space-2) var(--space-5);
++    font-size: var(--text-sm);
++    text-align: left;
++  }
++  .hero--plain .trust-link { font-size: inherit; }
++  @media (max-width: 1024px) {
++    .hero--plain { padding-top: var(--space-10); }
++    .hero--plain .hero-grid { row-gap: var(--space-5); }
++    .hero--plain .hero-lead { margin-bottom: var(--space-6); }
++    .hero--plain .hero-notes { grid-template-columns: 1fr; gap: var(--space-5); }
++  }
+ </style>
+diff --git a/site/src/components/sections/RegistryCard.astro b/site/src/components/sections/RegistryCard.astro
+index b7e4123..768b531 100644
+--- a/site/src/components/sections/RegistryCard.astro
++++ b/site/src/components/sections/RegistryCard.astro
+@@ -13,8 +13,9 @@
+ interface Props {
+   vault: any;
+   classLabel: string;
++  purpose?: string;
+ }
+-const { vault, classLabel } = Astro.props;
++const { vault, classLabel, purpose } = Astro.props;
+ import { personaLabel, tierOf, tierLabel, tierSlug } from '../../utils/vaultLabels';
+ 
+ // HAUSSMANN P2.4 — the homepage card shows the same lifecycle word as /vaults (ADR-052 §tiers).
+@@ -45,109 +46,28 @@ function shortNote(note: string | null | undefined): string {
+ }
+ 
+ const persona = personaLabel(vault.persona);
+-const note = shortNote(vault.note);
++const note = purpose || shortNote(vault.note);
+ ---
+ 
+-<a class="reg-card" href={`/vaults/${vault.vault_slug}/`}>
++<!-- agent_codex · 2026-09-16: compact entry within a source-derived lifecycle group. -->
++<article class="reg-card">
+   <div class="reg-card-top">
++    <h4 class="reg-name"><a href={`/vaults/${vault.vault_slug}/`}>{vault.display_name}</a></h4>
+     <span class="reg-class">{classLabel}</span>
+-    <span class:list={['reg-status', `tier-${tierSlug(tier)}`]}>{tierLabel(tier)}</span>
+   </div>
+-  <h3 class="reg-name">{vault.display_name}</h3>
+-  {persona && <p class="reg-persona">tended by {persona}</p>}
+-  {note && <p class="reg-note">{note}</p>}
+-  <span class="reg-open" aria-hidden="true">Open vault →</span>
+-</a>
++  <span class:list={['reg-status', 'sr-only', `tier-${tierSlug(tier)}`]}>{tierLabel(tier)}</span>
++  {note && <p class="reg-note">Purpose: {note}</p>}
++  {persona && <p class="reg-persona">Tended by {persona}</p>}
++</article>
+ 
+ <style>
+-  .reg-card {
+-    display: flex;
+-    flex-direction: column;
+-    gap: var(--space-2);
+-    padding: var(--space-5) var(--space-5) var(--space-4);
+-    background: var(--color-surface);
+-    border: 1px solid var(--color-border);
+-    border-radius: var(--radius-lg);
+-    text-decoration: none;
+-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+-  }
+-
+-  .reg-card:hover {
+-    border-color: var(--color-primary);
+-    box-shadow: var(--shadow-md);
+-    transform: translateY(-2px);
+-  }
+-
+-  .reg-card-top {
+-    display: flex;
+-    align-items: center;
+-    justify-content: space-between;
+-    gap: var(--space-2);
+-  }
+-
+-  .reg-class {
+-    font-family: var(--font-mono);
+-    font-size: var(--text-xs);
+-    letter-spacing: 0.04em;
+-    color: var(--color-text-muted);
+-    text-transform: lowercase;
+-  }
+-
+-  .reg-status {
+-    font-family: var(--font-mono);
+-    font-size: var(--text-xs);
+-    padding: 0.1em 0.55em;
+-    border-radius: var(--radius-full);
+-    text-transform: lowercase;
+-  }
+-
+-  .tier-in-use {
+-    background: color-mix(in srgb, var(--color-success) 15%, transparent);
+-    /* Darkened toward text so the pill label meets AA on the pale-success tint (both modes). */
+-    color: color-mix(in srgb, var(--color-success) 55%, var(--color-text));
+-  }
+-
+-  .tier-chartered,
+-  .tier-planned {
+-    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+-    /* More --color-text in the mix = AA on the pale-amber tint in both modes. */
+-    color: color-mix(in srgb, var(--color-accent) 45%, var(--color-text));
+-  }
+-
+-  .status-superseded {
+-    background: color-mix(in srgb, var(--color-text-muted) 15%, transparent);
+-    color: var(--color-text-muted);
+-  }
+-
+-  .reg-name {
+-    font-family: var(--font-display);
+-    font-size: var(--text-lg);
+-    font-weight: var(--font-weight-bold);
+-    color: var(--color-text-heading);
+-    margin: var(--space-1) 0 0;
+-  }
+-
+-  .reg-persona {
+-    font-family: var(--font-mono);
+-    font-size: var(--text-xs);
+-    /* Metadata — muted (purple --color-primary fails AA for xs text on the card surface). */
+-    color: var(--color-text-muted);
+-    margin: 0;
+-  }
+-
+-  .reg-note {
+-    font-size: var(--text-sm);
+-    color: var(--color-text-muted);
+-    line-height: 1.55;
+-    margin: var(--space-1) 0 var(--space-2);
+-  }
+-
+-  .reg-open {
+-    font-family: var(--font-display);
+-    font-size: var(--text-sm);
+-    font-weight: var(--font-weight-semibold);
+-    /* Affordance — cyan link token (AA both modes; purple --color-primary fails for sm text). */
+-    color: var(--color-link);
+-    margin-top: auto;
+-  }
++  .reg-card { display: block; color: var(--color-text); text-decoration: none; min-width: 0; border-radius: var(--radius-sm); }
++  .reg-card-top { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-1) var(--space-3); }
++  .reg-name { font-size: var(--text-base); line-height: 1.6; color: var(--color-link); margin: 0; overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: 0.18em; }
++  .reg-class { font-size: var(--text-sm); color: var(--color-text-muted); }
++  .reg-note { font-size: var(--text-sm); line-height: 1.6; margin: var(--space-2) 0 0; }
++  .reg-persona { font-size: var(--text-sm); line-height: 1.6; color: var(--color-text-muted); margin: var(--space-1) 0 0; }
++  .reg-name a { display: inline-block; color: var(--color-link); }
++  .reg-name a:hover { color: var(--color-text-heading); }
++  .reg-name a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 5px; }
+ </style>
+diff --git a/site/src/data/home.ts b/site/src/data/home.ts
+index e78f73b..07db8f3 100644
+--- a/site/src/data/home.ts
++++ b/site/src/data/home.ts
+@@ -193,10 +193,12 @@ import { resolve } from 'node:path';
+ const publicGovernance = readFileSync(resolve(process.cwd(), '../CLAUDE.md'), 'utf8');
+ const publicRule = publicGovernance.split('\n').find(line => line.startsWith('1. **Phase gates are human gates.**'));
+ if (!publicRule) throw new Error('home: public governance example anchor missing');
+-export const governanceExample = ['# CLAUDE.md — aDNA.aDNA', '', '## Standing Orders', '', publicRule].join('\n');
+-export const projectTree = `aDNA.aDNA/
+-├── CLAUDE.md      Agent instructions
+-├── STATE.md       Work in progress
+-├── what/          Knowledge and decisions
+-├── how/           Plans and procedures
+-└── who/           People and roles`;
++// One actual rule, stripped of its list marker; retain source wording and Markdown emphasis.
++export const governanceExample = publicRule.replace(/^1\. /, '');
++export const projectFiles = [
++  { path: 'CLAUDE.md', kind: 'File', description: 'Agent instructions' },
++  { path: 'STATE.md', kind: 'File', description: 'Work in progress' },
++  { path: 'what/', kind: 'Folder', description: 'Knowledge and decisions' },
++  { path: 'how/', kind: 'Folder', description: 'Plans and procedures' },
++  { path: 'who/', kind: 'Folder', description: 'People and roles' },
++];
+diff --git a/site/src/pages/index.astro b/site/src/pages/index.astro
+index 3468bfa..aa82f0d 100644
+--- a/site/src/pages/index.astro
++++ b/site/src/pages/index.astro
+@@ -1,14 +1,12 @@
+ ---
+ import BaseLayout from '../layouts/BaseLayout.astro';
+ import HomeHero from '../components/sections/HomeHero.astro';
+-import NetworkDiagram from '../components/sections/NetworkDiagram.astro';
+ import RegistryCard from '../components/sections/RegistryCard.astro';
+ import { buildWebSiteJsonLD } from '../utils/seo';
+-import { audiences, governanceExample, projectTree } from '../data/home';
++import { audiences, governanceExample, projectFiles } from '../data/home';
+ import { STANDARD_VERSION, ENTITY_TYPE_COUNT, STANDARD_LICENSE } from '../data/standard';
+ import vaultsData, { canonicalVaultSlug } from '../data/vaults';
+-import { classLabel as sharedClassLabel } from '../utils/vaultLabels';
+-import subnetworksData from '../data/subnetworks.json';
++import { classLabel as sharedClassLabel, TIER_ORDER, tierOf, tierLabel, tierSlug } from '../utils/vaultLabels';
+ // HAUSSMANN P1.2 — the derived network facts the hero, /about and /state-of-the-network all state.
+ // One module so the three surfaces cannot disagree; never type a count here (KW-14).
+ import { connectedCount, edgeCount } from '../data/network_state';
+@@ -16,12 +14,7 @@ import { connectedCount, edgeCount } from '../data/network_state';
+ // Same fixture /get-started + /network consume (built by scripts/build_install_truth.mjs); never
+ // hardcoded. HOME-ONLY additive-optional prop → /network + /commons stay zero-diff.
+ import installTruth from '../data/install_truth.json';
+-import heroImage from '../assets/heroes/hero_adna_helix.png';
+-// Storyweave direction A — the "living network" hero graph: the compact connected-component radial
+-// pre-rendered by scripts/build_graph_svg.mjs (npm run sync:graph) → committed static SVG, imported
+-// raw and inlined by HomeHero as the graph-led hero. HOME-ONLY (the additive-optional `heroGraph`
+-// prop; /network + /commons don't pass it → they keep the image-led hero, zero-diff).
+-import heroGraph from '../assets/hero_graph.svg?raw';
++import subnetworksData from '../data/subnetworks.json';
+ // HAUSSMANN P3.3 O3 — the machine-door block's twin count, DERIVED from the same manifest that
+ // drives twin emission and negotiation (scripts/emit_bespoke_twins.mjs + inject_negotiation.mjs).
+ // Never typed: KW-14 / convention 1. If a twin stops being emitted this number falls with it.
+@@ -56,15 +49,16 @@ const registryVaults = REGISTRY_SLUGS.map((s) => {
+   return v;
+ });
+ const vaultCount = vaultsData.vault_count;
++// Existing public purpose descriptions, matched through the same canonical slug boundary.
++const publicPurposes = new Map(subnetworksData.subnetworks.flatMap(network =>
++  network.members.map(member => [canonicalVaultSlug(member.vault_slug), network.serves] as const)));
++const missingPurposes = registryVaults.filter(v => !publicPurposes.has(v.vault_slug) && !v.note);
++
+ 
+-// Section 5 — the featured public-good subnetworks, teased data-driven from the
+-// subnetworks.json fixture (names/taglines single-sourced, never hardcoded — the
+-// E1-deferred §5 tease now hands off to the live /commons surface; E5 c165).
+-const subnetworks = subnetworksData.subnetworks as Array<{
+-  id: string;
+-  display_name: string;
+-  tagline: string;
+-}>;
++// The same curated selections, grouped by the registry's declared lifecycle.
++const registryGroups = TIER_ORDER.map(tier => ({
++  tier, vaults: registryVaults.filter(v => tierOf(v.status) === tier),
++})).filter(group => group.vaults.length > 0);
+ 
+ const CLASS_LABELS: Record<string, string> = {
+   standard_dev: 'the standard',
+@@ -113,7 +107,9 @@ const latestEntries = (await getSortedChangelog()).slice(0, LATEST_COUNT);
+  * `date` field. Stripped only when the prefix is LITERALLY there, so a title that does not follow
+  * the convention degrades to itself rather than being surgically mangled. */
+ const changelogHeadline = (title: string, version: string) =>
+-  title.startsWith(`${version} — `) ? title.slice(version.length + 3) : title;
++  (title.startsWith(`${version} — `) ? title.slice(version.length + 3) : title)
++    .replace(/^aDNA (v\d[\d.]*):/, 'Workspace $1:')
++    .replace(/\ba (v\d[\d.]*) fix to the standard\b/, 'a workspace $1 fix');
+ 
+ /* `timeZone: 'UTC'` is load-bearing, not cosmetic — R-126. A frontmatter `date: 2026-08-28` parses
+  * to UTC midnight; formatted without a zone it renders in the BUILD MACHINE's, so a build from PDT
+@@ -128,8 +124,7 @@ const changelogDate = (d: Date) =>
+   jsonLD={jsonLD}
+ >
+   <HomeHero
+-    heroImage={heroImage}
+-    heroAlt="A pixel-art DNA helix rising from small computers into connected nodes, in the Tokyo Night palette."
++    presentation="plain"
+     title="Project knowledge, organized for AI."
+     lead="aDNA (Agentic DNA) is an open standard for organizing a project's files. Three folders and plain Markdown give people and AI agents a shared map."
+     audienceSub="Start a local workspace with Git and Claude Code."
+@@ -142,16 +137,18 @@ const changelogDate = (d: Date) =>
+     installOneLiner={installTruth.one_liner}
+     showLicenseEyebrow={true}
+   >
++    <p slot="orientation" class="hero-orientation">New to aDNA? <a href="/learn/what-is-adna">Read the short introduction</a>.</p>
+     <div slot="example" class="file-example">
+       <h2>A project you can inspect</h2>
+       <div class="example-file">
+-        <h3 id="folder-example-title">Folder structure</h3>
+-        <pre class="project-tree" tabindex="0" aria-labelledby="folder-example-title"><code>{projectTree}</code></pre>
++        <h3 id="folder-example-title"><code>aDNA.aDNA/</code><span class="folder-caption">This site's project folder</span></h3>
++        <dl class="project-tree" aria-labelledby="folder-example-title">
++          {projectFiles.map(file => <div class="project-file"><dt><code>{file.path}</code><span class="file-kind">{file.kind}</span></dt><dd>{file.description}</dd></div>)}
++        </dl>
+       </div>
+       <div class="example-file">
+         <h3 id="governance-example-title"><code>CLAUDE.md</code> excerpt</h3>
+-        <p>The site you are reading uses this structure. Its instruction file tells an agent how to work:</p>
+-        <pre class="governance-example" tabindex="0" aria-labelledby="governance-example-title"><code>{governanceExample}</code></pre>
++        <blockquote class="governance-example" aria-labelledby="governance-example-title"><p>{governanceExample.replaceAll('**', '')}</p></blockquote>
+         <a href="https://github.com/aDNA-Network/aDNA.aDNA/blob/main/CLAUDE.md" class="example-source">Read the full instruction file</a>
+         <p class="example-limit">These are written instructions. The structure does not enforce an agent’s behavior.</p>
+       </div>
+@@ -161,37 +158,48 @@ const changelogDate = (d: Date) =>
+   <section class="movement-band" aria-labelledby="inheritance-title">
+     <div class="section-inner">
+       <h2 id="inheritance-title" class="section-title">Knowledge worth passing on</h2>
+-      <p class="movement-lyric">Think of it as AI DNA: the instructions, decisions and knowledge an agent can read.</p>
+-      <p class="movement-reframe">DNA carries our biological inheritance. The knowledge we choose to share can become a cultural inheritance for AI. We want people to build, question and improve it together, for the good of all.</p>
+-      <p class="movement-reframe">Share what you choose. Keep the rest private. Democratic stewardship is the goal; <a href="/about/">Stanley Bishop stewards the project today</a>.</p>
++      <div class="movement-copy">
++        <p class="movement-lyric">Think of it as AI DNA: the instructions, decisions and knowledge an agent can read.</p>
++        <p>DNA carries our biological inheritance. The knowledge we choose to share can become a cultural inheritance for AI. We want people to build, question and improve it together, for the good of all.</p>
++        <p class="stewardship">Share what you choose. Keep the rest private. Democratic stewardship is the goal; <a href="/about/">Stanley Bishop stewards the project today</a>.</p>
++      </div>
+     </div>
+   </section>
+ 
+   <section class="living-registry" aria-labelledby="current-work-title">
+     <div class="section-inner">
+       <h2 id="current-work-title" class="section-title">What exists today</h2>
+-      <p class="section-subtitle">A <a href="/learn/what-is-adna/">vault</a> is a project folder that follows the standard. Here is a selection from the registry.</p>
++      <p class="section-subtitle">A <a href="/learn/what-is-adna/">vault</a> is a project folder that follows the standard. Here is a selection from the registry, grouped by declared status.</p>
+       <p class="registry-disclosure">{vaultCount} vaults — every one of them on a single computer, ours. {connectedCount} are joined by {edgeCount} declared relationships; the rest stand alone. <a href="/state-of-the-network/">The state of the network, dated</a>.</p>
+       <p class="registry-disclosure">“Tended by” names an <a href="/about/#agent-stewards">AI persona</a>, not a person. <a href="/about/">Who’s behind aDNA</a>.</p>
+-      <div class="registry-grid">
+-        {registryVaults.map((v) => <RegistryCard vault={v} classLabel={classLabel(v.class)} />)}
++      {missingPurposes.length > 0 && <p class="registry-disclosure">Purpose descriptions are not listed for {missingPurposes.map(v => v.display_name).join(', ')}.</p>}
++      <div class="registry-groups">
++        {registryGroups.map(group => (
++          <section class="registry-group" aria-labelledby={`registry-${tierSlug(group.tier)}`}>
++            <div class="registry-group-heading">
++              <h3 id={`registry-${tierSlug(group.tier)}`}>{tierLabel(group.tier)}</h3>
++
++            </div>
++            <div class="registry-grid">
++              {group.vaults.map(v => <RegistryCard vault={v} classLabel={classLabel(v.class)} purpose={publicPurposes.get(v.vault_slug)} />)}
++            </div>
++          </section>
++        ))}
++      </div>
++      <div class="registry-actions">
++        <a href="/vaults/">See all {vaultCount} vaults</a>
++        <a href="/vaults/graph/">Inspect the declared relationships</a>
+       </div>
+-      <details class="network-detail">
+-        <summary>Inspect the declared relationships</summary>
+-        <div class="registry-graph dark" set:html={heroGraph} />
+-        <p>{connectedCount} connected vaults · {edgeCount} relationships. <a href="/vaults/graph/">Open the graph and its keyboard navigation</a>.</p>
+-        <NetworkDiagram />
+-      </details>
+-      <p class="registry-actions"><a href="/vaults/">See all {vaultCount} vaults</a></p>
+     </div>
+   </section>
+ 
+   <section class="the-standard" aria-labelledby="standard-title">
+     <div class="section-inner">
++      <div class="standard-reading">
+       <h2 id="standard-title" class="section-title">Inspect the standard</h2>
+       <p class="section-subtitle">The specification describes the file structure and its rules. Your notes are plain Markdown. Read them in Obsidian, VS Code or GitHub. The workspace gives you a starting point.</p>
+       <div class="standard-meta">
+-        <span class="meta-tag">{STANDARD_VERSION}</span>
++        <span class="meta-tag">Specification {STANDARD_VERSION}</span>
+         <span class="meta-tag">{STANDARD_LICENSE} License</span>
+         <a class="meta-tag" href="/learn/what-is-adna#entity-types">{ENTITY_TYPE_COUNT} Entity Types</a>
+       </div>
+@@ -203,38 +211,37 @@ const changelogDate = (d: Date) =>
+         <h3 class="onramp-title">New to aDNA? Start here</h3>
+         <p class="onramp-lead">Explore the <a href="/learn/what-is-adna">short introduction</a>, <a href="/learn">concepts</a> or <a href="/learn/tutorials">tutorials</a>.</p>
+       </div>
++      </div>
+       <div class="machine-door">
+         <h3>Built to be read by agents</h3>
+         <p>This site provides text and data alongside its pages:</p>
+         <ul class="door-list">
+-          <li class="door-item"><a href="/llms.txt" class="door-path">/llms.txt</a><span class="door-note">A curated index. <a href="/llms-full.txt">/llms-full.txt</a> contains the full corpus.</span></li>
+-          <li class="door-item"><span class="door-path">Markdown twins</span><span class="door-note">{twinCount} pages have a text version. Add <code>.md</code> to a documentation URL, or request <code>Accept: text/markdown</code>.</span></li>
+-          <li class="door-item"><a href="/api/registry.v1.json" class="door-path">/api/registry.v1.json</a><span class="door-note">The registry as versioned JSON.</span></li>
++          <li class="door-item"><a href="/llms.txt" class="door-path">/llms.txt</a>{' '}<span class="door-note">A curated index. <a href="/llms-full.txt">/llms-full.txt</a> contains the full corpus.</span></li>
++          <li class="door-item"><span class="door-path">Markdown twins</span>{' '}<span class="door-note">{twinCount} pages have a text version. Add <code>.md</code> to a documentation URL, or request <code>Accept: text/markdown</code>.</span></li>
++          <li class="door-item"><a href="/api/registry.v1.json" class="door-path">/api/registry.v1.json</a>{' '}<span class="door-note">The registry as versioned JSON.</span></li>
+         </ul>
+       </div>
+     </div>
+   </section>
+ 
+   <section class="join-network" aria-labelledby="participate-title">
+-    <div class="section-inner">
++    <div class="section-inner participation-layout">
++    <div class="participation-copy">
+       <h2 id="participate-title" class="section-title">Build with us</h2>
+       <p class="section-subtitle">Try the workspace. Report a confusing instruction. Propose a change to the <a href="/reference/governance-model/">standard</a>. Each is a way to help.</p>
+       <div class="join-cta">
+         <a href="/community/" class="btn btn-primary">Find a way to contribute</a>
+         <a href="/commons/" class="btn btn-secondary">See the public-good work</a>
+       </div>
+-      <p class="audience-pathways"><span class="pathways-label">aDNA for</span>{audiences.map((a, i) => <Fragment><a href={a.href}>{a.label}</a>{i < audiences.length - 1 && <span class="sep" aria-hidden="true">·</span>}</Fragment>)}</p>
++      <p class="audience-pathways"><span class="pathways-label">aDNA for</span>{' '}{audiences.map((a, i) => <Fragment><a href={a.href}>{a.label}</a>{i < audiences.length - 1 && <span class="sep" aria-hidden="true"> · </span>}</Fragment>)}</p>
+     </div>
+     <div class="latest-strip">
+-    <div class="section-inner">
+       <h2 class="section-title">What's new</h2>
+       <ul class="latest-list" role="list">
+         {latestEntries.map((e) => (
+           <li class="latest-item">
+-            <a href="/changelog" class="latest-date">
+-              <time datetime={e.data.date.toISOString()}>{changelogDate(e.data.date)}</time>
+-            </a>
+-            <span class="latest-headline">{changelogHeadline(e.data.title, e.data.version)}</span>
++            <time class="latest-date" datetime={e.data.date.toISOString()}>{changelogDate(e.data.date)}</time>
++            <a href="/changelog" class="latest-headline">{changelogHeadline(e.data.title, e.data.version)}</a>
+           </li>
+         ))}
+       </ul>
+@@ -249,645 +256,82 @@ const changelogDate = (d: Date) =>
+ </BaseLayout>
+ 
+ <style>
+-  /* agent_codex · 2026-09-16: one inspectable document, two related file examples. */
+-  .file-example { color: var(--color-text); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); text-align: left; }
++  /* agent_codex · 2026-09-16: the real project files are the visual anchor. */
++  .file-example { color: var(--color-text); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-bg-alt); text-align: left; overflow-wrap: anywhere; }
+   .file-example h2 { font-size: var(--text-lg); line-height: 1.4; margin: 0; padding: var(--space-5) var(--space-6); color: var(--color-text-heading); }
+   .example-file { padding: var(--space-5) var(--space-6); border-top: 1px solid var(--color-border); }
+   .example-file h3 { font-size: var(--text-sm); font-weight: var(--font-weight-medium); line-height: 1.6; color: var(--color-text-muted); margin: 0 0 var(--space-3); }
+-  .example-file h3 code { font-size: inherit; color: inherit; padding: 0; background: none; }
+-  .file-example p { font-size: var(--text-sm); margin: 0 0 var(--space-4); line-height: 1.65; }
+-  .file-example pre { max-width: 100%; overflow-x: auto; font-family: var(--font-mono); font-size: var(--text-sm); line-height: 1.75; margin: 0; padding: 0 0 var(--space-2); background: none; border: 0; border-radius: 0; }
+-  .file-example .governance-example { white-space: pre-wrap; overflow-wrap: anywhere; }
+-  .file-example pre:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
++  .example-file code { font-size: inherit; color: inherit; padding: 0; background: none; }
++  .project-tree { margin: 0 0 0 var(--space-2); padding-left: var(--space-4); border-left: 1px solid var(--color-border); font-size: var(--text-sm); line-height: 1.6; }
++  .project-file { display: grid; grid-template-columns: minmax(0, 8.5rem) minmax(0, 1fr); gap: var(--space-3); padding-block: var(--space-1); position: relative; }
++  .project-file::before { content: ''; width: var(--space-2); border-top: 1px solid var(--color-border); position: absolute; top: 1em; left: calc(-1 * var(--space-4)); }
++  .project-file dt { color: var(--color-text-heading); display: flex; flex-direction: column; }
++  .file-kind { font-family: var(--font-body); color: var(--color-text-muted); font-size: var(--text-xs); }
++  .folder-caption { display: block; font-family: var(--font-body); font-size: var(--text-xs); margin-top: var(--space-1); }
++  .hero-orientation { font-size: var(--text-sm); color: var(--color-text-muted); margin: var(--space-4) 0 0; text-align: left; }
++  .project-file dd { margin: 0; }
++  .file-example p { font-size: var(--text-sm); margin: 0 0 var(--space-3); line-height: 1.65; }
++  .governance-example { margin: var(--space-4) 0; padding-left: var(--space-4); border-left: 2px solid var(--color-primary); }
++  .governance-example p { color: var(--color-text-heading); }
+   .file-example .example-limit { margin: var(--space-2) 0 0; color: var(--color-text-muted); }
+-  .example-source { display: inline-flex; align-items: center; min-height: 44px; padding-block: var(--space-2); margin-top: var(--space-3); font-size: var(--text-sm); }
+-  .network-detail { max-width: var(--prose-width); margin: var(--space-8) auto; }
+-  .network-detail summary { cursor: pointer; padding: var(--space-4) 0; color: var(--color-link); }
+-  .registry-graph { max-width: 36rem; margin: var(--space-6) auto; background: var(--color-bg); border-radius: var(--radius-lg); }
+-  .registry-graph :global(svg) { display: block; width: 100%; height: auto; }
+-  .latest-strip { margin-top: var(--space-12); }
+-  .machine-door h3 { font-size: var(--text-2xl); }
+-  @media(max-width: 600px) { .file-example h2, .example-file { padding: var(--space-4); } }
+-
+-  /* ——— Movement band (ADR-048): the demoted manifesto lyric, one quiet full-width statement
+-     directly below the fold. Reads as the "why", after the hero has answered the "what". ——— */
+-  .movement-band {
+-    padding: var(--space-10) var(--space-6);
+-    background: var(--color-bg-alt);
+-    border-bottom: 1px solid var(--color-border);
+-  }
+-
+-  .movement-lyric {
+-    max-width: 46rem;
+-    margin: 0 auto;
+-    text-align: center;
+-    font-family: var(--font-display);
+-    font-size: var(--text-xl);
+-    font-weight: 500;
+-    line-height: 1.5;
+-    color: var(--color-text);
+-    text-wrap: balance;
+-  }
+-
+-  /* The concrete twin under the lyric — quieter and smaller, so the lyric keeps the band and this
+-     grounds it rather than competing with it. */
+-  .movement-reframe {
+-    max-width: 42rem;
+-    margin: var(--space-5) auto 0;
+-    text-align: center;
+-    font-size: var(--text-base);
+-    line-height: 1.7;
+-    color: var(--color-text-muted);
+-    text-wrap: pretty;
+-  }
+-
+-  /* ——— Shared section styles ——— */
+-  .section-inner {
+-    max-width: var(--content-width);
+-    margin: 0 auto;
+-    padding: 0 var(--space-6);
+-  }
+-
+-  .section-title {
+-    font-size: var(--text-3xl);
+-    text-align: center;
+-    margin-bottom: var(--space-3);
+-  }
+-
+-  .section-subtitle {
+-    text-align: center;
+-    color: var(--color-text-muted);
+-    font-size: var(--text-lg);
+-    max-width: 36rem;
+-    margin: 0 auto var(--space-10);
+-    line-height: 1.6;
+-  }
+-
+-  /* The disclosure line under the registry count — sits between the subtitle and the grid, quieter
+-     than the subtitle it qualifies. It pulls up under the subtitle's bottom margin so the pair
+-     reads as one block. */
+-  .registry-disclosure {
+-    text-align: center;
+-    color: var(--color-text-muted);
+-    font-size: var(--text-sm);
+-    max-width: 36rem;
+-    margin: calc(var(--space-10) * -1 + var(--space-3)) auto var(--space-10);
+-    line-height: 1.6;
+-  }
+-
+-  /* ——— 1 · What a context democracy is ——— */
+-  .context-democracy {
+-    padding: var(--space-24) 0;
+-  }
+-
+-  /* Storyweave P3 / M3.2 — the S7 first-scroll 4-pillar payoff. Tokens only (AA both modes). */
+-  .democracy-pillars {
+-    list-style: none;
+-    padding: 0;
+-    margin: var(--space-8) auto 0;
+-    max-width: 60rem;
+-    display: grid;
+-    grid-template-columns: repeat(4, 1fr);
+-    gap: var(--space-4);
+-  }
+-  .democracy-pillars li {
+-    text-align: left;
+-    padding: var(--space-4);
+-    border-top: 2px solid var(--color-primary);
+-    background: var(--color-bg-alt);
+-    border-radius: var(--radius-md);
+-  }
+-  .democracy-pillars strong {
+-    display: block;
+-    font-family: var(--font-display);
+-    color: var(--color-text-heading);
+-    margin-bottom: var(--space-1);
+-  }
+-  .democracy-pillars span {
+-    color: var(--color-text-muted);
+-    font-size: var(--text-sm);
+-    line-height: 1.55;
+-  }
+-  @media (max-width: 780px) {
+-    .democracy-pillars { grid-template-columns: repeat(2, 1fr); }
+-  }
+-  @media (max-width: 420px) {
+-    .democracy-pillars { grid-template-columns: 1fr; }
+-  }
+-
+-  .diagram-caption {
+-    text-align: center;
+-    color: var(--color-text-muted);
+-    font-size: var(--text-sm);
+-    max-width: 34rem;
+-    margin: var(--space-8) auto 0;
+-    line-height: 1.6;
+-  }
+-
+-  /* ——— 2 · The living registry ——— */
+-  .living-registry {
+-    padding: var(--space-24) 0;
+-  }
+-
+-  .registry-grid {
+-    display: grid;
+-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+-    gap: var(--space-5);
+-  }
+-
+-  .registry-actions {
+-    text-align: center;
+-    margin-top: var(--space-10);
+-    font-family: var(--font-display);
+-    font-weight: 500;
+-    font-size: var(--text-sm);
+-    display: flex;
+-    gap: var(--space-3);
+-    justify-content: center;
+-    align-items: center;
+-    flex-wrap: wrap;
+-  }
+-
+-  .registry-actions a {
+-    color: var(--color-primary);
+-    text-decoration: none;
+-  }
+-
+-  .registry-actions a:hover {
+-    text-decoration: underline;
+-  }
+-
+-  .registry-actions .sep {
+-    color: var(--color-border);
+-  }
+-
+-  /* ——— How it Works ——— */
+-  .how-it-works {
+-    padding: var(--space-24) 0;
+-    background: var(--color-bg-alt);
+-    overflow-x: hidden;
+-  }
+-
+-  .feature-strip {
+-    display: grid;
+-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+-    gap: var(--space-6);
+-    margin-bottom: var(--space-12);
+-    padding: var(--space-6);
+-    background: var(--color-surface);
+-    border: 1px solid var(--color-border);
+-    border-radius: var(--radius-xl);
+-  }
+-
+-  .feature-item {
+-    display: flex;
+-    flex-direction: column;
+-    gap: var(--space-2);
+-    padding-left: var(--space-4);
+-    border-left: 2px solid var(--color-primary);
+-  }
+-
+-  .feature-item strong {
+-    font-size: var(--text-base);
+-    color: var(--color-text-heading);
+-  }
+-
+-  .feature-item span {
+-    font-size: var(--text-sm);
+-    color: var(--color-text-muted);
+-    line-height: 1.5;
+-  }
+-
+-  .steps-grid {
+-    display: grid;
+-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+-    gap: var(--space-8);
+-  }
+-
+-  .step {
+-    text-align: center;
+-    padding: var(--space-8) var(--space-6);
+-    background: var(--color-surface);
+-    border-radius: var(--radius-xl);
+-    border: 1px solid var(--color-border);
+-    min-width: 0;
+-  }
+-
+-  .step-number {
+-    font-family: var(--font-mono);
+-    font-size: var(--text-sm);
+-    /* Cyan accent — AA both modes (purple --color-primary fails for sm text). */
+-    color: var(--color-link);
+-    font-weight: 600;
+-    margin-bottom: var(--space-4);
+-  }
+-
+-  .step-title {
+-    font-size: var(--text-xl);
+-    margin-bottom: var(--space-3);
+-  }
+-
+-  .step-description {
+-    color: var(--color-text-muted);
+-    line-height: 1.6;
+-    margin-bottom: var(--space-6);
+-  }
+-
+-  .step-demo {
+-    border-radius: var(--radius-md);
+-    overflow: hidden;
+-    border: 1px solid var(--color-border);
+-    background: #13131f;
+-    width: 100%;
+-    box-sizing: border-box;
+-  }
+-
+-  .step-demo-bar {
+-    display: flex;
+-    align-items: center;
+-    gap: var(--space-2);
+-    padding: var(--space-2) var(--space-3);
+-    background: #1c1c2e;
+-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+-  }
+-
+-  .demo-dots {
+-    display: flex;
+-    gap: 5px;
+-    flex-shrink: 0;
+-  }
+-
+-  .demo-dots span {
+-    width: 10px;
+-    height: 10px;
+-    border-radius: 50%;
+-  }
+-
+-  .demo-dots span:nth-child(1) { background: #ff5f57; }
+-  .demo-dots span:nth-child(2) { background: #febc2e; }
+-  .demo-dots span:nth-child(3) { background: #28c840; }
+-
+-  .demo-filename {
+-    color: #aaa;
+-    font-family: var(--font-mono);
+-    font-size: var(--text-xs);
+-    letter-spacing: 0.01em;
+-  }
+-
+-  .step-demo-pre {
+-    margin: 0;
+-    padding: var(--space-4);
+-    color: #c9c9df;
+-    font-family: var(--font-mono);
+-    font-size: var(--text-xs);
+-    line-height: 1.65;
+-    white-space: pre;
+-    overflow-x: auto;
+-    max-width: 100%;
+-    box-sizing: border-box;
+-  }
+-
+-  .how-footer {
+-    text-align: center;
+-    color: var(--color-text-muted);
+-    font-size: var(--text-sm);
+-    margin-top: var(--space-10);
+-    line-height: 1.6;
+-  }
+-
+-  .how-footer a {
+-    color: var(--color-primary);
+-    text-decoration: none;
+-    font-weight: 500;
+-  }
+-
+-  .how-footer a:hover {
+-    text-decoration: underline;
+-  }
+-
+-  /* ——— Learning on-ramp (N-07 / F-CHM-210): a findable "start here" for the
+-     image-holding newcomer — the site is the learning home the image points at. ——— */
+-  .learn-onramp {
+-    max-width: 44rem;
+-    margin: var(--space-12) auto 0;
+-    padding: var(--space-8) var(--space-6);
+-    text-align: center;
+-    background: var(--color-surface);
+-    border: 1px solid var(--color-border);
+-    border-radius: var(--radius-xl);
+-  }
+-
+-  .onramp-title {
+-    font-size: var(--text-xl);
+-    margin-bottom: var(--space-3);
+-  }
+-
+-  .onramp-lead {
+-    color: var(--color-text-muted);
+-    font-size: var(--text-base);
+-    line-height: 1.6;
+-    max-width: 36rem;
+-    margin: 0 auto var(--space-6);
+-  }
+-
+-  .onramp-actions {
+-    display: flex;
+-    gap: var(--space-4);
+-    justify-content: center;
+-    flex-wrap: wrap;
+-  }
+-
+-  /* ——— The Standard ——— */
+-  .the-standard {
+-    /* §5 (.join-network) closes the page now — the --space-32 tail moved there (c165). */
+-    padding: var(--space-24) 0;
+-    background: var(--color-bg-alt);
+-  }
+-
+-  .standard-meta {
+-    display: flex;
+-    justify-content: center;
+-    gap: var(--space-3);
+-    flex-wrap: wrap;
+-    margin-bottom: var(--space-8);
+-  }
+-
+-  .meta-tag {
+-    display: inline-flex;
+-    align-items: center;
+-    padding: 0.25em 0.75em;
+-    border: 1px solid var(--color-border);
+-    border-radius: var(--radius-full);
+-    font-family: var(--font-mono);
+-    font-size: var(--text-xs);
+-    color: var(--color-text-muted);
+-    background: var(--color-surface);
+-    letter-spacing: 0.03em;
+-  }
+-
+-  .standard-cta {
+-    display: flex;
+-    gap: var(--space-4);
+-    justify-content: center;
+-    flex-wrap: wrap;
+-  }
+-
+-  /* ——— Machine door (HAUSSMANN P3.3 O3) ———
+-     Sits between §4 (.the-standard, --color-bg-alt) and §5 (.join-network), so it takes the base
+-     background to keep the alternating band rhythm rather than stacking two tinted sections. */
+-  .machine-door {
+-    padding: var(--space-24) 0;
+-    border-top: 1px solid var(--color-border);
+-  }
+-
+-  .door-list {
+-    list-style: none;
+-    margin: var(--space-8) auto 0;
+-    padding: 0;
+-    max-width: 46rem;
+-    display: grid;
+-    gap: var(--space-5);
+-  }
+-
+-  .door-item {
+-    display: grid;
+-    grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+-    gap: var(--space-4);
+-    align-items: baseline;
+-    padding-bottom: var(--space-5);
+-    border-bottom: 1px solid var(--color-border);
+-  }
+-
+-  .door-item:last-child {
+-    padding-bottom: 0;
+-    border-bottom: none;
+-  }
+-
+-  .door-path {
+-    font-family: var(--font-mono);
+-    font-size: var(--text-sm);
+-    color: var(--color-text);
+-    overflow-wrap: anywhere;
+-  }
+-
+-  .door-note {
+-    font-size: var(--text-sm);
+-    line-height: 1.6;
+-    color: var(--color-text-muted);
+-  }
+-
+-  .door-note code {
+-    font-family: var(--font-mono);
+-    font-size: 0.9em;
+-  }
+-
+-  /* Single column below the two-column breakpoint: a 14rem label column against a narrow viewport
+-     leaves the note squeezed into a ribbon. Mobile integrity is a P1.4 standing concern. */
+-  @media (max-width: 40rem) {
+-    .door-item {
+-      grid-template-columns: minmax(0, 1fr);
+-      gap: var(--space-2);
+-    }
+-  }
+-
+-  /* ——— 5 · Join the network ——— */
+-  .join-network {
+-    padding: var(--space-24) 0 var(--space-32);
+-  }
+-
+-  /* In-text link inside the subtitle — underlined (link-in-text-block, c155 lesson). */
+-  .join-network .section-subtitle a {
+-    color: var(--color-link);
+-    text-decoration: underline;
+-  }
+-
+-  .subnetwork-tease {
+-    list-style: none;
+-    margin: 0 auto var(--space-10);
+-    padding: 0;
+-    display: grid;
+-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+-    gap: var(--space-4);
+-    max-width: 60rem;
+-  }
+-
+-  .tease-item {
+-    display: flex;
+-    flex-direction: column;
+-    gap: var(--space-1);
+-    padding: var(--space-4) var(--space-5);
+-    background: var(--color-surface);
+-    border: 1px solid var(--color-border);
+-    border-radius: var(--radius-lg);
+-    text-align: center;
+-  }
+-
+-  .tease-name {
+-    font-family: var(--font-display);
+-    font-weight: 600;
+-    /* Cyan — AA both modes for small/medium brand-colored text. */
+-    color: var(--color-link);
+-    text-decoration: none;
+-  }
+-
+-  .tease-name:hover {
+-    text-decoration: underline;
+-  }
+-
+-  .tease-tagline {
+-    font-size: var(--text-sm);
+-    color: var(--color-text-muted);
+-    line-height: 1.5;
+-  }
+-
+-  .join-cta {
+-    display: flex;
+-    gap: var(--space-4);
+-    justify-content: center;
+-    flex-wrap: wrap;
+-  }
+-
+-  .audience-pathways {
+-    margin-top: var(--space-10);
+-    font-family: var(--font-display);
+-    font-weight: 500;
+-    font-size: var(--text-sm);
+-    color: var(--color-text-muted);
+-    display: flex;
+-    gap: var(--space-3);
+-    justify-content: center;
+-    align-items: center;
+-    flex-wrap: wrap;
+-  }
+-
+-  /* Underlined — the row mixes muted label text with links (link-in-text-block guard). */
+-  .audience-pathways a {
+-    color: var(--color-link);
+-    text-decoration: underline;
+-  }
+-
+-  .audience-pathways .sep {
+-    color: var(--color-border);
+-  }
+-
+-  /* ——— What's new (GR-4 O4 · D5) — the quietest band on the page, deliberately. It is a
+-     wayfinding affordance for someone who has already been here, so it sits below the join CTA
+-     and reads as a footer shelf rather than competing with it. ——— */
+-  .latest-strip {
+-    padding: 0 0 var(--space-24);
+-  }
+-
+-  .latest-list {
+-    list-style: none;
+-    margin: 0 auto var(--space-6);
+-    padding: 0;
+-    max-width: 48rem;
+-    display: flex;
+-    flex-direction: column;
+-    gap: var(--space-3);
+-  }
+-
+-  .latest-item {
+-    display: flex;
+-    gap: var(--space-4);
+-    align-items: baseline;
+-    justify-content: center;
+-    flex-wrap: wrap;
+-    padding-bottom: var(--space-3);
+-    border-bottom: 1px solid var(--color-border);
+-  }
+-
+-  .latest-item:last-child {
+-    border-bottom: none;
+-    padding-bottom: 0;
+-  }
+-
+-  .latest-date {
+-    font-family: var(--font-mono);
+-    font-size: var(--text-sm);
+-    /* Cyan — AA in both modes for small brand-coloured text, same token as .tease-name. */
+-    color: var(--color-link);
+-    text-decoration: none;
+-    white-space: nowrap;
+-  }
+-
+-  .latest-date:hover {
+-    text-decoration: underline;
+-  }
+-
+-  .latest-headline {
+-    font-size: var(--text-sm);
+-    color: var(--color-text-muted);
+-    line-height: 1.5;
+-  }
+-
+-  /* Underlined — the row is a link cluster with a separator, not prose (link-in-text-block guard,
+-     same treatment as .audience-pathways above). */
+-  .latest-actions {
+-    font-family: var(--font-display);
+-    font-weight: 500;
+-    font-size: var(--text-sm);
+-    display: flex;
+-    gap: var(--space-3);
+-    justify-content: center;
+-    align-items: center;
+-    flex-wrap: wrap;
+-  }
+-
+-  .latest-actions a {
+-    color: var(--color-link);
+-    text-decoration: underline;
+-  }
+-
+-  .latest-actions .sep {
+-    color: var(--color-border);
+-  }
+-
+-  /* ——— Responsive ——— */
+-  @media (max-width: 480px) {
+-    .section-title {
+-      font-size: var(--text-2xl);
+-    }
+-
+-    .section-subtitle {
+-      font-size: var(--text-base);
+-      margin-bottom: var(--space-6);
+-    }
+-
+-    .how-it-works {
+-      padding: var(--space-12) 0;
+-    }
+-
+-    .context-democracy {
+-      padding: var(--space-12) 0;
+-    }
+-
+-    .living-registry {
+-      padding: var(--space-12) 0;
+-    }
+-
+-    .the-standard {
+-      padding: var(--space-12) 0;
+-    }
+-
+-    .join-network {
+-      padding: var(--space-12) 0 var(--space-16);
+-    }
+-
+-    .latest-strip {
+-      padding: 0 0 var(--space-12);
+-    }
+-
+-    .steps-grid {
+-      gap: var(--space-6);
+-    }
+-
+-    .feature-strip {
+-      margin-bottom: var(--space-8);
+-    }
+-
+-    .how-footer {
+-      margin-top: var(--space-6);
+-    }
++  .example-source { display: inline-flex; align-items: center; min-height: 44px; padding-block: var(--space-2); font-size: var(--text-sm); }
++  .section-inner { max-width: var(--content-width); margin: 0 auto; padding: 0 var(--space-6); }
++  .section-title { font-size: var(--text-3xl); line-height: 1.2; margin: 0 0 var(--space-5); text-wrap: balance; }
++  .section-subtitle { color: var(--color-text); font-size: var(--text-base); max-width: 62ch; margin: 0 0 var(--space-6); line-height: 1.7; }
++  .movement-band, .living-registry, .the-standard, .join-network { padding-block: var(--space-16); }
++  .movement-band { border-bottom: 1px solid var(--color-border); }
++  .movement-band .section-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: var(--space-12); }
++  .movement-copy p { line-height: 1.7; margin: 0 0 var(--space-5); max-width: 64ch; }
++  .movement-copy .movement-lyric { font-size: var(--text-lg); color: var(--color-text-heading); }
++  .movement-copy .stewardship { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 0; }
++  .registry-disclosure { max-width: 78ch; color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.7; margin: 0 0 var(--space-3); }
++  .registry-groups { margin-top: var(--space-8); }
++  .registry-group { display: grid; grid-template-columns: minmax(0, 12rem) minmax(0, 1fr); gap: var(--space-8); border-top: 1px solid var(--color-border); padding-block: var(--space-6); }
++  .registry-group-heading h3 { font-size: var(--text-lg); margin: 0 0 var(--space-2); }
++  .registry-group-heading h3::first-letter { text-transform: uppercase; }
++  .registry-group-heading p { font-size: var(--text-sm); line-height: 1.6; color: var(--color-text-muted); margin: 0; }
++  .registry-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5) var(--space-8); align-items: start; }
++  .registry-actions { display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-8); margin-top: var(--space-4); }
++  .registry-actions a { padding-block: var(--space-2); }
++  .the-standard { background: var(--color-bg-alt); border-block: 1px solid var(--color-border); }
++  .the-standard .section-inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-16); }
++  .standard-meta { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-5); color: var(--color-text-muted); font-size: var(--text-sm); margin-bottom: var(--space-6); }
++  .standard-cta, .join-cta { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
++  .learn-onramp { margin-top: var(--space-8); }
++  .onramp-title, .machine-door h3 { font-size: var(--text-lg); margin: 0 0 var(--space-3); }
++  .onramp-lead, .machine-door p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; margin: 0; }
++  .machine-door { padding-left: var(--space-8); border-left: 1px solid var(--color-border); }
++  .door-list { list-style: none; margin: var(--space-5) 0 0; padding: 0; }
++  .door-item { display: grid; gap: var(--space-2); margin: 0; padding-block: var(--space-4); border-top: 1px solid var(--color-border); }
++  .door-path { font-family: var(--font-mono); font-size: var(--text-sm); overflow-wrap: anywhere; }
++  .door-note { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; }
++  .door-note code { font-size: inherit; overflow-wrap: anywhere; }
++  .participation-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-16); }
++  .audience-pathways { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2) var(--space-3); margin-top: var(--space-6); color: var(--color-text-muted); font-size: var(--text-sm); }
++  .latest-strip .section-title { font-size: var(--text-xl); }
++  .latest-list { list-style: none; margin: 0 0 var(--space-4); padding: 0; }
++  .latest-item { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: var(--space-4); padding-block: var(--space-3); border-bottom: 1px solid var(--color-border); font-size: var(--text-sm); line-height: 1.6; }
++  .latest-date { white-space: nowrap; color: var(--color-text-muted); }
++  .latest-headline { color: var(--color-link); }
++  .latest-actions { display: flex; gap: var(--space-3); font-size: var(--text-sm); }
++  .sep { color: var(--color-text-muted); }
++  @media (max-width: 1024px) {
++    .section-inner { max-width: 47rem; }
++    .movement-band .section-inner, .the-standard .section-inner, .participation-layout { grid-template-columns: 1fr; gap: var(--space-8); }
++    .machine-door { border-left: 0; border-top: 1px solid var(--color-border); padding: var(--space-6) 0 0; }
++    .registry-group { grid-template-columns: 1fr; gap: var(--space-5); }
++  }
++  @media (max-width: 600px) {
++    .file-example h2, .example-file { padding: var(--space-4); }
++    .project-file { grid-template-columns: minmax(0, 7rem) minmax(0, 1fr); gap: var(--space-2); }
++    .registry-grid { grid-template-columns: 1fr; gap: var(--space-5); }
++    .movement-band, .living-registry, .the-standard, .join-network { padding-block: var(--space-10); }
++    .section-title { font-size: var(--text-2xl); }
++    .latest-item { grid-template-columns: 1fr; gap: var(--space-1); }
++  }
++  @media (max-width: 359px) {
++    .project-file { grid-template-columns: 1fr; gap: 0; }
++    .project-file dd { padding-left: var(--space-3); }
++    .project-file dt { flex-direction: row; gap: var(--space-2); align-items: baseline; flex-wrap: wrap; }
+   }
+ </style>
+diff --git a/site/tests/gates/gate-10-perf.spec.ts b/site/tests/gates/gate-10-perf.spec.ts
+index b581df0..7dac4e1 100644
+--- a/site/tests/gates/gate-10-perf.spec.ts
++++ b/site/tests/gates/gate-10-perf.spec.ts
+@@ -1,13 +1,13 @@
+ /**
+  * Gate 10: Performance Invariants
+- * Criterion: No JPEG hero images, hero img has sizes attribute, no render-blocking
++ * Criterion: No JPEG images on illustrated heroes, hero img has sizes attribute, no render-blocking
+  * external scripts in <head>, no font-display:block in loaded stylesheets.
+  * Established pre-D6 (2026-04-24) per D5 AAR finding: expand gates before implementing.
+  */
+ import { test, expect } from '@playwright/test';
+ 
+ test('G10 Perf: hero image uses modern format (WebP/AVIF, not bare JPEG)', async ({ page }) => {
+-  await page.goto('/', { waitUntil: 'networkidle' });
++  await page.goto('/network/', { waitUntil: 'networkidle' });
+ 
+   // When using <picture>, modern formats are in <source> elements; <img> is the legacy fallback.
+   // Check either: a <source> in the hero uses avif/webp, or the img src itself is not a JPEG.
+@@ -34,7 +34,7 @@ test('G10 Perf: hero image uses modern format (WebP/AVIF, not bare JPEG)', async
+ });
+ 
+ test('G10 Perf: hero image has sizes attribute for responsive loading', async ({ page }) => {
+-  await page.goto('/', { waitUntil: 'networkidle' });
++  await page.goto('/network/', { waitUntil: 'networkidle' });
+ 
+   const heroImg = page.locator('.hero-stage-img').first();
+   const sizes = await heroImg.getAttribute('sizes');
+@@ -42,7 +42,7 @@ test('G10 Perf: hero image has sizes attribute for responsive loading', async ({
+ });
+ 
+ test('G10 Perf: hero image has srcset for multiple breakpoints', async ({ page }) => {
+-  await page.goto('/', { waitUntil: 'networkidle' });
++  await page.goto('/network/', { waitUntil: 'networkidle' });
+ 
+   const heroImg = page.locator('.hero-stage-img').first();
+   const srcset = await heroImg.getAttribute('srcset');
+@@ -85,3 +85,12 @@ test('G10 Perf: no font-display:block in page styles (FOIT prevention)', async (
+ 
+   expect(hasFontDisplayBlock, 'No @font-face rule should use font-display:block (causes invisible text on slow connections)').toBe(false);
+ });
++
++// agent_codex · 2026-09-16: the homepage deliberately has no decorative hero asset.
++test('G10 Perf: homepage does not request a decorative hero illustration', async ({ page }) => {
++  const requested: string[] = [];
++  page.on('request', request => requested.push(request.url()));
++  await page.goto('/', { waitUntil: 'networkidle' });
++  expect(requested.filter(url => /hero_adna_helix|hero_graph/.test(url))).toEqual([]);
++  await expect(page.locator('.hero img, .hero picture, .hero canvas')).toHaveCount(0);
++});
+diff --git a/site/tests/gates/gate-11-hero-banner.spec.ts b/site/tests/gates/gate-11-hero-banner.spec.ts
+index 3ac3252..551a67c 100644
+--- a/site/tests/gates/gate-11-hero-banner.spec.ts
++++ b/site/tests/gates/gate-11-hero-banner.spec.ts
+@@ -15,7 +15,6 @@ mkdirSync('evidence/hero_banner', { recursive: true });
+ 
+ // Band heroes — full <Picture> treatment (AVIF+WebP sources, 16:9 source assets).
+ const BAND_SURFACES = [
+-  { name: 'Homepage', path: '/' },
+   { name: 'Network', path: '/network/' },
+   { name: 'Commons', path: '/commons/' },
+   { name: 'Vaults index', path: '/vaults/' },          // E5 c162
+@@ -90,8 +89,25 @@ for (const { name, path } of DOC_SURFACES) {
+   });
+ }
+ 
+-test('G11 Hero: capture homepage banner screenshot for evidence', async ({ page }) => {
++// The accepted clean-composition pass makes imagery optional on the homepage only.
++// Image-format, aspect and alternative-text coverage above remains on every illustrated route.
++test('G11 Hero: homepage has a native-theme reading surface and a real file example', async ({ page }) => {
+   await page.goto('/', { waitUntil: 'networkidle' });
+-  const banner = page.locator('img.hero-stage-img');
+-  await banner.screenshot({ path: 'evidence/hero_banner/hero_banner.png' });
++  const hero = page.locator('.hero');
++  await expect(hero.locator('h1')).toBeVisible();
++  await expect(hero.locator('.project-tree')).toBeVisible();
++  await expect(hero.locator('.hero-ground, .hero-ground-scrim')).toHaveCount(0);
++  for (const theme of ['dark', 'light']) {
++    if (theme === 'light') await page.getByRole('button', { name: 'Toggle dark mode' }).click();
++    const surfaces = await hero.evaluate(el => ({
++      background: getComputedStyle(el).backgroundColor,
++      page: getComputedStyle(document.body).backgroundColor,
++      image: getComputedStyle(el).backgroundImage,
++      before: getComputedStyle(el, '::before').backgroundImage,
++    }));
++    expect(surfaces.background).toBe(surfaces.page);
++    expect(surfaces.image).toBe('none');
++    expect(surfaces.before).toBe('none');
++  }
++  await hero.screenshot({ path: 'evidence/hero_banner/homepage_plain.png' });
+ });
+diff --git a/site/tests/gates/gate-23-hero-claims.spec.ts b/site/tests/gates/gate-23-hero-claims.spec.ts
+index d535b23..204501d 100644
+--- a/site/tests/gates/gate-23-hero-claims.spec.ts
++++ b/site/tests/gates/gate-23-hero-claims.spec.ts
+@@ -2,7 +2,7 @@
+  * Gate 23 — Hero claims (Operation Meridian M9, DP1 items 11–12; re-anchored HAUSSMANN P1.1)
+  *
+  * Criterion: the homepage fold carries the two load-bearing framing claims verbatim, and the
+- * "demo-as-proof" NetworkDiagram is a real inline, no-JS-safe SVG — not a runtime-JS island.
++ * relationship inspection reaches a real, no-JS-safe graph with a keyboard navigation twin.
+  *   (a) A-11 functional-definition hero phrase: aDNA is "an open standard for organizing a
+  *       project's files …" (the ADR-048 definition-as-hero lead, ratified at DP2 — HomeHero.astro
+  *       `lead` default). P1.1 replaced the Meridian-era "project knowledge" phrasing; the old
+@@ -18,9 +18,9 @@
+  *       kept as its own test — inverting (b) must not take that guard down with it, which is what
+  *       deleting this clause would have done.
+  *   (b2) R-120: the hero reframe must not tell a reader their context is both local and published.
+- *   (c) The homepage NetworkDiagram renders as an inline SVG with real, selectable <text> node
+- *       labels (>= 6) and is fully present with JavaScript DISABLED (the animation is JS-armed;
+- *       the composed diagram is the no-JS default — the marquee "real relationships" proof).
++ *   (c) Homepage relationship inspection links to the dedicated graph. The graph and its
++ *       real node links work with JavaScript disabled. NetworkDiagram's responsive variants
++ *       remain covered on /network by gate29; no homepage illustration is required.
+  *
+  * A regression that reworks the hero copy away from these phrases, or that reverts the marquee to
+  * client-only rendering (invisible without JS), goes red here — before it reaches a first-time reader.
+@@ -70,7 +70,7 @@ const R120_RETIRED = 'and shared in the open';
+ const R120_REPLACEMENT = 'The standard that gives it that shape is open';
+ 
+ // The homepage NetworkDiagram: an inline abstract-geometric SVG (NetworkDiagram.astro).
+-const NETDIAGRAM_SVG = 'figure.netdiagram svg.netdiagram-svg';
++
+ 
+ test('G-hero-claims: the homepage renders the A-11 functional-definition hero phrase', async ({ page }) => {
+   await page.goto('/');
+@@ -131,42 +131,25 @@ test('G-hero-claims: the fold does not promise the reader\'s context is both loc
+   ).toContainText(R120_REPLACEMENT);
+ });
+ 
+-test('G-hero-claims: the NetworkDiagram is an inline SVG with real <text> labels, visible with JS DISABLED', async ({ browser }) => {
++test('G-hero-claims: homepage relationships reach the graph and node links with JS DISABLED', async ({ browser }) => {
+   const context = await browser.newContext({ javaScriptEnabled: false });
+   try {
+     const page = await context.newPage();
+     await page.goto('/');
+-
+-    // GARNIER P1.1: relationships are behind a native details disclosure; keyboard/JS-off access must work.
+-    await page.locator('.network-detail > summary').click();
+-
+-    // HAUSSMANN P1.4 (F3): the figure now ships a landscape + portrait twin-pair of the SAME
+-    // diagram, media-query-swapped at 768px so phone labels stay legible. Exactly two inline
+-    // SVGs — and exactly ONE displayed per viewport (the hidden twin is display:none, out of
+-    // the accessibility tree).
+-    const svg = page.locator(NETDIAGRAM_SVG);
+-    await expect(svg, 'expected the landscape + portrait NetworkDiagram twin-pair inline with JS disabled').toHaveCount(2);
+-    await expect(
+-      page.locator(`${NETDIAGRAM_SVG}:visible`),
+-      'exactly one NetworkDiagram variant should be displayed at desktop width',
+-    ).toHaveCount(1);
+-    await page.setViewportSize({ width: 375, height: 800 });
+-    await expect(
+-      page.locator(`figure.netdiagram svg.netdiagram-svg--portrait:visible`),
+-      'the portrait NetworkDiagram variant should be the one displayed at phone width (F3)',
+-    ).toHaveCount(1);
+-
+-    // Real, selectable <text> node/hub labels — not <foreignObject> HTML, not runtime-injected.
+-    // Each twin carries its own full label set (>= 6 satellites + hub text).
+-    const labels = await page.locator(`${NETDIAGRAM_SVG} text`).count();
+-    expect(
+-      labels,
+-      `expected >= 12 real <text> labels across the NetworkDiagram twin-pair with JS disabled, got ${labels}`,
+-    ).toBeGreaterThanOrEqual(12);
+-    await expect(
+-      page.locator(`${NETDIAGRAM_SVG} foreignObject`),
+-      'NetworkDiagram uses <foreignObject> HTML labels, not real selectable <text>',
+-    ).toHaveCount(0);
++    await page.getByRole('link', { name: 'Inspect the declared relationships' }).click();
++    await expect(page).toHaveURL(/\/vaults\/graph\/?$/);
++    const svg = page.locator('.mermaid-container svg');
++    await expect(svg).toBeVisible();
++    const nodes = svg.locator('g.node');
++    const links = page.locator('.graph-node-list a[data-slug]');
++    expect(await nodes.count()).toBeGreaterThan(0);
++    expect(await links.count()).toBe(await nodes.count());
++    await links.first().focus();
++    await expect(links.first()).toBeVisible();
++    const href = await links.first().getAttribute('href');
++    await links.first().press('Enter');
++    expect(new URL(page.url()).pathname.replace(/\/$/, '')).toBe(href!.replace(/\/$/, ''));
++    await expect(page.locator('h1')).toBeVisible();
+   } finally {
+     await context.close();
+   }
+diff --git a/site/tests/gates/gate-39-figure-typeset.spec.ts b/site/tests/gates/gate-39-figure-typeset.spec.ts
+index 835787d..98125f6 100644
+--- a/site/tests/gates/gate-39-figure-typeset.spec.ts
++++ b/site/tests/gates/gate-39-figure-typeset.spec.ts
+@@ -136,11 +136,12 @@ const ADVISORY_UNSTABLE: Record<string, string> = {
+     'The pin is not re-derivable from an environment that does not reproduce its own measurement.',
+ };
+ 
++// 2026-09-16 GARNIER accepted clean-homepage composition removes the homepage hero graph.
++// Retired population row: hero-graph-svg worstPx3.4 (27 labels,0.28× at320); this is not a
++// repaired figure or a raised threshold. Asset stays archived. G11 guards its absence on /;
++// G23 follows the homepage link to /vaults/graph and verifies its SSR + keyboard twin.
++// Every still-rendered figure retains its existing floor and baseline, including the advisory.
+ const BASELINE: Record<string, { worstPx: number; why: string }> = {
+-  'hero-graph-svg': {
+-    worstPx: 3.4,
+-    why: 'Committed asset, 27 labels, 0.28× at 320px. Needs a redraw or a mobile treatment, not a bump — and it is on the protected homepage hero.',
+-  },
+   'netdiagram-svg': {
+     worstPx: 7.9,
+     why: 'Has a portrait twin already; the twin still paints its secondary labels at 8px on a 320 viewport. Closest of the three to a real fix.',
+@@ -460,15 +461,12 @@ test.describe('Gate 39 — figure typeset floor (lock O1)', () => {
+         `gate-39 emitted measurements for ${Object.keys(observed).length} figure(s) — expected all ${Object.keys(BASELINE).length} pinned figures to yield at least one below-floor sample. Absent: ${JSON.stringify(Object.keys(BASELINE).filter((k) => !(k in observed)))}. Either a figure improved past the ${FLOOR_PX}px floor (tighten its baseline — see the ratchet law) or the emission stopped seeing it, and those are different repairs.`,
+       ).toHaveLength(Object.keys(BASELINE).length);
+ 
+-      // Assert the gate measured something. A selector change that finds zero <text> elements would
+-      // otherwise produce a perfect green — the exact shape of the upstream failure this lock records.
+-      /* ⚠ NOT `> 0`. The first version of this assertion was, and it was too weak to be worth
+-         having: after the figure-domain filter landed, this gate went green in 0.4s where it had
+-         taken 30s, and `measured > 0` would have passed just as happily on 8 elements as on 255.
+-         A floor that silently stops looking at most of its domain is the fake enforcement this
+-         lock's own text warns about. The number below is the observed count with all three figures
+-         present across every route × width; it drops loudly if a figure stops being recognised. */
+-      const MIN_MEASURED = 200;
++      // Coverage guard for the remaining population, not a font-size quality threshold.
++      // GARNIER2026-09-16 removed the homepage's two figures by accepted composition scope:
++      // the observed sweep falls from255labels to80 across the same five widths. Keep the
++      // remaining80-label census strict so a partial/empty scan still fails. Font floor12px,
++      // both surviving baseline pins and the provider-owned advisory policy are unchanged.
++      const MIN_MEASURED = 80;
+       expect(
+         measured,
+         `only ${measured} <text>/<tspan> element(s) measured across ${FIGURE_ROUTES.length} routes × ${WIDTHS.length} widths — expected at least ${MIN_MEASURED}. A figure stopped being recognised (check the role=img / <figure> predicate) or stopped rendering; either way this gate is no longer covering its domain.`,

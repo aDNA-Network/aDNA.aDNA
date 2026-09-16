@@ -1,0 +1,29 @@
+{
+  "base": "afa3f2a",
+  "actual": [
+    "site/src/components/sections/HomeHero.astro",
+    "site/src/components/sections/RegistryCard.astro",
+    "site/src/data/home.ts",
+    "site/src/pages/index.astro",
+    "site/tests/gates/gate-10-perf.spec.ts",
+    "site/tests/gates/gate-11-hero-banner.spec.ts",
+    "site/tests/gates/gate-23-hero-claims.spec.ts",
+    "site/tests/gates/gate-39-figure-typeset.spec.ts"
+  ],
+  "allowed": [
+    "site/src/components/sections/HomeHero.astro",
+    "site/src/components/sections/RegistryCard.astro",
+    "site/src/data/home.ts",
+    "site/src/pages/index.astro",
+    "site/tests/gates/gate-10-perf.spec.ts",
+    "site/tests/gates/gate-11-hero-banner.spec.ts",
+    "site/tests/gates/gate-23-hero-claims.spec.ts",
+    "site/tests/gates/gate-39-figure-typeset.spec.ts"
+  ],
+  "pass": true,
+  "negative_control": {
+    "added_path": "site/src/data/vaults.json",
+    "accepted": false
+  },
+  "reviewer": "same executor; not independent certification"
+}

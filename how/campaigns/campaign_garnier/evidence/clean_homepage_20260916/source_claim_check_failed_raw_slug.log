@@ -1,0 +1,1 @@
+Initial source corroboration failed: TypeError at raw registry lookup. Browser routes use canonical slugs; raw vaults.json includes legacy names. No site defect found. Corrected check imports the actual canonical accessor and shared lifecycle function.

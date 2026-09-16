@@ -10,7 +10,7 @@ campaign_phase: 3
 campaign_mission_number: 23
 mission_class: implementation
 created: '2026-09-14'
-updated: '2026-09-15'
+updated: '2026-09-16'
 last_edited_by: agent_codex
 tags:
 - plan
@@ -39,7 +39,7 @@ acceptance_criteria:
 - 'C1: Component/type/token census covers the full declared tracked population and assigns every exception to a
   semantic reason; provider validators consume existing light/dark tokens.'
 - 'C2: Design-system page and one of each touched template show a consistent type/space hierarchy in both themes,
-  with preserved contrast and focus.'
+  with preserved contrast and focus, clean reading surfaces and independent R-VISUAL findings resolved or explicitly dispositioned.'
 - 'C3: mission_garnier_p3_1_design_system closes with a scoped diff, cited evidence and five-line AAR; DP5 remains
   a human gate and no reserved path/outward action is inferred.'
 verification_method:
@@ -54,8 +54,8 @@ verification_method:
 - id: V2
   surface: design_system_contract.md; component_exception_ledger.md; consumer_bundle_manifest.json
   method: Design-system page and one of each touched template show a consistent type/space hierarchy in both themes,
-    with preserved contrast and focus.
-  command: R-SITE; R-CAPTURE on /design-system plus each changed template; python3 site/scripts/token_aa_check.py
+    with preserved contrast and focus, clean reading surfaces and independent R-VISUAL findings resolved or explicitly dispositioned.
+  command: R-VISUAL; R-SITE; R-CAPTURE on /design-system plus each changed template; python3 site/scripts/token_aa_check.py
     --json.
   red_test: 'Remove a focus treatment or use a failing theme token pair: keyboard/contrast checks must fail.'
 - id: V3
@@ -89,7 +89,7 @@ contract_version: garnier_amendment_20260915
 
 ## Why
 
-[I] Component/type/token census covers the full declared tracked population and assigns every exception to a semantic reason; provider validators consume existing light/dark tokens. Design-system page and one of each touched template show a consistent type/space hierarchy in both themes, with preserved contrast and focus.
+[I] Component/type/token census covers the full declared tracked population and assigns every exception to a semantic reason; provider validators consume existing light/dark tokens. Design-system page and one of each touched template show a consistent type/space hierarchy in both themes, with preserved contrast and focus, clean reading surfaces and independent R-VISUAL findings resolved or explicitly dispositioned.
 
 ## Where we are
 
@@ -104,7 +104,7 @@ contract_version: garnier_amendment_20260915
 | # | Objective | Output | Gate |
 |---|-----------|--------|------|
 | 1 | Component/type/token census covers the full declared tracked population and assigns every exception to a semantic reason; provider validators consume existing light/dark tokens. | design_system_contract.md | ⛩ DP4 entry and C1 |
-| 2 | Design-system page and one of each touched template show a consistent type/space hierarchy in both themes, with preserved contrast and focus. | design_system_contract.md; component_exception_ledger.md; consumer_bundle_manifest.json | C2 reached-surface evidence |
+| 2 | Design-system page and one of each touched template show a consistent type/space hierarchy in both themes, with preserved contrast and focus, clean reading surfaces and independent R-VISUAL findings resolved or explicitly dispositioned. | design_system_contract.md; component_exception_ledger.md; consumer_bundle_manifest.json | C2 reached-surface evidence |
 | 3 | Reconcile the actual diff, limitations and AAR | Mission evidence manifest and five-line AAR | ⛩ DP5 remains human |
 
 ## Constraints & gates
@@ -115,7 +115,7 @@ contract_version: garnier_amendment_20260915
 
 ## Goal and exit gate
 
-[I] C1: Component/type/token census covers the full declared tracked population and assigns every exception to a semantic reason; provider validators consume existing light/dark tokens. C2: Design-system page and one of each touched template show a consistent type/space hierarchy in both themes, with preserved contrast and focus. C3: mission_garnier_p3_1_design_system closes with a scoped diff, cited evidence and five-line AAR; DP5 remains a human gate and no reserved path/outward action is inferred.
+[I] C1: Component/type/token census covers the full declared tracked population and assigns every exception to a semantic reason; provider validators consume existing light/dark tokens. C2: Design-system page and one of each touched template show a consistent type/space hierarchy in both themes, with preserved contrast and focus, clean reading surfaces and independent R-VISUAL findings resolved or explicitly dispositioned. C3: mission_garnier_p3_1_design_system closes with a scoped diff, cited evidence and five-line AAR; DP5 remains a human gate and no reserved path/outward action is inferred.
 
 ## Verification and convention-13 pair audit
 
@@ -160,3 +160,10 @@ Deliverables: pending execution. Descoped: none. Key findings: pending. Scope ch
 - **Finding:** pending execution.
 - **Change:** pending execution.
 - **Follow-up:** pending execution.
+
+
+## Accepted review-context amendment — 2026-09-16
+
+[D] [[clean_homepage_revision]] authorizes a bounded homepage implementation and this prospective acceptance refinement; this mission remains queued and its phase gates remain open. C2/V2 now include [[verification_recipes]] §R-VISUAL: independent enterprise, cognitive/access and brand/information reviewers inspect immutable pixels before builder/peer rationale, with versioned findings and reinspection. V2 remains feasible with the expanded method; V1 population/provenance and V3 scope/authority remain necessary and cannot replace it. Update the provisional workload at DP4 to include the actual review rounds; no silent commitment of the old estimate.
+
+[I] Review visual relevance and restraint, not merely legibility. No vague translucent artwork, scrims or glow behind reading areas; use contained art only when it adds meaning. Slot permission does not mandate image presence. A red control is an archived known-busy homepage capture: reviewers must inspect it and explain their judgment, rather than auto-accept a green test report. No finding count is required and no human result is inferred. Real-reader and formal scoring obligations survive.

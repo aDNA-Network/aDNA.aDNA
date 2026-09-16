@@ -1,0 +1,20 @@
+{
+  "dist": "site/dist",
+  "measured": 1,
+  "missing": [],
+  "rows": [
+    {
+      "route": "/",
+      "target": 10,
+      "prose_fkgl": 5.89,
+      "whole_fkgl": 9.05,
+      "delta": 3.16,
+      "passive_pct": 5.9,
+      "sentences": 34,
+      "words": 326,
+      "avg_wps": 9.6,
+      "dropped_lines": 75,
+      "low_confidence": false
+    }
+  ]
+}

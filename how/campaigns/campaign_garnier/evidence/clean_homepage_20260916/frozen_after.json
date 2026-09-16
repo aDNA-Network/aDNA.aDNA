@@ -1,0 +1,99 @@
+{
+  "recorded_at": "2026-09-16T06:06:50.243979+00:00",
+  "source_commit": "b1cf040",
+  "comparison": "frozen_before.json",
+  "origin": "http://127.0.0.1:4465",
+  "rows": [
+    {
+      "route": "/",
+      "status": 200,
+      "sha256": "35a9f9528c39effcab41039c2dda38ec1651a9023c6090ee8dfae3f7739d6712",
+      "matches": true
+    },
+    {
+      "route": "/get-started",
+      "status": 200,
+      "sha256": "e3584c5a4ddb01ee4328ccbc684689a2b13629906acd8f87af1f41b5411a870f",
+      "matches": true
+    },
+    {
+      "route": "/learn/what-is-adna",
+      "status": 200,
+      "sha256": "3ebb7205f16934627ef15092716f5ceb7a5b96629a0165f50cd2f792e40d1c8e",
+      "matches": true
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "sha256": "51f9c91457771d729999d079768c9e5026d2598bf9446996b29bc4f69e19b04f",
+      "matches": true
+    },
+    {
+      "route": "/community",
+      "status": 200,
+      "sha256": "ab66d288c274a185cdbecc8f90f14dabe9bf8877966e12b2c3804aab17649684",
+      "matches": true
+    },
+    {
+      "route": "/commons",
+      "status": 200,
+      "sha256": "748f3061874c6966356e7614eb1365c80a2d1121dd87a1c54a7639e4cc52c629",
+      "matches": true
+    },
+    {
+      "route": "/network",
+      "status": 200,
+      "sha256": "27af42611346ab0c8c04a51a639b36416a4754b28d3f6acd540aa8899b39fb81",
+      "matches": true
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "sha256": "d3ac55ec215f9b67b6ac7b464c3559e587fec4ce012236cc47fabe0a75597a9d",
+      "matches": true
+    },
+    {
+      "route": "/state-of-the-network",
+      "status": 200,
+      "sha256": "da621470febeedda5bf9d212717ed6e9c13faaabe047dbf739825780a949257c",
+      "matches": true
+    },
+    {
+      "route": "/vaults",
+      "status": 200,
+      "sha256": "c1542013e7e2f00f94740b26605fea0f6e5299bda9952033ffc1ab113a7eed9f",
+      "matches": true
+    },
+    {
+      "route": "/get-started/what-your-agent-reads",
+      "status": 200,
+      "sha256": "d8713904da3f132167da83002b7972792f18c0c4ef01f3a0ebe469d5eef38fad",
+      "matches": true
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/workspace-router",
+      "status": 200,
+      "sha256": "187d841e094464e95df996867c4fb0ff1ad2f40dfdffb63c2b3c372760aeee9d",
+      "matches": true
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/standard-governance",
+      "status": 200,
+      "sha256": "b8b7a5266fa2d47ddd8ec0f471328b6866b150827db453a53230d760c5ed6e3f",
+      "matches": true
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-project-fork",
+      "status": 200,
+      "sha256": "1fe730ef2f066aa6306dcdc3245657ef548606a76e9a8c489d2673faff1c5457",
+      "matches": true
+    },
+    {
+      "route": "/get-started/what-your-agent-reads/skill-onboarding",
+      "status": 200,
+      "sha256": "4dda86dd7653fe4d2d550b013a28e43049f3aa669e6f9449580963015025e724",
+      "matches": true
+    }
+  ],
+  "all_match": true
+}

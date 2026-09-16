@@ -1,0 +1,74 @@
+[
+  {
+    "viewport": "mobile",
+    "theme": "dark",
+    "exit": 0,
+    "report": "how/campaigns/campaign_garnier/evidence/clean_homepage_20260916/round3/t0/mobile_dark/capture_report.json"
+  },
+  {
+    "viewport": "mobile",
+    "theme": "light",
+    "exit": 0,
+    "report": "how/campaigns/campaign_garnier/evidence/clean_homepage_20260916/round3/t0/mobile_light/capture_report.json"
+  },
+  {
+    "viewport": "mobile-lg",
+    "theme": "dark",
+    "exit": 0,
+    "report": "how/campaigns/campaign_garnier/evidence/clean_homepage_20260916/round3/t0/mobile-lg_dark/capture_report.json"
+  },
+  {
+    "viewport": "mobile-lg",
+    "theme": "light",
+    "exit": 0,
+    "report": "how/campaigns/campaign_garnier/evidence/clean_homepage_20260916/round3/t0/mobile-lg_light/capture_report.json"
+  },
+  {
+    "viewport": "tablet",
+    "theme": "dark",
+    "exit": 0,
+    "report": "how/campaigns/campaign_garnier/evidence/clean_homepage_20260916/round3/t0/tablet_dark/capture_report.json"
+  },
+  {
+    "viewport": "tablet",
+    "theme": "light",
+    "exit": 0,
+    "report": "how/campaigns/campaign_garnier/evidence/clean_homepage_20260916/round3/t0/tablet_light/capture_report.json"
+  },
+  {
+    "viewport": "laptop-sm",
+    "theme": "dark",
+    "exit": 0,
+    "report": "how/campaigns/campaign_garnier/evidence/clean_homepage_20260916/round3/t0/laptop-sm_dark/capture_report.json"
+  },
+  {
+    "viewport": "laptop-sm",
+    "theme": "light",
+    "exit": 0,
+    "report": "how/campaigns/campaign_garnier/evidence/clean_homepage_20260916/round3/t0/laptop-sm_light/capture_report.json"
+  },
+  {
+    "viewport": "laptop",
+    "theme": "dark",
+    "exit": 0,
+    "report": "how/campaigns/campaign_garnier/evidence/clean_homepage_20260916/round3/t0/laptop_dark/capture_report.json"
+  },
+  {
+    "viewport": "laptop",
+    "theme": "light",
+    "exit": 0,
+    "report": "how/campaigns/campaign_garnier/evidence/clean_homepage_20260916/round3/t0/laptop_light/capture_report.json"
+  },
+  {
+    "viewport": "desktop",
+    "theme": "dark",
+    "exit": 0,
+    "report": "how/campaigns/campaign_garnier/evidence/clean_homepage_20260916/round3/t0/desktop_dark/capture_report.json"
+  },
+  {
+    "viewport": "desktop",
+    "theme": "light",
+    "exit": 0,
+    "report": "how/campaigns/campaign_garnier/evidence/clean_homepage_20260916/round3/t0/desktop_light/capture_report.json"
+  }
+]
