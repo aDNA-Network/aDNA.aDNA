@@ -2,11 +2,11 @@
 type: artifact
 artifact_class: scope_amendment
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-09-16
 last_edited_by: agent_codex
-status: proposed
+status: accepted
 campaign: campaign_garnier
-tags: [garnier, design, scope, proposed]
+tags: [garnier, design, scope, accepted]
 ---
 # Next build: refine the homepage opening
 
@@ -20,7 +20,9 @@ tags: [garnier, design, scope, proposed]
 
 [D] Source inspection: `site/src/pages/index.astro` contains the example slot and its styles; `site/src/components/sections/HomeHero.astro` already distinguishes `hero--example-led`; `site/src/data/home.ts` derives the actual governance rule from the vault. The retained desktop frame is `evidence/p1/home_first_screen.png`. It shows several similarly prominent prose blocks and a nested example panel. [I] These are design opportunities, not measured reader failures. Research cannot establish that the proposed treatment will improve comprehension.
 
-## Exact authority amendment requested
+## Accepted authority amendment
+
+[D] Stanley explicitly approved this bounded design pass on 2026-09-16: “Approve the bounded design pass.” This accepts the scope and additional forecast below. The historical rationale for requesting the exception is retained; the request is no longer pending. P1 reader stimulus b1cf040 remains frozen, and DP3 and real-reader requirements remain open.
 
 [I] Authorize this local homepage design increment before the three formative observations arrive. Preserve P1 source b1cf040 and its current preview at port 4465 as the frozen reader stimulus; build the new candidate in an isolated checkout and preview it separately, initially port 4466. Record both identities. The original first-project and three-class evidence requirements remain owed; DP3 remains pending. This is a limited exception to the visual-production sequence, not general P2/P3 entry or phase acceptance.
 
@@ -38,9 +40,9 @@ tags: [garnier, design, scope, proposed]
 
 [I] Proposed additional workload: **60 kT content-load**, rough breakdown 10 isolation/source review, 20 implementation, 20 verification/iteration, 10 closure. Forecast uncertainty ±25 kT; billing unavailable. Book this separately from the already recorded P1 workload and research. It is a forecast, not a billing quote or a silent commitment of P2's 991 kT envelope. No purchase, publication or peer delivery is part of this increment.
 
-- **Decision:** proposed limited early homepage design increment described above.
-- **Ratified-by:** pending operator response.
-- **Date:** pending.
-- **Status:** proposed.
+- **Decision:** accept the limited early homepage design increment described above in a separate preview, preserving the frozen P1 reader stimulus and open DP3/real-reader requirements.
+- **Ratified-by:** Stanley Bishop, explicit chat approval “Approve the bounded design pass.”
+- **Date:** 2026-09-16.
+- **Status:** accepted.
 
 Related: [[phase_exit]] · [[formative_reader_pack]] · [[session_stanley_20260915_122656_garnier_next_build]].
