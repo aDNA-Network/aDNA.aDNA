@@ -10,7 +10,7 @@ tags: [directory_index, decisions, adr_index]
 
 One row per ADR in `what/decisions/`, derived from each file's frontmatter + H1. Auto-generated — see Regeneration below.
 
-**Tally:** 54 ADRs — accepted: 53 · amended: 1 · proposed: **0** *(derived 2026-09-04 by `grep -l '^status:' `, not transcribed — ADR-056 ratified at the batched planning gate; the vault now carries no `proposed` ADR)*
+**Tally:** 56 ADRs — accepted: 53 · amended: 1 · proposed: **2** *(re-derived 2026-09-16 at the gate-advisory sitting: ADR-060 + ADR-061 drafted `proposed` per §7.7, awaiting operator signature — the queue had been empty since ADR-056's ratification on 2026-09-04)*
 
 > **Numbering note** (F-CHM-206): numbers **015** and **018–021** are unassigned — reserved/withdrawn during drafting, never materialized as files. The highest number in use (**046**) exceeds the 41-file count by exactly these 5 gaps; the tally counts actual files and is internally correct. ADR-012 records a 009→012 renumber. Do **not** renumber existing ADRs to close the gaps (stable IDs are load-bearing across cross-references). Preserve this note on regeneration.
 
@@ -70,6 +70,13 @@ One row per ADR in `what/decisions/`, derived from each file's frontmatter + H1.
 | [057](adr_057_measurement_regime.md) | The HAUSSMANN measurement regime: four instruments, composed — plus the same-diff gate law | accepted | 2026-08-16 | 2026-08-19 | Accepted — the regime the campaign runs throughout; ⊳ D-B at DP6 confirmed the Gate C signature covered it (the `proposed` was clerical). |
 | [058](adr_058_unified_installer_no_agent_dependency.md) | One installer: joining the network and getting the workspace, with no AI-assistant dependency | accepted | 2026-08-16 | 2026-08-16 | Accepted — one installer for network join + workspace fetch, with no AI-assistant dependency. |
 | [059](adr_059_token_substrate.md) | Token substrate: adopt WebForge's DTCG pipeline, pin a formal divergence, or take the validators only | accepted | 2026-08-23 | 2026-08-23 | Accepted — ratified at ⛩ DP8, 2026-08-23, option (c): adopt WebForge's validators over the existing CSS; pin the emission divergence; no ceiling derived. |
+| [060](adr_060_template_decision_provenance.md) | Template-shipped decisions: ratify at template altitude, provenance-stamp at fork | proposed | 2026-09-16 | 2026-09-16 | Proposed — from Hestia's adr_003 census finding; rejects any bulk flip across the 26 inherited copies; `.adna/` touch waits on ratification + a release gate. |
+| [061](adr_061_three_valued_memo_authorship.md) | Coordination-memo authorship is three-valued: persona · vault · authority | proposed | 2026-09-16 | 2026-09-16 | Proposed — answers Vitruvius's KW-93 routing; endorses the REFUSE posture (a sender's `from:` is theirs); WebForge's memo_schema is prior art, consumed by reference. |
+
+> ⚠ **Standing annotation, 2026-09-16 (flag, not an edit):** `adr_023_*.md:73` names the legacy
+> host inside a **ratified contract clause**. Rewriting ratified ADR text is not an agent's act
+> (the HAUSSMANN queue's §5 flag, carried here so it stops resurfacing as a fresh finding).
+> Disposition is the operator's; until ruled, the mention stands as historical contract language.
 
 ## Regeneration
 

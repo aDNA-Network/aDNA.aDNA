@@ -36,4 +36,16 @@ tags: [garnier, handoff, ratification, executor_runtime]
 - **`.codex/hooks.json`** (untracked) is left in place, per the Cassiodorus memo of 2026-09-13 — it is Codex-side measurement plumbing, inert for Claude sessions, and deleting it is not this campaign's call.
 - **VITRINE stays `proposed`** with history retained (not flipped to `subsumed`), per the charter's original documented choice.
 
+## Instrument follow-up — same-day, found by the instrument itself
+
+[D] `verify_amendments.py` pinned the CLAUDE.md conventions section byte-immutable against the
+archived proposal; the compression this record authorizes changed that section, and the
+verifier correctly went red at the next run (the compression sitting ran it *before* the
+CLAUDE.md edit — a sequencing miss, recorded). Repair, same-diff with this note: the archived
+section was verified byte-identical to its source (`campaign_haussmann/CLAUDE.md` §Standing
+conventions), and the check now asserts immutability **at the source** plus the compressed
+file's pointer to it — the protected text stays protected where it lives. Both new limbs
+red-proven by mutation (source edit → `inherited section changed`; pointer removal →
+`pointer lost`); 38 missions / 0 errors / selftest 1+12 after.
+
 Related: [[campaign_garnier]] · [[charter_ratification_20260915]] · [[dp2_ratification_20260915]] · [[verification_recipes]].

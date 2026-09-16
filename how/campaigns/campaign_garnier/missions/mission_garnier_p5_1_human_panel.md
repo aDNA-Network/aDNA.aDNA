@@ -10,8 +10,8 @@ campaign_phase: 5
 campaign_mission_number: 30
 mission_class: verification
 created: '2026-09-14'
-updated: '2026-09-15'
-last_edited_by: agent_codex
+updated: '2026-09-16'
+last_edited_by: agent_rosetta
 tags:
 - plan
 - campaign
@@ -148,6 +148,17 @@ Previous: [[mission_garnier_p4_3_regression]]. Next: [[mission_garnier_p5_2_resc
 ## Progress
 
 Queued. Specification amended; no campaign acceptance criterion has been executed by this records-only sitting.
+
+## ⛩ Proposed joint-panel amendment — 2026-09-16, pending ratification
+
+[I] [[panel_merge_brief]] (`status: proposed`) proposes that this mission's panel and
+HAUSSMANN P5.1's AC-1 cold-reader panel are **the same recruitment event**: one cohort of
+≥5 new humans per decisive class (which satisfies HAUSSMANN's five-across-three as a
+superset), one live-production stimulus at a re-derived stamp after GR-7 integration, both
+campaigns' sealed keys applied by both scorer pairs, each campaign's bar reported against its
+own key. GARNIER's formative-participant exclusion covers the joint cohort. HAUSSMANN's
+mission carries the mirror text as its proposed AMENDMENT 5. **Until the operator signs the
+brief, this mission's criteria stand exactly as written above and nothing here is in force.**
 
 ## Completion Summary
 

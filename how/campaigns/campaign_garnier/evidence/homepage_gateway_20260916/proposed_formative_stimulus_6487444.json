@@ -1,0 +1,87 @@
+{
+ "purpose": "Proposed formative stimulus identity \u2014 gateway candidate (takes effect only on ratification of formative_stimulus_repin_20260916)",
+ "recorded_at": "2026-09-16T12:29Z",
+ "source_commit": "6487444",
+ "source_branch": "garnier/homepage-20260916",
+ "checkout": "/Users/stanley/.cache/garnier-homepage-20260916",
+ "origin": "http://127.0.0.1:4466",
+ "derived_by": "agent_rosetta",
+ "checkout_clean_at_derivation": true,
+ "rows": [
+  {
+   "route": "/",
+   "status": 200,
+   "sha256": "5ca994bd16f7395065935a4def89ad73c0bc2d46e07db36be04e7b861f49e7a8"
+  },
+  {
+   "route": "/get-started",
+   "status": 200,
+   "sha256": "e3584c5a4ddb01ee4328ccbc684689a2b13629906acd8f87af1f41b5411a870f"
+  },
+  {
+   "route": "/learn/what-is-adna",
+   "status": 200,
+   "sha256": "3ebb7205f16934627ef15092716f5ceb7a5b96629a0165f50cd2f792e40d1c8e"
+  },
+  {
+   "route": "/about",
+   "status": 200,
+   "sha256": "51f9c91457771d729999d079768c9e5026d2598bf9446996b29bc4f69e19b04f"
+  },
+  {
+   "route": "/community",
+   "status": 200,
+   "sha256": "ab66d288c274a185cdbecc8f90f14dabe9bf8877966e12b2c3804aab17649684"
+  },
+  {
+   "route": "/commons",
+   "status": 200,
+   "sha256": "c13e5a055a8e38e8c008cb5bf9aa8a8daa73669bd7e249b6fef45e6f789457be"
+  },
+  {
+   "route": "/network",
+   "status": 200,
+   "sha256": "93c88c26657a3237252b5c34c25c080eb2fbef36bb7e3cfb4836c09ddeab8ed5"
+  },
+  {
+   "route": "/privacy",
+   "status": 200,
+   "sha256": "d3ac55ec215f9b67b6ac7b464c3559e587fec4ce012236cc47fabe0a75597a9d"
+  },
+  {
+   "route": "/state-of-the-network",
+   "status": 200,
+   "sha256": "da621470febeedda5bf9d212717ed6e9c13faaabe047dbf739825780a949257c"
+  },
+  {
+   "route": "/vaults",
+   "status": 200,
+   "sha256": "12b3165e7576278da9b771cafe44273626b54a12972c0d68f72d60e47bc78657"
+  },
+  {
+   "route": "/get-started/what-your-agent-reads",
+   "status": 200,
+   "sha256": "d8713904da3f132167da83002b7972792f18c0c4ef01f3a0ebe469d5eef38fad"
+  },
+  {
+   "route": "/get-started/what-your-agent-reads/workspace-router",
+   "status": 200,
+   "sha256": "187d841e094464e95df996867c4fb0ff1ad2f40dfdffb63c2b3c372760aeee9d"
+  },
+  {
+   "route": "/get-started/what-your-agent-reads/standard-governance",
+   "status": 200,
+   "sha256": "b8b7a5266fa2d47ddd8ec0f471328b6866b150827db453a53230d760c5ed6e3f"
+  },
+  {
+   "route": "/get-started/what-your-agent-reads/skill-project-fork",
+   "status": 200,
+   "sha256": "1fe730ef2f066aa6306dcdc3245657ef548606a76e9a8c489d2673faff1c5457"
+  },
+  {
+   "route": "/get-started/what-your-agent-reads/skill-onboarding",
+   "status": 200,
+   "sha256": "4dda86dd7653fe4d2d550b013a28e43049f3aa669e6f9449580963015025e724"
+  }
+ ]
+}

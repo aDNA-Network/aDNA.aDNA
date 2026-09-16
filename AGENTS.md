@@ -1,12 +1,14 @@
 ---
 type: directory_index
 created: 2026-04-13
-updated: 2026-06-29
+updated: 2026-09-16
 last_edited_by: agent_rosetta
 tags: [directory_index, root]
 ---
 
 # aDNA.aDNA — Agent Guide
+
+**Before working in this vault, read `CLAUDE.md` (root) and, once routed to a campaign, that campaign's `CLAUDE.md`.** They carry the binding governance; this file only routes. *(Sentence added 2026-09-16 — harnesses that auto-load only AGENTS.md previously received this instruction from a node-global file in another vault; Cassiodorus memo, 2026-09-13, §3.)*
 
 ## Purpose
 

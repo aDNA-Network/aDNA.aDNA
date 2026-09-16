@@ -94,8 +94,16 @@ def verify():
         new=(BASE/'CLAUDE.md').read_text()
         start='## Standing conventions (every session, every mission)'
         end='## What this campaign protects'
-        # Exact inherited section, including historical examples, is immutable in this amendment.
-        if old.split(start,1)[1].split(end,1)[0] != new.split(start,1)[1].split(end,1)[0]: errors.append('inherited section changed')
+        # The inherited section, including historical examples, is immutable — but since the
+        # operator-ruled compression at runtime_handoff_20260916, its verbatim copy lives at its
+        # SOURCE (campaign_haussmann/CLAUDE.md; archived copy verified byte-identical to it before
+        # this repoint), and the campaign CLAUDE.md carries a pointer + per-convention essence.
+        # The check therefore asserts (a) the source still holds the archived text unchanged, and
+        # (b) the compressed file still points at it. This instrument change was red-tested at the
+        # repoint (mutated source -> 'inherited section changed'; pointer removed -> 'pointer lost').
+        haussmann=(BASE.parent/'campaign_haussmann/CLAUDE.md').read_text()
+        if start not in haussmann or old.split(start,1)[1].split(end,1)[0] != haussmann.split(start,1)[1].split(end,1)[0]: errors.append('inherited section changed')
+        if 'campaign_haussmann/CLAUDE.md' not in new: errors.append('pointer lost: compressed CLAUDE.md no longer names the conventions source')
     for p in paths:
         text=p.read_text()
         if 'Checked pairs: V1×C1 yes, all named outputs;' in text: errors.append('old generic audit: '+p.name)

@@ -306,6 +306,43 @@ would strand every outbound memo for the panel's duration for no protective gain
 `git merge-base --is-ancestor <recorded_commit> HEAD`, plus the containment check. Run it — `AC-P` is
 otherwise verified by nothing, which is the defect `GAP-1` was raised to close.
 
+## ⛩ AMENDMENT 5 (PROPOSED — NOT RULED, unlike Amendments 1–4) — 2026-09-16: one joint panel with GARNIER P5.1, after the rewrite
+
+**Status: `proposed`. Nothing below is in force until the operator signs the ratification block
+in `campaign_garnier/artifacts/amendments/panel_merge_brief.md`, which is this amendment's
+decision artifact.** Authored by agent_rosetta at the gate-advisory sitting; GARNIER is now the
+ratified successor to the VITRINE rewrite this mission's ordering question anticipated
+(`campaign_garnier`, runtime claude since `runtime_handoff_20260916`).
+
+**The proposal, in one sentence:** `AC-1`'s five-reader cold panel merges into **GARNIER
+P5.1's** panel (≥5 per decisive class — a superset of five-across-three), run **once**, against
+live production at a re-derived stamp, **after** GARNIER's craft waves and `GR-7`'s
+integration, with **both campaigns' sealed keys applied by both scorer pairs to the same
+session records**.
+
+- **What it resolves:** the ordering question this mission has carried since 2026-09-14 — a
+  panel run now cold-reads a homepage the ratified GARNIER campaign is replacing (three
+  candidate increments already exist), and the reader protocols on both sides forbid pooling
+  across versions, so a pre-rewrite panel is a guaranteed re-recruitment. Cold readers are a
+  consumable; this spends them once.
+- **What it does NOT change:** `AC-2` (recruited non-builder TTFS, dual-labelled for `P2.6`
+  O0b) and `AC-3` (operator-as-outsider, CoI declared, halt before submission) keep their
+  runners, conditions and no-ordering release — they may still run earlier, since neither
+  cold-reads the homepage copy the rewrite touches. The deploy-hold semantics are unchanged:
+  the hold engages when `evidence/p5_1/` goes non-empty, which under this amendment happens
+  once, at the joint panel. Agents still must not recruit. `AC-4`'s stamp check applies per
+  artifact as written.
+- **Scoring:** HAUSSMANN's ADR-048 key (two independent scorers, raw sheets committed before
+  reconciliation) and GARNIER's sealed key (two calibrated scorers, ≥ ceil(0.8·n) per class
+  per window) are both applied; each campaign's bar is reported against its own key. A
+  disagreement between the two keys' verdicts on the same record is a finding, recorded, never
+  resolved away.
+- **Exclusions compose:** GARNIER's formative participants are excluded from the joint cohort
+  (their protocol's rule now covers this mission's panel too, since it is the same panel).
+
+If declined, this mission's Amendments 1–4 stand exactly as ruled and the ordering question
+returns to the operator queue unresolved.
+
 ## AAR (SO#5)
 
 *(before completed)*

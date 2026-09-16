@@ -1,14 +1,29 @@
 ---
 type: artifact
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-09-16
 status: active
-last_edited_by: agent_codex
+last_edited_by: agent_rosetta
 tags: [garnier, p1, evidence]
 ---
 # P1 formative review pack — awaiting people
 
 [D] Candidate source: b1cf040, local preview at http://localhost:4465/. Homepage [first screen](../../evidence/p1/home_first_screen.png), [390px light](../../evidence/p1/home_390_light.png), [390px dark](../../evidence/p1/home_390_dark.png). These show a local candidate, not the deployed website. Use the restart procedure below if the preview is no longer running. [[how/campaigns/campaign_garnier/artifacts/p1/phase_exit|P1 review packet]] lists verification and open work.
+
+## ⛩ Proposed stimulus re-pin — pending ratification, 2026-09-16
+
+[I] [[formative_stimulus_repin_20260916]] (`status: proposed`) asks the operator to move the
+formative stimulus to the completed gateway candidate **`6487444`** (preview
+http://127.0.0.1:4466/, identity manifest
+`evidence/homepage_gateway_20260916/proposed_formative_stimulus_6487444.json`, 15 routes
+hashed 2026-09-16). Rationale: the gateway direction is already ratified, and
+[[reader_protocol]]'s full-repeat clause makes records on `b1cf040` disposable by
+construction. **Until that amendment is signed, everything below stands unchanged and
+`b1cf040`/4465 remains the stimulus of record.** If it is signed: substitute candidate
+identity `6487444`, URL `http://127.0.0.1:4466/`, and the manifest above wherever this pack
+names `b1cf040`/4465; the procedure, keys, consent and scoring rules are untouched, and the
+scorers first confirm the frozen key's expected answers remain reachable on the new stimulus
+(any unreachable expected answer is a finding against the candidate, not a key change).
 
 ## Operator-supplied participants
 
