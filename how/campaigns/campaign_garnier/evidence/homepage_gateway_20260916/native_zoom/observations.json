@@ -1,0 +1,104 @@
+{
+  "base": {
+    "width": 1280,
+    "dpr": 2
+  },
+  "rows": [
+    {
+      "width": 1280,
+      "height": 813,
+      "dpr": 2,
+      "scrollWidth": 1265,
+      "theme": "dark",
+      "clipped": [],
+      "rootCssZoom": "1",
+      "bodyCssZoom": "1",
+      "factor": 1,
+      "at": "2026-09-16T07:18:20.390Z"
+    },
+    {
+      "width": 640,
+      "height": 406,
+      "dpr": 4,
+      "scrollWidth": 632,
+      "theme": "dark",
+      "clipped": [],
+      "rootCssZoom": "1",
+      "bodyCssZoom": "1",
+      "factor": 2,
+      "at": "2026-09-16T07:19:00.913Z"
+    },
+    {
+      "width": 640,
+      "height": 406,
+      "dpr": 4,
+      "scrollWidth": 632,
+      "theme": "light",
+      "clipped": [],
+      "rootCssZoom": "1",
+      "bodyCssZoom": "1",
+      "factor": 2,
+      "at": "2026-09-16T07:19:14.421Z"
+    },
+    {
+      "width": 426,
+      "height": 271,
+      "dpr": 6,
+      "scrollWidth": 421,
+      "theme": "light",
+      "clipped": [],
+      "rootCssZoom": "1",
+      "bodyCssZoom": "1",
+      "factor": 3,
+      "at": "2026-09-16T07:19:30.973Z"
+    },
+    {
+      "width": 320,
+      "height": 203,
+      "dpr": 8,
+      "scrollWidth": 316,
+      "theme": "light",
+      "clipped": [],
+      "rootCssZoom": "1",
+      "bodyCssZoom": "1",
+      "factor": 4,
+      "at": "2026-09-16T07:19:32.444Z"
+    },
+    {
+      "width": 320,
+      "height": 203,
+      "dpr": 8,
+      "scrollWidth": 316,
+      "theme": "dark",
+      "clipped": [],
+      "rootCssZoom": "1",
+      "bodyCssZoom": "1",
+      "factor": 4,
+      "at": "2026-09-16T07:19:53.470Z"
+    },
+    {
+      "width": 320,
+      "height": 203,
+      "dpr": 8,
+      "scrollWidth": 316,
+      "theme": "light",
+      "clipped": [],
+      "rootCssZoom": "1",
+      "bodyCssZoom": "1",
+      "factor": 4,
+      "at": "2026-09-16T07:20:47.599Z"
+    },
+    {
+      "width": 640,
+      "height": 406,
+      "dpr": 4,
+      "scrollWidth": 632,
+      "theme": "light",
+      "clipped": [],
+      "rootCssZoom": "1",
+      "bodyCssZoom": "1",
+      "factor": 2,
+      "at": "2026-09-16T07:21:20.619Z"
+    }
+  ]
+}

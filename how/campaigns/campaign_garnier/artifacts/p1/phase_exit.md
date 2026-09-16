@@ -20,7 +20,7 @@ tags: [garnier, p1, verification]
 
 [D] [[next_build_scope]] is ready for a limited early homepage design increment: hierarchy, readable file example and interaction states in a separate preview. Its sequence amendment is unanswered. Source b1cf040/port4465 remain frozen; no visual production or P2/P3 entry occurred.
 
-[I] Latest sitting315±45kT versus25 forecast;295±35kT allocated to P1.2 and20±10kT to preparation. Phase implementation/evidence625±155kT versus320 committed; earlier wind-down/research remain separately booked. Reported cached runtime input735.4kT is separately disclosed. Retrospective and measurement limits: [[local_model_continuation]]. Remaining10–20kT after reader records, excluding waiting/proposed design; billing unavailable.
+[I] Latest sitting 315±45 kT versus 25 forecast; 295±35 kT allocated to P1.2 and 20±10 kT to preparation. Phase implementation/evidence 625±155 kT versus 320 committed; earlier wind-down/research remain separately booked. Reported cached runtime input 735.4 kT is separately disclosed. Retrospective and measurement limits: [[local_model_continuation]]. Remaining 10–20 kT after reader records, excluding waiting/proposed design; billing unavailable.
 
 
 ### Later account-route correction and design-context ingestion

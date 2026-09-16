@@ -22,7 +22,7 @@ Read `scripts/viewports.json` for the six names. From the vault root, run `node 
 
 ## R-VISUAL — independent composition review
 
-[D] Accepted by Stanley on2026-09-16 through [[clean_homepage_revision]]. This is consumer-specific review acceptance, not a fork of provider gates or an official score. Reusable process proposal: [[coord_2026_09_16_rosetta_to_vitruvius_independent_visual_review]] (staged only).
+[D] Accepted by Stanley on 2026-09-16 through [[clean_homepage_revision]]. This is consumer-specific review acceptance, not a fork of provider gates or an official score. Reusable process proposal: [[coord_2026_09_16_rosetta_to_vitruvius_independent_visual_review]] (staged only).
 
 [I] Trigger on every substantial layout, imagery, typography, color or motion change. Preserve source/build identity and pre-change captures. After R-CAPTURE, save immutable, versioned **full-page and first-screen** captures in both native themes, including desktop and narrow reading order; include the complete six-width matrix and relevant interaction/reflow states. Check image dimensions and source identity before review. Do not overwrite a pack being reviewed.
 
@@ -31,6 +31,8 @@ Read `scripts/viewports.json` for the six names. From the vault root, run `node 
 [I] Record each finding with visible evidence/region, observation versus inference, consequence, severity, minimal fix and reinspection condition. Builder records disposition and owner. Major issues require correction and another independent look at affected versioned captures; minor deferrals require a reason. Include real-reader limitations. No agent may manufacture comprehension, consent, familiarity or timing observations. Automated green checks and builder opinion do not settle visual acceptance; these critiques also do not certify WCAG or constitute a formal VITRUVIUS rescore.
 
 [I] Reflow receipts distinguish actual browser zoom from CSS zoom, text enlargement, pinch scaling and equivalent CSS viewport narrowing. Test200% and400% and state the mechanism used; never label a resized viewport as observed native browser zoom. Preserve keyboard/focus, copy success/rejection, JS-off, text-spacing and normal/reduced-motion evidence where applicable. P1 readers remain on4465 until an explicit stimulus disposition; candidate work uses4466.
+
+[D/I] **Gateway amendment 2026-09-16:** [[homepage_gateway_revision]] adds whole-page density, page purpose and choosing a next destination to R-VISUAL. Review full pages as well as first screens; question whether each block belongs on the homepage. Preserve reached-detail paths, not every old section. Use before/after main words and full-page height as descriptive measurements only. If detail moves, update occurrence/selector fixtures in the same diff and retain substantive checks on the destination; a passing old retention test is not grounds to rebuild clutter.
 
 ## R-VOICE — prose, claims and machine twin
 

@@ -1,0 +1,15 @@
+{
+  "counts": {
+    "skills": 57,
+    "templates": 45,
+    "context_topics": {
+      "adna_core": 13,
+      "lattice_basics": 2,
+      "claude_code": 4,
+      "object_standards": 1,
+      "prompt_engineering": 7
+    }
+  },
+  "correction": "GARNIER campaign routing was absent; current website status and historical-phase distinction added. Inventory values and gate41 ratchet preserved.",
+  "scope_dependency": "Previous STATE close updated its date without a companion MANIFEST review, exposed by gate41."
+}

@@ -40,7 +40,7 @@ tags: [garnier, vision, review]
 
 ## Builder checks and scope dependencies
 
-[D] Initial fast suite575passed/3failed/3skipped. Two failures were the gate39 census expecting the now-removed homepage hero graph; its archived baseline3.4px is retired from active population, not raised or claimed repaired. Other figure pins/advisory policy remain unchanged. Third failure was the measured light eyebrow. Initial source/Markdown inspection also found whole-entry links merged heading text in the twin: entries now use semantic articles with title links, and adjacent machine-resource labels receive whitespace. No emitter change.
+[D] Initial fast suite 575 passed / 3 failed/3skipped. Two failures were the gate39 census expecting the now-removed homepage hero graph; its archived baseline3.4px is retired from active population, not raised or claimed repaired. Other figure pins/advisory policy remain unchanged. Third failure was the measured light eyebrow. Initial source/Markdown inspection also found whole-entry links merged heading text in the twin: entries now use semantic articles with title links, and adjacent machine-resource labels receive whitespace. No emitter change.
 
 [D] Two command-context mistakes are preserved in logs: a root-relative edit launched from site/ made no edits and its premature build failed; a later build launched from checkout root used an unintended npm-cache Astro version and failed on missing entrypoints. It did not build the candidate or touch frozen P1. The correct pinned site build is `build_round2_site.log`; incidental candidate-root cache is isolated from the source commit. These failed attempts are not successful verification.
 
@@ -64,7 +64,7 @@ tags: [garnier, vision, review]
 
 ## Final technical dispositions and residual ownership
 
-[D] The first gate39 repair removed the retired hero baseline but missed its old200-row census guard; the second fast run still failed twice. Final guard80 matches the reduced figure population across the same five widths. The12px floor, surviving7.9/8.4px baseline pins, advisory policy and provider bars remain unchanged. Final fast578passed/3skipped, full696passed/3skipped. This is an explicit fixture-population update, not a claim that removed labels became legible.
+[D] The first gate39 repair removed the retired hero baseline but missed its old200-row census guard; the second fast run still failed twice. Final guard80 matches the reduced figure population across the same five widths. The12px floor, surviving7.9/8.4px baseline pins, advisory policy and provider bars remain unchanged. Final fast 578 passed / 3 skipped, full 696 passed / 3 skipped. This is an explicit fixture-population update, not a claim that removed labels became legible.
 
 [D] A source-corroboration helper initially compared raw registry names with canonical browser slugs and failed. The corrected helper imports the real canonical accessor and lifecycle functions; final comparison passes. Failed helper/log retained. Final light axe checks find zero violations; source command, actual governance rule, same eight destinations and qualifiers agree with HTML/twin.
 

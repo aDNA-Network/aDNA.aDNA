@@ -49,8 +49,12 @@ Related: [[phase_exit]] · [[formative_reader_pack]] · [[session_stanley_202609
 
 ## Implementation disposition — 2026-09-16
 
-[D] Completed under the accepted exception: [[homepage_design_pass]], source0c77b61, isolated preview port4466. Original sourceb1cf040/port4465 remains the reader stimulus. Implementation status completed does not accept the new candidate for reader use or close DP3. [I] Actual workload65±25kT; billing unavailable.
+[D] Completed under the accepted exception: [[homepage_design_pass]], source 0c77b61, isolated preview port 4466. Original source b1cf040/port 4465 remains the reader stimulus. Implementation status completed does not accept the new candidate for reader use or close DP3. [I] Actual workload 65±25 kT; billing unavailable.
 
 ## Accepted expansion and completion — later 2026-09-16
 
-[D] Stanley's “Implement the plan” accepts [[clean_homepage_revision]]: clean reading surfaces, whole-homepage composition and three independent vision perspectives for every substantial visual change. This is an additive expansion of the completed narrow pass above. Sourcee745990 at isolated4466 completes it; [[clean_homepage_verification]] and [[clean_homepage_visual_review]] preserve checks and three review rounds. FrozenP1b1cf040/4465, real-reader requirements and DP3 remain unchanged. [I] Additional forecast120±40kT; actual160±50kT, separately booked, billing unavailable.
+[D] Stanley's “Implement the plan” accepts [[clean_homepage_revision]]: clean reading surfaces, whole-homepage composition and three independent vision perspectives for every substantial visual change. This is an additive expansion of the completed narrow pass above. Source e745990 at isolated 4466 completes it; [[clean_homepage_verification]] and [[clean_homepage_visual_review]] preserve checks and three review rounds. Frozen P1 b1cf040/4465, real-reader requirements and DP3 remain unchanged. [I] Additional forecast 120±40 kT; actual 160±50 kT, separately booked, billing unavailable.
+
+## Accepted minimal-gateway scope — later 2026-09-16
+
+[D] [[homepage_gateway_revision]] records Stanley's chosen minimal gateway, tiny folder example and four task paths, followed by “Implement the plan”. It supersedes this document's previous all-section/same-eight-homepage retention requirements. Homepage content is reduced to orientation and navigation; destination pages retain depth. Separate candidate 4466, frozen P1 b1cf040/4465, real-reader evidence and open DP3 remain unchanged. [I] Additional forecast 110±40 kT; actuals owed at close, billing unavailable.

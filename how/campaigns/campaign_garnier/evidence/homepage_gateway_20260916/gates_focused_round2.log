@@ -1,0 +1,157 @@
+(node:87986) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[2m[WebServer] [22m(node:88015) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+[2m[WebServer] [22m(node:88015) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+
+Running 89 tests using 4 workers
+
+(node:88168) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:88169) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:88167) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:88170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:88170) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:88170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:88168) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:88168) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:88167) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:88167) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:88169) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:88169) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/gates/gate-41-derived-counts.spec.ts:70:1 › G41a: the gate is looking at the vault, not at wherever it was run from (3ms)
+  ✓   3 [chromium] › tests/gates/gate-41-derived-counts.spec.ts:84:1 › G41b (F-c): the claim register's published tally matches the derived one (34ms)
+  ✓   5 [chromium] › tests/gates/gate-41-derived-counts.spec.ts:124:1 › G41c (F-m): the ADR index does not fall further behind the ADRs on disk (3ms)
+  ✓   7 [chromium] › tests/gates/gate-41-derived-counts.spec.ts:166:1 › G41d (F-n): MANIFEST.md does not drift further behind STATE.md (3ms)
+  ✓   2 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:184:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54a: the source walk covered its frame (coverage floor, not > 0) (2ms)
+  ✓   8 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:194:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54b: the exclusion set is what it claims to be, and its arithmetic is pinned (1ms)
+  ✓   9 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:203:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54c: D1 is published in AUTHORED content (0ms)
+  ✓  10 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:214:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54h: the vendored exclusion is still load-bearing (0ms)
+  ✓  11 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:223:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54d: D2 is published on BOTH of its named home pages (1ms)
+  ✓  12 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:232:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54e: every graded page was actually measured (coverage floor) (1ms)
+  ✓  13 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:252:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54f: each new doctrine section meets the derived substance floor (0ms)
+  ✓  14 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:272:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54k: each graded section also clears its OWN page's comparator floor (1ms)
+  ✓  15 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:284:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54g: the derivation still supports the pinned budget (1ms)
+  ✓  16 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:307:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54i: the /commons twin is measurable, and the probe reaches real text (0ms)
+  ✓  17 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:335:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54j: the D4 ancient-DNA disambiguation reaches the reader on /commons (0ms)
+  ✓  18 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:403:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54l: the D3 section is measurable and the probe reaches real text (0ms)
+  ✓  19 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:420:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54m: the D3 section carries its planned-framing markers (0ms)
+  ✓  20 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:432:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54n: the D3 section makes no present-availability claim (0ms)
+  ✓  21 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:472:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54o: the top nav is still capped at its ratified 7 flat entries (0ms)
+  ✓  22 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:490:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54p: the home twin is measurable, and the probe reaches real text (2ms)
+  ✓  23 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:509:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54q: the returning-member entry point names BOTH destinations (0ms)
+  ✓  24 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:528:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54r: the reached changelog contains the source-derived latest dates (11ms)
+  ✓  25 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:637:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54t: the D6 probe reaches protocol text, and its exclusion arithmetic is pinned (15ms)
+  ✓  26 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:667:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54u: no retired present-tense protocol claim reaches a reader (11ms)
+  ✓  27 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:736:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54v: the /privacy twin is measurable, and the probe reaches real text (0ms)
+  ✓  28 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:755:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54w: R-124's disclaiming section reaches the reader, and is not a mention (0ms)
+  ✓  29 [chromium] › tests/gates/gate-54-doctrine-layer.spec.ts:795:3 › gate-54: GR-4 story coverage — D1/D2 doctrine, D4 on /commons, D3 on /network › G54x: the R-124 section makes NO compliance claim (0ms)
+  ✓   6 [chromium] › tests/gates/gate-13-nav-surfacing.spec.ts:22:1 › G13 Nav: header carries Commons in the desktop row (1440px) (608ms)
+  ✓   4 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Homepage (/) has zero WCAG AA violations (896ms)
+  ✓  30 [chromium] › tests/gates/gate-13-nav-surfacing.spec.ts:30:1 › G13 Nav: desktop row is ≤7 items with no overflow disclosure (ADR-049) (575ms)
+  ✓  32 [chromium] › tests/gates/gate-13-nav-surfacing.spec.ts:46:1 › G13 Nav: desktop row fits at the 1024px switch-on (c158 lesson) (582ms)
+  ✓  31 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Concept page (/learn/concepts/triad) has zero WCAG AA violations (1.0s)
+  ✓  33 [chromium] › tests/gates/gate-13-nav-surfacing.spec.ts:60:1 › G13 Nav: footer carries the top-level model including Commons (575ms)
+  ✓  35 [chromium] › tests/gates/gate-13-nav-surfacing.spec.ts:73:1 › G13 gateway: mission and participation link to their full destinations (572ms)
+  ✓  34 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Tutorial page (/learn/tutorials/first-claude-md) has zero WCAG AA violations (1.0s)
+3:16:20 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+  ✓  36 [chromium] › tests/gates/gate-13-nav-surfacing.spec.ts:82:1 › G13 §5: public-good handoff reaches the data-sourced commons (822ms)
+  ✓  37 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Course index (/learn/course/) has zero WCAG AA violations (870ms)
+  ✘  38 [chromium] › tests/gates/gate-13-nav-surfacing.spec.ts:101:1 › G13 audience pathways remain reachable through the Use Cases destination (720ms)
+(node:88589) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:88589) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:88589) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  39 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Course lesson (interactive checks) (/learn/course/what-is-an-adna-graph/) has zero WCAG AA violations (977ms)
+  ✓  40 [chromium] › tests/gates/gate-13-nav-surfacing.spec.ts:110:1 › G13 Mobile disclosure: doc pages expose section nav below 768px (684ms)
+  ✓  41 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Pattern page (/patterns/agents-md) has zero WCAG AA violations (937ms)
+  ✓  42 [chromium] › tests/gates/gate-13-nav-surfacing.spec.ts:122:1 › G13 Mobile disclosure: hidden at tablet+ where the sidebar shows (637ms)
+  ✓  43 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: 404 page (/404.html) has zero WCAG AA violations (791ms)
+  ✓  44 [chromium] › tests/gates/gate-13-nav-surfacing.spec.ts:135:1 › G13 Audience surfacing: /provenance-audit scopes to Guides with a breadcrumb (584ms)
+  ✓  45 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Network graph (/vaults/graph/) has zero WCAG AA violations (1.1s)
+  ✓  46 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Vault detail (with relationships) (/vaults/harness/) has zero WCAG AA violations (842ms)
+  ✓  47 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Network page (/network) has zero WCAG AA violations (918ms)
+  ✓  48 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Commons page (/commons) has zero WCAG AA violations (954ms)
+  ✓  49 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Vaults index (/vaults) has zero WCAG AA violations (1.4s)
+  ✓  50 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Get Started (/get-started) has zero WCAG AA violations (992ms)
+  ✓  51 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Specification (/reference/specification) has zero WCAG AA violations (941ms)
+  ✓  52 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Design system (/design-system) has zero WCAG AA violations (1.1s)
+  ✓  53 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Privacy (/privacy) has zero WCAG AA violations (827ms)
+  ✓  54 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Accessibility statement (/accessibility) has zero WCAG AA violations (840ms)
+  ✓  55 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Use-cases index (/use-cases) has zero WCAG AA violations (867ms)
+  ✓  56 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Guides index (/how) has zero WCAG AA violations (858ms)
+  ✓  57 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Glossary index (/glossary) has zero WCAG AA violations (913ms)
+  ✓  58 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: About (/about) has zero WCAG AA violations (882ms)
+  ✓  59 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: State of the network (/state-of-the-network) has zero WCAG AA violations (926ms)
+  ✓  60 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Canonical properties (/canonical-properties) has zero WCAG AA violations (914ms)
+  ✓  61 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Proposal archive (/community/proposals/) has zero WCAG AA violations (925ms)
+  ✓  62 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Proposal (constitution) (/community/proposals/aep-1/) has zero WCAG AA violations (972ms)
+  ✓  63 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [dark]: Proposal (draft) (/community/proposals/aep-2/) has zero WCAG AA violations (931ms)
+  ✓  64 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Homepage (/) has zero WCAG AA violations (830ms)
+  ✓  65 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Concept page (/learn/concepts/triad) has zero WCAG AA violations (1.0s)
+  ✓  66 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Tutorial page (/learn/tutorials/first-claude-md) has zero WCAG AA violations (1.0s)
+  ✓  67 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Course index (/learn/course/) has zero WCAG AA violations (857ms)
+  ✓  68 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Course lesson (interactive checks) (/learn/course/what-is-an-adna-graph/) has zero WCAG AA violations (960ms)
+  ✓  69 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Pattern page (/patterns/agents-md) has zero WCAG AA violations (918ms)
+  ✓  70 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: 404 page (/404.html) has zero WCAG AA violations (785ms)
+  ✓  71 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Network graph (/vaults/graph/) has zero WCAG AA violations (1.1s)
+  ✓  72 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Vault detail (with relationships) (/vaults/harness/) has zero WCAG AA violations (839ms)
+  ✓  73 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Network page (/network) has zero WCAG AA violations (914ms)
+  ✓  74 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Commons page (/commons) has zero WCAG AA violations (966ms)
+  ✓  75 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Vaults index (/vaults) has zero WCAG AA violations (1.4s)
+  ✓  76 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Get Started (/get-started) has zero WCAG AA violations (969ms)
+  ✓  77 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Specification (/reference/specification) has zero WCAG AA violations (940ms)
+  ✓  78 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Design system (/design-system) has zero WCAG AA violations (1.2s)
+  ✓  79 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Privacy (/privacy) has zero WCAG AA violations (822ms)
+  ✓  80 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Accessibility statement (/accessibility) has zero WCAG AA violations (833ms)
+  ✓  81 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Use-cases index (/use-cases) has zero WCAG AA violations (924ms)
+  ✓  82 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Guides index (/how) has zero WCAG AA violations (881ms)
+  ✓  83 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Glossary index (/glossary) has zero WCAG AA violations (911ms)
+  ✓  84 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: About (/about) has zero WCAG AA violations (889ms)
+  ✓  85 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: State of the network (/state-of-the-network) has zero WCAG AA violations (920ms)
+  ✓  86 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Canonical properties (/canonical-properties) has zero WCAG AA violations (924ms)
+  ✓  87 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Proposal archive (/community/proposals/) has zero WCAG AA violations (923ms)
+  ✓  88 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Proposal (constitution) (/community/proposals/aep-1/) has zero WCAG AA violations (969ms)
+  ✓  89 [chromium] › tests/gates/gate-4-a11y.spec.ts:96:5 › G4 A11y [light]: Proposal (draft) (/community/proposals/aep-2/) has zero WCAG AA violations (934ms)
+
+
+  1) [chromium] › tests/gates/gate-13-nav-surfacing.spec.ts:101:1 › G13 audience pathways remain reachable through the Use Cases destination 
+
+    Error: Use Cases must surface /use-cases/solo-developer/
+
+    [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('main a[href="/use-cases/solo-developer/"], main a[href="/use-cases/solo-developer"]')
+    Expected: visible
+    Error: strict mode violation: locator('main a[href="/use-cases/solo-developer/"], main a[href="/use-cases/solo-developer"]') resolved to 3 elements:
+        1) <a class="switcher-link" data-astro-cid-owrjt5ou="" href="/use-cases/solo-developer">…</a> aka getByLabel('Section navigation').locator('a').filter({ hasText: 'Use Cases' })
+        2) <a class="card" data-astro-cid-mozb6k5t="" href="/use-cases/solo-developer">…</a> aka getByRole('link', { name: 'Solo Developer Sam is a' })
+        3) <a class="switcher-link" data-astro-cid-owrjt5ou="" href="/use-cases/solo-developer">…</a> aka getByLabel('Documentation sections').getByRole('link', { name: 'Use Cases' })
+
+    Call log:
+    [2m  - Use Cases must surface /use-cases/solo-developer/ with timeout 5000ms[22m
+    [2m  - waiting for locator('main a[href="/use-cases/solo-developer/"], main a[href="/use-cases/solo-developer"]')[22m
+
+
+      104 |   await expect(page).toHaveURL(/\/use-cases\/?$/);
+      105 |   for (const a of audiences) {
+    > 106 |     await expect(page.locator(`main a[href="${a.href}"], main a[href="${a.href.replace(/\/$/, '')}"]`), `Use Cases must surface ${a.href}`).toBeVisible();
+          |                                                                                                                                             ^
+      107 |   }
+      108 | });
+      109 |
+        at /Users/stanley/.cache/garnier-homepage-20260916/site/tests/gates/gate-13-nav-surfacing.spec.ts:106:141
+
+    Error Context: test-results/gate-13-nav-surfacing-G13--41499-h-the-Use-Cases-destination-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/gates/gate-13-nav-surfacing.spec.ts:101:1 › G13 audience pathways remain reachable through the Use Cases destination 
+  88 passed (51.1s)

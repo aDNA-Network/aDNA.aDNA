@@ -1,0 +1,19 @@
+[
+  {
+    "surface": "home",
+    "path": "/",
+    "status": 200,
+    "loadMs": 531,
+    "title": "aDNA — project knowledge, organized for AI",
+    "desc": "aDNA (Agentic DNA) is an open standard for organizing a project's files. Learn the idea, explore the work, and choose where to begin.",
+    "ogTitle": "aDNA — project knowledge, organized for AI",
+    "h1": "Project knowledge,\norganized for AI.",
+    "h2count": 2,
+    "bodyLen": 1444,
+    "fullH": 1262,
+    "axeViolations": 0,
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  }
+]

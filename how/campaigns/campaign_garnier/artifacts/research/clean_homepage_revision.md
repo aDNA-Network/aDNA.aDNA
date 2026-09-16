@@ -12,12 +12,12 @@ tags: [garnier, design, visual-review]
 
 ## Accepted scope amendment
 
-- **Decision:** implement the whole-homepage clean composition and independent visual-review process in the isolated candidate, port4466; preserve P1 sourceb1cf040/port4465 and open DP3/real-reader requirements.
+- **Decision:** implement the whole-homepage clean composition and independent visual-review process in the isolated candidate, port 4466; preserve P1 source b1cf040/port 4465 and open DP3/real-reader requirements.
 - **Ratified-by:** Stanley Bishop; explicit “Implement the plan” following the selected clean-text/contained-art, each-substantial-change review, whole-homepage options.
 - **Date:** 2026-09-16.
 - **Status:** accepted.
 
-[I] Additional forecast120±40kT content-load; two independent visual rounds; billing unavailable. This expands the completed [[next_build_scope]] increment; it grants no general phase entry, publication or peer delivery.
+[I] Additional forecast 120±40 kT content-load; two independent visual rounds; billing unavailable. This expands the completed [[next_build_scope]] increment; it grants no general phase entry, publication or peer delivery.
 
 ## Design contract
 
@@ -47,12 +47,12 @@ tags: [garnier, design, visual-review]
 
 [D] [[clean_homepage_visual_review]] records three independent perspectives across three implementation rounds. Every medium/moderate finding is resolved or, for the optional-art interpretation, withdrawn. Final reviewers report no blocking visual issue. The prior miss is preserved above; the response is implemented in `R-VISUAL`, the quality brief and prospective P3.1/P3.2 acceptance criteria. Both future missions remain queued.
 
-[D] [[clean_homepage_verification]] records229 built routes, markup/injections, fast578passed/3skipped, full696passed/3skipped,12final axe cells with zero violations,12identical shared-hero comparisons, source/twin and interaction checks. All15 frozen P1 hashes remain identical. Candidate identity and immutable screenshot manifests are in `evidence/clean_homepage_20260916/`. No human observations, phase acceptance or publication are inferred.
+[D] [[clean_homepage_verification]] records229 built routes, markup/injections, fast 578 passed / 3 skipped, full 696 passed / 3 skipped,12final axe cells with zero violations,12identical shared-hero comparisons, source/twin and interaction checks. All15 frozen P1 hashes remain identical. Candidate identity and immutable screenshot manifests are in `evidence/clean_homepage_20260916/`. No human observations, phase acceptance or publication are inferred.
 
-[I] Additional actual **160±50kT content-load**, rough estimate including independent reviews, versus forecast120±40kT; central variance+40kT (+33%). Third targeted review, native-zoom verification, capture-metadata repair and fixture/source-corroboration corrections added work. Billing unavailable; this is not measured API usage. Prior design65±25kT and prior P1/research totals remain separately booked. No remaining implementation work for this increment.
+[I] Additional actual **160±50 kT** content-load**, rough estimate including independent reviews, versus forecast 120±40 kT; central variance+40kT (+33%). Third targeted review, native-zoom verification, capture-metadata repair and fixture/source-corroboration corrections added work. Billing unavailable; this is not measured API usage. Prior design 65±25 kT and prior P1/research totals remain separately booked. No remaining implementation work for this increment.
 
 ## Handoff
 
-[D] P1 sourceb1cf040 at **http://127.0.0.1:4465/** remains the frozen reader stimulus. P1.1/P1.2 are complete; P1.3 actual engineer/funder/scientist records and DP3 remain open. No automatic stimulus switch or general P2/P3 entry. Future substantial visual changes use R-VISUAL; shared-header polish and missing public descriptions have named owners in the review. Provider-process and data memos remain staged in this vault.
+[D] P1 source b1cf040 at **http://127.0.0.1:4465/** remains the frozen reader stimulus. P1.1/P1.2 are complete; P1.3 actual engineer/funder/scientist records and DP3 remain open. No automatic stimulus switch or general P2/P3 entry. Future substantial visual changes use R-VISUAL; shared-header polish and missing public descriptions have named owners in the review. Provider-process and data memos remain staged in this vault.
 
 [I] To resume the design preview if stopped, run `npx astro preview --host 127.0.0.1 --port 4466` from the isolated `site/` directory. Do not rebuild the primary checkout's frozen dist. Recheck identity before reuse. Session/AAR: [[session_stanley_20260916_052556_garnier_clean_homepage]].

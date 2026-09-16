@@ -1,0 +1,6 @@
+Frozen P1 stimulus re-verification at increment close — 2026-09-16 (agent_rosetta)
+Method: restarted `npx astro preview --port 4465` from the untouched vault site/dist;
+fetched all 15 routes in frozen_before.json from http://localhost:4465 and compared
+sha256 of each response body to the frozen manifest (source_commit b1cf040).
+Result: 15 routes, 0 mismatches. The freeze held through the gateway increment and
+the Codex→Claude runtime handoff.

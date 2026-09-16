@@ -10,7 +10,7 @@ tags: [garnier, p0, phase_exit, ratified]
 
 [D] **Accepted with six amendments on 2026-09-15.** See [[dp2_ratification_20260915]] for the operator event and binding changes. The proposal and evidence below are preserved as presented; their pending-language describes the pre-ratification state. P1 is now authorized; DP3 and publication remain separately gated.
 
-**Recommendation: accept the P0 evidence pack and authorize the three P1 missions with the proposed 320kT envelope.** [I] Keep a spend/scope review at each mission close. The original 186kT estimate remains preserved; additive proposed budgets are not yet committed. No P1 implementation or publication has begun.
+**Recommendation: accept the P0 evidence pack and authorize the three P1 missions with the proposed 320 kT envelope.** [I] Keep a spend/scope review at each mission close. The original 186 kT estimate remains preserved; additive proposed budgets are not yet committed. No P1 implementation or publication has begun.
 
 ## Delivered and verified
 
@@ -28,22 +28,22 @@ tags: [garnier, p0, phase_exit, ratified]
 
 ## Budget and next work
 
-[I] P0 actual is approximately 590±210kT content-load against 123 planned; p0_estimation_retrospective documents the roughly4.8× miss. Whole-session billing is unavailable. Six CLI turns have partial runtime token receipts, kept separate from context-load and currency. Rejected attempts remain counted.
+[I] P0 actual is approximately 590±210 kT content-load against 123 planned; p0_estimation_retrospective documents the roughly4.8× miss. Whole-session billing is unavailable. Six CLI turns have partial runtime token receipts, kept separate from context-load and currency. Rejected attempts remain counted.
 
 [I] P1 proposed budgets are derived from its mission frontmatter:
 
-- P1.1 homepage mechanism/storyboard/copy:150kT, including three fresh prescreens and two graders.
+- P1.1 homepage mechanism/storyboard/copy: 150 kT, including three fresh prescreens and two graders.
 - P1.2 quickstart and annotated first-read tour:90kT, including clean reproduction and source reconciliation.
 - P1.3 public-good invitation across community/about/commons/network:80kT, including evidence and formative-feedback disposition.
 
-[I] Total 320kT; three lead sittings forecast. The original 62+61+63=186kT remains unchanged pending this ruling. The approved campaign’s original totals remain 38 missions/47 sittings/2310kT; this proposal increases only the uncommitted P1 estimate if accepted. Retain Agentic DNA; show the file mechanism before shared-cultural-heritage and democratic/public-good aspirations; evolve the existing visual program after voice/proof and human feedback.
+[I] Total 320 kT; three lead sittings forecast. The original 62+61+63 = 186 kT remains unchanged pending this ruling. The approved campaign’s original totals remain 38 missions/47 sittings / 2310 kT; this proposal increases only the uncommitted P1 estimate if accepted. Retain Agentic DNA; show the file mechanism before shared-cultural-heritage and democratic/public-good aspirations; evolve the existing visual program after voice/proof and human feedback.
 
 ## ⛩ OPERATOR DECISIONS
 
 **DP2 question:** Accept P0’s evidence and limitations, and authorize P1 with which budget?
 
-1. **Accept P0 + commit 320kT (recommended).** Execute the three existing P1 missions, checking actuals/scope at each close. Formative humans remain required before DP3/visual production.
-2. **Accept P0 + retain 186kT.** Begin a bounded P1.1 increment, then return with measured scope/cost before the remaining work. Do not silently omit tests, source review, accessibility or human evidence to fit the estimate.
+1. **Accept P0 + commit 320 kT (recommended).** Execute the three existing P1 missions, checking actuals/scope at each close. Formative humans remain required before DP3/visual production.
+2. **Accept P0 + retain 186 kT.** Begin a bounded P1.1 increment, then return with measured scope/cost before the remaining work. Do not silently omit tests, source review, accessibility or human evidence to fit the estimate.
 3. **Hold or amend.** Name the missing evidence or altered scope; P1 stays queued.
 
 Default proposal: option1. Refusing it changes the commitment and next executable scope; silence is not approval. This is the campaign’s required human phase/budget gate, not a repeat of DP1.

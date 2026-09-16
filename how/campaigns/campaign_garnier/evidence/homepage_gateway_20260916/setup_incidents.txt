@@ -1,0 +1,1 @@
+Initial relative-path source write was issued from site/ and failed without editing a file; its subsequent old-source build was stopped. Source was then written at its absolute path and build_round1_site.log succeeded. This attempt is not passing verification.

@@ -1,0 +1,471 @@
+{
+  "recordedAt": "2026-09-16T07:17:30.312Z",
+  "native": [],
+  "shared": [
+    {
+      "route": "/network",
+      "name": "mobile-lg",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "0eef4afc261227c53c111ed634495aac5d7a114ff2c446f7785027fed0d4055d",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "0eef4afc261227c53c111ed634495aac5d7a114ff2c446f7785027fed0d4055d",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "mobile-lg",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "0eef4afc261227c53c111ed634495aac5d7a114ff2c446f7785027fed0d4055d",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "0eef4afc261227c53c111ed634495aac5d7a114ff2c446f7785027fed0d4055d",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "laptop-sm",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "582de76d5dd076e51d45ea1abec8a28db96235058badd4ce5549e266960710ab",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "582de76d5dd076e51d45ea1abec8a28db96235058badd4ce5549e266960710ab",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "laptop-sm",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "582de76d5dd076e51d45ea1abec8a28db96235058badd4ce5549e266960710ab",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "582de76d5dd076e51d45ea1abec8a28db96235058badd4ce5549e266960710ab",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "desktop",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "0a0bfcb1a6979c786cd04982d866fcd0832acd43fb5ba9c2a0877e744fd19d5a",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "0a0bfcb1a6979c786cd04982d866fcd0832acd43fb5ba9c2a0877e744fd19d5a",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "desktop",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "0a0bfcb1a6979c786cd04982d866fcd0832acd43fb5ba9c2a0877e744fd19d5a",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "0a0bfcb1a6979c786cd04982d866fcd0832acd43fb5ba9c2a0877e744fd19d5a",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "mobile-lg",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "f16b7264d48dc1ed9c72fc5f384a58dff0c6031dd4a2a6facf894c207737df3a",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "f16b7264d48dc1ed9c72fc5f384a58dff0c6031dd4a2a6facf894c207737df3a",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "mobile-lg",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "f16b7264d48dc1ed9c72fc5f384a58dff0c6031dd4a2a6facf894c207737df3a",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "f16b7264d48dc1ed9c72fc5f384a58dff0c6031dd4a2a6facf894c207737df3a",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "laptop-sm",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "6396515c10a9472e47989ff0dc3d371d98ae0ae2755e1da8e5c4fe0c57f0ec33",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "6396515c10a9472e47989ff0dc3d371d98ae0ae2755e1da8e5c4fe0c57f0ec33",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "laptop-sm",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "6396515c10a9472e47989ff0dc3d371d98ae0ae2755e1da8e5c4fe0c57f0ec33",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "6396515c10a9472e47989ff0dc3d371d98ae0ae2755e1da8e5c4fe0c57f0ec33",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "desktop",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "69223c8a275fe07372e5416180777e5533e988cab7c8ab3c0031e72ea5d5c5f5",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "69223c8a275fe07372e5416180777e5533e988cab7c8ab3c0031e72ea5d5c5f5",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "desktop",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "69223c8a275fe07372e5416180777e5533e988cab7c8ab3c0031e72ea5d5c5f5",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "69223c8a275fe07372e5416180777e5533e988cab7c8ab3c0031e72ea5d5c5f5",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    }
+  ],
+  "interaction": {
+    "keyboard": {
+      "links": [
+        {
+          "text": "Share what you choose.",
+          "href": "/commons/"
+        },
+        {
+          "text": "MIT-licensed standard",
+          "href": "/reference/specification/"
+        },
+        {
+          "text": "Stanley Bishop",
+          "href": "/about/"
+        },
+        {
+          "text": "Understand aDNA",
+          "href": "/learn/what-is-adna/"
+        },
+        {
+          "text": "Start a project",
+          "href": "/get-started/"
+        },
+        {
+          "text": "Explore the work",
+          "href": "/vaults/"
+        },
+        {
+          "text": "Participate",
+          "href": "/community/"
+        },
+        {
+          "text": "Changelog",
+          "href": "/changelog/"
+        },
+        {
+          "text": "RSS feed",
+          "href": "/rss.xml"
+        }
+      ],
+      "stops": [
+        {
+          "href": "/commons/",
+          "text": "Share what you choose.",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/reference/specification/",
+          "text": "MIT-licensed standard",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/about/",
+          "text": "Stanley Bishop",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/learn/what-is-adna/",
+          "text": "Understand aDNA",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/get-started/",
+          "text": "Start a project",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/vaults/",
+          "text": "Explore the work",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/community/",
+          "text": "Participate",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/changelog/",
+          "text": "Changelog",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/rss.xml",
+          "text": "RSS feed",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        }
+      ]
+    },
+    "no_js": {
+      "links": [
+        {
+          "text": "Share what you choose.",
+          "href": "/commons/"
+        },
+        {
+          "text": "MIT-licensed standard",
+          "href": "/reference/specification/"
+        },
+        {
+          "text": "Stanley Bishop",
+          "href": "/about/"
+        },
+        {
+          "text": "Understand aDNA",
+          "href": "/learn/what-is-adna/"
+        },
+        {
+          "text": "Start a project",
+          "href": "/get-started/"
+        },
+        {
+          "text": "Explore the work",
+          "href": "/vaults/"
+        },
+        {
+          "text": "Participate",
+          "href": "/community/"
+        },
+        {
+          "text": "Changelog",
+          "href": "/changelog/"
+        },
+        {
+          "text": "RSS feed",
+          "href": "/rss.xml"
+        }
+      ],
+      "stops": [
+        {
+          "href": "/commons/",
+          "text": "Share what you choose.",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/reference/specification/",
+          "text": "MIT-licensed standard",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/about/",
+          "text": "Stanley Bishop",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/learn/what-is-adna/",
+          "text": "Understand aDNA",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/get-started/",
+          "text": "Start a project",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/vaults/",
+          "text": "Explore the work",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/community/",
+          "text": "Participate",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/changelog/",
+          "text": "Changelog",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        },
+        {
+          "href": "/rss.xml",
+          "text": "RSS feed",
+          "outline": "solid",
+          "outlineWidth": "2px",
+          "visible": true
+        }
+      ]
+    },
+    "spacing_dark": {
+      "width": 320,
+      "scrollWidth": 320,
+      "clipped": []
+    },
+    "spacing_light": {
+      "width": 320,
+      "scrollWidth": 320,
+      "clipped": []
+    },
+    "reduce": {
+      "images": 0,
+      "animations": 0,
+      "words": 160
+    },
+    "no-preference": {
+      "images": 0,
+      "animations": 0,
+      "words": 160
+    }
+  },
+  "limits": [
+    "Single builder Chromium QA; no human reader observations.",
+    "Native light preference retains dark-first default; light states use the shipped toggle.",
+    "Local preview lacks Vercel speed-insights adapter script."
+  ]
+}

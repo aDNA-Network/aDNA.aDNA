@@ -13,6 +13,8 @@ tags: [design, research, garnier, quality, accessibility]
 
 ## Direction
 
+[D] **Current homepage direction, accepted 2026-09-16:** [[homepage_gateway_revision]]. The homepage introduces the idea, ethos, mission and current project, then offers four clear task paths. Dedicated pages provide depth. A tiny three-folder example is sufficient here; the earlier full-excerpt/eight-entry treatments below describe prior stages, not required homepage content. Preserve their source evidence without reproducing every detail on the front page.
+
 [I] Make aDNA feel carefully made by making its content easier to inspect: a readable working example, a coherent typographic hierarchy, evidence near consequential claims and predictable next actions. Preserve the warm Tokyo Night/pixel identity and the mechanism-first P1 story. The next improvement should come from composition and precision, rather than a new decorative system.
 
 [D] Basis: [[reference_set_garnier_20260915]] — ten sites attempted, nine reviewed on desktop and mobile — plus the primary guidance below, accessed 2026-09-15. These are proposed review criteria and implementation inputs. They neither ratify changes to [[front_page_doctrine]] nor prove improved reader outcomes. P1's candidate remains b1cf040; the formative reader protocol remains frozen.
@@ -128,3 +130,9 @@ Related: [[reference_set_garnier_20260915]] · [[front_page_doctrine]] · [[desi
 [I] **Independent perspectives:** enterprise composition/restraint/credibility ([[reviewer_design_critic]] + [[reviewer_visual_designer]]); cognitive load/access/task order ([[reviewer_anti_bloat_editor]] + [[reviewer_accessibility_auditor]]); brand/information meaning and truthfulness ([[reviewer_brand_strategist]] + [[reviewer_information_architect]]). Use three separate vision-capable agents on the same immutable first-screen and full-page captures. They receive audience, constraints and evidence identity before seeing builder rationale or peer findings. Be demanding and constructive: preserve specific strengths, name visible evidence and consequences, and propose the smallest useful correction. No finding quota, performative harshness, invented user reactions or role-played consent.
 
 [I] Each finding records screenshot/region, observation versus inference, severity, consequence, minimal fix, owner/disposition and reinspection condition. Resolve major issues before calling the visual increment complete. Record minor deferrals with reasons; inspect affected captures again. Green automated tests cannot certify composition. Agent critique cannot substitute for the three actual formative readers or VITRUVIUS's official scoring. Follow [[verification_recipes]] §R-VISUAL; retain the source/DOM/twin checks and frozen stimulus identity.
+
+## Review the page's job before its polish — accepted gateway increment
+
+[I] Assess the complete first-contact journey: can a newcomer find what aDNA is, why the project exists, who stewards it and where to go next? Every homepage block must serve orientation or navigation. Review what can move to a reached destination, not only how to style retained material. A neatly arranged catalog or manual can still fail this page's purpose. Main-content word/height comparisons inform editorial judgment; they do not prove comprehension. Keep essential qualifications with any remaining claim and verify information remains accurate at its destination.
+
+[D] R-VISUAL's three independent perspectives now explicitly cover density, purpose and task choice. [[homepage_gateway_revision]] supersedes the old homepage keep-every-section constraint while retaining [[verification_recipes]] and actual formative-reader requirements.

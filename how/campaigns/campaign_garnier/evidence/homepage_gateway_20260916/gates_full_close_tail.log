@@ -1,0 +1,4 @@
+  ✓  697 [chromium] › tests/gates/audit-p1s3-sweep.spec.ts:178:1 › P1S3 probe: mobile qual screenshots (vaults catalog / graph / spec) @audit (1.8s)
+
+  3 skipped
+  694 passed (2.4m)
