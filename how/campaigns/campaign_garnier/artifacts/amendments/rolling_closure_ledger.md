@@ -5,7 +5,7 @@ status: active
 tags:
 - garnier
 - amendments
-updated: '2026-09-15'
+updated: '2026-09-16'
 last_edited_by: agent_codex
 ---
 # Rolling closure evidence
@@ -59,3 +59,9 @@ Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
 [D] C2: copied command and local Qwen3.6 via C69 produced project9431f681 with360 tracked files; all five checks and distinct fresh-session recognition pass. Initial-commit assistance recorded; Qwen2.5 failed triad/history and is retained. C1 source b1cf040 unchanged; C3 scoped closure/AAR in [[local_model_continuation]] and [[session_stanley_20260915_122656_garnier_next_build]]. No provider pattern authored or delivered. P1.3 humans and DP3 pending; [[next_build_scope]] unanswered/proposed.
 
 [I] Sitting315±45kT versus25 preparation forecast: P1.2 allocation295±35, next-build preparation20±10. P1.2 cumulative430±85 versus90; phase implementation/evidence625±155 versus320. Reported735.4kT cached input is separately disclosed; mixed workload basis and overrun retrospective explicit, billing unavailable. Prior wind-down/research separately booked. Follow-up owner: Rosetta for real-evidence intake and any authorized design; Stanley for participants, DP3 and the separate sequence amendment. Remaining P1 forecast10–20kT after records, excluding waiting/design.
+
+## Bounded homepage exception — 2026-09-16
+
+[D] Stanley accepted [[next_build_scope]]; [[homepage_design_pass]] completes its three objectives. Isolated source0c77b61 at port4466 delivers hierarchy, connected file examples and visible copy success/rejection. Final markup/fast/full checks pass (full696passed/3documented skips);12final viewport/theme cells show zero axe violations; native interaction/fallback checks pass. Twelve shared-hero comparisons match exactly. All15 P1 port4465 hashes remain unchanged. Initial selector/capture failures and corrections are retained; builder QA does not replace independent or real-reader evidence. No provider gate change, new reusable pattern, publication or peer delivery.
+
+[I] Separate forecast60±25kT, estimated actual65±25kT; billing unavailable. Prior P1/research totals remain intact. Follow-up: Stanley reviews the separate candidate and supplies consenting participants; Rosetta receives records for P1.3. DP3 remains operator-owned. No automatic stimulus switch or phase advance. Session/AAR: [[session_stanley_20260916_032510_garnier_homepage]].

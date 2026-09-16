@@ -1,0 +1,20 @@
+{
+  "dist": "/Users/stanley/.cache/garnier-homepage-20260916/site/dist",
+  "measured": 1,
+  "missing": [],
+  "rows": [
+    {
+      "route": "/",
+      "target": 10,
+      "prose_fkgl": 5.46,
+      "whole_fkgl": 11.54,
+      "delta": 6.08,
+      "passive_pct": 0,
+      "sentences": 14,
+      "words": 130,
+      "avg_wps": 9.3,
+      "dropped_lines": 37,
+      "low_confidence": false
+    }
+  ]
+}

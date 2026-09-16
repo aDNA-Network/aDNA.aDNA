@@ -1,0 +1,15 @@
+{
+  "docs_rows": 118,
+  "built_html_routes": 229,
+  "frozen_population_same_routes": true,
+  "source_hash_changes": [],
+  "tour_candidate_equals_verified_original": true,
+  "tour_local_sync_sha": "81b1220a2980c468c875f190e78880cefa4a9834",
+  "tour_local_sync_type": "commit",
+  "tour_check": {
+    "command": "node scripts/build_tour_files.mjs --check",
+    "cwd": "/Users/stanley/aDNA/aDNA.aDNA/site",
+    "exit": 0,
+    "output": "OK \u2014 4 files current with v8.11 (sync 81b1220)"
+  }
+}

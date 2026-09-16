@@ -46,3 +46,7 @@ tags: [garnier, design, scope, accepted]
 - **Status:** accepted.
 
 Related: [[phase_exit]] · [[formative_reader_pack]] · [[session_stanley_20260915_122656_garnier_next_build]].
+
+## Implementation disposition — 2026-09-16
+
+[D] Completed under the accepted exception: [[homepage_design_pass]], source0c77b61, isolated preview port4466. Original sourceb1cf040/port4465 remains the reader stimulus. Implementation status completed does not accept the new candidate for reader use or close DP3. [I] Actual workload65±25kT; billing unavailable.

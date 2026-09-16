@@ -1,7 +1,7 @@
 ---
 type: governance
 created: 2026-09-14
-updated: '2026-09-15'
+updated: '2026-09-16'
 status: active
 last_edited_by: agent_codex
 tags:
@@ -15,6 +15,8 @@ tags:
 Campaign `campaign_garnier`; owner Stanley Bishop (`stanley`); Rosetta executor `agent_codex`; commissioned through Berthier. Status active. DP1 accepted with amendments on 2026-09-15; P0 is completed; DP2 accepted P0 and the 320 kT P1 envelope with six amendments on 2026-09-15; phase 1 is authorized, and later phase gates remain human. Read root governance before this file.
 
 ## Quick Start
+
+[D] **2026-09-16 limited sequence exception:** Stanley explicitly approved [[next_build_scope]]: homepage-only hierarchy, connected file examples and interaction finish in a separate preview, forecast60±25kT. This permits that early visual increment while P1 b1cf040/port4465 remains frozen. It does not accept DP3 or waive the real-reader requirements, and grants no general P2/P3 entry. Decision accepted; ratified-by Stanley Bishop; date2026-09-16; status accepted. Implementation and verification: [[homepage_design_pass]].
 
 Read [[campaign_garnier]], [[instrument_boundary]], [[haussmann_reconciliation_ledger]], and the current mission in [[session_prompts_garnier]]. Check active sessions, inbox and git status; open a scoped session before writing. Do not execute queued campaign missions until their human gates are ratified.
 

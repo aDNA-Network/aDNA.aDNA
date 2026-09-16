@@ -21,6 +21,17 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
 
+### 2026-09-16 — Bounded homepage design pass complete in separate preview
+
+[D] `updated: 2026-09-16`; `last_edited_by: agent_codex`; runtime Codex. Stanley's explicit approval ratifies [[how/campaigns/campaign_garnier/artifacts/research/next_build_scope|The bounded early-visual exception]]. [[how/campaigns/campaign_garnier/artifacts/research/homepage_design_pass|Implementation and receipt]]: source0c77b61 on `garnier/homepage-20260916`, isolated checkout `/Users/stanley/.cache/garnier-homepage-20260916`, preview http://127.0.0.1:4466/. Clearer hierarchy and connected file examples, visible copy/recovery, keyboard/no-JS/text-spacing checks. Full696passed/3documented skips;12final viewport/theme cells zero axe violations;12shared hero comparisons exact. Primary checkout site source/dist and all15 P1 hashes remain unchanged.
+
+[D] P1 sourceb1cf040 at http://127.0.0.1:4465/ remains the frozen reader stimulus. P1.1/P1.2 complete; P1.3 real engineer/funder/scientist records absent; DP3 pending. This completed design increment does not accept a new stimulus or general P2/P3 entry. No push/deploy/peer delivery. [I] Additional design workload65±25kT versus60±25forecast, separately booked; billing unavailable.
+
+**Intake:** 2026-09-16 · GARNIER bounded homepage design · Accepted exception implemented on isolated source0c77b61/port4466; evidence and handoff saved; P1 frozen.
+
+**Resume-Here:** Review the separate candidate at port4466 if requested; keep real-reader sessions on port4465 under [[how/campaigns/campaign_garnier/artifacts/p1/formative_reader_pack]]. Read [[how/campaigns/campaign_garnier/artifacts/research/homepage_design_pass]] and CURRENT in [[how/campaigns/campaign_garnier/missions/session_prompts_garnier]]. Do not ask again for this design approval or replay P1.2. Any future stimulus switch needs explicit version disposition; DP3/humans remain open. Code is on the isolated branch; main checkout contains the closure records. Session: [[session_stanley_20260916_032510_garnier_homepage]].
+
+
 ### 2026-09-15 — GARNIER P1.2 complete through local inference; reader evidence next
 
 [D] `updated: 2026-09-15`; `last_edited_by: agent_codex`; runtime Codex. [[how/campaigns/campaign_garnier/artifacts/p1/local_model_continuation|Local-model reproduction]] completes P1.2: exact copied Claude Code command through existing broker C69/Qwen3.6, all five file/history checks and distinct fresh-session governance recognition pass. Initial commit9431f681 contains360 files. The model needed a prompt to add that commit; earlier API and Qwen2.5 failures remain preserved. No unassisted timing or Claude subscription success is claimed.

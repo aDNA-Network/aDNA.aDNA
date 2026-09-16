@@ -1,0 +1,242 @@
+[
+  {
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "http://127.0.0.1:4466",
+      "--routes",
+      "/",
+      "--viewports",
+      "mobile",
+      "--themes",
+      "dark",
+      "--axe",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/mobile_dark"
+    ],
+    "exit": 0,
+    "output": "captured home\nDONE 1 surfaces \u00d7 1 viewports \u00d7 1 themes \u2192 /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/mobile_dark\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "http://127.0.0.1:4466",
+      "--routes",
+      "/",
+      "--viewports",
+      "mobile",
+      "--themes",
+      "light",
+      "--axe",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/mobile_light"
+    ],
+    "exit": 0,
+    "output": "captured home\nDONE 1 surfaces \u00d7 1 viewports \u00d7 1 themes \u2192 /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/mobile_light\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "http://127.0.0.1:4466",
+      "--routes",
+      "/",
+      "--viewports",
+      "mobile-lg",
+      "--themes",
+      "dark",
+      "--axe",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/mobile-lg_dark"
+    ],
+    "exit": 0,
+    "output": "captured home\nDONE 1 surfaces \u00d7 1 viewports \u00d7 1 themes \u2192 /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/mobile-lg_dark\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "http://127.0.0.1:4466",
+      "--routes",
+      "/",
+      "--viewports",
+      "mobile-lg",
+      "--themes",
+      "light",
+      "--axe",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/mobile-lg_light"
+    ],
+    "exit": 0,
+    "output": "captured home\nDONE 1 surfaces \u00d7 1 viewports \u00d7 1 themes \u2192 /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/mobile-lg_light\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "http://127.0.0.1:4466",
+      "--routes",
+      "/",
+      "--viewports",
+      "tablet",
+      "--themes",
+      "dark",
+      "--axe",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/tablet_dark"
+    ],
+    "exit": 0,
+    "output": "captured home\nDONE 1 surfaces \u00d7 1 viewports \u00d7 1 themes \u2192 /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/tablet_dark\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "http://127.0.0.1:4466",
+      "--routes",
+      "/",
+      "--viewports",
+      "tablet",
+      "--themes",
+      "light",
+      "--axe",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/tablet_light"
+    ],
+    "exit": 0,
+    "output": "captured home\nDONE 1 surfaces \u00d7 1 viewports \u00d7 1 themes \u2192 /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/tablet_light\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "http://127.0.0.1:4466",
+      "--routes",
+      "/",
+      "--viewports",
+      "laptop-sm",
+      "--themes",
+      "dark",
+      "--axe",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/laptop-sm_dark"
+    ],
+    "exit": 0,
+    "output": "captured home\nDONE 1 surfaces \u00d7 1 viewports \u00d7 1 themes \u2192 /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/laptop-sm_dark\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "http://127.0.0.1:4466",
+      "--routes",
+      "/",
+      "--viewports",
+      "laptop-sm",
+      "--themes",
+      "light",
+      "--axe",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/laptop-sm_light"
+    ],
+    "exit": 0,
+    "output": "captured home\nDONE 1 surfaces \u00d7 1 viewports \u00d7 1 themes \u2192 /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/laptop-sm_light\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "http://127.0.0.1:4466",
+      "--routes",
+      "/",
+      "--viewports",
+      "laptop",
+      "--themes",
+      "dark",
+      "--axe",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/laptop_dark"
+    ],
+    "exit": 0,
+    "output": "captured home\nDONE 1 surfaces \u00d7 1 viewports \u00d7 1 themes \u2192 /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/laptop_dark\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "http://127.0.0.1:4466",
+      "--routes",
+      "/",
+      "--viewports",
+      "laptop",
+      "--themes",
+      "light",
+      "--axe",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/laptop_light"
+    ],
+    "exit": 0,
+    "output": "captured home\nDONE 1 surfaces \u00d7 1 viewports \u00d7 1 themes \u2192 /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/laptop_light\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "http://127.0.0.1:4466",
+      "--routes",
+      "/",
+      "--viewports",
+      "desktop",
+      "--themes",
+      "dark",
+      "--axe",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/desktop_dark"
+    ],
+    "exit": 0,
+    "output": "captured home\nDONE 1 surfaces \u00d7 1 viewports \u00d7 1 themes \u2192 /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/desktop_dark\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "node",
+      "scripts/visual_capture.mjs",
+      "--base",
+      "http://127.0.0.1:4466",
+      "--routes",
+      "/",
+      "--viewports",
+      "desktop",
+      "--themes",
+      "light",
+      "--axe",
+      "--out",
+      "/Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/desktop_light"
+    ],
+    "exit": 0,
+    "output": "captured home\nDONE 1 surfaces \u00d7 1 viewports \u00d7 1 themes \u2192 /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/homepage_design_20260916/t0/desktop_light\n",
+    "stderr": ""
+  }
+]

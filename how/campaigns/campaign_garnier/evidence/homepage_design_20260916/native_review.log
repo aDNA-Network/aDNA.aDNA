@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ '3650b3fa2bc54ad7b013b8cc838ecb8f04766a98cb1c7a3535d210f0b3a46c0d'
+- '8c170748ecdcb445c1d04b3e8d98d2fca088f791278e84003ed841de64df148f'
+
+    at file:///private/tmp/garnier-homepage-review.mjs:46:9 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '3650b3fa2bc54ad7b013b8cc838ecb8f04766a98cb1c7a3535d210f0b3a46c0d',
+  expected: '8c170748ecdcb445c1d04b3e8d98d2fca088f791278e84003ed841de64df148f',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.8.2

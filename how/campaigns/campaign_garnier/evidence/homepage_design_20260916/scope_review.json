@@ -1,0 +1,14 @@
+{
+  "method": "Manual review by the builder; not independent certification or a new provider gate.",
+  "actual_files": [
+    "site/src/pages/index.astro",
+    "site/src/components/sections/HomeHero.astro"
+  ],
+  "verdict": "within accepted homepage scope",
+  "negative_control": "scope_negative_control.diff",
+  "negative_control_verdict": "rejected: reserved registry path; fixture only, no registry mutation",
+  "reserved_paths_changed": false,
+  "main_checkout_site_source_changed": false,
+  "copy_runtime_fault": "Clipboard write rejects with NotAllowedError; visible recovery is observed.",
+  "all_15_frozen_routes_unchanged": true
+}

@@ -1,0 +1,4 @@
+
+> adna-docs@0.1.0 check:markup
+> html-validate -c .htmlvalidate.cjs 'dist/**/*.html'
+

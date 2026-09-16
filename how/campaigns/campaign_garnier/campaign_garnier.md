@@ -25,7 +25,7 @@ governing_instrument: VITRUVIUS v1.1
 baseline_score: paired provisional v1.1; full breakdowns and limitations in artifacts/p0/baseline_reconciliation.md
 evidence_pack: /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0
 created: '2026-09-14'
-updated: '2026-09-15'
+updated: '2026-09-16'
 last_edited_by: agent_codex
 tags:
 - campaign
@@ -38,6 +38,10 @@ amendment_implementation: verified
 current_phase: 1
 ---
 # Campaign GARNIER
+
+## 2026-09-16 bounded homepage increment
+
+[D] Stanley accepted [[next_build_scope]], the narrow early-visual exception. [[homepage_design_pass]] delivers source0c77b61 on isolated branch `garnier/homepage-20260916`, preview http://127.0.0.1:4466/. P1 source b1cf040 and all15 route hashes at port4465 remain unchanged. P1.3 readers and DP3 are still open; no general P2/P3 entry or publication. [I] Additional design workload65±25kT against60±25forecast, separately booked from P1; billing unavailable.
 
 ## Goal
 

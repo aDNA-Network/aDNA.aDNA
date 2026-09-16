@@ -1,0 +1,223 @@
+diff --git a/site/src/components/sections/HomeHero.astro b/site/src/components/sections/HomeHero.astro
+index 549c8f3..f402f79 100644
+--- a/site/src/components/sections/HomeHero.astro
++++ b/site/src/components/sections/HomeHero.astro
+@@ -209,7 +209,8 @@ const heroNodes = heroGraph
+ 
+           <p class="hero-lead">{lead}</p>
+ 
+-          {(audienceSub || notLine) && (
++          {exampleLed && audienceSub && <p class="hero-setup">{audienceSub}</p>}
++          {!exampleLed && (audienceSub || notLine) && (
+             <p class="hero-quals">
+               {audienceSub && <span class="hero-audience">{audienceSub}</span>}
+               {audienceSub && notLine && ' '}
+@@ -217,7 +218,7 @@ const heroNodes = heroGraph
+             </p>
+           )}
+ 
+-          {reframe && <p class="hero-reframe">{reframe}</p>}
++          {!exampleLed && reframe && <p class="hero-reframe">{reframe}</p>}
+ 
+           <div class="hero-actions">
+             {showGetStarted && (
+@@ -232,16 +233,27 @@ const heroNodes = heroGraph
+               Command is the SINGLE SOURCE (install_truth.json one_liner) passed from index.astro —
+               never hardcoded; gate-12 verifies it verbatim on `/`. Static → CLS-safe. */}
+           {installOneLiner && (
++            <div class="hero-install-block">
+             <div class="hero-install">
+               <span class="hero-install-prompt" aria-hidden="true">$</span>
+               <code class="hero-install-cmd">{installOneLiner}</code>
+-              <button class="hero-install-copy" type="button" aria-label="Copy install command">
++              <button class="hero-install-copy" type="button" aria-label="Copy install command" hidden>
+                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                   <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                 </svg>
++                <span class="hero-copy-label">Copy</span>
+               </button>
+             </div>
++            <p class="hero-copy-status" role="status" aria-live="polite" aria-atomic="true"></p>
++            </div>
++          )}
++
++          {exampleLed && (notLine || reframe) && (
++            <div class="hero-privacy">
++              {notLine && <p>{notLine}</p>}
++              {reframe && <p class="hero-reframe">{reframe}</p>}
++            </div>
+           )}
+ 
+           <div class="hero-trust-links">
+@@ -627,25 +639,33 @@ const heroNodes = heroGraph
+   // deferred module script → not render-blocking (gate-10). Copies the exact one-liner from the
+   // `<code>` textContent (the decorative `$` prompt lives in a separate span, never copied).
+   document.querySelectorAll<HTMLButtonElement>('.hero-install-copy').forEach((btn) => {
++    const block = btn.closest('.hero-install-block');
++    const status = block?.querySelector<HTMLElement>('.hero-copy-status');
++    const label = btn.querySelector<HTMLElement>('.hero-copy-label');
++    let resetLabel: ReturnType<typeof setTimeout>;
+     btn.addEventListener('click', async () => {
+-      const cmd = btn.closest('.hero-install')?.querySelector('.hero-install-cmd')?.textContent ?? '';
++      const cmd = block?.querySelector('.hero-install-cmd')?.textContent ?? '';
++      clearTimeout(resetLabel);
++      btn.disabled = true;
++      if (status) status.textContent = '';
+       try {
+         await navigator.clipboard.writeText(cmd);
+-        btn.setAttribute('aria-label', 'Copied!');
+-        setTimeout(() => btn.setAttribute('aria-label', 'Copy install command'), 2000);
++        if (label) label.textContent = 'Copied';
++        if (status) status.textContent = 'Command copied.';
+       } catch {
+-        /* clipboard unavailable (insecure context) — the command stays visible + selectable */
++        if (label) label.textContent = 'Copy';
++        if (status) status.textContent = 'Copy unavailable. Select and copy the command above.';
++      } finally {
++        btn.disabled = false;
++        resetLabel = setTimeout(() => { if (label) label.textContent = 'Copy'; }, 2000);
+       }
+     });
++    btn.hidden = false;
+   });
+ </script>
+ 
+ <style>
+   .hero-example { min-width: 0; width: 100%; }
+-  .hero--example-led .hero-title--split { font-size: var(--text-4xl); text-wrap: balance; }
+-  .hero--example-led .hero-quals { font-size: var(--text-sm); }
+-  .hero--example-led .hero-grid { align-items: start; }
+-  .hero--example-led .hero-lead { font-size: var(--text-lg); }
+ 
+   /* E1 c3 dark-mode-first hero band (scoped `.dark`) retained; c146 makes it image-led. */
+   .hero {
+@@ -1313,4 +1333,67 @@ const heroNodes = heroGraph
+       display: flex;
+     }
+   }
++  /* agent_codex · 2026-09-16 · GARNIER bounded homepage pass.
++     Keep this variant after shared responsive rules; other hero consumers are unchanged. */
++  .hero--example-led .hero-grid { align-items: start; }
++  .hero--example-led .hero-copy { align-items: flex-start; }
++  .hero--example-led .hero-title--split {
++    font-size: var(--text-4xl);
++    line-height: 1.1;
++    text-align: left;
++    text-wrap: balance;
++  }
++  .hero--example-led .hero-eyebrow { text-transform: none; letter-spacing: normal; }
++  .hero--example-led .hero-lead {
++    font-size: var(--text-lg);
++    color: var(--color-text);
++    text-align: left;
++    margin: 0 0 var(--space-8);
++    max-width: 44ch;
++  }
++  .hero--example-led .hero-setup {
++    font-size: var(--text-sm);
++    color: var(--color-text-muted);
++    line-height: 1.6;
++    text-align: left;
++    margin: 0 0 var(--space-3);
++  }
++  .hero--example-led .hero-actions,
++  .hero--example-led .hero-trust-links { justify-content: flex-start; }
++  .hero--example-led .hero-install-block { width: 100%; max-width: 38rem; }
++  .hero--example-led .hero-install { max-width: none; align-items: center; }
++  .hero--example-led .hero-install-copy { gap: var(--space-2); padding-inline: var(--space-2); }
++  .hero--example-led .hero-install-copy[hidden] { display: none; }
++  .hero--example-led .hero-copy-label { font-size: var(--text-sm); }
++  .hero--example-led .hero-copy-status {
++    min-height: 1.6em;
++    font-size: var(--text-sm);
++    line-height: 1.6;
++    text-align: left;
++    color: var(--color-text-muted);
++    margin: var(--space-2) 0 0;
++  }
++  .hero--example-led .hero-privacy {
++    max-width: 60ch;
++    margin-top: var(--space-5);
++    text-align: left;
++    font-size: var(--text-sm);
++    line-height: 1.65;
++    color: var(--color-text-muted);
++  }
++  .hero--example-led .hero-privacy p { margin: 0; }
++  .hero--example-led .hero-privacy p + p { margin-top: var(--space-2); }
++  .hero--example-led .hero-privacy .hero-reframe {
++    font-size: inherit;
++    font-weight: var(--font-weight-regular);
++    color: inherit;
++    line-height: inherit;
++    text-align: left;
++    text-wrap: wrap;
++    max-width: none;
++    margin-inline: 0;
++  }
++  @media (max-width: 1024px) {
++    .hero--example-led .hero-grid { grid-template-columns: 1fr; max-width: 44rem; gap: var(--space-10); }
++  }
+ </style>
+diff --git a/site/src/pages/index.astro b/site/src/pages/index.astro
+index 142455c..3468bfa 100644
+--- a/site/src/pages/index.astro
++++ b/site/src/pages/index.astro
+@@ -144,11 +144,17 @@ const changelogDate = (d: Date) =>
+   >
+     <div slot="example" class="file-example">
+       <h2>A project you can inspect</h2>
+-      <pre class="project-tree" tabindex="0" aria-label="aDNA project file structure"><code>{projectTree}</code></pre>
+-      <p>The site you are reading uses this structure. Its instruction file tells an agent how to work:</p>
+-      <pre class="governance-example" tabindex="0" aria-label="Excerpt from this project's actual agent instructions"><code>{governanceExample}</code></pre>
+-      <a href="https://github.com/aDNA-Network/aDNA.aDNA/blob/main/CLAUDE.md" class="example-source">Read the full instruction file</a>
+-      <p class="example-limit">These are written instructions. The structure does not enforce an agent’s behavior.</p>
++      <div class="example-file">
++        <h3 id="folder-example-title">Folder structure</h3>
++        <pre class="project-tree" tabindex="0" aria-labelledby="folder-example-title"><code>{projectTree}</code></pre>
++      </div>
++      <div class="example-file">
++        <h3 id="governance-example-title"><code>CLAUDE.md</code> excerpt</h3>
++        <p>The site you are reading uses this structure. Its instruction file tells an agent how to work:</p>
++        <pre class="governance-example" tabindex="0" aria-labelledby="governance-example-title"><code>{governanceExample}</code></pre>
++        <a href="https://github.com/aDNA-Network/aDNA.aDNA/blob/main/CLAUDE.md" class="example-source">Read the full instruction file</a>
++        <p class="example-limit">These are written instructions. The structure does not enforce an agent’s behavior.</p>
++      </div>
+     </div>
+   </HomeHero>
+ 
+@@ -243,21 +249,25 @@ const changelogDate = (d: Date) =>
+ </BaseLayout>
+ 
+ <style>
+-  /* agent_codex · 2026-09-15: existing tokens, text-first homepage evidence slot. */
+-  .file-example { color: var(--color-text); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); padding: var(--space-6); text-align: left; }
+-  .file-example h2 { font-size: var(--text-lg); margin: 0 0 var(--space-5); color: var(--color-text-heading); }
+-  .file-example p { font-size: var(--text-sm); margin: var(--space-5) 0; line-height: 1.6; }
+-  .file-example pre { max-width: 100%; overflow-x: auto; font-family: var(--font-mono); font-size: var(--text-sm); line-height: 1.65; margin: 0; padding: var(--space-4); background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
++  /* agent_codex · 2026-09-16: one inspectable document, two related file examples. */
++  .file-example { color: var(--color-text); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); text-align: left; }
++  .file-example h2 { font-size: var(--text-lg); line-height: 1.4; margin: 0; padding: var(--space-5) var(--space-6); color: var(--color-text-heading); }
++  .example-file { padding: var(--space-5) var(--space-6); border-top: 1px solid var(--color-border); }
++  .example-file h3 { font-size: var(--text-sm); font-weight: var(--font-weight-medium); line-height: 1.6; color: var(--color-text-muted); margin: 0 0 var(--space-3); }
++  .example-file h3 code { font-size: inherit; color: inherit; padding: 0; background: none; }
++  .file-example p { font-size: var(--text-sm); margin: 0 0 var(--space-4); line-height: 1.65; }
++  .file-example pre { max-width: 100%; overflow-x: auto; font-family: var(--font-mono); font-size: var(--text-sm); line-height: 1.75; margin: 0; padding: 0 0 var(--space-2); background: none; border: 0; border-radius: 0; }
+   .file-example .governance-example { white-space: pre-wrap; overflow-wrap: anywhere; }
+-  .file-example .example-limit { margin-bottom: 0; }
+-  .example-source { display: inline-block; margin-top: var(--space-4); font-size: var(--text-sm); }
++  .file-example pre:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
++  .file-example .example-limit { margin: var(--space-2) 0 0; color: var(--color-text-muted); }
++  .example-source { display: inline-flex; align-items: center; min-height: 44px; padding-block: var(--space-2); margin-top: var(--space-3); font-size: var(--text-sm); }
+   .network-detail { max-width: var(--prose-width); margin: var(--space-8) auto; }
+   .network-detail summary { cursor: pointer; padding: var(--space-4) 0; color: var(--color-link); }
+   .registry-graph { max-width: 36rem; margin: var(--space-6) auto; background: var(--color-bg); border-radius: var(--radius-lg); }
+   .registry-graph :global(svg) { display: block; width: 100%; height: auto; }
+   .latest-strip { margin-top: var(--space-12); }
+   .machine-door h3 { font-size: var(--text-2xl); }
+-  @media(max-width: 600px) { .file-example { padding: var(--space-4); } .file-example pre { font-size: var(--text-sm); padding: var(--space-3); } }
++  @media(max-width: 600px) { .file-example h2, .example-file { padding: var(--space-4); } }
+ 
+   /* ——— Movement band (ADR-048): the demoted manifesto lyric, one quiet full-width statement
+      directly below the fold. Reads as the "why", after the hero has answered the "what". ——— */

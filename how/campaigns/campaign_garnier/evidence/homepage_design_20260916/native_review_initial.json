@@ -1,0 +1,658 @@
+{
+  "recordedAt": "2026-09-16T03:35:13.789Z",
+  "native": [
+    {
+      "name": "mobile",
+      "size": {
+        "width": 320,
+        "height": 720
+      },
+      "osPreference": "dark",
+      "initial": "dark",
+      "lightOptIn": false,
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320,
+      "heroTheme": "dark",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "columns": "288px",
+      "titleAlign": "left",
+      "errors": []
+    },
+    {
+      "name": "mobile",
+      "size": {
+        "width": 320,
+        "height": 720
+      },
+      "osPreference": "light",
+      "initial": "dark",
+      "lightOptIn": true,
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320,
+      "heroTheme": "dark",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "columns": "288px",
+      "titleAlign": "left",
+      "errors": []
+    },
+    {
+      "name": "mobile-lg",
+      "size": {
+        "width": 375,
+        "height": 812
+      },
+      "osPreference": "dark",
+      "initial": "dark",
+      "lightOptIn": false,
+      "theme": "dark",
+      "width": 375,
+      "scrollWidth": 375,
+      "heroTheme": "dark",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "columns": "343px",
+      "titleAlign": "left",
+      "errors": []
+    },
+    {
+      "name": "mobile-lg",
+      "size": {
+        "width": 375,
+        "height": 812
+      },
+      "osPreference": "light",
+      "initial": "dark",
+      "lightOptIn": true,
+      "theme": "light",
+      "width": 375,
+      "scrollWidth": 375,
+      "heroTheme": "dark",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "columns": "343px",
+      "titleAlign": "left",
+      "errors": []
+    },
+    {
+      "name": "tablet",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "osPreference": "dark",
+      "initial": "dark",
+      "lightOptIn": false,
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768,
+      "heroTheme": "dark",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "columns": "704px",
+      "titleAlign": "left",
+      "errors": []
+    },
+    {
+      "name": "tablet",
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "osPreference": "light",
+      "initial": "dark",
+      "lightOptIn": true,
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768,
+      "heroTheme": "dark",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "columns": "704px",
+      "titleAlign": "left",
+      "errors": []
+    },
+    {
+      "name": "laptop-sm",
+      "size": {
+        "width": 900,
+        "height": 700
+      },
+      "osPreference": "dark",
+      "initial": "dark",
+      "lightOptIn": false,
+      "theme": "dark",
+      "width": 900,
+      "scrollWidth": 900,
+      "heroTheme": "dark",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "columns": "704px",
+      "titleAlign": "left",
+      "errors": []
+    },
+    {
+      "name": "laptop-sm",
+      "size": {
+        "width": 900,
+        "height": 700
+      },
+      "osPreference": "light",
+      "initial": "dark",
+      "lightOptIn": true,
+      "theme": "light",
+      "width": 900,
+      "scrollWidth": 900,
+      "heroTheme": "dark",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "columns": "704px",
+      "titleAlign": "left",
+      "errors": []
+    },
+    {
+      "name": "laptop",
+      "size": {
+        "width": 1024,
+        "height": 768
+      },
+      "osPreference": "dark",
+      "initial": "dark",
+      "lightOptIn": false,
+      "theme": "dark",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "heroTheme": "dark",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "columns": "704px",
+      "titleAlign": "left",
+      "errors": []
+    },
+    {
+      "name": "laptop",
+      "size": {
+        "width": 1024,
+        "height": 768
+      },
+      "osPreference": "light",
+      "initial": "dark",
+      "lightOptIn": true,
+      "theme": "light",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "heroTheme": "dark",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "columns": "704px",
+      "titleAlign": "left",
+      "errors": []
+    },
+    {
+      "name": "desktop",
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "osPreference": "dark",
+      "initial": "dark",
+      "lightOptIn": false,
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "heroTheme": "dark",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "columns": "546.531px 557.469px",
+      "titleAlign": "left",
+      "errors": []
+    },
+    {
+      "name": "desktop",
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "osPreference": "light",
+      "initial": "dark",
+      "lightOptIn": true,
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "heroTheme": "dark",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "columns": "546.531px 557.469px",
+      "titleAlign": "left",
+      "errors": []
+    }
+  ],
+  "shared": [
+    {
+      "route": "/network",
+      "name": "mobile-lg",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "0eef4afc261227c53c111ed634495aac5d7a114ff2c446f7785027fed0d4055d",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "0eef4afc261227c53c111ed634495aac5d7a114ff2c446f7785027fed0d4055d",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "mobile-lg",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "0eef4afc261227c53c111ed634495aac5d7a114ff2c446f7785027fed0d4055d",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "0eef4afc261227c53c111ed634495aac5d7a114ff2c446f7785027fed0d4055d",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "laptop-sm",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "21c08ba8b7e5e6d3b1ddf44cf57c1f8ad42c862cf09ee73183d41b81ad59a5d4",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "21c08ba8b7e5e6d3b1ddf44cf57c1f8ad42c862cf09ee73183d41b81ad59a5d4",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "laptop-sm",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "21c08ba8b7e5e6d3b1ddf44cf57c1f8ad42c862cf09ee73183d41b81ad59a5d4",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "21c08ba8b7e5e6d3b1ddf44cf57c1f8ad42c862cf09ee73183d41b81ad59a5d4",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "desktop",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "48e95e21dc1aa2ffb95835d7066a5a8b699a31c3021aede3bb7e5c32e33e4703",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "48e95e21dc1aa2ffb95835d7066a5a8b699a31c3021aede3bb7e5c32e33e4703",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/network",
+      "name": "desktop",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "48e95e21dc1aa2ffb95835d7066a5a8b699a31c3021aede3bb7e5c32e33e4703",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "48e95e21dc1aa2ffb95835d7066a5a8b699a31c3021aede3bb7e5c32e33e4703",
+          "mainTextSha256": "d7b8a2aec91a2b94241be830a65f6b4657e4f6a6d9f927514157eba27af085f0"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "mobile-lg",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "f16b7264d48dc1ed9c72fc5f384a58dff0c6031dd4a2a6facf894c207737df3a",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "f16b7264d48dc1ed9c72fc5f384a58dff0c6031dd4a2a6facf894c207737df3a",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "mobile-lg",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "f16b7264d48dc1ed9c72fc5f384a58dff0c6031dd4a2a6facf894c207737df3a",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "f16b7264d48dc1ed9c72fc5f384a58dff0c6031dd4a2a6facf894c207737df3a",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "laptop-sm",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "61c70f994579784722926598a0a8d651a11c9654dda4d941cf52cc4763431915",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "cbcc90b307483268bfc4a549de81be7da0ecf1f7ab33e2568f57ea87cd0123a6",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": false,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "laptop-sm",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "cbcc90b307483268bfc4a549de81be7da0ecf1f7ab33e2568f57ea87cd0123a6",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "cbcc90b307483268bfc4a549de81be7da0ecf1f7ab33e2568f57ea87cd0123a6",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "desktop",
+      "theme": "dark",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "3860a132ad5e97ec7d36db44eed0e867e5ee8674ee902506419e993a5283db35",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "3860a132ad5e97ec7d36db44eed0e867e5ee8674ee902506419e993a5283db35",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    },
+    {
+      "route": "/commons",
+      "name": "desktop",
+      "theme": "light",
+      "sides": [
+        {
+          "port": 4465,
+          "heroPngSha256": "f8edde45683df1d0c5f2a20f94f2ed157f02bca0b2d56ea901b33f5aa3c2e3ff",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        },
+        {
+          "port": 4466,
+          "heroPngSha256": "f8edde45683df1d0c5f2a20f94f2ed157f02bca0b2d56ea901b33f5aa3c2e3ff",
+          "mainTextSha256": "780a095098d439e0f2704b91d54aec66c26100f5a5593101098bd48ef07094be"
+        }
+      ],
+      "pixelsIdentical": true,
+      "mainTextIdentical": true
+    }
+  ],
+  "interaction": {
+    "copy": {
+      "exactCommandCopied": true,
+      "failure": "Copy unavailable. Select and copy the command above.",
+      "liveRegion": "status",
+      "buttonStillEnabled": true
+    },
+    "keyboard": [
+      {
+        "tag": "A",
+        "text": "Get Started",
+        "class": "btn btn-primary",
+        "outline": "solid",
+        "outlineWidth": "3px",
+        "rect": {
+          "x": 144,
+          "y": 481.578125,
+          "width": 146.953125,
+          "height": 54.140625
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "Read the standard",
+        "class": "btn btn-secondary",
+        "outline": "solid",
+        "outlineWidth": "3px",
+        "rect": {
+          "x": 306.953125,
+          "y": 481.578125,
+          "width": 207.84375,
+          "height": 54.140625
+        },
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Copy",
+        "class": "hero-install-copy",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 606.734375,
+          "y": 568.46875,
+          "width": 74.796875,
+          "height": 44
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "Open source on GitHub",
+        "class": "trust-link",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 144,
+          "y": 771.546875,
+          "width": 160.71875,
+          "height": 23.046875
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "the standard, versioned and public",
+        "class": "trust-link",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 451.015625,
+          "y": 771.546875,
+          "width": 238.359375,
+          "height": 23.046875
+        },
+        "visible": true
+      },
+      {
+        "tag": "PRE",
+        "text": "aDNA.aDNA/\n├── CLAUDE.md      Agent instructions\n├── STATE.md       Work in prog",
+        "class": "project-tree",
+        "outline": "solid",
+        "outlineWidth": "3px",
+        "rect": {
+          "x": 763.53125,
+          "y": 259.15625,
+          "width": 507.46875,
+          "height": 161.9375
+        },
+        "visible": true
+      },
+      {
+        "tag": "PRE",
+        "text": "# CLAUDE.md — aDNA.aDNA\n\n## Standing Orders\n\n1. **Phase gates are human gates.**",
+        "class": "governance-example",
+        "outline": "solid",
+        "outlineWidth": "3px",
+        "rect": {
+          "x": 763.53125,
+          "y": 561.671875,
+          "width": 507.46875,
+          "height": 161.9375
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "Read the full instruction file",
+        "class": "example-source",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 763.53125,
+          "y": 735.609375,
+          "width": 185.65625,
+          "height": 44
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "Stanley Bishop stewards the project today",
+        "class": "",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 566.109375,
+          "y": 482.296875,
+          "width": 348.640625,
+          "height": 21
+        },
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "text": "vault",
+        "class": "",
+        "outline": "solid",
+        "outlineWidth": "2px",
+        "rect": {
+          "x": 453.09375,
+          "y": 714.953125,
+          "width": 47.71875,
+          "height": 25
+        },
+        "visible": true
+      }
+    ],
+    "keyboardCodeScroll": {
+      "scrollLeft": 36,
+      "clientWidth": 254,
+      "scrollWidth": 290
+    },
+    "textSpacing": {
+      "width": 320,
+      "scrollWidth": 320,
+      "actions": [
+        {
+          "text": "Get Started",
+          "width": 161.640625,
+          "height": 48
+        },
+        {
+          "text": "Read the standard",
+          "width": 231.25,
+          "height": 50
+        },
+        {
+          "text": "Copy",
+          "width": 76.953125,
+          "height": 44
+        },
+        {
+          "text": "Read the full instruction file",
+          "width": 219.296875,
+          "height": 44
+        }
+      ]
+    },
+    "no_js": {
+      "kind": "no_js",
+      "title": "Project knowledge, organized for AI.",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "copyVisible": false,
+      "text": "Open standard · MIT\n\nProject knowledge, organized for AI.\n\naDNA (Agentic DNA) is an open standard for organizing a project's files. Three folders and plain Markdown give people and AI agents a shared map.\n\nStart a local workspace with Git and Claude Code.\n\nGet Started\nRead the standard\n$\ngit clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude\n\nNot a product or service — no server, no signup; aDNA itself sends nothing.\n\nThe standard that gives it that shape is open. Your files stay on your machine. Your AI tool has its own data handling.\n\nOpen source on GitHub\n·\nMIT-licensed\n·\nthe standard, versioned and public\nA project you can inspect\nFolder structure\naDNA.aDNA/\n├── CLAUDE.md      Agent instructions\n├── STATE.md       Work in progress\n├── what/          Knowledge and decisions\n├── how/           Plans and procedures\n└── who/           People and roles\nCLAUDE.md excerpt\n\nThe site you are reading uses this structure. Its instruction file tells an agent how to work:\n\n# CLAUDE.md — aDNA.aDNA\n\n## Standing Orders\n\n1. **Phase gates are human gates.** Never auto-advance between campaign phases without explicit user approval.\nRead the full instruction file\n\nThese are written instructions. The structure does not enforce an agent’s behavior."
+    },
+    "art_disabled": {
+      "kind": "art_disabled",
+      "title": "Project knowledge, organized for AI.",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "copyVisible": true,
+      "text": "Open standard · MIT\n\nProject knowledge, organized for AI.\n\naDNA (Agentic DNA) is an open standard for organizing a project's files. Three folders and plain Markdown give people and AI agents a shared map.\n\nStart a local workspace with Git and Claude Code.\n\nGet Started\nRead the standard\n$\ngit clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude\nCopy\n\nNot a product or service — no server, no signup; aDNA itself sends nothing.\n\nThe standard that gives it that shape is open. Your files stay on your machine. Your AI tool has its own data handling.\n\nOpen source on GitHub\n·\nMIT-licensed\n·\nthe standard, versioned and public\nA project you can inspect\nFolder structure\naDNA.aDNA/\n├── CLAUDE.md      Agent instructions\n├── STATE.md       Work in progress\n├── what/          Knowledge and decisions\n├── how/           Plans and procedures\n└── who/           People and roles\nCLAUDE.md excerpt\n\nThe site you are reading uses this structure. Its instruction file tells an agent how to work:\n\n# CLAUDE.md — aDNA.aDNA\n\n## Standing Orders\n\n1. **Phase gates are human gates.** Never auto-advance between campaign phases without explicit user approval.\nRead the full instruction file\n\nThese are written instructions. The structure does not enforce an agent’s behavior."
+    },
+    "normal_motion": {
+      "kind": "normal_motion",
+      "title": "Project knowledge, organized for AI.",
+      "command": "git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude",
+      "copyVisible": true,
+      "text": "Open standard · MIT\n\nProject knowledge, organized for AI.\n\naDNA (Agentic DNA) is an open standard for organizing a project's files. Three folders and plain Markdown give people and AI agents a shared map.\n\nStart a local workspace with Git and Claude Code.\n\nGet Started\nRead the standard\n$\ngit clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude\nCopy\n\nNot a product or service — no server, no signup; aDNA itself sends nothing.\n\nThe standard that gives it that shape is open. Your files stay on your machine. Your AI tool has its own data handling.\n\nOpen source on GitHub\n·\nMIT-licensed\n·\nthe standard, versioned and public\nA project you can inspect\nFolder structure\naDNA.aDNA/\n├── CLAUDE.md      Agent instructions\n├── STATE.md       Work in progress\n├── what/          Knowledge and decisions\n├── how/           Plans and procedures\n└── who/           People and roles\nCLAUDE.md excerpt\n\nThe site you are reading uses this structure. Its instruction file tells an agent how to work:\n\n# CLAUDE.md — aDNA.aDNA\n\n## Standing Orders\n\n1. **Phase gates are human gates.** Never auto-advance between campaign phases without explicit user approval.\nRead the full instruction file\n\nThese are written instructions. The structure does not enforce an agent’s behavior."
+    }
+  },
+  "limits": [
+    "Single builder Chromium QA; no human reader observations.",
+    "Native light preference retains dark-first default; light states use the shipped toggle.",
+    "Local preview lacks Vercel speed-insights adapter script."
+  ]
+}
