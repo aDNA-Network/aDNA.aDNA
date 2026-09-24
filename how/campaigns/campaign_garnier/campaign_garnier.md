@@ -318,6 +318,14 @@ Later ratified amendments: [[dp2_ratification_20260915]] (DP2, six amendments) �
 
 [D] 2026-09-17: Stanley ruled "All recs approved." — [[formative_stimulus_repin_20260916]] (stimulus → `6487444`/4466), [[panel_merge_brief]] (one joint endgame panel with HAUSSMANN P5.1, after GR-7), ADR-060, ADR-061 and [[pattern_measurement_is_the_artifact]] accepted; G4 option (b) ruled; G5 deferred pending an address. 2026-09-24: the batch's unperformed acts executed (key-reachability record, AMENDMENT 5 activation, G4 fired in source, Prometheus reply delivered), inbox received and answered, campaign surfaces repaired. P1.3 C2 (three consenting readers) and DP3 remain open; no phase advance, push or deploy.
 
+### DP3 pre-assembly — 2026-09-24
+
+[D] The operator chose "Pre-assemble DP3" at plan time; P1.3 C2 readers are still owed. [[so11_retrospective_p1]] was filed:
+- P1 is at 625±155 kT against 320 (1.95×; P1.2 at 4.8×, with 237 kT of it subject-model runtime);
+- the eleven forecast pairs split into a known-method class (0.63–1.33×) and a first-contact/external-runtime class (4.0–5.4×).
+
+[[artifacts/p1/phase_exit]] §DP3 packet appended: exit-criteria table, empty reader slot, rulings (a)–(g), and P2 options A 991 / B ≈1,640 / **C first segment ≈640, recommended**. The P2 envelope and the documentation population were re-derived with 0 drift. New finding (f): the gateway `6487444` is not on `vitrine/design`. The trees share no `site/` file, the only textual conflict is `MANIFEST.md`, and a merge would need a gate-49 home re-baseline. No status, budget, site or checkout change; DP3 remains `pending`.
+
 ## Completion Summary
 
 Deliverables: pending campaign execution. Descoped: none approved. Key findings: genesis register only. Scope changes: VITRINE prospective scope absorbed; five charter amendments accepted; documentation assigned to twelve bounded tranche missions; executor runtime codex → claude (2026-09-16). Original proposal archived. Follow-up campaigns: to be scoped at P6.5.

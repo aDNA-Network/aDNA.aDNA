@@ -89,3 +89,9 @@ Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
 [D] Discharged the gate-49 in-container re-baseline owed since G4 fired. Red-first `check`: 6 failed (about/commons/**state-network** × light/dark) — state-network was under-named on 09-24; same G4 commit `228a624` re-derived its count sentence. Rendered text verified before baseline. `baseline` changed exactly those 6 PNGs; `check` 26/26 green; `redtest` 7/7. Committed, not pushed.
 
 [I] Sitting workload forecast 40 kT; actual ≈ 45±15 kT. Follow-up unchanged: P1.3 C2 records → DP3.
+
+## DP3 pre-assembly sitting — 2026-09-24
+
+[D] Records-only. [[so11_retrospective_p1]] filed. [[artifacts/p1/phase_exit|phase_exit]] §DP3 packet appended with the exit-criteria table, the empty reader slot, rulings (a)–(g), and P2 options A/B/C (C recommended). Read-only re-derivations: `derive_campaign.py` gives 38/47/2,444 kT, P2 at 17/18/991. `derive_docs_population.py` (stdout) gives 118/118 routes, 0 hash changes, 0 tranche moves. `git merge-tree` of `vitrine/design` × `6487444` shows the only conflict is `MANIFEST.md`, with no shared `site/` files. Finding (f), the P1 exit-candidate identity, was surfaced for a DP3 ruling. patterns_to_author: the subject-runtime-as-own-line booking rule is staged in the retrospective §5 and not yet adopted.
+
+[I] Sitting forecast 70±25 kT; actual ≈ 80±20 kT ([[session_stanley_20260924_145532_garnier_dp3_preassembly]]). Billing unavailable. Follow-up: Stanley supplies the P1.3 C2 records and rules (a)–(g) at DP3.

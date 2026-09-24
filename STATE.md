@@ -3,7 +3,7 @@ type: state
 created: 2026-04-13
 updated: 2026-09-24  # 2026-09-24 STATE graduation (304 KB → router); prior inline chain (from "2026-09-25 gate-49 re-baseline discharged" back) → [[STATE_archive]] §Shifted-2026-09-24, verbatim
 status: active
-phase: "GARNIER P1 — P1.1/P1.2 complete; **P1.3 C2 (three consenting readers) → DP3 is the open front** (stimulus `6487444`/4466; G4 fired in source 2026-09-24, built not deployed; panel merge in force). HAUSSMANN endgame only (P5.1 joint panel after GR-7 · P5.2 · GR-7). Prior HAUSSMANN phase text → [[STATE_archive]] §Shifted-2026-09-24."
+phase: "GARNIER P1 — P1.1/P1.2 complete; **P1.3 C2 (three consenting readers) → DP3 is the open front**; DP3 packet pre-assembled 2026-09-24 (c), reader slot pending (stimulus `6487444`/4466; G4 fired in source 2026-09-24, built not deployed; panel merge in force). HAUSSMANN endgame only (P5.1 joint panel after GR-7 · P5.2 · GR-7). Prior HAUSSMANN phase text → [[STATE_archive]] §Shifted-2026-09-24."
 campaigns: [campaign_garnier, campaign_haussmann]    # GARNIER active (ratified §7.7 2026-09-15, 7 phases / 38 missions, runtime claude since 2026-09-16 — runtime_handoff_20260916); HAUSSMANN holds its independent endgame only (P5.1 · P5.2 · GR-7). Was `[campaign_haussmann]` alone until 2026-09-16 — stale for two days after GARNIER's ratification while MANIFEST.md:42 was already correct: the index-vs-artifact class, again.
 last_edited_by: agent_rosetta
 _state_router_version: "1.0"
@@ -20,6 +20,17 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > **State router** (split from monolithic STATE.md at M2.1 S2 2026-05-19; pre-split SHA `1e337db`). For historical session prose (19 DEPRECATED-marker `## Last Session` blocks + retired Next Session Prompts) see [[STATE_archive.md|STATE_archive.md]]. Most-recent live session block + most-recent Next Session Prompt stay here.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
+
+### 2026-09-24 (c) — DP3 pre-assembled; reader slot PENDING
+
+[D] Operator's plan-time choice: "Pre-assemble DP3". Records only: no site, checkout, status or budget change.
+- **[[so11_retrospective_p1]] filed.** P1 is at 625±155 kT against 320 (1.95×). P1.2 is at 4.8×, but **237 kT of the 305 kT excess is the reproduced model's own runtime tokens booked in the executor's unit**; executor-only, P1 is at ≈1.21×. The campaign's eleven forecast pairs split into two classes: known-method at 0.63–1.33× and first-contact/external-runtime at 4.0–5.4×. The proposed fix is to book subject-runtime on its own line.
+- **`phase_exit.md` §DP3 packet**: exit-criteria table, empty reader slot, and rulings (a)–(g). **P2 options:** A 991 · B ≈1,640 calibrated · **C recommended**, committing the first segment P2.1–T01 at ≈640 and re-forecasting from T01's actual. Re-derived read-only: P2 = 17/18/991 ✓; docs population 118/118 routes, 0 drift.
+- ⭐ **New finding (f):** the ratified gateway homepage `6487444` is **not on `vitrine/design`**. That branch still has the `b1cf040`-era homepage plus G4. `git merge-tree` finds no shared `site/` files and one conflict, in `MANIFEST.md`. A merge would need a gate-49 `home-*` re-baseline. The P1 exit candidate's identity is a DP3 ruling.
+
+Session: [[session_stanley_20260924_145532_garnier_dp3_preassembly]].
+
+**Resume-Here:** open front unchanged: **P1.3 C2, Stanley supplies three consenting readers.** Then follow `phase_exit.md` §DP3 packet §5 in order; don't rebuild the packet. Owed on humans: the readers · DP3 rulings (a)–(g) · G5 address · G2 Speed Insights · ADR-010 co-sign · any push/deploy GO. Agent-reachable: the v8.12 gate when the operator opens it.
 
 ### 2026-09-24 (b) — STATE graduated: 303,654 → ~53 KB, verbatim to [[STATE_archive]] §Shifted-2026-09-24
 
