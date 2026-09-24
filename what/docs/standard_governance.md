@@ -2,8 +2,8 @@
 type: context
 title: "aDNA Standard Governance Model"
 created: 2026-03-20
-updated: 2026-03-20
-last_edited_by: agent_init
+updated: 2026-09-24
+last_edited_by: agent_rosetta
 status: approved
 tags: [context, governance, standard, stewardship, release-cadence]
 ---
@@ -66,6 +66,14 @@ This promise is normative (defined in `adna_standard.md` §15.4):
 ## Proposing Standard Changes
 
 ### Lightweight RFC Process
+
+> ⛩ **Superseded in practice — annotated 2026-09-24, not deleted.** Every release since v8.6 has shipped through a
+> different, operator-fired route: **an ADR in the proposing vault → an `idea_upstream_*` filing per
+> `how/skills/skill_upstream_contribution.md` → the `skill_template_release` gate** (dev graph `aDNA.aDNA` → public image
+> `aDNA-Network/aDNA`). That is the normative route today; the issue-label flow below is the pre-release-gate design
+> (`agent_init`, 2026-03-20) and is retained as history. Confirmed to Prometheus (Context.aDNA) in reply to their
+> 2026-09-15 memo. Reconciling this document wholesale rides a release, not a quiet edit.
+
 
 1. **Open a GitHub Issue** with the `standard-change` label
 2. **Describe**: What you want to change, why, and the impact on existing conformant instances

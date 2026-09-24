@@ -194,8 +194,12 @@ not co-write its declared files*.
 ### Model-Tiered Execution (`executor_tier`)
 
 Every mission/plan declares a planned **`executor_tier: fable | opus | sonnet`** — the model class the work is routed to —
-alongside its `token_budget_estimated` (Standing Order 11). Governance-authoring and judgment-heavy work runs `opus`;
-mechanical sweeps drop to `sonnet`/`fable`. Doctrine: `what/patterns/pattern_model_tiered_campaign_execution.md` (term:
+alongside its `token_budget_estimated` (Standing Order 11). **`fable` = strategy/judgment** (planning, design, review,
+gate sittings, adversarial passes — operator-summon only); **`opus` = build/execution** (implementation, verification-execution,
+hotfix); **`sonnet` = an explicit opt-down** for provably mechanical sweeps, never a default lane. *(Corrected 2026-09-24 —
+this line read "judgment-heavy work runs `opus`; mechanical sweeps drop to `sonnet`/`fable`", inverting the pattern's §2.1/§2.5
+binding; surfaced by Berthier/Automator's 2026-09-21 memo, which found the same inversion at Home CLAUDE:242 and Operations
+AGENTS:169 — those are theirs to fix.)* Doctrine: `what/patterns/pattern_model_tiered_campaign_execution.md` (term:
 [[glossary_model_tiered_execution]]). *(Self-reference, Standing Order 8: this campaign's own P1 mission,
 [[mission_w4_p1_dogfood_self_drift]], is the first vault mission to actually carry the field.)*
 

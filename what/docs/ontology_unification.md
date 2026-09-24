@@ -3,9 +3,9 @@ type: specification
 title: "aDNA Ontology Unification Protocol"
 version: "1.0.0"
 created: 2026-02-19
-updated: 2026-06-29
+updated: 2026-09-24
 status: active
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 token_estimate: ~8000
 tags: [specification, ontology, unification, federation, merge-algorithm, namespace]
 banner: "who/assets/banners/banner_what.jpg"
@@ -505,7 +505,10 @@ function detect_collisions(source, target):
 
 **Source instance**: `org_formation` sub-lattice — 12 entity types, deployed as a bare triad within the Lattice Labs vault at `what/lattices/org_formation/`.
 
-**Target instance**: Lattice Labs vault — 22 entity types (14 base + 8 extension), ontology v3.0.
+**Target instance**: Lattice Labs vault — 22 entity types (14 base + 8 extension), ontology v3.0. *(⚠ Worked-example
+figure, frozen at authoring: the base ontology is **16** entity types since ADR-035 promoted `inventory` + `identity`
+(aDNA standard v2.3); the example's 14 + 8 arithmetic is kept as written so its merge steps still add up. Flagged by
+Prometheus (Context.aDNA) 2026-09-15; annotated 2026-09-24.)*
 
 **Goal**: Unify the org_formation ontology with the vault ontology, demonstrating every step of the merge algorithm.
 

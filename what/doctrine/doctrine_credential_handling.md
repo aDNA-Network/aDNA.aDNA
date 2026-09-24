@@ -2,7 +2,7 @@
 type: governance
 scope: workspace
 created: 2026-05-25
-updated: 2026-08-17   # S199: Hestia co-sign amendments folded (§2.5 normative/epistemic + vacuity · §3.5 as-executed corrections 33/112 + 100-of-112 + kinds-carried-by-no-row · §4.5 rule 6 binds the delivering lane); §9 block RATIFIED S198 + S199 amendment row. Was: three-body amendment PROPOSED (Chambellan M-A6)
+updated: 2026-09-24   # §2.6 Lanes PROPOSED (Automator 2026-09-23 memo) — amendment candidate, not in force; prior: 2026-08-17   # S199: Hestia co-sign amendments folded (§2.5 normative/epistemic + vacuity · §3.5 as-executed corrections 33/112 + 100-of-112 + kinds-carried-by-no-row · §4.5 rule 6 binds the delivering lane); §9 block RATIFIED S198 + S199 amendment row. Was: three-body amendment PROPOSED (Chambellan M-A6)
 last_edited_by: agent_rosetta
 status: active
 canonical_at: /Users/stanley/aDNA/aDNA.aDNA/what/doctrine/doctrine_credential_handling.md
@@ -116,6 +116,28 @@ Four rules follow, and they are the whole point of naming the bodies separately:
    *Rules 1 and 3 do not conflict, and the distinction is load-bearing (Hestia co-sign, 2026-08-17): rule 1 is **normative** — the register owns **identity** across all three bodies, and a gap is a finding against the register; rule 3 is **epistemic** — no body may report clean over a population it does not enumerate. The register is authoritative over identity, never over any engine's enumeration. A reader who resolves the apparent tension by weakening rule 1 has weakened the valuable one.*
    *Coverage condition, recorded honestly: as of ratification both non-broker bodies are **empty** (0 rows carry either new `storage.kind`; DP-1/DP-13 undeployed), so rule 1's cross-body coverage duty is currently vacuous. It becomes real the day an engine stands up — **the reconciliation is a scheduled act named in each engine's stand-up runbook**, not a standing claim asserted from an empty population.*
 4. **The consumer interface does not change.** §3.3's invariant holds across all three bodies: env-var on the hot path, a cold path for a TTY. Consumer code and the §7 routing snippet **never branch on which body ultimately held the value** — that is precisely what makes a later custody move (§ `doctrine_safe_mutations.md` §8) survivable.
+
+### §2.6 Lanes — which account or endpoint a run uses (⛩ PROPOSED 2026-09-24 — NOT IN FORCE until §9 carries its row)
+
+> Proposed on Berthier/Automator's 2026-09-23 memo. §9 of this doctrine is ratified, so this paragraph is an
+> **amendment candidate**: it binds nothing until the operator signs the block below and §9 records the row.
+
+A node may reach a model three ways at once, and today this doctrine has no word for the choice:
+
+| Lane | Selector (a name, a flag or a directory — never a value) | Where the secret lives |
+|---|---|---|
+| **`oauth`** | the operator's logged-in subscription session (the CLI's own auth store) | the tool's keychain entry; no env var |
+| **`key`** | a broker **name** → env var (`ANTHROPIC_API_KEY` etc., §2.1 Keychain-exported) | Keychain-primary + 1P-backup, per §3 |
+| **`local`** | an on-node gateway address (`127.0.0.1:<port>`) or model directory | no credential; the endpoint is the selector |
+
+**The one rule:** *a lane selector is a name, a flag or a directory; a credential value never transits* — a
+mission card, a staged prompt or a session file may say `executor_lane: key`, never the key. This re-classes
+`ANTHROPIC_API_KEY` out of §2.3 "legacy / pre-broker" and into the `key` lane under §2.1 discipline: the
+friction-class finding stands, the *category* was wrong. Consumer surface: `executor_lane` on the mission card
+(`pattern_model_tiered_campaign_execution.md` §2.1a, proposed alongside). PHI-tagged work takes `local` only
+(Inference.aDNA ADR-010 `:35`).
+
+- **Ratified-by:** — · **Date:** — · **Status:** proposed (§9 row owed at signature).
 
 ## §3 Storage — where credentials live, canonically
 

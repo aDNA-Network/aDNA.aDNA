@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-09-11
-updated: 2026-09-11
+updated: 2026-09-24
 status: draft
 pattern_category: structural
 applies_to: [context, decisions, lattices, modules, campaigns]
@@ -82,8 +82,12 @@ actually regenerates the diagram.
 
 ### ⛔ `authority` is DOCTRINE-enforced, not machine-enforced — and this file says so on its face
 
-`canvas_std` **does not validate the `authority` key** (measured by Canvas at their erratum v2), so a
-typo passes silently and a missing value reports `core` with nothing to complain about. Therefore:
+~~`canvas_std` **does not validate the `authority` key** (measured by Canvas at their erratum v2), so a
+typo passes silently and a missing value reports `core` with nothing to complain about.~~ ⛩ **Corrected
+2026-09-24 (Mondrian's memo #19, 2026-09-11): Canvas Standard v2.4.0 now machine-enforces `authority` and
+`production`** — the sentence above was true when written (erratum v2) and is stale since v2.4.0. The reasoning
+below is kept because it still governs what this *pattern* requires of a canvas, which is a different question
+from what the validator checks. Therefore:
 
 - This pattern **does not** declare a canvas without a stated authority *nonconformant*. Mandating a
   field no validator checks would be **a conformance claim with nothing behind it** — a claim moving
@@ -93,7 +97,10 @@ typo passes silently and a missing value reports `core` with nothing to complain
 - ⭐ **The split therefore costs no schema change**, which is what makes it adoptable today: adding a
   sibling key to a key nothing validates changes nothing a validator sees. Canvas declined to *propose*
   the two-field shape on the reasonable reading that it was a schema change; it is one only once
-  LIP-0010 makes either key binding, and at that point both become binding together.
+  LIP-0010 makes either key binding, and at that point both become binding together. *Clarifying clause
+  (2026-09-24, on Mondrian's reading, which is the intended one): "binding together" constrains **what a validator
+  must check**, not **which keys a single canvas must carry** — a canvas may still declare one key without the other;
+  the pair is a validation contract, not a per-file requirement.*
 
 ### The conformance floor — and what it honestly cannot require yet
 

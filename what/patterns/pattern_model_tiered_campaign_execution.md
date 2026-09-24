@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-07-02
-updated: 2026-07-22   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor); §2.5 dispatch-shape note added at P3 open (operator ruling: Mode B same-session subagent dispatch = default); **§2.6 Mode-B operational discipline folded at Champollion M7.2 close (2026-07-03) — 7 sweep-surfaced hazards + the review-bookend checklist**; **§2.6 items 8–9 (adversary-born-PENDING · resume-not-respawn — Operations.aDNA co-evolution) folded + §2.7 RATIFIED accepted at Operation Refit G1 (DP6 rider; ratification_record_refit_g1.md), stamp landed 2026-07-22 (Refit M1)**; §2.7 next-mission handoff recommendation authored 2026-07-14 + §2.1 mechanical binding refreshed (Sonnet 4.6→5, Haiku 4.5)
+updated: 2026-09-24   # §2.1a executor_lane PROPOSED (Automator 2026-09-23 memo); prior:   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor); §2.5 dispatch-shape note added at P3 open (operator ruling: Mode B same-session subagent dispatch = default); **§2.6 Mode-B operational discipline folded at Champollion M7.2 close (2026-07-03) — 7 sweep-surfaced hazards + the review-bookend checklist**; **§2.6 items 8–9 (adversary-born-PENDING · resume-not-respawn — Operations.aDNA co-evolution) folded + §2.7 RATIFIED accepted at Operation Refit G1 (DP6 rider; ratification_record_refit_g1.md), stamp landed 2026-07-22 (Refit M1)**; §2.7 next-mission handoff recommendation authored 2026-07-14 + §2.1 mechanical binding refreshed (Sonnet 4.6→5, Haiku 4.5)
 status: active   # GRADUATED at Champollion G3 (2026-07-02, D2a — 5 instances; operator-ratified)
 pattern_category: operational
 applies_to: [campaign, mission, session, all_categories]
@@ -63,6 +63,35 @@ executor_tier: <class actually used>
 # model actual is implicit in the session runtime; record it when it differs from the binding table
 token_budget_actual: "<kT, rough is fine>"
 ```
+
+#### §2.1a `executor_lane` — the account/endpoint beside the tier (⛩ PROPOSED 2026-09-24, not in force)
+
+> **Proposed on Berthier/Automator's 2026-09-23 memo** (`who/coordination/inbox/coord_2026_09_23_berthier_automator_to_rosetta_executor_lane_card_key.md`;
+> their `doctrine_lane_routing.md` §2 is the prior art). Agents author, operators ratify: this sub-clause and
+> the companion doctrine paragraph (`doctrine_credential_handling.md` §2.6) carry empty §7.7 blocks until signed;
+> until then Automator keeps `executor_lane` as its own local convention, as their memo offers.
+
+`executor_tier` names a **model class**; nothing names **which account or endpoint** runs the mission. On a node
+that carries a subscription login, a metered key exported into every shell, and a local gateway, a staged prompt
+that names a model has not yet said who pays or where the bytes go. Proposed: one **optional** mission-card key,
+resolved beside `executor_tier` in the same pure step —
+
+```yaml
+executor_lane: oauth | key | local     # optional; absent = the campaign's or order's default
+```
+
+- **`oauth`** — the operator's subscription session (no key value exists to leak).
+- **`key`** — a metered API key reached **by name** through the Home.aDNA broker (never a value on the card).
+- **`local`** — an on-node gateway (`127.0.0.1:<port>`); the only lane a PHI-tagged mission may take
+  (Inference.aDNA ADR-010 `:35`).
+
+Invariants carried from the memo: **a tier is a model class; a lane is the credential or endpoint path** —
+orthogonal axes, so a lane never implies a tier and a tier never implies a lane; **Fable never routes `local`**;
+**a lane value is a name, a flag or a directory — a credential value never transits** (doctrine §6.1/§6.2).
+Session files record the lane actually used beside `executor_tier: <class actually used>`.
+
+- **Ratified-by:** — · **Date:** — · **Status:** proposed.
+
 
 Estimate-vs-actual lands in every mission AAR (SO-11); >2× drift triggers the ADR-016 retrospective — now *per tier*, which is the interesting cut.
 
