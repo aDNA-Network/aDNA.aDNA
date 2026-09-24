@@ -1,16 +1,16 @@
 ---
 type: decisions
-artifact_class: proposed_amendment
+artifact_class: ratified_amendment
 campaign_id: campaign_garnier
-title: "Proposed: re-pin the P1.3 formative stimulus to the gateway candidate"
+title: "Re-pin the P1.3 formative stimulus to the gateway candidate (ratified 2026-09-17)"
 created: 2026-09-16
-updated: 2026-09-16
-status: proposed
+updated: 2026-09-17
+status: accepted
 last_edited_by: agent_rosetta
-tags: [garnier, p1_3, formative, stimulus, repin, proposed]
+tags: [garnier, p1_3, formative, stimulus, repin, ratified]
 ---
 
-# Proposed amendment — re-pin the P1.3 formative stimulus (2026-09-16)
+# Ratified amendment — re-pin the P1.3 formative stimulus (proposed 2026-09-16, ratified 2026-09-17)
 
 ## The proposal
 
@@ -63,9 +63,10 @@ longer reachable, that is a finding against the candidate, not a reason to loose
 
 - **Decision:** re-pin the P1.3 formative stimulus to gateway candidate `6487444` per the
   terms above.
-- **Ratified-by:** *(pending — operator)*
-- **Date:** *(pending)*
-- **Status:** proposed.
+- **Ratified-by:** Stanley Bishop, Founding Architect.
+- **Date:** 2026-09-17.
+- **Status:** accepted.
+- **Gate / session reference:** operator chat approval “All recs approved.” (2026-09-17) + the two-question G4/G5 follow-up gate; [[session_stanley_20260917_052304_garnier_ratification_batch]].
 - **Scope of authority if accepted:** stimulus identity for P1.3 formative sessions only. No
   phase advance, no publication, no change to the final-panel stimulus rules, no deploy.
 

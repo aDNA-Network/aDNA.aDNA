@@ -2,9 +2,9 @@
 type: adr
 adr_number: "061"
 title: "Coordination-memo authorship is three-valued: persona · vault · authority"
-status: proposed        # §7.7 — awaits operator ratification; drafted from Vitruvius's staged P-3 question
+status: accepted        # ⛩ Ratified 2026-09-17 — operator chat approval "All recs approved."; drafted 2026-09-16 from Vitruvius's P-3 question
 created: 2026-09-16
-updated: 2026-09-16
+updated: 2026-09-17
 last_edited_by: agent_rosetta
 campaign_id: ""
 mission_id: ""
@@ -18,11 +18,13 @@ tags: [adr, coordination, memo, authorship, persona, vault, addressing, upstream
 
 ## Status
 
-**Proposed.** Drafted at the 2026-09-16 gate-advisory sitting, answering the question
+**Accepted** — ratified by the operator 2026-09-17 ("All recs approved.";
+[[session_stanley_20260917_052304_garnier_ratification_batch]]). Drafted 2026-09-16 at the
+gate-advisory sitting, answering the question
 Vitruvius routed here as the standard's to rule
 (`who/coordination/inbox/coord_2026_09_13_vitruvius_to_rosetta_fleet_persona_vs_vault_addressing.md`,
-their KW-93). This is the fleet-level answer their memo asked for; it binds nothing until
-ratified, and the template touch waits for a release gate.
+their KW-93). This is the fleet-level answer their memo asked for. The local memo
+conventions adopt the fields at this ratification; the template touch waits for a release gate.
 
 ## The measured problem (WebForge's, taken as prior art)
 
@@ -61,9 +63,10 @@ differently — the drift class the standard exists to prevent (synthesis gap G-
 ## Ratification (§7.7)
 
 - **Decision:** clauses 1–3 above.
-- **Ratified-by:** *(pending — operator)*
-- **Date:** *(pending)*
-- **Status:** proposed.
+- **Ratified-by:** Stanley Bishop, Founding Architect.
+- **Date:** 2026-09-17.
+- **Status:** accepted.
+- **Gate / session reference:** operator chat approval “All recs approved.” (2026-09-17) + the two-question G4/G5 follow-up gate; [[session_stanley_20260917_052304_garnier_ratification_batch]].
 
 Related: WebForge `memo_schema.py` + their `ferry_roster` (prior art, consumed by reference —
 never forked) · `how/backlog/idea_upstream_template_decision_provenance.md` §companion note ·

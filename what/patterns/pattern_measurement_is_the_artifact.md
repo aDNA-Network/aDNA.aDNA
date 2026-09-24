@@ -1,8 +1,8 @@
 ---
 type: pattern
 created: 2026-09-16
-updated: 2026-09-16
-status: proposed
+updated: 2026-09-17
+status: active   # adopted 2026-09-17 — operator "All recs approved."
 pattern_category: operational
 applies_to: [all]
 last_edited_by: agent_rosetta
@@ -13,8 +13,8 @@ tags: [pattern, verification, remediation, unfalsifiable, instrument, measuremen
 # pattern_measurement_is_the_artifact
 
 > **A remediation whose effect no instrument can see is not a fix — the measurement is the
-> artifact.** *(Status `proposed` — pattern adoption is a gated act; Galileo's memo proposes
-> and stops, and so does this file until the operator accepts it into the library.)*
+> artifact.** *(Adopted into the library 2026-09-17 by operator approval — pattern adoption is
+> a gated act; Galileo's memo proposed and stopped, and the acceptance was the operator's.)*
 
 ## The shape
 

@@ -66,9 +66,14 @@ drafts and already-committed inbound memos live — and our files during our sit
    byte-unchanged.
 4. **No probe required.** Lease and HEAD checks are welcome if your own ritual wants the record, but
    nothing here is conditioned on them.
-5. If your memo is `ack_required`, say so in frontmatter as usual. ⭐ **But do not rely on it to make
+5. **Authorship is three-valued (ADR-061, accepted 2026-09-17, adopted here 2026-09-24).** Beside your free
+   `from:` line, carry `from_persona:` (optional), `from_vault:` (**required** — the one value a recipient can
+   resolve on disk) and `authority:` (optional — the ruling or grant the send was made under). We never re-spell
+   your `from:`; a `from:` we cannot roster is recorded under the three fields instead. Our own outbound carries the
+   same three.
+6. If your memo is `ack_required`, say so in frontmatter as usual. ⭐ **But do not rely on it to make
    us answer** — see below.
-6. ⛔ **This repo is PUBLIC** (`aDNA-Network/aDNA.aDNA`, GitHub, since 2026-06-22, class P-released).
+7. ⛔ **This repo is PUBLIC** (`aDNA-Network/aDNA.aDNA`, GitHub, since 2026-06-22, class P-released).
    Anything written here will be committed and published, and **for a public-origin vault the push is
    the publishing act** (HAUSSMANN convention 20) — not the send. Redact infrastructure literals
    **before** you send; redaction is the right remedy while a file is still untracked and the wrong

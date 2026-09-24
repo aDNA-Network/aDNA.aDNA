@@ -23,6 +23,15 @@ const REPO_ROOT = resolve(SITE_ROOT, '..');
 const DIST = join(SITE_ROOT, 'dist');
 
 const registry = JSON.parse(readFileSync(join(SITE_ROOT, 'src/data/vaults.json'), 'utf8'));
+// G4 (2026-09-24): the overlay is GATED by publish_status at one seam (network_state.ts → subnetworkIsPublishable);
+// this gate must resolve the same set the page renders. Importing the module is not possible here (its JSON imports
+// need an import attribute under Node's ESM loader that Astro's does not), so the predicate is READ FROM THE MODULE'S
+// SOURCE at run time rather than re-encoded — a second hand-typed regex would drift in silence; this one cannot.
+const networkStateSrc = readFileSync(join(SITE_ROOT, 'src/data/network_state.ts'), 'utf8');
+const allowMatch = networkStateSrc.match(/const SUBNETWORK_PUBLISH_ALLOW = \/(.+)\/;/);
+if (!allowMatch) throw new Error('gate-30: SUBNETWORK_PUBLISH_ALLOW not found in network_state.ts — the seam moved; repoint this gate in the same commit (ADR-057)');
+const SUBNETWORK_PUBLISH_ALLOW = new RegExp(allowMatch[1]);
+const subnetworkIsPublishable = (s: any) => SUBNETWORK_PUBLISH_ALLOW.test(s.publish_status ?? 'ready');
 
 /** The law, stated once here so the gate is not merely agreeing with the code it tests. */
 const canonical = (v: string) =>
@@ -154,7 +163,18 @@ test.describe('gate-30 URL canonicalization', () => {
     const overlay = JSON.parse(readFileSync(overlayPath, 'utf8'));
     const known = new Set(registry.vaults.map((v: any) => canonical(v.vault_slug)));
 
-    const members = (overlay.subnetworks ?? []).flatMap((s: any) =>
+    /* G4 (HAUSSMANN operator queue, fired 2026-09-24): entries whose `publish_status` is not cleared are
+     * WITHHELD from every public surface (network_state.ts → subnetworkIsPublishable). The expected
+     * population is therefore the PUBLISHABLE overlay, not the file — otherwise a correctly withheld entry
+     * reads as "declared relationships in the registry but 0 rendered them", which is the gate accusing the
+     * page of the defect the gate itself introduced (same-diff law, ADR-057). The withheld set is asserted,
+     * never assumed: a withheld entry whose display name still renders is the gate's own red. */
+    const allEntries = overlay.subnetworks ?? [];
+    const publishable = allEntries.filter((s: any) => subnetworkIsPublishable(s));
+    const withheldEntries = allEntries.filter((s: any) => !subnetworkIsPublishable(s));
+    expect(publishable.length + withheldEntries.length, 'gate split must cover the whole overlay').toBe(allEntries.length);
+
+    const members = publishable.flatMap((s: any) =>
       (s.members ?? []).map((m: any) => ({ subnet: s.display_name, slug: m.vault_slug })),
     ).filter((m: any) => m.slug);
 
@@ -180,6 +200,17 @@ test.describe('gate-30 URL canonicalization', () => {
     const commonsPage = join(DIST, 'commons/index.html');
     test.skip(!existsSync(commonsPage), 'no dist/commons — site not built');
     const html = readFileSync(commonsPage, 'utf8');
+    /* Read the CARDS, not the page: a withheld entry's name may legitimately appear in prose (candor copy about
+     * the Foundation's own repository does), so the assertion is scoped to the rendered card blocks — the
+     * surface the publication gate governs (convention 17: the surface must match the claim's verb). */
+    const cardBlocks = html.match(/<li class="subnet-card"[\s\S]*?<\/li>/g) ?? [];
+    expect(cardBlocks.length, 'rendered subnet-card count must equal the PUBLISHABLE overlay').toBe(publishable.length);
+    for (const s of withheldEntries) {
+      expect(
+        cardBlocks.some((b) => b.includes(s.display_name)),
+        `withheld subnetwork "${s.display_name}" (publish_status=${s.publish_status}) still renders as a /commons card — the publication gate is not honoured by the page`,
+      ).toBe(false);
+    }
     const byCanonical = new Map<string, any>(
       registry.vaults.map((v: any) => [canonical(v.vault_slug), v]),
     );

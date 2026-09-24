@@ -2,9 +2,9 @@
 type: adr
 adr_number: "060"
 title: "Template-shipped decisions: ratify at template altitude, provenance-stamp at fork"
-status: proposed        # §7.7 — awaits operator ratification; drafted from Hestia's 2026-09-15 finding
+status: accepted        # ⛩ Ratified 2026-09-17 — operator chat approval "All recs approved."; drafted 2026-09-16 from Hestia's finding
 created: 2026-09-16
-updated: 2026-09-16
+updated: 2026-09-17
 last_edited_by: agent_rosetta
 campaign_id: ""
 mission_id: ""
@@ -18,7 +18,7 @@ tags: [adr, template, fork, provenance, adr_003, census, upstream]
 
 ## Status
 
-**Proposed.** Drafted at the 2026-09-16 gate-advisory sitting from Hestia's delivered finding
+**Accepted** — ratified by the operator 2026-09-17 ("All recs approved."; [[session_stanley_20260917_052304_garnier_ratification_batch]]). Drafted 2026-09-16 at the gate-advisory sitting from Hestia's delivered finding
 (`who/coordination/inbox/coord_2026_09_15_hestia_to_rosetta_adr_003_ships_proposed_and_31_forks_inherited_it.md`).
 Nothing changes anywhere until ratified; the `.adna/` edit additionally waits for the next
 template release gate (Standing Rule 1 — `.adna/` moves only via `skill_template_release`).
@@ -69,9 +69,11 @@ either at their own discretion.
 ## Ratification (§7.7)
 
 - **Decision:** parts 1 + 2 above.
-- **Ratified-by:** *(pending — operator)*
-- **Date:** *(pending)*
-- **Status:** proposed.
+- **Ratified-by:** Stanley Bishop, Founding Architect.
+- **Date:** 2026-09-17.
+- **Status:** accepted.
+- **Gate / session reference:** operator chat approval “All recs approved.” (2026-09-17) + the two-question G4/G5 follow-up gate; [[session_stanley_20260917_052304_garnier_ratification_batch]].
+- **Scope note:** ratification authorizes the decision; the `.adna/` status flip and the fork-skill stamp still execute only inside `skill_template_release`'s operator-fired gate (Standing Rule 1), per this ADR's own §Status.
 
 Related: `how/backlog/idea_upstream_template_decision_provenance.md` (the release-vehicle
 filing) · Standing Rule 1 · `skill_template_release` · `skill_project_fork`.

@@ -10,14 +10,14 @@ campaign_phase: 5
 campaign_mission_number: 30
 mission_class: verification
 created: '2026-09-14'
-updated: '2026-09-16'
+updated: '2026-09-24'
 last_edited_by: agent_rosetta
 tags:
 - plan
 - campaign
 - garnier
 executor_tier: opus
-executor_runtime: codex
+executor_runtime: claude   # was codex; runtime handoff 2026-09-16 (runtime_handoff_20260916); flipped on queued/in_progress missions 2026-09-24
 token_budget_estimated: 75
 token_budget_unit: kT_content_load
 estimated_sessions: 2
@@ -149,16 +149,15 @@ Previous: [[mission_garnier_p4_3_regression]]. Next: [[mission_garnier_p5_2_resc
 
 Queued. Specification amended; no campaign acceptance criterion has been executed by this records-only sitting.
 
-## ⛩ Proposed joint-panel amendment — 2026-09-16, pending ratification
+## ⛩ Joint-panel amendment — ✅ RATIFIED 2026-09-17, IN FORCE (mirror activated 2026-09-24)
 
-[I] [[panel_merge_brief]] (`status: proposed`) proposes that this mission's panel and
+[D] [[panel_merge_brief]] (`status: accepted`, Stanley Bishop 2026-09-17, rulings 1 + 2 both taken) establishes that this mission's panel and
 HAUSSMANN P5.1's AC-1 cold-reader panel are **the same recruitment event**: one cohort of
 ≥5 new humans per decisive class (which satisfies HAUSSMANN's five-across-three as a
 superset), one live-production stimulus at a re-derived stamp after GR-7 integration, both
 campaigns' sealed keys applied by both scorer pairs, each campaign's bar reported against its
 own key. GARNIER's formative-participant exclusion covers the joint cohort. HAUSSMANN's
-mission carries the mirror text as its proposed AMENDMENT 5. **Until the operator signs the
-brief, this mission's criteria stand exactly as written above and nothing here is in force.**
+mission carries the mirror text as its proposed AMENDMENT 5. **The brief is signed: this mission's panel IS the joint endgame panel, run once after GARNIER's craft waves and HAUSSMANN GR-7; HAUSSMANN P5.1 carries the same text as its AMENDMENT 5 (`accepted`).** ~~Until the operator signs the brief, this mission's criteria stand exactly as written above and nothing here is in force.~~
 
 ## Completion Summary
 

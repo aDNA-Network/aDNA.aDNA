@@ -40,6 +40,11 @@
 #   consent" safeguard died with the gate it was keyed to. The WF pair is nevertheless LIVE on
 #   production today. That disposition is an open ⛩ operator gate, not an agent's call; the gate is
 #   built and deliberately NOT fired, so nothing here changed what a reader sees.
+#   ⛩ RULED 2026-09-17 — option (b): FIRE the gate until the ADR-010 Wilhelm-batch co-sign lands. Fired in
+#   source 2026-09-24 (session_stanley_20260924_083249_garnier_reorientation): both WF entries now carry
+#   `held_adr_010_cosign_pending`, so /commons, /about (cards + the person card) and the derived counts
+#   withhold them. BUILT, NOT DEPLOYED — the deploy is its own ⛩ GO. To un-fire: set `ready` or a dated
+#   `operator_cleared_YYYY_MM_DD` here, with the co-sign record cited beside it.
 # ---------------------------------------------------------------------------
 
 subnetworks:
@@ -82,7 +87,7 @@ subnetworks:
     ethos_alignment: Rare-disease AI as a public good
     attribution: Wilhelm Foundation (Helene & Mikk Cederroth)
     license: Apache-2.0 + CC-BY-4.0
-    publish_status: operator_cleared_2026_06_07   # WF ADR-010-window override; commit-only until close-deploy green-light
+    publish_status: held_adr_010_cosign_pending   # ⛩ G4 option (b), ruled 2026-09-17, fired 2026-09-24: WITHHELD until the ADR-010 Wilhelm-batch co-sign lands. Was operator_cleared_2026_06_07 (conditional on an E5 close-deploy that never occurred).
     blurb: >-
       The Wilhelm AI Initiative for the Undiagnosed (AI4U) — the Wilhelm Foundation's
       umbrella over AI initiatives for people and families living with undiagnosed
@@ -99,7 +104,7 @@ subnetworks:
     ethos_alignment: Rare-disease AI built in the open
     attribution: Wilhelm Foundation (Helene & Mikk Cederroth)
     license: Apache-2.0 + CC-BY-4.0
-    publish_status: operator_cleared_2026_06_07   # WF ADR-010-window override; commit-only until close-deploy green-light
+    publish_status: held_adr_010_cosign_pending   # ⛩ G4 option (b), ruled 2026-09-17, fired 2026-09-24: WITHHELD until the ADR-010 Wilhelm-batch co-sign lands. Was operator_cleared_2026_06_07 (conditional on an E5 close-deploy that never occurred).
     blurb: >-
       Rare Archive is an open-source rare-disease AI project — the diagnosis-acceleration
       pillar of AI4U — governed under the Wilhelm Foundation, with a canonical home at

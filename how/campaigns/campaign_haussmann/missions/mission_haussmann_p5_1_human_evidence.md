@@ -306,11 +306,22 @@ would strand every outbound memo for the panel's duration for no protective gain
 `git merge-base --is-ancestor <recorded_commit> HEAD`, plus the containment check. Run it — `AC-P` is
 otherwise verified by nothing, which is the defect `GAP-1` was raised to close.
 
-## ⛩ AMENDMENT 5 (PROPOSED — NOT RULED, unlike Amendments 1–4) — 2026-09-16: one joint panel with GARNIER P5.1, after the rewrite
+## ⛩ AMENDMENT 5 — ✅ RATIFIED 2026-09-17 (executed at the destination 2026-09-24) — one joint panel with GARNIER P5.1, after the rewrite
 
-**Status: `proposed`. Nothing below is in force until the operator signs the ratification block
+~~## ⛩ AMENDMENT 5 (PROPOSED — NOT RULED, unlike Amendments 1–4) — 2026-09-16~~
+
+**Status: `accepted` — Stanley Bishop signed the ratification block in
+`campaign_garnier/artifacts/amendments/panel_merge_brief.md` on 2026-09-17 ("All recs approved.";
+rulings 1 + 2 both taken). This amendment is IN FORCE.** ⛩ **It resolves the P5.1-vs-rewrite
+ordering question this file carried since 2026-09-14: one joint panel, run ONCE, AFTER GARNIER's
+craft waves and GR-7 integration, both campaigns' sealed keys applied by both scorer pairs.**
+⚠ Activation at this destination lagged the signature by seven days — the 09-17 batch session
+recorded it as done and did not perform it (`F-u`'s class: a ruling recorded as taken and left
+unperformed at its destination). Performed 2026-09-24 by `session_stanley_20260924_083249_garnier_reorientation`.
+
+~~**Status: `proposed`. Nothing below is in force until the operator signs the ratification block
 in `campaign_garnier/artifacts/amendments/panel_merge_brief.md`, which is this amendment's
-decision artifact.** Authored by agent_rosetta at the gate-advisory sitting; GARNIER is now the
+decision artifact.**~~ Authored by agent_rosetta at the gate-advisory sitting; GARNIER is now the
 ratified successor to the VITRINE rewrite this mission's ordering question anticipated
 (`campaign_garnier`, runtime claude since `runtime_handoff_20260916`).
 

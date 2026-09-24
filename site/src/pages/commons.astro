@@ -34,6 +34,16 @@ const jsonLD = buildWebPageJsonLD({
 // rather than passed. Inert at current data; withholding is one value-change in subnetworks.yaml.
 const subnetworks = ((subnetworksData as any).subnetworks ?? []).filter(subnetworkIsPublishable);
 
+// G4 (2026-09-24): the "follow the work" sentence used to NAME the followable subnetworks in prose. Once the
+// gate withheld one of them, the sentence described a card that no longer renders — a false claim in the page's
+// own voice, one paragraph below the gate that removed the card. Derived now, so the prose cannot outlive the data.
+const followableNames: string[] = subnetworks.filter((s: any) => s.public_url).map((s: any) => s.display_name);
+const followableClause =
+  followableNames.length === 0
+    ? 'none has a public face you can open yet, and every card says so'
+    : `today that is ${followableNames.length === 1 ? followableNames[0] : followableNames.slice(0, -1).join(', ') + ' and ' + followableNames[followableNames.length - 1]}`;
+const othersClause = followableNames.length < subnetworks.length ? '; the others are still building theirs' : '';
+
 // ——— c164 · "The commons, today" — the first social surface, computed only from what the
 // registry truly records (who-not-how-many; zero fabricated metrics). Joins the curated
 // subnetworks overlay to the generated vault registry: members[].vault_slug → vault record;
@@ -191,9 +201,8 @@ const memberSyncDates = [...new Set(ledger.map((r: any) => r.lastSynced).filter(
         <li class="connect-path">
           <h3>Follow the work</h3>
           <p>
-            Where a subnetwork has a public face, its card links it &mdash; the Rare Archive
-            repository and the World Genome Academy site are followable today; the others are still
-            building theirs. The open record is the front door.
+            Where a subnetwork has a public face, its card links it &mdash; {followableClause}{othersClause}.
+            The open record is the front door.
           </p>
         </li>
         <li class="connect-path">

@@ -3,7 +3,7 @@ type: backlog_idea
 status: proposed
 priority: medium
 created: 2026-09-16
-updated: 2026-09-16
+updated: 2026-09-17
 last_edited_by: agent_rosetta
 filed_from: aDNA.aDNA (gate-advisory sitting, 2026-09-16)
 filing_authorization: skill_upstream_contribution
@@ -35,6 +35,7 @@ the class "the template's reach ends at fork time":
 **Why upstream.** All three are framework-level: they change what every future fork inherits
 and what every fleet census can read, not anything specific to this vault.
 
-**Gate.** Items 1–2 wait on ADR-060 ratification; item 3 is release-notes prose needing no
-ADR. All three execute only inside `skill_template_release`'s operator-fired gate (Standing
-Rule 1).
+**Gate.** ⛩ ADR-060 was **ratified 2026-09-17** ("All recs approved."), so items 1–2's ADR
+condition is satisfied; item 3 needed none. All three still execute only inside
+`skill_template_release`'s operator-fired gate (Standing Rule 1) — this idea stays open until
+that release folds it.

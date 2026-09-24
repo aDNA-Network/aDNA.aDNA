@@ -4,10 +4,10 @@ artifact_class: decision_brief
 campaign_id: campaign_garnier
 title: "Decision brief: one joint endgame panel, after the rewrite"
 created: 2026-09-16
-updated: 2026-09-16
-status: proposed
+updated: 2026-09-24
+status: accepted
 last_edited_by: agent_rosetta
-tags: [garnier, haussmann, p5_1, panel, ordering, proposed]
+tags: [garnier, haussmann, p5_1, panel, ordering, ratified]
 ---
 
 # Decision brief — merge the two endgame panels and order them after GARNIER
@@ -67,13 +67,16 @@ order the instrument doctrine wants.
 
 ## Ratification (§7.7)
 
-- **Decision:** rulings 1 + 2 above (or ruling 1 alone — strike ruling 2 and note it).
-- **Ratified-by:** *(pending — operator)*
-- **Date:** *(pending)*
-- **Status:** proposed.
+- **Decision:** rulings 1 + 2 above, both taken.
+- **Ratified-by:** Stanley Bishop, Founding Architect.
+- **Date:** 2026-09-17.
+- **Status:** accepted.
+- **Gate / session reference:** operator chat approval “All recs approved.” (2026-09-17) + the two-question G4/G5 follow-up gate; [[session_stanley_20260917_052304_garnier_ratification_batch]].
 - **Effect if accepted:** HAUSSMANN P5.1 AMENDMENT 5 and GARNIER P5.1's joint-panel note come
   into force; recruitment remains operator-only; deploy-hold semantics unchanged; DP7 and
   HAUSSMANN's close gates remain human.
 
 Related: [[mission_haussmann_p5_1_human_evidence]] · [[mission_garnier_p5_1_human_panel]] ·
 [[reader_protocol]] · [[formative_stimulus_repin_20260916]].
+
+[D] **Executed at both destinations 2026-09-24**: HAUSSMANN `mission_haussmann_p5_1_human_evidence.md` §AMENDMENT 5 → `accepted`/in force; GARNIER `mission_garnier_p5_1_human_panel.md` mirror → in force. (The 09-17 batch session recorded the activation and did not perform it; performed by `session_stanley_20260924_083249_garnier_reorientation`.)

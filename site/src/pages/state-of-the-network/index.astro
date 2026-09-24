@@ -140,7 +140,7 @@ const jsonLD = buildWebPageJsonLD({
     </ul>
     <p>
       Of the {subnetworkCount} subnetworks on <a href="/commons/" data-astro-prefetch>the commons</a>,
-      {subnetworksWithPublicUrl} have a public property you can open today. Their records were last
+      {subnetworksWithPublicUrl} {subnetworksWithPublicUrl === 1 ? 'has' : 'have'} a public property you can open today. Their records were last
       synced on {subnetworksGeneratedAt} &mdash; older than the registry above, and shown rather than
       hidden. Those properties are not a second operator: the one live subnetwork site is run from
       within this same orbit, and its vault is one of the {vaultCount} counted above.
