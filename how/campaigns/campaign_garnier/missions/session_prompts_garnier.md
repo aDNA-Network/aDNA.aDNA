@@ -1,16 +1,16 @@
 ---
 type: session_prompt_index
 created: 2026-09-14
-updated: '2026-09-16'
+updated: '2026-09-24'
 status: active
-last_edited_by: agent_codex
+last_edited_by: agent_rosetta
 tags:
 - garnier
 - genesis
 ---
 # GARNIER session prompts
 
-[D] DP1 accepted with amendments on 2026-09-15. P0 is complete; DP2 was accepted with six amendments on 2026-09-15. P1 implementation is delivered locally; P1.1/P1.2 are complete; P1.3 owes formative humans. The assisted local-provider run is recorded in [[local_model_continuation]]. Read [[artifacts/p1/phase_exit]] before running a mission prompt; do not restart completed work. P1 is authorized at 320 kT; read [[dp2_ratification_20260915]]. CURRENT marks the next mission, not a completed result.
+[D] DP1 accepted with amendments on 2026-09-15. P0 is complete; DP2 was accepted with six amendments on 2026-09-15. P1 implementation is delivered locally; P1.1/P1.2 are complete; P1.3 owes formative humans. The assisted local-provider run is recorded in [[local_model_continuation]]. Read [[artifacts/p1/phase_exit]] before running a mission prompt; do not restart completed work. P1 is authorized at 320 kT; read [[dp2_ratification_20260915]]. CURRENT marks the next mission, not a completed result. *(2026-09-24: stimulus of record is `6487444`/4466 per the ratified re-pin; the key-reachability record exists; G4 fired in source.)*
 
 ## Freeze baseline and reconcile authority
 
@@ -39,8 +39,9 @@ Run from ~/aDNA/aDNA.aDNA. Read root/campaign governance, active leases, the new
 ## Collect formative reader evidence ⬅ CURRENT
 
 ```text
-Run from ~/aDNA/aDNA.aDNA. Read root/campaign governance, active leases, the newest STATE block, artifacts/p1/phase_exit.md, local_model_continuation.md and formative_reader_pack.md. P1.1 and P1.2 are complete; P1.3 C1 copy is already delivered and C2 owes three consenting engineer/funder/scientist observations. The exact first-project command succeeded through broker C69 and local Qwen3.6 in a fresh container, with a prompted initial-commit correction; all five checks and fresh-session recognition passed. Preserve the Qwen2.5 and API failures and the local-provider/assistance limits. Do not repeat the unchanged-candidate reproduction or request API credit as its missing input. Source b1cf040 remains the frozen reader stimulus at http://127.0.0.1:4465/; recheck identity before reuse. Collect actual de-identified records under the existing protocol; no synthetic substitutes, recruitment or contact. Design research, the original bounded pass and the accepted whole-homepage clean-composition expansion are complete. Read artifacts/research/clean_homepage_revision.md, clean_homepage_visual_review.md and clean_homepage_verification.md: candidate sourcee745990 on isolated branch garnier/homepage-20260916 in /Users/stanley/.cache/garnier-homepage-20260916, preview http://127.0.0.1:4466/. Both previews are retained. Future substantial visual changes require R-VISUAL with three independent screenshot reviewers. Do not ask again for the accepted scope or replay its implementation. Do not merge it into the frozen reader stimulus or attribute P1 observations to it without an explicit version disposition. DP3 and the human requirement remain open; no general P2/P3 entry. Run affected checks for any observed correction and full R-SITE at actual phase exit. Latest workload and retrospective are in local_model_continuation.md; next P1 forecast10–20kT after records, excluding waiting and the separately completed design work. Open/close a scoped session, retain unrelated work, use explicit-path local commits. No push, deploy, peer delivery or reserved-path writes.
+Run from ~/aDNA/aDNA.aDNA. Read root/campaign governance, active leases, the newest STATE block, artifacts/p1/phase_exit.md (incl. its 2026-09-24 addendum), local_model_continuation.md and formative_reader_pack.md. P1.1 and P1.2 are complete; P1.3 C1 copy is delivered and C2 owes three consenting engineer/funder/scientist observations. The formative stimulus of record is 6487444 on isolated branch garnier/homepage-20260916 (checkout ~/.cache/garnier-homepage-20260916), preview http://127.0.0.1:4466/ — re-pinned by ratified amendment 2026-09-17; recheck identity against evidence/homepage_gateway_20260916/proposed_formative_stimulus_6487444.json (15 routes) before reuse; restart per the pack's procedure if down. The scorer key-reachability check ran 2026-09-24 (evidence/homepage_gateway_20260916/key_reachability_check.md): all expected answers reachable, one scorer caveat (scientist evaluation-absence is implied, not stated) carried to DP3. b1cf040/4465 is history, not a stimulus. G4 (Wilhelm publishability) is fired in the vault site/ on vitrine/design, built not deployed — the reader stimulus still shows the Foundation cards by design; do not attribute a reader's mention of them to the site. Collect actual de-identified records under the existing protocol; no synthetic substitutes, recruitment or contact. Two calibrated scorers apply the frozen key after intake. Then C3: R-CLOSE, five-line AAR, full R-SITE at actual phase exit, and assemble the DP3 packet in phase_exit.md with P2's separately provisional scope/budget (991 kT) and the P1 actuals overrun (~625±155 vs 320 committed) stated for an SO-11 ruling. DP3 and the human requirement remain open; no general P2/P3 entry. Open/close a scoped session, retain unrelated work, explicit-path local commits. No push, deploy, peer delivery or reserved-path writes.
 ```
+
 
 ## Make the public-good invitation concise — original implementation prompt
 

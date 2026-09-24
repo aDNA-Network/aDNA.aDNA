@@ -1,9 +1,9 @@
 ---
 type: artifact
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-09-24
 status: active
-last_edited_by: agent_codex
+last_edited_by: agent_rosetta
 tags: [garnier, p0, evidence]
 ---
 # P0 finding register
@@ -54,7 +54,8 @@ tags: [garnier, p0, evidence]
   "effort": "M",
   "owner": "Rosetta; collector access brokered by Hestia",
   "verification": "Compare actual mounted behavior, consent/configuration, collector receipt and every public disclosure; status remains COLLECTION_UNVERIFIED until the corresponding record is observed.",
-  "status": "open"
+  "status": "corrected",
+  "status_note": "Corrected in P1.3 C1 (privacy/state disclosure consistency, mission_copy_diff.md); collector verification stays with P4.1 as recorded in verification. Status moved 2026-09-24."
 }
 ```
 
@@ -140,6 +141,7 @@ Related: [[baseline_manifest]] · [[mission_garnier_p0_1_baseline]].
   "effort": "M",
   "owner": "Rosetta P1.2",
   "verification": "Compare every tour source/HTML/twin against the declared pin, then record exact command/prerequisites/result on a clean disposable setup; no synthetic success substitution.",
-  "status": "open"
+  "status": "corrected",
+  "status_note": "Corrected by P1.2 (local_model_continuation.md: exact command, five checks, fresh-session recognition on the pinned tour). Status moved 2026-09-24."
 }
 ```

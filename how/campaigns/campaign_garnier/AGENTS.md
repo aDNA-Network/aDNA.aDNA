@@ -1,9 +1,9 @@
 ---
 type: directory_index
 created: 2026-09-14
-updated: '2026-09-16'
+updated: '2026-09-24'
 status: active
-last_edited_by: agent_codex
+last_edited_by: agent_rosetta
 tags:
 - garnier
 - genesis
@@ -136,4 +136,6 @@ Excluded isolation attempts are archived under artifacts/p0/excluded_isolation a
 
 Related: [[campaign_garnier]] · [[missions/session_prompts_garnier]].
 
-[D] Latest continuation: [[artifacts/p1/first_task_continuation]] — installed CLI reached the API, which rejected the first task for insufficient credit. Local reader worksheet ready; zero human observations. CURRENT still points to P1.2; obtain the specific missing inputs before retrying. DP3 remains pending.
+~~[D] Latest continuation: [[artifacts/p1/first_task_continuation]] — installed CLI reached the API, which rejected the first task for insufficient credit. Local reader worksheet ready; zero human observations. CURRENT still points to P1.2; obtain the specific missing inputs before retrying. DP3 remains pending.~~
+
+[D] 2026-09-24: P1.2 is complete ([[artifacts/p1/local_model_continuation]]); CURRENT is *Collect formative reader evidence* (P1.3 C2). Stimulus of record `6487444`/4466 (re-pin ratified 2026-09-17); key-reachability record at `evidence/homepage_gateway_20260916/key_reachability_check.md`. Zero human observations; DP3 pending. The panel-merge amendment is in force (P5.1 joint panel after GR-7). Re-orientation record: [[session_stanley_20260924_083249_garnier_reorientation]].

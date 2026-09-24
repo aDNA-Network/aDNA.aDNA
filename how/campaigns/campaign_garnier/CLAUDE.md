@@ -3,7 +3,7 @@ type: governance
 subtype: campaign_claude
 campaign_id: campaign_garnier
 created: 2026-09-14
-updated: '2026-09-16'
+updated: '2026-09-24'
 status: active
 last_edited_by: agent_rosetta
 tags:
@@ -39,7 +39,10 @@ Do not execute queued campaign missions until their human gates are ratified.
 Live state in one line: P1.1/P1.2 completed; **P1.3 (three-class formative human evidence) and DP3
 are the open front**; three homepage increments completed under ratified exceptions, the last being
 the minimal gateway ([[homepage_gateway_revision]], completed 2026-09-16, candidate branch
-`garnier/homepage-20260916`). Frozen P1 stimulus: `b1cf040` at port 4465 — never touch it.
+`garnier/homepage-20260916`). ~~Frozen P1 stimulus: `b1cf040` at port 4465 — never touch it.~~ **Stimulus of record since the
+2026-09-17 re-pin ([[formative_stimulus_repin_20260916]], accepted): `6487444` at port 4466 in the isolated checkout — never touch
+it while P1.3 is open.** `b1cf040`/4465 is history (its records stay at `f34f9c2`). Panel merge in force (2026-09-17): one joint
+endgame panel with HAUSSMANN P5.1, after GR-7. G4 fired in the vault `site/` 2026-09-24 (built, not deployed).
 
 Ratified 2026-09-16 rulings (full blocks in the charter's Execution Log and their §7.7 records):
 **gateway direction** — the homepage introduces and routes; four task paths; supersedes all-section
@@ -124,10 +127,11 @@ ADR-053 remains the five-slot art lineage. Conditional H1 consent does not close
     publication scan runs pre-push; `outbound_ready` in a pushed tree is already published.
 
 GARNIER-specific additions: **R-VISUAL** (convention-level acceptance practice since 2026-09-16 —
-see Quick Start); **frozen-stimulus rule** — P1 `b1cf040`/port 4465 and its 15 route hashes are
-immutable until P1.3 reader evidence closes; site increments happen in the isolated checkout
-(`~/.cache/garnier-homepage-20260916`, branch `garnier/homepage-20260916`), never in the vault's
-`site/` while the freeze holds.
+see Quick Start); **frozen-stimulus rule (as amended 2026-09-17/24)** — the formative stimulus `6487444`/port 4466 and its 15 route
+hashes (`proposed_formative_stimulus_6487444.json`) are immutable until P1.3 reader evidence closes; the isolated checkout is
+never edited while the freeze holds. The vault's `site/` on `vitrine/design` is **no longer the stimulus surface**, so a
+ratified ruling may change it (G4 was the first, 2026-09-24) — each such change is recorded as a DP3 disposition item
+because readers and the site then diverge. ~~P1 `b1cf040`/port 4465 … never in the vault's `site/` while the freeze holds.~~
 
 ## What this campaign protects (verbatim reconciliation contract)
 

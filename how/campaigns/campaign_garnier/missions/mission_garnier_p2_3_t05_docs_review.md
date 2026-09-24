@@ -17,7 +17,7 @@ tags:
 - campaign
 - garnier
 executor_tier: opus
-executor_runtime: codex
+executor_runtime: claude   # was codex; runtime handoff 2026-09-16 (runtime_handoff_20260916); flipped on queued/in_progress missions 2026-09-24
 token_budget_estimated: 53
 token_budget_unit: kT_content_load
 estimated_sessions: 1

@@ -5,8 +5,8 @@ status: active
 tags:
 - garnier
 - amendments
-updated: '2026-09-16'
-last_edited_by: agent_codex
+updated: 2026-09-24
+last_edited_by: agent_rosetta
 ---
 # Rolling closure evidence
 
@@ -73,3 +73,13 @@ Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
 [D] [[clean_homepage_verification]]:229pages, markup, fast578/3skip, full696/3skip,12final zero-axe cells,12shared exact comparisons, interactions/source/twin checks;15frozenP1 routes unchanged. Failures retained, including transient theme metadata and obsolete population fixtures. Two patterns/data asks remain staged: [[coord_2026_09_16_rosetta_to_vitruvius_independent_visual_review]] and [[coord_2026_09_16_rosetta_to_hestia_homepage_purpose_descriptions]]. No provider bar change or peer delivery.
 
 [I] Forecast 120±40 kT; estimated actual 160±50 kT including reviewers (+40central), billing unavailable; prior 65±25 design and P1/research actuals preserved. Extra reinspection/native-zoom/metadata and corroboration correction account for variance. Follow-up owners: Rosetta receives P1 records, Stanley supplies consenting participants and owns DP3, Hestia owns missing purpose data, later shared-header work owns low C3 polish. No remaining accepted-increment implementation work; humans/DP3 stay open. Session/AAR: [[session_stanley_20260916_052556_garnier_clean_homepage]].
+
+## Gateway increment, handoff, gate advisory, ratifications — recorded 2026-09-24 (backfill)
+
+[D] Minimal gateway [[homepage_gateway_revision]] completed 2026-09-16, candidate `6487444` (isolated), suite 694/3/0, 12 axe-zero cells, R-VISUAL three perspectives; runtime handoff Codex→Claude ([[runtime_handoff_20260916]]); gate-advisory paperwork sitting 2026-09-16 (everything `proposed`); **2026-09-17 "All recs approved."** — re-pin, panel merge, ADR-060/061, pattern adoption ratified; G4 (b) ruled; G5 deferred. The 09-17 batch session performed a third of its scope and committed nothing; closed to history 2026-09-24.
+
+## Re-orientation sitting — 2026-09-24
+
+[D] Executed the unfinished 09-17 scope: key-reachability check (15/15 hashes, all answers reachable, one caveat), panel-merge activation at both P5.1 files, G4 fired in `site/` (subnetworks.yaml → `held_adr_010_cosign_pending`, projection re-run with pt19 outputs reverted, rebuilt), Prometheus reply delivered, ADR-061 adopted in the inbox README. Inbox received (12 memos) and answered (8 replies + Prometheus); ADR-062 (LinkML) drafted `proposed`; v8.12 staging ledger `proposed`; four local doc corrections; CURRENT/AGENTS/CLAUDE/phase_exit repaired. gate-49 in-container re-baseline for `/commons` + `/about` **owed** if Docker did not come up (recorded at the operator queue §G4).
+
+[I] Sitting workload ≈ 220±70 kT forecast; actual recorded at session close. Follow-up: P1.3 C2 records → DP3.

@@ -1,9 +1,9 @@
 ---
 type: artifact
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-09-24
 status: in_progress
-last_edited_by: agent_codex
+last_edited_by: agent_rosetta
 tags: [garnier, p1, verification]
 ---
 # P1 candidate — implementation delivered, DP3 pending
@@ -64,3 +64,11 @@ Run from ~/aDNA/aDNA.aDNA. Read root/campaign governance, active leases, the new
 Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
 
 [D] Wind-down record: [[session_stanley_20260915_110717_garnier_winddown]]. Website implementation remains `b1cf040`; the evidence and session close are committed at `f34f9c2`. The original implementation AAR and measurement limitations remain in force.
+
+## Addendum — 2026-09-24 (re-orientation sitting; this file's body above is the 2026-09-15 state, retained)
+
+[D] Since this packet was written: three homepage increments completed under ratified exceptions (bounded design pass `0c77b61` → clean composition `e745990` → minimal gateway `6487444`, all on the isolated branch); the Codex→Claude runtime handoff (2026-09-16); the formative stimulus **re-pinned to `6487444`/4466** (ratified 2026-09-17); the **panel-merge amendment ratified** (one joint endgame panel with HAUSSMANN P5.1, after GR-7 — resolving the P5.1-vs-rewrite ordering question); **G4 fired** in the vault `site/` (Wilhelm cards withheld until the ADR-010 co-sign; built, not deployed); **key-reachability check run 2026-09-24** — all expected answers reachable on `6487444`, one scorer caveat (scientist "evaluation explicitly absent" is implied by the stimulus, not stated) carried here for DP3 disposition. `next_build_scope`'s sequence amendment, unanswered above, was accepted 2026-09-16.
+
+[I] **Budget for the DP3 sitting (SO-11):** P1 implementation/evidence actuals are roughly **625±155 kT** ([[local_model_continuation]] basis) against **320 kT committed**, plus separately-booked design increments (65±25, 160±50, gateway). That is >2× on content-load, which triggers a retrospective by ADR-016; the DP3 packet must present it for a ruling rather than absorb it.
+
+[I] **Still owed before DP3:** the three consenting reader records (operator-supplied); two-scorer application of the frozen key; disposition of each material confusion; full R-SITE at phase exit; the P2 991 kT provisional envelope presented, not committed.

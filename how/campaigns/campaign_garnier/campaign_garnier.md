@@ -26,7 +26,7 @@ governing_instrument: VITRUVIUS v1.1
 baseline_score: paired provisional v1.1; full breakdowns and limitations in artifacts/p0/baseline_reconciliation.md
 evidence_pack: /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0
 created: '2026-09-14'
-updated: '2026-09-16'
+updated: '2026-09-24'
 last_edited_by: agent_rosetta
 tags:
 - campaign
@@ -313,6 +313,10 @@ Later ratified amendments: [[dp2_ratification_20260915]] (DP2, six amendments) �
 ### Runtime handoff and charter restructure — 2026-09-16
 
 [D] Stanley ruled Claude (Rosetta) takes over GARNIER execution fully; Codex retires from the campaign. [[runtime_handoff_20260916]] is the ratification record. The open gateway session transferred mid-flight with scope and forecast inherited; this charter was restructured to the vault template (form only, content preserved) and the campaign CLAUDE.md compressed to pointer + delta under the same ruling. Completed Codex work stays credited unchanged.
+
+### Ratification batch + re-orientation — 2026-09-17 / 2026-09-24
+
+[D] 2026-09-17: Stanley ruled "All recs approved." — [[formative_stimulus_repin_20260916]] (stimulus → `6487444`/4466), [[panel_merge_brief]] (one joint endgame panel with HAUSSMANN P5.1, after GR-7), ADR-060, ADR-061 and [[pattern_measurement_is_the_artifact]] accepted; G4 option (b) ruled; G5 deferred pending an address. 2026-09-24: the batch's unperformed acts executed (key-reachability record, AMENDMENT 5 activation, G4 fired in source, Prometheus reply delivered), inbox received and answered, campaign surfaces repaired. P1.3 C2 (three consenting readers) and DP3 remain open; no phase advance, push or deploy.
 
 ## Completion Summary
 
