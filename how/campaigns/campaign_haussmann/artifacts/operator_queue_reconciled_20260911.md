@@ -4,7 +4,7 @@ artifact_class: operator_queue_reconciliation
 campaign: campaign_haussmann
 title: "The operator queue, re-derived at the object — 2026-09-11"
 created: 2026-09-11
-updated: 2026-09-24
+updated: 2026-09-25
 status: active
 last_edited_by: agent_rosetta
 executor_tier: opus
@@ -107,6 +107,8 @@ The only genuine ratification queue left. Bundle into one sitting:
 ⛩ **Ruling (Stanley, 2026-09-17, two-question follow-up gate after "All recs approved."): option (b) — fire the gate until the ADR-010 Wilhelm-batch co-sign lands.** Executed 2026-09-24 by `session_stanley_20260924_083249_garnier_reorientation` (the 09-17 batch session recorded it as done and did not perform it): `site/src/data/subnetworks.yaml` `wilhelm_ai` + `rare_archive` → `publish_status: held_adr_010_cosign_pending`; rebuilt on `vitrine/design`; `/commons` and `/about` (cards, proof list, the hardcoded person card) and the derived counts withhold both entries. **BUILT, NOT DEPLOYED** — the deploy is its own ⛩ GO, and it is ordered *before the joint panel* (AMENDMENT 5 / panel_merge_brief) because `/commons` is a `gate-49` template a cold reader lands on. ⚠ The formative stimulus `6487444` (isolated checkout) still renders the cards by design — recorded at `evidence/homepage_gateway_20260916/key_reachability_check.md` as a DP3 disposition item. **Un-fire condition:** a dated `operator_cleared_YYYY_MM_DD` value citing the co-sign record, at the yaml, never at the json.
 
 ⚠ **Two things the firing found, recorded rather than smoothed over.** (1) Re-running `scripts/build_vaults_data.mjs` to project the yaml also regenerates `vaults.json`/`vaults_graph.mmd` (pt19 — Hestia's, reverted), re-stamps `subnetworks.json` `generated_at` from the clock, and now emits lowercase member slugs where the committed projection carries `Name.aDNA` forms — gate reds (gate-20 claim-trace `2026-07-06`; gate-30 overlay-resolves) that are **registry-sync drift, not G4**. The committed projection was restored and **only the two ruled `publish_status` values patched**; the drift is a data ask for the next Hestia sync. (2) `gate-49`'s in-container re-baseline for `about` + `commons` is **OWED** — Docker Desktop would not start on this node (`docker info`: cannot connect to the daemon, twice). It is a precondition of any push, because the CI snapshot lane compares against the committed baselines and both templates changed by design. (3) **Same-diff obligations discharged in the firing commit**: `gate-30` now derives its expected population from the *publishable* overlay (predicate read from `network_state.ts` source at run time) and asserts every withheld entry absent from the rendered `subnet-card` blocks — red-proven by mutation; `/commons`'s hardcoded *"Rare Archive repository … followable today"* sentence (one paragraph below the withheld card) and `/state-of-the-network`'s *"1 have"* are now derived from the gated data. Final chromium lane **698 / 1 skipped / 0 failed**.
+
+✅ **(2) DISCHARGED 2026-09-25** (`session_stanley_20260925_141328_garnier_gate49_rebaseline`): in-container red-first `check` failed on `about`, `commons` **and `state-network`** (both themes; the third was under-named above — same commit re-derived its count sentence), re-baselined exactly those 6 PNGs, `check` 26/26 green, `redtest` 7/7. Not pushed.
 
 ~~### ⛩ G4 — H1, the Wilhelm co-sign embargo · ⛔⛔ **RESTATED 2026-09-12 — THIS ROW WAS WRONG**~~ *(the restatement below is retained as the reasoning behind the ruling)*
 

@@ -5,7 +5,7 @@ status: active
 tags:
 - garnier
 - amendments
-updated: 2026-09-24
+updated: 2026-09-25
 last_edited_by: agent_rosetta
 ---
 # Rolling closure evidence
@@ -83,3 +83,9 @@ Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
 [D] Executed the unfinished 09-17 scope: key-reachability check (15/15 hashes, all answers reachable, one caveat), panel-merge activation at both P5.1 files, G4 fired in `site/` (subnetworks.yaml → `held_adr_010_cosign_pending`, projection re-run with pt19 outputs reverted, rebuilt), Prometheus reply delivered, ADR-061 adopted in the inbox README. Inbox received (12 memos) and answered (8 replies + Prometheus); ADR-062 (LinkML) drafted `proposed`; v8.12 staging ledger `proposed`; four local doc corrections; CURRENT/AGENTS/CLAUDE/phase_exit repaired. gate-49 in-container re-baseline for `/commons` + `/about` **owed** if Docker did not come up (recorded at the operator queue §G4).
 
 [I] Sitting workload ≈ 220±70 kT forecast; actual recorded at session close. Follow-up: P1.3 C2 records → DP3.
+
+## gate-49 re-baseline sitting — 2026-09-25
+
+[D] Discharged the gate-49 in-container re-baseline owed since G4 fired. Red-first `check`: 6 failed (about/commons/**state-network** × light/dark) — state-network was under-named on 09-24; same G4 commit `228a624` re-derived its count sentence. Rendered text verified before baseline. `baseline` changed exactly those 6 PNGs; `check` 26/26 green; `redtest` 7/7. Committed, not pushed.
+
+[I] Sitting workload forecast 40 kT; actual ≈ 45±15 kT. Follow-up unchanged: P1.3 C2 records → DP3.
