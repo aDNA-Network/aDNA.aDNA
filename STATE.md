@@ -1,9 +1,9 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-10-03  # 2026-10-03 (c) rulings packet accepted in full, four lanes executed — prior: 2026-10-03 mid-campaign SITREP — blockers/manual-actions/campaign rows repaired, Operation Primer queued, 10 inbox receipts (see ⏭ QUEUED). — prior: 2026-09-24  # 2026-09-24 STATE graduation (304 KB → router); prior inline chain (from "2026-09-25 gate-49 re-baseline discharged" back) → [[STATE_archive]] §Shifted-2026-09-24, verbatim
+updated: 2026-10-03  # 2026-10-03 (d) send · push · Primer O1 — 6/8 replies delivered, branch PUSHED (hook defect fixed), primer v0.1 drafted — prior: 2026-10-03 (c) rulings packet accepted in full, four lanes executed — prior: 2026-10-03 mid-campaign SITREP (see ⏭ QUEUED). — prior: 2026-09-24 STATE graduation (304 KB → router); prior inline chain → [[STATE_archive]] §Shifted-2026-09-24, verbatim
 status: active
-phase: "GARNIER P1 — P1.1/P1.2 complete; **DP3 rulings (a)–(g) taken in advance 2026-10-03 (P2 = Option C)**; `:4466` preview UP (restart before each reader sitting); **P1.3 C2 (three consenting readers) → DP3 intake is the open front**; Operation Primer O0 DONE, O1 next; 8 replies outbound_ready awaiting send GO; branch push GO'd (allowlist owed), not executed. HAUSSMANN endgame only (P5.1 joint panel after GR-7 · P5.2 · GR-7). Prior phase text → [[STATE_archive]] §Shifted-2026-09-24."
+phase: "GARNIER P1 — P1.1/P1.2 complete; **DP3 rulings (a)–(g) taken in advance 2026-10-03 (P2 = Option C)**; `:4466` preview UP (restart before each reader sitting); **P1.3 C2 (three consenting readers) → DP3 intake is the open front**; `vitrine/design` **PUSHED to origin 2026-10-03** (branch only, `main` local; push ≠ deploy, nothing deployed); 6/8 replies delivered, Ledoux recipient-pulled, **Hygieia HOLD (WilhelmAI live) — retry owed**; Operation Primer O1 DONE, O2 next. HAUSSMANN endgame only (P5.1 joint panel after GR-7 · P5.2 · GR-7). Prior phase text → [[STATE_archive]] §Shifted-2026-09-24."
 campaigns: [campaign_garnier, campaign_haussmann]    # GARNIER active (ratified §7.7 2026-09-15, 7 phases / 38 missions, runtime claude since 2026-09-16 — runtime_handoff_20260916); HAUSSMANN holds its independent endgame only (P5.1 · P5.2 · GR-7). Was `[campaign_haussmann]` alone until 2026-09-16 — stale for two days after GARNIER's ratification while MANIFEST.md:42 was already correct: the index-vs-artifact class, again.
 last_edited_by: agent_rosetta
 _state_router_version: "1.0"
@@ -20,6 +20,16 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > **State router** (split from monolithic STATE.md at M2.1 S2 2026-05-19; pre-split SHA `1e337db`). For historical session prose (19 DEPRECATED-marker `## Last Session` blocks + retired Next Session Prompts) see [[STATE_archive.md|STATE_archive.md]]. Most-recent live session block + most-recent Next Session Prompt stay here.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
+
+### 2026-10-03 (d) — Send GO executed (6/8 + 1 pulled + 1 HOLD); branch PUSHED; Primer O1 DONE
+
+[D] `last_edited_by: agent_rosetta`; runtime claude; tier fable; session [[session_stanley_20261003_223739_garnier_send_push_primer_o1]] (Tier 2). Operator selected three lanes at plan time (send · push · Primer O1); reader intake not selected. Four commits `ed72c9d` · `09245b6` · `d30d760` · `24370c7` + this close; **pushed**.
+- **Lane A — replies**: **6 of 8 delivered** by stamp→copy→verify, cmp identical on both legs, pin re-read foot note per memo — Talos ×3 (RC `2cd8647`, branch 1) · Vauban (Terminal `edc402d`, branch 1) · Ariel (Tinycast `6bc54e7`, branch 1) · Astro (`12d772e`, **branch 2**, no inbox, quiescent at the write). **Ledoux**: City had already pulled + committed the draft (`169c03b` = read-receipt) → sender stamped only, no write; §3 **recipient-pull gap** logged in `idea_external_sharing_doctrine.md`. **Hygieia: HOLD, branch 3** — WilhelmAI live at the 22:40Z probe (`lsof`: 7 agent processes with cwd in the vault); retry next sitting; **the ADR-010 co-sign ask is therefore not yet asked**.
+- **Lane B — PUSHED**: `git push -u origin vitrine/design` → **`d30d760`**, hook clean on 58 commits; `origin/main` unchanged (`d6ae1b6`), local `main` still 5 ahead, not pushed. `.gitleaks.toml` gains an AND-scoped allowlist (evidence JSON path + `^[0-9a-f]{64}$` + `generic-api-key`): range scan **12 → 0**, random 64-hex on stdin outside the path still fires. ⭐ **Hook defect found on the first push attempt** (blocked with 12): config resolution checked `git/.gitleaks.toml` (the tracked Git.aDNA skeleton) *before* the root file its header calls authoritative — so **every push since the hook's Aug-28 install ran on the skeleton config and no root allowlist ever applied**. Fixed root-first in `how/standard/hooks/pre-push-secret-scan.sh` + header; installed copy re-synced. No CI run appeared on the branch at close (`gh run list --branch vitrine/design` empty — the gates workflow may be `main`-only; verify next sitting). **Push ≠ deploy; nothing deployed.**
+- **Lane C — Primer O1 DONE** (≈95 kT vs 120): `what/docs/adna_primer_for_data_engineers.md` v0.1, **6,458 prose words** (first draft 7,470 → rewritten), 7/7 Mermaid → SVG (mermaid-cli via `npx`), 42 § citations, Appendix A 47/47 mechanisms, dual-audience smoke PASS, scrub 0 (courtesy; red-proof is O3's), `review_ledger.md` opened. **O2 next, operator-summoned.**
+
+**Resume-Here:** agent-reachable, operator-summoned: **(1) Hygieia retry** (re-probe WilhelmAI: `lsof` cwd + mtime < 10 min + 2026-10 lease; deliver by branch 2 when quiet — one short sitting) · **(2) Primer O2** (six-lens review, fable) · **(3) the v8.12 gate** when opened · **(4) `main` push** if wanted (5 ahead; not ruled). Human-owed, unchanged: **three formative readers** → DP3 intake per `phase_exit.md` §5 (restart `:4466` first) · G2 reading · G5 address · ADR-010 co-sign (asked only once the Hygieia memo lands) · Andy/Fluxer acts (C6) · credential rotation at discretion.
+
 
 ### 2026-10-03 (c) — Rulings packet ACCEPTED IN FULL; four lanes executed; preview UP; replies drafted; Primer O0 DONE
 
@@ -259,7 +269,7 @@ Session: [[session_stanley_20260924_145532_garnier_dp3_preassembly]].
 
 ### `campaign_haussmann` (Operation HAUSSMANN — **ENDGAME ONLY**: P5.1 joint panel after GR-7 · P5.2 · GR-7) · 34 missions: 30 completed · 2 in_progress · 2 queued · queue of record `artifacts/operator_queue_reconciled_20260911.md` (supersedes any owed-list narrated here)
 
-### `mission_primer_adna_for_data_engineers` (Operation Primer — standalone mission, **IN_PROGRESS**: O0 ✅ 2026-10-03, fable) · `how/missions/` + `artifacts/primer/` · O1 (draft v0.1, 120 kT) next, operator-summoned
+### `mission_primer_adna_for_data_engineers` (Operation Primer — standalone mission, **IN_PROGRESS**: O0 ✅ · **O1 ✅ 2026-10-03 (d)** — draft v0.1 at `what/docs/adna_primer_for_data_engineers.md`, fable) · `how/missions/` + `artifacts/primer/` · O2 (six-lens review, 90 kT) next, operator-summoned
 
 ### `campaign_v8_9_release` (Operation Palimpsest — ✅ **COMPLETED 2026-07-24**; v8.9 SHIPPED [commit c8e5427 + tag v8.9]; P0→P1→P2→P3 all done — **DO NOT re-open**)
 
@@ -317,7 +327,7 @@ itself. *(Prior value preserved, SO-6: `None.`)*
 | 6 | **GARNIER P1.3 C2 — three consenting formative readers** (engineer · funder · scientist; ⛔ agents never recruit) → two-scorer key → **DP3** | ⛩ **operator** | The campaign's critical path since 09-16. ⚠ Agent precondition: restart the `6487444` preview on `:4466` (down 2026-10-03) and re-verify 15/15 route hashes before any reader is scheduled. |
 | 7 | **DP3 rulings (a)–(g)** incl. (f) the P1 exit candidate's identity (`6487444` is not on `vitrine/design`) and the P2 option (A 991 · B ≈1,640 · **C ≈640 recommended**) | ⛩ operator | Packet pre-assembled 09-24 at `phase_exit.md` §DP3; follow §5 in order. |
 | 8 | **ADR-010 Wilhelm co-sign** (un-fires G4) · **G5 address** · **G2 Speed-Insights field reading** | ⛩ operator / the world | HAUSSMANN operator queue G2/G4/G5; G4 fired in source 09-24, built not deployed, gate-49 re-baseline discharged 09-25. |
-| 9 | **No push, no CI, no upstream** — `vitrine/design` 45 ahead of `origin/main` (last fetch 09-15), local `main` 5 ahead unpushed | ⛩ operator | Push ≠ deploy (convention 20); each its own GO. Nothing authorized to date. |
+| 9 | ~~**No push, no CI, no upstream**~~ ✅ **PUSHED 2026-10-03** — `vitrine/design` → `origin/vitrine/design` at `d30d760` (upstream set); **no CI run observed on the branch at close** (verify whether `gates.yml` triggers on non-`main` branches); local `main` still 5 ahead of origin, not pushed | ⛩ operator (`main` push; deploy) | Push ≠ deploy (convention 20); nothing deployed. Original row kept struck (SO-6): "`vitrine/design` 45 ahead of `origin/main` (last fetch 09-15), local `main` 5 ahead unpushed — each its own GO. Nothing authorized to date." |
 
 
 
@@ -328,14 +338,14 @@ itself. *(Prior value preserved, SO-6: `None.`)*
 
 > **Re-cut 2026-10-03 (c)** — after the operator accepted the whole rulings packet. The rows below the rule are June-era, kept (SO-6). Live human acts, in the order they unblock agent work:
 
-- **SEND GO** for the eight `outbound_ready` replies in `who/coordination/coord_2026_10_03_rosetta_to_*.md` (Talos G10 first — RC's register grades it RED ~2026-10-07). One blanket GO or per memo.
+- ~~**SEND GO** for the eight `outbound_ready` replies~~ ✅ **GIVEN + EXECUTED 2026-10-03 (d)**: 6 delivered · Ledoux recipient-pulled · **Hygieia HELD (branch 3)** → **agent retry owed next sitting** (re-probe WilhelmAI, deliver when quiet). Original: "in `who/coordination/coord_2026_10_03_rosetta_to_*.md` (Talos G10 first — RC's register grades it RED ~2026-10-07). One blanket GO or per memo."
 - **Three consenting readers** for GARNIER P1.3 C2 (engineer · funder · scientist) → DP3 **intake** per `phase_exit.md` §5 — rulings (a)–(g) are already taken; the agent restarts `:4466` + re-checks 15 hashes first.
-- **Push sitting GO** (C1 ruled GO 2026-10-03): agent adds a gitleaks allowlist for 64-hex sha256 values in `how/campaigns/**/evidence/**/*.json`, re-runs the hook self-test, then `git push -u origin vitrine/design`. Push ≠ deploy; **no deploy** (C2).
-- **Summon Primer O1** (fable, 120 kT) — `how/missions/mission_primer_adna_for_data_engineers.md`.
+- ~~**Push sitting GO**~~ ✅ **EXECUTED 2026-10-03 (d)** — allowlist landed (12 → 0), hook root-first defect fixed, `vitrine/design` pushed to origin at `d30d760`; `main` NOT pushed (own GO). Original: "(C1 ruled GO 2026-10-03): agent adds a gitleaks allowlist for 64-hex sha256 values in `how/campaigns/**/evidence/**/*.json`, re-runs the hook self-test, then `git push -u origin vitrine/design`. Push ≠ deploy; **no deploy** (C2)."
+- **Summon Primer O2** (fable, 90 kT — six parallel reviewer lenses + citation/ADR check) — `how/missions/mission_primer_adna_for_data_engineers.md`; O1 ✅ 2026-10-03 (d). ~~Summon Primer O1 (fable, 120 kT)~~
 - **Open the v8.12 template-release gate** — the six §3 answers are pre-written at `release_staging_ledger_v8_12.md`; the firing commit writes the §7.7 block.
 - **G2** — one Speed Insights dashboard look; record the p75 reading (or its dated absence) at the operator queue §G2.
 - **G5** — supply the CoC confidential reporting address → `CODE_OF_CONDUCT.md:54` + `:63`, one commit.
-- **ADR-010 Wilhelm co-sign** — asked of Hygieia by memo (drafted; sends with the GO above); un-fires G4 only with a dated `operator_cleared_YYYY_MM_DD` at the yaml.
+- **ADR-010 Wilhelm co-sign** — the ask to Hygieia is **drafted and HELD** (WilhelmAI live at the 2026-10-03 22:40Z send probe, doctrine §2 branch 3); it is *asked* only once the retry delivers; un-fires G4 only with a dated `operator_cleared_YYYY_MM_DD` at the yaml.
 - **Andy Zhang on Fluxer** (C6; Fluxer.aDNA / Aspasia, operator-approved per act): join `community.adna.network` · disclosure-roster row → `disclosed` · `dmRoster` · an attachment path or a carried link · register aDNA.aDNA as a consumer vault or route via aDNALabs. Needed before Primer O5.
 - **Credential rotation, at discretion** — a process listing on this node exposed env-carried credential values to an agent transcript on 2026-10-03 (none recorded); Hestia's broker is the surface.
 

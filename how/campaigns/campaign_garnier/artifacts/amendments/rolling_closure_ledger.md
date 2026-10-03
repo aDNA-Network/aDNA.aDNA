@@ -95,3 +95,10 @@ Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
 [D] Records-only. [[so11_retrospective_p1]] filed. [[artifacts/p1/phase_exit|phase_exit]] §DP3 packet appended with the exit-criteria table, the empty reader slot, rulings (a)–(g), and P2 options A/B/C (C recommended). Read-only re-derivations: `derive_campaign.py` gives 38/47/2,444 kT, P2 at 17/18/991. `derive_docs_population.py` (stdout) gives 118/118 routes, 0 hash changes, 0 tranche moves. `git merge-tree` of `vitrine/design` × `6487444` shows the only conflict is `MANIFEST.md`, with no shared `site/` files. Finding (f), the P1 exit-candidate identity, was surfaced for a DP3 ruling. patterns_to_author: the subject-runtime-as-own-line booking rule is staged in the retrospective §5 and not yet adopted.
 
 [I] Sitting forecast 70±25 kT; actual ≈ 80±20 kT ([[session_stanley_20260924_145532_garnier_dp3_preassembly]]). Billing unavailable. Follow-up: Stanley supplies the P1.3 C2 records and rules (a)–(g) at DP3.
+
+## Send · push · Primer O1 sitting — 2026-10-03 (d)
+
+[D] Operator send GO executed: 6 of 8 replies delivered (RC ×3 · Terminal · Tinycast · Astro), Ledoux found already pulled + committed by City (sender stamped only; doctrine recipient-pull gap logged), Hygieia HELD (WilhelmAI live; branch 3; retry owed). Push GO executed: gitleaks allowlist (sha256 in evidence JSON, AND-scoped) 12 → 0 with a mutation control; **pre-push hook resolved the federated skeleton config before the root file** — fixed root-first; `vitrine/design` pushed to origin at `d30d760`; `main` not pushed; nothing deployed; no CI run observed on the branch. Primer O1 drafted (outside GARNIER; recorded here because the sitting was one session).
+
+[I] Sitting forecast 220±70 kT; actual ≈ 185 kT executor (A ≈ 30 · B ≈ 30 · C ≈ 95 · close ≈ 30) + ≈ 275 kT explorers on their own line (3 recon agents at plan time). Billing unavailable. Follow-up unchanged: P1.3 C2 records → DP3; Hygieia retry; verify branch CI.
+
