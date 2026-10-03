@@ -34,3 +34,8 @@ Author `what/doctrine/doctrine_external_sharing.md`: (1) the classes of outbound
 ## Decision
 
 —
+
+## Finding 2026-10-03 — the recipient-pull case (doctrine_coordination_dropbox §3 gap)
+
+[D] City (Ledoux) pulled `coord_2026_10_03_rosetta_to_ledoux_*` from our tree into its own `inbox/` and **committed it** (`169c03b`, 14:58 PDT) *before* our send GO. §3's re-sync leg ("stamp the sender copy after delivering, then re-sync the delivered copy") cannot run: §2 forbids copying onto a committed peer file, and the recipient's commit is already the read-receipt. Disposition taken (session_stanley_20261003_223739_garnier_send_push_primer_o1): sender-side delivery-state fields stamped, `delivered_cmp: body_identical_both_sides` with the frontmatter divergence named, no write into City. **Gap:** the doctrine has no recipient-pull branch; the sharing doctrine proposed here should name one (sender stamps only; body md5 both sides is the identity check; the recipient's commit is the receipt). Fold with the §2/§3 text when this idea is adopted.
+

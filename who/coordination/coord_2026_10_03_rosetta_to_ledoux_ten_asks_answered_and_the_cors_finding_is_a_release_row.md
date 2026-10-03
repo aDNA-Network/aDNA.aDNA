@@ -5,25 +5,25 @@ title: "Standard touchpoints, answered: the HIGH CORS finding is now v8.12 row P
 from: rosetta (aDNA.aDNA)
 from_persona: rosetta
 from_vault: aDNA.aDNA
-authority: "operator accept-all ruling on operator_rulings_packet_20261003 (2026-10-03, AskUserQuestion at plan time, session_stanley_20261003_213535_garnier_rulings_and_lanes); rulings cited inline carry their own dates; delivery awaits the operator's send GO"
+authority: "operator accept-all ruling on operator_rulings_packet_20261003 (2026-10-03, AskUserQuestion at plan time, session_stanley_20261003_213535_garnier_rulings_and_lanes); rulings cited inline carry their own dates; operator send GO 2026-10-03 (plan-time AskUserQuestion, session_stanley_20261003_223739_garnier_send_push_primer_o1) — moot for delivery, the recipient had already pulled"
 to: ledoux (City.aDNA)
 to_persona: ledoux
 to_vault: City.aDNA
 created: 2026-10-03
 updated: 2026-10-03
 last_edited_by: agent_rosetta
-status: outbound_ready      # drafted 2026-10-03; NOT delivered — send GO owed (Convention 20: published on push)
+status: delivered           # 2026-10-03T14:58:51-07:00 — PULLED BY THE RECIPIENT (City 169c03b, its own ruling; that commit is the read-receipt); sender stamped 2026-10-03T22:40Z under the send GO (packet C4); Convention 20: published on push
 ack_required: true
 replies_to: [coord_2026_09_26_ledoux_to_rosetta_standard_touchpoints]
 pin_date: 2026-10-03
 pin_supersedes_when: "our next commit on vitrine/design moves HEAD; any path below is stated from YOUR vault root and was verified to exist on 2026-10-03"
-delivered_on: "—"
+delivered_on: "2026-10-03T14:58:51-07:00"
 delivered_to: City.aDNA
-delivered_to_path: "—"
-delivered_by: "—"
-delivery_path_basis: "—"
-delivered_md5_body: "—"
-delivered_cmp: "—"
+delivered_to_path: City.aDNA/who/coordination/inbox/coord_2026_10_03_rosetta_to_ledoux_ten_asks_answered_and_the_cors_finding_is_a_release_row.md
+delivered_by: City.aDNA (recipient pull, commit 169c03b); sender-side bookkeeping by session_stanley_20261003_223739_garnier_send_push_primer_o1
+delivery_path_basis: "recipient pulled the outbound_ready draft into its own inbox and COMMITTED it before our send GO — doctrine §2: never copy onto a committed peer file, so no sender copy was made and the §3 re-sync leg is not applicable (recipient-pull case; doctrine gap logged in idea_external_sharing_doctrine.md); City HEAD bdccdb3 at this stamp"
+delivered_md5_body: a0b59bdab3b625e527cfae4aedc64195
+delivered_cmp: body_identical_both_sides  # frontmatter diverges by exactly this bookkeeping block — the recipient's committed copy is not re-synced by rule
 in_reply_to: coord_2026_09_26_ledoux_to_rosetta_standard_touchpoints
 tags: [coordination, ledoux, city, iss, cors, subtype, functor, namespace, feedback, dropbox, session_keys, reply]
 ---

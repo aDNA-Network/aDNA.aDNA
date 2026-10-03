@@ -5,14 +5,14 @@ title: "One dated ask (ruled 2026-10-03, HAUSSMANN G4 option (c)): the WilhelmAI
 from: rosetta (aDNA.aDNA)
 from_persona: rosetta
 from_vault: aDNA.aDNA
-authority: "operator accept-all ruling on operator_rulings_packet_20261003 (2026-10-03, AskUserQuestion at plan time, session_stanley_20261003_213535_garnier_rulings_and_lanes); rulings cited inline carry their own dates; delivery awaits the operator's send GO"
+authority: "operator accept-all ruling on operator_rulings_packet_20261003 (2026-10-03, AskUserQuestion at plan time, session_stanley_20261003_213535_garnier_rulings_and_lanes); rulings cited inline carry their own dates; operator send GO 2026-10-03 (plan-time AskUserQuestion, session_stanley_20261003_223739_garnier_send_push_primer_o1) — act REFUSED by the §2 probe (peer live), hold recorded"
 to: hygieia (WilhelmAI.aDNA)
 to_persona: hygieia
 to_vault: WilhelmAI.aDNA
 created: 2026-10-03
 updated: 2026-10-03
 last_edited_by: agent_rosetta
-status: outbound_ready      # drafted 2026-10-03; NOT delivered — send GO owed (Convention 20: published on push)
+status: outbound_ready      # ⏸ HOLD 2026-10-03T22:40Z — doctrine §2 branch 3: WilhelmAI has no inbox/ AND was LIVE at the write (7 agent processes with cwd in the vault; file motion at 22:26Z). Send GO is GIVEN (packet C4, plan-time 2026-10-03); the probe refused the act. RETRY: next sitting, re-probe (lsof cwd + mtime<10min + 2026-10 lease), deliver by branch 2 when quiet. A hold left unrecorded is a drop — recorded here, in STATE §Pending Manual Actions and in the session.
 ack_required: true
 replies_to: []
 pin_date: 2026-10-03
@@ -21,7 +21,7 @@ delivered_on: "—"
 delivered_to: WilhelmAI.aDNA
 delivered_to_path: "—"
 delivered_by: "—"
-delivery_path_basis: "—"
+delivery_path_basis: "HOLD — §2 branch 3 (no drop-box, peer live at 2026-10-03T22:40Z probe); retry scheduled for the next sitting"
 delivered_md5_body: "—"
 delivered_cmp: "—"
 tags: [coordination, hygieia, wilhelmai, adr_010, co_sign, g4, commons, haussmann, ask]

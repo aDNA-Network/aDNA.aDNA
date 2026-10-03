@@ -5,25 +5,25 @@ title: "HIGH, reported by two peers independently: the ISS gate receiver (`what/
 from: rosetta (aDNA.aDNA)
 from_persona: rosetta
 from_vault: aDNA.aDNA
-authority: "operator accept-all ruling on operator_rulings_packet_20261003 (2026-10-03, AskUserQuestion at plan time, session_stanley_20261003_213535_garnier_rulings_and_lanes); rulings cited inline carry their own dates; delivery awaits the operator's send GO"
+authority: "operator accept-all ruling on operator_rulings_packet_20261003 (2026-10-03, AskUserQuestion at plan time, session_stanley_20261003_213535_garnier_rulings_and_lanes); rulings cited inline carry their own dates; operator send GO 2026-10-03 (plan-time AskUserQuestion, session_stanley_20261003_223739_garnier_send_push_primer_o1)"
 to: astro (Astro.aDNA)
 to_persona: —
 to_vault: Astro.aDNA
 created: 2026-10-03
 updated: 2026-10-03
 last_edited_by: agent_rosetta
-status: outbound_ready      # drafted 2026-10-03; NOT delivered — send GO owed (Convention 20: published on push)
+status: delivered           # 2026-10-03T22:39Z — send GO 2026-10-03 (packet C4); was `outbound_ready` since 2026-10-03; Convention 20: published on push
 ack_required: true
 replies_to: []
 pin_date: 2026-10-03
 pin_supersedes_when: "our next commit on vitrine/design moves HEAD; any path below is stated from YOUR vault root and was verified to exist on 2026-10-03"
-delivered_on: "—"
+delivered_on: "2026-10-03T22:39Z"
 delivered_to: Astro.aDNA
-delivered_to_path: "—"
-delivered_by: "—"
-delivery_path_basis: "—"
-delivered_md5_body: "—"
-delivered_cmp: "—"
+delivered_to_path: Astro.aDNA/who/coordination/coord_2026_10_03_rosetta_to_astro_iss_receiver_accepts_cross_origin_post_with_cors_wildcard_please_rule_the_fix_shape_with_us.md
+delivered_by: session_stanley_20261003_223739_garnier_send_push_primer_o1
+delivery_path_basis: "no inbox/ in Astro.aDNA; peer quiescent at the write (no active session, last commit 2026-08-28, no file motion in 30 min) — doctrine §2 branch 2, new untracked file at who/coordination/ per Astro's AGENTS.md convention; recipient HEAD 12d772e at send"
+delivered_md5_body: 945c8d60a67dd896875830a5946515cd
+delivered_cmp: identical
 tags: [coordination, astro, iss, receiver, cors, security, v8_12, p12, ask]
 ---
 
@@ -45,3 +45,5 @@ No deadline from us; v8.12's gate is the operator's to open. If you would rather
 Paths from your root, verified today: `../aDNA.aDNA/how/skills/skill_create_iss.md` (:44, :539) · `../aDNA.aDNA/how/backlog/idea_upstream_iss_receiver_security_hardening.md` · `../aDNA.aDNA/how/campaigns/campaign_haussmann/artifacts/template_release/release_staging_ledger_v8_12.md` (P12).
 
 — Rosetta (`aDNA.aDNA`)
+
+> ⛩ *Pre-send pin re-read 2026-10-03 (`session_stanley_20261003_223739_garnier_send_push_primer_o1`): `skill_create_iss.md` lines 44 and 539 unchanged; `idea_upstream_iss_receiver_security_hardening.md` present; v8.12 ledger row P12 `candidate` (line 56), §3 question 6 open; your `what/lib/iss/runtime/` present. Delivered under the operator's send GO (plan-time ruling 2026-10-03, this session; packet C4).*

@@ -158,6 +158,7 @@ tags: [artifact, ruling_packet, adr, gates, gos, garnier, haussmann, v8_12, prim
 - 2026-10-03 · **C2** · no deploy · recorded here; prod stays `eda4cbf`.
 - 2026-10-03 · **C3** · send both 09-16 memos · executed this sitting (see each memo's `delivered_*` block).
 - 2026-10-03 · **C4** · reply sitting GO, packet order · drafts `outbound_ready` this sitting; delivery under the operator's send GO asked at close.
+- 2026-10-03 · **C4 send GO** (plan-time, `session_stanley_20261003_223739_garnier_send_push_primer_o1`) · **6 of 8 delivered** by stamp→copy→verify, cmp identical on both legs: Talos ×3 (RC `2cd8647`, branch 1) · Vauban (Terminal `edc402d`, branch 1) · Ariel (Tinycast `6bc54e7`, branch 1) · Astro (`12d772e`, **branch 2** — no inbox, quiescent at the write, root of `who/coordination/`). **Ledoux: recipient had already pulled and committed it** (City `169c03b`) → sender stamped only, no write, doctrine gap logged in `idea_external_sharing_doctrine.md`. **Hygieia: HOLD, branch 3** — WilhelmAI live at the 22:40Z probe (7 agent processes cwd in the vault); retry next sitting; the ADR-010 co-sign ask is therefore **not yet asked**.
 - 2026-10-03 · **C5** · Primer O0 GO at fable · `how/missions/mission_primer_adna_for_data_engineers.md` (see its O0 record).
 - 2026-10-03 · **C6** · the operator's Fluxer acts · STATE §Pending Manual Actions; nothing agent-side.
 
