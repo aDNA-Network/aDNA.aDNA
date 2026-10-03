@@ -4,6 +4,7 @@ type: backlog
 title: "The standard (v2.5) does not define the campaign layer — campaign · objective · AAR · phase gate · OODA · executor_tier · token budget are practice without a normative home"
 category: governance
 status: proposed
+disposition: "v8.13 lane — convention-to-codify — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 priority: medium
 effort: plan
 proposed_by: agent_rosetta

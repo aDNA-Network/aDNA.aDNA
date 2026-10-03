@@ -2,8 +2,9 @@
 type: backlog
 subtype: upstream_idea
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-10-03
 status: proposed
+disposition: "rides v8.12 P12 (ISS receiver hardening) — advisory row, carried to v8.13 unless Astro runtime fix lands first — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 last_edited_by: agent_hestia
 origin_vault: Home.aDNA
 origin_persona: hestia

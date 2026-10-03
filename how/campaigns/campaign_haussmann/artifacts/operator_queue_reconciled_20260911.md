@@ -4,7 +4,7 @@ artifact_class: operator_queue_reconciliation
 campaign: campaign_haussmann
 title: "The operator queue, re-derived at the object — 2026-09-11"
 created: 2026-09-11
-updated: 2026-09-25
+updated: 2026-10-03
 status: active
 last_edited_by: agent_rosetta
 executor_tier: opus
@@ -85,6 +85,8 @@ dashboard look answers it; an agent cannot — the token is broker-held.
 > ⭐ Worth stating plainly because the campaign's mental model is *"P5.1 is the only blocker"*, and that is
 > true of the **mission graph** and possibly false of the **calendar**.
 
+⛩ **Ruled 2026-10-03 (Stanley, accept-all on `operator_rulings_packet_20261003` row B3): one dashboard look, now; the reading — or its dated absence — is recorded on this row by the operator.** Human act; nothing an agent can perform (token broker-held). *Reading: — (pending).*
+
 ### ⛩ G3 — one gate for the peer-ratification queue
 
 The only genuine ratification queue left. Bundle into one sitting:
@@ -109,6 +111,8 @@ The only genuine ratification queue left. Bundle into one sitting:
 ⚠ **Two things the firing found, recorded rather than smoothed over.** (1) Re-running `scripts/build_vaults_data.mjs` to project the yaml also regenerates `vaults.json`/`vaults_graph.mmd` (pt19 — Hestia's, reverted), re-stamps `subnetworks.json` `generated_at` from the clock, and now emits lowercase member slugs where the committed projection carries `Name.aDNA` forms — gate reds (gate-20 claim-trace `2026-07-06`; gate-30 overlay-resolves) that are **registry-sync drift, not G4**. The committed projection was restored and **only the two ruled `publish_status` values patched**; the drift is a data ask for the next Hestia sync. (2) `gate-49`'s in-container re-baseline for `about` + `commons` is **OWED** — Docker Desktop would not start on this node (`docker info`: cannot connect to the daemon, twice). It is a precondition of any push, because the CI snapshot lane compares against the committed baselines and both templates changed by design. (3) **Same-diff obligations discharged in the firing commit**: `gate-30` now derives its expected population from the *publishable* overlay (predicate read from `network_state.ts` source at run time) and asserts every withheld entry absent from the rendered `subnet-card` blocks — red-proven by mutation; `/commons`'s hardcoded *"Rare Archive repository … followable today"* sentence (one paragraph below the withheld card) and `/state-of-the-network`'s *"1 have"* are now derived from the gated data. Final chromium lane **698 / 1 skipped / 0 failed**.
 
 ✅ **(2) DISCHARGED 2026-09-25** (`session_stanley_20260925_141328_garnier_gate49_rebaseline`): in-container red-first `check` failed on `about`, `commons` **and `state-network`** (both themes; the third was under-named above — same commit re-derived its count sentence), re-baselined exactly those 6 PNGs, `check` 26/26 green, `redtest` 7/7. Not pushed.
+
+⛩ **Ruled 2026-10-03 (Stanley, accept-all on `operator_rulings_packet_20261003` row A3): options (b) + (c) — keep the gate fired AND send one direct, dated ask through WilhelmAI (Hygieia) for the ADR-010 Wilhelm-batch co-sign. Not (a): a conditional clearance whose E5 gate was abolished 06-18 is not consent (R-49/R-52 already score that copy `unsupported`).** If no answer lands before the joint panel, the panel runs with the cards withheld. Un-fire only with a dated `operator_cleared_YYYY_MM_DD` at the yaml. The Hygieia ask is drafted by `session_stanley_20261003_213535_garnier_rulings_and_lanes` and delivered under the send GO.
 
 ~~### ⛩ G4 — H1, the Wilhelm co-sign embargo · ⛔⛔ **RESTATED 2026-09-12 — THIS ROW WAS WRONG**~~ *(the restatement below is retained as the reasoning behind the ruling)*
 
@@ -161,6 +165,8 @@ reader lands on, and the register already scores its copy `unsupported` (R-49, R
 ### ⛩ G5 — H5, the CoC confidential reporting address · **RULED 2026-09-17: DEFERRED pending an address the operator will supply** · still open
 
 ⛩ Stanley (2026-09-17): defer; he will supply the confidential reporting address. Nothing to build until it arrives; when it does, `CODE_OF_CONDUCT.md:54` + `:63` change in one commit and the register row moves when the page is live.
+
+⛩ **Ruled 2026-10-03 (Stanley, accept-all on `operator_rulings_packet_20261003` row B4): supply the address.** The address itself was not supplied at the ruling; `CODE_OF_CONDUCT.md` is unchanged until it is. *Address: — (pending).*
 
 ~~### ⛩ G5 — H5, the CoC confidential reporting address · **re-probed, still open**~~
 

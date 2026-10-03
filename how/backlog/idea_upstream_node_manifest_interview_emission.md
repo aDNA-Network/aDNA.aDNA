@@ -5,6 +5,7 @@ from_vault: Home.aDNA
 from_persona: hestia
 created: 2026-07-06
 status: proposed
+disposition: "v8.13 or decline on re-measurement at the gate — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 target: skill_node_bootstrap_interview.md (+ the `.adna/` template release train)
 origin: "ADR-015 §B3(1) (aDNALabs, accepted ⛩C2 2026-07-02) + Home ADR-006 (node_manifest v0 adopt-with-amendments, Hearthfire P1 2026-07-06)"
 tags: [backlog, upstream, node_manifest, interview, bootstrap, adr_015, tier3, hearthfire, hestia]

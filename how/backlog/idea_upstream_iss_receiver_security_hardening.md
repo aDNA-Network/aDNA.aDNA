@@ -4,6 +4,7 @@ type: backlog
 title: "ISS gate receivers accept cross-origin, unauthenticated POST /save — harden to same-origin or per-gate token"
 category: governance
 status: proposed
+disposition: "IS v8.12 P12 — advisory row, carried to v8.13 unless Astro runtime fix lands first; Astro memo opened 2026-10-03 — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 priority: high
 effort: session
 proposed_by: agent_rosetta

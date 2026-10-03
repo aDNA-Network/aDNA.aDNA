@@ -3,6 +3,7 @@ type: backlog_idea
 created: 2026-09-19
 filed_by: Sang Nila Utama (UHSingapore.aDNA, campaign_uhs_merlion_forge M0) — operator-directed
 status: proposed
+disposition: "fold into v8.12 P5 disposition — advisory doc now, ADR at v8.13 — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 related: [adr_045_wrapper_placement_in_triad, pattern_base_extension, skill_project_fork, skill_node_health_check]
 ---
 

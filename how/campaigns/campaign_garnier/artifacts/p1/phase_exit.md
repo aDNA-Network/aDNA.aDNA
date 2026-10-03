@@ -1,7 +1,7 @@
 ---
 type: artifact
 created: 2026-09-15
-updated: 2026-09-24
+updated: 2026-10-03   # DP3 rulings (a)–(g) taken in advance (packet B1, accept-all); §5 step 6 struck
 status: in_progress
 last_edited_by: agent_rosetta
 tags: [garnier, p1, verification]
@@ -105,11 +105,11 @@ Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
 
 ### 3. Rulings the operator will be asked for at DP3
 
-- **(a) G4 stimulus/site divergence.** The stimulus `6487444` still renders the Wilhelm Foundation cards. The vault `site/` has withheld them since G4 fired (2026-09-24). *Proposed:* attribute any reader mention of those cards to the stimulus, not the site, and log it without correcting it. The cards' return is governed by the ADR-010 co-sign, not by reader feedback.
-- **(b) Scientist key caveat** ([[key_reachability_check]]). The key accepts "explicitly absent" for what evaluation is available, but the stimulus *implies* that absence without stating it. *Proposed:* scorers accept a reader answer that correctly infers absence. A reader who concludes evaluation *exists* scores a miss. The question of whether to *state* the absence moves to P2.4, which owns the trust surfaces.
-- **(c) SO-11 overrun** — [[so11_retrospective_p1]]. P1 is at 625±155 kT against 320 committed (1.95×; P1.2 at 4.8×). 237 kT of the 305 kT excess is subject-model runtime booked in the executor's unit. *Asked:* accept the overrun as recorded, and adopt or decline its four method changes, above all **subject-model runtime as its own booked line**.
-- **(d) Separately booked lines** (≈870 kT since DP2: three design increments, handoff, re-orientation and more, itemized in the retrospective §1). These were each ruled when they happened. They are listed for acknowledgement, not re-ratification.
-- **(e) Panel merge consequence** ([[panel_merge_brief]], in force). GARNIER P5.1 is now one recruitment event joint with HAUSSMANN P5.1, run after GR-7. P5's 199 kT provisional stays unchanged until DP6. The consequence to note is **timing**: P5 cannot start until GR-7 lands. No ruling is needed now; it is recorded so DP6 is not surprised by it.
+- **(a) G4 stimulus/site divergence.** The stimulus `6487444` still renders the Wilhelm Foundation cards. The vault `site/` has withheld them since G4 fired (2026-09-24). *Proposed:* attribute any reader mention of those cards to the stimulus, not the site, and log it without correcting it. The cards' return is governed by the ADR-010 co-sign, not by reader feedback. ⛩ *Ruled in advance 2026-10-03 (Stanley, accept-all on [[operator_rulings_packet_20261003]] row B1): accepted as proposed.*
+- **(b) Scientist key caveat** ([[key_reachability_check]]). The key accepts "explicitly absent" for what evaluation is available, but the stimulus *implies* that absence without stating it. *Proposed:* scorers accept a reader answer that correctly infers absence. A reader who concludes evaluation *exists* scores a miss. The question of whether to *state* the absence moves to P2.4, which owns the trust surfaces. ⛩ *Ruled in advance 2026-10-03 (Stanley, accept-all on [[operator_rulings_packet_20261003]] row B1): accepted as proposed.*
+- **(c) SO-11 overrun** — [[so11_retrospective_p1]]. P1 is at 625±155 kT against 320 committed (1.95×; P1.2 at 4.8×). 237 kT of the 305 kT excess is subject-model runtime booked in the executor's unit. *Asked:* accept the overrun as recorded, and adopt or decline its four method changes, above all **subject-model runtime as its own booked line**. ⛩ *Ruled in advance 2026-10-03 (Stanley, accept-all on [[operator_rulings_packet_20261003]] row B1): overrun accepted as recorded; all four method changes ADOPTED, subject-model runtime booked on its own line from now on — the 2026-10-03 SITREP sitting already used it (≈220 kT executor + ≈670 kT explorers).*
+- **(d) Separately booked lines** (≈870 kT since DP2: three design increments, handoff, re-orientation and more, itemized in the retrospective §1). These were each ruled when they happened. They are listed for acknowledgement, not re-ratification. ⛩ *Ruled in advance 2026-10-03 (Stanley, accept-all on [[operator_rulings_packet_20261003]] row B1): acknowledged.*
+- **(e) Panel merge consequence** ([[panel_merge_brief]], in force). GARNIER P5.1 is now one recruitment event joint with HAUSSMANN P5.1, run after GR-7. P5's 199 kT provisional stays unchanged until DP6. The consequence to note is **timing**: P5 cannot start until GR-7 lands. No ruling is needed now; it is recorded so DP6 is not surprised by it. ⛩ *Ruled in advance 2026-10-03 (Stanley, accept-all on [[operator_rulings_packet_20261003]] row B1): noted (timing only).*
 - **(f) ⭐ Which tree is the P1 exit candidate** *(found by this pre-assembly; no earlier record addresses it)*.
   - [D] The ratified gateway homepage `6487444` exists only on the isolated branch `garnier/homepage-20260916`. It is **not** an ancestor of `vitrine/design` (`git merge-base --is-ancestor` → false).
   - `vitrine/design` still carries the `b1cf040`-era homepage, plus G4.
@@ -126,7 +126,8 @@ Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
   - No recorded plan brings the gateway into the working tree. GR-7 integrates *GARNIER's diff into main*; it does not bring the isolated branch into GARNIER's own tree.
   - *Proposed sequence, for the operator to rule on:* after the records are keyed and each confusion is dispositioned, the frozen checkout stays untouched (the freeze lifts only when P1.3 closes). `garnier/homepage-20260916` plus any reader-driven corrections is then merged into `vitrine/design` **with G4 preserved** (the isolated branch predates G4). The full R-SITE runs on that merged tree, and that run is the phase-exit evidence for criterion 3.
   - Budget for the merge, the gate-49 home re-baseline and full R-SITE, from the known-method class: ≈50±20 kT, booked inside P1's remaining forecast. This amends the 10–20 kT remainder, stated here rather than absorbed.
-- **(g) P2 commitment (DP3 commits P2 per [[budget_basis]] D-9).** See §4.
+  - ⛩ *Ruled in advance 2026-10-03 (Stanley, accept-all on [[operator_rulings_packet_20261003]] row B1): the proposed sequence is ACCEPTED — merge `garnier/homepage-20260916` into `vitrine/design` with G4 preserved, in-container gate-49 `home-*` re-baseline, full R-SITE on the merged tree as criterion-3 evidence, ≈50 ± 20 kT booked inside P1. Sequence-gated: executes only after the records are keyed and confusions dispositioned (§5 step 4); NOT executed at the ruling.*
+- **(g) P2 commitment (DP3 commits P2 per [[budget_basis]] D-9).** See §4. ⛩ *Ruled in advance 2026-10-03 (Stanley, accept-all on [[operator_rulings_packet_20261003]] row B1): **Option C**. Written into the P2 mission frontmatter the same sitting (`budget_status`), originals preserved.*
 
 ### 4. P2 presented (commit nothing until ruled)
 
@@ -139,7 +140,7 @@ Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
 |---|---|---:|---:|---|
 | A — as provisioned | all 17 missions | 991 | — | Carries P0/P1's risk-class error forward. Four missions are expected to exceed |
 | B — calibrated whole phase | all 17 missions | ≈1,640 | ≈1,155–2,330 | Known ×1.15, risk ×3 ([[so11_retrospective_p1]] §4) |
-| **C — first segment, then re-forecast** *(recommended)* | P2.1 · P2.2 · P2.3 · T01 | ≈640 *(provisional 235)* | ≈430–1,040 | Re-forecast T02–T12 · P2.4 · P2.5 from T01's measured actual before T02 opens (a scope/budget amendment; no new gate) |
+| **C — first segment, then re-forecast** *(recommended — ⛩ RULED 2026-10-03, packet B1(g))* | P2.1 · P2.2 · P2.3 · T01 | ≈640 *(provisional 235)* | ≈430–1,040 | Re-forecast T02–T12 · P2.4 · P2.5 from T01's measured actual before T02 opens (a scope/budget amendment; no new gate) |
 
 [I] **Why C:**
 - The chain is strict, so nothing after T01 can start before T01 finishes anyway.
@@ -148,7 +149,7 @@ Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
 - Committing 991 would authorize a number the campaign has evidence against.
 - C respects D-9: DP3 still commits P2's opening, and the rest arrives as a presented amendment, not a silent expansion.
 
-*If ruled:* Rosetta writes the ruling into P2 mission frontmatter (`budget_status`, `token_budget_estimated` with originals preserved) in the DP3 sitting itself.
+*If ruled:* Rosetta writes the ruling into P2 mission frontmatter (`budget_status`, `token_budget_estimated` with originals preserved) in the DP3 sitting itself. ⛩ *Ruled 2026-10-03 in advance; written into the 17 P2 mission frontmatters by `session_stanley_20261003_213535_garnier_rulings_and_lanes` the same day: P2.1 · P2.2 · P2.3 · T01 → `committed_DP3_option_C_20261003` (≈640 kT segment, band 430–1,040; per-mission estimates unchanged); T02–T12 · P2.4 · P2.5 → `provisional_until_T01_actual`.*
 
 ### 5. What the DP3 sitting still has to do, in order
 
@@ -157,4 +158,4 @@ Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
 3. Disposition every material confusion. Apply ruling (a)/(b) where they bear.
 4. Ruling (f) → merge → full R-SITE on the exit candidate (criterion 3 re-verified).
 5. Fill §2. Re-run `derive_docs_population.py` (stdout). R-CLOSE, then the P1.3 five-line AAR.
-6. Author the ISS gate from this packet → operator rules (a)–(g) → record, commit.
+6. ~~Author the ISS gate from this packet → operator rules (a)–(g) → record, commit.~~ **Rulings (a)–(g) were taken in advance on 2026-10-03** (accept-all, [[operator_rulings_packet_20261003]] B1) — no gate authoring is owed; the DP3 sitting records the rulings as applied (steps 3–4) and closes the packet. Any *new* question the reader records raise is a fresh ruling, surfaced then.

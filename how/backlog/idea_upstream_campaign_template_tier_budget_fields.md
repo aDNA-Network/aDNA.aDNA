@@ -4,6 +4,7 @@ type: backlog
 title: "template_campaign + template_campaign_mission lack executor_tier and token-budget fields that template_mission carries; mission templates still say type: plan"
 category: vault_infra
 status: proposed
+disposition: "v8.13 lane — convention-to-codify — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 priority: medium
 effort: quick
 proposed_by: agent_rosetta

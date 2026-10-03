@@ -1,8 +1,9 @@
 ---
 type: backlog_idea
 created: 2026-08-08
-updated: 2026-08-08
+updated: 2026-10-03
 status: proposed
+disposition: "v8.13 or decline on re-measurement at the gate — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 last_edited_by: agent_hestia
 author: hestia (Home.aDNA)
 trigger: "Operation Open Hearth A2 (onboarding-seam review), reached from the shim side — the Rule-9 ref-sweep for §C rows 124/125 found the `.adna` onboarding pair to be the single largest live referrer class in the fleet (90 files / 43 vaults = 56% of the whole roster)"

@@ -26,7 +26,7 @@ governing_instrument: VITRUVIUS v1.1
 baseline_score: paired provisional v1.1; full breakdowns and limitations in artifacts/p0/baseline_reconciliation.md
 evidence_pack: /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0
 created: '2026-09-14'
-updated: '2026-09-24'
+updated: 2026-10-03
 last_edited_by: agent_rosetta
 tags:
 - campaign
@@ -325,6 +325,10 @@ Later ratified amendments: [[dp2_ratification_20260915]] (DP2, six amendments) �
 - the eleven forecast pairs split into a known-method class (0.63–1.33×) and a first-contact/external-runtime class (4.0–5.4×).
 
 [[artifacts/p1/phase_exit]] §DP3 packet appended: exit-criteria table, empty reader slot, rulings (a)–(g), and P2 options A 991 / B ≈1,640 / **C first segment ≈640, recommended**. The P2 envelope and the documentation population were re-derived with 0 drift. New finding (f): the gateway `6487444` is not on `vitrine/design`. The trees share no `site/` file, the only textual conflict is `MANIFEST.md`, and a merge would need a gate-49 home re-baseline. No status, budget, site or checkout change; DP3 remains `pending`.
+
+### Rulings packet accepted in full — 2026-10-03
+
+[D] The operator accepted every recommendation in [[operator_rulings_packet_20261003]] (14 rows) at plan time, 2026-10-03, and selected four lanes (`session_stanley_20261003_213535_garnier_rulings_and_lanes`). For this campaign: **B1 — DP3 rulings (a)–(g) taken in advance, accepted as proposed; (g) = P2 Option C** (P2.1 · P2.2 · P2.3 · T01 committed ≈640 kT, band 430–1,040; T02–T12 · P2.4 · P2.5 `provisional_until_T01_actual`) — written into the 17 P2 mission frontmatters; **(f)**'s merge stays sequence-gated on keyed reader records; **B5** — three formative readers this week, five cold readers after GR-7; **C1** — branch push GO'd, pre-check resolved (Vauban memo `privacy_class` downgraded P1 → P0 by the operator with reason logged), push itself not this sitting; **C2** — no deploy. The `:4466` preview was restarted and the 15 route hashes re-verified (15/15). DP3 itself remains `pending` on the three reader records; no phase advanced.
 
 ## Completion Summary
 

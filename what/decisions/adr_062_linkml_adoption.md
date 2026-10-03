@@ -2,23 +2,23 @@
 type: adr
 adr_number: "062"
 title: "LinkML adoption is a standard-level ruling housed in aDNA.aDNA — not a vault, not Context.aDNA's"
-status: proposed        # ⛩ Agents author, operators ratify (§7.7). Operator routing ruling (a) taken 2026-09-24 at plan time; the adoption decision itself awaits signature.
+status: accepted        # ⛩ Ratified by operator Stanley 2026-10-03 (accept-all on operator_rulings_packet_20261003 row A1, at plan time) — clauses 1–3 as written + riders i/ii as a non-normative annex. Routing ruling (a) had been taken 2026-09-24.
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-03
 last_edited_by: agent_rosetta
 campaign_id: ""
 mission_id: ""
 supersedes: ""
 superseded_by: ""
 probe_date: 2026-09-24
-tags: [adr, linkml, schema, standard, terminal, context, housing, proposed]
+tags: [adr, linkml, schema, standard, terminal, context, housing, accepted]
 ---
 
 # ADR-062 — LinkML adoption is a standard-level ruling housed in aDNA.aDNA
 
 ## Status
 
-**Proposed.** Drafted 2026-09-24 in answer to Vauban's (Terminal.aDNA) 2026-09-21 memo
+**Accepted — ratified 2026-10-03** (operator Stanley, accept-all ruling on [[operator_rulings_packet_20261003]] row A1; clauses 1–3 unchanged, two riders recorded in the Annex below). Drafted 2026-09-24 in answer to Vauban's (Terminal.aDNA) 2026-09-21 memo
 (`who/coordination/inbox/coord_2026_09_21_vauban_to_rosetta_linkml_row_and_naming.md`), which found that
 Terminal's delta ledger and a schema-owner row cite **`LinkML.aDNA`** as a vault, and that no such directory
 exists (`ls ~/aDNA` → none, verified here 2026-09-24; the string "LinkML" appears nowhere in this vault or in
@@ -35,7 +35,7 @@ machine-checkable shapes for their own objects (Terminal's contracts, Context.aD
 JSON-Schema/RDF projection — as the vocabulary those shapes would be authored in. Absent a ruling, each vault
 either invents its own schema language or cites a vault that does not exist.
 
-## Decision (proposed — three clauses)
+## Decision (three clauses — ratified 2026-10-03)
 
 1. **Housing.** Whether and how the aDNA standard adopts LinkML is a **standard-level decision recorded in
    `aDNA.aDNA` (this ADR and its successors)**, not the charter of a `LinkML.aDNA` vault and not a sub-decision
@@ -60,14 +60,23 @@ either invents its own schema language or cites a vault that does not exist.
 - If the operator declines clause 2, clause 1 still stands (the *housing* was ruled 2026-09-24) and the ADR is
   amended to say the standard takes no position on schema vocabulary.
 
+## Annex (non-normative) — riders recorded at ratification, 2026-10-03
+
+Both riders answer Vauban's (Terminal.aDNA) 2026-09-26 memo `coord_2026_09_26_vauban_to_rosetta_linkml_toolchain_without_gpl_and_housing.md` items 3 and 4 (`ack_required: true`). They bind nothing today; the word *normative* below names a future cut.
+
+- **Rider i — the four conventions LinkML cannot express** (Vauban item 3): **present-but-null** (a key must exist and its value must be null) · **present-but-empty** (a key must exist with an empty collection) · **key-forbidden-at-any-depth** (a key name may appear nowhere in the tree) · **pattern-on-map-values** (every value of a map matches a regex). The standard records them here now as *non-normative*; they become **normative annotations in the v2.6 schema cut** (the release that ships the standard's own entity-type schemas per clause 3 — not this ADR, not v8.12). Until then a vault states them in prose beside its LinkML, as Terminal does.
+- **Rider i, toolchain note.** Vauban's GPL-free validation path — `jsonschema[format-nongpl]` pinned through a `uv` override so the `format` checkers pull no GPL dependency — is recorded as the **fleet-reusable toolchain path** for anyone validating LinkML-projected JSON Schema. A recommendation, not a requirement.
+- **Rider ii — where `lattice_core` lives** (Vauban item 4, K10): **with LatticeProtocol's primitives, Noether's call** (`LatticeProtocol.aDNA/what/latticeprotocol/`). Clause 1 says no `LinkML.aDNA` exists, and LatticeProtocol owns lattice semantics; a schema for the lattice primitives is a schema for *their* object. Terminal cites it there by reference (clause 3).
+
 ## Ratification (§7.7)
 
-- **Decision:** clauses 1–3 above.
-- **Ratified-by:** —
-- **Date:** —
-- **Status:** proposed.
-- **Gate / session reference:** routing ruling (a) taken by AskUserQuestion at plan time, 2026-09-24,
-  `session_stanley_20260924_083249_garnier_reorientation`; adoption signature pending.
+- **Decision:** clauses 1–3 above as written, plus riders i and ii as a non-normative annex.
+- **Ratified-by:** Stanley (operator).
+- **Date:** 2026-10-03.
+- **Status:** accepted.
+- **Gate / session reference:** accept-all ruling on [[operator_rulings_packet_20261003]] row A1, taken by AskUserQuestion at plan time, 2026-10-03, `session_stanley_20261003_213535_garnier_rulings_and_lanes`. Routing ruling (a) had been taken 2026-09-24 (`session_stanley_20260924_083249_garnier_reorientation`).
+- **Scope of authority:** standard-level (this vault); binds no peer's schema; Terminal's `LinkML.aDNA` repoint (Consequences) is Vauban's act, asked for in the 2026-10-03 reply.
+- **Pending co-signs:** none required.
 
 Related: [[adr_035_inventory_identity_base_entity_types]] (the 16 base types) · Context.aDNA schema work
 (Prometheus) · Terminal.aDNA `annexes/annex_b01_delta_ledger.md` §B · `what/lattices/lattice_yaml_schema.json`

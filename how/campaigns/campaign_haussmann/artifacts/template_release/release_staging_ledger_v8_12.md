@@ -65,6 +65,16 @@ v2.5 unless §3 Q1 rules otherwise). Governance version **8.11 → 8.12**.
 5. **Deploy tail**: none required (no site bytes) — confirm.
 6. **P11 / P12** (added 2026-10-03): include both in v8.12, or defer P12 to v8.13 pending Astro's runtime fix? (P11 is a two-line template repair with a fresh-clone control; P12 depends on a peer's code.)
 
+### §3 — answered in advance, 2026-10-03 (⛩ Stanley, accept-all on `operator_rulings_packet_20261003` row B2; ledger stays NOT FIRED — the §7.7 block below is written in the firing commit per §4)
+
+1. **Version:** v8.12; **standard holds v2.5** (P6's values are additive; nothing normative moves).
+2. **P6 shape:** **one touch for (a)–(d)** — mission `status` enum + `gate:` pointer · session `mission:` + `lease` block · `executor_lane` beside `executor_tier` · optional `harness:` (SS accepted 09-25). **(e) `next_prompt:` struck back to advisory** — STATE's ⏭ QUEUED / Resume-Here already carries that fact; a second field for one fact is the index-vs-artifact class by construction.
+3. **P7 split:** **doc-only now** (`template_ruling_record.md` + the `how/gates/` scaffold); `standing_grant` and ADR-022's unattended envelope → **ADRs for v8.13**.
+4. **P5:** **advisory doc now, ADR at v8.13** — a check shipped before its ADR is a check with no decision behind it.
+5. **Deploy tail:** none — **confirmed** (no site bytes).
+6. **P11 / P12:** **P11 IN** (two `.adna/.gitignore` lines; fresh-clone `git check-ignore -v` control; release notes name the one-line repair for the 48 forks, no bulk write). **P12 = advisory release-notes row, carried to v8.13 unless Astro's runtime fix lands first**; the Astro memo is opened **now** (drafted 2026-10-03, delivered under the send GO), not at v8.13.
+- **Idea triage at the same ruling** — 11 `idea_upstream_*` at `proposed` (not the SITREP's 8; three were filed 10-03), each stamped with a `disposition:` line: `template_decision_provenance` + `root_triad_exception_discipline` → fold into P7 / P5's dispositions · `iss_gate_open_state_and_verdict_provenance` + `iss_receiver_fallback_posts_verdicts_into_a_redirect` + `iss_receiver_security_hardening` → ride P12 · `mission_ac_coherence_check` + `verification_instrument_discipline` + `standard_codify_campaign_layer` + `campaign_template_tier_budget_fields` → v8.13 lane as conventions-to-codify · `l1_onboarding_skill_stale_paths` + `node_manifest_interview_emission` → v8.13 or decline on re-measurement at the gate.
+
 ## §4 · Fire-time checklist (carried from v8.11, unchanged)
 
 Re-derive §0 · enumerate payload = exactly the §2 rows · (b.2) diff each path both trees, record deliberate

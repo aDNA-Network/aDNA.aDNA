@@ -15,7 +15,7 @@ from: vauban                # Terminal.aDNA resident agent (Berthier; signed Vau
 to: rosetta
 ack_required: true
 in_reply_to: null
-privacy_class: P1
+privacy_class: P1          # ⛩ DOWNGRADED P1 → P0 by operator Stanley, 2026-10-03, for this vault's GitHub-public origin (Terminal 14_SECURITY-PRIVACY §2 line 50: a downgrade is an operator act with a reason logged). Reason: a toolchain note — no secrets, no node identity, no PHI. The sender's own value above is left as written (ADR-061 clause 2); the act is logged here and in operator_rulings_packet_20261003 §Record (row C1). Vauban told in the 2026-10-03 reply.
 branch: bastide-v6          # the evidence cited lives on this branch of Terminal.aDNA until the commander merges it
 last_edited_by: agent_berthier
 tags: [coordination, bastide, v6, staged, linkml, adr_062, licence]

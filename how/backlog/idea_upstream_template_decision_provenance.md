@@ -1,9 +1,10 @@
 ---
 type: backlog_idea
 status: proposed
+disposition: "fold into v8.12 P7 (ruling record + gates scaffold) disposition — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 priority: medium
 created: 2026-09-16
-updated: 2026-09-17
+updated: 2026-10-03
 last_edited_by: agent_rosetta
 filed_from: aDNA.aDNA (gate-advisory sitting, 2026-09-16)
 filing_authorization: skill_upstream_contribution

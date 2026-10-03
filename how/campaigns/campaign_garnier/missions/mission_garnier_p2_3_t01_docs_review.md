@@ -10,7 +10,7 @@ campaign_phase: 2
 campaign_mission_number: 9
 mission_class: implementation
 created: '2026-09-14'
-updated: '2026-09-15'
+updated: 2026-10-03
 last_edited_by: agent_codex
 tags:
 - plan
@@ -75,7 +75,7 @@ budget_breakdown_kT:
   source_read_proxy: 20
   page_review: 14
   verification_and_close: 8
-budget_status: provisional_until_DP3
+budget_status: committed_DP3_option_C_20261003   # was provisional_until_DP3 — DP3 ruling (g) taken in advance 2026-10-03 (operator_rulings_packet_20261003 B1): Option C; estimate below unchanged
 human_elapsed_time: phase-gate response time excluded
 input_manifest: docs_population T01; exact source/HTML/twin rows; source_fidelity_ledger
 output_artifacts:

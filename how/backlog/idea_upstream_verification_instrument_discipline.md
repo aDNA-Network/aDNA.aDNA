@@ -1,9 +1,10 @@
 ---
 type: backlog_idea
 status: proposed
+disposition: "v8.13 lane — convention-to-codify — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 priority: high
 created: 2026-08-21
-updated: 2026-08-21
+updated: 2026-10-03
 last_edited_by: agent_rosetta
 filed_from: aDNA.aDNA/how/campaigns/campaign_haussmann/missions/mission_haussmann_p3_1_md_twins.md (AAR)
 filing_authorization: skill_upstream_contribution
