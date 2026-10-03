@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # pre-push-secret-scan.sh — outgoing-range secret-scanner gate (Network.aDNA / Venus)
 #
-# Source of record (tracked):   how/code/hooks/pre-push-secret-scan.sh
-# Installed to (untracked):     .git/hooks/pre-push  (symlink → this file)
+# Source of record (tracked):   how/standard/hooks/pre-push-secret-scan.sh   (header corrected 2026-10-03; was how/code/hooks/, a path that does not exist)
+# Installed to (untracked):     .git/hooks/pre-push  (a regular COPY of this file, not a symlink — re-copy after editing; corrected 2026-10-03)
 # Engine:                       gitleaks (>= 8.19 for `gitleaks git --log-opts`; tested on 8.30.1)
 # Config / allowlist:           $GITLEAKS_CONFIG → <repo>/git/.gitleaks.toml → <repo>/.gitleaks.toml
 #                               (F-W3-a: this vault's ROOT .gitleaks.toml is authoritative;

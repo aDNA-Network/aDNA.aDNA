@@ -59,3 +59,18 @@ description = "F-q: benign design-token prose ('token pipeline, measured+gating'
 regexes = [
     '''^measured\+gating$''',
 ]
+
+# ── sha256 content hashes in campaign evidence manifests ──────────────────────────────────────────
+# 2026-10-03 (push sitting, session_stanley_20261003_223739_garnier_send_push_primer_o1): 12 false
+# positives on origin/main..vitrine/design, all `generic-api-key`, all `"<path>": "<64-hex>"` entries
+# in file→hash dictionaries whose KEYS contain token/secret/api (garnier evidence p0/baseline_freeze.json
+# ×8 · p0/tracked_component_population.json · amendments/opening_snapshot.json ×2 ·
+# p1/resume_evidence_manifest.json). Entropy 3.7–4.0, length exactly 64, hex alphabet.
+# Scope discipline: evidence JSON under a campaign only + exact 64-hex Secret + the one rule that fired
+# (AND). A 64-hex anywhere else, or any other rule, still fires. Do NOT widen. Control: the range scan
+# dropped 12 → 0 with this block; a 64-hex on stdin outside that path still fires (recorded in the session).
+[[allowlists]]
+targetRules = ["generic-api-key"]
+condition = "AND"
+paths = ['''^how/campaigns/[^/]+/evidence/.*\.json$''']
+regexes = ['''^[0-9a-f]{64}$''']
