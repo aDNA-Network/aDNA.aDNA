@@ -1,9 +1,9 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-10-03  # 2026-10-03 mid-campaign SITREP — blockers/manual-actions/campaign rows repaired, Operation Primer queued, 10 inbox receipts (see ⏭ QUEUED). — prior: 2026-09-24  # 2026-09-24 STATE graduation (304 KB → router); prior inline chain (from "2026-09-25 gate-49 re-baseline discharged" back) → [[STATE_archive]] §Shifted-2026-09-24, verbatim
+updated: 2026-10-03  # 2026-10-03 (c) rulings packet accepted in full, four lanes executed — prior: 2026-10-03 mid-campaign SITREP — blockers/manual-actions/campaign rows repaired, Operation Primer queued, 10 inbox receipts (see ⏭ QUEUED). — prior: 2026-09-24  # 2026-09-24 STATE graduation (304 KB → router); prior inline chain (from "2026-09-25 gate-49 re-baseline discharged" back) → [[STATE_archive]] §Shifted-2026-09-24, verbatim
 status: active
-phase: "GARNIER P1 — P1.1/P1.2 complete; ⚠ 2026-10-03: the :4466 preview is DOWN — restart before any reader sitting; **Operation Primer** (standalone, fable) queued as the agent-reachable work; **P1.3 C2 (three consenting readers) → DP3 is the open front**; DP3 packet pre-assembled 2026-09-24 (c), reader slot pending (stimulus `6487444`/4466; G4 fired in source 2026-09-24, built not deployed; panel merge in force). HAUSSMANN endgame only (P5.1 joint panel after GR-7 · P5.2 · GR-7). Prior HAUSSMANN phase text → [[STATE_archive]] §Shifted-2026-09-24."
+phase: "GARNIER P1 — P1.1/P1.2 complete; **DP3 rulings (a)–(g) taken in advance 2026-10-03 (P2 = Option C)**; `:4466` preview UP (restart before each reader sitting); **P1.3 C2 (three consenting readers) → DP3 intake is the open front**; Operation Primer O0 DONE, O1 next; 8 replies outbound_ready awaiting send GO; branch push GO'd (allowlist owed), not executed. HAUSSMANN endgame only (P5.1 joint panel after GR-7 · P5.2 · GR-7). Prior phase text → [[STATE_archive]] §Shifted-2026-09-24."
 campaigns: [campaign_garnier, campaign_haussmann]    # GARNIER active (ratified §7.7 2026-09-15, 7 phases / 38 missions, runtime claude since 2026-09-16 — runtime_handoff_20260916); HAUSSMANN holds its independent endgame only (P5.1 · P5.2 · GR-7). Was `[campaign_haussmann]` alone until 2026-09-16 — stale for two days after GARNIER's ratification while MANIFEST.md:42 was already correct: the index-vs-artifact class, again.
 last_edited_by: agent_rosetta
 _state_router_version: "1.0"
@@ -20,6 +20,22 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > **State router** (split from monolithic STATE.md at M2.1 S2 2026-05-19; pre-split SHA `1e337db`). For historical session prose (19 DEPRECATED-marker `## Last Session` blocks + retired Next Session Prompts) see [[STATE_archive.md|STATE_archive.md]]. Most-recent live session block + most-recent Next Session Prompt stay here.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
+
+### 2026-10-03 (c) — Rulings packet ACCEPTED IN FULL; four lanes executed; preview UP; replies drafted; Primer O0 DONE
+
+[D] `last_edited_by: agent_rosetta`; runtime claude; tier fable; session [[session_stanley_20261003_213535_garnier_rulings_and_lanes]] (Tier 2). **The operator accepted all 14 rows of [[operator_rulings_packet_20261003]] as written** (AskUserQuestion at plan time) and selected four lanes. Every ruling landed **at its object** (never in prose alone) and the packet's §Record lists where. Six commits `76ed14c`…this one; **not pushed**.
+- **A1 ADR-062 ACCEPTED** + non-normative annex (the four LinkML-inexpressible conventions → normative at the **v2.6 schema cut**; GPL-free toolchain note; `lattice_core` lives with LatticeProtocol). `adr_index` tally **57 = 56 accepted · 1 amended · 0 proposed** (derived). The proposed queue is empty.
+- **B1 DP3 (a)–(g) ruled in advance**, accepted as proposed; **(g) = P2 Option C** → 17 P2 mission frontmatters (`budget_status`: P2.1 · P2.2 · P2.3 · T01 `committed_DP3_option_C_20261003`; the rest `provisional_until_T01_actual`); `phase_exit.md` §5 step 6 (author the ISS gate) struck. (f)'s merge stays sequence-gated on keyed reader records.
+- **B2 v8.12**: six §3 answers written in advance (v8.12 / standard v2.5 · P6 one touch (a)–(d), (e) advisory · P7 doc-only · P5 advisory · no deploy tail · **P11 IN, P12 advisory + Astro memo now**); **11** `idea_upstream_*` (not 8) carry a `disposition:` line. Ledger still **NOT FIRED** (its §7.7 is written in the firing commit).
+- **A3** (b)+(c) at the HAUSSMANN queue §G4; **B3/B4** ruling lines at §G2/§G5 — the Speed Insights reading and the CoC address are **still human-owed**.
+- **C1 push GO — pre-check resolved**: the one `privacy_class: P1` hit (Vauban 09-26; Terminal §2 = internal) was **downgraded P1 → P0 by the operator with reason logged** beside the sender's line; `gitleaks` on `origin/main..vitrine/design` → **12 `generic-api-key` hits, all 64-hex sha256 content hashes in evidence JSON** (false positives) — the pre-push hook fails closed on them, so **an allowlist is owed before the push sitting**. Push NOT executed (not a selected lane). Range 50 commits / 1,303 files at the check.
+- **Lane 1**: `:4466` preview restarted from the untouched `dist/`, **15/15 hashes MATCH**, checkout clean. ⚠ It is a foreground process — it dies with its shell; restart + re-check immediately before each reader sitting.
+- **Lane 3 (C3) DELIVERED**: both 09-16 memos (→ Hestia purpose descriptions · → Vitruvius independent visual review) upgraded to ADR-061 form, pin re-read (all four registry records still null note/tagline), cmp-identical in Home (`18aa9d6`) + WebForge (`bf80026`) inboxes. One sender-side defect caught and re-synced before any receipt (the Hestia memo's pin-re-read sentence; `delivered_resync` recorded).
+- **Lane 2 (C4) DRAFTED — 8 memos `outbound_ready`, SEND GO OWED**: Talos ×3 (C1 reading · ADR-002 three dispositions · Berthier's ISS census) · Vauban · Ledoux · Ariel (one memo, three replies) · Astro (P12 fix shape) · Hygieia (A3(c) ADR-010 ask). Astro + WilhelmAI have **no `inbox/`** → doctrine §2 branch 2; WilhelmAI had two session files touched today → branch 3 (hold + retry) if still live at send. **Talos G10 reds ~10-07.**
+- **Lane 4 (C5) Primer O0 DONE** (≈40 kT vs 70): source pack · **14-row** inconsistency register (one SITREP claim did not reproduce at its object) · outline v0 · `reviewer_data_engineer` (reviewers **16 → 17**, derived) · scrub control. Mission `in_progress`; **O1 next, operator-summoned**.
+- ⚠ **Node finding**: `pgrep -fl` on this node prints matched processes' *environment*, which carried credential **values** into an agent transcript; none recorded; rotation is the operator's call (Hestia's broker).
+
+**Resume-Here:** **Send GO** for the 8 `outbound_ready` replies (Talos G10 first — RED ~10-07) is the one agent-reachable act waiting on a word. Then: **Primer O1** (fable) · the **push sitting** (gitleaks allowlist for sha256-in-evidence-JSON, hook self-test, then `git push -u origin vitrine/design`; push ≠ deploy) · the **v8.12 gate** when opened (answers pre-written). Human-owed, unchanged: **three formative readers** → DP3 intake per `phase_exit.md` §5 (rulings already taken; restart `:4466` first) · G2 reading · G5 address · ADR-010 co-sign (asked of Hygieia once the memo is sent) · Andy/Fluxer acts (C6).
 
 ### 2026-10-03 — Mid-campaign SITREP; surfaces repaired; Operation Primer QUEUED; 10 inbox receipts
 
@@ -243,7 +259,7 @@ Session: [[session_stanley_20260924_145532_garnier_dp3_preassembly]].
 
 ### `campaign_haussmann` (Operation HAUSSMANN — **ENDGAME ONLY**: P5.1 joint panel after GR-7 · P5.2 · GR-7) · 34 missions: 30 completed · 2 in_progress · 2 queued · queue of record `artifacts/operator_queue_reconciled_20260911.md` (supersedes any owed-list narrated here)
 
-### `mission_primer_adna_for_data_engineers` (Operation Primer — standalone mission, **QUEUED** 2026-10-03, fable) · `how/missions/` · O0 next, operator-summoned
+### `mission_primer_adna_for_data_engineers` (Operation Primer — standalone mission, **IN_PROGRESS**: O0 ✅ 2026-10-03, fable) · `how/missions/` + `artifacts/primer/` · O1 (draft v0.1, 120 kT) next, operator-summoned
 
 ### `campaign_v8_9_release` (Operation Palimpsest — ✅ **COMPLETED 2026-07-24**; v8.9 SHIPPED [commit c8e5427 + tag v8.9]; P0→P1→P2→P3 all done — **DO NOT re-open**)
 
@@ -310,16 +326,18 @@ itself. *(Prior value preserved, SO-6: `None.`)*
 
 ## Pending Manual Actions
 
-> **Re-cut 2026-10-03** — the rows below the rule were June-era and said nothing about GARNIER or the v8.12 gate; they are kept (SO-6). The live human acts are these — **each with a recommendation in [[operator_rulings_packet_20261003]]** (A1 ADR-062 · A2 Talos bindings · A3 Wilhelm · B1 DP3 · B2 v8.12 · B3 G2 · B4 G5 · B5 readers · C1 push · C2 deploy · C3 sends · C4 replies · C5 Primer · C6 Andy/Fluxer):
+> **Re-cut 2026-10-03 (c)** — after the operator accepted the whole rulings packet. The rows below the rule are June-era, kept (SO-6). Live human acts, in the order they unblock agent work:
 
-- **Three consenting readers** for GARNIER P1.3 C2 (engineer · funder · scientist) → DP3. Agent restarts `:4466` first.
-- **DP3 rulings (a)–(g)** + the P2 option — `how/campaigns/campaign_garnier/phase_exit.md` §DP3.
-- **Open the v8.12 template-release gate** — six §3 questions (P11/P12 added 2026-10-03) at `release_staging_ledger_v8_12.md`; **sign or hold ADR-062** (LinkML housing, the only `proposed` ADR; Vauban's 09-27 ack depends on it).
-- **Talos ADR-002** — accept, correct or refuse each of the three bindings (RC as OIP reference-implementation candidate · RC as the M2.11 ISS runtime home · the consent-prompt shape) before the reply is drafted.
-- **Send GO** for the two 09-16 staged memos (→ hestia homepage purpose descriptions · → vitruvius independent visual review) — re-read 2026-10-03, still current.
-- **Summon Operation Primer O0** (fable) — `how/missions/mission_primer_adna_for_data_engineers.md`.
-- **Andy Zhang on Fluxer** (Fluxer.aDNA / Aspasia, operator-approved per act): join `community.adna.network` · disclosure-roster row → `disclosed` · `dmRoster` · an attachment path or a carried link · register aDNA.aDNA as a consumer vault or route via aDNALabs. Needed before the Primer's O5 delivery can execute.
-- **`git fetch` + a push decision** for `vitrine/design` (45 ahead, no upstream, never through CI; push ≠ deploy).
+- **SEND GO** for the eight `outbound_ready` replies in `who/coordination/coord_2026_10_03_rosetta_to_*.md` (Talos G10 first — RC's register grades it RED ~2026-10-07). One blanket GO or per memo.
+- **Three consenting readers** for GARNIER P1.3 C2 (engineer · funder · scientist) → DP3 **intake** per `phase_exit.md` §5 — rulings (a)–(g) are already taken; the agent restarts `:4466` + re-checks 15 hashes first.
+- **Push sitting GO** (C1 ruled GO 2026-10-03): agent adds a gitleaks allowlist for 64-hex sha256 values in `how/campaigns/**/evidence/**/*.json`, re-runs the hook self-test, then `git push -u origin vitrine/design`. Push ≠ deploy; **no deploy** (C2).
+- **Summon Primer O1** (fable, 120 kT) — `how/missions/mission_primer_adna_for_data_engineers.md`.
+- **Open the v8.12 template-release gate** — the six §3 answers are pre-written at `release_staging_ledger_v8_12.md`; the firing commit writes the §7.7 block.
+- **G2** — one Speed Insights dashboard look; record the p75 reading (or its dated absence) at the operator queue §G2.
+- **G5** — supply the CoC confidential reporting address → `CODE_OF_CONDUCT.md:54` + `:63`, one commit.
+- **ADR-010 Wilhelm co-sign** — asked of Hygieia by memo (drafted; sends with the GO above); un-fires G4 only with a dated `operator_cleared_YYYY_MM_DD` at the yaml.
+- **Andy Zhang on Fluxer** (C6; Fluxer.aDNA / Aspasia, operator-approved per act): join `community.adna.network` · disclosure-roster row → `disclosed` · `dmRoster` · an attachment path or a carried link · register aDNA.aDNA as a consumer vault or route via aDNALabs. Needed before Primer O5.
+- **Credential rotation, at discretion** — a process listing on this node exposed env-carried credential values to an agent transcript on 2026-10-03 (none recorded); Hestia's broker is the surface.
 
 ---
 
