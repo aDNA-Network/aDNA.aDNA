@@ -1,7 +1,7 @@
 ---
 type: backlog_idea
 created: 2026-05-20
-updated: 2026-07-02
+updated: 2026-10-03
 last_edited_by: agent_rosetta
 status: deferred
 priority: P1   # strategic doctrine reach across aDNA standard
@@ -40,6 +40,7 @@ Today, agentic interactions with the operator are scattered across multiple ad-h
 | `PushNotification` | Phone-push for async operator alerts | One-way only; no input back |
 | Canvas substrate (CanvasForge.aDNA) | Production-grade deck + comic surfaces (VR1-VR5 voice; CMYK) — could be operator-interaction host too | Currently producer-only; not wired as an agent → operator dialog surface |
 | LatticeTerminal.aDNA splash + sidebar (genesis) | Designed for home-agent launcher (MC-LAUNCH) + agent-orchestration sidebar | Genesis phase; not yet operational; per-node terminal-substrate UI under design |
+| Launcher / operator command shelf (Tinycast.aDNA, Ariel — `Tinycast.aDNA/how/backlog/idea_operator_command_shelf.md`; row added 2026-10-03 from Ariel's 09-26 memo) | An agent **stages** the command the operator must run; it waits in the palette in full, readable, for the operator to fire — a hand-act surface for focus-sensitive / menu-bar apps; also the hand-pass protocol (Tinycast execution_conventions §11) | Tinycast M08/M09 build pending; Palette Contract not yet lifted into the standard; no agent → operator *input* path, only staged-command fire |
 | Custom HTML pages opened via browser | Ad-hoc one-off (e.g., Bokeh dashboards, Streamlit notebooks) | Per-session manual artifact; no doctrine for how/when |
 
 The operator's framing at S24 pc_01 Phase B1: "we have wanted to update the usage of advanced canvas and opening web pages with custom designed interface as a core interaction pattern for the agents and possibly integrate that with the work being done on interface patterns in the LatticeTerminal.aDNA project... please review these other design dimensions and come up with a campaign planning mission to update user interaction for the whole adna standard in general and on a graph specific basis."
