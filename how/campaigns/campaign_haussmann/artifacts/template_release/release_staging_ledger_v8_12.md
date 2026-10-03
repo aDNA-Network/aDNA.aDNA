@@ -4,13 +4,13 @@ artifact_id: release_staging_ledger_v8_12
 title: "v8.12 staging ledger — the memo-derived template touches, ADR-060's adr_003 flip at the source, ADR-061's memo fields, and the image-only defects that a fold must back-write"
 campaign: campaign_haussmann
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-03   # P11 + P12 candidates + §3 Q6 added at the mid-campaign SITREP; everything else as measured 2026-09-24
 status: proposed          # ⛩ NOT FIRED. Every row is a hypothesis to be re-measured against disk before the gate; the operator rules each §3 question at the gate.
 last_edited_by: agent_rosetta
 session: session_stanley_20260924_083249_garnier_reorientation
 supersedes_none: true
 relates: [release_staging_ledger_v8_11, skill_template_release, adr_060_template_decision_provenance, adr_061_three_valued_memo_authorship, idea_upstream_template_decision_provenance, idea_upstream_root_triad_exception_discipline]
-tags: [artifact, template_release, ledger, v8_12, adr_060, adr_061, executor_lane, unattended, seven_lamps, proposed]
+tags: [artifact, template_release, ledger, v8_12, gitignore, iss_receiver, adr_060, adr_061, executor_lane, unattended, seven_lamps, proposed]
 ---
 
 # v8.12 staging ledger — ⛩ PROPOSED, NOT FIRED
@@ -52,6 +52,8 @@ v2.5 unless §3 Q1 rules otherwise). Governance version **8.11 → 8.12**.
 | P7 | **Ruling-record template + `how/gates/` scaffold** (`template_ruling_record.md`: gate_id · packet_ref@SHA · items[] · ruled_by/date/via/provenance) | Automator idea #2; this vault's `how/gates/` practice (Champollion, Refit) as instances | `.adna/how/templates/template_ruling_record.md` (new) | ⛩ Split candidate — the `standing_grant` record type (Automator #3) and ADR-022's unattended envelope (#6) are **bigger than a template field**; recommended: doc-only in v8.12, ADRs in v8.13 |
 | P8 | **`decision_log.jsonl` sidecar + `pattern_decision_queue` graduation** (Automator #4: "Recent Decisions" unused 0/6 fleet-wide) | Automator idea #4 | `.adna/how/templates/template_state.md` (a sidecar note) | ⛩ Advisory row unless the pattern graduates first (`what/patterns/AGENTS.md` below-3 rule) |
 | P9 | **Release-notes advisory — 31 vendored pre-4.2.0 hooks** (Ilmarinen 09-07/09-15): name the `NOT_INSTALLED` class (Git.aDNA A8 §4) and the one-line re-vendor; **no bulk write** into any vault | `idea_upstream_template_decision_provenance.md` item 3 | `.adna/CHANGELOG.md` release entry only | Control: the entry names Ilmarinen's instrument; count re-asked of Forgejo at fire time, never re-run here |
+| **P11** | **`.adna/.gitignore` dead patterns** — lines 64 (`dist/`) and 71 (`/*.tar.gz`) carry an inline comment on the pattern line, so **neither pattern ever matches** (gitignore has no inline comments); `git check-ignore -v dist/x x.tar.gz` → rc 1 before, resolves after moving each comment to its own line. **48 of 120** `*.aDNA/.gitignore` carry the dead `dist/` line (read-only count, 2026-09-25) | `who/coordination/inbox/coord_2026_09_25_ariel_to_rosetta_gitignore_inline_comments_and_tarball_pathspec.md` (:29–43) — **`candidate`, added 2026-10-03**; dev-graph `.gitignore` to be checked for the same defect at the gate | `.adna/.gitignore:64,71` — two lines, comment moved above each pattern | Line-scoped (b.2); control: `git check-ignore -v` resolves both in a fresh clone. ⚠ Fixing the template does **not** fix the 48 forks — release-notes advisory names the one-line repair, no bulk write (P9's discipline) |
+| **P12** | **ISS gate-receiver hardening** — per-vault receivers accept `POST /save` with CORS `*` (any page in the operator's browser could attempt a gate write); `gate_receiver.py` write is unauthenticated. Shape: same-origin only or a per-gate token; reject cross-origin POST; `skill_create_iss` receiver step gains the clause; `:8765` fixed-port assumption at `skill_create_iss.md:44` revisited | Ledoux 09-26 (:69, :76, **HIGH**) + Berthier 09-02; `how/backlog/idea_upstream_iss_receiver_security_hardening.md` — **`candidate`, added 2026-10-03**; the runtime fix is Astro's (`what/lib/iss/runtime/`), ruled jointly by memo | `.adna/how/skills/skill_create_iss.md` (+ the ISS adaptation guides if they ship in the image — verify at gate) | ⛩ ships only if the receiver fix exists in Astro's runtime first — otherwise **advisory** in the release notes, row carried to v8.13. Red-prove: a planted cross-origin POST is refused |
 | P10 | **Docs currency riders** — `standard_governance.md` RFC section's "superseded in practice" annotation; `ontology_unification.md` "22 entity types" worked-example annotation | both annotated in the dev graph 2026-09-24 (strike-not-delete) | `.adna/what/docs/…` counterparts (verify they exist in the image at gate) | (b.2) line-scoped; if the image lacks the file, the row is void and says so |
 
 ## §3 · ⛩ Questions for the operator at the gate
@@ -61,6 +63,7 @@ v2.5 unless §3 Q1 rules otherwise). Governance version **8.11 → 8.12**.
 3. **P7 split**: doc-only now, `standing_grant` + unattended envelope as ADRs for v8.13?
 4. **P5**: ADR now, or advisory doc?
 5. **Deploy tail**: none required (no site bytes) — confirm.
+6. **P11 / P12** (added 2026-10-03): include both in v8.12, or defer P12 to v8.13 pending Astro's runtime fix? (P11 is a two-line template repair with a fresh-clone control; P12 depends on a peer's code.)
 
 ## §4 · Fire-time checklist (carried from v8.11, unchanged)
 

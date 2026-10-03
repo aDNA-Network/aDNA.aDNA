@@ -1,9 +1,9 @@
 ---
 type: state
 created: 2026-04-13
-updated: 2026-09-24  # 2026-09-24 STATE graduation (304 KB → router); prior inline chain (from "2026-09-25 gate-49 re-baseline discharged" back) → [[STATE_archive]] §Shifted-2026-09-24, verbatim
+updated: 2026-10-03  # 2026-10-03 mid-campaign SITREP — blockers/manual-actions/campaign rows repaired, Operation Primer queued, 10 inbox receipts (see ⏭ QUEUED). — prior: 2026-09-24  # 2026-09-24 STATE graduation (304 KB → router); prior inline chain (from "2026-09-25 gate-49 re-baseline discharged" back) → [[STATE_archive]] §Shifted-2026-09-24, verbatim
 status: active
-phase: "GARNIER P1 — P1.1/P1.2 complete; **P1.3 C2 (three consenting readers) → DP3 is the open front**; DP3 packet pre-assembled 2026-09-24 (c), reader slot pending (stimulus `6487444`/4466; G4 fired in source 2026-09-24, built not deployed; panel merge in force). HAUSSMANN endgame only (P5.1 joint panel after GR-7 · P5.2 · GR-7). Prior HAUSSMANN phase text → [[STATE_archive]] §Shifted-2026-09-24."
+phase: "GARNIER P1 — P1.1/P1.2 complete; ⚠ 2026-10-03: the :4466 preview is DOWN — restart before any reader sitting; **Operation Primer** (standalone, fable) queued as the agent-reachable work; **P1.3 C2 (three consenting readers) → DP3 is the open front**; DP3 packet pre-assembled 2026-09-24 (c), reader slot pending (stimulus `6487444`/4466; G4 fired in source 2026-09-24, built not deployed; panel merge in force). HAUSSMANN endgame only (P5.1 joint panel after GR-7 · P5.2 · GR-7). Prior HAUSSMANN phase text → [[STATE_archive]] §Shifted-2026-09-24."
 campaigns: [campaign_garnier, campaign_haussmann]    # GARNIER active (ratified §7.7 2026-09-15, 7 phases / 38 missions, runtime claude since 2026-09-16 — runtime_handoff_20260916); HAUSSMANN holds its independent endgame only (P5.1 · P5.2 · GR-7). Was `[campaign_haussmann]` alone until 2026-09-16 — stale for two days after GARNIER's ratification while MANIFEST.md:42 was already correct: the index-vs-artifact class, again.
 last_edited_by: agent_rosetta
 _state_router_version: "1.0"
@@ -20,6 +20,17 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 > **State router** (split from monolithic STATE.md at M2.1 S2 2026-05-19; pre-split SHA `1e337db`). For historical session prose (19 DEPRECATED-marker `## Last Session` blocks + retired Next Session Prompts) see [[STATE_archive.md|STATE_archive.md]]. Most-recent live session block + most-recent Next Session Prompt stay here.
 
 ## ⏭ QUEUED — Next Live Session (READ THIS FIRST)
+
+### 2026-10-03 — Mid-campaign SITREP; surfaces repaired; Operation Primer QUEUED; 10 inbox receipts
+
+[D] `last_edited_by: agent_rosetta`; runtime claude; tier fable; session [[session_stanley_20261003_205316_sitrep_and_primer_authoring]]; plan approved at plan time with four operator rulings (doc shape · tier · scope · delivery). **Nothing had moved for nine days** (`e413fd6` 09-24 → this sitting) while ten memos arrived unread. Full report: [[sitrep_mid_campaign_20261003]] (`how/missions/artifacts/`).
+- **Inbox: 10 memos received** (committed byte-unchanged `7840cd4`; berthier 09-02 · hestia 09-07 · talos 09-16 · ariel 09-25 ×2 · ss 09-25 · ariel 09-26 · **ledoux 09-26 (HIGH: ISS gate receivers accept `POST /save` with CORS `*`)** · talos 09-26 (ADR-002 co-signed — three refusable bindings) · vauban 09-27). **No reply authored** (operator ruling). Derived reply-debt: 8 of 10 owe a reply; **talos G10 grades RED ~2026-10-07** by its own register.
+- **This file was wrong in four sections** and is repaired below: §Active Blockers carried HAUSSMANN only (GARNIER rows added); row 3's "`/learn/course/*` 404 live" is **false** (200, `curl` 2026-10-03) and row 5 was ruled out 09-11 — both struck, not deleted; §Pending Manual Actions re-cut to the live human acts; §Active Campaigns/§Current Phase gain live pointers. *Index-vs-artifact, inside STATE.md again — the short declarative sections are the ones a cold reader trusts.*
+- **Repairs elsewhere**: HAUSSMANN charter `mission_count: 33 → 34` (derived: `ls missions/mission_haussmann_*.md | wc -l`; GR-7 was never counted); **v8.12 ledger gains P11** (Ariel's `.adna/.gitignore:64,71` dead-pattern fix, 48/120 vaults) **and P12** (ISS receiver CORS/auth) as candidates + §3 question 6; MANIFEST re-reviewed (57/45/57 zero drift; `last_edited_by` corrected). Five backlog ideas filed `proposed`: `idea_upstream_iss_receiver_security_hardening` (high) · `idea_upstream_standard_codify_campaign_layer` · `idea_upstream_campaign_template_tier_budget_fields` · `idea_external_sharing_doctrine` · `idea_a2a_communication_overview`.
+- ⭐ **[[mission_primer_adna_for_data_engineers]] — Operation Primer — AUTHORED + QUEUED** (standalone, `how/missions/`, **fable**, ≈420 ± 120 kT, O0–O5): a reusable "aDNA for data engineers" primer + a cover note for Andy Zhang (`zhang8128`), six-lens review ×2 incl. a new `reviewer_data_engineer`, write-gate scrub, operator read gate, PDF, then a delivery memo to Aspasia (Fluxer.aDNA). ⚠ Delivery preconditions measured 2026-10-03: Emissary is text-only to `#agent-comms`; Andy is pre-roster; aDNA.aDNA is not a registered consumer vault — hers to clear, operator-approved per act.
+- **GARNIER precondition found**: the `6487444` preview on `:4466` is **not running** (connection refused) — restart + re-verify 15/15 hashes before any reader is scheduled. Isolated checkout clean; nothing touched.
+
+**Resume-Here:** two lanes. **Human-owed (unchanged)**: P1.3 C2 — Stanley supplies three consenting readers → two-scorer key → DP3 per `phase_exit.md` §5 (don't rebuild the packet) · DP3 rulings (a)–(g) · G5 address · G2 Speed Insights · ADR-010 co-sign · fetch + push decision (`vitrine/design` 45 ahead, no upstream, never CI'd). **Agent-reachable, operator-summoned**: (1) **Operation Primer O0** (fable) — `how/missions/mission_primer_adna_for_data_engineers.md`; (2) a **reply sitting** — talos G10 (by ~10-07) · ledoux (HIGH + 11 asks) · vauban (3·4 ack) · talos ADR-002 (bindings need the operator's call first) · berthier · ariel ×3; (3) the v8.12 gate when the operator opens it (now 6 questions). Owed-send pending GO: the two 09-16 staged memos (hestia · vitruvius), still current.
 
 ### 2026-09-24 (c) — DP3 pre-assembled; reader slot PENDING
 
@@ -218,11 +229,19 @@ Session: [[session_stanley_20260924_145532_garnier_dp3_preassembly]].
 
 ## Current Phase
 
+**Live (2026-10-03):** the `phase:` string in this file's frontmatter is the single live statement — GARNIER P1 at P1.3 C2 → DP3; HAUSSMANN endgame (P5.1 joint panel after GR-7 · P5.2 · GR-7); Operation Primer queued. Everything below this line is archive pointers.
+
 > *(Current-Phase rows 2026-07-01 → 2026-07-03 — the Champollion G0→G5 ladder + STR Track-C close — archive-shifted → [[STATE_archive]] §Shifted-2026-07-17 [Clear Hearth W-B slice 3]; never deleted.)*
 
 > *(Current-Phase activity older than 2026-07-01 archive-shifted → [[STATE_archive]] §Shifted-2026-07-02 (Champollion M1.5); 48 bullets, never deleted per SO-6. This router keeps the recent live arc (Champollion 2026-07-02 + STR close 2026-07-01); older bullets archive-shifted, trim to the next diet.)*
 
 ## Active Campaigns
+
+### `campaign_garnier` (Operation GARNIER — **ACTIVE**, runtime claude since 2026-09-16) · 38 missions: 4 completed · 1 in_progress (P1.3) · 33 queued · open front P1.3 C2 → DP3 · charter `how/campaigns/campaign_garnier/campaign_garnier.md` · CURRENT `missions/session_prompts_garnier.md` · packet `phase_exit.md` §DP3
+
+### `campaign_haussmann` (Operation HAUSSMANN — **ENDGAME ONLY**: P5.1 joint panel after GR-7 · P5.2 · GR-7) · 34 missions: 30 completed · 2 in_progress · 2 queued · queue of record `artifacts/operator_queue_reconciled_20260911.md` (supersedes any owed-list narrated here)
+
+### `mission_primer_adna_for_data_engineers` (Operation Primer — standalone mission, **QUEUED** 2026-10-03, fable) · `how/missions/` · O0 next, operator-summoned
 
 ### `campaign_v8_9_release` (Operation Palimpsest — ✅ **COMPLETED 2026-07-24**; v8.9 SHIPPED [commit c8e5427 + tag v8.9]; P0→P1→P2→P3 all done — **DO NOT re-open**)
 
@@ -268,15 +287,19 @@ disagreeing, with the stale one being the one a cold reader would trust**, becau
 declarative and headed *Active Blockers*. The campaign's **index-vs-artifact** class, inside `STATE.md`
 itself. *(Prior value preserved, SO-6: `None.`)*
 
-**Live, 2026-09-04 20:5x UTC:**
+**Live, 2026-09-04 20:5x UTC — re-derived 2026-10-03 (rows 3 and 5 struck with their corrections; rows 6–9 added for GARNIER, which this table had omitted since the campaign's ratification on 09-15):**
 
 | # | Blocker | Owner | Note |
 |---|---|---|---|
 | 1 | ⭐ **UPDATED 2026-09-05 — the ordering constraint is GONE, the recruitment is not.** `AC-2` and `AC-3` may now run **in either order or in parallel** (⛩ ruling (a), P5.1 AMENDMENT 3), so the three human acts can be scheduled concurrently. **`P5.1` still needs five recruited cold readers** — and now **one of them also runs the TTFS**, which is what discharges `P2.6 O0b` | ⛩ **operator** | The campaign's true critical path. Kit built and waiting since 2026-08-26; `AC-P` satisfied since the 2026-09-04 deploy. **Nothing agent-side unblocks this.** |
 | 2 | **`P5.2` → `DP9`** | ⛩ operator | ⭐ **UPDATED 2026-09-07 — its two HARD PRECONDITIONS are DISCHARGED by `GR-6`** (instrument v1.1 + the re-authored crawler). **Blocked on 1 alone now**, which is human. **`DP7` folds in here**, ruled 2026-09-04. |
-| 3 | **⛩ course-deploy GO** — `/learn/course/*` is **404** live; ~~the 7-lesson ladder is complete in-tree~~ **TWO lessons are in-tree** (derived: `ls src/content/course/*.md` → 2; `b2e943b`'s own message says *"lessons 1–2"*) | ⛩ operator | ⭐ **Must be taken BEFORE recruitment opens** — `P5.1 AC-1` fixes its stimulus as *"the LIVE production hero at the recorded build stamp"*, so a deploy *after* the panel means the panel evaluated a site that no longer exists. ⚠ **The "7-lesson … complete" claim was FALSE and it is corrected, not deleted (SO-6).** ⭐ Note which surface was honest: the **page derives its own count** (`course/index.astro:13,53` renders `{ladder.length} lessons`), so a reader has always been told **2**; only this index said 7. *The index-vs-artifact class, with the artifact right and the pointer wrong* — and it would have gone out as an operator-facing description of what a deploy ships. **C1 + C2 are now built and the two blockers are discharged** (see the course-deploy increment). |
+| 3 | ~~**⛩ course-deploy GO** — `/learn/course/*` is **404** live~~ ⛔ **STRUCK 2026-10-03: `curl https://adna.network/learn/course/` → 200** — the course deployed with the 2026-09-11 prod `eda4cbf`; this row stayed red for 22 days after the thing it blocked on had shipped (SO-6: struck, not deleted). Original text follows: ~~the 7-lesson ladder is complete in-tree~~ **TWO lessons are in-tree** (derived: `ls src/content/course/*.md` → 2; `b2e943b`'s own message says *"lessons 1–2"*) | ⛩ operator | ⭐ **Must be taken BEFORE recruitment opens** — `P5.1 AC-1` fixes its stimulus as *"the LIVE production hero at the recorded build stamp"*, so a deploy *after* the panel means the panel evaluated a site that no longer exists. ⚠ **The "7-lesson … complete" claim was FALSE and it is corrected, not deleted (SO-6).** ⭐ Note which surface was honest: the **page derives its own count** (`course/index.astro:13,53` renders `{ladder.length} lessons`), so a reader has always been told **2**; only this index said 7. *The index-vs-artifact class, with the artifact right and the pointer wrong* — and it would have gone out as an operator-facing description of what a deploy ships. **C1 + C2 are now built and the two blockers are discharged** (see the course-deploy increment). |
 | 4 | **`F-ab`** — ~~now FOUR surfaces~~ **MEASURED, and half discharged** | `GR-5` ✅ **CLOSED 2026-09-05** | ⛩ The ratified rider **fired on the measurement**: CI n=30 → `netdiagram-svg` **spread 0.6400 ⇒ advisory**; every other figure **0.0000 ⇒ still enforcing**. ⛔ **No pin moved** (`worstPx` still 7.9). **(b) discharged**; **(a) narrowed** to a measured **~3.3 %** on one figure with its **cause still unverified**; §22.4's `gate-47` half **unrunnable** in the sampleable regime; `AMENDMENT 1`'s `gate-49`/`home` **untouched**. ⭐ *There was no pin to re-derive* — and the forbidden `7.9 → 7.4` would have pinned **above** CI's true worst of **7.3600** and kept flaking. Still a standing tax on the other surfaces: a red there is *a question, not a verdict*. |
-| 5 | Clause 5 of ADR-056 — `npm login` | *the world* | Ratified-with-rider; not a decision. |
+| 5 | ~~Clause 5 of ADR-056 — `npm login`~~ ⛔ **STRUCK 2026-10-03 — ruled OUT of the gate queue 2026-09-11** (`operator_queue_reconciled_20260911.md` §3: a credential, not a decision); it survived here three weeks after its own ruling | ~~*the world*~~ | Ratified-with-rider; not a decision. |
+| 6 | **GARNIER P1.3 C2 — three consenting formative readers** (engineer · funder · scientist; ⛔ agents never recruit) → two-scorer key → **DP3** | ⛩ **operator** | The campaign's critical path since 09-16. ⚠ Agent precondition: restart the `6487444` preview on `:4466` (down 2026-10-03) and re-verify 15/15 route hashes before any reader is scheduled. |
+| 7 | **DP3 rulings (a)–(g)** incl. (f) the P1 exit candidate's identity (`6487444` is not on `vitrine/design`) and the P2 option (A 991 · B ≈1,640 · **C ≈640 recommended**) | ⛩ operator | Packet pre-assembled 09-24 at `phase_exit.md` §DP3; follow §5 in order. |
+| 8 | **ADR-010 Wilhelm co-sign** (un-fires G4) · **G5 address** · **G2 Speed-Insights field reading** | ⛩ operator / the world | HAUSSMANN operator queue G2/G4/G5; G4 fired in source 09-24, built not deployed, gate-49 re-baseline discharged 09-25. |
+| 9 | **No push, no CI, no upstream** — `vitrine/design` 45 ahead of `origin/main` (last fetch 09-15), local `main` 5 ahead unpushed | ⛩ operator | Push ≠ deploy (convention 20); each its own GO. Nothing authorized to date. |
 
 
 
@@ -284,6 +307,19 @@ itself. *(Prior value preserved, SO-6: `None.`)*
 > *(the 2026-06-24 keystone-DP2 Next-Steps snapshot (superseded by the ⏭ QUEUED banner above) archive-shifted → [[STATE_archive]] §Shifted-2026-07-02, Champollion M1.5. Historical; live handoff = ⏭ QUEUED above.)*
 
 ## Pending Manual Actions
+
+> **Re-cut 2026-10-03** — the rows below the rule were June-era and said nothing about GARNIER or the v8.12 gate; they are kept (SO-6). The live human acts are these:
+
+- **Three consenting readers** for GARNIER P1.3 C2 (engineer · funder · scientist) → DP3. Agent restarts `:4466` first.
+- **DP3 rulings (a)–(g)** + the P2 option — `how/campaigns/campaign_garnier/phase_exit.md` §DP3.
+- **Open the v8.12 template-release gate** — six §3 questions (P11/P12 added 2026-10-03) at `release_staging_ledger_v8_12.md`; **sign or hold ADR-062** (LinkML housing, the only `proposed` ADR; Vauban's 09-27 ack depends on it).
+- **Talos ADR-002** — accept, correct or refuse each of the three bindings (RC as OIP reference-implementation candidate · RC as the M2.11 ISS runtime home · the consent-prompt shape) before the reply is drafted.
+- **Send GO** for the two 09-16 staged memos (→ hestia homepage purpose descriptions · → vitruvius independent visual review) — re-read 2026-10-03, still current.
+- **Summon Operation Primer O0** (fable) — `how/missions/mission_primer_adna_for_data_engineers.md`.
+- **Andy Zhang on Fluxer** (Fluxer.aDNA / Aspasia, operator-approved per act): join `community.adna.network` · disclosure-roster row → `disclosed` · `dmRoster` · an attachment path or a carried link · register aDNA.aDNA as a consumer vault or route via aDNALabs. Needed before the Primer's O5 delivery can execute.
+- **`git fetch` + a push decision** for `vitrine/design` (45 ahead, no upstream, never through CI; push ≠ deploy).
+
+---
 
 - **ADR-010 Wilhelm co-sign** (carry) — gates the `/commons` un-embargo; first inclusion = the E5-close coordinated deploy (c169).
 - **Hestia: vault-card public fields** — ack `coord_2026_06_10_rosetta_to_hestia_vault_card_public_fields.md` (Harness `display_name` split + optional taglines) → Rosetta regen + next deploy.

@@ -307,9 +307,18 @@ The honesty strata (`/about`, `/community` empty-state candor, zero-count displa
 
 ## Mission index
 
-`missions/` — **33** files, **derived not typed** (`ls missions/mission_haussmann_*.md | wc -l`): **27**
-`mission_haussmann_p{0..5}_*.md` **plus 6 `mission_haussmann_gr_*.md`**, which the `p{0..5}` glob does
+`missions/` — **34** files, **derived not typed** (`ls missions/mission_haussmann_*.md | wc -l`): **27**
+`mission_haussmann_p{0..5}_*.md` **plus 7 `mission_haussmann_gr_*.md`**, which the `p{0..5}` glob does
 **not** match.
+
+> ✅ **RECONCILED 2026-10-03 AT THE MID-CAMPAIGN SITREP — index, disk and charter all read 34.** GR-7's
+> block below *surfaced* `33 → 34` on 2026-09-14 as the operator's to take; the operator-approved SITREP plan
+> (2026-10-03) took it, and it was **performed at the charter in the same sitting**. ⚠ `estimated_sessions`
+> and `calibrated_sessions` **HOLD** — GR-7 carries **no ratified band** (convention-13 pass owed, budget not
+> ratified), so there is no addend to re-derive; both move at GR-7's signature. `phase_count` **HOLDS at 6**.
+> ⚠ The window in which this index (33) disagreed with disk (34) was **19 days**, not the length of an open
+> gate — GR-7 was authored and the two surfaces were left to disagree with nobody at the gate to close it.
+> ~~33~~ · prior note follows:
 
 > ✅ **RECONCILED AT `GR-6`'S SIGNATURE, 2026-09-07 — index, disk and charter all read 33.** The
 > amendment **32 → 33** was surfaced at the gate, ruled, and **performed in the signing commit**, with
