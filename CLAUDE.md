@@ -391,7 +391,7 @@ Extend by adding domain-specific entities under the appropriate triad leg. The b
 | **WHAT** | `comparison` | `what/comparisons/` | aDNA vs. other knowledge architectures (honest positioning) |
 | **WHO** | `community` | `who/community/` | Community roles, contribution paths, governance |
 | **WHO** | `adopter` | `who/adopters/` | Adopter personas and deployment profiles |
-| **WHO** | `reviewer` | `who/reviewers/` | Specialist UX/design reviewer personas (Design Critic, Accessibility Auditor, Content Strategist, Information Architect, Newcomer Stress-Tester, and 11 further specialists (16 total; roster: `who/reviewers/AGENTS.md`)) — invoked during decadal AAR Step 4b |
+| **WHO** | `reviewer` | `who/reviewers/` | Specialist UX/design reviewer personas (Design Critic, Accessibility Auditor, Content Strategist, Information Architect, Newcomer Stress-Tester, and 12 further specialists (17 total — re-derived 2026-10-03 at Primer O0, +`reviewer_data_engineer`; roster: `who/reviewers/AGENTS.md`)) — invoked during decadal AAR Step 4b |
 | **HOW** | `workshop` | `how/workshops/` | Workshop kits and facilitation guides |
 | **HOW** | `publishing` | `how/publishing/` | Vault-to-web content publishing pipeline |
 

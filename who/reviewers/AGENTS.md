@@ -1,7 +1,7 @@
 ---
 type: directory_index
 created: 2026-04-23
-updated: 2026-06-18   # WEBSITE.aDNA P1: 14 → 16 reviewers (+2 campaign_focused: Standard Archivist [axis J], Performance Engineer [axis F] — genuinely new lenses). Prior: M5.9 ecosystem expansion 10 → 14 (+4 ecosystem_focused; full bench 21 → 30); M5.2 expansion 5 → 10 (5 existing_specialist + 5 visual_focused per M5.0 §4)
+updated: 2026-10-03   # Primer O0: 16 → 17 reviewers (+1 external_reader: Data Engineer); count derived from disk
 last_edited_by: agent_stanley
 tags: [directory_index, reviewer, m5_2_bench_expansion, m5_9_ecosystem_expansion, wadna_p1_expansion]
 ---
@@ -10,11 +10,11 @@ tags: [directory_index, reviewer, m5_2_bench_expansion, m5_9_ecosystem_expansion
 
 ## What's Here
 
-Reviewer personas — **16 total** at WEBSITE.aDNA P1 (5 existing_specialist + 5 visual_focused [M5.2] + 4 ecosystem_focused [M5.9] + 2 NEW campaign_focused [WADNA P1]). Archetypal specialist UX/design critics invoked during decadal AAR cycles to supplement the 5-adopter + 6 P5-planned-adopter ranker with an *expert lens*. Adopters represent **audience** ("does this work for my persona?"); reviewers represent **expertise** ("is this well-made, and would a stranger feel welcomed?"). One file per reviewer.
+Reviewer personas — **17 total** (re-derived `ls who/reviewers/reviewer_*.md | wc -l` 2026-10-03: +1 external_reader at Primer O0; was 16 at WEBSITE.aDNA P1: 5 existing_specialist + 5 visual_focused [M5.2] + 4 ecosystem_focused [M5.9] + 2 NEW campaign_focused [WADNA P1]). Archetypal specialist UX/design critics invoked during decadal AAR cycles to supplement the 5-adopter + 6 P5-planned-adopter ranker with an *expert lens*. Adopters represent **audience** ("does this work for my persona?"); reviewers represent **expertise** ("is this well-made, and would a stranger feel welcomed?"). One file per reviewer.
 
 Reviewers are the answer to a gap surfaced in the 2026-04-23 UX heuristic audit (see [[ux_audit_2026_04_23]]): Lighthouse saturates at 100/100/100/100 and the persona ranker moved 4.0 → 4.70 across D1 + D2, yet Delight stayed flat at 4.0 — both automated gates and audience self-assessment miss the "is this well-made?" question that a trained reviewer would catch on first scan. The M5.2 bench expansion adds 5 visual_focused reviewers to address operator priorities at v8 P5 pivot (visual + clarity + conciseness + anti-bloat + explanation-quality push; per `m50_persona_bench_expansion.md`).
 
-## Bench Inventory (16 total — 14 at M5.9 + 2 NEW campaign_focused at WADNA P1)
+## Bench Inventory (17 total — 14 at M5.9 + 2 campaign_focused at WADNA P1 + 1 external_reader at Primer O0)
 
 | Category | Reviewer | Primary Lens | File |
 |---|---|---|---|
@@ -34,6 +34,7 @@ Reviewers are the answer to a gap surfaced in the 2026-04-23 UX heuristic audit 
 | **ecosystem_focused (NEW M5.9)** | Movement Skeptic | trust + comprehension | [[reviewer_movement_skeptic]] |
 | **campaign_focused (NEW WADNA P1)** | Standard Archivist | trust + findability | [[reviewer_standard_archivist]] |
 | **campaign_focused (NEW WADNA P1)** | Performance Engineer | trust + actionability | [[reviewer_performance_engineer]] |
+| **external_reader (NEW Primer O0, 2026-10-03)** | Data Engineer | comprehension + cognitive_load | [[reviewer_data_engineer]] — pipeline/contract/lineage crossmap lens; scores clarity · correctness · crossmap fidelity · excitement |
 
 > **P1 extensions, not new files (WADNA):** the WEBSITE.aDNA campaign's [[../../how/campaigns/campaign_website_adna/CLAUDE.md|persona roster]] names two further lenses — the **Skeptical Frontier Engineer** (3-sec trust verdict; axes A/D) and the **Funder / Program Officer** (FAIR/governance/adopters; axes E/K). These are **sharpened briefs over existing lenses** ([[reviewer_movement_skeptic|Movement Skeptic]] + [[reviewer_brand_strategist|Brand Strategist]] + an adopter), reconciled in the Phase-1 persona sweep — **not authored as bench files.** Only the Standard Archivist (axis J) and Performance Engineer (axis F) were genuinely uncovered and added above.
 
