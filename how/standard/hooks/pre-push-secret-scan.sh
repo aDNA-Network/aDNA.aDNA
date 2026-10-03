@@ -4,7 +4,7 @@
 # Source of record (tracked):   how/standard/hooks/pre-push-secret-scan.sh   (header corrected 2026-10-03; was how/code/hooks/, a path that does not exist)
 # Installed to (untracked):     .git/hooks/pre-push  (a regular COPY of this file, not a symlink — re-copy after editing; corrected 2026-10-03)
 # Engine:                       gitleaks (>= 8.19 for `gitleaks git --log-opts`; tested on 8.30.1)
-# Config / allowlist:           $GITLEAKS_CONFIG → <repo>/git/.gitleaks.toml → <repo>/.gitleaks.toml
+# Config / allowlist:           $GITLEAKS_CONFIG → <repo>/.gitleaks.toml → <repo>/git/.gitleaks.toml   (root-first since 2026-10-03; see the resolution block)
 #                               (F-W3-a: this vault's ROOT .gitleaks.toml is authoritative;
 #                               git/.gitleaks.toml is intentionally not staged — the search
 #                               order is kept identical to the federated Git.aDNA skeleton.)
@@ -81,9 +81,15 @@ if ! command -v gitleaks >/dev/null 2>&1; then
 fi
 
 # Config search order — identical to the federated skeleton (F-W3-a).
+# Resolution order corrected 2026-10-03 (push sitting): ROOT config FIRST, skeleton second. The
+# header above has said since Aug 28 that the root .gitleaks.toml is authoritative (F-W3-a), but
+# the code checked git/.gitleaks.toml first — and that file exists on disk (the federated Git.aDNA
+# skeleton, 1.4 KB, no allowlists), so every push since the hook's install scanned with the
+# skeleton's config and none of the root allowlists ever applied. Found when the 12→0 allowlist
+# proved green on the command line and the hook still blocked with 12.
 if   [[ -n "${GITLEAKS_CONFIG:-}" ]];          then config="$GITLEAKS_CONFIG"
-elif [[ -f "$REPO_ROOT/git/.gitleaks.toml" ]]; then config="$REPO_ROOT/git/.gitleaks.toml"
 elif [[ -f "$REPO_ROOT/.gitleaks.toml" ]];     then config="$REPO_ROOT/.gitleaks.toml"
+elif [[ -f "$REPO_ROOT/git/.gitleaks.toml" ]]; then config="$REPO_ROOT/git/.gitleaks.toml"
 else config=""
 fi
 CFG_ARGS=()
