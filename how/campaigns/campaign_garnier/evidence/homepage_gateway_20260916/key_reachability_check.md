@@ -1,7 +1,7 @@
 ---
 type: evidence
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-03
 status: active
 last_edited_by: agent_rosetta
 tags: [garnier, p1, formative, stimulus, reachability]
@@ -24,6 +24,8 @@ Checkout `~/.cache/garnier-homepage-20260916` at `6487444a365c9c89fabfd61a1ac1ef
 clean. Preview restarted (`npx astro preview --port 4466 --host 127.0.0.1` from the checkout's `site/`,
 existing `dist/`). All **15 routes** in `proposed_formative_stimulus_6487444.json` fetched and
 sha256-compared: **15 MATCH / 0 MISMATCH** (method: response-body sha256, same as `frozen_check_close.txt`).
+
+[D] **Re-verified 2026-10-03T21:40Z** (`session_stanley_20261003_213535_garnier_rulings_and_lanes`): the preview was found DOWN at the 2026-10-03 SITREP (connection refused) and restarted with the same command from the same untouched `dist/`; checkout clean at `6487444`; **15 MATCH / 0 MISMATCH** again. ⚠ The preview is a foreground `node` process, not a service — it dies with the shell that started it, so it must be restarted (and these 15 hashes re-checked) immediately before each reader sitting, never assumed up from a prior record.
 
 ## Method
 
