@@ -30,6 +30,8 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
 - ⭐ **[[mission_primer_adna_for_data_engineers]] — Operation Primer — AUTHORED + QUEUED** (standalone, `how/missions/`, **fable**, ≈420 ± 120 kT, O0–O5): a reusable "aDNA for data engineers" primer + a cover note for Andy Zhang (`zhang8128`), six-lens review ×2 incl. a new `reviewer_data_engineer`, write-gate scrub, operator read gate, PDF, then a delivery memo to Aspasia (Fluxer.aDNA). ⚠ Delivery preconditions measured 2026-10-03: Emissary is text-only to `#agent-comms`; Andy is pre-roster; aDNA.aDNA is not a registered consumer vault — hers to clear, operator-approved per act.
 - **GARNIER precondition found**: the `6487444` preview on `:4466` is **not running** (connection refused) — restart + re-verify 15/15 hashes before any reader is scheduled. Isolated checkout clean; nothing touched.
 
+⛩ **Rosetta's recommendations on every open ADR / gate / GO are in [[operator_rulings_packet_20261003]]** (`how/missions/artifacts/`, 14 rows A1–A3 · B1–B5 · C1–C6, each with an empty §7.7 block; authored 2026-10-03 on the operator's request; nothing pre-decided). Rule there or from an ISS gate authored from it.
+
 **Resume-Here:** two lanes. **Human-owed (unchanged)**: P1.3 C2 — Stanley supplies three consenting readers → two-scorer key → DP3 per `phase_exit.md` §5 (don't rebuild the packet) · DP3 rulings (a)–(g) · G5 address · G2 Speed Insights · ADR-010 co-sign · fetch + push decision (`vitrine/design` 45 ahead, no upstream, never CI'd). **Agent-reachable, operator-summoned**: (1) **Operation Primer O0** (fable) — `how/missions/mission_primer_adna_for_data_engineers.md`; (2) a **reply sitting** — talos G10 (by ~10-07) · ledoux (HIGH + 11 asks) · vauban (3·4 ack) · talos ADR-002 (bindings need the operator's call first) · berthier · ariel ×3; (3) the v8.12 gate when the operator opens it (now 6 questions). Owed-send pending GO: the two 09-16 staged memos (hestia · vitruvius), still current.
 
 ### 2026-09-24 (c) — DP3 pre-assembled; reader slot PENDING
@@ -308,7 +310,7 @@ itself. *(Prior value preserved, SO-6: `None.`)*
 
 ## Pending Manual Actions
 
-> **Re-cut 2026-10-03** — the rows below the rule were June-era and said nothing about GARNIER or the v8.12 gate; they are kept (SO-6). The live human acts are these:
+> **Re-cut 2026-10-03** — the rows below the rule were June-era and said nothing about GARNIER or the v8.12 gate; they are kept (SO-6). The live human acts are these — **each with a recommendation in [[operator_rulings_packet_20261003]]** (A1 ADR-062 · A2 Talos bindings · A3 Wilhelm · B1 DP3 · B2 v8.12 · B3 G2 · B4 G5 · B5 readers · C1 push · C2 deploy · C3 sends · C4 replies · C5 Primer · C6 Andy/Fluxer):
 
 - **Three consenting readers** for GARNIER P1.3 C2 (engineer · funder · scientist) → DP3. Agent restarts `:4466` first.
 - **DP3 rulings (a)–(g)** + the P2 option — `how/campaigns/campaign_garnier/phase_exit.md` §DP3.
