@@ -184,7 +184,7 @@
     {
       "id": "registry-generated-at",
       "class": "status",
-      "claim": "the registry was last regenerated on 2026-08-17",
+      "claim": "the registry was last regenerated on 2026-10-04",
       "rendered_on": [
         "/state-of-the-network"
       ],
@@ -194,13 +194,13 @@
         "kind": "json_field",
         "accessor": "generated_at"
       },
-      "expected": "2026-08-17",
+      "expected": "2026-10-04",
       "_note": "The disclosure surface dates its own counts. Owner is pt19: the date moves when the registry data owner regenerates, and this fixture follows that committed value — it is never hand-set to make the page look fresher."
     },
     {
       "id": "subnetworks-generated-at",
       "class": "status",
-      "claim": "subnetwork records were last synced on 2026-07-06",
+      "claim": "subnetwork records were last synced on 2026-10-04",
       "rendered_on": [
         "/state-of-the-network"
       ],
@@ -210,8 +210,8 @@
         "kind": "json_field",
         "accessor": "generated_at"
       },
-      "expected": "2026-07-06",
-      "_note": "Deliberately surfaced even though it lags the registry by weeks. The page says so in words ('older than the registry above, and shown rather than hidden'). Do not regenerate the fixture to close the gap cosmetically — the gap is an honest signal about the pace of the thing being described."
+      "expected": "2026-10-04",
+      "_note": "Moved 2026-10-04 with the ruled sync:vaults regeneration (GARNIER (h)) — the same run writes subnetworks.json, so the two dates now coincide; the lag this note described is history, kept: Deliberately surfaced even though it lags the registry by weeks. The page says so in words ('older than the registry above, and shown rather than hidden'). Do not regenerate the fixture to close the gap cosmetically — the gap is an honest signal about the pace of the thing being described."
     }
   ]
 }

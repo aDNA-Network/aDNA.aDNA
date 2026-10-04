@@ -309,8 +309,25 @@ test.describe('gate-35 registry lifecycle tiers', () => {
     // ADR-053's a11y clause: decorative marks are aria-hidden and must therefore never carry the
     // meaning alone. The test of that is that REMOVING every mark loses nothing — so each absent
     // sentence has to be present in its own right.
-    for (const sentence of ['No persona recorded', 'No public description yet.', 'No card written yet']) {
-      expect(html.includes(sentence), `the absent sentence "${sentence}" is missing from the page`).toBe(true);
+    // Each sentence is owed only while some non-minimal row actually has that absence — derived from
+    // the registry, not assumed. (2026-10-04, GARNIER (h): the ruled sync:vaults regeneration gave every
+    // admitted row a card and a public description, so "No public description yet." and "No card
+    // written yet" legitimately render nowhere; asserting them unconditionally would have made the
+    // gate red on complete data, which is the inverse of what it guards.)
+    const nonMinimal = registry.vaults.filter((v: any) => v.listing !== 'minimal');
+    const owed: Array<[string, boolean]> = [
+      ['No persona recorded', nonMinimal.some((v: any) => absences(v).persona)],
+      ['No public description yet.', nonMinimal.some((v: any) => absences(v).purpose)],
+      ['No card written yet', nonMinimal.some((v: any) => absences(v).card)],
+    ];
+    expect(owed.some(([, o]) => o), 'no absence of any kind in the registry — this direction is untested').toBe(true);
+    for (const [sentence, isOwed] of owed) {
+      expect(
+        html.includes(sentence),
+        isOwed
+          ? `the absent sentence "${sentence}" is missing from the page`
+          : `the absent sentence "${sentence}" renders although no non-minimal row has that absence`,
+      ).toBe(isOwed);
     }
 
     // Every mark is hidden from assistive technology, with no exceptions.

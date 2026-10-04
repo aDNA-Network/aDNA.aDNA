@@ -5,6 +5,7 @@
  * Reads:
  *   - ../Home.aDNA/what/inventory/inventory_vaults.yaml (canonical inventory)
  *   - ../Home.aDNA/what/vault_cards/the_*.aDNA.md (vault_card frontmatter overlays)
+ *   - site/src/data/registry_admission.yaml (the ADMITTED set — ADR-052 §admission; rows not on it are HELD)
  *
  * Writes:
  *   - site/src/data/vaults.json (projected data; committed)
@@ -46,7 +47,25 @@ if (!fs.existsSync(INVENTORY_YAML)) {
 // Parse canonical inventory
 const inventoryRaw = fs.readFileSync(INVENTORY_YAML, 'utf-8');
 const inventory = yaml.parse(inventoryRaw);
-const inventoryVaults = inventory.vaults || [];
+const inventoryVaultsAll = inventory.vaults || [];
+
+// ── Registry admission (ADR-052 §admission / §tiers.6) ────────────────────────────────────────
+// A public listing is a per-row operator ruling, never a side effect of running this script. The
+// admitted set lives in site/src/data/registry_admission.yaml (with its rulings log); every
+// inventory row NOT on it is HELD and named on stderr, so the omission is loud and the admission
+// is impossible to do by accident. Ruled 2026-10-04 (grandfather the 74) — see the yaml header.
+const ADMISSION_YAML = path.join(PROJECT_ROOT, 'site/src/data/registry_admission.yaml');
+const admission = yaml.parse(fs.readFileSync(ADMISSION_YAML, 'utf-8'));
+const admitted = new Set((admission && admission.admitted) || []);
+if (admitted.size === 0) {
+  console.error('[build_vaults_data] FATAL: registry_admission.yaml has no `admitted:` rows — refusing to project an empty registry.');
+  process.exit(1);
+}
+const inventoryVaults = inventoryVaultsAll.filter((v) => admitted.has(v.name));
+const heldRows = inventoryVaultsAll.filter((v) => !admitted.has(v.name)).map((v) => v.name).sort();
+const missingRows = [...admitted].filter((n) => !inventoryVaultsAll.some((v) => v.name === n)).sort();
+console.error(`[build_vaults_data] admission: ${inventoryVaultsAll.length} inventory rows → ${inventoryVaults.length} admitted; HELD (admission_pending, ADR-052 §tiers.6): ${heldRows.length}${heldRows.length ? ' — ' + heldRows.join(', ') : ''}`);
+if (missingRows.length) console.error(`[build_vaults_data] WARN: admitted but absent from the inventory: ${missingRows.join(', ')}`);
 
 // Compute canonical SHA for drift detection (ADR-023 Clause C)
 const inventorySha = crypto.createHash('sha256').update(inventoryRaw).digest('hex').slice(0, 16);
@@ -123,6 +142,22 @@ function splitSentences(text) {
 }
 
 const parensBalanced = (s) => (s.match(/\(/g) || []).length === (s.match(/\)/g) || []).length;
+
+// R-125 counsel embargo (HAUSSMANN claim register, ⊳ D-C; gate-23 asserts it on every HomeHero route,
+// /vaults/ included): the term "Lattice Protocol" is CUT from public surfaces until counsel rules at
+// D-8 — it may be neither defined nor linked, so it cannot be repaired by adding a gloss. A tagline or
+// note that carries it is therefore withheld whole (honest-absent, never trimmed), and the row is
+// named on stderr so the owner (Hestia's card / inventory text) can reword it. First tripped
+// 2026-10-04 (GARNIER (h) sync): Molecules.aDNA + LatticeProtocol.aDNA taglines. When D-8 rules,
+// delete this list and flip gate-23 back to a presence check — both in one diff.
+const R125_EMBARGOED_TERMS = [/\bLattice Protocol\b/i];
+function withholdEmbargoed(value, vault, field) {
+  if (typeof value !== 'string' || !value) return value || null;
+  const hit = R125_EMBARGOED_TERMS.find((re) => re.test(value));
+  if (!hit) return value;
+  console.error(`[build_vaults_data] R-125: ${vault}.${field} carries the embargoed term (${hit}) — withheld whole (honest-absent); reword at the source to publish it`);
+  return null;
+}
 
 function publicNote(note) {
   if (!note) return null;
@@ -206,7 +241,7 @@ function projectVault(invVault) {
     vault_slug: slugOf(card.vault_slug || slug),
     display_name: card.display_name || invVault.display_name || slug.replace(/\.aDNA$/, ''),
     full_name: card.full_name || null,
-    tagline: card.tagline || null,
+    tagline: withholdEmbargoed(card.tagline || null, slug, 'tagline'),
 
     // Class + persona (inventory primary; card overlay). Persona placeholders normalize to null —
     // a card's '—' must not shadow a real inventory persona, hence the per-source normalize.
@@ -241,7 +276,7 @@ function projectVault(invVault) {
 
     // Provenance
     last_synced: card.last_synced || null,
-    note: publicNote(invVault.note),
+    note: withholdEmbargoed(publicNote(invVault.note), slug, 'note'),
 
     // Schema metadata
     schema_version: card.schema_version || '0.1',

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06",
+  "generated_at": "2026-10-04",
   "schema_version": "0.1",
   "subnetwork_count": 4,
   "subnetworks": [
@@ -16,10 +16,10 @@
           "canonical_governance": "wga.aDNA/CLAUDE.md",
           "class": "org_vault",
           "display_name": "wga",
-          "persona": null,
+          "persona": "berthier",
           "status": "pending",
           "vault": "wga.aDNA",
-          "vault_slug": "wga.aDNA"
+          "vault_slug": "wga"
         }
       ],
       "public_url": "https://worldgeno.me",
@@ -44,7 +44,7 @@
           "persona": null,
           "status": "pending",
           "vault": "ContextCommons.aDNA",
-          "vault_slug": "ContextCommons.aDNA"
+          "vault_slug": "contextcommons"
         }
       ],
       "public_url": null,
@@ -69,7 +69,7 @@
           "persona": "Hygieia",
           "status": "pending",
           "vault": "WilhelmAI.aDNA",
-          "vault_slug": "WilhelmAI.aDNA"
+          "vault_slug": "wilhelmai"
         }
       ],
       "public_url": null,
@@ -94,7 +94,7 @@
           "persona": "Mnemosyne",
           "status": "pending",
           "vault": "RareArchive.aDNA",
-          "vault_slug": "RareArchive.aDNA"
+          "vault_slug": "rarearchive"
         }
       ],
       "public_url": "https://github.com/Wilhelm-Foundation/rare-archive",

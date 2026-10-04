@@ -1,0 +1,99 @@
+# registry_admission.yaml — which inventory rows the public registry projection ADMITS.
+#
+# ADR-052 §admission (DP4, operator 2026-08-16): what earns a public listing is a per-row operator
+# ruling with Hestia's B7 data pass — never a side effect of `sync:vaults`. ADR-052 §tiers.6 stated
+# the open case (77 inventory rows vs 74 listed) and `site/src/data/vaults.ts` refused to regenerate
+# for the same reason. On 2026-10-04 (GARNIER sitting (h)) the inventory carried 102 rows against
+# the committed 74; a regeneration would have listed 28 unruled vaults, 22 of them private or
+# without a remote, 5 data-bearing. ⛩ Operator ruling 2026-10-03 PDT (plan-time AskUserQuestion,
+# session_stanley_20261004_045208_garnier_h_sync_vaults_send_channel_proof_primer_sweep):
+# GRANDFATHER THE 74 — the committed set is the admitted set; every other regeneration change for
+# those rows (canonical slugs, taglines, cards, the four purpose notes, status flips) lands; the
+# 28 stay out as `admission_pending` until ruled per row (Hestia B7 data ask sent the same sitting).
+#
+# `scripts/build_vaults_data.mjs` filters the inventory by this list and prints every HELD row to
+# stderr on each run, so a silent admission is impossible and a silent omission is loud.
+# Admitting a vault = one line here + the ruling that put it there (date · who), nothing else.
+# Removing a vault from the public projection is ALSO a per-row ruling (ADR-052 §admission).
+admitted:
+  - aDNA.aDNA
+  - aDNALabs.aDNA
+  - aiLP-Dataroom.aDNA
+  - APScheduler.aDNA
+  - Astro.aDNA
+  - AWSBootstrap.aDNA
+  - Bitwarden.aDNA
+  - Caddy.aDNA
+  - CakeHealth.aDNA
+  - CakeProtocol.aDNA
+  - Canvas.aDNA
+  - ComfyUI.aDNA
+  - Container.aDNA
+  - Context.aDNA
+  - ContextCommons.aDNA
+  - D3.aDNA
+  - Dashboards.aDNA
+  - Datarooms.aDNA
+  - Datasets.aDNA
+  - Emacs.aDNA
+  - Exchange.aDNA
+  - FastAPI.aDNA
+  - Fluxer.aDNA
+  - Forgejo.aDNA
+  - Git.aDNA
+  - GOTFN.aDNA
+  - Groupware.aDNA
+  - Harness.aDNA
+  - Home.aDNA
+  - III.aDNA
+  - Inference.aDNA
+  - Jupyter.aDNA
+  - LatticeProtocol.aDNA
+  - LAVentureGraph.aDNA
+  - Lighthouse.aDNA
+  - LlamaCppForge.aDNA
+  - MagnaPetra.aDNA
+  - Molecules.aDNA
+  - Nebula.aDNA
+  - Neo4j.aDNA
+  - Network.aDNA
+  - Nextcloud.aDNA
+  - Obsidian.aDNA
+  - Operations.aDNA
+  - Oration.aDNA
+  - Organization.aDNA
+  - PercySleep.aDNA
+  - Prefect.aDNA
+  - RareAnthropic.aDNA
+  - RareArchive.aDNA
+  - React.aDNA
+  - RealityScan.aDNA
+  - Regenesis.aDNA
+  - RemoteControl.aDNA
+  - ScienceStanley.aDNA
+  - Spacemacs.aDNA
+  - Store.aDNA
+  - SuperLeague.aDNA
+  - Tailwind.aDNA
+  - TappProtocol.aDNA
+  - Terminal.aDNA
+  - ThreeJS.aDNA
+  - TypeScript.aDNA
+  - VAAS.aDNA
+  - Vercel.aDNA
+  - Videos.aDNA
+  - VisualDNA.aDNA
+  - Warp.aDNA
+  - WebForge.aDNA
+  - wga.aDNA
+  - WilhelmAI.aDNA
+  - WorldGenome.aDNA
+  - ZenZachary.aDNA
+  - zeta.aDNA
+
+# Rulings log (append-only; the list above is the state, this is why)
+rulings:
+  - date: 2026-10-04
+    by: stanley (operator)
+    decision: "grandfather — the 74 committed as of a1744c4 are admitted; 28 inventory rows held admission_pending"
+    where: how/sessions/history/2026-10/session_stanley_20261004_045208_garnier_h_sync_vaults_send_channel_proof_primer_sweep.md

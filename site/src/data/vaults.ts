@@ -31,6 +31,15 @@
  * reintroduce a mixed-case URL. The law is enforced where routes are built, not
  * where data is written.
  *
+ * ⛩ ADDENDUM 2026-10-04 (GARNIER sitting (h)): the regeneration this header refused DID run, under
+ * the operator's ruling and with the admission question answered the way this header asked for —
+ * `site/src/data/registry_admission.yaml` now names the ADMITTED set (the 74, grandfathered) and the
+ * generator holds every other inventory row (28 that day) on stderr as `admission_pending`
+ * (ADR-052 §admission / §tiers.6). `vaults.json` therefore carries canonical slugs at the data
+ * layer too; `canonicalVaultSlug()` stays the law at the read boundary exactly as argued above —
+ * idempotent on already-canonical input, and still the only thing standing between a future
+ * mixed-case card and a 404. The paragraph above is kept as the record of why the regen waited.
+ *
  * Every consumer imports from here rather than from `vaults.json` directly;
  * gate-30 asserts no site source imports the raw JSON and that every emitted
  * vault route is canonical.
