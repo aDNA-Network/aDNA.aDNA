@@ -2,16 +2,16 @@
 type: context
 title: "aDNA Standard Reading Guide"
 created: 2026-03-19
-updated: 2026-05-29
+updated: 2026-10-04   # I-04 (primer follow-up sweep): the line count was typed (1,336) against a 1,522-line file — now derived and dated
 status: active
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [adna, standard, reading-guide, navigation]
 token_estimate: 2200
 ---
 
 # aDNA Standard Reading Guide
 
-The [aDNA Universal Standard](adna_standard.md) is 1,336 lines. You don't need all of them. This guide maps three reading paths by reader intent, provides a section-by-section table of contents, and disambiguates the skill/lattice dual identity.
+The [aDNA Universal Standard](adna_standard.md) runs to roughly 1,500 lines (`wc -l` → 1,522 on 2026-10-04; a derived count — re-derive it, this sentence lags the file by design). You don't need all of them. This guide maps three reading paths by reader intent, provides a section-by-section table of contents, and disambiguates the skill/lattice dual identity.
 
 ---
 

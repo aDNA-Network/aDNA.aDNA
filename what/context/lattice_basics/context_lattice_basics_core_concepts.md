@@ -3,7 +3,7 @@ type: context_core
 topic: lattice_basics
 subtopic: core_concepts
 created: 2026-03-05
-updated: 2026-07-02
+updated: 2026-10-04   # I-03 (primer follow-up sweep): "Autonomous DNA" → "Agentic DNA" — the expansion the standard and the workspace router use
 sources: ["aDNA Standard v2.3 (what/docs/adna_standard.md)", "aDNA Design Document (what/docs/adna_design.md)", "adna_core lattice_design context", "hello_world.lattice.yaml example", "type_vocabulary context"]
 context_version: "2.0"
 token_estimate: ~1000
@@ -24,7 +24,7 @@ status: active
 
 ## What is aDNA?
 
-**aDNA** (Autonomous DNA) is a framework for organizing human-AI collaborative work. It provides:
+**aDNA** (Agentic DNA) is a framework for organizing human-AI collaborative work. It provides:
 
 1. **A vault structure** (who/what/how triad) — the knowledge graph
 2. **Object types** (modules, datasets, lattices) — composable building blocks

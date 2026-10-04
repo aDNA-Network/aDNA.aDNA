@@ -2,13 +2,15 @@
 type: context
 title: "Federation Walkthrough — Two aDNA Instances Exchanging a Lattice"
 created: 2026-03-20
-updated: 2026-03-20
-last_edited_by: agent_init
+updated: 2026-10-04   # I-12 banner only — body unchanged
+last_edited_by: agent_rosetta
 status: approved
 tags: [context, federation, walkthrough, interop]
 ---
 
 # Federation Walkthrough
+
+> ⚠ **Predates the topology (noted 2026-10-04, primer follow-up sweep I-12).** Written 2026-03-20 for two generic instances; the network it would run on today has a master graph (`Network.aDNA`), an exchange (`Exchange.aDNA`), deployable nodes (`Lighthouse.aDNA`) and wrapper placement fixed by ADR-045. The steps still demonstrate the exchange *mechanism* against `lattice_federation.md`; they do not describe the live topology. See the banner on that specification for where the map now lives.
 
 > A step-by-step demonstration of two aDNA instances exchanging a lattice artifact via the federation protocol.
 

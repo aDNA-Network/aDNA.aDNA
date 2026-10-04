@@ -224,7 +224,7 @@ This graph federates **Git.aDNA** (Grace Hopper) for platform-agnostic git/forge
 3. **Outward actions are gated** — creating remotes, pushing, cutting releases, configuring mirrors, and migrating hosts require operator confirmation. Never improvised.
 4. **Credentials via the Home.aDNA broker; never inlined** — host→env-var (`GITHUB_TOKEN`/`CODEBERG_TOKEN`/`FORGEJO_TOKEN`); tokens never transit the conversation (ADR-007).
 5. **CI is portable-first** — author workflows in `.github/workflows/` syntax (Forgejo falls back to it); add a `.forgejo/workflows/` variant only where a delta requires it (ADR-008).
-6. **Cross-graph writes are staged as coord memos** — never silently write into another vault (workspace Rule 10).
+6. **Cross-graph writes are staged as coord memos** — never silently write into another vault (HAUSSMANN convention 10, `how/campaigns/campaign_haussmann/CLAUDE.md`; ⚠ this line said "workspace Rule 10" until 2026-10-04 — the workspace router has nine Standing Rules and no tenth; the rule is real, the number dangled — primer follow-up sweep I-11).
 7. **Secret hygiene** — `gitleaks` pre-push hook on every push; a **full-history scan is a hard gate before any host move** (ADR-011); a finding blocks the move until purged + the credential is rotated.
 8. **Sandbox git reads set `GIT_OPTIONAL_LOCKS=0`** — any git probe from a sandboxed/parallel context (Cowork sandboxes, read-only recon lanes) runs with optional locks off, so a killed probe cannot litter `index.lock` into a tree carrying another lane's WIP. *(Slipway P-7, adopted at Champollion G6 2026-07-03; incident-derived — 3 vaults lock-littered HQ-side; image-side fold rides the next release.)*
 

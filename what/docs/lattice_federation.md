@@ -3,9 +3,9 @@ type: specification
 title: "Lattice Federation & Sharing Protocol"
 version: "1.0.0"
 created: 2026-02-19
-updated: 2026-02-19
+updated: 2026-10-04   # I-12 banner only — body unchanged (predates Network · Exchange · Lighthouse · ADR-045)
 status: active
-last_edited_by: agent_init
+last_edited_by: agent_rosetta
 token_estimate: ~8000
 tags: [specification, federation, sharing, composition, uri-scheme, lattice-yaml]
 banner: "who/assets/banners/banner_what.jpg"
@@ -13,6 +13,8 @@ icon: share-2
 ---
 
 # Lattice Federation & Sharing Protocol
+
+> ⚠ **Predates the topology (noted 2026-10-04, primer follow-up sweep I-12).** This specification (v1.0.0, 2026-02-19) knows no `Network.aDNA` (the live aggregate of nodes), no `Exchange.aDNA` (Registry · Commons · Market), no `Lighthouse.aDNA` (deployable node), and no ADR-045 placement of federation wrappers at `how/federation/<software>/`. Its URI scheme and composition rules still describe the *mechanism*; the *who-federates-with-whom* layer now lives in the workspace router (`~/aDNA/CLAUDE.md` §Project Discovery), `spec_forge_ecosystem.md` / `spec_platform_ecosystem.md`, and ADR-039 / ADR-045. Read it as the protocol layer, not as the map. Kept active rather than retired because nothing else states the mechanism in one place; a refresh is a standard v2.6-window item.
 
 ## 1. Overview
 

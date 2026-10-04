@@ -4,7 +4,7 @@ type: plan
 title: "Primer follow-up sweep — discharge the 17 source inconsistencies the primer exposed (I-01 … I-17), each at its object, never in the primer"
 created: 2026-10-04
 updated: 2026-10-04
-status: queued   # stub authored at Primer O5 (2026-10-04); opens operator-summoned; the three standard-level items (I-15 · I-16 · I-17) are errata candidates for the standard v2.6 window and need their own §7.7
+status: in_progress   # OPENED 2026-10-04 (h) — operator selected lane D at the plan gate (session_stanley_20261004_045208_garnier_h_sync_vaults_send_channel_proof_primer_sweep). ⚠ Declared executor_tier opus; EXECUTED ON FABLE at the operator's selection — recorded, not hidden. Was: queued (stub authored at Primer O5, 2026-10-04); the three standard-level items (I-15 · I-16 · I-17) are errata candidates for the standard v2.6 window and need their own §7.7
 last_edited_by: agent_rosetta
 executor_tier: opus            # mechanical-to-mid-judgment: each row names its object and its fix; the three standard errata escalate to fable at the gate
 executor_runtime: claude
