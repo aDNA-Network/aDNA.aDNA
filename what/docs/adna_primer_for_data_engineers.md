@@ -1,13 +1,13 @@
 ---
 type: doc
 title: "aDNA for data engineers — a primer"
-version: "0.1"
+version: "0.2"
 status: draft
 created: 2026-10-03
-updated: 2026-10-03
+updated: 2026-10-04   # v0.2 — review round 1 applied (23 correctness · 15 clarity · 8 diagram rows); the one allowed restructure (§5.1 → table) taken; §4.5 → table; §6 → three incident→check bullets
 last_edited_by: agent_rosetta
 audience: data_engineer
-reading_time_minutes: 25
+reading_time_minutes: 36   # DERIVED 2026-10-04 by script: 6734 prose words / 220 wpm + 5 figures × 1 min, rounded up — never typed
 spec_version_cited: "aDNA Standard v2.5"
 tags: [doc, primer, data_engineer, dual_audience, crossmap, external_reader]
 ---
@@ -16,11 +16,13 @@ tags: [doc, primer, data_engineer, dual_audience, crossmap, external_reader]
 
 *A primer for people who already run pipelines, contracts, lineage and catalogs, and want to know what this is, what it does for them, and which parts are actually the rules.*
 
+A note on words used throughout: an **operator** is the human who owns a project and takes its binding decisions; an **agent** is an AI model running with tools inside that project; a **vault** (also called a **graph**) is one project organised the aDNA way; a **node** is one machine that hosts vaults. A **persona** is the named role an agent plays in a given vault, declared in that vault's root file.
+
 ---
 
 ## 0. In one paragraph
 
-aDNA (Agentic DNA) is a standard for organising a project's knowledge so that AI agents and humans can both find their way around it. It is folders, Markdown files and a handful of conventions. Every project gets three directories, `who/`, `what/` and `how/`, four short governance files at the root, and YAML frontmatter on every content file. An agent opening the project reads the governance files first, then only the directory it is working in. That is the whole trick: the structure tells the agent what to load, so it never has to read everything. On top of the standard sits a layer of *practice*, built by the people running it day to day: how work is budgeted in tokens, how agents coordinate without overwriting each other, and how many such projects federate into a network. This document covers both, and the closing appendix says plainly which is which.
+aDNA (Agentic DNA) is a standard for organising a project's knowledge so that AI agents and humans can both find their way around it. It is folders, Markdown files and a handful of conventions. Every project gets three directories, `who/`, `what/` and `how/`, five short governance files at the root (four required, one recommended), and YAML frontmatter on every content file. An agent opening the project reads the governance files first, then only the directory it is working in. That is the whole trick: the structure tells the agent what to load, so it never has to read everything. On top of the standard sits a layer of *practice*, built by the people running it day to day: how work is budgeted in tokens, how agents coordinate without overwriting each other, and how many such projects federate into a network. This document covers both, and the closing appendix says plainly which is which.
 
 ## 1. The problem: context for agents is a data problem
 
@@ -28,33 +30,14 @@ You already know what happens to an undocumented pipeline. It runs until someone
 
 Context for AI agents fails the same four ways.
 
-| Axis | The undocumented pipeline | The undocumented agent context |
-|---|---|---|
-| **Schema** | Column types drift; consumers break silently | Prompts and chat logs have no shape; a decision and a draft look the same |
-| **Provenance** | Nobody knows where a number came from | Nobody knows whether a claim was verified, inferred, or copied |
-| **Freshness** | A stale snapshot looks like a current one | A status note from March reads exactly like one from today |
-| **Access control** | Credentials in a config file somewhere | A secret pasted into a conversation, now in a transcript forever |
+| Axis | The undocumented pipeline | The undocumented agent context | What aDNA gives it |
+|---|---|---|---|
+| **Schema** | Column types drift; consumers break silently | Prompts and chat logs have no shape; a decision and a draft look the same | Frontmatter on every file |
+| **Provenance** | Nobody knows where a number came from | Nobody knows whether a claim was verified, inferred, or copied | Attribution fields; provenance tags on findings |
+| **Freshness** | A stale snapshot looks like a current one | A status note from March reads exactly like one from today | An `updated` field checked before every write |
+| **Access control** | Credentials in a config file somewhere | A secret pasted into a conversation, now in a transcript forever | Secrets referenced by name, never by value |
 
-Most teams' first attempt at agent context is a long system prompt and a folder of notes. That is a pipeline built from one giant SQL file and a wiki page. It works for one person for one month.
-
-```mermaid
-flowchart LR
-  subgraph P["An undocumented pipeline"]
-    direction TB
-    p1["Schema drift"] --> p2["Lineage lost"]
-    p2 --> p3["Freshness unknown"]
-    p3 --> p4["Access by folklore"]
-  end
-  subgraph C["Undocumented agent context"]
-    direction TB
-    c1["Prompts with no shape"] --> c2["Claims with no source"]
-    c2 --> c3["Stale notes read as current"]
-    c3 --> c4["Secrets in transcripts"]
-  end
-  P -. "same failure, same fix:\nschema, provenance, freshness, access" .-> C
-```
-
-aDNA treats agent context as data: it gets a schema (frontmatter), provenance (attribution and tags), freshness (an `updated` field checked before every write), and access control (secrets referenced by name, never by value). The rest of this document is how.
+Most teams' first attempt at agent context is a long system prompt and a folder of notes. That is a pipeline built from one giant SQL file and a wiki page. It works for one person for one month. aDNA treats agent context as data; the rest of this document is how.
 
 ## 2. The vault standard
 
@@ -70,13 +53,13 @@ Every vault has three top-level directories (Standard §3.1):
 | `how/` | How does this project **work**? | Missions, sessions, templates, pipelines, skills |
 | `who/` | Who is **involved**? | People, teams, coordination notes, governance |
 
-Any piece of project knowledge belongs in exactly one of the three. When unsure, apply the question test: is this about what we know, how we work, or who is involved? Three categories are deliberately few; more create sorting ambiguity.
+Any piece of project knowledge belongs in exactly one of the three. Three categories are deliberately few; more create sorting ambiguity.
 
-The three can sit at the project root (a **bare** triad) or inside a `.agentic/` folder in an existing code repository (an **embedded** triad). The ontology is identical; only the nesting differs (§3.2–§3.4). A vault directory should carry the `.aDNA` suffix, the way a macOS bundle carries `.app`, so tools can discover vaults with a glob (§3.5).
+The three can sit at the project root (a **bare** triad) or inside a `.agentic/` folder in an existing code repository (an **embedded** triad). The ontology is identical; only the nesting differs (§3.2–§3.4). A vault directory should carry the `.aDNA` suffix, the way a macOS bundle carries `.app`, so tools can discover vaults with a glob (§3.5). The standard also gives the name part a pattern (lowercase, digits, underscores); in practice the pattern is honoured loosely, and the one vault named in this document would fail it.
 
-### 2.2 The four files an agent reads first
+### 2.2 The files an agent reads first
 
-At the root sit a few ALLCAPS governance files (§4.1). Four matter to an agent on every session:
+At the root sit five ALLCAPS governance files (§4.1). Four are required; `STATE.md` is recommended, and a vault at the lowest conformance level may lack it (§5.5).
 
 | File | Job | Changes |
 |---|---|---|
@@ -84,49 +67,48 @@ At the root sit a few ALLCAPS governance files (§4.1). Four matter to an agent 
 | `STATE.md` | Where the project **is right now**: phase, blockers, recent decisions, next steps | Every session close |
 | `MANIFEST.md` | What the project **is**: identity, architecture, entry points | Rarely |
 | `AGENTS.md` | Per-directory guide: purpose, key files, local conventions | When a directory changes |
+| `README.md` | For humans browsing the repository | When onboarding changes |
 
-A fifth, `README.md`, is for humans browsing the repository.
+About the first name: the standard names the root file after the agent CLI that auto-loads it, Claude Code (§4.2). The *structure* is vendor-neutral; the *filename* is not. Other agent tools read `AGENTS.md`, which is a widely used convention, or are pointed at `CLAUDE.md` by a one-line include. If you run a different agent, expect to add that line.
 
 The design point is the split between rules and state. A rule that should still be true in six months lives in `CLAUDE.md`; a fact about this week lives in `STATE.md`. If you have had a `README` that mixed "how to deploy" with "currently broken, see Dave", you know why these are separate.
 
-The standard prescribes a five-step agent quickstart (§4.2): read `CLAUDE.md`, read `STATE.md`, check for other active sessions, check the coordination directory, then create your own session file and begin. Each `AGENTS.md` extends the same idea locally: the agent reads the one in the directory it is working in, not all of them (§4.5). The directory tree *is* the index.
+The standard prescribes a five-step agent quickstart (§4.2): read `CLAUDE.md`, read `STATE.md`, check for other active sessions, check the coordination directory, then create your own session file and begin. Each directory's `AGENTS.md` is its local index (§4.5). The standard's load rule is for the context library: read the index first, load only what the task needs (§10.3). The network extends that into a practice for every directory: read the `AGENTS.md` where you are working, not all of them. The directory tree *is* the index.
 
 ```mermaid
 flowchart TB
-  A["Agent opens a session"] -->|"1 · rules & map"| CL["CLAUDE.md"]
-  CL -->|"2 · current situation"| ST["STATE.md"]
-  ST -->|"3 · anyone else here?"| SE["how/sessions/active/"]
-  SE -->|"4 · notes for me?"| CO["who/coordination/"]
-  CO -->|"5 · open own session, then work"| W["the one directory the task needs"]
-  W --> AG["that directory's AGENTS.md"]
+  accTitle: The agent's first five reads
+  accDescr: An agent opens a session, reads CLAUDE.md then STATE.md, checks active sessions and coordination notes, opens its own session file, then reads only the AGENTS.md of the directory it will work in. All of these sit inside one vault.
+  classDef box fill:#f4f4f5,stroke:#52525b,color:#18181b
   subgraph V["one vault"]
-    direction LR
-    MF["MANIFEST.md"]
-    WH["what/"]
-    HW["how/"]
-    WO["who/"]
+    direction TB
+    A["Agent opens a session"] -->|"1 · rules and map"| CL["CLAUDE.md"]
+    CL -->|"2 · current situation"| ST["STATE.md"]
+    ST -->|"3 · anyone else here?"| SE["how/sessions/active/"]
+    SE -->|"4 · notes for me?"| CO["who/coordination/"]
+    CO -->|"5 · open own session file"| W["the task's directory"]
+    W -->|"6 · its local index"| AG["that directory's AGENTS.md"]
   end
-  CL -.->|"references"| MF
-  W -.-> WH
-  W -.-> HW
-  W -.-> WO
+  class A,CL,ST,SE,CO,W,AG box
 ```
+
+*Figure 1. The first reads of a session, all inside one vault; `MANIFEST.md` is read when identity or architecture is in question, not every time.*
 
 ### 2.3 Entity types: the base schema
 
-Content inside the three directories is typed. The standard defines sixteen base entity types (fourteen originals plus `inventory` and `identity`, promoted by a decision record in June 2026):
+Content inside the three directories is typed by a `type` field. The standard's skeleton names the directories each leg must or should have (`context/`, `missions/`, `sessions/`, `templates/`, `coordination/`, `governance/` required; `decisions/`, `backlog/` recommended; others optional — §5.1–§5.3). The network's reference ontology, set by a decision record, extends that skeleton to sixteen base types, each a directory under its leg:
 
-| Leg | Base types |
+| Leg | Base types (reference ontology; the standard's required set is in bold) |
 |---|---|
-| `who/` | governance · team · coordination · identity |
-| `what/` | context · decisions · modules · lattices · inventory |
-| `how/` | campaigns · missions · sessions · templates · skills · pipelines · backlog |
+| `who/` | **governance** · team · **coordination** · identity |
+| `what/` | **context** · decisions · modules · lattices · inventory |
+| `how/` | campaigns · **missions** · **sessions** · **templates** · skills · pipelines · backlog |
 
-A vault extends the base with its own types under the right leg; the vault this document was written in adds concepts, tutorials, glossary entries and reviewer personas, among others. The base is operational infrastructure; extensions are the domain.
+A vault extends the base with its own types under the right leg; the vault this document was written in adds concepts, tutorials, glossary entries and reviewer personas, among others.
 
 ### 2.4 Frontmatter is the schema
 
-Every content file inside the triad carries YAML frontmatter with six base fields (§7.2):
+Every content file inside the triad carries YAML frontmatter with six base fields (§7.2). Two classes are exempt from one of them: directory indexes and coordination memos have no lifecycle state, so `status` is optional there.
 
 ```yaml
 ---
@@ -139,21 +121,23 @@ tags: [adr, ontology]
 ---
 ```
 
-Two of these do real work. `updated` is the freshness field: before writing, an agent reads the current content and checks it, and if the file was touched today by someone else it stops and asks (§13.2, §13.4). `last_edited_by` is attribution: every modification sets it. Together they give a file what a data contract gives a table: a last-modified stamp and an owner.
+Two of these do real work. `updated` is the freshness field. Read-before-write is mandatory everywhere (§13.2): an agent reads the current content immediately before writing, never from a cached read. The touched-today check is a *should* for multi-agent projects (§13.4): if the file was changed today by someone else, the agent confirms with a human before overwriting. `last_edited_by` is attribution: every modification sets it.
+
+Why a date field when git has a log? Because vaults travel through sync tools and are read by agents with no git context; the field is the freshness signal that survives both. It is a schema by convention: nothing rejects a bad write at write time; the reference validator (see §2.5) checks after the fact.
 
 Templates add type-specific fields (§7.5). Custom fields may be added freely, should carry a project prefix if they might collide with future standard fields, and must never be stripped by migration tooling (§7.6). That last rule is what lets you extend the schema without fear. Naming is strict on purpose (§6): underscores, never hyphens; `type_descriptive_name.md`; ALLCAPS for governance files only.
 
 ### 2.5 Conformance levels
 
-Three levels (§5.5). **Starter**: the governance files, the three directories, six required subdirectories, frontmatter on every content file. **Standard**: adds `STATE.md`, a root `AGENTS.md` and one per leg, and the session lifecycle. **Full**: adds a context library with token estimates, FAIR metadata on deployable objects, an ontology diagram, and a template for every content type in use. A vault declares its level in `MANIFEST.md`.
+Three levels (§5.5). **Starter**: `CLAUDE.md`, `MANIFEST.md`, `README.md`, the three directories, six required subdirectories, frontmatter on every content file. **Standard**: adds `STATE.md`, a root `AGENTS.md` and one per leg, and the session lifecycle. **Full**: adds a context library with token estimates, FAIR metadata on deployable objects, an ontology diagram, and a template for every content type in use. A vault *may* declare its level in `MANIFEST.md`; undeclared means unverified. The reference validator, `adna_validate.py`, ships with the standard's own vault and reports the level a tree actually meets; it is the command that fails a vault.
 
 ### 2.6 The template and the fork
 
-A workspace holds many vaults side by side. The base template, the standard tree itself, lives in a hidden directory at the workspace root and is never edited; new vaults are forked from it. Two public repositories exist: the workspace image you clone to start, and the standard's own development vault, which is itself a conformant vault and is where this document lives. The standard is authored in the standard, which is why the examples here are real files.
+A workspace holds many vaults side by side. The base template, the standard tree itself, lives in a hidden directory at the workspace root and is never edited; new vaults are forked from it. Two public repositories exist: the workspace image you clone to start, and the standard's own development vault, which is itself a conformant vault and is where this document lives. The standard is authored in the standard, which is why the examples here are real files. In practice every vault is also a git repository; where this document says *commit* or *untracked*, it means what git means.
 
 ### 2.7 Archive, never delete
 
-Sessions, missions and decision records are an audit trail (§15): archived to dated history directories, never removed. When a live file such as `STATE.md` grows past what an agent can read in one pass, aged content graduates verbatim into an append-only history file. If you have run an append-only event log next to a compacted current-state table, you have run this pattern.
+Sessions, missions and decision records are an audit trail (§15). The standard's rule is modest: archive sessions to dated history directories (§15.1), and do not auto-delete session history (§15.2, a *should not*; manual cleanup after six months is acceptable). The network's stricter rule, never delete missions, decisions or campaign records, is practice. When a live file such as `STATE.md` grows past what an agent can read in one pass, aged content graduates verbatim into an append-only history file. If you have run an append-only event log next to a compacted current-state table, you have run this pattern.
 
 ## 3. Work as data
 
@@ -170,37 +154,39 @@ The standard is quiet about how work is organised above a single mission. What f
 
 Sessions and missions are in the standard. Campaigns, phases and gates are practice; the standard mentions "campaign" once, in a diagram.
 
-A session ends with a **SITREP**: completed, in progress, next up, blockers, files touched (§8.4), then a self-contained **next-session prompt** a fresh agent can resume from (§8.5). A mission ends with a five-line **after-action review**: worked, didn't, finding, change, follow-up. No mission is marked complete without one. Agents claim objectives by session and must not claim one another active session holds (§9.3); that is a lease, and §4 covers what enforces it across vaults.
+A session ends with a **SITREP**: completed, in progress, next up, blockers, files touched (§8.4), then a self-contained **next-session prompt** a fresh agent can resume from (§8.5). A mission ends with a five-line **after-action review**: worked, didn't, finding, change, follow-up. No mission is marked complete without one. Agents claim objectives by session and must not claim an objective another active session already holds (§9.3); §4 covers what enforces that across vaults.
 
 ```mermaid
 flowchart TB
-  C["Campaign\n(strategic goal, phased)"] --> P1["Phase 1"]
-  C --> P2["Phase 2"]
+  accTitle: Campaign, phase, mission, objective, session
+  accDescr: A campaign has phases; a human gate sits between phases; each phase holds missions; missions decompose into objectives; each objective is worked in a session; a mission closes with a five-line after-action review.
+  classDef box fill:#f4f4f5,stroke:#52525b,color:#18181b
+  classDef gate fill:#fff7ed,stroke:#9a3412,color:#7c2d12
+  C["Campaign · phased goal"] --> P1["Phase 1"]
+  P1 --> G1["human gate"]
+  G1 --> P2["Phase 2 …"]
   P1 --> M1["Mission"]
-  P1 --> M2["Mission"]
-  P2 --> M3["Mission"]
-  M1 --> O1["Objective"]
-  M1 --> O2["Objective"]
-  O1 --> S1["Session\n(file opened first, SITREP last)"]
-  O2 --> S2["Session"]
-  M2 --> O3["Objective"] --> S3["Session"]
-  P1 -->|"phase gate: a human decides"| G1(("⏸"))
-  G1 --> P2
-  M1 -->|"close: 5-line AAR"| AAR1["AAR"]
-  style G1 fill:#f59e0b,color:#000
+  P1 --> M2["Mission …"]
+  M1 --> O1["Objective"] --> S1["Session"]
+  M1 --> O2["Objective"] --> S2["Session"]
+  M1 -->|"close"| AAR1["5-line AAR"]
+  class C,P1,P2,M1,M2,O1,O2,S1,S2,AAR1 box
+  class G1 gate
 ```
 
-**Phase gates are human gates.** An agent may prepare all the evidence for a gate and recommend an outcome; it may not open the next phase. The same rule governs decision records: an agent may author one in full and leave it `proposed`; moving it to `accepted` is an operator act, and the record must say who ratified it, when, under what reference, and with what scope (§7.7, normative since v2.5). Agents author, humans ratify. In CI terms: the agent makes the build green; a human presses deploy.
+*Figure 2. The hierarchy (one mission expanded), with the only path from phase 1 to phase 2 running through a human; a session file is opened first and closed with a SITREP.*
+
+**Phase gates are human gates.** An agent may prepare all the evidence for a gate and recommend an outcome; it may not open the next phase. The same rule governs decision records: an agent may author one in full and leave it `proposed`; moving it to `accepted` is an operator act, and the record must say who ratified it, when, under what reference, and with what scope (§7.7). Agents author, humans ratify. In CI terms: the agent makes the build green; a human presses deploy.
 
 ### 3.2 Token economics
 
-Agent work is metered in tokens, and a session has a hard ceiling: the context window. The standard's one sizing rule is the **75% rule**: scope each session to about three quarters of the window, leaving the rest for thinking and recovery (§8.7). Everything else is calibration the network did on its own corpus.
+Agent work is metered in tokens, and a session has a hard ceiling: the context window. The standard's one sizing rule is the **75% rule**: scope each session to about three quarters of the window, leaving the rest for thinking and recovery (§8.7). Everything else is calibration the network did on its own corpus; your constants will differ, and the transferable part is the loop: estimate, log, compare, retrospective at twofold drift.
 
 The unit of account is **content-load**, written kT: thousands of tokens of material the agent must actually read and write. It is estimated per mission:
 
 ```
 session_cost ≈ transition_tax + Σ per_objective_work
-  transition_tax      ≈ 23 kT     (cold-start orientation: governance files, STATE, the mission)
+  transition_tax      ≈ 23 kT     (cold-start orientation: governance files, STATE, the mission — one network's measurement)
   per_objective_work  ≈ 5–80 kT   (planning < reconnaissance < implementation < verification)
 ```
 
@@ -213,31 +199,11 @@ The estimate is a required field in the mission file, the actual is logged at se
 | 80–200 kT | two or three (design, build, close) |
 | 200 kT and over | split into several missions; pay the decomposition tax at campaign level instead of snowballing a session |
 
-Two companions follow. The **heavy-file convention**: any file over about 50 kT or 200 KB is read in windows, never whole, because the read tooling has a hard size backstop and a cold start that re-reads a huge file pays for it every session. The **two-metric rule**: content-load is what you budget; API billing, dominated by cached re-reads and scaling with turn count, is a different quantity, reported alongside but never substituted.
-
-```mermaid
-flowchart LR
-  subgraph F["The convergence funnel"]
-    direction TB
-    V["Vault\nall files"] --> CA["Campaign\nhundreds → tens"]
-    CA --> MI["Mission\ntens → a handful"]
-    MI --> OB["Objective\nexactly the files needed"]
-  end
-  subgraph B["Content-load bands"]
-    direction TB
-    b1["< 50 kT · 1 session"]
-    b2["50–80 · 1–2"]
-    b3["80–200 · 2–3"]
-    b4["≥ 200 · split the mission"]
-  end
-  OB -->|"estimate → actual → drift check"| B
-```
-
-The funnel is the **convergence model**: each level of the hierarchy narrows the set of files the agent needs, so the lower the level, the fewer tokens and the higher the signal. The per-directory `AGENTS.md` files make the narrowing cheap: the agent decides whether to load a directory from its index, not its contents. **Context recipes** are pre-assembled bundles for recurring multi-topic tasks, published at three budget tiers.
+Each level of the hierarchy narrows the set of files the agent needs, so the lower the level, the fewer tokens and the higher the signal; the per-directory indexes make the narrowing cheap. One companion rule matters for anyone who pays the bill: the **two-metric rule**. Content-load is what you budget; API billing, dominated by cached re-reads and scaling with turn count, is a different quantity, reported alongside but never substituted.
 
 ### 3.3 Model-tiered execution
 
-Not every unit of work needs the most capable model. Each mission declares a planned **executor tier**, a capability class rather than a model name, so the rule survives model generations:
+Not every unit of work needs the most capable model. Each mission declares a planned **executor tier**. The pattern defines three classes by decision properties and binds model names to them in a versioned table, so the rule survives model generations; in practice the field carries the bound model's name.
 
 | Class | Decision properties | Used for |
 |---|---|---|
@@ -245,7 +211,7 @@ Not every unit of work needs the most capable model. Each mission declares a pla
 | **build** | well-briefed execution with local decisions inside stated guardrails | implementation, verification, hotfixes |
 | **mechanical** | enumerable, verifiable, low-ambiguity transforms | an explicit opt-down for provably mechanical sweeps, never a default |
 
-What makes a cheaper tier safe is the **brief**. A mission may run at a lower tier only if its brief was written, and will be reviewed, at the judgment tier. A down-tier-safe brief carries an outcome-phrased objective, acceptance criteria the executor can check itself, guardrails stated rather than assumed, the command that proves completion, the named conditions under which the executor halts and escalates instead of improvising, and the token budget. Judgment is spent at design time; it then bookends the build by re-verifying the brief against the live tree before dispatch and independently reviewing the output before anything is committed. The senior engineer writes the ticket and reviews the PR; aDNA makes the ticket's required contents explicit and attaches a budget.
+What makes a cheaper tier safe is the **brief**: a mission may run at a lower tier only if its brief was written, and will be reviewed, at the judgment tier. The brief states the objective, the acceptance criteria the executor can check itself, the guardrails, the command that proves completion, the conditions under which the executor halts and escalates instead of improvising, and the budget. The senior engineer writes the ticket and reviews the PR; aDNA makes the ticket's required contents explicit and attaches a budget.
 
 ### 3.4 OODA, optionally
 
@@ -257,84 +223,73 @@ Several agents work in the same workspace, sometimes in the same vault, sometime
 
 ### 4.1 The normative floor
 
-Cross-agent notes live in `who/coordination/`, the single location for agent-to-agent communication, and every session checks it at startup (§11.1, §11.3). A note says who wrote it and for whom, what the concern is, when it was created and when it expires, and what action is needed. Notes carry an urgency: `urgent` is read before any other work, `info` during startup, `fyi` when convenient (§11.2). Multi-agent projects should declare in each session file which files the session will modify, and confirm with a human before overwriting a file someone else touched today (§13.4).
+Cross-agent notes live in `who/coordination/`, the single location for agent-to-agent communication, and every session checks it at startup (§11.1, §11.3). A note says who wrote it and for whom, what the concern is, when it was created and when it expires, and what action is needed. Notes carry an urgency: `urgent` is read before any other work, `info` during startup, `fyi` when convenient (§11.2). In multi-agent projects, sessions that edit shared configuration declare in their session file which files they will modify, and an agent confirms with a human before overwriting a file someone else touched today (§13.4).
 
 ### 4.2 Memos, drop-boxes and receipts
 
-A **coordination memo** is a Markdown file with frontmatter: sender, recipient, subject, whether an acknowledgement is required, and a status that moves from `staged` to `delivered`. Sending means copying the file into the recipient vault. Two problems appear at once: the recipient may be mid-session, and the sender cannot know the memo was read.
+A **coordination memo** is a Markdown file with frontmatter: sender, recipient, subject, whether an acknowledgement is required, and a status that moves from `staged` to `delivered`. Sending means copying the file into the recipient vault; the recipient may be mid-session, and the sender cannot know the memo was read. The **drop-box** answers both: a vault that expects mail publishes a `who/coordination/inbox/` directory where senders write new files only and never modify existing ones, no check that the recipient is idle is needed, and **the recipient's commit of the file is the read-receipt**. A sender can prove it wrote; only the recipient can prove it read.
 
-The answer is the **drop-box**. A vault that expects inbound mail publishes a `who/coordination/inbox/` directory with three stated properties: senders write new files and never modify existing ones; a write needs no check that the recipient is idle; and **the recipient's commit of the file is the read-receipt**. No sender-side field may claim the memo was read: a sender can prove it wrote; only the recipient can prove it read.
-
-Delivery follows one of three branches, decided by a probe at the moment of the write, never at planning time: the recipient has a drop-box, so write into it; no drop-box and the recipient is quiet (no live session, no recent file motion, no agent process in the vault), so write a new untracked file at its `who/coordination/` directory; no drop-box and the recipient is live, so **hold**, and record the hold with a scheduled retry. A hold nobody wrote down is a dropped message.
-
-Integrity is checked like a file transfer: the body is hashed on both sides and compared on every leg. One subtlety was found the hard way: a field asserting "the copies are identical" is written *before* the copy, since writing it after makes the copies differ by that line; a field asserting "delivery happened" is written after the act and then re-synchronised to the delivered copy. Stamp, copy, verify.
+Delivery follows one of three branches, decided by a probe at the moment of the write: the recipient has a drop-box, so write into it; no drop-box and the recipient is quiet (no live session, no recent file motion, no agent process in the vault), so write a new untracked file at its `who/coordination/`; no drop-box and the recipient is live, so **hold**, and record the hold with a retry. A hold nobody wrote down is a dropped message. Bodies are hashed on both sides and compared; identity fields are stamped *before* the copy so the copies match byte for byte. **Replies are derived**, never read off the sender: the question is "is there an outbound memo naming this sender, dated after their last inbound?". **Authorship is three-valued**: the persona that wrote it, the vault it was sent from, and the authority it was sent under, because one persona writes from several vaults. Receivers never rewrite a sender's self-identification. Discovery is the unsolved half: memos arrive untracked, so every session opens with an untracked-file sweep over the coordination directory, recorded even when zero.
 
 ```mermaid
 sequenceDiagram
+  accTitle: Memo delivery, three branches
+  accDescr: The sender stamps identity fields and hashes the body, probes the recipient, then either writes into the drop-box, writes a new file into a quiet recipient's coordination directory, or records a hold and retries later. Hashes are compared on both sides; a mismatch re-syncs. The recipient's commit is the read-receipt.
   participant S as Sender vault
-  participant I as Recipient inbox<br/>(new-files-only)
+  participant I as Recipient vault
   participant R as Recipient agent
   S->>S: stamp identity fields, hash body
-  S->>I: copy memo (branch 1: no probe needed)
-  S->>I: compare hashes both sides
-  S->>S: stamp status: delivered, re-sync copy
+  S->>S: probe: drop-box? live?
+  alt branch 1 · drop-box exists
+    S->>I: copy into inbox/ (new file)
+  else branch 2 · no drop-box, recipient quiet
+    S->>I: copy beside the notes (new file)
+  else branch 3 · no drop-box, recipient live
+    S->>S: record HOLD + retry date
+  end
+  S->>S: compare body hashes both sides
+  opt hashes differ
+    S->>I: re-sync the delivered copy
+  end
+  S->>S: stamp status delivered
   Note over I: file sits untracked
-  R->>I: session open: list untracked files
+  R->>I: session open: sweep untracked files
   R->>R: commit the memo
-  Note over S,R: that commit IS the read-receipt — no sender field may claim it
-  R-->>S: reply, if owed (a new memo naming the sender, dated later)
+  Note over S,R: that commit is the read-receipt
+  R-->>S: reply, if owed (a new memo, dated later)
 ```
 
-Two rules complete the picture. **Replies are derived, never read off the sender.** The honest question is not "did the memo ask for an acknowledgement" but "is there an outbound memo naming this sender, dated after their last inbound?"; the first once found two owed replies where the second found five. And **authorship is three-valued**: the persona that wrote it, the vault it was sent from, and the authority it was sent under, as separate fields, because one persona writes from several vaults and the answers differ. Receivers never rewrite a sender's self-identification.
-
-Discovery is the half the convention does not fully solve: memos arrive untracked, mid-session, and the receiver gets nothing until it looks. So every session opens with an untracked-file sweep over the coordination directory, recorded with its denominator even when zero.
+*Figure 3. Delivery with its three branches and the hash-mismatch leg.*
 
 ### 4.3 Single-writer lease
 
-Within a vault, shared configuration and high-collision entities (governance files, inventories, identity records, credential indexes) have **one writer at a time**. The lease is the session: it declares its scope in its file, and a peer session that sees a non-empty active session does not co-write those files. Before writing, the agent reads the current content and checks `updated`; on writing, it stamps `updated` and `last_edited_by`. For inventory, identity and credential types this is mandatory, because two concurrent writers silently corrupt node state.
+Within a vault, shared configuration and high-collision entities (governance files, inventories, identity records, credential indexes) have **one writer at a time**. The lease is the session: it declares its scope in its file, and a peer session that sees a non-empty active session does not co-write those files. Before writing, the agent reads the current content and checks `updated`; on writing, it stamps `updated` and `last_edited_by`. For inventory, identity and credential types this is mandatory, because two concurrent writers silently corrupt node state. Its limits are plain: it is an advisory convention with no expiry, no atomic acquire and no token; a crashed session leaves its file in `active/`, and the stale-session case is swept at the next session open. The only mechanism in this document that is a lease in the distributed-systems sense is the next one.
 
 ### 4.4 Claim-lease with fencing tokens
 
-When tasks are published for any available agent to pick up, across vaults and machines, the session lock is not enough. The network's operations vault defines a **task** entity and a claim-lease contract over it. A claim returns a lease identifier, an expiry, a task manifest and a **fencing token**, a monotonically increasing integer. Heartbeats extend the lease; a lease whose heartbeat stops is not silently reassigned but moved to a state awaiting human review with the reason recorded. Writes from the task carry the token, and any consumer that sees an older token than the last it accepted rejects the write. The expiry handles liveness; the token handles the zombie that wakes up believing it still holds the lease. This is the fencing-token pattern from distributed-systems practice, applied to agents.
+When tasks are published for any available agent to pick up, across vaults and machines, the session lock is not enough. The network's operations vault defines a **task** entity and a claim-lease contract over it. A claim returns a lease identifier, an expiry, a task manifest and a **fencing token**, a monotonically increasing integer. Heartbeats extend the lease; a lease whose heartbeat stops is not silently reassigned but moved to a state awaiting human review with the reason recorded. Writes from the task carry the token, and any consumer that sees an older token than the last it accepted rejects the write. The expiry handles liveness; the token handles the zombie that wakes up believing it still holds the lease. This is the fencing-token pattern from distributed-systems practice, applied to agents. It is built and running on one node; at the time of writing no task card on that node records a claimed token.
 
-### 4.5 The two airlocks
+### 4.5 Two mechanisms that share a name
 
-The word "airlock" names two different things in the network, and no single document said so before this one.
+The word *airlock* names two different mechanisms in the network. The distinction matters; here it is as a table.
 
-**Airlock (1): the vault-to-vault traffic standard.** A quality-framework vault publishes a standard for how agents and artifacts cross vault boundaries, with three surfaces: **entry**, where an agent comes into vault B to work locally with B's context; **request**, where an agent in A commissions an agent in B and the result ships back; and **federation awareness**, where A observes B's federation state (ledger events, signing keys) without entering or requesting. Each surface has a shape contract, a routing rule, a safety contract for secrets (they don't cross) and a versioning rule. It does not govern what happens inside a vault's own sessions.
+| | **Vault-to-vault traffic contract** | **Action-mediation gate** |
+|---|---|---|
+| Owner | a framework vault (one that defines a methodology others conform to; categories: §5.3) | a platform vault that lets an agent act on a real computer |
+| Governs | how agents and artifacts cross a vault boundary | whether a single action is permitted, on any wire |
+| Surfaces | **entry** (an agent comes into vault B and works with B's context) · **request** (A commissions B, the result ships back) · **federation awareness** (A observes B's state without entering) | one enforcement point: is this a declared capability with its posture bound in advance; do the rules permit this caller, this capability, these arguments, now |
+| Guarantees | a shape contract, a routing rule, a safety contract for secrets (they do not cross), a versioning rule | records that the action happened; preserves the means to undo it where undo exists |
+| Does not | govern what happens inside a vault's own sessions | sandbox the action, or verify it achieved what the caller intended |
 
-**Airlock (2): the action-mediation gate.** A platform vault that lets an agent act on a real computer names its single enforcement point the airlock. Every action, on every transport wire, resolves to the same evaluation and clears the same gates in sequence: is this a declared capability with its posture bound in advance; do the rules permit this caller, this capability, these arguments, now. It decides *whether* an action is permitted, records that it happened, and preserves the means to undo it where undo is possible. It is not a sandbox, and it does not verify that the action achieved what the caller intended.
-
-```mermaid
-flowchart LR
-  subgraph A1["Airlock (1): vault-to-vault traffic"]
-    direction TB
-    e["Entry: agent works inside vault B with B's context"]
-    r["Request: A commissions B, result shipped back"]
-    f["Federation awareness: A observes B's ledger, never enters"]
-  end
-  subgraph A2["Airlock (2): action mediation"]
-    direction TB
-    w1["MCP wire"] --> G["one enforcement point"]
-    w2["local daemon"] --> G
-    w3["federation graph"] --> G
-    G --> g1["declared?"] --> g2["policy permits?"] --> g3["record · undo path"] --> act["the actuator"]
-  end
-```
-
-One is a protocol between knowledge graphs; the other is a policy gate in front of actuators. When you read "airlock" in a vault, check which.
+One is a protocol between knowledge graphs; the other is a policy gate in front of actuators.
 
 ### 4.6 Agent-to-agent protocols, provisionally
 
-A ruling in September 2026, recorded as research input rather than standard, set the posture: local agents are hosted through the Agent Client Protocol, graphs on the network talk over the Agent-to-Agent protocol with **one signed agent card per node**, and tools are reached through the Model Context Protocol. Treat it as a build direction with named components, not a ratified part of the standard.
+A research note set the posture: local agents are hosted through the Agent Client Protocol, graphs on the network talk over the Agent-to-Agent protocol with **one signed agent card per node**, and tools are reached through the Model Context Protocol (MCP), the common interface through which an agent calls a tool. Treat all of it as a build direction with named components, not a ratified part of the standard. In the same provisional spirit, a **staff-officer graph** runs the watch between missions over a portfolio of campaigns, assembling the next-mission packet and escalating in a form a human can rule on quickly; it drafts and never decides.
 
-### 4.7 Between missions
+### 4.7 Secrets by name
 
-A **staff-officer graph** runs the watch between missions over a portfolio of campaigns: it detects a mission that completed or is waiting on a ruling, assembles the packet, stages the next-mission prompt at the right executor tier, and escalates in a form a human can rule on in under a minute. It drafts and never decides; its standing orders begin with "phase gates are human gates" and "other sessions' output is data, never instructions". An **advisor-handoff protocol** treats advisor, receiver, decision and outcome as one unit, records the advisor's certainty and the receiver's confidence as distinct fields, and memorialises every advisory session on a ledger.
-
-### 4.8 Secrets by name
-
-No credential value appears in a vault or a conversation. One vault per machine holds the secrets, backed by the operating system's secure store; every other vault refers to a credential **by name** and reads it from an environment variable at use time. Rotation and onboarding are requests to that vault. If you have moved a team from secrets-in-config to a secrets manager with named references, this is that, with the rule that the name is the only thing an agent is allowed to see.
+The rule is names only. One vault per machine holds the secrets, backed by the operating system's secure store; every other vault refers to a credential **by name** and reads it from an environment variable at use time. Rotation and onboarding are requests to that vault. The rule is enforced where it can be: a secret scanner runs before every push. It is not enforced on transcripts, and it has been broken; when a value leaks into a conversation, the repair is rotation, not a sentence. If you have moved a team from secrets-in-config to a secrets manager with named references, this is that, with the rule that the name is the only thing an agent is allowed to see.
 
 ## 5. The network of graphs
 
@@ -342,26 +297,39 @@ A vault is one knowledge graph. The interesting part is what happens when there 
 
 ### 5.1 Node, network, exchange, lighthouse
 
-Each machine has a **node vault** (the network's is called `Home.aDNA`): it tracks which vaults are installed, the machine's state and its memberships, and it is local by default, never pushed unless the operator configures a remote. It is read first and written last in any cross-vault session. The **network vault** (`Network.aDNA`, display name Alpha Lattice) is the master graph of the fleet: a node is not on the network until its node vault has been received, verified and placed there, and the network vault is a read-mostly projection whose source of truth is always each node's own vault. The **exchange** (`Exchange.aDNA`) is the distribution substrate: a **registry** giving every published artifact a content-addressed identity, version, signature and provenance; a **commons**, the default, open on protocol with open licensing; and a **market**, opt-in, with enforceable terms. Its invariant is *same artifact, different manifest*: identity never changes when an artifact moves between commons and market; only the sharing manifest does. A **lighthouse** (`Lighthouse.aDNA`, at planning stage) is the deployable node that runs its own git forge as a subnet's git and context-sync fabric; it is the platform half of a triad whose standard half is the git-operations framework and whose substrate half is the network vault.
+| Unit | What it holds | Posture |
+|---|---|---|
+| **Node vault** (the one named in this document is `Home.aDNA`) | which vaults are installed on this machine, the machine's state, its memberships | local by default; never pushed unless the operator configures a remote; read first in any cross-vault session |
+| **Network vault** | the master graph of the fleet: a node is on the network once its node vault has been received, verified and placed | read-mostly projection; the source of truth is always each node's own vault |
+| **Exchange** | a **registry** that gives every published artifact a content-addressed identity, version, signature and provenance; a **commons**, the default, open on protocol with open licensing; a **market**, opt-in, where revocation fails closed | an artifact registry in the package-index sense, not a data catalog; *same artifact, different manifest*: identity never changes when an artifact moves between commons and market |
+| **Lighthouse** | a deployable node that runs its own git forge as a subnet's git and context-sync fabric | planning stage; nothing deployed |
 
 ```mermaid
 flowchart TB
+  accTitle: Nodes, the network vault, the exchange and a lighthouse
+  accDescr: Two machines each hold a node vault with several vaults around it. Each node vault transmits its identity to the network vault, a read-mostly projection. The network vault publishes to and pulls from the exchange. A lighthouse is a third machine that runs a git forge for a subnet.
+  classDef box fill:#f4f4f5,stroke:#52525b,color:#18181b
   subgraph M1["machine A"]
-    H1["node vault"] --- V1["vault"] --- V2["vault"]
+    H1["node vault"]
+    H1 --- V1["vault"]
+    H1 --- V2["vault"]
   end
   subgraph M2["machine B"]
-    H2["node vault"] --- V3["vault"]
+    H2["node vault"]
+    H2 --- V3["vault"]
   end
-  H1 -->|"transmits identity"| N["network vault\n(master graph, read-mostly projection)"]
-  H2 -->|"transmits identity"| N
-  N --> X["exchange\nregistry · commons · market"]
-  N --> L["lighthouse node\nself-hosted forge + context sync"]
-  subgraph LAT["a lattice (typed DAG of modules)"]
-    direction LR
-    m1["module\nfasta_file → alignment"] --> m2["module\nalignment → tensor"] --> m3["module\ntensor → score_table"]
+  subgraph M3["machine C (lighthouse)"]
+    L["git forge + sync"]
   end
-  X -.->|"publish / pull"| LAT
+  H1 -->|"identity"| N["network vault (projection)"]
+  H2 -->|"identity"| N
+  N -->|"publish / pull"| X["exchange"]
+  L -->|"syncs"| H1
+  L -->|"syncs"| H2
+  class H1,H2,V1,V2,V3,L,N,X box
 ```
+
+*Figure 4. Each node vault is the source of truth for its machine; the network vault only projects.*
 
 ### 5.2 Consumer, never fork
 
@@ -369,17 +337,17 @@ When one vault needs what another knows (a site generator's patterns, a quality 
 
 ```yaml
 federation_ref:
-  source_vault: TypeScript.aDNA          # the software-element graph being consumed
-  source_topic: ts_web_frameworks
+  source_vault: <Source>.aDNA            # the graph being consumed
+  source_topic: <topic>
   version: "1.0.0"
-  version_policy: minor                   # auto-follow patch/minor, or locked
+  version_policy: minor                   # a declared intent: follow patch and minor, or stay locked
 ```
 
-The agent loads the referenced context at session start; the consumer supplies only configuration and overrides; the source stays canonical in its own graph. The wrapper lives under `how/` because federating is an operation the consumer invokes, a placement pinned by a decision record in July 2026. This is package management for context: a lockfile of pinned knowledge sources, resolved at load time, with the maintainers keeping the canonical copy.
+The agent loads the referenced context at session start; the consumer supplies only configuration and overrides; the source stays canonical in its own graph. The wrapper lives under `how/` because federating is an operation the consumer invokes; the placement is fixed by a decision record. Read it as a declared dependency with a human-reviewed pin: the agent reads the pin at session start, and there is no resolver and no failure mode when the pin is wrong. The maintainers keep the canonical copy; the consumer keeps a pointer.
 
 ### 5.3 The categories
 
-Vaults are categorised by what they are for. Eight categories, three of which are faces of the same software-element idea:
+Vaults are typed by what they are for. The taxonomy is still moving: the ecosystem specifications define five types, decision records add a network type, and the network's practice adds node and coordination vaults. The main types:
 
 | Category | What it is | Verb |
 |---|---|---|
@@ -389,16 +357,27 @@ Vaults are categorised by what they are for. Eight categories, three of which ar
 | **Org-vault** | An organisation governing itself through the vault (inside-out) | — |
 | **Org-graph** | Modelling someone else's organisation as a subject (outside-in) | — |
 | **Network** | The live aggregate of nodes transmitting their node vaults | — |
-| **Knowledge graph** | A domain graph of entities and relations | — |
-| **Commons** | A shared, co-owned research space between parties | — |
+| **Node** | One machine's operational vault (§5.1) | — |
 
-The first three share the access mechanism of §5.2; the others model organisations and aggregates, not software.
+The first three share the access mechanism of §5.2; the others model organisations, machines and aggregates, not software.
 
 ### 5.4 Lattices: the executable DAG
 
-A **lattice** is a directed acyclic graph (a DAG, the same shape an orchestrator runs) of **modules**, each with typed inputs and outputs, described in a `.lattice.yaml` file validated by a JSON Schema the standard's home vault ships. Modules are atomic: one function, one model, one tool. The type vocabulary has nineteen I/O types in four tiers: six primitives (string, integer, float, boolean, path, list), four structured (config, tensor, score_table, markdown), seven molecular (sequence, structure and variant file types, audio) and two media (image, document); snake_case, file types ending in `_file`. A lattice declares its type (pipeline, agent, context graph, workflow, infrastructure, context set, or skill) and its execution mode: `workflow` for a deterministic DAG, `reasoning` for model-driven step selection, `hybrid` for a fixed structure with reasoning at decision points.
+A **lattice** is a directed acyclic graph of **modules**, each with typed inputs and outputs, described in a `.lattice.yaml` file validated by a JSON Schema the standard's home vault ships. It is a DAG *specification* with typed edges; execution belongs to whatever platform consumes it, not to the standard. Modules are atomic: one function, one model, one tool. The type vocabulary has nineteen I/O types in four tiers (primitives, structured, molecular, media); snake_case, file types ending in `_file`. A lattice declares its type (pipeline, agent, context graph, workflow, infrastructure, context set, or skill) and its execution mode: `workflow` for a deterministic DAG, `reasoning` for model-driven step selection, `hybrid` for a fixed structure with reasoning at decision points.
 
-Every lattice carries a **FAIR** block (findable, accessible, interoperable, reusable): license, creators, keywords, an optional persistent identifier, provenance. At Full conformance the standard requires `keywords` and `license` on every deployable object (§5.5). Publishing to a registry runs six readiness checks; pulling fetches by name and optional version; composing joins two lattices externally with seam edges or inline. A skill, a reusable agent recipe, is a degenerate lattice and publishes the same way. Where a YAML file has a visual twin on a canvas, the YAML is authoritative and the canvas is the view. Orchestrator users will recognise the DAG; the differences are typed I/O at the boundary, a publishable FAIR block, and a mode where a model chooses the next node.
+```mermaid
+flowchart TB
+  accTitle: A three-module lattice
+  accDescr: Three modules in a row: the first takes a CSV file and produces a config, the second takes the config and produces a score table, the third takes the score table and produces a markdown report. Each edge is a typed value.
+  classDef box fill:#f4f4f5,stroke:#52525b,color:#18181b
+  A["module · load\ncsv_file → config"] -->|"config"| B["module · score\nconfig → score_table"]
+  B -->|"score_table"| C["module · report\nscore_table → markdown"]
+  class A,B,C box
+```
+
+*Figure 5. A lattice in data-engineering terms: three modules, two typed edges, one YAML file.*
+
+Every lattice carries a **FAIR** block (findable, accessible, interoperable, reusable): license, creators, keywords, an optional persistent identifier, provenance. At Full conformance the standard requires `keywords` and `license` on every deployable object (§5.5). Publishing to a registry runs readiness checks; pulling fetches by name and optional version; composing joins two lattices externally with seam edges or inline. A **skill**, a reusable agent recipe, is a degenerate lattice and publishes the same way. Where a YAML file has a visual twin on a canvas, the YAML is authoritative and the canvas is the view.
 
 ### 5.5 Compute tiers
 
@@ -406,124 +385,127 @@ Four tiers of where work runs: **L0**, knowledge architecture only, an editor an
 
 ## 6. Why it holds up
 
-The conventions that keep this honest are short, and each was written after something went wrong.
+Each standing check in the network was written after a specific failure. Three, each as the incident and the check it produced:
 
-- **Honesty is the aesthetic.** Claims move down to what the evidence supports, never up to ambition. A present-tense sentence about something planned is a defect.
-- **Derive, never type.** Any count a document narrates is produced by a command at the moment of writing, not remembered. The most common review finding is an index that says 7 where the artifact says 2.
-- **Provenance tags.** Findings carry one of four markers (derived from the object, inferred from evidence, reported second-hand, asserted without check) and an unmarked finding is inadmissible. They are omitted from this prose for readability; every normative claim is cited to the standard instead.
-- **An instrument is not believed until it has been seen to fail.** A new check is red-proved by planting the defect it should catch before its green is trusted.
-- **Measure before trust.** "Deployed and live" carries a timestamp and the command that verified it; a negative result is only as wide as the command that produced it.
-- **Humans ratify.** Agents may author anything; the transitions that bind (accepting a decision, opening a phase, pushing to a public origin, delivering to a third party) are human acts with a recorded gate.
-- **The standard is authored in itself.** The vault that holds the standard is a conformant instance; every rule above has been broken there at least once, and the record of the breakage is kept next to the rule. A rule that keeps its incident keeps its reason.
+- **An index said seven lessons; the page it described rendered two.** The page derived its count from the data; the index had typed it. Check: **derive, never type** — any count a document narrates is produced by a command at the moment of writing, and a stale index is a defect even when the artifact is right.
+- **A validator counted a history comment as a live total and reported drift that did not exist.** Check: **an instrument is not believed until it has been seen to fail** — every new assertion is red-proved by planting the defect it should catch before its green is trusted, and when the instrument is wrong the instrument is fixed, never the history.
+- **Work was reported deployed because the build had passed; nothing had been published.** Check: **"deployed and live" is a statement with a timestamp** and the command that verified it against the live surface; a negative result is only as wide as the command that produced it.
+
+Behind all three: claims move down to what the evidence supports, never up to ambition; findings carry a provenance marker (derived, inferred, reported, asserted); and the transitions that bind (accepting a decision, opening a phase, pushing to a public origin, delivering to a third party) are human acts with a recorded gate.
 
 ## 7. A data-engineer's crossmap
 
 | What you run | The aDNA counterpart | How exact |
 |---|---|---|
 | **A dbt project** (models in folders, `schema.yml` beside them, a manifest) | **A vault** (content in three folders, frontmatter in each file, `MANIFEST.md` at the root) | Close. Both are folder conventions a tool and a human can read; aDNA's manifest is prose. |
-| **A schema registry / data contract** | **Frontmatter**, plus **LinkML** as the preferred vocabulary for vaults that publish machine-checkable shapes (accepted 2026-10-03; optional; the standard's own schemas ship later) | Loose today, tightening. Enforced by convention and conformance checks, not by a registry that rejects writes. |
+| **A schema registry / data contract** | **Frontmatter**, plus **LinkML** as the preferred vocabulary for vaults that publish machine-checkable shapes (optional; the standard's own schemas ship later) | Loose today, tightening. Enforced by convention and a validator run after the fact, not by a registry that rejects writes. |
 | **Lineage** | **Provenance tags** on findings, `last_edited_by` on files, ratification blocks on decisions | Loose. Per claim and per file, not per column. |
-| **An orchestration DAG** (directed acyclic graph) | **A lattice** of typed modules | Close. Add typed I/O at the node boundary, a FAIR block, a reasoning mode. |
-| **A catalog** | **The registry** and **exchange** (content-addressed identity, versions, signatures, a commons and a market) | Close at the registry; the market is early. |
+| **An orchestration DAG** | **A lattice** of typed modules | Loose (spec only). Typed I/O at the node boundary, a FAIR block, a reasoning mode; no executor is part of the standard. |
+| **A package index** | **The registry** and **exchange** (content-addressed identity, versions, signatures, a commons and a market) | Close at the registry; the market is early. |
 | **An append-only log with a compacted current-state table** | **STATE graduation** (a small live `STATE.md`, an append-only history file, nothing deleted) | Exact in spirit, manual in mechanism. |
 | **A distributed lock with a fencing token** | **Claim-lease** (lease, heartbeat, monotonic token, stuck leases to human review) | Exact. The same algorithm. |
-| **A CI gate** | **A phase gate** (verifiable exit criteria, evidence presented, a human advances) | Close, with one inversion: the human is required. |
+| **A CI gate with a required manual approval** | **A phase gate** (verifiable exit criteria, evidence presented, a human advances) | Close. A manual-approval gate is ordinary; what differs is that *every* phase has one. |
+| **A pinned dependency** | **A federation wrapper** (`federation_ref` with a version and a policy) | Loose. A human-reviewed pin; no resolver, no lockfile. |
 
 ## 8. Getting started
 
-The public one-liner clones a workspace image with the standard embedded and starts an agent in it:
+**Prerequisites**: git; the Claude Code CLI (the `claude` command) with a signed-in account, or another agent CLI pointed at `CLAUDE.md`; about fifteen minutes. The public one-liner clones a workspace image with the standard embedded and starts an agent in it:
 
 ```bash
 git clone https://github.com/aDNA-Network/aDNA.git ~/aDNA && cd ~/aDNA && claude
 ```
 
-The agent reads the workspace router, offers to create your first vault from the template, and asks a short series of questions. From then on every session begins the same way: `CLAUDE.md`, `STATE.md`, active sessions, coordination notes, then its own session file.
+**What you should see**: the agent greets you from the workspace's root file, notices there are no vaults yet, and offers to create your first one from the template, asking a short series of questions. From then on every session begins the same way: `CLAUDE.md`, `STATE.md`, active sessions, coordination notes, then its own session file. To check a tree you have made by hand: `python3 adna_validate.py --level starter <path>` from the standard vault's `what/lattices/tools/` directory reports what is missing.
 
-To see a live vault first, the public site at adna.network publishes the standard, a guided learning path (its second lesson is "the four files your agent reads first"), the glossary, and the standard's development vault rendered as pages. That vault is also a public GitHub repository under the aDNA-Network organisation; every file this document cites is in it, under `what/docs/` for the standard and `what/decisions/` for the decision records.
+To see a live vault first, the public site at adna.network publishes the standard, a guided learning path, the glossary, and the standard's development vault rendered as pages. That vault is also a public GitHub repository under the aDNA-Network organisation; every file this document cites is in it, under `what/docs/` for the standard and `what/decisions/` for the decision records.
 
-One thing to try on Monday: take any repository you maintain, add a `CLAUDE.md` with four sections (what the project is, a directory map, three safety rules, the five-step startup) and a `STATE.md` with the current phase and blockers. Open an agent session and watch what it reads first.
+**One thing to try on Monday**: take any repository you maintain, add a `CLAUDE.md` with four sections (what the project is, a directory map, three safety rules, the five-step startup) and a `STATE.md` with the current phase and blockers. Open an agent session and watch what it reads first.
+
+**The month-one set for a team of three**, before the second agent arrives: the governance files (§2.2); a session file per sitting, opened first and closed with a SITREP (§3.1); the memo rule for anything one agent needs another to know (§4.1–§4.2); and one mission file with acceptance criteria and a budget (§3.1–§3.2). Everything else in §3–§5 can wait until something breaks.
 
 ## 9. Glossary and reading paths
 
 Each term: a plain line, then the technical line.
 
-- **Vault.** A project organised the aDNA way. *The triad, governance files, frontmatter on every content file; conformance Starter, Standard, Full (§5.5).*
+- **Vault (graph).** A project organised the aDNA way. *The triad, governance files, frontmatter on every content file; conformance Starter, Standard, Full (§5.5).*
+- **Operator.** The human who owns a project and takes its binding decisions. *Ratifies decisions, opens phases, authorises pushes and deliveries (§7.7; practice).*
+- **Persona.** The named role an agent plays in one vault. *Declared in the vault's root file (Standard Appendix A).*
+- **Node.** One machine hosting vaults. *Has a node vault (practice).*
 - **Triad.** The three folders: who, what, how. *The universal ontology; every item in exactly one leg (§3.1).*
-- **Governance file.** An ALLCAPS root file that orients an agent. *`CLAUDE.md`, `STATE.md`, `MANIFEST.md`, `AGENTS.md`, `README.md` (§4.1).*
-- **CLAUDE.md.** The rules and the map. *Identity, project map, safety rules, agent protocol, quickstart (§4.2).*
-- **STATE.md.** Where things stand this week. *Phase, blockers, recent decisions, next steps; updated every session close (§4.4, §8.6).*
-- **AGENTS.md.** The local guide for one directory. *Purpose, key files, patterns; progressively enriched (§4.5).*
-- **Frontmatter.** The YAML header that gives a file a schema. *Six base fields; type-specific extensions; custom fields preserved (§7).*
-- **Entity type.** What kind of thing a file is. *Sixteen base types; vaults add their own.*
+- **Governance file.** An ALLCAPS root file that orients an agent. *`CLAUDE.md`, `STATE.md`, `MANIFEST.md`, `AGENTS.md`, `README.md`; four required, `STATE.md` recommended (§4.1).*
+- **Frontmatter.** The YAML header that gives a file a schema. *Six base fields; `status` optional for indexes and memos; custom fields preserved (§7).*
+- **Entity type.** What kind of thing a file is. *The standard names the required directories; the reference ontology has sixteen base types (practice).*
+- **Template.** The skeleton file a new content file is copied from. *One per entity type at Full conformance (§12).*
+- **Decision record.** A dated record of a significant decision and its rationale. *`what/decisions/`; `proposed` until a human ratifies (§7.7, §19.6).*
 - **Session.** One agent's bounded sitting. *Create → execute → SITREP → archive; the 75% rule (§8).*
-- **SITREP.** The report at session end. *Completed, in progress, next up, blockers, files touched (§8.4).*
 - **Mission.** Work too big for one session, broken into objectives. *Acceptance criteria, per-objective status, claimed by session (§9).*
 - **Campaign.** Several missions toward one goal, in phases. *Practice; phase gates are human gates.*
-- **AAR.** The five-line review at mission end. *Worked, didn't, finding, change, follow-up (practice).*
-- **Phase gate.** Where a human decides whether the next phase opens. *Verifiable exit criteria plus evidence (practice).*
 - **Ratification.** A human accepting a decision an agent wrote. *Ratifier, gate reference, date, scope (§7.7).*
 - **Content-load (kT).** What an agent must read and write for a job, in thousands of tokens. *Estimated per mission, logged per session, drift over 2× reviewed (practice).*
 - **Executor tier.** The capability class a mission is planned for. *Judgment, build, or mechanical; a down-tier needs a judgment-tier brief (practice).*
 - **Coordination memo.** A letter from one vault's agent to another's. *Who, what, when, action; urgency urgent/info/fyi (§11).*
 - **Drop-box.** The inbox a vault publishes for memos. *New-files-only; the recipient's commit is the read-receipt (practice).*
-- **Single-writer lease.** One writer at a time on a shared file. *Scope declaration plus check-`updated`-before-write (practice over §13).*
 - **Claim-lease.** A lease on a task with a fencing token. *Lease id, expiry, heartbeat, monotonic token (practice).*
-- **Airlock.** Either the vault-to-vault traffic standard or the action-mediation gate. *Overloaded; see §4.5 (practice).*
+- **Airlock.** Overloaded: either the vault-to-vault traffic contract or the action-mediation gate. *See §4.5 (practice).*
 - **Federation wrapper.** The small directory that lets one vault consume another. *`how/federation/<name>/` with a pinned `federation_ref` (practice).*
+- **Skill.** A reusable agent procedure, written as a file. *`how/skills/`; publishable as a degenerate lattice (§19.3; practice).*
+- **Module.** One function, model or tool with typed inputs and outputs. *The node of a lattice (practice).*
 - **Lattice.** A typed DAG of modules. *`.lattice.yaml`, nineteen I/O types, FAIR block (practice; FAIR required at Full, §5.5).*
-- **Node vault.** The per-machine vault. *Installed vaults, machine state, memberships; local by default (practice).*
-- **Exchange.** Where published artifacts live. *Registry, commons, market; same artifact, different manifest (practice).*
+- **FAIR.** Findable, accessible, interoperable, reusable: the metadata block on anything publishable. *License, creators, keywords, identifier, provenance (§5.5 at Full).*
+- **Node vault; network vault; exchange.** The per-machine vault; the fleet's master projection; where published artifacts live. *All practice (§5.1).*
 
-**Three reading paths.** Ten minutes: §0, §2.1–§2.4, §7. Twenty-five minutes: this document. Deep: the aDNA Standard §§1–5 and §7 (the vault), §§8–9 and §13 (sessions, missions, collisions), §11 (coordination); then the decision records on per-mission budgets, memo authorship, wrapper placement and LinkML; then the patterns on model-tiered execution and the software-element context graph; then the coordination drop-box doctrine.
+**Three reading paths.** Ten minutes: §0, §2.1–§2.4, §7. The whole document: see the frontmatter for the derived reading time. Deep: the aDNA Standard §§1–5 and §7 (the vault), §§8–9 and §13 (sessions, missions, collisions), §11 (coordination); then the decision records on per-mission budgets, memo authorship, wrapper placement and LinkML; then the patterns on model-tiered execution and the software-element context graph; then the coordination drop-box doctrine.
 
 ## Appendix A — normative vs practice
 
-Every mechanism in §2–§5 with its authority. **Normative**: the aDNA Standard v2.5 requires or defines it at the cited section. **Practice**: defined by a decision record, pattern or doctrine in the network and adopted by the vaults that run it; the standard does not require it. **Provisional**: a stated direction with no ratified record.
+Every mechanism in §2–§6 with its authority. **Normative**: the aDNA Standard v2.5 requires or defines it at the cited section. **Practice**: defined by a decision record, pattern or doctrine in the network and adopted by the vaults that run it; the standard does not require it. **Provisional**: a stated direction with no ratified record. For practice rows, *Authority* gives the kind of record, who owns it and when it was set, and *Adoption* says how far it has spread; neither is a link, by design.
 
-| Mechanism | Authority | Class |
-|---|---|---|
-| The who/what/how triad; the question test | Standard §3.1 | normative |
-| Bare and embedded deployment forms | §3.2–§3.4 | normative |
-| The `.aDNA` suffix and glob discovery | §3.5 | normative (SHOULD) |
-| Governance files and their jobs; the five-step quickstart | §4.1–§4.6 | normative |
-| Sixteen base entity types | §3; promotion of `inventory` + `identity` by decision record (v2.3) | normative |
-| Six base frontmatter fields; extension policy | §7.2, §7.6 | normative |
-| Naming | §6 | normative |
-| Conformance levels | §5.5 | normative |
-| Session lifecycle, ID, tiers, SITREP, next-session prompt | §8.1–§8.5 | normative |
-| The 75% rule | §8.7 | normative |
-| Mission structure; claiming by session | §9.1, §9.3 | normative |
-| Coordination directory, note contents, urgency | §11 | normative |
-| Read-before-write, attribution, update-field check, scope declarations | §13.2, §13.4 | normative (Tier 3 is SHOULD) |
-| Archive patterns, retention | §15 | normative |
-| Human ratification; the four-field block | §7.7 (v2.5) | normative |
-| FAIR block on deployable objects | §5.5 Full | normative at Full |
-| The hidden template and the fork model | workspace router; fork skill | practice |
-| STATE graduation | state-graduation skill; budget record clause B | practice |
-| Campaigns, phases, human phase gates | campaign protocol; standing orders | practice |
-| The five-line AAR | AAR template; standing order | practice |
-| Content-load unit, formula, bands, drift, two metrics | per-mission context budget record (May 2026) | practice |
-| Heavy-file read convention | same record, clause B | practice |
-| Convergence model; context recipes | context-library documents | practice |
-| Executor tiers; the brief contract | model-tiered execution pattern (July 2026 binding) | practice |
-| OODA cascade | context-library document; opt-in | practice |
-| Drop-box, delivery branches, receipts, hashes, replies derived | coordination drop-box doctrine (September 2026) | practice |
-| Three-valued memo authorship | decision record (September 2026) | practice |
-| Single-writer lease | vault governance doctrine (v8.4) | practice |
-| Claim-lease with fencing tokens | operations vault task ontology + decision record | practice |
-| Airlock (1), vault-to-vault traffic | a framework vault's spec (v0.3) | practice |
-| Airlock (2), action mediation | a platform vault's doctrine | practice |
-| ACP / A2A / MCP posture; one signed card per node | research ruling, September 2026 | provisional |
-| Staff-officer graph | genesis vault; mandate record `proposed` | provisional |
-| Advisor-handoff protocol | platform vault; federation pending | practice |
-| Credential routing by name | credential-handling doctrine | practice |
-| Node vault; network vault; received-verified-placed | node + network vault governance; category ratified by improvement proposal | practice |
-| Exchange: registry, commons, market; one artifact, many manifests | exchange vault doctrine; adopt posture since September 2026 | practice |
-| Lighthouse node | planning vault; nothing deployed | provisional |
-| Federation wrappers, `federation_ref`, placement under `how/` | software-element pattern; placement record (July 2026) | practice |
-| Eight vault categories | ecosystem specs; category records | practice |
-| Lattice schema, nineteen I/O types, lattice types, execution modes | the schema the home vault ships; type-vocabulary decision | practice |
-| LinkML as preferred schema vocabulary | decision record accepted 2026-10-03; optional | practice |
-| Compute tiers L0–L3 | vault governance | practice |
+| Mechanism | § here | Authority | Adoption | Class |
+|---|---|---|---|---|
+| The who/what/how triad | §2.1 | Standard §3.1 | — | normative |
+| Bare and embedded deployment forms | §2.1 | §3.2–§3.4 | — | normative |
+| The `.aDNA` suffix, name pattern, glob discovery | §2.1 | §3.5 | — | normative (SHOULD) |
+| Governance files and their jobs; the five-step quickstart | §2.2 | §4.1–§4.6 | — | normative |
+| Context-library load rule (index first, load only what is needed) | §2.2 | §10.3 | — | normative |
+| Per-directory `AGENTS.md` read discipline | §2.2 | standing order · reference vault · 2026-04 | network-wide | practice |
+| Required and recommended subdirectories per leg | §2.3 | §5.1–§5.3 | — | normative |
+| Sixteen base entity types | §2.3 | decision record · reference vault · 2026-06 (standard v2.3 skeleton extension) | network-wide | practice |
+| Six base frontmatter fields; per-class profile; extension policy | §2.4 | §7.2, §7.6 | — | normative |
+| Read-before-write; attribution | §2.4 | §13.2 | — | normative |
+| Touched-today check; Tier-2 scope declarations | §2.4, §4.1 | §13.4 | — | normative (SHOULD) |
+| Naming | §2.4 | §6 | — | normative |
+| Conformance levels; the validator | §2.5 | §5.5 | — | normative |
+| The hidden template and the fork model | §2.6 | workspace router + fork skill · reference vault · 2026-05 | network-wide | practice |
+| Archive pattern; retention (no auto-delete) | §2.7 | §15.1, §15.2 | — | normative (SHOULD NOT) |
+| Never delete missions, decisions, campaigns | §2.7 | standing order · reference vault · 2026-04 | network-wide | practice |
+| STATE graduation to a history file | §2.7 | skill · reference vault · 2026-07 (template release v8.9) | several vaults | practice |
+| Session lifecycle, ID, tiers, SITREP, next-session prompt | §3.1 | §8.1–§8.5 | — | normative |
+| The 75% rule | §3.2 | §8.7 | — | normative |
+| Mission structure; claiming by session | §3.1 | §9.1, §9.3 | — | normative |
+| Human ratification; the four-field block | §3.1 | §7.7 | — | normative |
+| Campaigns, phases, human phase gates; the five-line AAR | §3.1 | campaign protocol + standing orders · reference vault · 2026-04 | network-wide | practice |
+| Content-load unit, formula, bands, drift, two metrics; heavy-file reads | §3.2 | decision record · reference vault · 2026-05 | network-wide | practice |
+| Executor tiers; the brief contract | §3.3 | pattern · reference vault · 2026-07 | several campaigns | practice |
+| OODA cascade | §3.4 | context document · reference vault; opt-in | few | practice |
+| Coordination directory, note contents, urgency | §4.1 | §11 | — | normative |
+| Drop-box, delivery branches, receipts, hashes, replies derived; three-valued authorship | §4.2 | doctrine + decision record · reference vault · 2026-09 | most active vaults | practice |
+| Single-writer lease | §4.3 | governance doctrine · reference vault · 2026-07 | network-wide | practice |
+| Claim-lease with fencing tokens | §4.4 | task ontology + decision record · operations vault · 2026-06 | one node | practice |
+| Airlock: vault-to-vault traffic contract | §4.5 | specification · a framework vault · 2026-09 | few | practice |
+| Airlock: action-mediation gate | §4.5 | doctrine + decision record · a platform vault · 2026-09 | one vault | practice |
+| ACP / A2A / MCP posture; one signed card per node | §4.6 | research note · 2026-09 | — | provisional |
+| Staff-officer graph | §4.6 | decision record · coordination vault · 2026-09 (mandate accepted) | one vault | practice |
+| Credential routing by name | §4.7 | doctrine · node vault + reference vault · 2026-05 | network-wide | practice |
+| Node vault; network vault; received-verified-placed | §5.1 | governance + decision record · node and network vaults · 2026-05 | network-wide | practice |
+| Exchange: registry, commons, market; one artifact, many manifests | §5.1 | doctrine · exchange vault · 2026-09 | one vault | practice |
+| Lighthouse node | §5.1 | planning vault; nothing deployed | — | provisional |
+| Federation wrappers, `federation_ref`, placement under `how/` | §5.2 | pattern + decision record · reference vault · 2026-07 | network-wide | practice |
+| Vault categories | §5.3 | ecosystem specifications + decision records · reference vault · 2026-05 → | network-wide | practice |
+| Lattice schema, I/O types, lattice types, execution modes | §5.4 | schema + decision record · reference vault · 2026-04 | several vaults | practice |
+| LinkML as preferred schema vocabulary | §7 | decision record · reference vault · 2026-10; optional | few | practice |
+| Compute tiers L0–L3 | §5.5 | governance · reference vault | network-wide | practice |
+| Derive-never-type; red-proved instruments; timestamped "live" | §6 | campaign directives · reference vault · 2026-08 → | two campaigns | practice (campaign directive) |
 
-Adopt only the normative rows and you have a conformant vault and an agent that orients in one read. Everything below the line is what one network built to run dozens of them, offered as worked practice, not as the standard.
+Adopt only the normative rows and you have a conformant vault and an agent that orients in one read. The practice rows are what one network built to run dozens of such vaults, offered as worked practice, not as the standard.
+
+*Row count, derived at write time: 43 mechanisms — 17 normative, 24 practice, 2 provisional.*

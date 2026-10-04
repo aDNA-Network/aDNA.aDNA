@@ -4,7 +4,7 @@ mission_id: mission_primer_adna_for_data_engineers
 objective: O0
 title: "Primer scrub control — the write-gate grep list (adapted from RiemannCommons write_gate_checklist) and the record of its runs; must go RED on a planted path before it is believed"
 created: 2026-10-03
-updated: 2026-10-03
+updated: 2026-10-04
 status: active
 last_edited_by: agent_rosetta
 executor_tier: fable
@@ -36,6 +36,6 @@ Also: `privacy_class` · `T0` / `T1` (WilhelmAI-local tiers) · `[D]` / `[I]` / 
 
 | Date | File · version | Planted? | Hits | Result |
 |---|---|---|---|---|
-| — | (O3: v0.1 with one planted path) | yes | must be ≥ 1 | RED-proof pending |
-| — | (O3: v0.2 after scrub) | no | — | — |
+| 2026-10-04 | v0.2 draft + one planted path (`~/aDNA/Home.aDNA/what/inventory/` appended to a scratch copy) | yes | **1** (rule 1, `~/aDNA/`) | **RED ✓** — the control fires (`session_stanley_20261004_033400_garnier_f_hygieia_inbox_dp12_primer_o3`; pattern file = the 8 rules + the "Also" row, 71 regexes, `grep -nE -f`) |
+| 2026-10-04 | v0.2 body (below the frontmatter fence) | no | **0** | clean; frontmatter checked separately: 0 (its `last_edited_by: agent_rosetta` is the file's own attribution and does not match the persona rule's `\bRosetta\b`); gitleaks `--no-git` 0 findings |
 | — | (O4: v1.0, both files) | no | 0 required | — |
