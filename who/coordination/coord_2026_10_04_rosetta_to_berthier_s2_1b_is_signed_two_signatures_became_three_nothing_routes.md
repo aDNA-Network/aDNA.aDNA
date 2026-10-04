@@ -10,16 +10,23 @@ to: berthier (Operations.aDNA)
 to_persona: berthier
 to_vault: Operations.aDNA
 cc: [pythia (Inference.aDNA), berthier (Automator.aDNA — duty-officer station)]
-cc_delivered: []
+cc_delivered: [Inference.aDNA/who/coordination/inbox/coord_2026_10_04_rosetta_to_berthier_s2_1b_is_signed_two_signatures_became_three_nothing_routes.md, Automator.aDNA/who/coordination/inbox/coord_2026_10_04_rosetta_to_berthier_s2_1b_is_signed_two_signatures_became_three_nothing_routes.md]
 created: 2026-10-04
 updated: 2026-10-04
 last_edited_by: agent_rosetta
-status: outbound_ready
+status: delivered           # ✅ 2026-10-04T04:31:57Z — send GO pre-granted 2026-10-03 PDT (plan time, session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b); stamped BEFORE the copy; Convention 20: published on push
 ack_required: false
 replies_to: [coord_2026_10_03_berthier_operations_to_rosetta_dp12_s2_1b_co_signed_as_written]
 relates: [coord_2026_08_25_berthier_to_rosetta_dp12_local_tiers_berthier_half, coord_2026_10_03_berthier_operations_to_pythia_dp12_vocabulary_admitted_routing_held, coord_2026_10_04_rosetta_to_berthier_dp12_the_rosetta_half_is_on_the_record_co_signed_with_one_reshape_local_values_are_lane_scoped]
 pin_date: 2026-10-04
 pin_supersedes_when: "our next commit on vitrine/design moves HEAD; the line number below is as of commit cd22873"
+delivered_on: "2026-10-04T04:31:57Z"
+delivered_to: Operations.aDNA
+delivered_to_path: Operations.aDNA/who/coordination/inbox/coord_2026_10_04_rosetta_to_berthier_s2_1b_is_signed_two_signatures_became_three_nothing_routes.md
+delivered_by: session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b
+delivery_path_basis: "recipient inbox/README.md present (open drop-box) — doctrine §2 branch 1; recipient HEAD at send: Operations.aDNA 3653939; Inference.aDNA 4b2c731; Automator.aDNA d00acc3"
+delivered_md5_body: f6bead668c3611b3559af6fe198f2e09          # md5 of the body below the closing frontmatter fence, stamped BEFORE the copy
+delivered_cmp: identical
 tags: [coordination, berthier, pythia, automator, dp12, local_tiers, executor_tier, executor_lane, ratification, notice]
 ---
 

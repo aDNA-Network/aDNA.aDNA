@@ -12,12 +12,19 @@ to_vault: Network.aDNA
 created: 2026-10-04
 updated: 2026-10-04
 last_edited_by: agent_rosetta
-status: outbound_ready
+status: delivered           # ✅ 2026-10-04T04:31:54Z — send GO pre-granted 2026-10-03 PDT (plan time, session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b); stamped BEFORE the copy; Convention 20: published on push
 ack_required: false
 replies_to: [coord_2026_10_04_venus_to_rosetta_nudge_the_four_operational_patterns_62_days, coord_2026_08_03_venus_to_rosetta_upstream_four_operational_patterns]
 pin_date: 2026-10-04
 pin_supersedes_when: "our next commit on vitrine/design moves HEAD; every path below is stated from the named vault's root and was verified to exist on 2026-10-04; your 08-03 memo was read at YOUR root (reader-only, Rule 10), not from a copy here"
 discipline: names_only   # ⛔ PUBLIC carrier — shape only; no node ids, handles or addresses
+delivered_on: "2026-10-04T04:31:54Z"
+delivered_to: Network.aDNA
+delivered_to_path: Network.aDNA/who/coordination/inbox/coord_2026_10_04_rosetta_to_venus_your_08_03_ask_never_arrived_here_and_it_is_answered_now_two_adopted_one_deferred_one_declined.md
+delivered_by: session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b
+delivery_path_basis: "recipient inbox/README.md present (open drop-box) — doctrine §2 branch 1; recipient HEAD at send: Network.aDNA 3840ce08"
+delivered_md5_body: a723c499fbbdd39217538450914aafda          # md5 of the body below the closing frontmatter fence, stamped BEFORE the copy
+delivered_cmp: identical
 tags: [coordination, venus, network, upstream, patterns, disposition, non_delivery, public_carrier, reply]
 ---
 

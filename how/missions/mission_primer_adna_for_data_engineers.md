@@ -4,13 +4,13 @@ mission_id: mission_primer_adna_for_data_engineers
 type: plan
 title: "Operation Primer — aDNA for data engineers: a comprehensive explainer of the standard, iterated through review, delivered to Andy Zhang on Fluxer"
 owner: stanley
-status: in_progress   # O0 ✅ 2026-10-03 · O1 ✅ 2026-10-03 · O2 ✅ 2026-10-04 UTC · O3 ✅ 2026-10-04 UTC · O4 ✅ 2026-10-04 UTC — read gate PASSED, v1.0 + PDF + cover note + transmission log (session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b) · O5 (delivery memo → Fluxer; completed only on delivery) in the same sitting
+status: completed   # O0 ✅ 2026-10-03 · O1 ✅ 2026-10-03 · O2 ✅ 2026-10-04 UTC · O3 ✅ 2026-10-04 UTC · O4 ✅ 2026-10-04 UTC (read gate PASSED → v1.0 + PDF + cover note + transmission log) · O5 ✅ 2026-10-04T04:32:19Z — the Aspasia memo is DELIVERED into Fluxer.aDNA/who/coordination/inbox/ (cmp identical); completed on the delivery, per the O5 acceptance. Andy's receipt is Fluxer.aDNA's act (STATE §Pending Manual Actions) — not this mission's.
 mission_class: implementation
 mission_kind: external_document
 executor_tier: fable            # operator ruling 2026-10-03: fable throughout — audience-fit writing for a named reader is judgment work at every objective
 executor_runtime: claude
 token_budget_estimated: "≈420 ± 120 kT content-load across 5–6 sessions (≥200 kT band per ADR-016 → objectives are session-sized; kept as ONE mission on the mission_site_story_review_charter precedent, 200–400 kT / 2–4 sessions). Per objective: O0 70 · O1 120 · O2 90 · O3 90 · O4 40 · O5 15. Source reading is the sink (≈15 canonical files, 3 of them ≥ 60 KB — read with offset/limit)."
-token_budget_actual: "<kT, filled at close>"
+token_budget_actual: "≈ 370 kT executor content-load (O0 40 · O1 95 · O2 70 · O3 110 · O4 35 · O5 20; rough) vs 420 ± 120 estimated — inside the band on the executor unit; PLUS ≈ 1,765 kT read-only lens subagents on their own line (O2 six lenses 1,053 · O3 four lenses + two re-runs 712). Billing: unavailable."
 priority: high
 depends_on: []                   # needs no site/, no push, no deploy, no peer edit — the one substantial agent-reachable item while GARNIER P1.3 / HAUSSMANN P5.1 wait on humans
 grounded_in:
@@ -19,7 +19,7 @@ grounded_in:
   - RiemannCommons.aDNA/what/write_gate_checklist.md           # the scrub rule, adapted (§Scrub)
   - LAVentureGraph.aDNA/who/contacts/contact_andy_zhang.md     # reader profile: builder/engineer, ETL + data engineering, accessibility
 created: 2026-10-03
-updated: 2026-10-04   # O4 DONE (read gate passed → v1.0; §7.7 filled)   # O3 DONE (v0.2; round 2 four lenses → 31 correctness items applied → archivist re-verify 3 low applied → dual-audience PASS; scrub 0/0 red-proved) — prior: O2 DONE (six-lens ledger, zero PENDING; O3 opens with A1–A6) — prior: O1 DONE (draft v0.1 at what/docs/adna_primer_for_data_engineers.md; review_ledger opened); §Outline I-13 fix (ADR-062 accepted, not proposed)
+updated: 2026-10-04   # COMPLETED — O5 delivered 04:32:19Z; AAR filed; O4 DONE (read gate passed → v1.0; §7.7 filled)   # O3 DONE (v0.2; round 2 four lenses → 31 correctness items applied → archivist re-verify 3 low applied → dual-audience PASS; scrub 0/0 red-proved) — prior: O2 DONE (six-lens ledger, zero PENDING; O3 opens with A1–A6) — prior: O1 DONE (draft v0.1 at what/docs/adna_primer_for_data_engineers.md; review_ledger opened); §Outline I-13 fix (ADR-062 accepted, not proposed)
 last_edited_by: agent_rosetta
 tags: [plan, mission, primer, explainer, standard, data_engineering, andy_zhang, fluxer, external_document, operation_primer]
 ---
@@ -78,6 +78,7 @@ A reader with Andy's background — ETL and data-engineering, no prior exposure 
 | **O4** | **Operator read gate → v1.0 + render.** Operator reads v0.2 (ISS via `skill_create_iss` if the gate is richer than approve/amend/defer, else `AskUserQuestion`); apply; set v1.0; render PDF; SHA256 both files; write `cover_note_andy.md` (≤ 4,000 chars) and `transmission_log.md`. | fable | 40 | operator ⛩ GO recorded (§7.7 4-field block in the mission); PDF opens; hashes logged |
 | | ✅ **O4 DONE 2026-10-04 UTC** (`session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b`, fable): the operator **read v0.2 and approved it as v1.0 without amendment** (plan-time `AskUserQuestion`; the gate was the bounded approve / amend / defer / not-read-yet form, so no ISS was rendered); §7.7 block below filled. `what/docs/adna_primer_for_data_engineers.md` → `version: "1.0"`, `status: active`, body **byte-identical** to v0.2 (`cmp` against HEAD). **PDF rendered** at `artifacts/primer/adna_primer_for_data_engineers_v1.pdf` — **25 pages, 914,290 bytes**, 5 figures each on its own page-with-images and each inspected rendered; method delta stated in `transmission_log.md` (pandoc → HTML → headless Chrome, not tectonic: SVG figures; the first pass showed figures scaled to page width and split across pages — caught by looking, fixed by sizing each `<img>` from its SVG `viewBox`). **Cover note** `artifacts/primer/cover_note_andy.md`, **2,547 chars** (derived), plain register, agent authorship disclosed in the note's own words. **Scrub**: 76-regex list rebuilt; v1.0 body 0 · frontmatter **1 → 0** (the `updated:` comment had named this mission's ID — rule 2 caught it) · cover note 0 · planted 1 (RED ✓) · gitleaks 0 ×3. One correctness fix in the note before hashing: it had claimed the standard "requires agent authorship to be disclosed" — the standard does not say so (`grep -i disclos` → 0); reworded to what is true. **SHA256** of all three in `transmission_log.md`. **Actual ≈ 35 kT** executor (vs 40). | | | |
 | **O5** | **Delivery hand-off + AAR.** Stage the Aspasia memo (§Delivery) and **deliver it** into `Fluxer.aDNA/who/coordination/inbox/` (cmp-identical, recipient HEAD pin re-read); add the delivery act to STATE §Pending Manual Actions; author the follow-up sweep mission stub from `source_inconsistencies.md`; 5-line AAR; `status: completed` **only when the memo is delivered, not when authored** (commitment is live from delivery). | fable | 15 | memo in Fluxer's inbox byte-identical; STATE row present; AAR filed; `token_budget_actual` recorded |
+| | ✅ **O5 DONE 2026-10-04T04:32:19Z** (same session): `who/coordination/coord_2026_10_04_rosetta_to_aspasia_primer_delivery_to_andy.md` **DELIVERED** into `Fluxer.aDNA/who/coordination/inbox/` (open drop-box `open_unilaterally`, doctrine §2 branch 1; recipient HEAD `37cda74`; the three SHA256 re-run immediately before the copy and equal; stamped before the copy, body md5 `831b7c14…`, `cmp` identical). The memo **asks** — the five preconditions (join · disclosed row · `dmRoster` · an attachment path or carried link · consumer-vault registration or the aDNALabs route) are named as Aspasia's with operator approval per act, the fallback (the relay through Jake's desk, or the operator sends the file) is stated, and `ack_scope` closes on any of three answers. Follow-up sweep stub authored: `how/missions/mission_primer_followup_sweep.md` (`queued`, opus, ≈60 kT; I-01–I-17 mapped to four objectives; the three standard errata draft-only). STATE row added. **Actual ≈ 20 kT** (vs 15). | | | |
 
 **Session shape**: O0 · O1 · O2 · O3 · O4+O5 = 5 sessions (6 if O1 splits). Each session opens a Tier-1 file (Tier-2 when touching `MANIFEST.md`/`STATE.md`), records `grounded_in` re-verified on disk, and converts intent to record only at each verified step — never leave a finished session in `active/`.
 
@@ -123,11 +124,14 @@ Operator ruling: Fluxer.aDNA's agents deliver on Fluxer to Andy. Measured 2026-1
 *Fill out when setting `status: completed`.*
 
 ### Deliverables
--
+- `what/docs/adna_primer_for_data_engineers.md` **v1.0** (operator-approved 2026-10-04; 5 figures; App. A 46 rows derived 19/24/2/1) · `how/missions/artifacts/primer/adna_primer_for_data_engineers_v1.pdf` (25 pp) · `cover_note_andy.md` (2,547 chars) · `transmission_log.md` (SHA256 ×3) · `scrub_control.md` (red-proved twice, 0/0/0 at release) · `review_ledger.md` (O2 53 rows + O3 round 2) · `source_pack.md` + `source_inconsistencies.md` (I-01–I-17) · `outline_v0.md` · `who/reviewers/reviewer_data_engineer.md` (reviewers 16 → 17 derived) · the Aspasia delivery memo (delivered) · `mission_primer_followup_sweep.md` (queued).
 ### Descoped
--
+- Andy's actual receipt (Fluxer.aDNA's act; preconditions not ours) · the `/learn` page / `aDNA_overview.md` successor question (noted for the sweep, not done) · any amendment to the standard (I-15–I-17 are errata drafts for the sweep's O3) · the B12 "~34 rows" App. A merge (not reached; 46 rows stated).
 ### Key Findings
--
+- The O1 dual-audience smoke test measured legibility, not truth: six lenses at the object found six highs (O2), and round 2 found 31 more after the fixes (O3) — the "≤ 5" exit criterion was not met as written and was recorded, not relaxed.
+- Three findings are about the **standard**, not the primer (§4.1 vs §5.5 governance-file MUSTs; `frontmatter_schema.json` stale against §7.2; §6.5 cites a §15 rule that is not there) — the first outsider-facing document re-read the standard harder than its own vault had.
+- Rendering is a check, not a formality: a `;` in a sequence-diagram message was a parse error (O3), and unconstrained SVGs split across PDF pages (O4) — both caught only by looking at the output.
+- The scrub control fired on its own author twice (the bare `.adna/` rule at O3; the mission ID in the v1.0 `updated:` comment at O4) and on a false claim in the cover note ("the standard requires disclosure" — it does not).
 ### Scope Changes
 -
 
@@ -142,8 +146,8 @@ Operator ruling: Fluxer.aDNA's agents deliver on Fluxer to Andy. Measured 2026-1
 
 *Mandatory before `status: completed`. `how/templates/template_aar_lightweight.md`.*
 
-- **Worked**:
-- **Didn't**:
-- **Finding**:
-- **Change**:
-- **Follow-up**:
+- **Worked**: one standalone mission with session-sized objectives (O0–O5 over four sittings, ≈370 kT executor vs 420 ± 120) and a fixed outline with at most one restructure; read-only lens subagents on their own budget line; every count derived by script; the write-gate scrub red-proved before it was believed; the operator read gate as a bounded `AskUserQuestion` (no ISS needed).
+- **Didn't**: the word budget (4,500–6,500 advisory) — v1.0 is 7,534 by the ledger's method, overage stated; the O3 exit criterion (≤ 5 round-2 findings, none correctness) failed at 31; the deliverables row's `pandoc + tectonic` was not the method that worked (SVG figures → HTML → headless Chrome); App. A's ~34-row merge target not reached.
+- **Finding**: the primer was the hardest re-read the standard has had — seventeen inconsistencies, three in the standard's own text, none fixable from inside a document that must not amend it; and the scrub control's best catches were against its own author.
+- **Change**: the follow-up is its own mission (`mission_primer_followup_sweep`, queued, opus) so the errata get §7.7 and the vault-local fixes get commits; the render step is written down as a check with an inspection, not a build command.
+- **Follow-up**: Aspasia's ack (one of three) → Andy's receipt is Fluxer's record · the sweep mission on summons · the primer as a `/learn` candidate (AAR note, not scope) · the three backlog ideas it feeds (`idea_external_sharing_doctrine` first instance · `idea_a2a_communication_overview` first draft · `idea_upstream_standard_codify_campaign_layer`).

@@ -12,11 +12,18 @@ to_vault: Operations.aDNA
 created: 2026-10-04
 updated: 2026-10-04
 last_edited_by: agent_rosetta
-status: outbound_ready
+status: delivered           # ✅ 2026-10-04T04:31:55Z — send GO pre-granted 2026-10-03 PDT (plan time, session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b); stamped BEFORE the copy; Convention 20: published on push
 ack_required: false
 replies_to: [coord_2026_08_27_berthier_to_rosetta_decision_queue_instance_seed]
 pin_date: 2026-10-04
 pin_supersedes_when: "our next commit on vitrine/design moves HEAD; the pattern file path below is stated from OUR root and the seed path from YOURS, both verified to exist on 2026-10-04"
+delivered_on: "2026-10-04T04:31:55Z"
+delivered_to: Operations.aDNA
+delivered_to_path: Operations.aDNA/who/coordination/inbox/coord_2026_10_04_rosetta_to_berthier_seed_received_37_days_late_and_adopted_as_the_second_instance_your_band_c_distinction_is_now_in_the_pattern.md
+delivered_by: session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b
+delivery_path_basis: "recipient inbox/README.md present (open drop-box) — doctrine §2 branch 1; recipient HEAD at send: Operations.aDNA 3653939"
+delivered_md5_body: a6a62e94932d5b50ffd481e3eac94e30          # md5 of the body below the closing frontmatter fence, stamped BEFORE the copy
+delivered_cmp: identical
 tags: [coordination, berthier, operations, decision_queue, pattern, instance, reply, late_delivery]
 ---
 
