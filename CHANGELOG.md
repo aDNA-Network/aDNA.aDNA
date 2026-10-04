@@ -30,9 +30,11 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
-### 2026-10-04 — `pattern_model_tiered_campaign_execution.md` §2.1b **Local tiers** PROPOSED (the Rosetta half of DP-12)
+### 2026-10-04 — `pattern_model_tiered_campaign_execution.md` §2.1b **Local tiers** ACCEPTED (§7.7 signed; proposed earlier the same day as the Rosetta half of DP-12)
 
-> Co-signs Operations' 2026-08-25 half and Pythia's 2026-10-03 substrate half with one reshape: local tier values (`light · standard · frontier`, interim) may enter the `executor_tier` vocabulary only behind a capability-matrix row + calibration verdict, are **valid only with `executor_lane: local`**, route only once the ADR-012 §7 battery verdict lands (per tier, evidence-fired), and are mapped onto §2.1 classes by the consumer's table, never by this pattern. Empty §7.7 until the operator signs. Memo to Berthier cc Pythia/Automator the same day.
+> **Ratified 2026-10-04** (Stanley, plan-time AskUserQuestion) after Operations co-signed the text as written at 03:54Z — three halves (Berthier 08-25 · Pythia 10-03 · Rosetta 10-04) and two signatures on record; the text in force is unchanged from the proposal. Nothing routes by the signature: each local tier's ADR-012 §7 battery verdict is still the substrate owner's to land. Notice to Berthier cc Pythia/Automator the same sitting.
+>
+> *Proposal entry, kept:* Co-signs Operations' 2026-08-25 half and Pythia's 2026-10-03 substrate half with one reshape: local tier values (`light · standard · frontier`, interim) may enter the `executor_tier` vocabulary only behind a capability-matrix row + calibration verdict, are **valid only with `executor_lane: local`**, route only once the ADR-012 §7 battery verdict lands (per tier, evidence-fired), and are mapped onto §2.1 classes by the consumer's table, never by this pattern. Empty §7.7 until the operator signs. Memo to Berthier cc Pythia/Automator the same day.
 
 ### 2026-10-04 — template release **v8.12** fired from this dev graph (image track; this vault's own governance version is unchanged)
 
