@@ -12,7 +12,7 @@ to_vault: WilhelmAI.aDNA
 created: 2026-10-03
 updated: 2026-10-03
 last_edited_by: agent_rosetta
-status: outbound_ready      # ⏸ HOLD 2026-10-03T22:40Z — doctrine §2 branch 3: WilhelmAI has no inbox/ AND was LIVE at the write (7 agent processes with cwd in the vault; file motion at 22:26Z). Send GO is GIVEN (packet C4, plan-time 2026-10-03); the probe refused the act. RETRY: next sitting, re-probe (lsof cwd + mtime<10min + 2026-10 lease), deliver by branch 2 when quiet. A hold left unrecorded is a drop — recorded here, in STATE §Pending Manual Actions and in the session.
+status: outbound_ready      # ⏸ HOLD ×2 — 2026-10-04T00:26Z second probe: still LIVE (claude.ex + 6 node + Python, cwd in WilhelmAI.aDNA; no file motion <10 min; no 2026-10 lease at status active) → HELD AGAIN per doctrine §2 branch 3 (operator ruling 2026-10-04 at plan time: hold if live). Retry next sitting. ⏸ HOLD 2026-10-03T22:40Z — doctrine §2 branch 3: WilhelmAI has no inbox/ AND was LIVE at the write (7 agent processes with cwd in the vault; file motion at 22:26Z). Send GO is GIVEN (packet C4, plan-time 2026-10-03); the probe refused the act. RETRY: next sitting, re-probe (lsof cwd + mtime<10min + 2026-10 lease), deliver by branch 2 when quiet. A hold left unrecorded is a drop — recorded here, in STATE §Pending Manual Actions and in the session.
 ack_required: true
 replies_to: []
 pin_date: 2026-10-03
@@ -21,7 +21,7 @@ delivered_on: "—"
 delivered_to: WilhelmAI.aDNA
 delivered_to_path: "—"
 delivered_by: "—"
-delivery_path_basis: "HOLD — §2 branch 3 (no drop-box, peer live at 2026-10-03T22:40Z probe); retry scheduled for the next sitting"
+delivery_path_basis: "HOLD ×2 — §2 branch 3 (no drop-box; peer live at the 2026-10-03T22:40Z probe AND at the 2026-10-04T00:26Z probe — 8 agent processes with cwd in the vault); retry scheduled for the next sitting"
 delivered_md5_body: "—"
 delivered_cmp: "—"
 tags: [coordination, hygieia, wilhelmai, adr_010, co_sign, g4, commons, haussmann, ask]

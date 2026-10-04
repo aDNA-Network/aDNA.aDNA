@@ -1,7 +1,7 @@
 ---
 type: directory_index
 created: 2026-02-17
-updated: 2026-05-20
+updated: 2026-10-04
 last_edited_by: agent_stanley
 tags: [directory_index, coordination]
 ---
@@ -28,6 +28,8 @@ expires: YYYY-MM-DD
 
 Brief description of what other agents need to know.
 ```
+
+**Authorship is three-valued (ADR-061).** Beside the free `author:`/`from:` line a memo carries `from_persona:` (optional), `from_vault:` (**required** — the one value a recipient can resolve on disk) and `authority:` (optional — the ruling or grant it was sent under); `how/templates/template_coordination.md` ships the three fields.
 
 ## Urgency Levels
 

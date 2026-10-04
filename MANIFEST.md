@@ -40,7 +40,7 @@ aDNA.aDNA/
 │   ├── workshops/      [EXT] Workshop kits + facilitation
 │   ├── publishing/     [EXT] Vault-to-web pipeline
 │   ├── campaigns/      Strategic initiatives (campaign_garnier active; campaign_haussmann holds independent endgame; campaign_vitrine proposed/history retained; campaign_rosetta closed 2026-04-26)
-│   ├── templates/      45 templates (26 base + 11 extension + 8 operational)
+│   ├── templates/      46 templates (26 base + 11 extension + 9 operational)
 │   ├── skills/         57 skills (27 base + 30 project-specific)
 │   ├── sessions/       Session tracking
 │   ├── missions/       Multi-session task decomposition
@@ -110,9 +110,9 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | `canvas2lattice.py` | `what/lattices/tools/` | Convert Obsidian canvas → lattice YAML |
 | `lattice_yaml_schema.json` | `what/lattices/` | JSON Schema for lattice definitions |
 
-### Templates (45)
+### Templates (46)
 
-**26 base** (inherited from `.adna` — 12 auto-triggered + 13 manual-apply; full index: `how/templates/AGENTS.md`) + **11 extension** + **8 operational** = the 19 Rosetta-local templates below:
+**26 base** (inherited from `.adna` — 12 auto-triggered + 13 manual-apply; full index: `how/templates/AGENTS.md`) + **11 extension** + **9 operational** = the 20 Rosetta-local templates below:
 
 | Local Template | Class | Target Directory |
 |----------------|-------|-----------------|
@@ -135,6 +135,7 @@ Cross-topic recipes: `what/context/context_recipes.md` (6 domain-neutral recipes
 | `template_ratification_record.md` | operational | `what/decisions/` · `how/gates/` |
 | `template_second_genesis_dossier.md` | operational | new `<Name>.aDNA/` re-genesis intake |
 | `template_disposition_ledger.md` | operational | fleet spring-clean (`skill_workspace_spring_clean`) |
+| `template_ruling_record.md` | operational | `how/gates/<gate_id>.md` *(v8.12)* |
 
 ### Skills (57)
 

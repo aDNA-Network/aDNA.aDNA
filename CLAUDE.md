@@ -63,7 +63,7 @@ aDNA.aDNA/
 │       ├── tools/               # Python validation and conversion tools
 │       └── examples/            # Example .lattice.yaml files
 ├── how/                         # HOW — Operations, sessions, templates
-│   ├── templates/               # 45 reusable templates (26 base + 11 extension + 8 operational)
+│   ├── templates/               # 46 reusable templates (26 base + 11 extension + 9 operational)
 │   ├── sessions/                # Session tracking (active/ + history/)
 │   ├── missions/                # Multi-session plans (standalone)
 │   ├── backlog/                 # Ideation and improvement tracking

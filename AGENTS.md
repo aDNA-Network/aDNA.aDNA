@@ -42,7 +42,7 @@ aDNA.aDNA/
 │   ├── workshops/      Workshop kits + facilitation
 │   ├── publishing/     Vault-to-web pipeline
 │   ├── campaigns/      Strategic initiatives (campaign_rosetta active)
-│   ├── templates/      45 templates (26 base + 11 extension + 8 operational)
+│   ├── templates/      46 templates (26 base + 11 extension + 9 operational)
 │   ├── skills/         57 skills (27 base + 30 project-specific)
 │   ├── sessions/       Session tracking
 │   ├── missions/       Multi-session tasks

@@ -1,7 +1,7 @@
 ---
 type: directory_index
 created: 2026-02-19
-updated: 2026-07-06
+updated: 2026-10-04
 last_edited_by: agent_rosetta
 tags: [directory_index, templates]
 ---
@@ -14,7 +14,7 @@ Templates for all content types in the vault. Each template defines the frontmat
 
 ## Template Index
 
-> **45 `template_*.md` total** = 12 auto-triggered + 14 manual-apply + 8 operational + 11 extension. (The Fork-Skeleton Bundle is a directory, not a `template_*.md`, so it sits outside the 44.) Provenance split: 26 base (inherited from `.adna`) + 11 extension + 8 operational.
+> **46 `template_*.md` total** = 12 auto-triggered + 14 manual-apply + 9 operational + 11 extension. (The Fork-Skeleton Bundle is a directory, not a `template_*.md`, so it sits outside the 46.) Provenance split: 26 base (inherited from `.adna`) + 11 extension + 9 operational. *(v8.12: +`template_ruling_record`; the parenthetical's stale "44" corrected in the same edit.)*
 
 ### Auto-Triggered Templates (12)
 
@@ -56,7 +56,7 @@ These templates have no Templater auto-trigger. Copy their structure manually or
 | `template_quest_result.md` | Side-quest result record | `how/quests/` | `quest_result` | Quest dir mixes definitions + results |
 | `template_side_quest.md` | Side-quest definition | `how/quests/` | `side_quest` | Quest dir mixes definitions + results |
 
-### Operational / Lifecycle Templates (8)
+### Operational / Lifecycle Templates (9)
 
 Vault-agnostic operational templates (manual-apply; not entity-type templates). Added since the original index was written:
 
@@ -70,6 +70,7 @@ Vault-agnostic operational templates (manual-apply; not entity-type templates). 
 | `template_ratification_record.md` | Ratification record (ceremony + per-ADR block; local mirror of the upstream v8.5 instrument) | `what/decisions/` · `how/gates/` | `template` |
 | `template_second_genesis_dossier.md` | Second-genesis intake dossier (9-section read of a stale vault) | new `<Name>.aDNA/` re-genesis intake | `second_genesis_dossier` |
 | `template_disposition_ledger.md` | Workspace-houseclean disposition ledger (§A–H; §C = STANDING shim registry) | fleet spring-clean (`skill_workspace_spring_clean`) | `disposition_ledger` |
+| `template_ruling_record.md` | Ruling record — one gate sitting: items put, rulings taken, packet pinned to its commit *(v8.12; doc-only `how/gates/` placement)* | `how/gates/<gate_id>.md` | `ruling_record` |
 
 ### Fork-Skeleton Bundles (1)
 

@@ -5,8 +5,10 @@ adr_number: 3
 title: "Claude Code Runtime as Cross-Triad Context Topic"
 status: accepted
 created: 2026-03-27
-updated: 2026-07-02
+updated: 2026-10-04   # v8.12: marked as a template decision (ADR-060); the template copy flips proposed → accepted at this release
 last_edited_by: agent_rosetta
+template_decision: true
+template_version: v8.12
 supersedes:
 superseded_by:
 tags: [adr, decision, claude_code, context, triad, runtime]
