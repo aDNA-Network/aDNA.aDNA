@@ -1,14 +1,14 @@
 ---
 type: ontology
 created: 2026-02-20
-updated: 2026-06-18
+updated: 2026-10-04   # I-01: `reviewer` row added, entity_count re-derived 26 → 27
 status: active
 last_edited_by: agent_rosetta
 tags:
   - ontology
   - architecture
   - adna
-entity_count: 26
+entity_count: 27   # derived 2026-10-04: 16 base (ADR-035) + 11 Rosetta extensions (CLAUDE.md §Extended Ontology rows); was 26 = 16 + 10, missing `reviewer` — primer follow-up sweep I-01
 base_version: "v3.1"
 quality_score: 4.2
 signal_density: 5
@@ -66,7 +66,9 @@ This artifact documents the base layer in full. Extensions are shown as illustra
 
 **Merge behavior**: All 16 base types are `invariant` — during [ontology unification](docs/ontology_unification.md), base types are never renamed, removed, or reassigned. Only extension types use `extension/namespace` merge behavior.
 
-### Rosetta Extensions (10 Entity Types)
+### Rosetta Extensions (11 Entity Types)
+
+> Count derived 2026-10-04 from `CLAUDE.md` §Extended Ontology (11 rows) and the live directories: this table had 10 rows since 2026-06 while `reviewer` (`who/reviewers/`) had existed since 2026-04, so the frontmatter `entity_count: 26` was that stale sum (16 + 10). Now **27 = 16 base + 11 Rosetta extensions**; the two Network.aDNA rows below are another instance's examples and are not counted.
 
 Domain-specific entity types added by the aDNA.aDNA project for documentation, education, and community architecture.
 
@@ -82,6 +84,7 @@ Domain-specific entity types added by the aDNA.aDNA project for documentation, e
 | 24 | adopter | WHO | `who/adopters/` | Adopter personas and deployment profiles | extension/rosetta |
 | 25 | workshop | HOW | `how/workshops/` | Workshop kits and facilitation guides | extension/rosetta |
 | 26 | publishing | HOW | `how/publishing/` | Vault-to-web content publishing pipeline | extension/rosetta |
+| 27 | reviewer | WHO | `who/reviewers/` | Specialist UX/design reviewer personas (17 at 2026-10-03), invoked at decadal AAR step 4b; live since 2026-04, row added 2026-10-04 (primer sweep I-01) | extension/rosetta |
 
 ### Network.aDNA Extensions (2 Entity Types)
 
@@ -89,8 +92,8 @@ Domain-specific entity types added by the `LatticeNetwork.aDNA` (Alpha Lattice) 
 
 | # | Entity | Triad | Directory | Purpose | Merge Behavior |
 |---|--------|-------|-----------|---------|----------------|
-| 27 | network_node_mirror | WHAT | `what/network/nodes/<hostname>.aDNA/` | Per-node mirror directory (source: each node's own `node.aDNA`; SO-7 read-mostly invariant; aggregator-side; full sub-triad structurally distinct from base `context` per peer ADR-002 §a) | extension/network |
-| 28 | permission_edge | WHAT | `what/network/permissions/<edge_id>.yaml` | Directed authentication edge between nodes (10-field body per peer ADR-008 §g; lifecycle bound to LIP-0003 ledger events at peer arch_01 §6.4 call-site 3) | extension/network |
+| 28 | network_node_mirror | WHAT | `what/network/nodes/<hostname>.aDNA/` | Per-node mirror directory (source: each node's own `node.aDNA`; SO-7 read-mostly invariant; aggregator-side; full sub-triad structurally distinct from base `context` per peer ADR-002 §a) | extension/network |
+| 29 | permission_edge | WHAT | `what/network/permissions/<edge_id>.yaml` | Directed authentication edge between nodes (10-field body per peer ADR-008 §g; lifecycle bound to LIP-0003 ledger events at peer arch_01 §6.4 call-site 3) | extension/network |
 
 ### Triad Structure (Diagram 1)
 

@@ -341,3 +341,8 @@ Deliverables: pending campaign execution. Descoped: none approved. Key findings:
 - **Finding:** pending.
 - **Change:** pending.
 - **Follow-up:** pending P6.5.
+
+### Registry sync under ruling; stimulus/site divergence widens — 2026-10-04 (h)
+
+- `sync:vaults` ran for the first time since 2026-08-17, operator-gated, **grandfathering the 74** admitted vaults after the diff showed 28 unruled rows (`registry_admission.yaml` is now the admitted set; ADR-052 §tiers.6's open question has a file). Four purpose lines + Hestia's B7 data live in the vault `site/`; **built, not deployed**. The formative stimulus `6487444` is untouched; **DP3 item (h)** records the divergence beside (a). gate-49 re-baselined in-container on five routes; chromium 698/1/0.
+- `pattern_channel_proof` accepted; ADR-063 (standard errata) proposed for the v2.6 window; primer follow-up sweep 17/17. Open front unchanged: three readers → DP3. Session `session_stanley_20261004_045208_garnier_h_sync_vaults_send_channel_proof_primer_sweep`; ledger entry of the same date.

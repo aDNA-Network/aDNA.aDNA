@@ -4,7 +4,7 @@ mission_id: mission_primer_adna_for_data_engineers
 objective: O0
 title: "Primer source inconsistencies — every contradiction met while ranking sources, verified at the object 2026-10-03; feeds the follow-up sweep mission"
 created: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-04   # sweep dispositions appended (mission_primer_followup_sweep, sitting (h)); the register rows above are unchanged — the sweep section is the record of what each became
 status: active
 last_edited_by: agent_rosetta
 executor_tier: fable
@@ -39,3 +39,30 @@ tags: [artifact, primer, o0, data_engineer]
 | I-17 | **§6.5 cites a rule §15 does not contain**: the rename protocol says "archive-don't-delete, §15"; §15 covers archive pattern + retention of session history only | the standard (v2.5) | `adna_standard.md` §6.5 → §15 | none in the primer; standard erratum (O3 round-2, archivist lens) |
 
 Count: **17 rows (14 at O0 + 3 found by the O3 round-2 lenses)**; was **14 rows ≥ the SITREP S5 list (8 items)** — acceptance criterion met; 1 SITREP claim (the "36 = 16 + 20" line's location) did **not** reproduce at the stated object and is recorded as such in I-01.
+
+
+## Sweep dispositions — `mission_primer_followup_sweep`, 2026-10-04 (h)
+
+Every row re-verified at its object before any act (the 2026-10-03 lesson: two of the register's own claims did not reproduce). ✅ = fixed at the object · 📨 = memo (peer file) · 📋 = upstream row filed · ⛔ = not reproduced · ✔ = verified, nothing to do.
+
+| ID | Result | Where / what |
+|---|---|---|
+| I-01 | ✅ | `what/ontology.md`: the Rosetta extension table had 10 rows — `reviewer` (`who/reviewers/`, live since 2026-04) was missing; row added, heading 10 → 11, `entity_count` **26 → 27** derived (16 base + 11); MANIFEST's "11" was right all along |
+| I-02 | ⛔ | `grep "entity types"` in `Network.aDNA/what/context/context_adna_domain_reference.md` → **no match** (2026-10-04); the SITREP's "14 entity types" does not reproduce at the object — no memo |
+| I-03 | ✅ | `context_lattice_basics_core_concepts.md:27` Autonomous → Agentic |
+| I-04 | ✅ | `standard_reading_guide.md:14` typed 1,336 → derived + dated ("roughly 1,500; `wc -l` → 1,522 on 2026-10-04") |
+| I-05 | ⛔ | the two `title:` lines are frontmatter **examples inside code blocks** (`tutorial_design_a_mission.md:88` is a mission-plan sample; `tutorial_run_a_campaign.md:90` a campaign sample) — the tutorials' own frontmatter carries no `title` field at all; the register misread the sample as the file. No wrong title exists; no fix |
+| I-06 | 📨 | memo to Noether **staged `outbound_ready`** (`coord_2026_10_04_rosetta_to_noether_a_second_copy_of_the_standard_at_v2_2_…`): v2.2 copy, pin-historical / pointer / reason — **send GO owed** |
+| I-07 | 📋 | `idea_upstream_adna_overview_successor` (v8.13 gate question: refresh · point at primer · replace) |
+| I-08 | ✔ | `idea_upstream_standard_codify_campaign_layer.md` exists, carries the finding |
+| I-09 | ✔ | `idea_upstream_campaign_template_tier_budget_fields.md` exists, carries the finding |
+| I-10 | ✔ | `idea_a2a_communication_overview.md` exists, carries the finding |
+| I-11 | ✅ | re-dispositioned O3 → O1: a **vault-local** citation, not a standard erratum — `CLAUDE.md` §Git-Ops item 6 "workspace Rule 10" → "HAUSSMANN convention 10" (the router has nine Standing Rules); the campaign CLAUDEs' "(Rule 10)" self-cite their own convention list and stand |
+| I-12 | ✅ | dated "predates the topology" banners on `lattice_federation.md` + `federation_walkthrough.md` (bodies unchanged; refresh = v2.6-window item) |
+| I-13 | ✔ | none owed (the primer already says accepted 2026-10-03) |
+| I-14 | 📨 | **DELIVERED** to Berthier + Hestia: `Home.aDNA/CLAUDE.md:243` + `Operations.aDNA/AGENTS.md:173` still carry the inversion, re-read by grep at the send |
+| I-15 | 📋 | erratum **E-1** drafted → `errata_v2_6_drafts.md` + **ADR-063** (`proposed`; §7.7 at the v2.6 window); standard unchanged |
+| I-16 | 📋 | `idea_upstream_frontmatter_schema_per_class_status` (v8.13) — the schema is byte-identical to the template's, so no local edit |
+| I-17 | 📋 | erratum **E-2** drafted → `errata_v2_6_drafts.md` + ADR-063; standard unchanged |
+
+Totals: 7 ✅ · 2 📨 (1 delivered, 1 send owed) · 4 📋 · 2 ⛔ · 4 ✔ — 17/17 dispositioned (I-11 counted once, as ✅).
