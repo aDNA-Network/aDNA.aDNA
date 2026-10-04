@@ -4,7 +4,7 @@ mission_id: mission_primer_adna_for_data_engineers
 objective: O0
 title: "Primer scrub control — the write-gate grep list (adapted from RiemannCommons write_gate_checklist) and the record of its runs; must go RED on a planted path before it is believed"
 created: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-04   # O4 runs appended (v1.0: 0/0/0, planted 1, gitleaks 0 ×3)
 status: active
 last_edited_by: agent_rosetta
 executor_tier: fable
@@ -39,4 +39,8 @@ Also: `privacy_class` · `T0` / `T1` (WilhelmAI-local tiers) · `[D]` / `[I]` / 
 | 2026-10-04 | v0.2 draft + one planted path (`~/aDNA/Home.aDNA/what/inventory/` appended to a scratch copy) | yes | **1** (rule 1, `~/aDNA/`) | **RED ✓** — the control fires (`session_stanley_20261004_033400_garnier_f_hygieia_inbox_dp12_primer_o3`; pattern file = the 8 rules + the "Also" row, 71 regexes, `grep -nE -f`) |
 | 2026-10-04 | v0.2 body after round 2 (31 correctness items applied) | no | **0** (one hit on the old bare `\.adna/` pattern — the §8 validator command — led to the rule-1 narrowing above; re-run 0; planted copy still 1; gitleaks 0) | clean |
 | 2026-10-04 | v0.2 body (below the frontmatter fence) | no | **0** | clean; frontmatter checked separately: 0 (its `last_edited_by: agent_rosetta` is the file's own attribution and does not match the persona rule's `\bRosetta\b`); gitleaks `--no-git` 0 findings |
-| — | (O4: v1.0, both files) | no | 0 required | — |
+| 2026-10-04 | **v1.0** body (byte-identical to v0.2's) | no | **0** | clean (`session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b`; 76-regex list rebuilt from this table — the O3 scratch file did not survive the session, so the list was re-derived, not reused) |
+| 2026-10-04 | v1.0 frontmatter | no | **1 → 0** | the first v1.0 `updated:` comment named the authoring mission's ID (rule 2, `mission_[a-z0-9_]+`) — reworded to "the authoring mission file"; re-run 0 |
+| 2026-10-04 | v1.0 body + one planted path (`~/aDNA/Home.aDNA/what/inventory/`) | yes | **1** | **RED ✓** — the rebuilt control fires |
+| 2026-10-04 | `cover_note_andy.md` (whole file, frontmatter included) | no | **0** | clean; 2,547 chars derived; one *correctness* fix made before the hash (the note had said the standard "requires agent authorship to be disclosed" — the standard has no such sentence; `grep -i disclos adna_standard.md` → 0; reworded to what is true: every file records who last touched it) |
+| 2026-10-04 | gitleaks `--no-git` on the .md, the .pdf and the cover note | no | **0** | no leaks found ×3 |

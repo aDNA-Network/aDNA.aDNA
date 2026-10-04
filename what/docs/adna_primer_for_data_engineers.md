@@ -1,10 +1,10 @@
 ---
 type: doc
 title: "aDNA for data engineers — a primer"
-version: "0.2"
-status: draft
+version: "1.0"
+status: active
 created: 2026-10-03
-updated: 2026-10-04   # v0.2 — review rounds 1 AND 2 applied (round 2: archivist · skeptic · data engineer · cold read; 31 correctness items, all applied); round 1 (23 correctness · 15 clarity · 8 diagram rows); the one allowed restructure (§5.1 → table) taken; §4.5 → table; §6 → three incident→check bullets
+updated: 2026-10-04   # v1.0 — operator read gate PASSED 2026-10-04 (approved as v1.0 without amendment at a plan-time question; the ratification block lives in the authoring mission file, not here); text identical to v0.2 below the frontmatter. v0.2 — review rounds 1 AND 2 applied (round 2: archivist · skeptic · data engineer · cold read; 31 correctness items, all applied); round 1 (23 correctness · 15 clarity · 8 diagram rows); the one allowed restructure (§5.1 → table) taken; §4.5 → table; §6 → three incident→check bullets
 last_edited_by: agent_rosetta
 audience: data_engineer
 reading_time_minutes: 40   # DERIVED 2026-10-04 by script: 7534 prose words / 220 wpm + 5 figures × 1 min, rounded up — never typed; the two body mentions are written from this value by the same script
