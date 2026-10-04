@@ -1,14 +1,15 @@
 ---
 type: pattern
 created: 2026-07-22
-updated: 2026-07-22
+updated: 2026-10-04   # second instance (Operations.aDNA C03 queue, 64 rows / 7 campaigns) + band-C sub-state 'decided, undelivered' + §5 failure modes — from Berthier's 2026-08-27 seed, received 2026-10-04; prior: 2026-07-22
 status: draft
 pattern_category: operational
 applies_to: [coordination, campaigns, sessions, all_categories]
 campaign_id: campaign_refit
 instances:
   - "aDNA.aDNA (this vault) — the Operation Refit B-row docket (B1–B6, banded in the P0 SITREP) as a decision-queue-in-embryo + the self-caught 2026-07-22 RareAnthropic quiescent-window fold (Refit M1)"
-graduation: "n=1 (this vault, embryonic). Operations.aDNA's reference implementation (2 campaigns / ~40 commit-cited rows) is the requested instance seed; a second vault-level adoption moves toward the 3-adoption graduation, ratified at a future operator gate per the instance-counting rule. Template fold deferred to a successor release campaign (skill_template_release)."
+  - "Operations.aDNA — how/campaigns/C03-ETAT-MAJOR/artifacts/decision_queue_v0.md (org_shared; read live 2026-10-04 at Berthier's 2026-08-27 seed memo, received 2026-10-04): 64 rows · 41 dispositioned · 23 open · C03 → C09, one queue that outlived six campaign closes without being re-created"
+graduation: "n=2 (this vault embryonic + Operations.aDNA's live reference implementation, cited 2026-10-04). A third vault-level adoption moves to the 3-adoption graduation, ratified at a future operator gate per the instance-counting rule. Template fold deferred to a successor release campaign (skill_template_release)."
 last_edited_by: agent_rosetta
 tags: [pattern, decision_queue, operator_decision, quiescent_window, three_band, coordination, standing_surface, refit]
 ---
@@ -42,13 +43,15 @@ The bands are only worth having if **B and C honestly hold what is *not* actiona
 
 *Provenance*: Operations.aDNA runs the **reference implementation** — 2 campaigns, ~40 dispositioned rows, every consumption commit-cited — offered as the instance seed for this pattern ([[../../who/coordination/coord_2026_07_16_berthier_to_rosetta_ddp2_docs_propagation|the D-DP2 proposal, item 6]]).
 
+**Band C has two sub-states, and the sender keeps them** (adopted 2026-10-04 from Operations' instance testimony): a watched row is either **`awaiting`** — nobody has decided yet — or **`decided_undelivered`** — the decision exists somewhere, and the artifact that carries it has not reached the party the row is waiting on. The second is invisible from the receiver's side by construction (a memo with `status: sent` that never left its tree looks, to the addressee, exactly like silence), so the band belongs to the side that *holds* the undelivered thing. Operations' row C11 read *"Rosetta still awaited"* for eight weeks while the awaited co-sign had sat granted since 07-03; on 2026-10-04 the class fired twice in one hour on this desk (a 2026-08-27 seed memo and a 2026-08-03 upstream ask, both `sent`, neither delivered). A queue that cannot tell the two apart will watch a solved problem until someone sweeps.
+
 ## 3. Live instances (the structure IS the lesson)
 
 **This vault, right now (self-reference — you can look at it):**
 - Operation Refit's **B-row docket** (B1–B6, banded in [[../../how/campaigns/campaign_refit/artifacts/sitrep_2026_07_21_state_of_the_estate|the P0 state-of-the-estate SITREP]]) is a decision-queue *in embryo*: a set of pending operator decisions already banded — the deadline-bearing B1 was band-**A** (decide-now), the held Exchange + Vitruvius memos are band-**C** (watch, owner-and-trigger named). The SITREP §quiescent-window paragraph names the failure mode outright and prescribes this pattern as the structural answer.
 - **The load-bearing example — this mission caught the failure live.** Refit M1 folded a fresh inbound, the [[../../who/coordination/coord_2026_07_22_rareanthropic_to_rosetta_org_graph_registration|2026-07-22 RareAnthropic org-graph registration]], that arrived *after* the charter's docket was fixed. It was a clean band-**A** item — all inputs present, the spec's own diagnostic test passing — yet it had **no standing home**: it landed in `who/coordination/` and had to be hand-caught by a mid-campaign operator scope ruling ("fold it into M1"). That is *exactly* the quiescent-window failure this queue exists to prevent — had a standing decision queue existed, the memo would have self-filed as a band-A row awaiting the next sitting, instead of needing a bespoke fold decision. The pattern was authored, in part, *because this mission tripped over its absence.*
 
-**The reference implementation is not yet in this vault (honest gap):** Operations.aDNA holds the mature instance (2 campaigns / ~40 rows); it is the requested seed, not a local adoption. This file is `status: draft` at n=1 accordingly.
+**The reference implementation, read live (2026-10-04):** Operations.aDNA's `how/campaigns/C03-ETAT-MAJOR/artifacts/decision_queue_v0.md` — minted under C03/M29, carried forward at every close since (*"this queue continues at STEADY-STATE as the vault's standing operator surface"*), **64 rows · 41 dispositioned · 23 open across seven campaigns** at Berthier's 2026-08-27 measurement. Its testimony, in the owner's words: band C is the point (it is the only surface in that vault where *nothing happening* is legible); rows are struck, never deleted, with the consuming commit or session appended; the queue outlived six campaign closes; every refresh is dated and signed. It is cited, not copied — the property worth studying is that it kept accumulating. This file is `status: draft` at **n=2** accordingly.
 
 ## 4. Adoption (copy, don't re-derive)
 
@@ -65,6 +68,11 @@ The bands are only worth having if **B and C honestly hold what is *not* actiona
 - **Anti-pattern — band inflation.** Filing everything "A — ready-now" defeats the instrument; the bands earn their keep only when B and C honestly carry what is *not* actionable this sitting.
 - **Anti-pattern — un-cited close.** A disposition with no commit reference is a sticky-note removal, not a ledgered decision — the audit spine is the whole point.
 - **Anti-pattern — the vanishing per-campaign table.** Building the decision surface *inside* a campaign so it dies at close re-creates the quiescent-window gap the pattern exists to close. The queue must outlive the campaign.
+
+**Three failure modes reported by the live instance (Operations, 2026-08-27 — "an instance that only reports its successes is not evidence"):**
+- **The refresh trail in the frontmatter.** Append-only in the wrong place: a ~85 KB frontmatter field that every cold-start read pays for. Normative here: the refresh history lives in the **body**, the frontmatter carries only the last refresh.
+- **Row IDs that collide with their own history** (`B1′`, `B1″`, `B1‴` … where a gate re-minted). A row ID is a monotonic counter; re-minting gets a new number and a `supersedes:` pointer, not a prime.
+- **No prompt to stand a row down.** Band C tolerates indefinite silence by design, and nothing in the instrument asks *"is this still a live question?"* — so a solved row can be watched for weeks. Each refresh asks it of every band-C row older than its declared window; the answer is `still_live` · `stood_down` (with reason) · `decided_undelivered` (see §2).
 
 ## Forward integration (fold stub)
 
