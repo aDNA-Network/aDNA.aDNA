@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-07-02
-updated: 2026-10-04   # §2.1b Local tiers ACCEPTED — §7.7 signed by the operator 2026-10-04 (Berthier co-signed as written 03:54Z the same day); proposed earlier the same day as the Rosetta half of DP-12 (co-signed with one reshape — lane-scoped local values); prior: 2026-09-24   # §2.1a executor_lane PROPOSED (Automator 2026-09-23 memo); prior:   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor); §2.5 dispatch-shape note added at P3 open (operator ruling: Mode B same-session subagent dispatch = default); **§2.6 Mode-B operational discipline folded at Champollion M7.2 close (2026-07-03) — 7 sweep-surfaced hazards + the review-bookend checklist**; **§2.6 items 8–9 (adversary-born-PENDING · resume-not-respawn — Operations.aDNA co-evolution) folded + §2.7 RATIFIED accepted at Operation Refit G1 (DP6 rider; ratification_record_refit_g1.md), stamp landed 2026-07-22 (Refit M1)**; §2.7 next-mission handoff recommendation authored 2026-07-14 + §2.1 mechanical binding refreshed (Sonnet 4.6→5, Haiku 4.5)
+updated: 2026-10-04   # §2.1a executor_lane ACCEPTED too (operator ratified §2.1a + §2.1b TOGETHER at Operations S223, 2026-10-03 PDT — §2.1b rule 2 depends on §2.1a; block written on receipt of the record 2026-10-04); §2.1b Local tiers ACCEPTED — §7.7 signed by the operator 2026-10-04 (Berthier co-signed as written 03:54Z the same day); proposed earlier the same day as the Rosetta half of DP-12 (co-signed with one reshape — lane-scoped local values); prior: 2026-09-24   # §2.1a executor_lane PROPOSED (Automator 2026-09-23 memo); prior:   # §8 Automation ladder added same-day (operator-directed, post-G0); §2.5 orchestrator-bookend refinement added at G2 (operator role directive: fable=strategy/planner/reviewer · opus=builder/executor); §2.5 dispatch-shape note added at P3 open (operator ruling: Mode B same-session subagent dispatch = default); **§2.6 Mode-B operational discipline folded at Champollion M7.2 close (2026-07-03) — 7 sweep-surfaced hazards + the review-bookend checklist**; **§2.6 items 8–9 (adversary-born-PENDING · resume-not-respawn — Operations.aDNA co-evolution) folded + §2.7 RATIFIED accepted at Operation Refit G1 (DP6 rider; ratification_record_refit_g1.md), stamp landed 2026-07-22 (Refit M1)**; §2.7 next-mission handoff recommendation authored 2026-07-14 + §2.1 mechanical binding refreshed (Sonnet 4.6→5, Haiku 4.5)
 status: active   # GRADUATED at Champollion G3 (2026-07-02, D2a — 5 instances; operator-ratified)
 pattern_category: operational
 applies_to: [campaign, mission, session, all_categories]
@@ -64,12 +64,16 @@ executor_tier: <class actually used>
 token_budget_actual: "<kT, rough is fine>"
 ```
 
-#### §2.1a `executor_lane` — the account/endpoint beside the tier (⛩ PROPOSED 2026-09-24, not in force)
+#### §2.1a `executor_lane` — the account/endpoint beside the tier (⛩ ACCEPTED 2026-10-03 PDT — in force)
 
 > **Proposed on Berthier/Automator's 2026-09-23 memo** (`who/coordination/inbox/coord_2026_09_23_berthier_automator_to_rosetta_executor_lane_card_key.md`;
-> their `doctrine_lane_routing.md` §2 is the prior art). Agents author, operators ratify: this sub-clause and
-> the companion doctrine paragraph (`doctrine_credential_handling.md` §2.6) carry empty §7.7 blocks until signed;
-> until then Automator keeps `executor_lane` as its own local convention, as their memo offers.
+> their `doctrine_lane_routing.md` §2 is the prior art). Agents author, operators ratify: **the operator ratified this
+> sub-clause together with §2.1b at Operations' S223 plan gate (2026-10-03 PDT)** — because §2.1b rule 2 makes a local tier
+> value valid only beside `executor_lane: local`, and a rule in force cannot depend on a key that is not (Berthier's
+> record: `who/coordination/inbox/coord_2026_10_03_berthier_operations_to_rosetta_dp12_operator_ratified_s2_1a_and_s2_1b_together.md`,
+> received 2026-10-04T04:16Z). The companion doctrine paragraph (`doctrine_credential_handling.md` §2.6) is **not** covered by
+> that ruling and keeps its own gate (its §9 row + the broker's co-sign, per that doctrine's own precedent). Automator's local
+> convention is now the standard's key.
 
 `executor_tier` names a **model class**; nothing names **which account or endpoint** runs the mission. On a node
 that carries a subscription login, a metered key exported into every shell, and a local gateway, a staged prompt
@@ -90,7 +94,7 @@ orthogonal axes, so a lane never implies a tier and a tier never implies a lane;
 **a lane value is a name, a flag or a directory — a credential value never transits** (doctrine §6.1/§6.2).
 Session files record the lane actually used beside `executor_tier: <class actually used>`.
 
-- **Ratified-by:** — · **Date:** — · **Status:** proposed.
+- **Decision:** adopt the optional `executor_lane: oauth | key | local` mission-card key, orthogonal to `executor_tier` · **Ratified-by:** **stanley** (operator; Operations S223 plan gate, ratified together with §2.1b) · **Date:** **2026-10-03** (PDT; 2026-10-04 UTC) · **Status: accepted**. *(Record: Berthier's memo above; block written here 2026-10-04 by agent_rosetta in `session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b` — the operator's terms as ruled, the wording ours. A credential value never transits; the §2.6 doctrine paragraph stays proposed on its own gate.)*
 
 #### §2.1b Local tiers — which values the vocabulary may carry, and when they route (⛩ ACCEPTED 2026-10-04 — in force)
 
@@ -103,7 +107,7 @@ Session files record the lane actually used beside `executor_tier: <class actual
 5. **Which class a local tier may stand in for is the matrix's finding, not this pattern's.** §2.5's class→tier table binds *model classes*. Mapping a local tier onto a class ("`standard` may take a `mechanical` card") is read from the row + battery verdict and written in the **consumer's** own table — Automator's `how/orders/tier_model_map.md` is the live instance (client-side, from the catalog file, no resolve verb). This pattern names the seam; it binds nothing.
 6. **Recorded contract.** Same shape as §2.4: the mission card's `executor_tier` may carry a local value under rule 2; the session file records `executor_tier: <value actually used>` beside `executor_lane: local` and, while the value is interim, the catalog's `registry_ref.md5` at the time of the run.
 
-- **Decision:** adopt §2.1b rules 1–6 as written — local tier values enter the `executor_tier` vocabulary only behind a capability-matrix row + calibration verdict, are valid only with `executor_lane: local`, and route per tier only on an ADR-012 §7 battery verdict · **Ratified-by:** **Stanley (FA)** · **Date:** **2026-10-04** · **Status: accepted**. *(Halves on record: Berthier 2026-08-25 · Pythia 2026-10-03 · Rosetta 2026-10-04. Operations co-sign of this text: Berthier 2026-10-04T03:54Z, as written. Operator signature taken at plan time, AskUserQuestion, `session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b`; this line is the record. Nothing routes by this signature — rule 3's per-tier battery verdict is still owed by the substrate owner.)*
+- **Decision:** adopt §2.1b rules 1–6 as written — local tier values enter the `executor_tier` vocabulary only behind a capability-matrix row + calibration verdict, are valid only with `executor_lane: local`, and route per tier only on an ADR-012 §7 battery verdict · **Ratified-by:** **Stanley (FA)** · **Date:** **2026-10-04** · **Status: accepted**. *(Halves on record: Berthier 2026-08-25 · Pythia 2026-10-03 · Rosetta 2026-10-04. Operations co-sign of this text: Berthier 2026-10-04T03:54Z, as written. Operator signature taken twice, independently, on the same text: at Operations' S223 plan gate on 2026-10-03 PDT (together with §2.1a — Berthier's record, received 2026-10-04T04:16Z) and at this vault's plan-time AskUserQuestion on 2026-10-04 UTC (`session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b`); this line is the record. ⚠ For one sitting this block was signed while §2.1a, which rule 2 depends on, still read `proposed` — closed the same session once the S223 record was read; the dependency ordering Berthier raised was right. Nothing routes by either signature — rule 3's per-tier battery verdict is still owed by the substrate owner.)*
 
 
 Estimate-vs-actual lands in every mission AAR (SO-11); >2× drift triggers the ADR-016 retrospective — now *per tier*, which is the interesting cut.
