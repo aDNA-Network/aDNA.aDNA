@@ -121,3 +121,53 @@ Carried to O2 (not findings yet, questions for the six lenses): (a) does §4.5's
 | E7 | Diagram reviewer (a) premise ("§4.5 has no diagram") — the brief was wrong; §4.5 has d06. | **already-true at the object**; recorded so the brief's error does not propagate (the O1 ledger's carried question (a) was worded from memory). |
 
 **O2 acceptance check:** ledger complete (23 correctness rows A1–A23, 15 clarity rows, 8 diagram rows, 7 dispositions in E), **zero correctness findings left PENDING**. The volume of **high** correctness findings (6) against a v0.1 that passed a dual-audience smoke test is itself the finding: the smoke test measured legibility, not truth — the six lenses measured truth at the object, and three of the six highs are claims *about the standard* that the standard does not make. O3 opens with A1–A6.
+
+## O3 — revise v0.2 · review round 2 · write-gate scrub (2026-10-04 UTC)
+
+[D] Session `session_stanley_20261004_033400_garnier_f_hygieia_inbox_dp12_primer_o3` (fable). **Pass 1 — apply §O2.** Every correctness row A1–A23 applied against the standard's text re-extracted by script this sitting (§3.5 · §4 · §5.1–5.3 · §5.5 · §7.2 · §10.3 · §13.2–13.4 · §15.2), A1–A6 first; B1–B15 applied (the one allowed restructure = §5.1 → table; §4.5 → two-column table; §4.7 folded into §4.6; §6 → three incident→check bullets; §4.2 cut to the five rules); D1–D8 applied (d01 and d04 cut, d06 → table, d03 redrawn with `alt`/`opt`, new §5.4 lattice figure; `accTitle`/`accDescr` + neutral `classDef` on every block); E2/E4/E6 applied. Two re-derivations at the object before writing: A12 (staff-officer mandate `status: accepted`, ratified 2026-09-24) and A17 (`fencing_token:` on the operations vault's task cards → 40 of 40 present fields `null`; the §O2 "88/88" was the bridge's own count — same conclusion, different population).
+
+**Round 2 — four read-only lenses in parallel** (`standard_archivist` · `movement_skeptic` · `data_engineer` · simulated cold read + `skill_dual_audience_review`; ≈ 45 + 55 + 45 + 40 kT read, explorer tokens on their own line). **Round-1 rows re-checked: 23/23 verified fixed by the archivist**; the skeptic 11/12 (B9 partial); the data engineer 11 fixed, 4 partial (A8 residue, A15 exposed `AGENTS.md`, B12 adoption-in-words, B14 branch-2 atomicity).
+
+**Raw round-2 count: archivist 11 · skeptic 13 · data engineer 11 · cold read 3 correctness-class — union after de-duplication 31 distinct correctness items (+ ~14 clarity).** ⛔ **The O3 exit criterion "round-2 findings ≤ 5, none correctness-class" was NOT met at the first pass.** Recorded as such; not re-framed. Two of the 31 were introduced by O3's own A15 fix (a Starter vault may lack root `AGENTS.md` as well as `STATE.md`); one (the §6 "reported deployed" incident) could not be found in the records by the skeptic and was replaced with the verified row-3 incident; one cold-read "correctness" item (App. A tally "42/16") was **already-true at the object** (43/17, re-derived twice by script and independently by the archivist) and is not counted. Scores (DE lens): clarity 4 · correctness 4 · crossmap 3 · excitement 4 (round 1: 4 · 3 · 4 · 3). Dual-audience skill verdict on the pre-fix v0.2: **NEEDS REVISION** (both audiences FAIL on the items below); Andy's cold read: three questions (validator in CI; cross-machine delivery; non-Claude agents), one excitement (§1's four-axis table), Monday exercise "yes"; measured read ≈ 36 min = the derived frontmatter value.
+
+### Round-2 correctness items (31) and their dispositions — all **applied 2026-10-04**
+
+| # | Lens(es) | Sev | § | Finding (short) | Applied as |
+|---|---|---|---|---|---|
+| R1 | archivist · DE · cold read | med-high | §2.2, §0, §9 | "four required" vs Starter's three; A15's fix exposed root `AGENTS.md` | §2.2 states the §4.1-vs-§5.5 tension; §0 count dropped; glossary row re-cited; **I-15 filed** |
+| R2 | archivist · skeptic | med-high | §5.2, App. A | `how/federation/` is a §5.3 optional directory (normative), not practice | row split: directory normative-optional · `federation_ref` contents practice; §5.2 sentence |
+| R3 | archivist | med | §2.1, App. A | name pattern is MUST, suffix SHOULD | sentence + row class |
+| R4 | archivist | med | §9 | memo row over-cites §11 | §11 for note contents/urgency; cross-vault letter = practice |
+| R5 | archivist | med | §9 | template "one per entity type (§12)" | §5.5 item 12, "per content type in use" |
+| R6 | archivist | low | §2.3 | `inventory`/`identity` are standard-named optional dirs | footnote ¹ |
+| R7 | archivist · DE | low | §2.5 | Standard level also requires the recommended directories | clause |
+| R8 | archivist | low | §2.4 | frontmatter also on root governance files (§7.1) | clause + App. A row |
+| R9 | archivist · DE | low | §2.7 | §15 is not an audit-trail clause for missions/decisions | §8.1 for sessions; the rest practice |
+| R10 | archivist | low | §9 FAIR | §5.5 requires keywords + license only | row |
+| R11 | archivist | low | App. A | validator is informative; template location/fork naming normative (§3.5) | rows |
+| R12 | archivist · skeptic | low | §3.1 | AAR sentence unmarked; "no mission marked complete without one" states compliance (10/213 broke it) | "(practice)" + "the rule is … has broken it" |
+| R13 | archivist · skeptic | low | §4.3 | "mandatory" vs "advisory" | "required by doctrine; nothing enforces it at runtime" |
+| R14 | archivist | low | §3.1, note | "touched" → "modified"; persona optional | applied |
+| R15 | all four | low | §8 | validator path points at a vault the reader lacks; PyYAML | `.adna/what/lattices/tools/`; Python 3 + PyYAML in prerequisites |
+| R16 | DE (high) · skeptic | high | §4.4, §7 | fencing enforcement is consumer-side; not exercised; "Exact" overstated | §4.4 status paragraph; §7 "Exact in design; … not yet exercised" |
+| R17 | DE | med | §2.7, §7 | STATE graduation ≠ event sourcing | "hot/cold tiering; history cannot be replayed" in both |
+| R18 | DE | med | §7 | dbt "Close" overstated | "Close in layout only: no compiler, no reference resolution, no tests" |
+| R19 | DE · skeptic | med | §7 | "the standard's own schemas ship later" false; a stale v2.3 JSON schema ships | row names the schema and its staleness; **I-16 filed** |
+| R20 | DE · skeptic | low | §1, §2.4 | `updated` "checked before every write" | "stamped on every write; read before overwriting" |
+| R21 | DE | low | §7 | CI gate: enforcement by instruction, not the runner | clause |
+| R22 | DE | low | §4.2 | branch-2 probe-then-write not atomic | clause + cross-machine carrier sentence |
+| R23 | skeptic | med | §4.7 | scanner is per-clone + bypassable (96/123 vaults) | sentence |
+| R24 | skeptic | med | §6 | incident 3 not found in the records | replaced with the row-3 incident (404 reported 22 days after live) |
+| R25 | skeptic | med | §6 | "each standing check in the network" | "three checks two campaigns adopted" |
+| R26 | skeptic | med | §8 | "every file this document cites is in it" false | "the standard and most records …; other vaults' and the newest are not" |
+| R27 | skeptic | low | App. A | "orients in one read" | "from a handful of short files" |
+| R28 | skeptic · DE | low | App. A | adoption words typed, "most active vaults" | legend (four bands) + derived 47/124 count |
+| R29 | skeptic | low | §5.5 | "most adoption starts and stays there" | cut |
+| R30 | skeptic | low | §6 | leftover "never up to ambition" aphorism | cut |
+| R31 | skeptic | low | §7 | LinkML row states a future release | reworded |
+
+Clarity applied: cold read 4–10 (reading-path pointer after §0; ~10 glosses incl. ACP/agent card/content-addressed/fails-closed/seam/degenerate/canvas/molecular/"the network"; §2.1 forward ref; Figure 1 title "six reads"; session ID/tiers clause; §4.2 split; Monday-exercise directories + "will not pass Starter"); DE 12–15 (adoption legend; App. A format normalised; catalog row + §7.6 clause; validator checks presence, exits non-zero); archivist 12–15. **Declined**: skeptic 14 (cut §4.5 to glossary lines) — the cold reader did not trip on the table and the §O2 carried question (a) ruled the distinction stays; recorded here.
+
+**Derived after the pass**: prose words **7,509** (v0.1 6,458 → v0.2 draft 6,762 → post-round-2 7,509; the glosses, tension sentence, Monday clauses, catalog row and legend outweigh the cuts — word targets are advisory, the overage is stated) · 5 figures render (249 · 744 · 850 · 726 · 168 px; `accTitle`/`accDescr` on all) · `reading_time_minutes` **40** by script · § tokens **60, all resolve** (standard or primer heading; `§99.9` control flagged) · App. A **46 rows = 19 normative · 24 practice · 2 provisional · 1 informative** (B12's ~34 merge target not reached; rows gained § / adoption columns instead) · **scrub: planted 1 (RED ✓) · real 0 · frontmatter 0 · gitleaks 0** — after narrowing rule 1's bare `\.adna/` to its home-rooted forms (the §8 validator command legitimately names the public template path; narrowing recorded + red-proved in `scrub_control.md`).
+
+**Re-verification pass (archivist, on the revised text):** PENDING_REVERIFY

@@ -4,7 +4,7 @@ mission_id: mission_primer_adna_for_data_engineers
 objective: O0
 title: "Primer source inconsistencies — every contradiction met while ranking sources, verified at the object 2026-10-03; feeds the follow-up sweep mission"
 created: 2026-10-03
-updated: 2026-10-03
+updated: 2026-10-04
 status: active
 last_edited_by: agent_rosetta
 executor_tier: fable
@@ -34,4 +34,8 @@ tags: [artifact, primer, o0, data_engineer]
 | I-13 | **ADR-062 is cited as "proposed"** in the mission text and the SITREP; it was **accepted 2026-10-03** | this vault (same day) | `adr_062_linkml_adoption.md` `accepted` | none — the primer writes "accepted (2026-10-03), optional, preferred" |
 | I-14 | **Model-tier inversion** was reported at Home CLAUDE:242 and Operations AGENTS:169 `[R]` (Automator 09-21); corrected here 09-24 | peers | `pattern_model_tiered_campaign_execution.md` §2.1/§2.5 | verify at the sweep whether theirs moved; the primer quotes the pattern |
 
-Count: **14 rows ≥ the SITREP S5 list (8 items)** — acceptance criterion met; 1 SITREP claim (the "36 = 16 + 20" line's location) did **not** reproduce at the stated object and is recorded as such in I-01.
+| I-15 | **The standard disagrees with itself on required governance files**: §4.1 marks `CLAUDE.md` · `MANIFEST.md` · `AGENTS.md` · `README.md` as MUST (`STATE.md` SHOULD); §5.5 Starter requires only `CLAUDE.md` · `MANIFEST.md` · `README.md`, with `STATE.md` + root `AGENTS.md` arriving at Standard; `adna_validate.py` follows §5.5 | the standard (v2.5) | `adna_standard.md` §4.1 vs §5.5 | the primer states the tension (§2.2) rather than picking a side; a standard erratum is the fix (O3 round-2, archivist + data-engineer + cold-read lenses, independently) |
+| I-16 | **`frontmatter_schema.json` is stale against §7.2**: the shipped schema (v2.3) requires `status` unconditionally; §7.2's per-class profile (v2.5, ADR-044) makes it optional for `directory_index` and `coordination` — a validator built from the schema fails every memo and index | this vault | `what/lattices/tools/frontmatter_schema.json` vs `adna_standard.md` §7.2 | the primer names the schema and its staleness (§7 row); the schema bump is a vault fix, not the primer's (O3 round-2, data-engineer lens) |
+| I-17 | **§6.5 cites a rule §15 does not contain**: the rename protocol says "archive-don't-delete, §15"; §15 covers archive pattern + retention of session history only | the standard (v2.5) | `adna_standard.md` §6.5 → §15 | none in the primer; standard erratum (O3 round-2, archivist lens) |
+
+Count: **17 rows (14 at O0 + 3 found by the O3 round-2 lenses)**; was **14 rows ≥ the SITREP S5 list (8 items)** — acceptance criterion met; 1 SITREP claim (the "36 = 16 + 20" line's location) did **not** reproduce at the stated object and is recorded as such in I-01.

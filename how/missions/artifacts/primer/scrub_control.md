@@ -21,7 +21,7 @@ tags: [artifact, primer, o0, data_engineer]
 
 | # | Rule (mission §Scrub) | Pattern(s) | Notes |
 |---|---|---|---|
-| 1 | No home-vault paths | `~/aDNA/` · `/Users/` · `[A-Za-z]+\.aDNA/(what|how|who)/` · `\.adna/` | vault *names* may appear as glossed examples; a *path* may not |
+| 1 | No home-vault paths | `~/aDNA/` · `/Users/` · `[A-Za-z]+\.aDNA/(what|how|who)/` · `~/aDNA/\.adna/` · `/Users/[^ ]*\.adna/` | vault *names* may appear as glossed examples; a *path* may not. ⛩ **Narrowed 2026-10-04 (O3)**: the bare `\.adna/` pattern was over-broad — it is the public template's install path (Standard §3.5, public README) and the reader's own clone has it; the §8 validator command needs it. Only the home-rooted forms are home-vault paths. Red-proved after the change: `~/aDNA/.adna/CLAUDE.md` still fires. |
 | 2 | No workspace identifiers | `session_[a-z]+_[0-9]{8}` · `coord_20[0-9]{2}_` · `mission_[a-z0-9_]+` · `gate_id` · `[0-9a-f]{7,40}` preceded by \`` or "commit" · `GR-[0-9]` · `DP[0-9]` · `P[0-9]\.[0-9]` (mission IDs) | SHAs: 7–40 hex in backticks; allow none |
 | 3 | No credential names | `C1[0-9]{2}\b` · `[A-Z_]+_TOKEN` · `[A-Z_]+_API_KEY` · `op://` · `Keychain` · `1Password` · `broker` | describe "a credential broker", never name an entry |
 | 4 | No local-only vault names | `share_omics` · `RareGraph` · `Datarooms` · `aiLP` · `AILedger` · `GOTFN` · `Bearly` · `Fluxer` · `Emissary` · `dmRoster` · `#agent-comms` | Fluxer runtime/state is Aspasia's "does not publish" ruling |
@@ -37,5 +37,6 @@ Also: `privacy_class` · `T0` / `T1` (WilhelmAI-local tiers) · `[D]` / `[I]` / 
 | Date | File · version | Planted? | Hits | Result |
 |---|---|---|---|---|
 | 2026-10-04 | v0.2 draft + one planted path (`~/aDNA/Home.aDNA/what/inventory/` appended to a scratch copy) | yes | **1** (rule 1, `~/aDNA/`) | **RED ✓** — the control fires (`session_stanley_20261004_033400_garnier_f_hygieia_inbox_dp12_primer_o3`; pattern file = the 8 rules + the "Also" row, 71 regexes, `grep -nE -f`) |
+| 2026-10-04 | v0.2 body after round 2 (31 correctness items applied) | no | **0** (one hit on the old bare `\.adna/` pattern — the §8 validator command — led to the rule-1 narrowing above; re-run 0; planted copy still 1; gitleaks 0) | clean |
 | 2026-10-04 | v0.2 body (below the frontmatter fence) | no | **0** | clean; frontmatter checked separately: 0 (its `last_edited_by: agent_rosetta` is the file's own attribution and does not match the persona rule's `\bRosetta\b`); gitleaks `--no-git` 0 findings |
 | — | (O4: v1.0, both files) | no | 0 required | — |
