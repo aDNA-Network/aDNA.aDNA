@@ -1,7 +1,7 @@
 ---
 type: artifact
 created: 2026-09-15
-updated: 2026-10-03   # DP3 rulings (a)–(g) taken in advance (packet B1, accept-all); §5 step 6 struck
+updated: 2026-10-04   # (h) registry regeneration divergence added to §3 (sync:vaults ran 2026-10-04 under ruling); DP3 rulings (a)–(g) taken in advance 2026-10-03 (packet B1, accept-all); §5 step 6 struck
 status: in_progress
 last_edited_by: agent_rosetta
 tags: [garnier, p1, verification]
@@ -128,6 +128,10 @@ Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
   - Budget for the merge, the gate-49 home re-baseline and full R-SITE, from the known-method class: ≈50±20 kT, booked inside P1's remaining forecast. This amends the 10–20 kT remainder, stated here rather than absorbed.
   - ⛩ *Ruled in advance 2026-10-03 (Stanley, accept-all on [[operator_rulings_packet_20261003]] row B1): the proposed sequence is ACCEPTED — merge `garnier/homepage-20260916` into `vitrine/design` with G4 preserved, in-container gate-49 `home-*` re-baseline, full R-SITE on the merged tree as criterion-3 evidence, ≈50 ± 20 kT booked inside P1. Sequence-gated: executes only after the records are keyed and confusions dispositioned (§5 step 4); NOT executed at the ruling.*
 - **(g) P2 commitment (DP3 commits P2 per [[budget_basis]] D-9).** See §4. ⛩ *Ruled in advance 2026-10-03 (Stanley, accept-all on [[operator_rulings_packet_20261003]] row B1): **Option C**. Written into the P2 mission frontmatter the same sitting (`budget_status`), originals preserved.*
+- **(h) Registry regeneration divergence** *(added 2026-10-04 (h) — the operator-gated `sync:vaults` ran under the 2026-10-03 PDT plan-time rulings "full regeneration" + "grandfather the 74")*.
+  - [D] The vault `site/` now renders, for the 74 admitted vaults, data the stimulus `6487444` does not have: the four purpose lines Hestia wrote (aDNA · Operations · Home · Canvas — `null` on the stimulus, which carries the 2026-08-17 projection), 71 taglines, 50 newly-present cards, three lifecycle flips (Container · Forgejo · Inference genesis → active), canonical slugs at the data layer, two taglines withheld under the R-125 counsel embargo (Molecules · LatticeProtocol), and `/state-of-the-network` dates of 2026-10-04 with its lag clause derived. gate-49 re-baselined in-container on exactly five routes (home · commons · vaults-index · vault-card · state-network).
+  - [D] 28 inventory rows are **held `admission_pending`** (`site/src/data/registry_admission.yaml`; ADR-052 §admission / §tiers.6) — an operator + Hestia-B7 question, not a reader-feedback item.
+  - *Proposed:* as (a) — attribute any reader remark about a vault with no description, a stale registry date, or a missing vault to the stimulus, log it without correcting; the admission of the 28 is ruled per row on its own gate, never from a reader record. ⛩ *Ruling asked at DP3.*
 
 ### 4. P2 presented (commit nothing until ruled)
 
