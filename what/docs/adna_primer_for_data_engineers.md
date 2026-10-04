@@ -7,7 +7,7 @@ created: 2026-10-03
 updated: 2026-10-04   # v0.2 — review rounds 1 AND 2 applied (round 2: archivist · skeptic · data engineer · cold read; 31 correctness items, all applied); round 1 (23 correctness · 15 clarity · 8 diagram rows); the one allowed restructure (§5.1 → table) taken; §4.5 → table; §6 → three incident→check bullets
 last_edited_by: agent_rosetta
 audience: data_engineer
-reading_time_minutes: 40   # DERIVED 2026-10-04 by script: 7509 prose words / 220 wpm + 5 figures × 1 min, rounded up — never typed
+reading_time_minutes: 40   # DERIVED 2026-10-04 by script: 7534 prose words / 220 wpm + 5 figures × 1 min, rounded up — never typed; the two body mentions are written from this value by the same script
 spec_version_cited: "aDNA Standard v2.5"
 tags: [doc, primer, data_engineer, dual_audience, crossmap, external_reader]
 ---
@@ -24,7 +24,7 @@ A note on words used throughout: an **operator** is the human who owns a project
 
 aDNA (Agentic DNA) is a standard for organising a project's knowledge so that AI agents and humans can both find their way around it. It is folders, Markdown files and a handful of conventions. Every project gets three directories, `who/`, `what/` and `how/`, five short governance files at the root, and YAML frontmatter on every content file. An agent opening the project reads the governance files first, then only the directory it is working in. That is the whole trick: the structure tells the agent what to load, so it never has to read everything. On top of the standard sits a layer of *practice*, built by one group running dozens of such projects as a **network** (their word for the fleet of vaults and machines they operate together): how work is budgeted in tokens, how agents coordinate without overwriting each other, and how many such projects federate into a network. This document covers both, and the closing appendix says plainly which is which.
 
-*Short on time? Ten minutes: this paragraph, §2.1–§2.4, then §7 (the crossmap) and §8 (what to try). The whole document is about thirty-five minutes.*
+*Short on time? Ten minutes: this paragraph, §2.1–§2.4, then §7 (the crossmap) and §8 (what to try). The whole document is about 40 minutes (the number is derived from the word count at write time).*
 
 ## 1. The problem: context for agents is a data problem
 
@@ -131,7 +131,7 @@ Templates add type-specific fields (§7.5). Custom fields may be added freely, s
 
 ### 2.5 Conformance levels
 
-Three levels (§5.5). **Starter**: `CLAUDE.md`, `MANIFEST.md`, `README.md`, the three directories, six required subdirectories, frontmatter on every content file. **Standard**: adds `STATE.md`, a root `AGENTS.md` and one per leg, the recommended directories (`what/decisions/`, `how/backlog/`, `how/sessions/active/`, `how/sessions/history/`) as requirements, and the session lifecycle. **Full**: adds a context library with token estimates, FAIR metadata on deployable objects, an ontology diagram, and a template for every content type in use. A vault *may* declare its level in `MANIFEST.md`; undeclared means unverified. The standard mentions a reference validator, `adna_validate.py`, which reports the level a tree actually meets (§5.5; the tool is informative, not required). It checks the presence of files, directories and frontmatter fields, not their values, and exits non-zero on failure, so it can run in CI.
+Three levels (§5.5). **Starter**: `CLAUDE.md`, `MANIFEST.md`, `README.md`, the three directories, six required subdirectories, frontmatter on every content file. **Standard**: adds `STATE.md`, a root `AGENTS.md` and one per leg, the recommended directories (`what/decisions/`, `how/backlog/`, `how/sessions/active/`, `how/sessions/history/`) as requirements, and the session lifecycle. **Full**: adds a context library with token estimates, FAIR metadata on deployable objects, an ontology diagram, and a template for every content type in use. A vault *may* declare its level in `MANIFEST.md`; undeclared means unverified. The standard mentions a reference validator, `adna_validate.py`, which reports the level a tree actually meets (§5.5; the tool is informative, not required). It checks the presence of files, directories and frontmatter fields, not their values (at Full it checks structure only, not FAIR fields, token estimates or per-type templates), and exits non-zero on failure, so it can run in CI.
 
 ### 2.6 The template and the fork
 
@@ -149,7 +149,7 @@ The standard is quiet about how work is organised above a single mission. What f
 
 | Unit | Scale | What it is |
 |---|---|---|
-| **Session** | one agent, one sitting | A bounded unit of work with a file in `how/sessions/active/`, created *before* any other file is modified (Standard §8.1); the file has a standard ID format and a tier that says how much it may touch (§8.2, §8.3) |
+| **Session** | one agent, one sitting | A bounded unit of work with a file in `how/sessions/active/`, created *before* any other file is modified (Standard §8.1); the file has a standard ID format and a tier set by what it edits, which adds safeguards for shared configuration (§8.2, §8.3) |
 | **Objective** | session-sized | The atomic unit inside a mission |
 | **Mission** | one to five sessions | A task too large for one session, decomposed into objectives with acceptance criteria and per-objective status (§9.1) |
 | **Campaign** | ten to forty sessions | Several missions toward a strategic goal, in phases, with a gate between phases *(practice)* |
@@ -455,15 +455,15 @@ Each term: a plain line, then the technical line.
 - **Drop-box.** The inbox a vault publishes for memos. *New-files-only; the recipient's commit is the read-receipt (practice).*
 - **Claim-lease.** A lease on a task with a fencing token. *Lease id, expiry, heartbeat, monotonic token (practice).*
 - **Airlock.** Overloaded: either the vault-to-vault traffic contract or the action-mediation gate. *See §4.5 (practice).*
-- **Federation wrapper.** The small directory that lets one vault consume another. *`how/federation/<name>/` with a pinned `federation_ref` (practice).*
-- **Skill.** A reusable agent procedure, written as a file. *`how/skills/`; publishable as a degenerate lattice (§19.3; practice).*
+- **Federation wrapper.** The small directory that lets one vault consume another. *The `how/federation/` directory is the standard's (§5.3); the pinned `federation_ref` contents are practice.*
+- **Skill.** A reusable agent procedure, written as a file. *`how/skills/`; publishable as the one-module case of a lattice (§19.3; practice).*
 - **Module.** One function, model or tool with typed inputs and outputs. *The node of a lattice (practice).*
 - **Lattice.** A typed DAG of modules. *`.lattice.yaml`, nineteen I/O types, FAIR block (practice; FAIR required at Full, §5.5).*
 - **FAIR.** Findable, accessible, interoperable, reusable: the metadata block on anything publishable. *The standard requires `keywords` and `license` at Full (§5.5); creators, identifier and provenance are practice.*
 - **Network.** The fleet of vaults and machines one group operates together. *Practice; its master graph is the network vault (§5.1).*
 - **Node vault; network vault; exchange.** The per-machine vault; the fleet's master projection; where published artifacts live. *All practice (§5.1).*
 
-**Three reading paths.** Ten minutes: §0, §2.1–§2.4, §7, §8. The whole document: about thirty-five minutes. Deep: the aDNA Standard §§1–5 and §7 (the vault), §§8–9 and §13 (sessions, missions, collisions), §11 (coordination); then the decision records on per-mission budgets, memo authorship, wrapper placement and LinkML; then the patterns on model-tiered execution and the software-element context graph; then the coordination drop-box doctrine.
+**Three reading paths.** Ten minutes: §0, §2.1–§2.4, §7, §8. The whole document: about 40 minutes. Deep: the aDNA Standard §§1–5 and §7 (the vault), §§8–9 and §13 (sessions, missions, collisions), §11 (coordination); then the decision records on per-mission budgets, memo authorship, wrapper placement and LinkML; then the patterns on model-tiered execution and the software-element context graph; then the coordination drop-box doctrine.
 
 ## Appendix A — normative vs practice
 
