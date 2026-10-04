@@ -102,3 +102,11 @@ Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
 
 [I] Sitting forecast 220±70 kT; actual ≈ 185 kT executor (A ≈ 30 · B ≈ 30 · C ≈ 95 · close ≈ 30) + ≈ 275 kT explorers on their own line (3 recon agents at plan time). Billing unavailable. Follow-up unchanged: P1.3 C2 records → DP3; Hygieia retry; verify branch CI.
 
+
+## Hygieia retry · `main` push · Primer O2 · v8.12 release + deploy tail — 2026-10-04 (UTC; fifth sitting of the 10-03 run)
+
+- **Session**: `session_stanley_20261004_002600_garnier_v8_12_release_primer_o2` (Tier 2, fable; plan-approved 2026-10-04 UTC with three operator rulings: deploy tail together · conditional push pre-grant · Hygieia hold-if-live).
+- **GARNIER-side**: Hygieia memo **HOLD ×2** (WilhelmAI live at 00:26Z; doctrine §2 branch 3) — ADR-010 co-sign still not asked. **No reader records; DP3 intake untouched.** `main` moved (`a1744c4` → `926c706`, pushed + CI green + deployed) — **GR-7 / P5.3 integration now rebases onto a `main` that carries the v8.12 trust page, the 10-04 changelog entry, new `home` baselines and the 09-12 docs-sweep fixes**; `vitrine/design` untouched by the deploy; the frozen stimulus `6487444`/4466 untouched.
+- **Primer O2** (standalone mission): six-lens ledger, zero PENDING; **O3 next, operator-summoned**.
+- **v8.12**: fired `1a25446` / tag `v8.12`; deploy `tree=926c706` at 01:05:37Z. Ledger → `accepted`.
+- **Actuals (content-load)**: ≈ **330 kT executor** (A 8 · B 8 · C 70 · D 160 · E 60 · close ≈25) vs 410 ± 120 estimated — inside the band; **≈ 1,053 kT explorers on their own line** (six O2 lenses). Subject-model runtime: none. Billing: unavailable.

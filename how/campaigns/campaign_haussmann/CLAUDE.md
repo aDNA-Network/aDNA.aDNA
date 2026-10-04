@@ -4046,3 +4046,45 @@ operator-gated TTFS run) — **the only Decade-1 leftover still open.**
 > held: **P5.1** with the humans — and ⚠ **its ordering against Vitrine is now the most consequential open
 > question on the campaign** (a panel run on pre-Vitrine copy measures a site about to be replaced; a deploy
 > landing mid-panel invalidates the panel).
+
+> 🚀 **2026-10-04 (UTC) — `v8.12` IS RELEASED AND ITS DEPLOY TAIL IS LIVE.** `aDNA-Network/aDNA` main
+> **`1a25446`**, annotated tag **`v8.12`**; local `.adna` synced `bf5bdd8`, byte-identical; fresh-clone smoke
+> **7/7 + 4 controls**. `deploy_record: 2026-10-04T01:05:37Z mode=prod tree=926c706` from `main` (not a
+> mission — the release's own tail, ruled at plan time; the deploy also carried the **2026-09-12 docs-sweep
+> fixes** that had sat built-not-deployed for three weeks). Alias ancestry OK (`eda4cbf` ⊂ `926c706`); live
+> headers **4/4 by value**; gate-49 `home` **red confirmed in-container first (2 failed / 24 passed)**, then
+> re-baselined with **exactly 2 of 24** changed; CI on `main` green at `926c706` (run `37166489022`) **before**
+> the deploy — push preceded deploy, each its own act. Session
+> `session_stanley_20261004_002600_garnier_v8_12_release_primer_o2`; ledger
+> `artifacts/template_release/release_staging_ledger_v8_12.md` → `accepted`, §5 fire-gate re-verification, §6
+> fire record, §7.7.
+>
+> ⛔⛔ **THE LEDGER'S Q5 WAS FALSE AT ITS PREMISE, AND THE PREMISE WAS OURS.** It answered *"deploy tail: none
+> (no site bytes)"* and the operator confirmed it in advance. The **v8.11 ledger's own P6 row** — three weeks
+> older — says the opposite and why: `build_tour_files.mjs` derives `source_ref` from `.adna/CLAUDE.md`'s
+> version and vendors four files, **two of which change at v8.12**. ⇒ *"no site bytes" is not "no deploy tail"
+> while the trust page vendors the template.* Re-ruled at plan time: **release + deploy together** (R2's
+> precedent). ⭐ The index-vs-artifact class, in a **question** this time: a ledger asked the operator to confirm
+> a premise that a sibling ledger on the same shelf had already refuted.
+>
+> ⭐⭐ **THE LINT WENT RED ON HISTORY, AND THE INSTRUMENT — NOT THE HISTORY — WAS WRONG.**
+> `adna_validate --governance` in the fresh clone: *"CLAUDE.md says 31 templates, actual 32"*. The match was
+> **`30→31 templates` inside the v8.9 version-history comment** — true when written, kept under SO-6, and read
+> by the regex as a live claim the first time the real count moved past it. Editing the history to green the
+> checker would have been the wrong repair; the validator now strips `<!-- … -->` before **both** count scans
+> (an 18th payload path, enumerated before the push; red-proved — a mutated `### Templates (31)` is still
+> caught). *Convention 18's family: a correct instrument pointed at the wrong object — here, at the past.*
+>
+> ⭐ **P4 was narrower than its defect** (the row said line 4; the class was **five** unquoted `{{…}}` scalars —
+> the staged file still failed at line 9 with lines 4–5 quoted); **a sixth template-count surface** (the dev
+> `README.md` tree comment) was found by the lint, not by memory; **`skill_project_fork.md` was reconciled in
+> BOTH directions** (the image led on R1–R7 / ADR-009 / orphan lint / `{{persona}}`; the dev graph on the
+> license step) — v8.11's *a fold is not a copy*, exercised rather than remembered. ⚠ Two node quirks bit and
+> were caught by output: zsh passed a multi-line file list as **one filename** to the leak sweep (the first
+> sweep "ran" over nothing); and a **git worktree cannot be mounted into the gate-49 container** (its `.git` is a
+> pointer file into the main repo) — a standalone local clone of `main` replaced it. ⚠ The clone carried **no
+> pre-push hook and no Vercel link file**; the publication scan was run by hand on each outgoing range, and the
+> link file copied from the main checkout after the CLI refused without a scope.
+>
+> ⏭ **NEXT is unchanged: `P5.1`, human-gated.** ⚠ **Re-derive the build stamp before the first panellist** —
+> prod now serves `926c706`, not `eda4cbf`. ⛔ A deploy hold engages the instant `evidence/p5_1/` exists.
