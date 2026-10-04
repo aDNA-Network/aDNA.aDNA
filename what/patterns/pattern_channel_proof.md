@@ -1,8 +1,8 @@
 ---
 type: pattern
 created: 2026-10-04
-updated: 2026-10-04
-status: proposed          # ⛩ agent-authored 2026-10-04 from Network.aDNA's upstream proposal (Venus, 2026-08-03, received via the 2026-10-04 nudge); operator §7.7 pending — not in force
+updated: 2026-10-04   # §7.7 signed
+status: accepted          # ⛩ operator §7.7 SIGNED AS WRITTEN 2026-10-03 PDT (UTC 2026-10-04; plan-time AskUserQuestion, session_stanley_20261004_045208_garnier_h_sync_vaults_send_channel_proof_primer_sweep) — in force. Was: proposed (agent-authored 2026-10-04 from Network.aDNA's upstream proposal, Venus 2026-08-03, received via the 2026-10-04 nudge)
 pattern_category: operational
 applies_to: [coordination, credentials, federation, deploys, all_categories]
 proposed_by: venus (Network.aDNA) — upstream contribution 2026-08-03; authored here by agent_rosetta 2026-10-04
@@ -10,7 +10,7 @@ instances:
   - "Network.aDNA — F-S339-01 (2026-08-03): a forge-admission kit named a git drop-box its PRIMARY transmit channel and the close called it live; the first non-interactive agent to drive it could not — the key it needed sits outside the agent's permission scope, correctly. The channel was provisioned, not proven."
   - "aDNA.aDNA (this vault) — the pre-push secret-scan hook (installed 2026-08-28) resolved a tracked skeleton config before the root config its own header called authoritative; every push for five weeks ran on the wrong allowlist and nobody knew until the first consumer push that needed the root allowlist was blocked (2026-10-03, (d) sitting). Installed ≠ proven."
   - "aDNA.aDNA / HAUSSMANN convention 16 — 'deployed + live-verified is a statement with a timestamp': a deploy is proven by the alias probe against production after the deploy, never by the deploy command's exit code. Same theorem, deploy costume."
-graduation: "n=3 instances across 2 vaults at authoring; status stays proposed until the operator signs §7.7 below. Template fold (idea_upstream_*) filed on signature, not before."
+graduation: "n=3 instances across 2 vaults at authoring; ⛩ signed 2026-10-04 — template fold filed the same sitting: how/backlog/idea_upstream_pattern_channel_proof.md (v8.13 lane). Was: status stays proposed until the operator signs §7.7 below."
 last_edited_by: agent_rosetta
 tags: [pattern, channel_proof, agent_scope, credentials, coordination, consuming_side, f_s328_06_class, upstream_from_network]
 ---
@@ -56,4 +56,4 @@ The pre-push hook instance above is the clean one: `how/standard/hooks/pre-push-
 
 ## Ratification (§7.7)
 
-- **Decision:** adopt rules 1–4 as an operational pattern of the standard's practice layer; file the template fold on signature · **Ratified-by:** — · **Date:** — · **Status: proposed** *(authored 2026-10-04 by agent_rosetta from Venus's 2026-08-03 proposal, received 2026-10-04; operator signature pending at a gate)*.
+- **Decision:** adopt rules 1–4 as an operational pattern of the standard's practice layer; file the template fold on signature · **Ratified-by:** Stanley (operator) · **Date:** 2026-10-03 PDT (UTC 2026-10-04) · **Status: accepted** — signed **as written**, no amendment, at the plan gate of session [[session_stanley_20261004_045208_garnier_h_sync_vaults_send_channel_proof_primer_sweep]] (`AskUserQuestion`: sign / defer / amend / decline). Fold filed: [[../../how/backlog/idea_upstream_pattern_channel_proof|idea_upstream_pattern_channel_proof]]; Network notified to keep its copy pointing here. *(Was: Ratified-by — · Date — · Status proposed — authored 2026-10-04 by agent_rosetta from Venus's 2026-08-03 proposal, received 2026-10-04; operator signature pending at a gate.)*
