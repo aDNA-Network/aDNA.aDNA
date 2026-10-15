@@ -1,7 +1,7 @@
 ---
 type: directory_index
 created: 2026-07-02
-updated: 2026-10-04   # ADR-063 drafted proposed (primer follow-up sweep O3); tally 57 → 58, proposed 0 → 1
+updated: 2026-10-15   # ADR-064 drafted proposed (ARCADE A1.1 — graph-exchange spec placement); tally 58 → 59, proposed 1 → 2. Prior: 2026-10-04 ADR-063 drafted proposed (primer follow-up sweep O3); tally 57 → 58, proposed 0 → 1
 last_edited_by: agent_rosetta
 tags: [directory_index, decisions, adr_index]
 ---
@@ -10,7 +10,7 @@ tags: [directory_index, decisions, adr_index]
 
 One row per ADR in `what/decisions/`, derived from each file's frontmatter + H1. Auto-generated — see Regeneration below.
 
-**Tally:** 58 ADRs — accepted: 56 · amended: 1 · proposed: **1** *(re-derived 2026-10-04 by `grep -h '^status:' adr_0*.md | sort | uniq -c`: ADR-063 standard errata drafted `proposed` at the primer follow-up sweep; its §7.7 waits for the v2.6 window)* *(re-derived 2026-10-03 by `grep -h '^status:' adr_0*.md | sort | uniq -c`: ADR-062 ratified by the operator, accept-all on `operator_rulings_packet_20261003` row A1; the proposed queue is empty again)* *(re-derived 2026-09-24: ADR-062 LinkML drafted `proposed`)* *(re-derived 2026-09-17: ADR-060 + ADR-061 ratified by the operator — "All recs approved." — one day after drafting; the proposed queue is empty again)*
+**Tally:** 59 ADRs — accepted: 56 · amended: 1 · proposed: **2** *(re-derived 2026-10-15 by `grep -h '^status:' adr_0*.md | sort | uniq -c`: ADR-064 graph-exchange spec placement drafted `proposed` at ARCADE A1.1 — the placement itself was ratified 2026-08-25; the spec text + L2 custody await G1)* *(re-derived 2026-10-04 by `grep -h '^status:' adr_0*.md | sort | uniq -c`: ADR-063 standard errata drafted `proposed` at the primer follow-up sweep; its §7.7 waits for the v2.6 window)* *(re-derived 2026-10-03 by `grep -h '^status:' adr_0*.md | sort | uniq -c`: ADR-062 ratified by the operator, accept-all on `operator_rulings_packet_20261003` row A1; the proposed queue is empty again)* *(re-derived 2026-09-24: ADR-062 LinkML drafted `proposed`)* *(re-derived 2026-09-17: ADR-060 + ADR-061 ratified by the operator — "All recs approved." — one day after drafting; the proposed queue is empty again)*
 
 > **Numbering note** (F-CHM-206): numbers **015** and **018–021** are unassigned — reserved/withdrawn during drafting, never materialized as files. The highest number in use (**046**) exceeds the 41-file count by exactly these 5 gaps; the tally counts actual files and is internally correct. ADR-012 records a 009→012 renumber. Do **not** renumber existing ADRs to close the gaps (stable IDs are load-bearing across cross-references). Preserve this note on regeneration.
 
@@ -74,6 +74,7 @@ One row per ADR in `what/decisions/`, derived from each file's frontmatter + H1.
 | [061](adr_061_three_valued_memo_authorship.md) | Coordination-memo authorship is three-valued: persona · vault · authority | accepted | 2026-09-16 | 2026-09-17 | Accepted — ⛩ ratified 2026-09-17 ("All recs approved."); REFUSE posture endorsed fleet-wide; local memo conventions adopt the three fields now, template touch rides the release. |
 | [062](adr_062_linkml_adoption.md) | LinkML adoption is a standard-level ruling housed in aDNA.aDNA — not a vault, not Context.aDNA's | accepted | 2026-09-24 | 2026-10-03 | Accepted — ⛩ ratified 2026-10-03 (accept-all, packet A1); clauses 1–3 as written + non-normative annex (four LinkML-inexpressible conventions → normative at the v2.6 schema cut; GPL-free toolchain note; `lattice_core` lives with LatticeProtocol). Answers Vauban's 09-21 + 09-26 memos; no vault forked. |
 | [063](adr_063_standard_errata_v2_6.md) | Standard errata for the v2.6 window — §4.1 vs §5.5 required files · §6.5 → §15 dangling archive-don't-delete rule | proposed | 2026-10-04 | 2026-10-04 | Proposed — drafted at mission_primer_followup_sweep O3 (2026-10-04); one §7.7 line per erratum at the standard v2.6 window; `adna_standard.md` unchanged until then. |
+| [064](adr_064_graph_exchange_spec_placement.md) | The graph-exchange contract is a standard-side ecosystem spec (spec_graph_exchange.md) that cites Exchange.aDNA's owned objects and rules L2 rule-set custody — placement ratified 2026-08-25, text seated here | proposed | 2026-10-15 | 2026-10-15 | Proposed — drafted 2026-10-15 at ARCADE A1.1; clauses 1–4 record the operator's 2026-08-25 ratification of the placement (aDNALabs S250); clause 5 (L2 rule-set custody: content the standard's, execution the Exchange's) + the spec v0.1 text await §7.7 at ARCADE G1. ⚠ Exchange.aDNA has its own ADR-064; every citation vault-qualified. |
 
 > ⚠ **Standing annotation, 2026-09-16 (flag, not an edit):** `adr_023_*.md:73` names the legacy
 > host inside a **ratified contract clause**. Rewriting ratified ADR text is not an agent's act

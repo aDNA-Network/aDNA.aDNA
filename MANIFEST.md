@@ -39,7 +39,7 @@ aDNA.aDNA/
 ├── how/            # HOW — Campaigns, workshops, publishing, operations
 │   ├── workshops/      [EXT] Workshop kits + facilitation
 │   ├── publishing/     [EXT] Vault-to-web pipeline
-│   ├── campaigns/      Strategic initiatives (campaign_garnier active; campaign_haussmann holds independent endgame; campaign_vitrine proposed/history retained; campaign_rosetta closed 2026-04-26)
+│   ├── campaigns/      Strategic initiatives (campaign_garnier active; campaign_arcade active — side campaign of GARNIER, chartered 2026-10-15; campaign_haussmann holds independent endgame; campaign_vitrine proposed/history retained; campaign_rosetta closed 2026-04-26)
 │   ├── templates/      46 templates (26 base + 11 extension + 9 operational)
 │   ├── skills/         57 skills (27 base + 30 project-specific)
 │   ├── sessions/       Session tracking

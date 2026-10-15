@@ -133,6 +133,11 @@ Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
   - [D] 28 inventory rows are **held `admission_pending`** (`site/src/data/registry_admission.yaml`; ADR-052 §admission / §tiers.6) — an operator + Hestia-B7 question, not a reader-feedback item.
   - *Proposed:* as (a) — attribute any reader remark about a vault with no description, a stale registry date, or a missing vault to the stimulus, log it without correcting; the admission of the 28 is ruled per row on its own gate, never from a reader record. ⛩ *Ruling asked at DP3.*
 
+- **(i) Operation ARCADE chartered as a side campaign of this one** *(added 2026-10-15 — operator ruling at the session open: AILedger.aDNA is the main operational/entity graph and economic platform; Exchange.aDNA + Terminal.aDNA are the primary access points; aDNA-Medical is the first named profile)*.
+  - [D] `how/campaigns/campaign_arcade/` — `status: active` (ratified at the plan gate 2026-10-15, R3); 6 phases / 15 missions; P0 + A1.1 executed the same sitting (`spec_graph_exchange.md` v0.1 + ADR-064 proposed). Its A5.1 will bring a **GARNIER amendment to DP3**: the four relations enter the claims lanes; P2.3 docs tranches re-scoped to cover the access-point docs + the profile page; Exchange/Terminal registry cards; `campaign_vitrine` dispositioned. Nothing in this charter moves before DP3 rules it.
+  - [D] Public naming of the company is **held** (R2) — no `site/` change rides ARCADE until the operator says "publication"; the stimulus `6487444` is untouched.
+  - *Proposed:* record the amendment as a DP3 item to be ruled with (a)–(h); ARCADE's own gates (G1–G5) stay separate from this campaign's. ⛩ *Ruling asked at DP3.*
+
 ### 4. P2 presented (commit nothing until ruled)
 
 [D] Re-derived 2026-09-24:
