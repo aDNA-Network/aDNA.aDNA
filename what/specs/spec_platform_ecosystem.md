@@ -3,13 +3,15 @@ type: spec
 kind: ecosystem_spec
 name: platform_ecosystem
 created: 2026-05-20
-updated: 2026-07-02
-version: "0.3"
+updated: 2026-10-15   # v0.4 — ARCADE A1.2: §Access points (Exchange · Terminal, tense-labelled) + the recommended-default note; §Terminal ↔ Harness Contract at today's names; v0.3 2026-07-02
+version: "0.4"
+version_status: "v0.4 delta PROPOSED — ARCADE G1 (§7.7 below); v0.3 remains in force until G1 signs"
 status: active
 last_edited_by: agent_rosetta
-tags: [spec, ecosystem, platform, aDNA_pattern]
+tags: [spec, ecosystem, platform, aDNA_pattern, access_points, v0_4_proposed, arcade]
 extraction_source: ~/aDNA/CLAUDE.md lines 178-190 (extracted at compliance campaign M01)
 co_signed_adr: aDNA.aDNA/what/decisions/adr_012_ecosystem_spec_extraction.md
+co_signed_adr_v0_4: aDNA.aDNA/what/decisions/adr_064_graph_exchange_spec_placement.md   # proposed — the access-point section cites the Exchange contract it places
 ---
 
 # Platform Ecosystem
@@ -51,11 +53,28 @@ The **build-scale twin** of the deployment role-graph. A Platform.aDNA carrying 
 
 ## Terminal ↔ Harness Contract
 
-Terminal platforms (`LatticeTerminal`, `Cmux`) and harness platforms (`LatticeAgent`, `RareHarnessNeo`, plus `Claude Code`/`OpenCode` as co-providers) compose across a canonical boundary contract: [[spec_terminal_harness_contract]] (co-signed by `adr_027`). It lets any conforming harness run as a **terminal-driven agent** under any conforming terminal. The contract references LatticeTerminal's `PROVIDER-CONTRACT.md` + `HARNESS-CONTRACT.md` as the normative clause source and adds the multi-terminal generalization + arms-length process-isolation clause (which keeps mixed-license integration — e.g. a GPL-3.0 Cmux fork driving an Apache-2.0 harness — clean by construction).
+Terminal platforms (`Terminal.aDNA` — the live Python/Textual console; before it the archived LatticeTerminal HUD and the archived Go console of the Cmux lineage) and harness platforms (`Harness.aDNA` (`rareharness`), plus `Claude Code`/`OpenCode` as co-providers; the archived `LatticeAgent` was the first conformer) compose across a canonical boundary contract: [[spec_terminal_harness_contract]] (v0.2 proposed; co-signed by aDNA.aDNA `adr_027`, accepted 2026-07-02). It lets any conforming harness run as a **terminal-driven agent** under any conforming terminal. The contract references the two normative clause files `PROVIDER-CONTRACT.md` + `HARNESS-CONTRACT.md` — authoritative in-Harness since 2026-06-07, byte-identical to the archived originals — and adds the multi-terminal generalization + arms-length process-isolation clause (which keeps mixed-license integration — e.g. the GPL-3.0 Go console driving an Apache-2.0 harness — clean by construction). *(Names updated at v0.4; the clause pointers followed the June 2026 archive wave — see that spec's §2.)*
+
+## Access points (v0.4 — PROPOSED, ARCADE A1.2)
+
+> **Plain version.** The standard is a way of organising knowledge; it is not itself a product. Two products built on it are the places a builder or operator actually *arrives*: a **console** to work in, and an **exchange** to publish, find and fetch graphs. This section names them, says how far along each one is in the ratified tense vocabulary, and recommends them without requiring them.
+
+An **access point** is a Platform.aDNA that the network names as a primary way *in* — the place a new builder or operator first touches graphs built to the standard. Two are named (operator ruling 2026-10-15, recorded in `how/campaigns/campaign_arcade/campaign_arcade.md` §1); each carries one spec on this shelf and a tense label from the ratified `exchange-adoption-path` vocabulary (`PASS` true today, verified · `TAUGHT-AS-DESIGN` ratified design, not yet live · `HORIZON` intended):
+
+| Access point | Graph · persona | What it is | The one spec it cites | Posture at authoring (2026-10-15) | Tense |
+|---|---|---|---|---|---|
+| **The console** | `Terminal.aDNA` · Berthier (outward Vauban) | The operator seat: a per-node daemon (`terminald`), the Textual app (`adnaterm`), `terminal-mcp`; hosts agents over ACP, links graphs over A2A v1.0, carries tools over MCP (Terminal ADR-B09) | [[spec_terminal_harness_contract]] v0.2 | Operation Enceinte (the v6 band) active: e4 Glacis closed 2026-10-15, e5 Faubourg planned, **e6 Drawbridge = the launch** (alpha → beta → public, measured not asserted) | hosting `PASS` (s1 · e2 claims held); **launch `TAUGHT-AS-DESIGN`** |
+| **The exchange** | `Exchange.aDNA` · the triad (Mnemosyne · Hermes · Themis) | Registry · Commons · Market for graphs and topologies; the `:8791` substrate; the Terminal is its operator seat, the web faces are citing faces | [[spec_graph_exchange]] v0.1 (proposed; placement aDNA.aDNA ADR-064) | Tier-0 complete 2026-07-17; ADOPT since 2026-09-17; three real graphs published on L1; no fleet vault has fetched a graph yet (that spec's §6) | Tier-0 `PASS`; **launch `TAUGHT-AS-DESIGN`** |
+
+**Recommended defaults — recommended, never required.** `Terminal.aDNA` is the network's **recommended default terminal** and `Harness.aDNA` its **recommended default harness**. This is an onboarding kindness, not a coupling: [[spec_terminal_harness_contract]] stays **any-terminal × any-harness**, and a node that runs another conforming terminal or harness is fully conformant. *(Paper row 1 of `how/backlog/idea_default_terminal_harness_standard_touch.md`, Berthier 2026-06-11, deferred at Champollion G0 with only this paper note allowed to land early.)* The two network-facing pieces of that idea — a `skill_node_bootstrap_interview` hook offering to install the default, and a "recommended default entry" document — **stay deferred** on Terminal's access-point threat-model mission (recommending a default multiplies unscoped credential/permission/ingestion surfaces by every user who follows it). ⚠ At v0.4 that trigger's only object is archived with the Go console (`Archive.aDNA/TerminalGo.aDNA/how/backlog/idea_access_point_threat_model.md`, `proposed`, 2026-06-11; no live Terminal roadmap row carries it) — its re-home is asked of Vauban at ARCADE A1.3; until a live mission exists the hook does not land.
+
+What this section does **not** do: rank the two (they are complementary — seat and substrate); name a hosting company or a price (this spec classifies categories; commerce is [[spec_graph_exchange]] §7's "never carries" and the company estate's own record); or make either access point a conformance requirement of the standard.
 
 ## Active Platforms
 
 > ⚠️ **STALE (pre-2026-06 rename/merge wave).** This table predates the identity cascade (RareHarness→Harness, Cmux→Terminal, LatticeTerminal/LatticeAgent archived, RareHarnessNeo folded). Refresh tracked separately as `idea_upstream_platform_spec_refresh`; not refactored here to respect the Operation Production Tidy freeze. Authoritative platform routing lives in the workspace router + each vault's `STATE.md`.
+>
+> ⛩ **v0.4 (2026-10-15):** still stale, still retained verbatim (SO-6). The refresh remains `idea_upstream_platform_spec_refresh` (accepted Champollion G0 → M2.1, undone). The live access-point posture is **§Access points** above; routing of record is unchanged (router + each `STATE.md`). Of the five rows: `RareHarness.aDNA` → `Harness.aDNA`; `LatticeTerminal.aDNA` + `LatticeAgent.aDNA` → `Archive.aDNA/`; `Cmux.aDNA` → the Go `Terminal.aDNA` → `Archive.aDNA/TerminalGo.aDNA` (2026-10-06); `RareHarnessNeo.aDNA` → `Harness.aDNA`.
 
 | Platform | Persona | Runtime focus | Vault | Code repo | Maturity | Partners |
 |----------|---------|---------------|-------|-----------|----------|----------|
@@ -69,6 +88,17 @@ Terminal platforms (`LatticeTerminal`, `Cmux`) and harness platforms (`LatticeAg
 
 `RareHarness.aDNA/what/artifacts/rh_platform_pattern_spec.md` — authored MP0-2; promotes to workspace-canonical once a second platform emerges (likely at LatticeTerminal Phase-Architect close or LatticeAgent cartograph campaign close).
 
+## §7.7 — Ratification (v0.4 delta)
+
+| Field | Value |
+|---|---|
+| **Decision** | Adopt the v0.4 delta: the §Access points section (Exchange · Terminal, tense-labelled; the recommended-default note, recommended-not-required; the deferred hook named with its orphaned trigger), the §Terminal ↔ Harness Contract paragraph at today's names, and the dated note on the stale table — no category definition changed |
+| **Ratified-by** | *(operator)* |
+| **Date** | *(pending — ARCADE G1)* |
+| **Status** | **proposed** |
+| **Gate / session reference** | ARCADE G1 (`how/campaigns/campaign_arcade/campaign_arcade.md` §5); authored at `session_stanley_20261015_224015_arcade_a1_2_terminal_platform_specs_cli_sweep` |
+| **Scope of authority** | this spec's v0.4 text; the node-bootstrap hook and the entry document are NOT authorised by it (deferred, trigger-gated) |
+
 ## Provenance
 
-Extracted from `~/aDNA/CLAUDE.md` at `campaign_lattice_compliance_upgrade` M01 (2026-05-20). Pre-extraction location: workspace-router §Platform Ecosystem (lines 178-190). Co-signed ADR: `aDNA.aDNA/what/decisions/adr_009_ecosystem_spec_extraction.md`.
+Extracted from `~/aDNA/CLAUDE.md` at `campaign_lattice_compliance_upgrade` M01 (2026-05-20). Pre-extraction location: workspace-router §Platform Ecosystem (lines 178-190). Co-signed ADR: `aDNA.aDNA/what/decisions/adr_009_ecosystem_spec_extraction.md`. v0.2 (2026-06-20, Keystone P0, aDNA.aDNA ADR-037) · v0.3 (2026-06-27, aDNA.aDNA ADR-041) · **v0.4 (2026-10-15, proposed — ARCADE A1.2; access points from the operator ruling of 2026-10-15 and `idea_default_terminal_harness_standard_touch` paper row 1; cites aDNA.aDNA ADR-064, proposed)**.

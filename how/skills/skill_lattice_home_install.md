@@ -3,7 +3,7 @@ type: skill
 skill_type: agent
 category: infrastructure
 created: 2026-05-29
-updated: 2026-06-11
+updated: 2026-10-15   # ARCADE A1.2 dead-CLI sweep: the CMux substrate source is archived (Archive.aDNA/TerminalGo.aDNA, read-only); this vault's instance is the live canonical; prior 2026-06-11
 status: active
 skill_version: 2   # v2 at campaign_lattice_home_pattern M3: vault-identity-class conditional + 5th substitution row + 3 NEW SEEDs from M2 close
 last_edited_by: agent_stanley
@@ -22,7 +22,7 @@ tags: [skill, agent, infrastructure, lattice_home, splash, install, vault_portab
 
 ## Overview
 
-Install the [[pattern_lattice_home]] terminal cold-start splash in any aDNA vault. Lifts the CMux.aDNA canonical implementation (`how/configs/bin/lattice` `cmd_home()`), parameterizes it for the target vault, and wires the activation hook + idempotent install/uninstall scripts. Pure bash + awk; no runtime dependencies. Sub-second render; dual-gated (env var + graph-root walk).
+Install the [[pattern_lattice_home]] terminal cold-start splash in any aDNA vault. Lifts the canonical implementation (`how/configs/bin/lattice` `cmd_home()` — originally CMux.aDNA's; ⛩ since 2026-10-06 that lineage is archived at `Archive.aDNA/TerminalGo.aDNA`, read-only, so lift from **this vault's** `aDNA.aDNA/how/configs/bin/lattice`, the live canonical instance), parameterizes it for the target vault, and wires the activation hook + idempotent install/uninstall scripts. Pure bash + awk; no runtime dependencies. Sub-second render; dual-gated (env var + graph-root walk).
 
 The skill is **vault-agnostic** — it works for `aDNA.aDNA`, `Home.aDNA`, `LatticeAgent.aDNA`, forges, frameworks, org-vaults, or any future vault that inherits from the upstream `LatticeProtocol/Agentic-DNA` base.
 
@@ -37,7 +37,7 @@ The skill is **vault-agnostic** — it works for `aDNA.aDNA`, `Home.aDNA`, `Latt
 
 ### Step 1 — Lift (read-only CMux probe)
 
-Read the 5 CMux substrate files in `CMux.aDNA/how/configs/`:
+Read the 5 substrate files in `aDNA.aDNA/how/configs/` (the live canonical since the CMux lineage was archived 2026-10-06; the originals are read-only at `Archive.aDNA/TerminalGo.aDNA/how/configs/`):
 
 1. `bin/lattice` lines 165-290 (`cmd_home()` function — the splash render core)
 2. `home/home_template.md` (fence-pair ASCII + 9 placeholders)
@@ -146,8 +146,9 @@ Failure on any row → fix before commit. Verify chain is the canonical exit gat
 Annually OR on operator request, run a `git diff` comparison:
 
 ```bash
-diff <(awk '/^cmd_home\(\)/,/^}/' CMux.aDNA/how/configs/bin/lattice) \
+diff <(awk '/^cmd_home\(\)/,/^}/' aDNA.aDNA/how/configs/bin/lattice) \
      <(awk '/^cmd_home\(\)/,/^}/' <target_vault>/how/configs/bin/lattice)
+# (was CMux.aDNA/how/configs/bin/lattice — archived 2026-10-06 at Archive.aDNA/TerminalGo.aDNA/how/configs/bin/lattice, read-only)
 ```
 
 Divergence audit table:

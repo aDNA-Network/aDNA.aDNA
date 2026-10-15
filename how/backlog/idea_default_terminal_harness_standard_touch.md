@@ -42,3 +42,7 @@ aDNA.aDNA rules on all three (your spec, your skill, your shelf). Terminal pre-c
 ## Disposition — Refit M5 vNext triage (2026-07-24) · **CONFIRM-DEFERRED**
 
 Reviewed in the light sweep; **stays `deferred`** — trigger: operator elects the recommended-default terminal/harness standard-touch (explicitly operator-gated). Owner: operator + Terminal/Warp. See [[vnext_roadmap]] §Deferred-with-trigger.
+
+## Disposition — ARCADE A1.2 (2026-10-15) · **paper row 1 LANDED** (`spec_platform_ecosystem.md` v0.4 §Access points, proposed at G1); rows 2–3 **stay deferred**
+
+The recommended-default note is in the spec, recommended-not-required as written here. ⚠ The deferral trigger's object — Terminal's access-point threat-model mission — exists only as the archived `Archive.aDNA/TerminalGo.aDNA/how/backlog/idea_access_point_threat_model.md` (`proposed`, 2026-06-11); no live `Terminal.aDNA` roadmap row carries it (ROADMAP-v1.1 / v1.2 grep'd 2026-10-15). Its re-home is asked of Vauban at A1.3; until a live mission exists, the hook (row 2) and the entry doc (row 3) do not land. Status stays `deferred`.

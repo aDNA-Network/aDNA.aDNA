@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-10-15   # ARCADE A1.2: canonical-instance #1 archived with the Go console (2026-10-06); #2 (this vault) is the live canonical; prior 2026-05-29
 status: active
 pattern_category: structural   # 5-block layout is structural; activation discipline is operational; primary register is structural per first-contact UX framing
 applies_to: [campaigns, missions, sessions, governance, team]
@@ -79,9 +79,9 @@ Every placeholder has a documented fallback for missing data:
 
 ## Example
 
-**Canonical-instance #1**: `CMux.aDNA/how/configs/bin/lattice` lines 165-290 (`cmd_home()`). Splash live since CMux EP2 ex_04 close 2026-05-28. Activates via `CMUX_LATTICE` env gate + graph-root walk for `what/cmux/graph/node.adna.yaml`. ~75 LoC pure bash + awk; sub-second render; idempotent install via CMux ex_02 ADR-015 graph-local runtime discipline.
+**Canonical-instance #1** (⛩ ARCHIVED 2026-10-06 — read-only at `Archive.aDNA/TerminalGo.aDNA/how/configs/bin/lattice`; the vault lineage CMux.aDNA → the Go Terminal.aDNA → TerminalGo.aDNA was archived at the Slice-5 cutover, and the Go `lattice`/`aDNA` CLI retired with it, its console verbs succeeded by `adnaterm`): `CMux.aDNA/how/configs/bin/lattice` lines 165-290 (`cmd_home()`). Splash live since CMux EP2 ex_04 close 2026-05-28. Activates via `CMUX_LATTICE` env gate + graph-root walk for `what/cmux/graph/node.adna.yaml`. ~75 LoC pure bash + awk; sub-second render; idempotent install via CMux ex_02 ADR-015 graph-local runtime discipline.
 
-**Canonical-instance #2** (this vault): `aDNA.aDNA/how/configs/bin/lattice` (delivered at `campaign_lattice_home_pattern` Mission 2). Activates via `ADNA_LATTICE` env gate + graph-root walk for `aDNA.aDNA/MANIFEST.md`. Renders Rosetta-flavored header (`🧬 aDNA / Rosetta` badge), aDNA mission grep (`how/campaigns/*/missions/*.md`), and Rosetta-specific capability stubs.
+**Canonical-instance #2** (this vault — **the live canonical since 2026-10-06**): `aDNA.aDNA/how/configs/bin/lattice` (delivered at `campaign_lattice_home_pattern` Mission 2). Activates via `ADNA_LATTICE` env gate + graph-root walk for `aDNA.aDNA/MANIFEST.md`. Renders Rosetta-flavored header (`🧬 aDNA / Rosetta` badge), aDNA mission grep (`how/campaigns/*/missions/*.md`), and Rosetta-specific capability stubs.
 
 **Self-reference**: this very pattern doc lives in `aDNA.aDNA/what/patterns/` under the `pattern` ontology extension Rosetta authored for the vault's own demonstration purpose. The vault IS the textbook (CLAUDE.md Operating Style); the pattern is documented in the same surface where it will be installed at Mission 2.
 

@@ -14,6 +14,7 @@
 #                                 Both gated by ADNA_LATTICE + graph-root walk at runtime.
 #
 # Conflict-aware: existing `~/.local/bin/lattice` (from CMux install) is NOT touched;
+#   ⛩ 2026-10-06: that CMux/Go-console link (`~/.local/bin/lattice`, alias `aDNA`) was REMOVED with the Go console's archive (Terminal.aDNA cutover packet row 13, ruling CP4-1 (b)); the successor console CLI is `adnaterm` (uv tool, with `terminald` · `terminal-mcp`). This guard is now vacuous and stays as written (annotated at ARCADE A1.2, never deleted).
 # we install under the vault-prefixed name `lattice-adna` to coexist (M2 mission spec
 # AC #9; NEW SEED candidate `skill_lattice_home_install_path_conflict_vault_prefix`).
 
@@ -47,7 +48,8 @@ Usage:
   install.sh -h | --help   This help.
 
 Vault-prefixed name `lattice-adna` coexists with existing `~/.local/bin/lattice`
-(typically a CMux install). Invoke as: `lattice-adna home`.
+(typically a CMux install; that link was removed 2026-10-06 with the Go console —
+see the header note). Invoke as: `lattice-adna home`.
 EOF
 }
 

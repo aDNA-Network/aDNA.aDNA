@@ -23,7 +23,7 @@ Every aDNA-derived vault opens to an empty terminal. There is no inherited cold-
 
 ## Evidence
 
-- **Canonical-instance #1** — `CMux.aDNA/how/configs/bin/lattice` `cmd_home()` lines 165-290 (~75 LoC bash + awk). Live since CMux EP2 ex_04 close 2026-05-28. Sub-second render; dual-gated; ADR-013 (context-graph-as-product) names the share-ready posture.
+- **Canonical-instance #1** — `CMux.aDNA/how/configs/bin/lattice` `cmd_home()` lines 165-290 (~75 LoC bash + awk). Live since CMux EP2 ex_04 close 2026-05-28. *(⛩ 2026-10-06: archived with the Go console → `Archive.aDNA/TerminalGo.aDNA/how/configs/bin/lattice`, read-only; #2 below is the live canonical — noted at ARCADE A1.2.)* Sub-second render; dual-gated; ADR-013 (context-graph-as-product) names the share-ready posture.
 - **Canonical-instance #2** — `aDNA.aDNA/how/configs/bin/lattice` (delivered at `campaign_lattice_home_pattern` Mission 2; lift target). Will prove the lift-and-parameterize discipline works across vaults.
 - **Adoption** — 2 of 19+ vaults at this filing = 11%. Without upstream propagation, the next 17 vaults each re-implement bespoke surfaces (drift) or skip (tax).
 - **No fork required** — the pattern ships in `how/configs/` as a Tier-0 overlay; no upstream cmux/terminal/shell patching.

@@ -38,6 +38,8 @@ Removes: ~/.local/bin/lattice-adna  (if symlinked into this vault)
 
 Leaves: substrate files in <vault>/how/configs/ untouched.
         Existing ~/.local/bin/lattice (from CMux or other) untouched.
+        (2026-10-06: the CMux/Go-console link was removed with its archive —
+         Terminal.aDNA cutover packet row 13; successor CLI `adnaterm`. Clause kept.)
 EOF
 }
 

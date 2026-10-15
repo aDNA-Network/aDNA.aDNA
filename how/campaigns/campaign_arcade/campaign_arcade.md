@@ -19,7 +19,7 @@ executor_tier_default: opus      # judgment missions declared fable; see each ca
 executor_runtime: claude
 priority: high
 created: 2026-10-15
-updated: 2026-10-15
+updated: 2026-10-15   # A1.2 closed (second sitting)
 last_edited_by: agent_rosetta
 ratification_status: accepted
 ratification_date: '2026-10-15'
@@ -83,7 +83,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 | Mission | Title | Sessions | Tier | Deps | Status |
 |---|---|---:|---|---|---|
 | [[mission_arcade_a1_1_spec_graph_exchange]] | `spec_graph_exchange.md` + ADR-064 + reply to Berthier/the triad | 1 | opus (executed fable, R3) | A0.1 | completed |
-| [[mission_arcade_a1_2_terminal_platform_specs]] | Terminal contract v0.2 · platform spec v0.4 · dead-CLI sweep | 1 | opus | A1.1 | queued |
+| [[mission_arcade_a1_2_terminal_platform_specs]] | Terminal contract v0.2 · platform spec v0.4 · dead-CLI sweep | 1 | opus (executed fable) | A1.1 | completed |
 | [[mission_arcade_a1_3_vauban_rulings_packet]] | Vauban's 13 asks dispositioned, ruled, replied | 1 | fable | A1.2 | queued |
 | [[mission_arcade_a1_4_registry_truth]] | Exchange/Terminal registry rows → Hestia → gated sync | 1 | sonnet | A1.3 | queued |
 
@@ -172,3 +172,8 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
 ### Chartered at the plan gate; P0 + A1.1 opened — 2026-10-15
 
 - [D] Session `session_stanley_20261015_212937_arcade_p0_situation_review_and_a1_1` (Tier 2, fable). Ten inbox memos receipted `409293c`. Three read-only explorers at plan time; findings re-verified at the object; rulings R1–R4 taken. This charter, `CLAUDE.md`, 15 mission cards, `session_prompts_arcade.md`, `artifacts/p0/situation_review_20261015.md`, `artifacts/p0/operator_rulings_packet_20261015.md` written. GARNIER DP3 item (i) + Execution Log entry. A1.1 opened the same sitting (R3).
+
+### A1.2 closed — 2026-10-15
+
+- [D] Session `session_stanley_20261015_224015_arcade_a1_2_terminal_platform_specs_cli_sweep` (Tier 2; fable on a declared-opus card). Plan-time rulings **R5** push at close · **R6** sweep = live-routing-dead set only. `spec_terminal_harness_contract.md` **v0.2** + `spec_platform_ecosystem.md` **v0.4**, both `proposed` with empty §7.7 → **G1 now holds three specs + aDNA.aDNA ADR-064**. Blob SHAs re-verified on both trees (no-drift case). Dead-CLI sweep derived at the object: 42 / 15 / 2 false / 7 records / **6 annotated** — the "~19" did not reproduce (most hits = this vault's own `lattice home` script, the live `latlab` CLI, the live `aDNA terminal` launcher). aDNA.aDNA ADR-027 found `accepted` since 07-02 (ceremony moot). Panacea re-pin notice staged (send after G1). Three Vauban rows → A1.3. Budget ≈60 vs 70 ± 25. ⚠ Self-catch at close: a bulk ADR-qualifier pass mis-tagged this charter's *aDNALabs* ADR-027 mentions as ours — reverted from HEAD before commit; rule 3 is applied by hand, never by regex.
+

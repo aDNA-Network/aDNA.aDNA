@@ -47,3 +47,8 @@ Terminal × Harness co-development was operator-directed 2026-06-11 (Operation G
 ## Champollion G0 disposition — M (M1.1, 2026-07-02)
 
 **ACCEPT → fix/mission.** Owning mission: `M2.1` (see `champollion_mission`). Not executed inline (M1.1 is a pure disposition sweep). Ratified at Champollion G0 (D2).
+
+## Disposition — ARCADE A1.2 (2026-10-15) · **EXECUTED → `spec_terminal_harness_contract.md` v0.2 (proposed, G1)**
+
+Rows 1–5 applied as path cells (blob SHAs re-verified on both trees: `14b651d3…` / `7f2508f0…` — the §8 no-drift case; the LatticeAgent interop snapshot differs from its archived original only by the 2026-06-07 rehome annotation, `a640076e…` vs `98cf8b37…`). **Option 3 was moot**: aDNA.aDNA ADR-027 has been `accepted` since 2026-07-02 (Champollion G0). Two things the proposal could not foresee: the Cmux-era pointer-spec named in row 5 is archived with the Go console (`Archive.aDNA/TerminalGo.aDNA/what/specs/spec_provider_conformance.md`), and the live Python `Terminal.aDNA` has no `what/specs/` — the v0.2 §7 row says so (`HORIZON`) and the pointer-spec is asked of Vauban at A1.3. Status stays `accepted` (executed); re-pins on the doctrine SHA are Terminal's and Harness's after G1.
+
