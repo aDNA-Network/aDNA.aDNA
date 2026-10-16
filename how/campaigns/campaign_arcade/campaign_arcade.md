@@ -19,7 +19,7 @@ executor_tier_default: opus      # judgment missions declared fable; see each ca
 executor_runtime: claude
 priority: high
 created: 2026-10-15
-updated: 2026-10-16   # A1.2 closed (second sitting)
+updated: 2026-10-16   # A1.4 closed (fourth sitting) — P1 complete, G1 pending; prior: A1.2 closed (second sitting)
 last_edited_by: agent_rosetta
 ratification_status: accepted
 ratification_date: '2026-10-15'
@@ -85,9 +85,9 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 | [[mission_arcade_a1_1_spec_graph_exchange]] | `spec_graph_exchange.md` + ADR-064 + reply to Berthier/the triad | 1 | opus (executed fable, R3) | A0.1 | completed |
 | [[mission_arcade_a1_2_terminal_platform_specs]] | Terminal contract v0.2 · platform spec v0.4 · dead-CLI sweep | 1 | opus (executed fable) | A1.1 | completed |
 | [[mission_arcade_a1_3_vauban_rulings_packet]] | Vauban's 13 asks dispositioned, ruled, replied | 1 | fable | A1.2 | completed |
-| [[mission_arcade_a1_4_registry_truth]] | Exchange/Terminal registry rows → Hestia → gated sync | 1 | sonnet | A1.3 | queued |
+| [[mission_arcade_a1_4_registry_truth]] | Exchange/Terminal registry rows → Hestia → gated sync | 1 | sonnet (executed fable) | A1.3 | completed 2026-10-16 |
 
-**⛩ G1:** specs + ADR-064 §7.7; reply send GOs. Budget ≈245 kT.
+**⛩ G1:** specs + ADR-064 §7.7; reply send GOs. Budget ≈245 kT. *P1 complete 2026-10-16 (A1.1–A1.4); G1 pending — the four §7.7 signatures + the send GOs (triad reply · Hestia registry memo · Panacea notice after G1).*
 
 ### P2 — Economic-platform seam
 
@@ -180,4 +180,4 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
 ### A1.3 closed — 2026-10-16
 
 - [D] Session `session_stanley_20261016_164611_arcade_a1_3_vauban_rulings_packet` (Tier 2, fable). Plan-time rulings **R7** accept all eight template rows · **R8** row 6 ratified into the ISS pattern + `skill_create_iss` · **R9** rows 1/2/4 → one new pattern (`pattern_ledger_backed_acceptance_tables`, draft) + row 5's record-identity rule into `template_session` · **R10** row 7's general rule → the v2.6 cut (queued on A4.1). Packet `artifacts/p1/vauban_rulings_packet.md`: 16 rows (13 + 3), ratify 8 · amend 4 · to-v2.6 1 · decline 0. Nine files amended `proposed (v8.13)` + one new pattern; reply to Vauban `outbound_ready` (ROADMAP-v1.1 row 17 closes by pointer; C3 correction; C1/C2 asked back). Validator zero drift; bare-ADR grep clean. Budget ≈55 vs 60 ± 25 (+≈88 explorer at plan time, own line). G1 unchanged.
-
+- [D] Session `session_stanley_20261016_172213_arcade_a1_4_registry_truth` (Tier 2; fable on a declared-sonnet card). Plan-time rulings: cc Vauban + Berthier on the Hestia memo (strikeable at the send GO) · push at close (R5). `artifacts/p1/registry_corrections_exchange_terminal.md` derived at the object (two rows; §0 field→file map from `scripts/build_vaults_data.mjs:203-282`; §3 sanitizer proof 5 PASS / 2 controls REFUSED); memo to Hestia `outbound_ready` (two cards + two inventory first sentences; `status` genesis → active both, Terminal tagline off "soft-fork of cmux"; `github_url` stays empty, both private, PASS); `sync:vaults` GO queued (STATE §Pending). Finding: the rows were stale at the **card** overlay (B7 backfill `9be9794`, 2026-08-29), not the inventory. A1.4 `completed`; **P1 complete; G1 pending**; CURRENT → G1. Budget ≈35 vs 25.
