@@ -10,7 +10,7 @@ campaign_phase: 4
 campaign_mission_number: 12
 mission_class: implementation
 created: '2026-10-15'
-updated: 2026-10-15
+updated: 2026-10-16
 last_edited_by: agent_rosetta
 tags: [plan, campaign, arcade]
 executor_tier: fable
@@ -39,6 +39,10 @@ verification_method: "Every claim in the Completion Summary cites a path or a co
 ## Goal
 
 One sitting per §15.4: fold the ratified decisions into adna_standard.md and cut v2.6 only when the operator signs. Queue: ADR-063 errata (two §7.7 lines) · ADR-062 annex path (Noether 10-10: lattice_core at LatticeProtocol.aDNA/what/schemas/) · the LinkML frontmatter master's five rulings (ISS gate authored from Noether 10-03/10-07) · ADR-066 profiles + release integrity · spec_graph_exchange cross-reference in §5.3/§19 · the campaign layer codified (idea_upstream_standard_codify_campaign_layer) · the four-surface version-cut checklist.
+
+**Queued 2026-10-16 (A1.3, ruling R10 — Vauban 10-06 row 7):** one §19.6 line — *an ADR number is qualified by its vault and, where a campaign numbers its own ADRs, by the campaign's one-letter prefix (`ADR-B08` is Terminal's Bastide ADR 08, not `ADR-008`)* — plus `adr_` (and `campaign_` · `coord_`) in the §6.4 type-prefix table. Not edited at A1.3; the standard moves only at the cut. Source: `how/campaigns/campaign_arcade/artifacts/p1/vauban_rulings_packet.md` row 10-06 #7.
+
+**Incoming (heads-up 2026-10-16, Noether — `inbox/coord_2026_10_16_noether_to_rosetta_academie_p4_open_heads_up.md`, no ack):** ACADÉMIE P4's standard-amendment package (multi-modal memorialization; `lattice_core` masters at LP `what/schemas/`) is coming, sized to ride this queue if Rosetta agrees — rule it when it lands, not before.
 
 ## Exit Gate
 

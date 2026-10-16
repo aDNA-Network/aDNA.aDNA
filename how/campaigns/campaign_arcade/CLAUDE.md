@@ -3,7 +3,7 @@ type: governance
 subtype: campaign_claude
 campaign_id: campaign_arcade
 created: 2026-10-15
-updated: 2026-10-15
+updated: 2026-10-16
 status: active
 last_edited_by: agent_rosetta
 tags: [governance, campaign, arcade]
@@ -18,7 +18,7 @@ tags: [governance, campaign, arcade]
 |---|---|
 | Campaign | `campaign_arcade` — Operation ARCADE, side campaign of `campaign_garnier` |
 | Owner · executor | Stanley · Rosetta (`agent_rosetta`, runtime claude) |
-| Status · phase | active · P0 (A0.1 in progress; A1.1 opened the same sitting) |
+| Status · phase | active · P1 (A0.1 · A1.1 · A1.2 · A1.3 done; A1.4 next; G1 pending) — updated 2026-10-16 |
 | Charter | [[campaign_arcade]] · CURRENT pointer: [[session_prompts_arcade]] |
 
 ## Quick start

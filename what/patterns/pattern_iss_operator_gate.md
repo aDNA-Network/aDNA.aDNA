@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-10-16   # §4 clause 5 added, proposed (v8.13) — the recommended chip derived from the payload; ARCADE A1.3, Vauban 10-06 row 6
 status: active   # GRADUATED at Champollion G3 (2026-07-02, D2b — 10 vault adoptions, census-verified; operator-ratified)
 pattern_category: operational
 applies_to: [decisions, campaigns, coordination, all_categories]
@@ -66,6 +66,7 @@ The heart of the pattern is **the decision boundary, as actually practiced**: *r
 2. If web: invoke the canonical [[../../how/skills/skill_create_iss|skill_create_iss]] — pick template + persona, bind data, render to `<vault>/how/gates/`, watch the sentinel, read the output JSON. Do **not** roll a bespoke gate.
 3. Honor the **fallback chain**: probe capability; if web can't render, degrade to inline, then copy-paste — never fail the whole decision because one surface is unavailable.
 4. It is legitimate to **decline** the web surface even when it's up (record homogeneity, speed) — declining is a normal outcome, not a defect.
+5. **The recommended chip is derived from the payload, never a fixed string** *(v8.13, proposed — ARCADE A1.3, Vauban/Terminal 10-06 row 6 = Terminal ROADMAP-v1.1 row 17)*. A gate card lights **only** the option the recommendation names (`rec_label` / `rec_class` in the data) and lights **none** when the payload carries no recommendation; the affordance text ("Recommended", a pill, a highlighted chip) is computed from the payload at render, so a gate with no recommendation cannot say one exists. *(The inherited defect this closes: the Go console's gate card said "Recommended" on every chip; Terminal fixed it in its own surfaces by test — `what/terminal/tests/barbican/test_gate_card.py:36,43`, `[R]` — and asked the pattern to carry the rule upstream so no ISS built from this pattern repeats it. Mirrored in `skill_create_iss` §Structured recommendation; the renderer templates are Astro's to confirm.)*
 
 **Landing ISS in a vault (consumer):**
 1. Add a `<vault>/how/federation/iss/CLAUDE.md` wrapper (ADR-045 placement) with `federation_ref:` (pin the site-forge ISS substrate) + default `persona:` + optional `default_preset:`/`skin:` — sibling to your other federation wrappers; contains no forge code.

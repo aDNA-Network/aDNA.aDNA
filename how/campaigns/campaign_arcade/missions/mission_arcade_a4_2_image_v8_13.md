@@ -10,7 +10,7 @@ campaign_phase: 4
 campaign_mission_number: 13
 mission_class: implementation
 created: '2026-10-15'
-updated: 2026-10-15
+updated: 2026-10-16
 last_edited_by: agent_rosetta
 tags: [plan, campaign, arcade]
 executor_tier: opus
@@ -38,7 +38,7 @@ verification_method: "Every claim in the Completion Summary cites a path or a co
 
 ## Goal
 
-Run skill_template_release for v8.13 with its queue: the mesh-probe skill + channel-proof fold · the Vauban template rows accepted at A1.3 · the deep_research.lattice.yaml CEL condition fix (Noether 10-08: :91 and :95 → `effort_level in [...]`) · the P5 / P7 ADRs owed by v8.12 · Rand's spec_forge_ecosystem row (Design.aDNA) · template_profile_spec if A3.3 landed. Diff-based delta-only fold; tags only; dry-run then pause for the fire GO.
+Run skill_template_release for v8.13 with its queue: the mesh-probe skill + channel-proof fold · the Vauban rows accepted at A1.3 (**ruled 2026-10-16, R7–R9**, all `proposed` in place: `template_aar` §Carries · `template_campaign` ×4 · `template_campaign_mission` + `template_mission` §Premise pass + §Descoped · `template_session` `issued_by:`/`continues:`/open-seal reads · `template_aar_lightweight` §Boundary AAR-light · `pattern_iss_operator_gate` §4 cl. 5 + `skill_create_iss` affordance rule · **new** `pattern_ledger_backed_acceptance_tables` (draft) — ledger: `artifacts/p1/vauban_rulings_packet.md` §Objects) · the deep_research.lattice.yaml CEL condition fix (Noether 10-08: :91 and :95 → `effort_level in [...]`) · the P5 / P7 ADRs owed by v8.12 · Rand's spec_forge_ecosystem row (Design.aDNA) · template_profile_spec if A3.3 landed. Diff-based delta-only fold; tags only; dry-run then pause for the fire GO.
 
 ## Exit Gate
 

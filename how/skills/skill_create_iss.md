@@ -2,7 +2,7 @@
 type: skill
 skill_type: agent
 created: 2026-05-21
-updated: 2026-05-28
+updated: 2026-10-16   # affordance rule added, proposed (v8.13) — ARCADE A1.3, Vauban 10-06 row 6
 status: active
 category: communication
 trigger: agent needs operator decision/input richer than AskUserQuestion can carry
@@ -257,6 +257,8 @@ Per-section (in `phase_exit.html`) or top-level (in `decision_gate_3option.html`
 | `risks` | recommended | 1–3 bullets; **explicit acknowledgment** of what could go wrong; never omit because "nothing's wrong" — author the bullet "No material risks at this scope" if so |
 | `confidence` | recommended | Integer 1–5; agent's own confidence; renders as 5-dot indicator in CONFIDENCE row AND as section-header pill suffix |
 | `next_actions` | recommended | 2–5 bullets; what happens on approve; lifted from the legacy `actions[]` shape |
+
+**Affordance rule** *(v8.13, proposed — ARCADE A1.3, Vauban/Terminal 10-06 row 6; `pattern_iss_operator_gate.md` §4 clause 5)*: the "Recommended" affordance on an option chip is **derived from `rec_label` / `rec_class` in the payload at render** — light only the option the recommendation names; **light none when no recommendation is present**; never author a fixed "Recommended" string into a template or a label. A gate whose data has no recommendation must render no recommended chip.
 
 All fields are optional; absent fields cleanly omit their subsection (no empty label). Empty `recommendation: {}` falls through to legacy `verdict` + `actions[]` if both are present, otherwise renders nothing in the rec block. **At minimum populate `rationale` + `key_factors` + `confidence`** — those three carry the load-bearing signal.
 
