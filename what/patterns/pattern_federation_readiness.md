@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-04-14
-updated: 2026-04-17
+updated: 2026-10-16   # §Related: one cross-link line to spec_graph_exchange + aDNA.aDNA ADR-065 (ARCADE A2.1); body unchanged
 status: active
 pattern_category: federation
 applies_to: [lattices, modules]
@@ -89,3 +89,4 @@ This lattice passes all 6 checks: schema-valid, opted in, provenance set, licens
 - [[what/concepts/concept_lattice_composition|Lattice Composition]] — the composition patterns that federation-ready lattices enable
 - [[what/patterns/pattern_fair_envelope|FAIR Envelope]] — the metadata pattern that federation readiness depends on
 - [[what/concepts/concept_open_standard|Open Standard]] — the governance model that makes cross-instance federation possible
+- [[what/specs/spec_graph_exchange|spec_graph_exchange]] §3–§4 — the *publishable-graph minimum* (identity · license · provenance · trust posture) a federation-ready lattice meets when it is offered through an exchange as a [[what/glossary/glossary_graph_product|graph product]]; the standard's position on where that exchange sits is [[what/decisions/adr_065_standard_position_two_estates|aDNA.aDNA ADR-065]] (proposed, 2026-10-16)

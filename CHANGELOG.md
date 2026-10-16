@@ -30,6 +30,14 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-16 (e) — ARCADE G1 RULED (R11–R14) · three memos delivered · A2.1: ADR-065 (the standard's position under the two-estate model) **proposed**
+
+- **Ratified (operator, plan-time AskUserQuestion, as written):** `what/decisions/adr_064_graph_exchange_spec_placement.md` **accepted** · `what/specs/spec_graph_exchange.md` v0.1 **accepted** · `what/specs/spec_terminal_harness_contract.md` **v0.2 in force** (path-only re-anchor; blob `f629b019…`) · `what/specs/spec_platform_ecosystem.md` **v0.4 in force** (§Access points). `adr_index` tally derived.
+- **Delivered:** `coord_2026_10_15_rosetta_to_berthier_and_the_triad_*` → Exchange (cc aDNALabs, Terminal) · `coord_2026_10_16_rosetta_to_hestia_two_access_point_rows_*` → Home (cc Terminal, Exchange) · `coord_2026_10_15_rosetta_to_panacea_adr_027_*` → Harness (cc Terminal); each with a §0 "at the send"; drop-box doctrine on every leg.
+- **New (proposed, G2):** `what/decisions/adr_065_standard_position_two_estates.md` — public way · access points · commercial home (private-side, R2) · the economic platform as an owner × tense table · ecosystem by conformance · first profile · never-carries · two A2.2 memo proposals; `cites:` block; every ADR vault-qualified.
+- **New:** `what/glossary/glossary_access_point.md` · `glossary_commercial_home.md` · `glossary_graph_product.md` (name-free). **Touched:** `what/patterns/pattern_federation_readiness.md` §Related (+1 line). Campaign: A2.1 card `completed` + AAR; charter · CLAUDE · prompts (CURRENT → A2.2, A2.2 prompt authored) · STATE ⏭ (e).
+- `site/` untouched (R2); nothing written in any foreign tree beyond the inbox copies.
+
 ### 2026-10-16 (d) — ARCADE A1.4: registry truth for Exchange + Terminal — two rows derived at the object, memo to Hestia `outbound_ready`, `sync:vaults` GO queued; **P1 complete, G1 pending**
 
 - **Campaign:** `how/campaigns/campaign_arcade/artifacts/p1/registry_corrections_exchange_terminal.md` — §0 field→file map (`scripts/build_vaults_data.mjs:203-282`: `status · tagline · last_synced · github_url · current_phase` come from Hestia's **cards**, `note` from her inventory via `publicNote()`); section A per vault = the ask (`status` genesis → **active** both, per aDNA.aDNA ADR-052 §tiers.3; Terminal tagline off "soft-fork of cmux"; one proven first sentence per note; `current_phase` optional, 0/74 fill it; `github_url` stays empty — both private, `PASS`); section B = inventory-only offers; §3 sanitizer proof (5 PASS / 2 planted controls REFUSED). A1.4 card `completed` (summary + AAR; ≈35 vs 25; fable on a declared-sonnet card) · charter row + Execution Log · campaign CLAUDE phase line · CURRENT → **G1** · STATE ⏭ (d).

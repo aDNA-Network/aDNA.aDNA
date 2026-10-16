@@ -19,7 +19,7 @@ executor_tier_default: opus      # judgment missions declared fable; see each ca
 executor_runtime: claude
 priority: high
 created: 2026-10-15
-updated: 2026-10-16   # G1 RULED (R11–R14, fifth sitting) — P2 open, A2.1 running; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
+updated: 2026-10-16   # G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
 last_edited_by: agent_rosetta
 ratification_status: accepted
 ratification_date: '2026-10-15'
@@ -93,7 +93,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 
 | Mission | Title | Sessions | Tier | Deps | Status |
 |---|---|---:|---|---|---|
-| [[mission_arcade_a2_1_adr_065_estate_position]] | ADR-065 — the standard's position under the two-estate model | 1 | fable | A1.1 | queued |
+| [[mission_arcade_a2_1_adr_065_estate_position]] | ADR-065 — the standard's position under the two-estate model | 1 | fable | A1.1 | **completed 2026-10-16** (ADR-065 proposed; 3 glossary + 1 pattern touch; ≈60 vs 70) |
 | [[mission_arcade_a2_2_estate_memos]] | ADR-027 amendment proposal → aDNALabs; pre-emptive answer → AILedger | 1 | fable | A2.1 | queued |
 | [[mission_arcade_a2_3_public_face_account]] | Tense-labelled, name-free public account → GARNIER claim register | 1 | opus | A2.2 | queued |
 
@@ -185,3 +185,8 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
 ### G1 RULED — 2026-10-16
 
 - [D] Session `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065` (Tier 2, fable). The operator sat G1 at plan time (AskUserQuestion, four questions, all as recommended): **R11** sign all four as written → aDNA.aDNA ADR-064 `accepted`, `spec_graph_exchange` v0.1 `accepted`, `spec_terminal_harness_contract` v0.2 + `spec_platform_ecosystem` v0.4 in force (each §7.7 carries Stanley · 2026-10-16 · accepted · this session); `adr_index` tally re-derived 57 · 1 · 1. The terminal spec's blob moved with the signature to `f629b019…` (the SHA Harness pins on receipt of the Panacea notice). **R12** send GOs ×3 (cc as staged) · **R13** A2.1 in this sitting · **R14** push at close. Sends and A2.1 are logged below as they land.
+
+### Sends delivered + A2.1 closed — 2026-10-16
+
+- [D] Same session `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`. **R12 sends**: triad reply → `Exchange.aDNA` `f924872` cc aDNALabs `5d7ac7b2` + Terminal `f48c839` (17:50:26Z, md5_body `b74970e0…`) · Hestia data ask → `Home.aDNA` `d851f63` cc Terminal + Exchange (17:50:27Z, `fb9dc0d7…`; a live s53 lease there — her README lands deliveries regardless) · Panacea re-pin → `Harness.aDNA` `ff3176f` cc Terminal (17:50:27Z, `6209e73f…`; §0 names the signed blob `f629b019…`). Doctrine order kept on all eight legs (identity before the copy, delivery-state after, re-sync, cmp identical). Commit `4eaeab2`. **`sync:vaults` now waits on Hestia's ack.**
+- [D] **A2.1 closed**: `what/decisions/adr_065_standard_position_two_estates.md` **proposed** (§1 public way · §2 access points by pointer · §3 commercial home, private-side · §4 the economic platform as an owner × tense table + the VISION:27 reconciliation · §5 ecosystem by conformance · §6 first profile → ADR-066 · §7 never-carries · §8 two A2.2 memo proposals; `cites:` block, 48 ADR tokens all vault-qualified); `adr_index` 60 = 57 · 1 · 2; glossary ×3 name-free (`access point` · `commercial home` · `graph product`); `pattern_federation_readiness` §Related +1. Premise pass first-hand at HEAD (aDNALabs ADR-027 §2/A1/§3 v3 · AILedger ADR-008 + VISION · Exchange ADR-058/059/062). Budget ≈60 vs 70 (the sitting ≈95 with G1 + sends). **CURRENT → A2.2** (prompt authored). **G2 owed**: ADR-065 §7.7 + the two A2.2 send GOs.

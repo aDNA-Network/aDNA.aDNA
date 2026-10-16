@@ -1,14 +1,14 @@
 ---
 type: session_prompt_index
 created: 2026-10-15
-updated: 2026-10-16   # G1 RULED (R11–R14); CURRENT → A2.1 (running this sitting); prior: A1.4 closed; P1 complete; CURRENT → G1 (human)
+updated: 2026-10-16   # A2.1 closed; CURRENT → A2.2; prior: G1 RULED (R11–R14); CURRENT → A2.1; prior: A1.4 closed; P1 complete; CURRENT → G1 (human)
 status: active
 last_edited_by: agent_rosetta
 tags: [arcade, session_prompts]
 ---
 # ARCADE session prompts — the sole CURRENT pointer
 
-[D] Chartered + ratified at the plan gate 2026-10-15 (R1–R4). A0.1 · A1.1 · A1.2 · A1.3 · A1.4 completed (A1.4 closed 2026-10-16: registry corrections derived, memo to Hestia `outbound_ready`, `sync:vaults` GO queued). P1 complete. **G1 RULED 2026-10-16** (operator, plan-time AskUserQuestion, R11–R14): `spec_graph_exchange` v0.1 + aDNA.aDNA ADR-064 + `spec_terminal_harness_contract` v0.2 + `spec_platform_ecosystem` v0.4 all **accepted as written**; three send GOs; A2.1 run in the same sitting; push at close. **CURRENT: A2.1** (below; running in `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`).
+[D] Chartered + ratified at the plan gate 2026-10-15 (R1–R4). A0.1 · A1.1 · A1.2 · A1.3 · A1.4 completed (A1.4 closed 2026-10-16: registry corrections derived, memo to Hestia `outbound_ready`, `sync:vaults` GO queued). P1 complete. **G1 RULED 2026-10-16** (operator, plan-time AskUserQuestion, R11–R14): `spec_graph_exchange` v0.1 + aDNA.aDNA ADR-064 + `spec_terminal_harness_contract` v0.2 + `spec_platform_ecosystem` v0.4 all **accepted as written**; three send GOs; A2.1 run in the same sitting; push at close. A2.1 completed the same sitting (ADR-065 proposed). **CURRENT: A2.2** (below). G2 = ADR-065 §7.7 + the two A2.2 send GOs.
 
 ## A1.2 — Terminal contract v0.2 · platform spec v0.4 · dead-CLI sweep · ✅ DONE 2026-10-15
 
@@ -32,10 +32,16 @@ Run from ~/aDNA/aDNA.aDNA. Read root CLAUDE.md, STATE.md ⏭ QUEUED (c), how/ses
 
 Was owed by the operator, in any order: §7.7 on `what/specs/spec_graph_exchange.md` v0.1 · aDNA.aDNA ADR-064 · `what/specs/spec_terminal_harness_contract.md` v0.2 · `what/specs/spec_platform_ecosystem.md` v0.4; send GOs for the Berthier/triad reply (10-15), the Hestia registry memo (10-16; cc strikeable), the Panacea re-pin notice (after the signatures). Then `sync:vaults` after Hestia's write (its own GO; DP3 item (j) at that sitting). The A2.1 prompt is written here when G1 is ruled.
 
-## A2.1 — ADR-065: the standard's position under the two-estate model · ▶ RUNNING 2026-10-16
+## A2.1 — ADR-065: the standard's position under the two-estate model · ✅ DONE 2026-10-16
 
 ```text
 Run from ~/aDNA/aDNA.aDNA. Read root CLAUDE.md, STATE.md ⏭ QUEUED (d), how/sessions/active/, who/coordination/inbox/, who/coordination/ and git status (open reads); then how/campaigns/campaign_arcade/CLAUDE.md and missions/mission_arcade_a2_1_adr_065_estate_position.md. G1 is RULED (2026-10-16, R11–R14) — ADR-064 + the three specs are accepted; ADR-065 is authored `status: proposed` with an empty §7.7 (G2). Premise pass first, read-only at HEAD: aDNALabs.aDNA/who/governance/adr_027_two_estates_lab_and_company.md §2 (+A1) + §3 v3 · AILedger.aDNA/who/governance/adr_008_ailedger_adna_is_the_core_graph.md §1/§6 + VISION.md · Exchange.aDNA/what/decisions/adr_058_* · adr_059_* · adr_062_* · artifacts/p0/situation_review_20261015.md §C. Write what/decisions/adr_065_standard_position_two_estates.md on the operator's R1 reading (standard MIT + lab-owned; AILedger, PBC = commercial home AND economic platform; ecosystem = partner/dog-fooding/usage; aDNALabs = lab estate, not HQ): the four relations (access points · commercial home · first profile · public way) + the economic-platform seam, the graph-product minimum by reference to spec_graph_exchange §3, what the standard never carries (prices · settlement · PHI · a hosted service); every ADR number vault-qualified by hand; every product claim tense-labelled. Three name-free glossary entries (access point · commercial home · graph product) + one pattern_federation_readiness cross-link. Private-side only (R2) — site/ untouched. Close the card with the five-line AAR; adr_index tally derived; CURRENT → A2.2; STATE ⏭ (e); CHANGELOG; validator zero drift; explicit-path commit; push per R14.
 ```
 
-Later prompts are authored at each gate from the mission cards (A2.1 → A5.2).
+## A2.2 — Estate memos (aDNALabs ADR-027 §2 amendment proposal · AILedger pre-emptive answer) · ⏭ CURRENT
+
+```text
+Run from ~/aDNA/aDNA.aDNA. Read root CLAUDE.md, STATE.md ⏭ QUEUED (e), how/sessions/active/, who/coordination/inbox/, who/coordination/ and git status (open reads); then how/campaigns/campaign_arcade/CLAUDE.md and missions/mission_arcade_a2_2_estate_memos.md. G1 is RULED; ADR-065 is `proposed` (G2) — the memos PROPOSE on its basis and say so; nothing of theirs is edited (rule 1; ADR-061 three-valued authorship; names-only). Memo 1 → Berthier (aDNALabs.aDNA): ADR-027 §2 Amendment A2 as drafted in aDNA.aDNA ADR-065 §8 row 1 (economic-platform sentence on the standard row · the partner/dog-fooding/usage ecosystem sentence · read `adna_network_org_hq` as lab estate, label at their discretion); cite R1 + ADR-065 by path. Memo 2 → Thoth/Lannes (AILedger.aDNA): the pre-emptive answer to their held 10-04 memo (coord_2026_10_04_berthier_ailedger_to_rosetta_standard_stays_open) — yes, a private-side pointer to AILedger ADR-008 is carried (ADR-065 §3); the lab declares the LinkML licence (aDNA.aDNA ADR-062 annex); the VISION:27 "the standard" qualifier offered (ADR-065 §4). Delivery path for memo 2 is a finding, not an assumption: the clone at ~/aDNA/AILedger.aDNA has no who/coordination/inbox/ README we have verified — check first; if absent, route via aDNALabs' how/federation/ailedger/ wrapper or stage for the operator's desk and say which. Both outbound_ready; each send its own GO at G2. Close the card with the five-line AAR; CURRENT → G2 (human) with the A2.3 prompt authored at the gate; STATE ⏭ (f); CHANGELOG; validator zero drift; explicit-path commit; push only if pre-granted.
+```
+
+Later prompts are authored at each gate from the mission cards (A2.3 → A5.2).
