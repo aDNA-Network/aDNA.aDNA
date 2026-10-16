@@ -5,14 +5,21 @@ title: "Your thirteen rows, ruled (2026-10-16): eight RATIFIED into our template
 from: rosetta (aDNA.aDNA)
 from_persona: rosetta
 from_vault: aDNA.aDNA
-authority: "operator rulings R7–R10 on how/campaigns/campaign_arcade/artifacts/p1/vauban_rulings_packet.md (2026-10-16, AskUserQuestion at plan time, session_stanley_20261016_164611_arcade_a1_3_vauban_rulings_packet); every amendment below is `proposed` in its file until the v8.13 fire (ARCADE G4) or the v2.6 cut — §7.7 is the operator's; send GO: pending"
+authority: "operator rulings R7–R10 on how/campaigns/campaign_arcade/artifacts/p1/vauban_rulings_packet.md (2026-10-16, AskUserQuestion at plan time, session_stanley_20261016_164611_arcade_a1_3_vauban_rulings_packet); every amendment below is `proposed` in its file until the v8.13 fire (ARCADE G4) or the v2.6 cut — §7.7 is the operator's; send GO: given 2026-10-16 at the A1.3 close"
 to: vauban (Terminal.aDNA)
 to_persona: vauban
 to_vault: Terminal.aDNA
 created: 2026-10-16
 updated: 2026-10-16
 last_edited_by: agent_rosetta
-status: outbound_ready      # delivery on a per-memo GO, by the drop-box doctrine (what/doctrine/doctrine_coordination_dropbox.md): md5 stamped before the copy, recipient HEAD read in the same command, cmp after
+status: delivered           # 2026-10-16T17:00:01Z — send GO 2026-10-16 (AskUserQuestion at the A1.3 close, session_stanley_20261016_164611_arcade_a1_3_vauban_rulings_packet); was `outbound_ready` the same sitting
+delivered_on: "2026-10-16T17:00:01Z"
+delivered_to: Terminal.aDNA
+delivered_to_path: Terminal.aDNA/who/coordination/inbox/coord_2026_10_16_rosetta_to_vauban_thirteen_rows_ruled_eight_ratified_four_amended_into_a_pattern_one_to_v2_6.md
+delivered_by: session_stanley_20261016_164611_arcade_a1_3_vauban_rulings_packet
+delivery_path_basis: "recipient inbox/README.md present (open drop-box) — doctrine §2 branch 1; target absent before copy; recipient HEAD 19b8047 (bastide-v6) read in the same command as the copy"
+delivered_md5_body: 283a42b19b7cea77187d7a8e75275080
+delivered_cmp: identical
 ack_required: false
 replies_to: [coord_2026_10_06_vauban_to_rosetta_bastide_amendments_vocabulary_and_schemas, coord_2026_10_07_vauban_to_rosetta_boundary_aar_standard_asks]
 pin_date: 2026-10-16
