@@ -3,15 +3,15 @@ type: spec
 kind: ecosystem_spec
 name: platform_ecosystem
 created: 2026-05-20
-updated: 2026-10-15   # v0.4 — ARCADE A1.2: §Access points (Exchange · Terminal, tense-labelled) + the recommended-default note; §Terminal ↔ Harness Contract at today's names; v0.3 2026-07-02
+updated: 2026-10-16   # v0.4 delta ACCEPTED at ARCADE G1 (operator R11; §7.7 below); authored 2026-10-15 — ARCADE A1.2: §Access points (Exchange · Terminal, tense-labelled) + the recommended-default note; §Terminal ↔ Harness Contract at today's names; v0.3 2026-07-02
 version: "0.4"
-version_status: "v0.4 delta PROPOSED — ARCADE G1 (§7.7 below); v0.3 remains in force until G1 signs"
+version_status: "v0.4 ACCEPTED — ARCADE G1, 2026-10-16 (operator R11; §7.7 below); supersedes v0.3 (2026-06-27, aDNA.aDNA ADR-041)"
 status: active
 last_edited_by: agent_rosetta
-tags: [spec, ecosystem, platform, aDNA_pattern, access_points, v0_4_proposed, arcade]
+tags: [spec, ecosystem, platform, aDNA_pattern, access_points, v0_4_accepted, arcade]
 extraction_source: ~/aDNA/CLAUDE.md lines 178-190 (extracted at compliance campaign M01)
 co_signed_adr: aDNA.aDNA/what/decisions/adr_012_ecosystem_spec_extraction.md
-co_signed_adr_v0_4: aDNA.aDNA/what/decisions/adr_064_graph_exchange_spec_placement.md   # proposed — the access-point section cites the Exchange contract it places
+co_signed_adr_v0_4: aDNA.aDNA/what/decisions/adr_064_graph_exchange_spec_placement.md   # accepted 2026-10-16 (ARCADE G1) — the access-point section cites the Exchange contract it places
 ---
 
 # Platform Ecosystem
@@ -93,12 +93,12 @@ What this section does **not** do: rank the two (they are complementary — seat
 | Field | Value |
 |---|---|
 | **Decision** | Adopt the v0.4 delta: the §Access points section (Exchange · Terminal, tense-labelled; the recommended-default note, recommended-not-required; the deferred hook named with its orphaned trigger), the §Terminal ↔ Harness Contract paragraph at today's names, and the dated note on the stale table — no category definition changed |
-| **Ratified-by** | *(operator)* |
-| **Date** | *(pending — ARCADE G1)* |
-| **Status** | **proposed** |
-| **Gate / session reference** | ARCADE G1 (`how/campaigns/campaign_arcade/campaign_arcade.md` §5); authored at `session_stanley_20261015_224015_arcade_a1_2_terminal_platform_specs_cli_sweep` |
+| **Ratified-by** | Stanley (operator) |
+| **Date** | 2026-10-16 |
+| **Status** | **accepted** |
+| **Gate / session reference** | ARCADE G1 — ruled 2026-10-16 by AskUserQuestion at plan time, ruling **R11** ("Sign all four as written"), `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`; `campaign_arcade.md` §5 row G1; authored at `session_stanley_20261015_224015_arcade_a1_2_terminal_platform_specs_cli_sweep` |
 | **Scope of authority** | this spec's v0.4 text; the node-bootstrap hook and the entry document are NOT authorised by it (deferred, trigger-gated) |
 
 ## Provenance
 
-Extracted from `~/aDNA/CLAUDE.md` at `campaign_lattice_compliance_upgrade` M01 (2026-05-20). Pre-extraction location: workspace-router §Platform Ecosystem (lines 178-190). Co-signed ADR: `aDNA.aDNA/what/decisions/adr_009_ecosystem_spec_extraction.md`. v0.2 (2026-06-20, Keystone P0, aDNA.aDNA ADR-037) · v0.3 (2026-06-27, aDNA.aDNA ADR-041) · **v0.4 (2026-10-15, proposed — ARCADE A1.2; access points from the operator ruling of 2026-10-15 and `idea_default_terminal_harness_standard_touch` paper row 1; cites aDNA.aDNA ADR-064, proposed)**.
+Extracted from `~/aDNA/CLAUDE.md` at `campaign_lattice_compliance_upgrade` M01 (2026-05-20). Pre-extraction location: workspace-router §Platform Ecosystem (lines 178-190). Co-signed ADR: `aDNA.aDNA/what/decisions/adr_009_ecosystem_spec_extraction.md`. v0.2 (2026-06-20, Keystone P0, aDNA.aDNA ADR-037) · v0.3 (2026-06-27, aDNA.aDNA ADR-041) · **v0.4 (2026-10-15, authored — ARCADE A1.2; access points from the operator ruling of 2026-10-15 and `idea_default_terminal_harness_standard_touch` paper row 1; cites aDNA.aDNA ADR-064) — ACCEPTED 2026-10-16 at ARCADE G1 (operator R11, as written; §7.7)**.

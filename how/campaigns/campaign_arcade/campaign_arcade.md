@@ -19,7 +19,7 @@ executor_tier_default: opus      # judgment missions declared fable; see each ca
 executor_runtime: claude
 priority: high
 created: 2026-10-15
-updated: 2026-10-16   # A1.4 closed (fourth sitting) — P1 complete, G1 pending; prior: A1.2 closed (second sitting)
+updated: 2026-10-16   # G1 RULED (R11–R14, fifth sitting) — P2 open, A2.1 running; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
 last_edited_by: agent_rosetta
 ratification_status: accepted
 ratification_date: '2026-10-15'
@@ -87,7 +87,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 | [[mission_arcade_a1_3_vauban_rulings_packet]] | Vauban's 13 asks dispositioned, ruled, replied | 1 | fable | A1.2 | completed |
 | [[mission_arcade_a1_4_registry_truth]] | Exchange/Terminal registry rows → Hestia → gated sync | 1 | sonnet (executed fable) | A1.3 | completed 2026-10-16 |
 
-**⛩ G1:** specs + ADR-064 §7.7; reply send GOs. Budget ≈245 kT. *P1 complete 2026-10-16 (A1.1–A1.4); G1 pending — the four §7.7 signatures + the send GOs (triad reply · Hestia registry memo · Panacea notice after G1).*
+**⛩ G1:** specs + ADR-064 §7.7; reply send GOs. Budget ≈245 kT. *P1 complete 2026-10-16 (A1.1–A1.4). **G1 RULED 2026-10-16** (operator, plan-time AskUserQuestion, `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`): **R11** all four §7.7 signed as written · **R12** send GO for the three memos, cc as staged (Panacea after the signed blob) · **R13** author the A2.1 prompt and run A2.1 in the same sitting · **R14** push at close. P2 open.*
 
 ### P2 — Economic-platform seam
 
@@ -132,7 +132,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 | # | When | Decision | Status |
 |---|---|---|---|
 | G0 | Genesis | Charter + R1–R4 | **accepted 2026-10-15** (plan-time AskUserQuestion, four questions; recorded in [[operator_rulings_packet_20261015]]) |
-| G1 | P1 exit | `spec_graph_exchange` + ADR-064 + the two re-anchored specs | pending |
+| G1 | P1 exit | `spec_graph_exchange` + ADR-064 + the two re-anchored specs | **ruled 2026-10-16** (R11 sign all four as written · R12 three send GOs, cc as staged · R13 run A2.1 now · R14 push at close; Stanley, plan-time AskUserQuestion, `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`) |
 | G2 | P2 exit | ADR-065; the two estate memos' send GOs | pending |
 | G3 | P3 exit | ADR-066 (four lines) | pending |
 | G4 | P4 exit | the v2.6 cut; the v8.13 fire | pending (two gates) |
@@ -181,3 +181,7 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
 
 - [D] Session `session_stanley_20261016_164611_arcade_a1_3_vauban_rulings_packet` (Tier 2, fable). Plan-time rulings **R7** accept all eight template rows · **R8** row 6 ratified into the ISS pattern + `skill_create_iss` · **R9** rows 1/2/4 → one new pattern (`pattern_ledger_backed_acceptance_tables`, draft) + row 5's record-identity rule into `template_session` · **R10** row 7's general rule → the v2.6 cut (queued on A4.1). Packet `artifacts/p1/vauban_rulings_packet.md`: 16 rows (13 + 3), ratify 8 · amend 4 · to-v2.6 1 · decline 0. Nine files amended `proposed (v8.13)` + one new pattern; reply to Vauban `outbound_ready` (ROADMAP-v1.1 row 17 closes by pointer; C3 correction; C1/C2 asked back). Validator zero drift; bare-ADR grep clean. Budget ≈55 vs 60 ± 25 (+≈88 explorer at plan time, own line). G1 unchanged.
 - [D] Session `session_stanley_20261016_172213_arcade_a1_4_registry_truth` (Tier 2; fable on a declared-sonnet card). Plan-time rulings: cc Vauban + Berthier on the Hestia memo (strikeable at the send GO) · push at close (R5). `artifacts/p1/registry_corrections_exchange_terminal.md` derived at the object (two rows; §0 field→file map from `scripts/build_vaults_data.mjs:203-282`; §3 sanitizer proof 5 PASS / 2 controls REFUSED); memo to Hestia `outbound_ready` (two cards + two inventory first sentences; `status` genesis → active both, Terminal tagline off "soft-fork of cmux"; `github_url` stays empty, both private, PASS); `sync:vaults` GO queued (STATE §Pending). Finding: the rows were stale at the **card** overlay (B7 backfill `9be9794`, 2026-08-29), not the inventory. A1.4 `completed`; **P1 complete; G1 pending**; CURRENT → G1. Budget ≈35 vs 25.
+
+### G1 RULED — 2026-10-16
+
+- [D] Session `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065` (Tier 2, fable). The operator sat G1 at plan time (AskUserQuestion, four questions, all as recommended): **R11** sign all four as written → aDNA.aDNA ADR-064 `accepted`, `spec_graph_exchange` v0.1 `accepted`, `spec_terminal_harness_contract` v0.2 + `spec_platform_ecosystem` v0.4 in force (each §7.7 carries Stanley · 2026-10-16 · accepted · this session); `adr_index` tally re-derived 57 · 1 · 1. The terminal spec's blob moved with the signature to `f629b019…` (the SHA Harness pins on receipt of the Panacea notice). **R12** send GOs ×3 (cc as staged) · **R13** A2.1 in this sitting · **R14** push at close. Sends and A2.1 are logged below as they land.

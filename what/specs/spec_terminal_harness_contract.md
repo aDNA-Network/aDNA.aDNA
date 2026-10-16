@@ -3,9 +3,9 @@ type: spec
 kind: ecosystem_spec
 name: terminal_harness_contract
 created: 2026-05-25
-updated: 2026-10-15   # v0.2 — ARCADE A1.2: path-only re-anchor to the in-Harness contract copies (blob SHAs unchanged — the §8 no-drift case), the Terminal.aDNA protocol-seam binding (ADR-B09), the §7 adoption table at today's names; v0.1 2026-05-25
+updated: 2026-10-16   # v0.2 delta ACCEPTED at ARCADE G1 (operator R11; §7.7 below); authored 2026-10-15 — ARCADE A1.2: path-only re-anchor to the in-Harness contract copies (blob SHAs unchanged — the §8 no-drift case), the Terminal.aDNA protocol-seam binding (ADR-B09), the §7 adoption table at today's names; v0.1 2026-05-25
 version: "0.2"
-version_status: "v0.2 delta PROPOSED — ARCADE G1 (§7.7 below); v0.1 (ratified with aDNA.aDNA ADR-027, 2026-07-02) remains in force until G1 signs"
+version_status: "v0.2 ACCEPTED — ARCADE G1, 2026-10-16 (operator R11; §7.7 below); supersedes v0.1 (ratified with aDNA.aDNA ADR-027, 2026-07-02) — path-only re-anchor, no normative clause body changed"
 status: active
 last_edited_by: agent_rosetta
 co_signed_adr: aDNA.aDNA/what/decisions/adr_027_terminal_harness_contract_canonicalization.md
@@ -134,17 +134,18 @@ The Go console's `adr_010_agent_provider_contract.md` open-Q5 asked: *"is this A
 | Field | Value |
 |---|---|
 | **Decision** | Adopt the v0.2 delta of this spec: the path-only re-anchor (frontmatter · §0 · §2 · §4), the §5 tense-labelled provider list, the §6 Terminal.aDNA protocol-seam binding, the §7 adoption table at today's names, and the §8 no-drift clause — no normative clause body changed |
-| **Ratified-by** | *(operator)* |
-| **Date** | *(pending — ARCADE G1)* |
-| **Status** | **proposed** |
-| **Gate / session reference** | ARCADE G1 (`how/campaigns/campaign_arcade/campaign_arcade.md` §5); authored at `session_stanley_20261015_224015_arcade_a1_2_terminal_platform_specs_cli_sweep` |
-| **Scope of authority** | this spec's v0.2 text; the pointer-specs' re-pins are Terminal's and Harness's own acts after signature |
+| **Ratified-by** | Stanley (operator) |
+| **Date** | 2026-10-16 |
+| **Status** | **accepted** |
+| **Gate / session reference** | ARCADE G1 — ruled 2026-10-16 by AskUserQuestion at plan time, ruling **R11** ("Sign all four as written"), `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`; `campaign_arcade.md` §5 row G1; authored at `session_stanley_20261015_224015_arcade_a1_2_terminal_platform_specs_cli_sweep` |
+| **Scope of authority** | this spec's v0.2 text; the pointer-specs' re-pins are Terminal's and Harness's own acts after signature (Harness notified by the Panacea re-pin notice, sent after this signature — the SHA they pin is the one they read on receipt) |
 
 ## Provenance
 
 - 2026-05-25 — v0.1 authored per approved workspace plan (`~/.claude/plans/please-read-the-claude-md-compiled-cherny.md`). Generalizes the bilateral `LatticeTerminal.aDNA ↔ LatticeAgent.aDNA` contract (negotiated 2026-05-18 via Joint Interop Negotiation) to multi-terminal/multi-harness, prompted by the requirement to run `RareHarnessNeo` as a terminal-driven agent inside `Cmux`. Co-signed ADR: aDNA.aDNA `adr_027_terminal_harness_contract_canonicalization.md` — **accepted 2026-07-02** (Champollion G0).
 - 2026-06-11 — Berthier (Terminal.aDNA, Operation Gateway gw_p0) proposed the five-spot re-anchor (`idea_terminal_harness_contract_reanchor`); accepted at Champollion G0 2026-07-02 (M1.1 → M2.1), not executed there.
 - 2026-10-15 — **v0.2 (proposed)** at ARCADE A1.2 (declared opus, executed fable at the operator's session): rows 1–5 of the idea applied as path cells; blob SHAs re-verified on both trees; the §6 third binding added from Terminal ADR-B09; the Terminal row's pointer-spec gap recorded honestly as `HORIZON`. Text `proposed` until G1 (§7.7).
+- 2026-10-16 — **v0.2 ACCEPTED** at ARCADE G1 (operator R11, as written; §7.7). The two clause-source blobs did not move (`canonical_clause_sha` unchanged); this file's own blob moved with the signature — consumers re-pin from `git hash-object` on receipt of the notice.
 
 ## See also
 

@@ -2,16 +2,16 @@
 type: adr
 adr_number: "064"
 title: "The graph-exchange contract is a standard-side ecosystem spec (spec_graph_exchange.md) that cites Exchange.aDNA's owned objects and rules L2 rule-set custody — placement ratified 2026-08-25, text seated here"
-status: proposed        # ⛩ drafted 2026-10-15 at ARCADE A1.1; the PLACEMENT was ratified as drafted 2026-08-25 (operator, aDNALabs S250); the spec TEXT + §5 custody ruling await the operator's §7.7 at G1
+status: accepted        # ⛩ RATIFIED 2026-10-16 at ARCADE G1 (operator, R11 "sign all four as written") — the spec TEXT v0.1 + the §5 custody ruling are in force; the PLACEMENT had been ratified as drafted 2026-08-25 (operator, aDNALabs S250). PRIOR (SO-7): proposed — drafted 2026-10-15 at ARCADE A1.1
 created: 2026-10-15
-updated: 2026-10-15
+updated: 2026-10-16   # §Ratification signed at ARCADE G1 (R11); frontmatter status proposed → accepted
 last_edited_by: agent_rosetta
 campaign_id: campaign_arcade
 mission_id: mission_arcade_a1_1_spec_graph_exchange
 supersedes: ""
 superseded_by: ""
 probe_date: 2026-10-15
-tags: [adr, arcade, exchange, spec_placement, graph_exchange, l2_custody, adr_045, proposed]
+tags: [adr, arcade, exchange, spec_placement, graph_exchange, l2_custody, adr_045, accepted]
 ---
 
 # ADR-064 — Placement of the graph-exchange contract in the standard
@@ -57,9 +57,9 @@ tags: [adr, arcade, exchange, spec_placement, graph_exchange, l2_custody, adr_04
 | Field | Value |
 |---|---|
 | **Decision** | Seat `spec_graph_exchange.md` v0.1 as drafted (clauses 1–4 = the 2026-08-25 ratified placement, recorded; clause 5 = the L2 custody split) |
-| **Ratified-by** | *(pending — operator; an agent/persona is author/steward, never ratifier)* |
-| **Date** | *(pending)* |
-| **Status** | **proposed** |
-| **Gate / session reference** | ARCADE G1 — `campaign_arcade.md` §5 |
+| **Ratified-by** | Stanley (operator) |
+| **Date** | 2026-10-16 |
+| **Status** | **accepted** |
+| **Gate / session reference** | ARCADE G1 — ruled 2026-10-16 by AskUserQuestion at plan time, ruling **R11** ("Sign all four as written"), `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`; `campaign_arcade.md` §5 row G1 |
 | **Scope of authority** | this ADR + the spec's v0.1 text; Exchange's `RULE_SET_VERSION` bump is theirs on notice |
 | **Pending co-signs** | none required; Exchange (Themis) may co-sign §5 by memo |

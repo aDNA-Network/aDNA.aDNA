@@ -4,9 +4,9 @@ kind: ecosystem_spec
 name: graph_exchange
 title: "Graph Exchange — the ONE standard-side contract for publishing, discovering, fetching and trusting an aDNA graph as an artifact (cites Exchange.aDNA's owned specs, never copies them)"
 created: 2026-10-15
-updated: 2026-10-15
+updated: 2026-10-16   # status proposed → accepted at ARCADE G1 (operator R11, with aDNA.aDNA ADR-064 §Ratification); text byte-unchanged otherwise
 version: "0.1"
-status: proposed          # ⛩ placement ratified as drafted 2026-08-25 (aDNALabs S250, operator) on the 2026-07-11 draft; this TEXT is proposed until ADR-064's §7.7 — Standing Order 9 / standard §7.7
+status: accepted          # ⛩ RATIFIED 2026-10-16 at ARCADE G1 with aDNA.aDNA ADR-064 (operator, R11 "sign all four as written"); the placement had been ratified as drafted 2026-08-25 (aDNALabs S250, operator) on the 2026-07-11 draft. PRIOR (SO-7): proposed until ADR-064's §7.7 — Standing Order 9 / standard §7.7
 last_edited_by: agent_rosetta
 campaign_id: campaign_arcade
 mission_id: mission_arcade_a1_1_spec_graph_exchange
@@ -125,5 +125,6 @@ Prices, settlement, payment rails (Exchange ADR-045/047: settlement is *recorded
 - 2026-07-11 — placement, minimum and split drafted by this desk (`coord_2026_07_11_rosetta_to_berthier_exchange_graph_spec_placement.md`, answering Berthier's `vb_graph_exchange` memo asks #3/#4 and the Exchange triad's three proposals).
 - 2026-08-25 — **all three rulings ratified as drafted** by the operator at aDNALabs S250; delivered 08-26 (operator-sanctioned direct delivery after two lease refusals — the finding that produced this vault's `who/coordination/inbox/` drop-box).
 - 2026-10-15 — authored at ARCADE A1.1 (declared opus, executed fable at the operator's R3 selection); L2 custody ruled here as §5; text `proposed` until ADR-064 §7.7.
+- 2026-10-16 — **v0.1 ACCEPTED** at ARCADE G1: the operator signed aDNA.aDNA ADR-064 §Ratification as written (R11, plan-time AskUserQuestion, `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`); the Exchange is notified by the delivered triad reply (`coord_2026_10_15_rosetta_to_berthier_and_the_triad_*`) — its `RULE_SET_VERSION` bump is its own act on that notice.
 
-*End of spec_graph_exchange v0.1 (proposed)*
+*End of spec_graph_exchange v0.1 (accepted 2026-10-16)*

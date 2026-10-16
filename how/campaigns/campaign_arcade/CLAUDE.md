@@ -18,7 +18,7 @@ tags: [governance, campaign, arcade]
 |---|---|
 | Campaign | `campaign_arcade` — Operation ARCADE, side campaign of `campaign_garnier` |
 | Owner · executor | Stanley · Rosetta (`agent_rosetta`, runtime claude) |
-| Status · phase | active · P1 **complete** (A0.1 · A1.1 · A1.2 · A1.3 · A1.4 done 2026-10-16); **G1 pending** (human — four §7.7 signatures + send GOs); P2 opens on G1 — updated 2026-10-16 |
+| Status · phase | active · P1 complete (A0.1 · A1.1–A1.4); **G1 RULED 2026-10-16** (R11–R14 — four §7.7 signed as written, three send GOs, A2.1 in-sitting, push at close); **P2 open — A2.1 running** (ADR-065 estate position); G2 = ADR-065 §7.7 + two send GOs — updated 2026-10-16 |
 | Charter | [[campaign_arcade]] · CURRENT pointer: [[session_prompts_arcade]] |
 
 ## Quick start
