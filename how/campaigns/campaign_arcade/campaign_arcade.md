@@ -19,7 +19,7 @@ executor_tier_default: opus      # judgment missions declared fable; see each ca
 executor_runtime: claude
 priority: high
 created: 2026-10-15
-updated: 2026-10-16   # G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
+updated: 2026-10-16   # A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
 last_edited_by: agent_rosetta
 ratification_status: accepted
 ratification_date: '2026-10-15'
@@ -94,7 +94,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 | Mission | Title | Sessions | Tier | Deps | Status |
 |---|---|---:|---|---|---|
 | [[mission_arcade_a2_1_adr_065_estate_position]] | ADR-065 — the standard's position under the two-estate model | 1 | fable | A1.1 | **completed 2026-10-16** (ADR-065 proposed; 3 glossary + 1 pattern touch; ≈60 vs 70) |
-| [[mission_arcade_a2_2_estate_memos]] | ADR-027 amendment proposal → aDNALabs; pre-emptive answer → AILedger | 1 | fable | A2.1 | queued |
+| [[mission_arcade_a2_2_estate_memos]] | ADR-027 amendment proposal → aDNALabs; pre-emptive answer → AILedger | 1 | fable | A2.1 | **completed 2026-10-16** (two memos `outbound_ready`; memo 2's path found on the genesis branch; ADR-065 witness row re-tensed; ≈45 vs 40) |
 | [[mission_arcade_a2_3_public_face_account]] | Tense-labelled, name-free public account → GARNIER claim register | 1 | opus | A2.2 | queued |
 
 **⛩ G2:** ADR-065 §7.7; two send GOs. Budget ≈170 kT.
@@ -133,7 +133,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 |---|---|---|---|
 | G0 | Genesis | Charter + R1–R4 | **accepted 2026-10-15** (plan-time AskUserQuestion, four questions; recorded in [[operator_rulings_packet_20261015]]) |
 | G1 | P1 exit | `spec_graph_exchange` + ADR-064 + the two re-anchored specs | **ruled 2026-10-16** (R11 sign all four as written · R12 three send GOs, cc as staged · R13 run A2.1 now · R14 push at close; Stanley, plan-time AskUserQuestion, `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`) |
-| G2 | P2 exit | ADR-065; the two estate memos' send GOs | pending |
+| G2 | P2 exit | ADR-065; the two estate memos' send GOs | **pending — ready**: ADR-065 `proposed` (witness row corrected 10-16); both memos `outbound_ready` (R15: author only, send at G2); the A2.3 prompt is authored at the gate |
 | G3 | P3 exit | ADR-066 (four lines) | pending |
 | G4 | P4 exit | the v2.6 cut; the v8.13 fire | pending (two gates) |
 | G5 | P5 exit | GARNIER DP3 amendment (parent) · closure | pending |
@@ -190,3 +190,7 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
 
 - [D] Same session `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`. **R12 sends**: triad reply → `Exchange.aDNA` `f924872` cc aDNALabs `5d7ac7b2` + Terminal `f48c839` (17:50:26Z, md5_body `b74970e0…`) · Hestia data ask → `Home.aDNA` `d851f63` cc Terminal + Exchange (17:50:27Z, `fb9dc0d7…`; a live s53 lease there — her README lands deliveries regardless) · Panacea re-pin → `Harness.aDNA` `ff3176f` cc Terminal (17:50:27Z, `6209e73f…`; §0 names the signed blob `f629b019…`). Doctrine order kept on all eight legs (identity before the copy, delivery-state after, re-sync, cmp identical). Commit `4eaeab2`. **`sync:vaults` now waits on Hestia's ack.**
 - [D] **A2.1 closed**: `what/decisions/adr_065_standard_position_two_estates.md` **proposed** (§1 public way · §2 access points by pointer · §3 commercial home, private-side · §4 the economic platform as an owner × tense table + the VISION:27 reconciliation · §5 ecosystem by conformance · §6 first profile → ADR-066 · §7 never-carries · §8 two A2.2 memo proposals; `cites:` block, 48 ADR tokens all vault-qualified); `adr_index` 60 = 57 · 1 · 2; glossary ×3 name-free (`access point` · `commercial home` · `graph product`); `pattern_federation_readiness` §Related +1. Premise pass first-hand at HEAD (aDNALabs ADR-027 §2/A1/§3 v3 · AILedger ADR-008 + VISION · Exchange ADR-058/059/062). Budget ≈60 vs 70 (the sitting ≈95 with G1 + sends). **CURRENT → A2.2** (prompt authored). **G2 owed**: ADR-065 §7.7 + the two A2.2 send GOs.
+
+### A2.2 closed — 2026-10-16
+
+- [D] Session `session_stanley_20261016_193817_arcade_a2_2_estate_memos` (Tier 2, fable). Plan-time rulings **R15** (memos only; G2 later — no send, no signature, nothing leaves this vault) · **R16** (push at close). **Two memos `outbound_ready`**: → Berthier (aDNALabs) — ADR-027 §2 **Amendment A2** in their A1 form: (a) the economic-platform clause on the standard row + the owner sentence, (b) the ecosystem bullet (partner / dog-fooding / usage, related by conformance), (c) `adna_network_org_hq` read as *lab estate*, label theirs; co-sign of aDNA.aDNA ADR-065 §1/§3/§4 offered · → Thoth attn the genesis desk, cc Lannes (AILedger) — the pre-emptive answer to the **staged, never-delivered** 10-04 ask: pointer to AILedger ADR-008 **yes, private-side** (ADR-065 §3); the LinkML masters' licence is the **lab estate's**, declared **provisional MIT since 2026-10-03** (`LinkML.aDNA/MANIFEST.md:10`), the standard declaring only vocabulary + toolchain path (aDNA.aDNA ADR-062); VISION:27 qualifier offered. **Delivery path found at the object**: AILedger's drop-box README lives on `stanley/genesis-m00` (`1e1cc783`; worktree `scratchpad/genesis/ailedger_wt`), absent from `main` — doctrine branch 1 there. **ADR-065 §4 witness row corrected before G2** (`PASS` → `TAUGHT-AS-DESIGN`, Themis F-164-02 measured at Exchange's objects). Four inbound receipts (Mondrian ×2 · Noether · Themis); reply debt recorded, none answered here. Budget ≈45 vs 40. **CURRENT → G2 (human)**: ADR-065 §7.7 + two send GOs.

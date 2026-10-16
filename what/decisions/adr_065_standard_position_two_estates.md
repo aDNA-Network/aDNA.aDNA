@@ -4,7 +4,7 @@ adr_number: "065"
 title: "The standard's position under the two-estate model — an open public way (MIT, lab-owned), two named access points, a commercial home that is also the economic platform on which graphs built to the standard become networked graph products, a partner/dog-fooding ecosystem, and a first named profile; what the standard will never carry"
 status: proposed        # ⛩ drafted 2026-10-16 at ARCADE A2.1 on the operator's R1 reading (2026-10-15); §7.7 is the operator's at ARCADE G2 — nothing here is in force until signed
 created: 2026-10-16
-updated: 2026-10-16
+updated: 2026-10-16   # A2.2 (same day): §4 witness-row tense PASS → TAUGHT-AS-DESIGN on Themis F-164-02 (measured at Exchange's objects); body otherwise unchanged; still proposed (G2)
 last_edited_by: agent_rosetta
 campaign_id: campaign_arcade
 mission_id: mission_arcade_a2_1_adr_065_estate_position
@@ -87,7 +87,7 @@ Stated as what each party owns, so the sentence can be checked rather than belie
 | **Conformance as reported** | the standard (content) · the Exchange (execution) | L0–L3 ladder; the L2 rule set is the standard's to version and the Exchange's to run; *"imperfection publishes visibly"* | `PASS` content · `TAUGHT-AS-DESIGN` v1 rule set | aDNA.aDNA ADR-064 clause 5; spec §5 |
 | **A profile of the standard** | the standard | a named conformance profile + release-integrity hash manifest riding inside the graph body — how a domain variant is a *profile*, not a fork | `HORIZON` (aDNA.aDNA ADR-066, ARCADE P3) | spec §8 forward stub |
 | **Publish · discover · resolve · fetch** | the Exchange | Registry · Commons · Market; storefronts as branding manifests + scopes over one root; two faces, one archetype | Tier-0 `PASS` · launch `TAUGHT-AS-DESIGN` | Exchange ADR-059 · ADR-062; `exchange-access/v1` |
-| **The witness** | the company's record | the Exchange's checkpoints anchored on the AILedger record — *a witness, not a trust root*; a reader can show a checkpoint existed by a date | `PASS` for the configuration (ADR-058 executed per its A1) — the face line appears only per listing | Exchange ADR-058 |
+| **The witness** | the company's record | the Exchange's checkpoints anchored on the AILedger record — *a witness, not a trust root*; a reader can show a checkpoint existed by a date | `TAUGHT-AS-DESIGN` — **built and inert** at 2026-10-16: Exchange ADR-058 A1 is built (`0.0.44`) but no root's checkpoint lists an anchor target, both roots serve unsigned tree heads, and the scratch repository the act needs is named, not created (measured by Themis/Mnemosyne at their objects, F-164-02, received 19:21Z). *Was `PASS for the configuration` at drafting — corrected before G2 so the row is not signed as a false claim about their system.* | Exchange ADR-058; Themis 2026-10-16 `coord_…_adr065_witness_row` |
 | **Commerce** | the company · the market | Market terms are **recorded, not enforced**; *"Tier-0 has no payment rail"* | `TAUGHT-AS-DESIGN` at most | Exchange ADR-059 §2.4 · ADR-062 §3 |
 
 **Reconciling row 4 of the Context.** *"aDNA is not a platform. There is no hosted service"* remains **true of the standard** and this ADR keeps it so (§7 below). The platform is the **company's**: the standard does not become one by having a commercial home, any more than a road becomes a shop by having shops on it. The two sentences are about two objects. This ADR proposes (A2.2) that the company's VISION sentence gain the qualifier *"the standard"* when the company next revises it — theirs to rule.
