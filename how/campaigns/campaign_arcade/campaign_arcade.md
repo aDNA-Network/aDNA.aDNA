@@ -19,7 +19,7 @@ executor_tier_default: opus      # judgment missions declared fable; see each ca
 executor_runtime: claude
 priority: high
 created: 2026-10-15
-updated: 2026-10-16   # A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
+updated: 2026-10-16   # G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
 last_edited_by: agent_rosetta
 ratification_status: accepted
 ratification_date: '2026-10-15'
@@ -133,7 +133,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 |---|---|---|---|
 | G0 | Genesis | Charter + R1–R4 | **accepted 2026-10-15** (plan-time AskUserQuestion, four questions; recorded in [[operator_rulings_packet_20261015]]) |
 | G1 | P1 exit | `spec_graph_exchange` + ADR-064 + the two re-anchored specs | **ruled 2026-10-16** (R11 sign all four as written · R12 three send GOs, cc as staged · R13 run A2.1 now · R14 push at close; Stanley, plan-time AskUserQuestion, `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`) |
-| G2 | P2 exit | ADR-065; the two estate memos' send GOs | **pending — ready**: ADR-065 `proposed` (witness row corrected 10-16); both memos `outbound_ready` (R15: author only, send at G2); the A2.3 prompt is authored at the gate |
+| G2 | P2 exit | ADR-065; the two estate memos' send GOs | **ruled 2026-10-16** (R17 sign ADR-065 as written, R2 stands · R18 send GO ×3 — memo 1, memo 2, and the stale 10-04 Noether memo · R19 `sync:vaults` + build, not deployed · R20 four replies + WebForge notice sent, `lip_registry.md` proposed; Stanley, plan-time AskUserQuestion, `session_stanley_20261016_205633_arcade_g2_sends_sync_replies`) |
 | G3 | P3 exit | ADR-066 (four lines) | pending |
 | G4 | P4 exit | the v2.6 cut; the v8.13 fire | pending (two gates) |
 | G5 | P5 exit | GARNIER DP3 amendment (parent) · closure | pending |
@@ -194,3 +194,7 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
 ### A2.2 closed — 2026-10-16
 
 - [D] Session `session_stanley_20261016_193817_arcade_a2_2_estate_memos` (Tier 2, fable). Plan-time rulings **R15** (memos only; G2 later — no send, no signature, nothing leaves this vault) · **R16** (push at close). **Two memos `outbound_ready`**: → Berthier (aDNALabs) — ADR-027 §2 **Amendment A2** in their A1 form: (a) the economic-platform clause on the standard row + the owner sentence, (b) the ecosystem bullet (partner / dog-fooding / usage, related by conformance), (c) `adna_network_org_hq` read as *lab estate*, label theirs; co-sign of aDNA.aDNA ADR-065 §1/§3/§4 offered · → Thoth attn the genesis desk, cc Lannes (AILedger) — the pre-emptive answer to the **staged, never-delivered** 10-04 ask: pointer to AILedger ADR-008 **yes, private-side** (ADR-065 §3); the LinkML masters' licence is the **lab estate's**, declared **provisional MIT since 2026-10-03** (`LinkML.aDNA/MANIFEST.md:10`), the standard declaring only vocabulary + toolchain path (aDNA.aDNA ADR-062); VISION:27 qualifier offered. **Delivery path found at the object**: AILedger's drop-box README lives on `stanley/genesis-m00` (`1e1cc783`; worktree `scratchpad/genesis/ailedger_wt`), absent from `main` — doctrine branch 1 there. **ADR-065 §4 witness row corrected before G2** (`PASS` → `TAUGHT-AS-DESIGN`, Themis F-164-02 measured at Exchange's objects). Four inbound receipts (Mondrian ×2 · Noether · Themis); reply debt recorded, none answered here. Budget ≈45 vs 40. **CURRENT → G2 (human)**: ADR-065 §7.7 + two send GOs.
+
+### G2 RULED — 2026-10-16
+
+- [D] Session `session_stanley_20261016_205633_arcade_g2_sends_sync_replies` (Tier 2, fable). The operator sat G2 at plan time (AskUserQuestion, four questions, all as recommended): **R17** sign aDNA.aDNA ADR-065 as written → `accepted` (§7.7 Stanley · 2026-10-16; `visibility_note` re-ruled: **R2 stands**, the GitHub-public dev-graph repo is a record, not a public surface); `adr_index` tally re-derived 58 · 1 · 1. **R18** send GO ×3 (memo 1 → aDNALabs; memo 2 → the AILedger genesis worktree inbox; the stale 10-04 Noether v2.2 memo → LatticeProtocol). **R19** `sync:vaults` + build on Hestia's `2b65532` write, **not deployed**; GARNIER DP3 item (j). **R20** the four owed replies (Themis · Noether · Mondrian ×2) + the WebForge citing-face notice authored and sent; `who/governance/lip_registry.md` `proposed` from a fleet census. The A2.3 prompt is authored at this gate (SO-1); A2.3 (opus) is not run in this sitting. Sends, sync and replies are logged below as they land.

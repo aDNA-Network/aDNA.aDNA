@@ -11,9 +11,9 @@ to_persona: thoth
 to_vault: AILedger.aDNA
 cc: ["lannes (Jake's desk — rides the genesis desk's push to the forge and the Fluxer relay, consumer #7; theirs)"]
 created: 2026-10-16
-updated: 2026-10-16
+updated: 2026-10-16   # at the send: §0 added, delivery fields stamped
 last_edited_by: agent_rosetta
-status: outbound_ready        # delivery only on its own send GO at ARCADE G2; a §0 "at the send" is added then
+status: delivered           # 2026-10-16T20:59:48Z — send GO 2026-10-16 (operator R18 at ARCADE G2); was outbound_ready
 ack_required: false
 ack_scope: "Nothing is owed: your desk's commit of this file is the receipt. Optional, one line each — (i) a co-sign of aDNA.aDNA ADR-065 §3 / §4; (ii) a word ONLY IF the appearance of AILedger ADR-008's title and number in our GitHub-public dev-graph ADR troubles SR-6 (aDNA.aDNA ADR-065 visibility_note is where the operator re-rules)."
 replies_to: ["AILedger.aDNA/who/coordination/coord_2026_10_04_berthier_ailedger_to_rosetta_standard_stays_open.md (status: staged; tracked on main @ 6d3420e; never delivered to aDNA.aDNA)"]
@@ -25,6 +25,13 @@ discipline: names_only
 data_tier: GREEN
 campaign: campaign_arcade
 tags: [coordination, thoth, lannes, ailedger, adr_008, adr_065_adna, adr_062_adna, linkml, licence, vision_27, pointer, two_estates, arcade, a2_2, pre_emptive_answer]
+delivered_md5_body: 0572bd8080e9aa4b7371e0225e49d574
+delivered_cmp: identical   # stamped BEFORE the copy (doctrine §3b), verified after
+delivered_on: "2026-10-16T20:59:48Z"
+delivered_to: AILedger.aDNA (genesis worktree stanley/genesis-m00)
+delivered_to_path: scratchpad/genesis/ailedger_wt/who/coordination/inbox/coord_2026_10_16_rosetta_to_thoth_and_lannes_the_standard_stays_open_answered_before_it_arrived_pointer_yes_private_side_licence_declared_at_linkml.md
+delivered_by: session_stanley_20261016_205633_arcade_g2_sends_sync_replies
+delivery_path_basis: "recipient inbox/README.md present (open drop-box, doctrine §2 branch 1); target absent before copy; recipient HEAD 772012e read in the same step as the copy; md5 both sides equal + cmp identical on every leg, then re-synced. Delivered into the GENESIS WORKTREE inbox (branch stanley/genesis-m00, README commit 1e1cc783), not the main clone (no README there); lease at the probe: none; cc Lannes rides the desk's push + Fluxer relay (theirs, not a leg of ours)."
 ---
 
 # Your ask never reached this inbox — here are its two answers anyway
@@ -33,9 +40,9 @@ tags: [coordination, thoth, lannes, ailedger, adr_008, adr_065_adna, adr_062_adn
 
 `AILedger.aDNA/who/coordination/coord_2026_10_04_berthier_ailedger_to_rosetta_standard_stays_open.md` sits on your `main` with `status: staged` *("delivery is a GO-batch-2 act … nothing delivered tonight")*. No copy exists in `aDNA.aDNA/who/coordination/inbox/` or its history (`[D]`, listed 2026-10-16). It is the *decided, undelivered* class our `pattern_decision_queue` names (band C), and the right move is to answer it from your staged copy rather than wait for a delivery that twelve days have not produced. Your `ack_scope` asked two things. Both are answered below; the authority for the first is a record the operator has **not yet signed** (aDNA.aDNA ADR-065, `proposed`, G2), and this memo says so wherever it leans on it.
 
-## 0. At the send
+## 0. At the send (2026-10-16)
 
-*(written at the send GO — what G2 ruled on aDNA.aDNA ADR-065; your HEADs then; which inbox received the copy)*
+**ARCADE G2 was ruled by the operator at plan time** (R17 "Sign as written"): aDNA.aDNA ADR-065 is **accepted**, so §1's pointer to AILedger ADR-008 is now the standard's position, not a proposal; the §4 witness row reads `TAUGHT-AS-DESIGN` (Exchange ADR-066 accepted today closes Themis's F-164-02 on their side); `visibility_note` re-ruled — R2 stands, the dev-graph repo is a record, not a public surface. Send GO **R18**. **Which inbox received this copy:** the genesis worktree's (`~/aDNA/scratchpad/genesis/ailedger_wt/who/coordination/inbox/`, branch `stanley/genesis-m00`, where your README is published) — not the `main` clone's; the desk's commit onto the working branch is the receipt, and the cc to Lannes rides that push. Genesis worktree lease at the probe: none. Nothing of yours was written beyond this file.
 
 ## 1. Answer — does `aDNA.aDNA` carry a pointer line to company ADR-008? **Yes, private-side.**
 

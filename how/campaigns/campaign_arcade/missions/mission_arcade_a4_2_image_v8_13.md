@@ -72,6 +72,7 @@ G4 — fire GO.
 
 - Conventions: `campaign_arcade/CLAUDE.md` (GARNIER's by pointer + the four ARCADE rules: memos-not-edits · SR-6 public naming hold · ADR-number qualification · tense labels).
 - Provenance tags on every finding — `[D]` observed · `[I]` inferred · `[R]` peer record (re-verify before citing) · `[A]` assumption.
+- **Fire rows added 2026-10-16 (G2 sitting):** (f1) **Canvas partition repair** of the 8 v8.11 example canvases (template ×4 + this vault ×4), by Mondrian's partition test: `hello_world.canvas` = derived → `authority: "view"` · `production: "generated"` · `sync.source_name: hello_world.lattice.yaml` · `sync_hash` via `compute_sync_hash()`; the three `template_*.canvas` = primary → **omit** `authority`/`production`/`source_name` (never invent a source); A-2 fields per LIP-0010/0011. Release-note line: forks before v8.13 carry the old stamp until their next upgrade. (f2) **RFC1918 redaction** in `.adna/how/skills/skill_l1_upgrade.md` + this vault's copy: literal → `<overlay-ip>`/`<overlay-subnet>` placeholder resolved at Home.aDNA + an RFC 5737 example (`198.51.100.0/24`); fix-forward, records untouched (Canvas ADR-012 posture). Release-note line for the ~80 earlier forks.
 
 ## Completion Summary
 

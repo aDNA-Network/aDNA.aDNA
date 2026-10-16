@@ -83,6 +83,7 @@ G4 — the v2.6 cut (operator).
 
 - Conventions: `campaign_arcade/CLAUDE.md` (GARNIER's by pointer + the four ARCADE rules: memos-not-edits · SR-6 public naming hold · ADR-number qualification · tense labels).
 - Provenance tags on every finding — `[D]` observed · `[I]` inferred · `[R]` peer record (re-verify before citing) · `[A]` assumption.
+- **Queue rows added 2026-10-16 (G2 sitting):** (q1) Noether's M-A1 package `LatticeProtocol.aDNA/how/campaigns/campaign_academie/artifacts/m_a1_package/` — the **v2.6 SHOULD rider** ruled here; AEP numbered (AEP-0003 was next free 2026-10-16); **ADR seat 067 held**; six open questions answered by memo before force; v3.0 MUST logged for the major window. (q2) `spec_graph_exchange` §5.1 **one-clause amendment** (Themis F-164-01): "v1 = the six rules executing (Exchange ADR-066); the stamp moves only in the commit that runs all six". (q3) `spec_graph_exchange` §5.1 **L2-4 v1.1 wording** (Q-066-1 ruled wide): a *real directory* (symlinks are Standing-Rule-9 shims and pass) at graph root whose `CLAUDE.md` carries `federation_ref:`. (q4) `idea_upstream_registry_derivability` — candidate 11th compliance dimension (Mondrian §4). (q5) `who/governance/lip_registry.md` §2 rows → §7.7 after steward confirmations; §4 consumer in `adna_validate.py`.
 
 ## Completion Summary
 

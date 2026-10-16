@@ -1,7 +1,7 @@
 ---
 type: artifact
 created: 2026-09-15
-updated: 2026-10-04   # (h) registry regeneration divergence added to §3 (sync:vaults ran 2026-10-04 under ruling); DP3 rulings (a)–(g) taken in advance 2026-10-03 (packet B1, accept-all); §5 step 6 struck
+updated: 2026-10-16   # (j) second registry regeneration (ARCADE G2 R19; Exchange + Terminal rows) added to §3; prior: 2026-10-04 (h) registry regeneration divergence added to §3 (sync:vaults ran 2026-10-04 under ruling); DP3 rulings (a)–(g) taken in advance 2026-10-03 (packet B1, accept-all); §5 step 6 struck
 status: in_progress
 last_edited_by: agent_rosetta
 tags: [garnier, p1, verification]
@@ -137,6 +137,11 @@ Related: [[campaign_garnier]] · [[dp2_ratification_20260915]].
   - [D] `how/campaigns/campaign_arcade/` — `status: active` (ratified at the plan gate 2026-10-15, R3); 6 phases / 15 missions; P0 + A1.1 executed the same sitting (`spec_graph_exchange.md` v0.1 + ADR-064 proposed). Its A5.1 will bring a **GARNIER amendment to DP3**: the four relations enter the claims lanes; P2.3 docs tranches re-scoped to cover the access-point docs + the profile page; Exchange/Terminal registry cards; `campaign_vitrine` dispositioned. Nothing in this charter moves before DP3 rules it.
   - [D] Public naming of the company is **held** (R2) — no `site/` change rides ARCADE until the operator says "publication"; the stimulus `6487444` is untouched.
   - *Proposed:* record the amendment as a DP3 item to be ruled with (a)–(h); ARCADE's own gates (G1–G5) stay separate from this campaign's. ⛩ *Ruling asked at DP3.*
+
+- **(j) Second registry regeneration — the two access-point rows** *(added 2026-10-16 — the operator-gated `sync:vaults` ran under ARCADE G2 ruling R19 "sync + build, not deployed", after Hestia wrote the ARCADE A1.4 data ask into Home `2b65532`, stamp 2026-10-16)*.
+  - [D] `site/src/data/vaults.json` `generated_at: 2026-10-16` (was 2026-10-04); **74 vaults** (107 inventory rows → 74 admitted; **33 held** `admission_pending` per ADR-052 §tiers.6 — was 28 on 10-04; the five new holds include `AILedger.aDNA`, consistent with R2); the only row-level deltas are **Exchange** and **Terminal**: `status` genesis → **active**, `last_synced` 2026-08-29 → **2026-10-16**, `note` null → one proven first sentence each, Terminal `tagline` off "soft-fork of cmux". Two taglines still withheld under R-125 (Molecules · LatticeProtocol). `npm run build` exit 0, 229 pages; **not deployed** (deploy = its own GO); `/vaults/exchange/` and `/vaults/terminal/` in `dist/` carry no company name (R2 grep 0).
+  - [D] The stimulus `6487444` is untouched; readers who remark that the Exchange or Terminal card says *genesis* are describing the stimulus, not the tree.
+  - *Proposed:* as (h) — attribute reader remarks on those two cards to the stimulus; the deploy of this regeneration is ruled on its own gate, with or after DP3, never from a reader record. ⛩ *Ruling asked at DP3.*
 
 ### 4. P2 presented (commit nothing until ruled)
 

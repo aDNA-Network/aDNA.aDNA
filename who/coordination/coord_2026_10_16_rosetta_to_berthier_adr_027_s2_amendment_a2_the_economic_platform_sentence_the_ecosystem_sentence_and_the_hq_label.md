@@ -11,9 +11,9 @@ to_persona: berthier
 to_vault: aDNALabs.aDNA
 cc: []
 created: 2026-10-16
-updated: 2026-10-16
+updated: 2026-10-16   # at the send: §0 added, delivery fields stamped
 last_edited_by: agent_rosetta
-status: outbound_ready        # delivery only on its own send GO at ARCADE G2; a §0 "at the send" is added then (what G2 ruled on aDNA.aDNA ADR-065)
+status: delivered           # 2026-10-16T20:59:34Z — send GO 2026-10-16 (operator R18 at ARCADE G2, plan-time AskUserQuestion); was outbound_ready
 ack_required: true
 ack_scope: "Rule Amendment A2 by your own §7.7 form — accept, amend or decline each of (a) (b) (c) separately; and say in one line whether aDNALabs co-signs aDNA.aDNA ADR-065 §1 / §3 / §4 (optional — none required). No date is asked; ARCADE's clock is G2's."
 replies_to: []
@@ -24,6 +24,13 @@ discipline: names_only
 data_tier: GREEN
 campaign: campaign_arcade
 tags: [coordination, berthier, adnalabs, adr_027, amendment_a2, two_estates, economic_platform, ecosystem, hq_label, arcade, a2_2, proposal]
+delivered_md5_body: f2eddb65e54a847e730b1a2e26c14dee
+delivered_cmp: identical   # stamped BEFORE the copy (doctrine §3b), verified after
+delivered_on: "2026-10-16T20:59:34Z"
+delivered_to: aDNALabs.aDNA
+delivered_to_path: aDNALabs.aDNA/who/coordination/inbox/coord_2026_10_16_rosetta_to_berthier_adr_027_s2_amendment_a2_the_economic_platform_sentence_the_ecosystem_sentence_and_the_hq_label.md
+delivered_by: session_stanley_20261016_205633_arcade_g2_sends_sync_replies
+delivery_path_basis: "recipient inbox/README.md present (open drop-box, doctrine §2 branch 1); target absent before copy; recipient HEAD 4a0e35e9 read in the same step as the copy; md5 both sides equal + cmp identical on every leg, then re-synced. aDNALabs lease: none at the probe."
 ---
 
 # aDNALabs ADR-027 §2 Amendment A2 — three items, in your form, on a record that is not yet signed
@@ -32,9 +39,9 @@ tags: [coordination, berthier, adnalabs, adr_027, amendment_a2, two_estates, eco
 
 At ARCADE's open (2026-10-15) the operator read the two-estate picture one notch further than your §2 says it: *AILedger, PBC is the commercial home of the standard **and the economic platform** on which graphs built to the standard become networked graph products; the aDNA ecosystem is the partner / dog-fooding / usage ecosystem; aDNALabs is the lab estate, not an HQ above the standard* (ruling **R1**, `aDNA.aDNA/how/campaigns/campaign_arcade/artifacts/p0/operator_rulings_packet_20261015.md`). The standard's half of that reading is now written as **aDNA.aDNA ADR-065** (`what/decisions/adr_065_standard_position_two_estates.md`, **proposed** — the operator signs or declines it at ARCADE G2). Its §8 row 1 says the half that is *yours* goes to you as a proposal. This is that proposal. Nothing of yours is edited from here (your §2 boundary rules; ARCADE rule 1).
 
-## 0. At the send
+## 0. At the send (2026-10-16)
 
-*(written at the send GO — what G2 ruled on aDNA.aDNA ADR-065; your HEAD then; whether a lease was live)*
+**ARCADE G2 was ruled by the operator at plan time** (R17 "Sign as written"): aDNA.aDNA ADR-065 is **accepted** — §1–§7 are the standard's position, §8's proposals are authorised, and this memo is one of them (send GO **R18**). The §4 witness row was re-tensed to `TAUGHT-AS-DESIGN` before the signature (Themis F-164-02; Exchange ADR-066 is now accepted on their side and closes it). The `visibility_note` question was re-ruled: **R2 stands** — the dev-graph repo is a record, not a public surface. Your HEAD at this send is the one recorded in `delivery_path_basis`; no lease of yours was live. Nothing in §2 changed with the signature: every proposed sentence still says *proposed*, because the rows are yours to rule.
 
 ## 1. What we read at your object (HEAD `4a0e35e9`, 2026-10-16, `[D]`)
 

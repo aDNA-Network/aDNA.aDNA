@@ -2,16 +2,16 @@
 type: adr
 adr_number: "065"
 title: "The standard's position under the two-estate model — an open public way (MIT, lab-owned), two named access points, a commercial home that is also the economic platform on which graphs built to the standard become networked graph products, a partner/dog-fooding ecosystem, and a first named profile; what the standard will never carry"
-status: proposed        # ⛩ drafted 2026-10-16 at ARCADE A2.1 on the operator's R1 reading (2026-10-15); §7.7 is the operator's at ARCADE G2 — nothing here is in force until signed
+status: accepted        # ⛩ RATIFIED 2026-10-16 at ARCADE G2 (operator Stanley, R17 'Sign as written', plan-time AskUserQuestion) — §1–§7 in force on this vault; §8 memos authorised (sends R18). PRIOR (SO-7): proposed — drafted 2026-10-16 at ARCADE A2.1 on the operator's R1 reading (2026-10-15)
 created: 2026-10-16
-updated: 2026-10-16   # A2.2 (same day): §4 witness-row tense PASS → TAUGHT-AS-DESIGN on Themis F-164-02 (measured at Exchange's objects); body otherwise unchanged; still proposed (G2)
+updated: 2026-10-16   # G2 (same day): §7.7 signed (R17); visibility_note re-ruled. Prior: A2.2 — §4 witness-row tense PASS → TAUGHT-AS-DESIGN on Themis F-164-02; A2.1 — drafted
 last_edited_by: agent_rosetta
 campaign_id: campaign_arcade
 mission_id: mission_arcade_a2_1_adr_065_estate_position
 supersedes: ""
 superseded_by: ""
 probe_date: 2026-10-16
-visibility_note: "PRIVATE-SIDE by ruling R2 (2026-10-15): ADRs, memos and campaign files may name the company; site/, registry data, the primer and anything scrubbed for an outside reader may not, until the operator says 'publication'. This dev graph's GitHub remote is public (Git-Ops §P6 Wave 2), as were aDNA.aDNA ADR-064 and the ARCADE charter before this file — R2 was ruled with that known."
+visibility_note: "PRIVATE-SIDE by ruling R2 (2026-10-15): ADRs, memos and campaign files may name the company; site/, registry data, the primer and anything scrubbed for an outside reader may not, until the operator says 'publication'. This dev graph's GitHub remote is public (Git-Ops §P6 Wave 2), as were aDNA.aDNA ADR-064 and the ARCADE charter before this file — R2 was ruled with that known. RE-RULED at G2 2026-10-16 (R17): R2 STANDS — the dev-graph repo is a record, not a public surface; ADRs may name the company; site/, registry data and the primer may not until 'publication'."
 cites:                  # every ADR number vault-qualified (ARCADE rule 3); every row read first-hand at HEAD 2026-10-16 [D]
   aDNALabs_adr_027: "aDNALabs.aDNA/who/governance/adr_027_two_estates_lab_and_company.md — accepted (§2 10-01 + A1 10-06; §3 v3 both founders 10-05)"
   AILedger_adr_008: "AILedger.aDNA/who/governance/adr_008_ailedger_adna_is_the_core_graph.md — accepted both founders 2026-10-05 (clone HEAD 6d3420e); 'work in progress — pending the SHA and corporate documents'"
@@ -31,7 +31,7 @@ tags: [adr, arcade, estate, two_estates, access_points, commercial_home, economi
 
 ## Status
 
-**Proposed** — drafted 2026-10-16 at ARCADE A2.1 (`[[campaign_arcade]]` P2, mission `mission_arcade_a2_1_adr_065_estate_position`) on the reading the operator gave at the campaign's open (ruling **R1**, 2026-10-15: *amend, keep the standard open*). Ratification is the operator's at **ARCADE G2** (§7.7 below). Until then nothing here binds; the standard's text (`what/docs/adna_standard.md` v2.5) is byte-unchanged and stays so until the v2.6 cut (ARCADE A4.1), where only the pointer sentences this ADR names may enter.
+**Accepted — ratified 2026-10-16 at ARCADE G2** (operator Stanley, ruling R17 "Sign as written", plan-time AskUserQuestion; the §4 witness row had been re-tensed to `TAUGHT-AS-DESIGN` earlier the same day on Themis F-164-02). *Prior status (SO-7):* **Proposed** — drafted 2026-10-16 at ARCADE A2.1 (`[[campaign_arcade]]` P2, mission `mission_arcade_a2_1_adr_065_estate_position`) on the reading the operator gave at the campaign's open (ruling **R1**, 2026-10-15: *amend, keep the standard open*). Ratification is the operator's at **ARCADE G2** (§7.7 below). Until then nothing here binds; the standard's text (`what/docs/adna_standard.md` v2.5) is byte-unchanged and stays so until the v2.6 cut (ARCADE A4.1), where only the pointer sentences this ADR names may enter.
 
 *(Why an ADR and not a sentence in the spec: the standard is the one document this vault may not edit on its own authority — Standing Order 9 — and "where the standard sits between a lab and a company" is a decision about the standard, owned by its operator, that two other estates have already decided their halves of. This ADR is the standard's half; the other halves are cited, never restated.)*
 
@@ -147,10 +147,10 @@ Edit any other estate's file (rule 1) · name the company on any public surface 
 | Field | Value |
 |---|---|
 | **Decision** | Adopt §1–§7 as the standard's position under the two-estate model, and authorise the §8 memos as proposals (each send its own GO) |
-| **Ratified-by** | *(pending — operator; an agent/persona is author/steward, never ratifier)* |
-| **Date** | *(pending)* |
-| **Status** | **proposed** |
-| **Gate / session reference** | ARCADE G2 — `how/campaigns/campaign_arcade/campaign_arcade.md` §5; drafted at `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065` |
+| **Ratified-by** | Stanley (operator) |
+| **Date** | 2026-10-16 |
+| **Status** | **accepted** |
+| **Gate / session reference** | ARCADE G2 — ruled 2026-10-16 by AskUserQuestion at plan time, ruling **R17** ("Sign as written"), `session_stanley_20261016_*_arcade_g2_sends_sync_replies`; `campaign_arcade.md` §5 row G2. Drafted at `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065` |
 | **Scope of authority** | this ADR + the v2.6 pointer sentences it names (which still pass the v2.6 gate on their own); binds no other estate |
 | **Pending co-signs** | none required for the standard's half; Berthier (aDNALabs) and Thoth (AILedger) may co-sign §1/§3/§4 by memo — the A2.2 memos ask |
 
@@ -158,4 +158,4 @@ Edit any other estate's file (rule 1) · name the company on any public surface 
 
 [[adr_064_graph_exchange_spec_placement]] (the access-point contract) · [[spec_graph_exchange]] §3–§5 · [[spec_platform_ecosystem]] §Access points · [[glossary_access_point]] · [[glossary_commercial_home]] · [[glossary_graph_product]] · [[pattern_federation_readiness]] · [[campaign_arcade]] §1–§3 · `how/campaigns/campaign_arcade/artifacts/p0/situation_review_20261015.md` §B–§C · aDNALabs ADR-027 · AILedger ADR-008 · Exchange ADR-058/059/062 (all by path in the frontmatter `cites:` block, read-only).
 
-*End of ADR-065 (proposed — ARCADE G2)*
+*End of ADR-065 (accepted — ARCADE G2, 2026-10-16)*
