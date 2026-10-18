@@ -3,10 +3,10 @@ type: evidence
 packet: B5
 campaign: campaign_haussmann
 created: 2026-08-16
-updated: 2026-09-11
+updated: 2026-10-18   # §28 appended (ARCADE A2.3: 19 proposed rows R-185…R-203; Counts re-derived 222 · 207 · 0)
 status: active
 last_edited_by: agent_rosetta
-tags: [claim_register, evidence, vitruvius_d6_d7, h13]
+tags: [claim_register, evidence, vitruvius_d6_d7, h13, arcade]
 ---
 
 # B5 — Claim Register · adna.network
@@ -2726,6 +2726,80 @@ referent* — arriving as a property of a **corpus** rather than of a term. §26
 Derived by `artifacts/p3_5/derive_register_counts.py`, **re-run after §27 was written**, not typed.
 Δ from §26.5: rows **196 → 203** (+7), unique ids **181 → 188** (+7), `R-*` **167 → 174**. Equal deltas
 because §27 mints seven claim rows and no evidence-only tables — checked by re-deriving, not by reasoning.
+
+⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order. This section is now that
+table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and
+it must be a PARSEABLE TABLE, not a prose sentence.**
+
+## §28 — THE FOUR RELATIONS, AUTHORED BEFORE THEY ARE PUBLISHED: NINETEEN PROPOSED ROWS FROM ARCADE A2.3 (2026-10-18)
+
+**Session** `session_stanley_20261018_223403_arcade_a2_3_public_face_account` (ARCADE, side campaign of GARNIER), 2026-10-18.
+This section is the first in the register whose rows describe copy that **does not exist on any page yet**. ARCADE
+A2.3 authored the paragraph set adna.network will need about the standard's position under the two-estate model —
+the public way · the two access points · a commercial home that is also the platform where graphs become products ·
+the first named profile — on aDNA.aDNA **ADR-065** (accepted 2026-10-16) as the single source, and enumerated every
+sentence as a claim with the tense it carries *today*. Source artifact, with the paragraphs, the evidence cells and
+the scrub record: `how/campaigns/campaign_arcade/artifacts/p2/public_face_account.md` §1–§5.
+
+### §28.1 A new class, defined before it is used: `proposed`
+
+Every class above describes a claim **found on a page** and checked against ground truth. These rows are the inverse
+— **ground truth first, page never** — so the existing classes do not fit (nothing is *verified on the page*, and
+nothing is *FALSE* because nothing is said anywhere). **`proposed`** = authored copy awaiting GARNIER **A5.1** at DP3;
+verified against the vault record (the ADR, the two specs, the registry data) and **not** against any rendered surface.
+A `proposed` row carries, in place of a page quote, the sentence as it would be published, and in place of "verified",
+its **tense** from the ratified `exchange-adoption-path` vocabulary (`PASS` true today · `TAUGHT-AS-DESIGN` ratified
+design, not live · `HORIZON` intended). When A5.1 places a row in a lane and the copy ships, the row is **re-classed
+at that sitting** on a live fetch, like every row above it — `proposed` is a waiting room, not a verdict.
+
+**Severity** is empty on every row: a claim that is not on a page cannot block a launch. **S1 would attach** to any row
+that named or described the coordination protocol (R-125, D-8 counsel embargo) — there are none; the scrub's R-125
+layer is the machine proof (artifact §4 run 2). **Name hygiene**: R2 (no public naming of the company until
+"publication") holds — the company appears as a *role*; the two access-point graphs are named because both are
+**admitted** registry rows (`registry_admission.yaml`) `active` since the 2026-10-16 regeneration; the profile's name
+is permitted by plan-time ruling R21 (2026-10-18).
+
+### §28.2 The rows
+
+| # | Surface | Claim (as it would be published) | Class | Evidence/ground truth | Severity | Prov |
+|---|---------|----------------|-------|----------------------|----------|------|
+| R-185 | adna.network · future copy ¶1 (ARCADE A2.3, not deployed) | "aDNA is an open standard for organising a project's knowledge so that people and AI agents can both work in it." | proposed · `PASS` | aDNA.aDNA ADR-065 §1; `G-03`/`G-04`/`R-12` above (verified); `what/docs/adna_standard.md` v2.5 | — | [D] |
+| R-186 | future copy ¶1 | "Its text, templates and tools are MIT-licensed and stay that way." | proposed · `PASS` | aDNA.aDNA ADR-065 §1 + §7.7 (licence unchanged, ruling R1); `G-06` (GitHub API licence MIT) | — | [D] |
+| R-187 | future copy ¶1 | "The lab that writes the standard owns it and runs its gates." | proposed · `PASS` | aDNA.aDNA ADR-065 §1 (development, licence and law in `aDNA.aDNA` under the lab estate; gates the operator's); cites aDNALabs ADR-027 §2 standard row (accepted) | — | [D] |
+| R-188 | future copy ¶1 | "The standard is a shape for knowledge, not a service: there is no hosted platform, no telemetry and no lock-in in the standard itself." | proposed · `PASS` | aDNA.aDNA ADR-065 §4 reconciliation + §7 bullet 4; `spec_graph_exchange` §7 | — | [D] |
+| R-189 | future copy ¶2 | "A graph built to the standard can be offered to others through an exchange, and worked on through a console." | proposed · `PASS` at the spec shelf / `HORIZON` in the standard's text | `spec_graph_exchange` v0.1 accepted 2026-10-16 (aDNA.aDNA ADR-064); `spec_platform_ecosystem` v0.4 §Access points accepted. ⚠ The standard's text v2.5 does not yet say so — the §19 pointer lands at v2.6 (ARCADE A4.1). A lane that quotes "the standard says" is premature until then | — | [D] |
+| R-190 | future copy ¶2 | "The network recommends one of each as the place to start: the console is the Terminal graph, and the exchange is the Exchange graph." | proposed · `PASS` | `spec_platform_ecosystem` v0.4 §Access points (two rows); both graphs admitted + `active` in `vaults.json` (2026-10-16 regen, built not deployed) | — | [D] |
+| R-191 | future copy ¶2 | "Both are recommended, never required; any console or exchange that keeps the same contract is fully conformant." | proposed · `PASS` | `spec_platform_ecosystem` v0.4 "Recommended defaults — recommended, never required"; `spec_terminal_harness_contract` v0.2 (any × any); aDNA.aDNA ADR-065 §2 | — | [D] |
+| R-192 | future copy ¶2 | "The console runs today, and its public launch is designed but not yet live." | proposed · hosting `PASS` / launch `TAUGHT-AS-DESIGN` | `spec_platform_ecosystem` v0.4 §Access points console row | — | [D] |
+| R-193 | future copy ¶2 | "The exchange runs today at its first tier, and its public launch is also designed but not yet live." | proposed · Tier-0 `PASS` / launch `TAUGHT-AS-DESIGN` | `spec_platform_ecosystem` v0.4 exchange row; `spec_graph_exchange` §6 substrate row — **no fleet vault has fetched a graph yet**; the sentence stays silent on fetches | — | [D] |
+| R-194 | future copy ¶2 | "A graph offered through the exchange must declare four things: who made it and which version, what others may do with it, where it came from, and how far to trust it." | proposed · `PASS` | `spec_graph_exchange` §3 (identity · license · provenance · trust posture; accepted); aDNA.aDNA ADR-065 §4 row 1 | — | [D] |
+| R-195 | future copy ¶2 | "Conformance to the standard is reported as findings, never certified, and an advisory posture is shown as advisory, never as enforced." | proposed · `PASS` | `spec_graph_exchange` §3 last para + §4 honesty clause (1, 4); aDNA.aDNA ADR-065 §4 row 2 (content) | — | [D] |
+| R-196 | future copy ¶2 | "The exchange's structural check against the standard's current rule set is designed and not yet switched on." | proposed · `TAUGHT-AS-DESIGN` | `spec_graph_exchange` §5–§5.1 (L2 v1 proposed; runner at `v0-proposed`); Themis F-164-01 (not a one-line bump → A4.1) | — | [D] |
+| R-197 | future copy ¶3 | "Behind the exchange a company stands as the standard's commercial home. It presents the standard and operates the ecosystem around it as a business, as steward and not as owner." | proposed · `PASS` (role; holder unnamed, R2) | aDNA.aDNA ADR-065 §3 (cites the company's accepted record cl. 1 + aDNALabs ADR-027 §2/§3 v3); `glossary_commercial_home` | — | [D] |
+| R-198 | future copy ¶3 | "Its platform is designed to be where graphs built to the standard become products that other graphs can find, fetch and trust." | proposed · `TAUGHT-AS-DESIGN` | aDNA.aDNA ADR-065 §4 (the economic-platform sentence; owner × tense table) | — | [D] |
+| R-199 | future copy ¶3 | "The exchange's published state is designed to be witnessed by an independent record, so that a reader can show a listing existed by a given date; that witness is not a trust root, and it is not yet live." | proposed · `TAUGHT-AS-DESIGN` — built and inert | aDNA.aDNA ADR-065 §4 witness row (re-tensed 2026-10-16, Themis/Mnemosyne F-164-02); `spec_graph_exchange` §4 cl. 2 (a witness, never "on the ledger") | — | [D] |
+| R-200 | future copy ¶3 | "Whatever commerce grows around graphs belongs to the company and to the market." | proposed · `TAUGHT-AS-DESIGN` at most | aDNA.aDNA ADR-065 §4 row 6 (recorded, not enforced; no payment rail); Exchange ADR-059 §2.4 · Exchange ADR-062 §3 | — | [D] |
+| R-201 | future copy ¶3 | "The standard itself carries no prices, no settlement, no payment rail, no patient or personal data, no hosted service and no trust root." | proposed · `PASS` | aDNA.aDNA ADR-065 §7 (signed 2026-10-16); `spec_graph_exchange` §7 | — | [D] |
+| R-202 | future copy ¶4 | "The graphs of the standard's own network are its first users, and the standard improves by what they find. A graph relates to that ecosystem by what it declares and by what the conformance ladder reports, never by who owns it." | proposed · `PASS` | aDNA.aDNA ADR-065 §5 | — | [D] |
+| R-203 | future copy ¶4 | "A first named profile of the standard, aDNA-Medical, is being designed for compliance-focused medical use: a profile, not a fork, carrying a release-integrity manifest so that a reader can check that what they run is what was released. It is intended, and not yet live." | proposed · `HORIZON` | aDNA.aDNA ADR-065 §6; `spec_graph_exchange` §8 forward stub; aDNA.aDNA ADR-066 seat held (ARCADE P3); name by R21 | — | [D] |
+
+### §28.3 What this section does NOT do
+
+- ⛔ **No page changed; nothing deployed.** `site/` is untouched; the regenerated registry stays built-not-deployed (GARNIER DP3 item (j)). These rows enter a lane only when A5.1 tables them at DP3.
+- ⛔ **The gate fixture is not touched.** `site/tests/gates/fixtures/claim_register.json` asserts rendered pages (gate-26); a `proposed` row has no page to assert. When a row ships, it is re-classed here *and* enters the fixture in the same diff — the §9.2 discipline (R-15 → R-125).
+- ⚠ **One brief is dispositioned, not minted.** `campaign_vitrine.md` §1's "ledger-backed so that a graph you run is one you can trust" is read against R-193 · R-199 · R-195 in the artifact's §3 and recommended **superseded** — as written it would be present-tense about a witness that is built and inert, and it uses the one word the honesty clause forbids. Not a row here: it is a charter sentence, not a surface claim.
+
+### §28.4 Counts — derived last
+
+| Metric | Value |
+|---|---|
+| Physical table rows | **222** |
+| **Unique ids** | **207** (14 `G-*` + 193 `R-*`, `R-11`…`R-203`) |
+| Gaps in the `R-*` sequence | **0** |
+
+Derived by `artifacts/p3_5/derive_register_counts.py`, **re-run after §28 was written**, not typed.
+Δ from §27.6: rows **203 → 222** (+19), unique ids **188 → 207** (+19), `R-*` **174 → 193**. Equal deltas
+because §28 mints nineteen claim rows and no evidence-only tables — checked by re-deriving, not by reasoning.
 
 ⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order. This section is now that
 table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and

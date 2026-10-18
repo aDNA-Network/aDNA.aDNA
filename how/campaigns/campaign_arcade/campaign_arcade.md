@@ -19,7 +19,7 @@ executor_tier_default: opus      # judgment missions declared fable; see each ca
 executor_runtime: claude
 priority: high
 created: 2026-10-15
-updated: 2026-10-16   # G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
+updated: 2026-10-18   # A2.3 closed (eighth sitting; R21–R22) — P2 COMPLETE, CURRENT → A3.1; prior: G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
 last_edited_by: agent_rosetta
 ratification_status: accepted
 ratification_date: '2026-10-15'
@@ -95,9 +95,9 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 |---|---|---:|---|---|---|
 | [[mission_arcade_a2_1_adr_065_estate_position]] | ADR-065 — the standard's position under the two-estate model | 1 | fable | A1.1 | **completed 2026-10-16** (ADR-065 proposed; 3 glossary + 1 pattern touch; ≈60 vs 70) |
 | [[mission_arcade_a2_2_estate_memos]] | ADR-027 amendment proposal → aDNALabs; pre-emptive answer → AILedger | 1 | fable | A2.1 | **completed 2026-10-16** (two memos `outbound_ready`; memo 2's path found on the genesis branch; ADR-065 witness row re-tensed; ≈45 vs 40) |
-| [[mission_arcade_a2_3_public_face_account]] | Tense-labelled, name-free public account → GARNIER claim register | 1 | opus | A2.2 | queued |
+| [[mission_arcade_a2_3_public_face_account]] | Tense-labelled, name-free public account → GARNIER claim register | 1 | opus (executed fable) | A2.2 | **completed 2026-10-18** (artifact + 19 register rows `proposed` R-185…R-203; scrub RED→0; FKGL 9.1; VITRINE §1 dispositioned; ≈55 vs 60) |
 
-**⛩ G2:** ADR-065 §7.7; two send GOs. Budget ≈170 kT.
+**⛩ G2:** ADR-065 §7.7; two send GOs. Budget ≈170 kT. *G2 RULED 2026-10-16 (R17–R20). **P2 complete 2026-10-18** (A2.1 · A2.2 · A2.3; actuals ≈60 + 45 + 55 = 160 kT vs 170). No human gate between A2.3 and A3.1 — P3 open; G3 at P3 exit.*
 
 ### P3 — aDNA-Medical seam
 
@@ -198,3 +198,7 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
 ### G2 RULED — 2026-10-16
 
 - [D] Session `session_stanley_20261016_205633_arcade_g2_sends_sync_replies` (Tier 2, fable). The operator sat G2 at plan time (AskUserQuestion, four questions, all as recommended): **R17** sign aDNA.aDNA ADR-065 as written → `accepted` (§7.7 Stanley · 2026-10-16; `visibility_note` re-ruled: **R2 stands**, the GitHub-public dev-graph repo is a record, not a public surface); `adr_index` tally re-derived 58 · 1 · 1. **R18** send GO ×3 (memo 1 → aDNALabs; memo 2 → the AILedger genesis worktree inbox; the stale 10-04 Noether v2.2 memo → LatticeProtocol). **R19** `sync:vaults` + build on Hestia's `2b65532` write, **not deployed**; GARNIER DP3 item (j). **R20** the four owed replies (Themis · Noether · Mondrian ×2) + the WebForge citing-face notice authored and sent; `who/governance/lip_registry.md` `proposed` from a fleet census. The A2.3 prompt is authored at this gate (SO-1); A2.3 (opus) is not run in this sitting. Sends, sync and replies are logged below as they land.
+
+### A2.3 closed — 2026-10-18
+
+- [D] Session `session_stanley_20261018_223403_arcade_a2_3_public_face_account` (Tier 2, fable on a declared-opus card). Plan-time rulings **R21** (name the profile: aDNA-Medical may appear in the public text as a `HORIZON` claim with its own row) · **R22** (A2.3 only this sitting). **Artifact** `artifacts/p2/public_face_account.md`: four paragraphs between `PUBLIC-BEGIN/END` markers (22 sentences · 445 words), **19 claim rows** R-185…R-203 with tense from the cell of record (`PASS` 11 · `TAUGHT-AS-DESIGN` 4 · `HORIZON` 1 · split 3; **S1 0** — the block makes no protocol claim, the R-125 layer is the proof); the VITRINE §1 "ledger-backed" sentence dispositioned **superseded** by R-193 · R-199 · R-195 (tense-false today and the honesty clause's forbidden word). **Register**: HAUSSMANN `claim_register.md` **§28** — the 19 rows under a **new class `proposed`** (defined before use: ground truth first, page never; re-classed on a live fetch when the copy ships), Counts **222 · 207 · 0** derived after the append and replayed through gate-41's own regex; fixture untouched. **Scrub** five layers none re-typed (`PRIVATE_MARKERS` + `R125` by text from the generator · 8 leak patterns · the primer's list rebuilt to 75 regexes · the company's name whole-file): planted control **RED 6 → real 0**; name grep 0; bare-ADR 2 → 0; gitleaks 0. **FKGL 9.11**, passive 54.5 % recorded not repaired (the passives carry the tense). `site/` untouched (R2). Budget ≈55 vs 60. **P2 COMPLETE → P3 open; CURRENT → A3.1** (fable; prompt authored at this close — no human gate between them, G3 at P3 exit).
