@@ -3,7 +3,7 @@ type: artifact
 artifact_class: standard_delta
 created: 2026-10-19
 updated: 2026-10-19
-status: proposed        # a fifth G3 §7.7 line; spec_terminal_harness_contract.md stays byte-unchanged until ruled
+status: accepted_conditional   # ⛩ RULED 2026-10-19 at ARCADE G3 (operator R38: conditional-apply) — P1 failed at the gate (HarnessOld.aDNA absent), so spec_terminal_harness_contract.md stays byte-unchanged; the first sitting that observes HarnessOld.aDNA on disk applies the delta with no second gate. PRIOR (SO-7): proposed — a fifth G3 §7.7 line
 last_edited_by: agent_rosetta
 campaign_id: campaign_arcade
 mission_id: mission_arcade_a3_3_profile_scaffolding
@@ -35,6 +35,8 @@ instead of landing now.
 | P1 | `test -d ~/aDNA/HarnessOld.aDNA` | **absent** [D]. Sitting B's move is still ahead; `Harness.aDNA` HEAD `3cde19d` opens its pre-stage half |
 | P2 | successor `Harness.aDNA` carries `what/context/harness_core/terminal_contracts/{PROVIDER,HARNESS}-CONTRACT.md` at blobs `14b651d3…` / `7f2508f0…` | [R] Stanley's receipt says hash-checked at the fork. Re-verify by `git hash-object` at G3 |
 | P3 | `HarnessOld.aDNA/what/specs/rh_provider_conformance_ref.md` exists, `provider_id: rareharness` | follows P1 |
+
+**Re-checked at G3 (2026-10-19T23:22Z, `session_stanley_20261019_232222_arcade_g3_gate`) [D]:** P1 **absent** (`Harness.aDNA` HEAD `e489a09`: Sitting B's pre-stage half closed, the move still ahead) · P2 **PASS** (`git hash-object` → `14b651d3d0d7…` / `7f2508f0113b…`) · P3 not checkable (follows P1) · target blob still `f629b019…`. → ruled conditional (R38).
 
 **If P1 still fails at G3,** rule the delta *conditionally*: apply it in the sitting that first observes
 `HarnessOld.aDNA` on disk, with no second gate. The §7.7 line names this condition.
@@ -70,7 +72,9 @@ Also in the same edit:
 
 | Decision | Ratified-by | Date | Status |
 |---|---|---|---|
-| `spec_terminal_harness_contract` §7: split the Harness row (HarnessOld.aDNA `PASS` · Harness.aDNA successor `TAUGHT-AS-DESIGN` until its P5); retire the re-pin ⚠; v0.3, no clause changed; applied when P1 holds | *pending — G3* | — | proposed |
+| `spec_terminal_harness_contract` §7: split the Harness row (HarnessOld.aDNA `PASS` · Harness.aDNA successor `TAUGHT-AS-DESIGN` until its P5); retire the re-pin ⚠; v0.3, no clause changed; applied when P1 holds | Stanley (operator) — R38 "conditional-apply" | 2026-10-19 | **accepted, conditional** — apply in the first sitting that observes `HarnessOld.aDNA` on disk (re-run P1–P3 + the target blob there; if P2 fails, repoint per the delta's note); then the two re-pin notices go `outbound_ready`, each its own send GO |
+
+**Gate reference:** ARCADE G3, `session_stanley_20261019_232222_arcade_g3_gate`, AskUserQuestion at plan time; `campaign_arcade.md` §5 row G3. Trigger carried in `STATE.md` §Pending.
 
 ## Related
 

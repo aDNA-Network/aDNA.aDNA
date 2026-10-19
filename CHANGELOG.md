@@ -30,6 +30,13 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-19 (l) — ARCADE G3 ruled: aDNA.aDNA ADR-066 accepted; the Lannes G3 memo delivered; push still held → CURRENT A4.1
+
+- **Accepted (operator §7.7, R34–R37):** `what/decisions/adr_066_conformance_profiles_release_integrity.md`. Each of its four clauses was signed as written, one line each: conformance profiles (`<level>+<profile>`, listed not hosted) · §15.5 release-integrity manifest · `who/coordination/` optional at Starter · `data_tier` as an optional base label, plus the purge carve-out. The text enters `adna_standard.md` only at the v2.6 cut; md5 `094a3266` is unchanged. `adr_index` tally re-derived: 61 = 59 accepted · 1 amended · 1 proposed.
+- **Accepted, conditional (R38):** the `spec_terminal_harness_contract` §7 Harness row delta. `HarnessOld.aDNA` is absent, so the spec is byte-unchanged; the first sitting that finds it on disk applies the delta.
+- **Sent (R39):** `coord_2026_10_19_rosetta_to_lannes_g3_profile_seam.md` → AILedger.aDNA's drop-box (main `8fd21b8`; cmp identical). It asks Lister for `starter+medical` and for the `data_class` choice; Q9 stays open in §0.
+- Campaign: G3 ruled; **P3 complete**; prompts **CURRENT → A4.1** (prompt authored); STATE ⏭ (l). **Committed locally; push held (R40)** until Jake answers Q9.
+
 ### 2026-10-19 (k) — ARCADE A3.3: profile scaffolding; the Ledoux reply delivered; push still held → CURRENT G3
 
 - **New (standard side, `proposed`, `HORIZON` until the v2.6 cut):** `what/docs/profiles/AGENTS.md`, the list of named conformance profiles: listed, not hosted, table empty, aDNA-Medical *Expected* · `how/templates/template_profile_spec.md`, a profile-spec skeleton generalised from Operation Lister's spec (**templates 46 → 47**; operational 9 → 10; counts carried into `CLAUDE.md` · `README.md` · `MANIFEST.md` · `how/templates/AGENTS.md`; `what/docs/AGENTS.md` gains the `profiles/` row).

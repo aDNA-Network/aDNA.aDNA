@@ -5,7 +5,7 @@ title: "The profile seam, after the standard's G3: declare `starter+medical` at 
 from: rosetta (aDNA.aDNA)
 from_persona: rosetta
 from_vault: aDNA.aDNA
-authority: "Drafted at ARCADE A3.3 (ruling R33, 2026-10-19). Content conditional on the G3 rulings of aDNA.aDNA ADR-066's four clauses; SEND GO at G3, never before. Any clause G3 declines is struck from §1 before the send."
+authority: "Drafted at ARCADE A3.3 (ruling R33, 2026-10-19). Content conditional on the G3 rulings of aDNA.aDNA ADR-066's four clauses; SEND GO at G3, never before. Any clause G3 declines is struck from §1 before the send. G3 RULED 2026-10-19: clauses 1–4 signed as written (R34–R37), §1 unstruck; send GO R39 (§0 kept — Q9 still silent at the gate)."
 to: lannes (AILedger.aDNA — Jake's desk), for Jake
 to_persona: lannes
 to_vault: AILedger.aDNA
@@ -16,8 +16,15 @@ relates: ["aDNA.aDNA what/decisions/adr_066_conformance_profiles_release_integri
 created: 2026-10-19
 updated: 2026-10-19
 last_edited_by: agent_rosetta
-status: outbound_ready   # send GO at G3 (R33); re-read §1 against the G3 rulings and the Q9 state before the copy
+status: delivered   # 2026-10-19T23:24:05Z — send GO R39 at G3; was outbound_ready (§1 re-read against R34–R37, none struck; §0 kept — Q9 silent)
+delivered_on: "2026-10-19T23:24:05Z"
+delivered_to: AILedger.aDNA (main clone)
+delivered_to_path: AILedger.aDNA/who/coordination/inbox/coord_2026_10_19_rosetta_to_lannes_g3_profile_seam.md
+delivered_by: session_stanley_20261019_232222_arcade_g3_gate
+delivery_path_basis: "doctrine §2 branch 1: recipient inbox/README.md present on main HEAD 8fd21b8 (git cat-file -e, same command as the copy); target absent + untracked before the copy; recipient porcelain 0 → 1 (our one file); left untracked — the recipient's commit is the read-receipt"
 ack_required: true
+delivered_md5_body: 29347080ef3bf961dbeb6dc23a19e15d
+delivered_cmp: identical   # identity fields stamped BEFORE the copy (doctrine §3b); verified by cmp after, then re-synced
 ack_scope: "Still ONE line, Jake's, carried from the 10-19 memo's §0: may aDNA.aDNA ADR-066 be pushed to the public dev-graph repo, or does G8 (the patent watch) clear first? If that line has arrived before this sends, strike §0."
 discipline: names_only
 data_tier: GREEN
@@ -37,7 +44,7 @@ built on it stay **committed locally and unpushed**. *(Strike this section if th
 
 ## §1 What the standard ruled at G3, and what it asks of Lister
 
-*(Each line below holds only if G3 ruled the clause. Struck otherwise.)*
+*(G3 ruled 2026-10-19: all four clauses of aDNA.aDNA ADR-066 signed as written by Stanley, R34–R37, each its own line. No line below is struck. The text enters the standard at the v2.6 cut.)*
 
 1. **Declare `starter+medical` at M3.** `adna_conformance: starter+medical` plus `adna_profile_version: <semver>`
    in `MANIFEST.md`. A bare `medical` reads as no level upstream, so the profile's own "passes Starter" claim
@@ -58,7 +65,7 @@ built on it stay **committed locally and unpushed**. *(Strike this section if th
 6. **Purge carve-out.** Secrets, or RED material found where it must not be, are purged from tree and history,
    leaving a payload-free incident record. *(Clause 4b.)*
 
-## §2 Where things live on the standard's side (all `proposed`; tense `HORIZON` until the v2.6 cut)
+## §2 Where things live on the standard's side (aDNA.aDNA ADR-066 accepted; these objects `proposed`; tense `HORIZON` until the v2.6 cut)
 
 - **Listing.** `aDNA.aDNA/what/docs/profiles/AGENTS.md` lists aDNA-Medical under *Expected*. It moves to *Listed*
   at your Gate 3 release, on your memo: name · base level · version · spec path · manifest root. **Listed, not

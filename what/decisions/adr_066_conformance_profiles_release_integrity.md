@@ -2,16 +2,16 @@
 type: adr
 adr_number: "066"
 title: "Conformance profiles and release integrity — a named profile stacks on a conformance level (`<level>+<profile>`) and never relaxes it; a deterministic sha256 release manifest lets any release or instance prove its rules unmodified; `who/coordination/` becomes optional at Starter; `data_tier` is named as an optional base label and a purge carve-out bounds archive-never-delete"
-status: proposed        # four independent clauses, each its own §7.7 line (below) — G3 (ARCADE P3 exit); text lands in adna_standard.md only at the v2.6 cut (A4.1)
+status: accepted        # ⛩ RATIFIED 2026-10-19 at ARCADE G3 (operator Stanley, R34–R37: all four clauses signed as written, plan-time AskUserQuestion) — text lands in adna_standard.md only at the v2.6 cut (A4.1). PRIOR (SO-7): proposed — four independent clauses, each its own §7.7 line, drafted 2026-10-19 at ARCADE A3.2
 created: 2026-10-19
-updated: 2026-10-19
+updated: 2026-10-19   # G3: §7.7 ×4 signed (R34–R37); push still held (R40). Prior: A3.2 — drafted
 last_edited_by: agent_rosetta
 campaign_id: campaign_arcade
 mission_id: mission_arcade_a3_2_adr_066_profiles_hash_manifest
 supersedes: ""
 superseded_by: ""
 probe_date: 2026-10-19
-visibility_note: "PUSH HELD (ruling R25, 2026-10-19): this repo (aDNA-Network/aDNA.aDNA) is GitHub-public and a push is publication. Lister's G8 (the patent watch, Jake's) may cover the 'ledger-validated standard graph'. This ADR is committed locally and not pushed until Jake answers the Q9 yes/no asked in coord_2026_10_19_rosetta_to_lannes_lister_phase1_reading_upstream_and_gate1 §0. This ADR carries no ledger anchoring (that is Exchange.aDNA ADR-058's). Naming (R2) is unaffected: private-side text."
+visibility_note: "PUSH HELD (ruling R25, 2026-10-19; re-ruled at G3 R40 — Q9 still silent, the hold stands though the ADR is accepted): this repo (aDNA-Network/aDNA.aDNA) is GitHub-public and a push is publication. Lister's G8 (the patent watch, Jake's) may cover the 'ledger-validated standard graph'. This ADR is committed locally and not pushed until Jake answers the Q9 yes/no asked in coord_2026_10_19_rosetta_to_lannes_lister_phase1_reading_upstream_and_gate1 §0. This ADR carries no ledger anchoring (that is Exchange.aDNA ADR-058's). Naming (R2) is unaffected: private-side text."
 number_collision_note: "Exchange.aDNA ADR-066 (L2 rule-set v1, built 0.0.45) is a different record. Every ADR number here is vault-qualified (ARCADE rule 3)."
 cites:                  # read first-hand 2026-10-19 [D]
   lister_spec: "AILedger.aDNA how/campaigns/campaign_adna_medical/artifacts/adna_medical_spec.md v0.1.0-draft §3 (the `medical` level), §5.1 (`data_class`), §11 (hash manifest) — read on ~/aDNA/scratchpad/genesis/ailedger_qm_wt, stanley/quatre-mains-m00"
@@ -26,7 +26,7 @@ cites:                  # read first-hand 2026-10-19 [D]
   lp_data_tier: "LatticeProtocol.aDNA what/context/schemas/lattice_core/enums/DataTier.md (generated from what/schemas/lattice_core.linkml.yaml): GREEN ⊂ AMBER ⊂ RED; key `data_tier`, never `tier`"
   linkml_compliance_slots: "LinkML.aDNA what/schemas/docs/compliance_slots.md — proposed: `data_tier` (closed, GREEN · AMBER · RED), `data_posture` (open); 'map the ancestors, don't mint names'"
   linkml_profile: "LinkML.aDNA what/profile/adna_profile_v0_1.yaml — `profile_not_fork_test` (the schema side's own profile-vs-fork rule)"
-tags: [adr, arcade, p3, profile, conformance, release_integrity, hash_manifest, coordination, data_tier, purge, adna_medical, proposed]
+tags: [adr, arcade, p3, profile, conformance, release_integrity, hash_manifest, coordination, data_tier, purge, adna_medical, accepted]
 ---
 
 # ADR-066 — Conformance profiles and release integrity
@@ -44,8 +44,11 @@ tags: [adr, arcade, p3, profile, conformance, release_integrity, hash_manifest, 
 
 ## Status
 
-`proposed`. Four clauses, each with its own §7.7 line, are ruled at **G3** (ARCADE P3 exit). If a clause is accepted,
-its text enters `adna_standard.md` at the **v2.6 cut** (A4.1); until then the standard is byte-unchanged. The exact
+**Accepted — ratified 2026-10-19 at ARCADE G3** (operator Stanley, rulings **R34–R37**: each of the four clauses signed
+as written, its own line, plan-time AskUserQuestion). The text enters `adna_standard.md` at the **v2.6 cut** (A4.1);
+until then the standard is byte-unchanged (md5 `094a3266` at the gate). The push stays held (R40): Q9 is unanswered,
+and acceptance on this vault is not publication. *Prior status (SO-7):* `proposed` — four clauses, each with its own
+§7.7 line, ruled at **G3** (ARCADE P3 exit). The exact
 deltas are drafted in `how/campaigns/campaign_arcade/artifacts/p3/standard_deltas_adr_066.diff.md`.
 
 ## Context
@@ -159,7 +162,7 @@ No v2.5-conformant instance becomes non-conformant.
 
 | Claim | Tense |
 |---|---|
-| The standard defines profiles and a release manifest | `HORIZON` until G3 + the v2.6 cut |
+| The standard defines profiles and a release manifest | `TAUGHT-AS-DESIGN` since G3 (2026-10-19, ratified); `PASS` only once the v2.6 cut ships the text. *Prior: `HORIZON` until G3 + the v2.6 cut* |
 | aDNA-Medical is listed as an official profile | `HORIZON` (at Lister's Gate 3) |
 | A validator checks `<level>+<profile>` and `--verify`s a manifest | `HORIZON` (design at A3.3; code later) |
 | An exchange carries profile bytes | `HORIZON` here (Exchange.aDNA ADR-065 is `proposed`) |
@@ -195,12 +198,14 @@ No v2.5-conformant instance becomes non-conformant.
 
 | Clause | Decision | Ratified-by | Date | Status |
 |---|---|---|---|---|
-| 1 | Conformance profiles: overlay, declaration `<level>+<profile>`, unknown-profile validator rule, official = listed not hosted | *pending — G3* | — | proposed |
-| 2 | Release integrity: §15.5 deterministic sha256 manifest, MAY / MUST-for-profiles; egress modules inside the instance scope; two digests never conflated | *pending — G3* | — | proposed |
-| 3 | `who/coordination/` optional at Starter, required at Standard and wherever more than one agent writes; §11.3 check conditional | *pending — G3* | — | proposed |
-| 4 | (a) `data_tier` optional base label, values upstream; (b) purge carve-out with a payload-free incident record | *pending — G3* | — | proposed |
+| 1 | Conformance profiles: overlay, declaration `<level>+<profile>`, unknown-profile validator rule, official = listed not hosted | Stanley (operator) — R34 "sign as written" | 2026-10-19 | **accepted** |
+| 2 | Release integrity: §15.5 deterministic sha256 manifest, MAY / MUST-for-profiles; egress modules inside the instance scope; two digests never conflated | Stanley (operator) — R35 "sign as written" | 2026-10-19 | **accepted** |
+| 3 | `who/coordination/` optional at Starter, required at Standard and wherever more than one agent writes; §11.3 check conditional | Stanley (operator) — R36 "sign as written" | 2026-10-19 | **accepted** |
+| 4 | (a) `data_tier` optional base label, values upstream; (b) purge carve-out with a payload-free incident record | Stanley (operator) — R37 "sign as written" | 2026-10-19 | **accepted** |
 
-**Gate / session reference:** drafted at `session_stanley_20261019_211219_arcade_memo_send_and_a3_2_adr_066` on rulings
+**Gate / session reference:** ruled at ARCADE G3, `session_stanley_20261019_232222_arcade_g3_gate`, by
+AskUserQuestion at plan time (R34–R37, one line per clause; none declined, none amended); `campaign_arcade.md` §5 row
+G3. Drafted at `session_stanley_20261019_211219_arcade_memo_send_and_a3_2_adr_066` on rulings
 R25 (push held) + R28 (the four clauses; clause 4a refined at drafting from `data_class` to `data_tier` on the fleet
 evidence above). **Scope of authority:** this vault's text for the v2.6 cut; binds no other estate.
 
