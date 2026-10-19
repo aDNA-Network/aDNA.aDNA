@@ -19,7 +19,7 @@ executor_tier_default: opus      # judgment missions declared fable; see each ca
 executor_runtime: claude
 priority: high
 created: 2026-10-15
-updated: 2026-10-19   # A3.1 closed (ninth sitting; R23–R24) — CURRENT → A3.2; prior: A2.3 closed (eighth sitting; R21–R22) — P2 COMPLETE, CURRENT → A3.1; prior: G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
+updated: 2026-10-19   # A3.2 closed (tenth sitting; R25–R28) — ADR-066 proposed, PUSH HELD (R25), memo to Lannes delivered — CURRENT → A3.3; prior: A3.1 closed (ninth sitting; R23–R24) — CURRENT → A3.2; prior: A2.3 closed (eighth sitting; R21–R22) — P2 COMPLETE, CURRENT → A3.1; prior: G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
 last_edited_by: agent_rosetta
 ratification_status: accepted
 ratification_date: '2026-10-15'
@@ -104,7 +104,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 | Mission | Title | Sessions | Tier | Deps | Status |
 |---|---|---:|---|---|---|
 | [[mission_arcade_a3_1_lister_reading]] | Lister Phase 1 read from the standard's side: U1–U25 + §16 | 1 | fable | A2.3 | ✅ completed 2026-10-19 (≈75 vs 90 kT; executed opus) |
-| [[mission_arcade_a3_2_adr_066_profiles_hash_manifest]] | ADR-066 — profiles + release integrity (U23) with U15 · U18 · U19 | 1 | fable | A3.1 | queued |
+| [[mission_arcade_a3_2_adr_066_profiles_hash_manifest]] | ADR-066 — profiles + release integrity (U23) with U15 · U18 · U19 | 1 | fable | A3.1 | ✅ completed 2026-10-19 (≈55 vs 80 kT; executed opus; push held R25) |
 | [[mission_arcade_a3_3_profile_scaffolding]] | Placement · template · validator design · Lister fold path | 1 | opus | A3.2 | queued |
 
 **⛩ G3:** ADR-066 §7.7 (four independent lines). Lister's Gates 1–3 stay Jake + Stanley's. Budget ≈230 kT.
@@ -206,3 +206,7 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
 ### A3.1 closed — 2026-10-19
 
 - [D] Session `session_stanley_20261019_205516_arcade_a3_1_lister_reading` (Tier 2, opus on a declared-fable card). Plan-time rulings **R23** (Stanley's own Lister Gate-1 reply is NOT posted; the reading is advisory to it) · **R24** (inbox: receipt + small asks). **Premise:** Lister worktree `stanley/quatre-mains-m00` @ `2fe3ffe`, read-only. Their pin `27ccafc` = our v8.12 deploy record; `.adna/` is still v8.12. Jake's 10-16 "Gate 1: yes" covered only the Exchange-as-publish-path proposal = **Exchange.aDNA ADR-065** (not ours). Their ledger reproduces by script (258 · 100/112/46). **Artifact** `artifacts/p3/lister_upstream_disposition.md`: U1–U25 accept-now 10 · v2.6 14 · v3.0 1 · decline 0 (three claims corrected: U2 · U4 · U8; five coincide with primer I-rows); §16 agree 7 · refine 1 (Q8: `medical` reads as no level upstream → `starter+medical`) · divergence 2 (Q3 open between the signers; Q10 minor) · sequencing 1 (Q9: ADR-066 lands in a GitHub-public repo → the operator before A3.2 pushes). **Memo** to Lannes `outbound_ready` (send GO owed). The drop-box README is now on AILedger `main` @ `0e3a0d5` (supersedes A2.2's branch-only finding). **Side:** three 10-18 receipts byte-unchanged; `lip_registry.md` §2.1 F-AC-45 note row; A4.1 q6–q8. Rule 3 by grep + hand (0 bare in new files); R2: `site/` untouched; nothing written in any AILedger tree.
+
+### Memo send + A3.2 closed — 2026-10-19
+
+- [D] Session `session_stanley_20261019_211219_arcade_memo_send_and_a3_2_adr_066` (Tier 2, opus on a declared-fable card). The operator asked for Rosetta's recommendations and to go on; plan approval = **R25** (Q9: author + commit locally, hold the push until Jake answers) · **R26** (send the Lannes memo now with a §0 Q9 ask) · **R27** (Stanley's Gate-1 post = the S081 draft + a Q8 line; his act, paste-ready in chat) · **R28** (ADR-066's four clauses). **Memo DELIVERED** → AILedger main clone inbox (`0e3a0d5`; cmp identical; md5 `e61cea32`), committed + pushed `a672f5a`, the last push before the hold. **aDNA.aDNA ADR-066 proposed** (four §7.7 lines, G3) + `artifacts/p3/standard_deltas_adr_066.diff.md` (7 hunks, anchors re-found; standard md5 unchanged). Clause 4 refined `data_class` → **`data_tier`** on fleet evidence (LP `DataTier`; LinkML.aDNA compliance slots; 10 memos here). `adr_index` 61 = 58 · 1 · 2. A4.1 q9 (`ceil(bytes/4)`). **Committed locally; NOT pushed (R25).**

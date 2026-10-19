@@ -30,6 +30,14 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-19 (j) — ARCADE: the Lannes memo delivered; A3.2: aDNA.aDNA ADR-066 proposed, push held → CURRENT A3.3
+
+- **Sent:** `coord_2026_10_19_rosetta_to_lannes_lister_phase1_reading_upstream_and_gate1.md` → AILedger.aDNA's drop-box (R26; cmp identical). Its §0 asks Jake whether ADR-066 may go public before the G8 patent check.
+- **New:** `what/decisions/adr_066_conformance_profiles_release_integrity.md` (`proposed`, four independent §7.7 lines for G3): conformance profiles (`<level>+<profile>`, never relaxing the base; official = listed, not hosted) · release integrity (deterministic sha256 manifest, MUST for declared profiles) · `who/coordination/` optional at Starter · `data_tier` as an optional base label (the fleet's existing key, not a new `data_class`) + a purge carve-out.
+- **New:** `how/campaigns/campaign_arcade/artifacts/p3/standard_deltas_adr_066.diff.md` (7 hunks against v2.5; the standard is unchanged).
+- **Changed:** `what/decisions/adr_index.md` (row 066; 61 = 58 · 1 · 2); the A4.1 card gains q9 (`ceil(bytes/4)`).
+- Campaign: the A3.2 card is `completed` with its AAR (≈55 vs 80); prompts **CURRENT → A3.3**; STATE ⏭ (j). **Committed locally; push held (R25)** until Jake answers Q9.
+
 ### 2026-10-19 (i) — ARCADE A3.1: Operation Lister Phase 1 read from the standard's side — U1–U25 dispositioned, §16 answered beside both signers, memo to Lannes `outbound_ready` → CURRENT A3.2
 
 - **New:** `how/campaigns/campaign_arcade/artifacts/p3/lister_upstream_disposition.md`. U1–U25 are re-checked at the shipped image (v8.12): **accept-now 10 · v2.6 14 · v3.0 1 · decline 0**; three claims are corrected; U15 · U18 · U19 · U23 → aDNA.aDNA ADR-066 (A3.2). The eleven §16 Gate-1 questions are answered beside Jake's ten rulings and Stanley's unposted draft (R23): **agree 7 · refine 1 · divergence 2 · sequencing 1**. Q8: `adna_conformance: medical` reads as no level upstream → `starter+medical`. Q3 is the one open difference between the signers. Q9: ADR-066 would land in a public repo, so the patent-watch scope goes to the operator before A3.2 pushes.
