@@ -30,6 +30,15 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-19 (k) — ARCADE A3.3: profile scaffolding; the Ledoux reply delivered; push still held → CURRENT G3
+
+- **New (standard side, `proposed`, `HORIZON` until the v2.6 cut):** `what/docs/profiles/AGENTS.md`, the list of named conformance profiles: listed, not hosted, table empty, aDNA-Medical *Expected* · `how/templates/template_profile_spec.md`, a profile-spec skeleton generalised from Operation Lister's spec (**templates 46 → 47**; operational 9 → 10; counts carried into `CLAUDE.md` · `README.md` · `MANIFEST.md` · `how/templates/AGENTS.md`; `what/docs/AGENTS.md` gains the `profiles/` row).
+- **New (campaign):** `artifacts/p3/validator_profile_design.md` (interface only: `--profile` · `--rules` · `--verify`; an unknown profile is *unverified*, never failed) · `artifacts/p3/lister_fold_path.md` (nine steps, memo-only across the estate line) · `artifacts/p3/spec_terminal_harness_contract_row_delta.md` (Operation Jacquard: HarnessOld.aDNA `PASS` · Harness.aDNA successor `TAUGHT-AS-DESIGN`; a fifth G3 line; conditional on `HarnessOld.aDNA` existing).
+- **Sent:** `coord_2026_10_19_rosetta_to_ledoux_wrapper_fields_provisional_reading.md` → City.aDNA's drop-box (R31; cmp identical). It is a provisional reading: `federation_ref` is a convention, not standard text; cite `source_vault` + `version` as "declared"; `pinned_at_commit` is the one presence check; no `status` value reads as ratified. **Staged:** `coord_2026_10_19_rosetta_to_lannes_g3_profile_seam.md` (`outbound_ready`, send GO at G3).
+- **Queued for v2.6 (A4.1):** q10, a minimal `federation_ref` clause plus a closed wrapper status vocabulary · q11, the AEP owed for aDNA.aDNA ADR-066 (aDNA.aDNA ADR-055 §5), filed at publication.
+- **Received (byte-unchanged = receipt):** Ledoux's two-naming ask · Harness.aDNA's Operation Jacquard notice · Harness.aDNA's re-pin receipt (rows 1–2 at `2ad992c`).
+- Campaign: the A3.3 card is `completed` with its AAR (≈70 vs 60). P3 missions complete; prompts **CURRENT → G3** (the G3 prompt authored); STATE ⏭ (k). **Committed locally; push held (R29)** until Jake answers Q9.
+
 ### 2026-10-19 (j) — ARCADE: the Lannes memo delivered; A3.2: aDNA.aDNA ADR-066 proposed, push held → CURRENT A3.3
 
 - **Sent:** `coord_2026_10_19_rosetta_to_lannes_lister_phase1_reading_upstream_and_gate1.md` → AILedger.aDNA's drop-box (R26; cmp identical). Its §0 asks Jake whether ADR-066 may go public before the G8 patent check.

@@ -19,7 +19,7 @@ executor_tier_default: opus      # judgment missions declared fable; see each ca
 executor_runtime: claude
 priority: high
 created: 2026-10-15
-updated: 2026-10-19   # A3.2 closed (tenth sitting; R25–R28) — ADR-066 proposed, PUSH HELD (R25), memo to Lannes delivered — CURRENT → A3.3; prior: A3.1 closed (ninth sitting; R23–R24) — CURRENT → A3.2; prior: A2.3 closed (eighth sitting; R21–R22) — P2 COMPLETE, CURRENT → A3.1; prior: G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
+updated: 2026-10-19   # A3.3 closed (eleventh sitting; R29–R33) — P3 missions complete, Ledoux reply delivered, PUSH STILL HELD (R29) — CURRENT → G3 (human); prior: A3.2 closed (tenth sitting; R25–R28) — ADR-066 proposed, PUSH HELD (R25), memo to Lannes delivered — CURRENT → A3.3; prior: A3.1 closed (ninth sitting; R23–R24) — CURRENT → A3.2; prior: A2.3 closed (eighth sitting; R21–R22) — P2 COMPLETE, CURRENT → A3.1; prior: G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
 last_edited_by: agent_rosetta
 ratification_status: accepted
 ratification_date: '2026-10-15'
@@ -105,9 +105,9 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 |---|---|---:|---|---|---|
 | [[mission_arcade_a3_1_lister_reading]] | Lister Phase 1 read from the standard's side: U1–U25 + §16 | 1 | fable | A2.3 | ✅ completed 2026-10-19 (≈75 vs 90 kT; executed opus) |
 | [[mission_arcade_a3_2_adr_066_profiles_hash_manifest]] | ADR-066 — profiles + release integrity (U23) with U15 · U18 · U19 | 1 | fable | A3.1 | ✅ completed 2026-10-19 (≈55 vs 80 kT; executed opus; push held R25) |
-| [[mission_arcade_a3_3_profile_scaffolding]] | Placement · template · validator design · Lister fold path | 1 | opus | A3.2 | queued |
+| [[mission_arcade_a3_3_profile_scaffolding]] | Placement · template · validator design · Lister fold path | 1 | opus | A3.2 | ✅ completed 2026-10-19 (≈70 vs 60 kT; +3 off-card objects R31–R33; push held R29) |
 
-**⛩ G3:** ADR-066 §7.7 (four independent lines). Lister's Gates 1–3 stay Jake + Stanley's. Budget ≈230 kT.
+**⛩ G3:** ADR-066 §7.7 (four independent lines). Lister's Gates 1–3 stay Jake + Stanley's. Budget ≈230 kT. *P3 missions complete 2026-10-19 (≈75 + 55 + 70 = 200 kT vs 230). G3 items as of A3.3's close: (1–4) aDNA.aDNA ADR-066 clauses 1–4 · (5) the `spec_terminal_harness_contract` §7 Harness row (`artifacts/p3/spec_terminal_harness_contract_row_delta.md`, conditional on `HarnessOld.aDNA` on disk) · (6) send GO for `coord_2026_10_19_rosetta_to_lannes_g3_profile_seam` · (7) the push, only if Jake's Q9 line has arrived (R25/R29) · noted, not ruled: ADR-066's AEP is owed at publication (A4.1 q11).*
 
 ### P4 — The cut
 
@@ -134,7 +134,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 | G0 | Genesis | Charter + R1–R4 | **accepted 2026-10-15** (plan-time AskUserQuestion, four questions; recorded in [[operator_rulings_packet_20261015]]) |
 | G1 | P1 exit | `spec_graph_exchange` + ADR-064 + the two re-anchored specs | **ruled 2026-10-16** (R11 sign all four as written · R12 three send GOs, cc as staged · R13 run A2.1 now · R14 push at close; Stanley, plan-time AskUserQuestion, `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`) |
 | G2 | P2 exit | ADR-065; the two estate memos' send GOs | **ruled 2026-10-16** (R17 sign ADR-065 as written, R2 stands · R18 send GO ×3 — memo 1, memo 2, and the stale 10-04 Noether memo · R19 `sync:vaults` + build, not deployed · R20 four replies + WebForge notice sent, `lip_registry.md` proposed; Stanley, plan-time AskUserQuestion, `session_stanley_20261016_205633_arcade_g2_sends_sync_replies`) |
-| G3 | P3 exit | ADR-066 (four lines) | pending |
+| G3 | P3 exit | ADR-066 (four lines) + the Harness §7 row + the Lannes G3 memo GO + the push (if Q9 lifted) | pending — P3 missions complete 2026-10-19 |
 | G4 | P4 exit | the v2.6 cut; the v8.13 fire | pending (two gates) |
 | G5 | P5 exit | GARNIER DP3 amendment (parent) · closure | pending |
 
@@ -210,3 +210,7 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
 ### Memo send + A3.2 closed — 2026-10-19
 
 - [D] Session `session_stanley_20261019_211219_arcade_memo_send_and_a3_2_adr_066` (Tier 2, opus on a declared-fable card). The operator asked for Rosetta's recommendations and to go on; plan approval = **R25** (Q9: author + commit locally, hold the push until Jake answers) · **R26** (send the Lannes memo now with a §0 Q9 ask) · **R27** (Stanley's Gate-1 post = the S081 draft + a Q8 line; his act, paste-ready in chat) · **R28** (ADR-066's four clauses). **Memo DELIVERED** → AILedger main clone inbox (`0e3a0d5`; cmp identical; md5 `e61cea32`), committed + pushed `a672f5a`, the last push before the hold. **aDNA.aDNA ADR-066 proposed** (four §7.7 lines, G3) + `artifacts/p3/standard_deltas_adr_066.diff.md` (7 hunks, anchors re-found; standard md5 unchanged). Clause 4 refined `data_class` → **`data_tier`** on fleet evidence (LP `DataTier`; LinkML.aDNA compliance slots; 10 memos here). `adr_index` 61 = 58 · 1 · 2. A4.1 q9 (`ceil(bytes/4)`). **Committed locally; NOT pushed (R25).**
+
+### A3.3 closed — 2026-10-19
+
+- [D] Session `session_stanley_20261019_230119_arcade_a3_3_profile_scaffolding` (Tier 2, opus). The operator asked for recommendations and to go on, and plan approval = **R29** (Q9 silent: keep holding, every commit local) · **R30** (A3.3 as prompted, card reconciled to "listed, not hosted") · **R31** (reply to Ledoux with a provisional reading, delivered this sitting) · **R32** (Harness §7 row delta for a fifth G3 line; the public `harness` row flagged only, R2) · **R33** (G3 memo to Lannes `outbound_ready`). **Objects:** `what/docs/profiles/AGENTS.md` · `how/templates/template_profile_spec.md` (templates 46 → 47) · `artifacts/p3/validator_profile_design.md` · `artifacts/p3/lister_fold_path.md` · `artifacts/p3/spec_terminal_harness_contract_row_delta.md` · two memos. **Ledoux reply DELIVERED** → `City.aDNA/who/coordination/inbox/` (HEAD `dc97d90`, cmp identical, body md5 `dc4d3879`); its reading was corrected at the object before the send (`contract:` is a kind label, 2/121 `<name>@<version>`; the citation pair is `source_vault` + `version`, 193). **Findings:** the validator never reads `adna_conformance`; ADR-066 has no AEP (aDNA.aDNA ADR-055 §5) → A4.1 q11. Inbox receipts ×3 committed byte-unchanged. **P3 missions complete; CURRENT → G3 (human).** Committed locally; NOT pushed (R29).

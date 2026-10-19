@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-02-19
-updated: 2026-06-29
-last_edited_by: agent_stanley
+updated: 2026-10-19
+last_edited_by: agent_rosetta
 tags: [directory_index, docs]
 token_estimate: ~350
 ---
@@ -30,6 +30,7 @@ Core specification documents that define the aDNA (Agentic DNA) knowledge archit
 | `ontology_unification.md` | ~8,000 | Ontology unification protocol — merge algorithm (4-step with Mermaid flowchart + pseudo-code), 10-type conflict taxonomy, namespace specification, worked example (org_formation + vault). |
 | `lattice_federation.md` | ~8,000 | Federation & sharing protocol — 5 capabilities (validate, export, share, import, compose), `lattice://` URI scheme, inline vs. external reference composition, import algorithm with M9 integration, worked round-trip example. |
 | `lattice_interop.md` | ~5,500 | Lattice interop standard — design-time interface descriptors (`lattice_interface` node convention), 8-step runtime execution sequence for `lattice://` references, version drift detection and resolution (severity classification, policy strategies, drift recovery workflow). 2 Mermaid diagrams. |
+| `profiles/` | ~900 | The list of named conformance profiles: listed, not hosted (aDNA.aDNA ADR-066 clause 1, proposed). Holds the listed-profile table + `AGENTS.md` only, never a steward's profile text. *(Added 2026-10-19, ARCADE A3.3.)* |
 
 ## Total Token Budget
 

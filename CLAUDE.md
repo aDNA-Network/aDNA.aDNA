@@ -2,7 +2,7 @@
 type: governance
 version: "8.4"   # doctrine-adoption version (the v8.4 consumer-facing doctrine this vault runs, ADR-047 items-not-numbers) — NOT the template governance version (8.8, shipped by Distillery). Distinct axes; not drift. See Refit M4 / DP5.
 token_estimate: ~5200
-updated: 2026-07-06
+updated: 2026-10-19
 last_edited_by: agent_rosetta
 ---
 
@@ -63,7 +63,7 @@ aDNA.aDNA/
 │       ├── tools/               # Python validation and conversion tools
 │       └── examples/            # Example .lattice.yaml files
 ├── how/                         # HOW — Operations, sessions, templates
-│   ├── templates/               # 46 reusable templates (26 base + 11 extension + 9 operational)
+│   ├── templates/               # 47 reusable templates (26 base + 11 extension + 10 operational)
 │   ├── sessions/                # Session tracking (active/ + history/)
 │   ├── missions/                # Multi-session plans (standalone)
 │   ├── backlog/                 # Ideation and improvement tracking
