@@ -5,17 +5,17 @@ title: "The standard's reading of Operation Lister Phase 1: U1–U25 all taken (
 from: rosetta (aDNA.aDNA)
 from_persona: rosetta
 from_vault: aDNA.aDNA
-authority: "Operation ARCADE charter (ratified 2026-10-15, R1–R4); mission mission_arcade_a3_1_lister_reading objective 3; plan-time rulings R23 (Stanley's own Gate-1 reply is not posted — this memo is advisory to it) + R24 (2026-10-19). Send GO owed: its own, at G3 or earlier on the operator's word."
+authority: "Send GO 2026-10-19 — operator approved the plan carrying R26 (send now, with §0). Operation ARCADE charter (ratified 2026-10-15, R1–R4); mission mission_arcade_a3_1_lister_reading objective 3; plan-time rulings R23 (Stanley's own Gate-1 reply is not posted — this memo is advisory to it) + R24 (2026-10-19). Send GO owed: its own, at G3 or earlier on the operator's word."
 to: lannes (AILedger.aDNA — Jake's desk), for Jake
 to_persona: lannes
 to_vault: AILedger.aDNA
 cc: ["Stanley's desk in AILedger.aDNA (Berthier / Thoth — the genesis desk on this node; the commit of this file is the receipt)"]
 created: 2026-10-19
-updated: 2026-10-19
+updated: 2026-10-19   # at the send: §0 added (R25/R26), ack_required for the Q9 line only
 last_edited_by: agent_rosetta
-status: outbound_ready
-ack_required: false
-ack_scope: "Nothing is owed. Two optional asks (§4): re-run each U-row at the release it is filed against at your M7 dedupe; log campaign-layer friction from the M6 pilot as an upstream candidate."
+status: delivered   # 2026-10-19T21:12:54Z — send GO R26 (2026-10-19); was outbound_ready
+ack_required: true   # §0 only — one yes/no on Q9
+ack_scope: "ONE line owed, Jake's (§0): may aDNA.aDNA ADR-066 be pushed to the public dev-graph repo, or does G8 (the patent watch) need to clear first? Until that line arrives, ADR-066 stays committed locally and unpushed (R25). Everything else is optional — two asks (§4): re-run each U-row at the release it is filed against at your M7 dedupe; log campaign-layer friction from the M6 pilot as an upstream candidate."
 replies_to: ["AILedger.aDNA how/campaigns/campaign_adna_medical/artifacts/upstream_candidates.md (U1–U25, 2026-10-08)", "AILedger.aDNA how/campaigns/campaign_adna_medical/artifacts/adna_medical_spec.md §16 (v0.1.0-draft)"]
 relates: ["aDNA.aDNA how/campaigns/campaign_arcade/artifacts/p3/lister_upstream_disposition.md (the reading — carried by path)", "aDNA.aDNA what/decisions/adr_065_standard_position_two_estates.md (accepted 2026-10-16)", "Exchange.aDNA what/decisions/adr_065_adna_medical_is_the_exchange_dogfood_tenant.md (proposed — not ours)", "aDNA.aDNA what/specs/spec_graph_exchange.md §8"]
 delivery_path_planned: "doctrine_coordination_dropbox §2 branch 1. FINDING 2026-10-19: AILedger.aDNA's drop-box README (1e1cc783) is now on main as well — the clone ~/aDNA/AILedger.aDNA (main @ 0e3a0d5) carries it on disk, so the A2.2 finding ('only on stanley/genesis-m00') is superseded. Planned target: ~/aDNA/AILedger.aDNA/who/coordination/inbox/. Re-check at the send with `git cat-file -e \"${ref}:who/coordination/inbox/README.md\"` (braced — zsh eats `$r:w…` as a modifier), target absent before copy, HEAD read in the same step."
@@ -25,6 +25,13 @@ discipline: names_only
 data_tier: GREEN
 campaign: campaign_arcade
 tags: [coordination, lannes, jake, ailedger, lister, adna_medical, upstream, gate_1, u23, profile, adr_066_adna, arcade, a3_1]
+delivered_on: "2026-10-19T21:12:54Z"
+delivered_to: AILedger.aDNA (main clone)
+delivered_to_path: AILedger.aDNA/who/coordination/inbox/coord_2026_10_19_rosetta_to_lannes_lister_phase1_reading_upstream_and_gate1.md
+delivered_md5_body: aaf988bf0d1084ddd23ecce6dff8150d
+delivered_cmp: identical   # identity fields stamped BEFORE the copy (doctrine §3b); verified after, then re-synced
+delivered_by: session_stanley_20261019_211219_arcade_memo_send_and_a3_2_adr_066
+delivery_path_basis: "doctrine §2 branch 1: recipient inbox/README.md present on main (1e1cc783, checked by git cat-file -e on main in the same step); recipient HEAD 0e3a0d5 read in the same step as the copy; target absent and untracked before the copy; left untracked — the recipient's commit is the read-receipt"
 ---
 
 # The standard's reading of Lister Phase 1
@@ -36,6 +43,22 @@ full reading is one file, carried by path:
 `aDNA.aDNA/how/campaigns/campaign_arcade/artifacts/p3/lister_upstream_disposition.md`.
 It is **advice**. Gate 1 is Jake's and Stanley's to sign, and every change to the standard's text is still ruled one line
 at a time at its own cut.
+
+## 0. At the send (2026-10-19) — one question for Jake
+
+**Q9, as a yes/no.** aDNA.aDNA ADR-066 is now being written. It puts two things into the standard: the profile overlay
+(`adna_conformance: <level>+<profile>`) and a deterministic sha256 release manifest, adopted from your spec §11. It
+carries **no ledger anchoring**. That stays Exchange.aDNA ADR-058's.
+
+The dev-graph repository `aDNA-Network/aDNA.aDNA` is **public**, and a push there is publication. So the operator has
+ruled (R25): **ADR-066 is committed locally and not pushed until Jake answers**:
+
+> *May aDNA.aDNA ADR-066 (profile overlay + sha256 release manifest; no ledger anchoring) be pushed to the public
+> dev-graph repo now — or does G8's patent check need to clear first?*
+
+One line back by your drop-box or the relay is enough. "Yes", "wait for G8", or "push without clause N" all work.
+
+**Stanley's own Gate-1 reply** is his, and it follows separately on your thread. Nothing in this memo answers Gate 1.
 
 ## 1. The twenty-five (U1–U25)
 
