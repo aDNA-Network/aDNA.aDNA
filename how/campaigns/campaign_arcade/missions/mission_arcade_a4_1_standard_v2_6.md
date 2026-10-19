@@ -10,7 +10,7 @@ campaign_phase: 4
 campaign_mission_number: 12
 mission_class: implementation
 created: '2026-10-15'
-updated: 2026-10-16
+updated: 2026-10-19
 last_edited_by: agent_rosetta
 tags: [plan, campaign, arcade]
 executor_tier: fable
@@ -84,6 +84,7 @@ G4 — the v2.6 cut (operator).
 - Conventions: `campaign_arcade/CLAUDE.md` (GARNIER's by pointer + the four ARCADE rules: memos-not-edits · SR-6 public naming hold · ADR-number qualification · tense labels).
 - Provenance tags on every finding — `[D]` observed · `[I]` inferred · `[R]` peer record (re-verify before citing) · `[A]` assumption.
 - **Queue rows added 2026-10-16 (G2 sitting):** (q1) Noether's M-A1 package `LatticeProtocol.aDNA/how/campaigns/campaign_academie/artifacts/m_a1_package/` — the **v2.6 SHOULD rider** ruled here; AEP numbered (AEP-0003 was next free 2026-10-16); **ADR seat 067 held**; six open questions answered by memo before force; v3.0 MUST logged for the major window. (q2) `spec_graph_exchange` §5.1 **one-clause amendment** (Themis F-164-01): "v1 = the six rules executing (Exchange ADR-066); the stamp moves only in the commit that runs all six". (q3) `spec_graph_exchange` §5.1 **L2-4 v1.1 wording** (Q-066-1 ruled wide): a *real directory* (symlinks are Standing-Rule-9 shims and pass) at graph root whose `CLAUDE.md` carries `federation_ref:`. (q4) `idea_upstream_registry_derivability` — candidate 11th compliance dimension (Mondrian §4). (q5) `who/governance/lip_registry.md` §2 rows → §7.7 after steward confirmations; §4 consumer in `adna_validate.py`.
+- **Queue rows added 2026-10-19 (A3.1 sitting, from the 10-18 inbox; receipts committed byte-unchanged):** (q6) **Themis corrects Q-066-1's count:** under the q3 clause the live legacy-root-wrapper count is **3, not 0** — `WilhelmAI.aDNA/siteforge` (Home §C defers it, active WIP) · `RiemannCommons.aDNA/iii` (added 2026-09-08) · `ASOAtlas.aDNA/iss` (2026-09-25) — the last two created *after* aDNA.aDNA ADR-045 in the legacy shape. Re-checked 2026-10-19: all three are real directories, not symlinks, and each carries `federation_ref:`. Re-measure by `lstat` + a *tracked* `CLAUDE.md` at the cut; weighing the three is Rosetta's + Hestia's, and nothing goes to the owners from here. Exchange L2 rule-set v1 is **built (0.0.45), not serving** (Exchange ADR-066 §2.6) — so q2's amendment describes a built object, tense TAUGHT-AS-DESIGN until a root serves it. (q7) **F-AC-44 is fixed** at LP `f834cc7` (M-F44, 2026-10-16); q1's package still names it open at `templates/template_check_script.md` L71 and `doctrine_multimodal_memorialization.md` L113 + L193 — read those lines as "fixed at `f834cc7`". Noether: no objection to the three leanings; LinkML keys are Pāṇini's act (two LP memos unread on that desk); `classify_sweep.py` usable for the audit with its two recorded warnings. (q8) **Vauban (Terminal.aDNA):** the access-point threat-model idea is re-homed to `Terminal.aDNA/how/backlog/idea_access_point_threat_model.md` — the live target for the hook `spec_platform_ecosystem` v0.4 defers (repoint at the next spec bump); the Python Terminal's pointer-spec is Terminal ROADMAP-v1.2 row 81, so `spec_terminal_harness_contract` §7 row 3 stays **HORIZON** until it lands.
 
 ## Completion Summary
 

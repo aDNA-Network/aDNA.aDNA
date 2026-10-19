@@ -4,7 +4,7 @@ subtype: registry
 title: "LIP Registry — the global Lattice Improvement Proposal number line (registrar view)"
 status: proposed            # ⛩ registrar ROLE accepted by the operator 2026-10-16 (ARCADE G2 sitting, ruling R20 on the Canvas 2026-07-02 handshake ask, re-asked 2026-10-16); the ROWS are census-derived and proposed until each steward confirms its own; §7.7 for the registry text at the v2.6 cut (A4.1)
 created: 2026-10-16
-updated: 2026-10-16
+updated: 2026-10-19   # §2.1 note row (F-AC-45, Noether 10-18); prior: 2026-10-16 created
 last_edited_by: agent_rosetta
 authored_at_tier: fable
 session: session_stanley_20261016_205633_arcade_g2_sends_sync_replies
@@ -43,6 +43,14 @@ tags: [governance, registry, lip, registrar, number_line, proposed]
 | **LIP-0012** | *next free* | — | — | derived: no file on this node names it |
 
 **Tally (derived, not typed):** 11 assigned · 4 Canvas-stewarded (0008–0011) · 1 LatticeProtocol (0003) · 3 aDNA.aDNA / Network (0005 · 0006 · 0007) · 3 predecessor-only (0001 · 0002 · 0004). Rows marked *no live steward found* are **asked back** to the fleet by this registry's first memo; a steward who claims one confirms it by memo and the row moves from `[D] archive` to `[D] steward`.
+
+### §2.1 Note row — the 3-digit protocol line (not this registry's numbers)
+
+| Line | Digits | Steward | Rule | Basis |
+|---|---|---|---|---|
+| Protocol `LIP-NNN` (`LIP-000`…`LIP-004` today) | **3** | **LatticeProtocol.aDNA** (Noether) — `what/latticeprotocol/docs/proposals/` | LP `LIP-000_lip_process.md` (L25–37): *never zero-pad or truncate a LIP number*; `LIP-001` ≠ `LIP-0001` | `[D]` `ls` of the proposals dir + LIP-000 read 2026-10-19; asked by Noether as F-AC-45 (`coord_2026_10_18_noether_to_rosetta_triage_received_f_ac_44_fixed_lip_0003_confirmed` §3) |
+
+§2's "one number for the whole network" covers the **4-digit** line only. The 3-digit protocol line is a second, older namespace with its own steward; this registry hands out none of its numbers and renumbers nothing. A zero-pad is a misroute: LP `LIP-004` (trust-tier lifecycle event, implemented 2026-10-06) is not `LIP-0004` (the archived Character NFT signer standard), and LP `LIP-003` is not `LIP-0003` (the protocol specification). Cite either line with its digit width verbatim. *(LP's `LIP-000` L31 still names the archived `lattice-labs` registry as the 4-digit home; that pointer is LP's to correct at its next code mission, per Noether.)*
 
 ## §3 Relation to the ADR line and the AEP line
 

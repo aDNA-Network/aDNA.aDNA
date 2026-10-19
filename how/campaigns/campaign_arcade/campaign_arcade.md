@@ -19,7 +19,7 @@ executor_tier_default: opus      # judgment missions declared fable; see each ca
 executor_runtime: claude
 priority: high
 created: 2026-10-15
-updated: 2026-10-18   # A2.3 closed (eighth sitting; R21–R22) — P2 COMPLETE, CURRENT → A3.1; prior: G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
+updated: 2026-10-19   # A3.1 closed (ninth sitting; R23–R24) — CURRENT → A3.2; prior: A2.3 closed (eighth sitting; R21–R22) — P2 COMPLETE, CURRENT → A3.1; prior: G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
 last_edited_by: agent_rosetta
 ratification_status: accepted
 ratification_date: '2026-10-15'
@@ -103,7 +103,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 
 | Mission | Title | Sessions | Tier | Deps | Status |
 |---|---|---:|---|---|---|
-| [[mission_arcade_a3_1_lister_reading]] | Lister Phase 1 read from the standard's side: U1–U25 + §16 | 1 | fable | A2.3 | queued |
+| [[mission_arcade_a3_1_lister_reading]] | Lister Phase 1 read from the standard's side: U1–U25 + §16 | 1 | fable | A2.3 | ✅ completed 2026-10-19 (≈75 vs 90 kT; executed opus) |
 | [[mission_arcade_a3_2_adr_066_profiles_hash_manifest]] | ADR-066 — profiles + release integrity (U23) with U15 · U18 · U19 | 1 | fable | A3.1 | queued |
 | [[mission_arcade_a3_3_profile_scaffolding]] | Placement · template · validator design · Lister fold path | 1 | opus | A3.2 | queued |
 
@@ -202,3 +202,7 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
 ### A2.3 closed — 2026-10-18
 
 - [D] Session `session_stanley_20261018_223403_arcade_a2_3_public_face_account` (Tier 2, fable on a declared-opus card). Plan-time rulings **R21** (name the profile: aDNA-Medical may appear in the public text as a `HORIZON` claim with its own row) · **R22** (A2.3 only this sitting). **Artifact** `artifacts/p2/public_face_account.md`: four paragraphs between `PUBLIC-BEGIN/END` markers (22 sentences · 445 words), **19 claim rows** R-185…R-203 with tense from the cell of record (`PASS` 11 · `TAUGHT-AS-DESIGN` 4 · `HORIZON` 1 · split 3; **S1 0** — the block makes no protocol claim, the R-125 layer is the proof); the VITRINE §1 "ledger-backed" sentence dispositioned **superseded** by R-193 · R-199 · R-195 (tense-false today and the honesty clause's forbidden word). **Register**: HAUSSMANN `claim_register.md` **§28** — the 19 rows under a **new class `proposed`** (defined before use: ground truth first, page never; re-classed on a live fetch when the copy ships), Counts **222 · 207 · 0** derived after the append and replayed through gate-41's own regex; fixture untouched. **Scrub** five layers none re-typed (`PRIVATE_MARKERS` + `R125` by text from the generator · 8 leak patterns · the primer's list rebuilt to 75 regexes · the company's name whole-file): planted control **RED 6 → real 0**; name grep 0; bare-ADR 2 → 0; gitleaks 0. **FKGL 9.11**, passive 54.5 % recorded not repaired (the passives carry the tense). `site/` untouched (R2). Budget ≈55 vs 60. **P2 COMPLETE → P3 open; CURRENT → A3.1** (fable; prompt authored at this close — no human gate between them, G3 at P3 exit).
+
+### A3.1 closed — 2026-10-19
+
+- [D] Session `session_stanley_20261019_205516_arcade_a3_1_lister_reading` (Tier 2, opus on a declared-fable card). Plan-time rulings **R23** (Stanley's own Lister Gate-1 reply is NOT posted; the reading is advisory to it) · **R24** (inbox: receipt + small asks). **Premise:** Lister worktree `stanley/quatre-mains-m00` @ `2fe3ffe`, read-only. Their pin `27ccafc` = our v8.12 deploy record; `.adna/` is still v8.12. Jake's 10-16 "Gate 1: yes" covered only the Exchange-as-publish-path proposal = **Exchange.aDNA ADR-065** (not ours). Their ledger reproduces by script (258 · 100/112/46). **Artifact** `artifacts/p3/lister_upstream_disposition.md`: U1–U25 accept-now 10 · v2.6 14 · v3.0 1 · decline 0 (three claims corrected: U2 · U4 · U8; five coincide with primer I-rows); §16 agree 7 · refine 1 (Q8: `medical` reads as no level upstream → `starter+medical`) · divergence 2 (Q3 open between the signers; Q10 minor) · sequencing 1 (Q9: ADR-066 lands in a GitHub-public repo → the operator before A3.2 pushes). **Memo** to Lannes `outbound_ready` (send GO owed). The drop-box README is now on AILedger `main` @ `0e3a0d5` (supersedes A2.2's branch-only finding). **Side:** three 10-18 receipts byte-unchanged; `lip_registry.md` §2.1 F-AC-45 note row; A4.1 q6–q8. Rule 3 by grep + hand (0 bare in new files); R2: `site/` untouched; nothing written in any AILedger tree.

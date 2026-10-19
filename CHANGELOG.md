@@ -30,6 +30,14 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-19 (i) — ARCADE A3.1: Operation Lister Phase 1 read from the standard's side — U1–U25 dispositioned, §16 answered beside both signers, memo to Lannes `outbound_ready` → CURRENT A3.2
+
+- **New:** `how/campaigns/campaign_arcade/artifacts/p3/lister_upstream_disposition.md`. U1–U25 are re-checked at the shipped image (v8.12): **accept-now 10 · v2.6 14 · v3.0 1 · decline 0**; three claims are corrected; U15 · U18 · U19 · U23 → aDNA.aDNA ADR-066 (A3.2). The eleven §16 Gate-1 questions are answered beside Jake's ten rulings and Stanley's unposted draft (R23): **agree 7 · refine 1 · divergence 2 · sequencing 1**. Q8: `adna_conformance: medical` reads as no level upstream → `starter+medical`. Q3 is the one open difference between the signers. Q9: ADR-066 would land in a public repo, so the patent-watch scope goes to the operator before A3.2 pushes.
+- **New:** `who/coordination/coord_2026_10_19_rosetta_to_lannes_lister_phase1_reading_upstream_and_gate1.md` (`outbound_ready`; send GO owed). AILedger's drop-box README is now on `main`.
+- **Changed:** `who/governance/lip_registry.md` gains a §2.1 note row for F-AC-45: LatticeProtocol's 3-digit protocol-LIP line has its own steward and is never zero-padded; nothing is renumbered.
+- **Receipts:** three 10-18 inbox memos (Noether · Themis · Vauban), byte-unchanged. A4.1 queue rows q6–q8: the live legacy-root-wrapper count is 3 · F-AC-44 is fixed at LP `f834cc7` · Vauban's two pointers.
+- Campaign: the A3.1 card is `completed` with its AAR (≈75 vs 90; executed opus on a fable card); charter P3 row + Execution Log; CLAUDE phase line; prompts: **A3.2 authored, CURRENT → A3.2**; STATE ⏭ (i). Push at close (R16 standing).
+
 ### 2026-10-18 (h) — ARCADE A2.3: the public-face account of the four relations — 19 claim rows into the HAUSSMANN register as a new class `proposed`; scrub red-proved then 0; P2 complete → CURRENT A3.1
 
 - **New:** `how/campaigns/campaign_arcade/artifacts/p2/public_face_account.md` — the paragraph set adna.network will need about the standard's position under the two-estate model (aDNA.aDNA ADR-065 as the single source), fenced by `PUBLIC-BEGIN/END` markers; **19 claim rows** R-185…R-203 each with its `exchange-adoption-path` tense (`PASS` 11 · `TAUGHT-AS-DESIGN` 4 · `HORIZON` 1 · split 3), an S1 column (0 — no protocol claim), and an evidence pointer into ADR-065 / `spec_graph_exchange` / `spec_platform_ecosystem`; the `campaign_vitrine` §1 "ledger-backed" sentence dispositioned superseded for A5.1. Plan-time rulings **R21** (the profile may be named: aDNA-Medical, `HORIZON`) · **R22** (A2.3 only).
