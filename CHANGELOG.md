@@ -30,6 +30,15 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-20 (r) — ARCADE A5.1: the GARNIER amendment ruled in advance; VITRINE superseded → A5.1 completed, CURRENT A5.2
+
+- **GARNIER DP3 item (i), ruled in advance (R59, R61):** `campaign_garnier/artifacts/amendments/arcade_amendment_dp3_item_i.md` was accepted as recommended. The nineteen ARCADE claim rows now have lanes and five ship-order conditions (HAUSSMANN register §28.5; derived counts unchanged). Documentation review gains an append rule and tranche T13 for AEP-3 + AEP-4, plus a conditional profile row. DP3 itself still waits on the reader records.
+- **VITRINE (R62):** `campaign_vitrine` is closed as `superseded`. It was never ratified, its site scope was absorbed by GARNIER, and its Exchange sentence was superseded by register rows R-193 · R-195 · R-199. Its body is untouched.
+- **Found on the live site:**
+  - the specification pages still render standard v2.5, because the v8.13 release never regenerated the site's copy of the standard (carried to v8.14 / P2.2, R63);
+  - the Exchange and Terminal registry cards still read `planned`, because the 10-16 regeneration is undeployed.
+- **Delivered:** the held Harness.aDNA copy of the 10-20 Panacea notice (peer quiescent).
+
 ### 2026-10-20 (q) — ARCADE A4.2 sitting 3: v8.13 fired (standard v2.6 published) and deployed; AEP-3 + AEP-4 filed; five memos delivered → A4.2 completed, CURRENT A5.1
 
 - **Template release v8.13 (R56):** `aDNA-Network/aDNA` `223ecc1` + annotated tag `v8.13`. Standard v2.5 → v2.6, governance 8.12 → 8.13, templates 32 → 33, skills 33 → 34. Fired under a conditional pre-grant; every condition was a command with an output, and all held at the push. Fresh-clone smoke S1–S9 passed.

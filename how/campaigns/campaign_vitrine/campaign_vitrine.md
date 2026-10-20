@@ -4,7 +4,7 @@ type: campaign
 title: "Operation VITRINE — the public-launch shopfront: presentation quality, conciseness, and a sharper account of what aDNA is"
 owner: stanley
 persona: codex (planning + execution) · rosetta (integration, via HAUSSMANN GR-7)
-status: proposed        # ⛩ NOT RATIFIED. §7.7 — execution waits on the operator's signature. See the ratification block below.
+status: superseded      # ⛩ 2026-10-20 — closed as superseded at GARNIER DP3 item (i), ruled in advance (operator, ARCADE A5.1 R62). Never ratified; never executed. PRIOR (SO-7): proposed — NOT RATIFIED, execution waited on the operator's signature
 campaign_class: side_campaign
 parent_campaign: campaign_haussmann
 phase_count: tbd_at_ratification
@@ -18,7 +18,7 @@ working_branch: "vitrine/design — dedicated branch, SAME working directory (�
 brief: who/coordination/coord_2026_09_13_rosetta_to_codex_vitrine_design_brief.md
 integration_mission: how/campaigns/campaign_haussmann/missions/mission_haussmann_gr_7_vitrine_integration.md
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-10-20
 last_edited_by: agent_rosetta
 tags: [campaign, vitrine, side_campaign, codex, design, launch_readiness, haussmann]
 ---
@@ -112,3 +112,9 @@ changes.**
 | **Ratified by** | *(pending — operator)* |
 | **Date** | *(pending)* |
 | **Status** | **proposed** |
+
+> **Closed 2026-10-20 — `superseded`, never ratified, never executed** (operator, ARCADE A5.1 R62, ruling GARNIER DP3 item (i) in advance; record: `campaign_garnier/artifacts/amendments/arcade_amendment_dp3_item_i.md` §4).
+> - Its prospective site scope was absorbed by GARNIER (`campaign_garnier/CLAUDE.md`: "VITRINE's prospective scope absorbed without editing its history").
+> - Its §1 Exchange sentence was superseded by HAUSSMANN register rows R-193 · R-195 · R-199 (ARCADE A2.3 §3): as written, it is present-tense about a witness that is built and inert, and it says "ledger-backed", the wording the honesty clause forbids.
+>
+> Nothing above this note was edited (SO-6/7). The branch `vitrine/design` is a git ref, not this campaign, and is unaffected.

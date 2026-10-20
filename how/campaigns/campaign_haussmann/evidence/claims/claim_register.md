@@ -3,7 +3,7 @@ type: evidence
 packet: B5
 campaign: campaign_haussmann
 created: 2026-08-16
-updated: 2026-10-18   # §28 appended (ARCADE A2.3: 19 proposed rows R-185…R-203; Counts re-derived 222 · 207 · 0)
+updated: 2026-10-20   # §28.5 appended (GARNIER DP3 item (i), ruled in advance at ARCADE A5.1: lanes + C1–C5; counts unchanged 222 · 207 · 0) — prior: 2026-10-18 §28 appended (ARCADE A2.3: 19 proposed rows R-185…R-203)
 status: active
 last_edited_by: agent_rosetta
 tags: [claim_register, evidence, vitruvius_d6_d7, h13, arcade]
@@ -2804,3 +2804,15 @@ because §28 mints nineteen claim rows and no evidence-only tables — checked b
 ⚠ **`gate-41` reads the LAST `Counts` table in this file, in document order. This section is now that
 table.** Any future `§N.M Counts` section is appended **after** this one, never inserted above — **and
 it must be a PARSEABLE TABLE, not a prose sentence.**
+
+### §28.5 Lanes — ruled at GARNIER DP3 item (i), in advance (2026-10-20)
+
+[D] Ruled by the operator at ARCADE A5.1 (R61, "accept as recommended") on `campaign_garnier/artifacts/amendments/arcade_amendment_dp3_item_i.md` §1. **Every row stays `proposed`** — a lane names the GARNIER mission whose surface would carry it; nothing ships here, and §28.1's re-class-on-a-live-fetch rule is unchanged. The first cell is the lane (not an id), so §28.4's derived counts do not move — re-derived after this section was written.
+
+| Lane (GARNIER mission) | Rows | Tense at the 2026-10-20 live re-measure |
+|---|---|---|
+| P2.4 trust surfaces | R-185 · R-186 · R-187 · R-188 · R-197 · R-198 · R-199 · R-200 · R-201 · R-202 | unchanged (R-185 evidence → standard **v2.6**, md5 `86385da8`, live image `v8.13`; R-186 licence MIT re-read live) |
+| P2.3 docs review — T02 (with `/learn/tutorials/exchange-adoption-path`) | R-189 · R-190 · R-191 · R-192 · R-193 · R-194 · R-195 · R-196 | **R-189 split → `PASS`** (v2.6 §19.7 in the live image's text); the rest unchanged |
+| P2.3 conditional profile row (joins T13 when a profile route exists) | R-203 | `HORIZON` confirmed (the image's profiles list: none listed; `medical` a candidate, `HORIZON`) |
+
+**Ship-order conditions** (bind the sitting that renders a row): **C1** the registry regeneration (DP3 item (j)) deploys before or with R-190 · R-192 · R-193 — the live cards read `planned` on 2026-10-20 · **C2** the site's spec mirror is synced to v2.6 before or with R-189 — the live `/reference/specification/` reads v2.5 · **C3** R-196 re-fetched at shipping (`[R]` Exchange L2 v1 built `0.0.45`, dev harness only; wording candidate *"…is built and is not yet switched on where graphs are published"*) · **C4** re-class + gate fixture in the same diff (§28.3) · **C5** R2 — R-197 ships as a role or not at all.

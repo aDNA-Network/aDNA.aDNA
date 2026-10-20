@@ -5,7 +5,7 @@ status: active
 tags:
 - garnier
 - amendments
-updated: 2026-09-25
+updated: 2026-10-20
 last_edited_by: agent_rosetta
 ---
 # Rolling closure evidence
@@ -136,3 +136,23 @@ Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
 - **Deliveries**: Berthier reply → Operations cc Inference + Automator (one pin re-sync, recorded) · Hestia sync notice (B7 ask for the 28; wga persona queried) · I-14 tier-inversion notice → Home + Operations. **Staged**: Noether (v2.2 duplicate standard) — send GO owed; Venus signature notice deferred to the same GO (its second half, I-02, did not reproduce).
 - **Primer follow-up sweep** (standalone mission, fable on declared-opus — recorded): 17/17 dispositioned (7 ✅ · 2 📨 · 4 📋 · 2 ⛔ · 4 ✔); `in_progress` on the one owed send.
 - **Actuals (content-load)**: ≈ **195 kT executor** (probes 5 · A ≈ 95 incl. the admission question, three builds, two gate lanes and three container runs · B 5 · C 15 · D 55 · close ≈ 20) vs 180 ± 60 estimated — inside the band, A alone at ~1.6× its 60 (the admission detour). No lens subagents. Subject-model runtime: none. Billing: unavailable.
+
+## DP3 item (i) ruled in advance — the ARCADE amendment — 2026-10-20 (UTC; ARCADE A5.1)
+
+- **Session**: `session_stanley_20261020_053954_arcade_a5_1_garnier_amendment` (Tier 2; fable-declared, opus-run).
+  - Plan-time rulings: R59 (G5 = an advance ruling) · R60 (send GOs: the Harness cc leg; the gate-49 memo if a peer's).
+  - At the gate: R61–R63.
+- **GARNIER-side**: [[arcade_amendment_dp3_item_i]] **accepted**:
+  - phase_exit §3 (i) ruling line;
+  - HAUSSMANN register §28.5 lanes + C1–C5 (counts 222 · 207 · 0 re-derived unchanged; gate-41 4/4);
+  - `docs_review_scope.md` append rule + [[mission_garnier_p2_3_t13_docs_review]] (37 kT, `provisional_until_T01_actual`);
+  - `campaign_vitrine` → `superseded`.
+
+  **No reader records; DP3 intake untouched; DP3 `pending`.** No `site/` change, no deploy, stimulus untouched.
+- **Findings [D]** (live, 2026-10-20 ≈05:45Z):
+  - adna.network `/reference/specification/` renders **v2.5** while the image is v2.6. The spec mirror was not re-run in the v8.13 tail, and `skill_template_release` has no step for it → carry (R63).
+  - `/vaults/exchange` + `/vaults/terminal` render Stage `planned` → condition C1.
+  - On `main` the docs population is 120 rows; the greedy repack would move 82 → the append rule.
+  - `[R]` Exchange L2 v1 is built `0.0.45` on the dev harness only → R-196 condition C3.
+- **Deliveries**: the held Harness.aDNA cc leg (branch 2, peer quiescent, `cmp` identical, re-synced ×3). The gate-49 memo was **not sent**: the harness is this vault's own (HAUSSMANN P4.4b), so it is a local carry.
+- **Actuals (content-load)**: recorded on the A5.1 card at close. No lens subagents. Subject-model runtime: none. Billing: unavailable.

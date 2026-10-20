@@ -8,7 +8,7 @@ to: "panacea (HarnessOld.aDNA, the live conformer · Harness.aDNA, the successor
 to_persona: panacea
 to_vault: HarnessOld.aDNA
 cc_vaults: [Harness.aDNA]
-cc_delivery: "Harness.aDNA — HELD at the send (doctrine §2 branch 3): no who/coordination/inbox/, peer LIVE (how/sessions/active/session_20261019_jacquard_m00_a.md status active, mtime 2026-10-20T02:46Z = its HEAD bd6169f). Retry at the next ARCADE sitting's open reads: deliver into its inbox if one is published, else who/coordination/ once quiescent. Panacea reads this copy at HarnessOld.aDNA meanwhile."
+cc_delivery: "Harness.aDNA — DELIVERED 2026-10-20T05:40:27Z (doctrine §2 branch 2, operator send GO R60 at ARCADE A5.1 plan time): no who/coordination/inbox/, peer QUIESCENT at the instant of the act (how/sessions/active/ = .gitkeep only · porcelain 0 · HEAD 66ba0d9, last commit 2026-10-20T02:52Z) → new untracked file at Harness.aDNA/who/coordination/ (target absent + untracked before the copy; cmp identical; porcelain 0 → 1); left untracked — the recipient's commit is the read-receipt. First attempt HELD at A4.2 sitting 3 (branch 3, peer live)."
 authority: "ARCADE G3 ruling R38 (operator, 2026-10-19, conditional-apply); condition met and applied at A4.2 sitting 2, ruling R54 (2026-10-20)"
 asked_by: coord_2026_10_19_stanley_to_rosetta_harness_regenesis_notice_access_point_row_and_naming_exception
 direction: outbound

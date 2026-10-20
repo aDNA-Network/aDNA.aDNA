@@ -26,7 +26,7 @@ governing_instrument: VITRUVIUS v1.1
 baseline_score: paired provisional v1.1; full breakdowns and limitations in artifacts/p0/baseline_reconciliation.md
 evidence_pack: /Users/stanley/aDNA/aDNA.aDNA/how/campaigns/campaign_garnier/evidence/p0
 created: '2026-09-14'
-updated: 2026-10-15
+updated: 2026-10-20
 last_edited_by: agent_rosetta
 tags:
 - campaign
@@ -350,3 +350,14 @@ Deliverables: pending campaign execution. Descoped: none approved. Key findings:
 ### Side campaign chartered: Operation ARCADE — 2026-10-15
 
 - [D] Operator ruling at the session open (AILedger.aDNA = main operational/entity graph + economic platform; Exchange + Terminal = primary access points; aDNA-Medical = first named profile) → `campaign_arcade` chartered as a **side campaign of GARNIER** (`campaign_class: side_campaign`, `parent_campaign: campaign_garnier`), ratified at the plan gate (R1–R4). It touches this charter only through **DP3 item (i)** (`artifacts/p1/phase_exit.md` §3) and the amendment its A5.1 will table at DP3. Open front unchanged: three readers → DP3. Session `session_stanley_20261015_212937_arcade_p0_situation_review_and_a1_1`.
+
+### DP3 item (i) ruled in advance: the ARCADE amendment — 2026-10-20
+
+- [D] ARCADE A5.1 authored [[arcade_amendment_dp3_item_i]]. The operator ruled it **in advance** at plan time (ARCADE R59 → **R61** accept as recommended · **R62** `campaign_vitrine` → `superseded` · **R63** the spec-mirror sync carried to v8.14 / P2.2):
+  - R-185…R-203 laned (P2.4 ×10 · P2.3 T02 ×8 · conditional profile row ×1) with ship-order conditions C1–C5 (HAUSSMANN register §28.5; counts 222 · 207 · 0 unchanged; gate-41 4/4);
+  - the P2.3 **append rule** + [[mission_garnier_p2_3_t13_docs_review]] (AEP-3 · AEP-4, 37 kT provisional; P2 now 18 missions, provisional tranche pool 620 → 657 kT; Option C's committed segment unchanged);
+  - registry cards recorded (deploy stays item (j));
+  - v8.14 carries;
+  - ARCADE's budget (11 recorded missions 905 → 945 kT, ×1.04).
+- [D] Two live-surface findings carried: the v8.13 deploy tail left adna.network's spec mirror at **v2.5**, and the Exchange/Terminal cards render `planned` (the 2026-10-16 regeneration is undeployed).
+- **DP3 remains `pending`** on the three P1.3 reader records. No site, stimulus, registry or deploy change.

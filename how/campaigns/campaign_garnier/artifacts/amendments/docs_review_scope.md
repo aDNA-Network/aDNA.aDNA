@@ -5,8 +5,8 @@ status: active
 tags:
 - garnier
 - amendments
-updated: '2026-09-15'
-last_edited_by: agent_codex
+updated: '2026-10-20'
+last_edited_by: agent_rosetta
 ---
 # Documentation review population and tranches
 
@@ -35,4 +35,13 @@ last_edited_by: agent_codex
 
 Each tranche ledger records source/citation reading, actual rendered article inspection, command reproduction or an explicitly held external step, source/twin agreement and findings/dispositions. Purely generated registry values remain Hestia's lane; their template and labels are inspected by P3.3, and content/data corrections are staged. The original one-session P2.3 contract is preserved in proposal_20260914.tar.gz.
 
-Related: [[campaign_garnier]] · [[charter_ratification_20260915]].
+## Amendment — the append rule and T13 (DP3 item (i), ruled in advance 2026-10-20)
+
+[D] Ruled by the operator at ARCADE A5.1 (R61, "accept as recommended") on [[arcade_amendment_dp3_item_i]] §2. **The text above is unchanged** (originals kept). Re-derived 2026-10-20: `vitrine/design` 118/118, 0 hash changes, 0 moves. `main` (`cbca256`) has 120 rows (+`/community/proposals/aep-3`, +`aep-4`) and a changed `/changelog` hash, and the greedy pack there moves 82 routes into 14 tranches.
+
+1. **Append, don't repack.** A route added after the 2026-09-15 freeze goes to an **append tranche**, and T01–T12 keep their routes. A changed hash on an existing route is re-read inside its own tranche (`/changelog` → T04).
+2. [[mission_garnier_p2_3_t13_docs_review]]: 2 routes (AEP-3 · AEP-4), 15,067 source bytes; **37 kT** proposed, `provisional_until_T01_actual`.
+3. **Conditional profile row:** a profile route, once one exists, joins T13 before it opens and carries R-203. Otherwise it is carried to P2.5's re-forecast.
+4. The provisional tranche pool moves from 620 kT (T02–T12) to 657 kT (T02–T13). Option C's committed segment (P2.1 · P2.2 · P2.3 · T01) is unchanged, and T01 itself is unchanged on both trees.
+
+Related: [[campaign_garnier]] · [[charter_ratification_20260915]] · [[arcade_amendment_dp3_item_i]].
