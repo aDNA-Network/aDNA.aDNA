@@ -1,7 +1,7 @@
 ---
 type: pattern
 created: 2026-10-16
-updated: 2026-10-16
+updated: 2026-10-20   # ARCADE A5.2 close: status re-checked — still draft (adoptions 1 of 2 needed); carried by name in aar_campaign_arcade Carries #11
 status: draft   # proposed at ARCADE A1.3 (ruling R9, 2026-10-16); one live instance (Terminal.aDNA); graduates to active on a second counted adoption, by operator ratification (§7.7)
 pattern_category: operational
 applies_to: [missions, campaigns, verification, software_deployment_graph, forge, platform]

@@ -10,7 +10,7 @@ campaign_phase: 2
 campaign_mission_number: 8
 mission_class: implementation
 created: '2026-10-15'
-updated: 2026-10-18   # COMPLETED — artifact + 19 register rows (R-185…R-203, proposed) + scrub red→0 + FKGL; executed fable on a declared-opus card; R21 name the profile · R22 A2.3 only
+updated: 2026-10-20   # A5.2: token_budget_actual key normalised (value unchanged)
 last_edited_by: agent_rosetta
 tags: [plan, campaign, arcade]
 executor_tier: opus
@@ -18,6 +18,7 @@ executor_lane: hosted
 executor_runtime: claude
 token_budget_estimated: 60
 token_budget_unit: kT_content_load
+token_budget_actual: 55   # ≈ content-load kT; normalised 2026-10-20 at ARCADE A5.2 from this card's own budget_status: comment (no new number)
 estimated_sessions: 1
 calibrated_sessions: 1
 estimation_class: content-novel

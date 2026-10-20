@@ -30,6 +30,15 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-20 (s) — ARCADE A5.2: campaign AAR, graduation, close → G5 closed, Operation ARCADE completed
+
+- **Campaign AAR** (`how/campaigns/campaign_arcade/artifacts/p5/aar_campaign_arcade.md`): what ARCADE changed (aDNA.aDNA ADR-064–067 · three specs re-anchored · standard v2.6 inside template v8.13 · AEP-3 + AEP-4 · the GARNIER DP3 (i) amendment) and the budget, re-derived from every card: 1,055 → 1,135 kT across 14 missions (×1.08). Thirteen carries are handed on by name. No decadal pass was run (R64).
+- **Correction:** the A5.1 amendment said two missions never recorded a budget actual. They had, under a different field. A dated erratum is appended to the amendment (the ratified rows are kept), and the three cards now use one field name.
+- **Graduated:**
+  - `what/patterns/pattern_profile_upstream_fold_path.md` (proposed): how a profile's findings reach the standard, step by step, without either side editing the other's files;
+  - `how/backlog/idea_upstream_release_spec_mirror_regen.md`: the release skill must regenerate the site's copy of the standard (v8.14, high priority).
+- **Closed (R65):** the charter is `completed`, with its §7.7 close block. GARNIER is again the only active campaign.
+
 ### 2026-10-20 (r) — ARCADE A5.1: the GARNIER amendment ruled in advance; VITRINE superseded → A5.1 completed, CURRENT A5.2
 
 - **GARNIER DP3 item (i), ruled in advance (R59, R61):** `campaign_garnier/artifacts/amendments/arcade_amendment_dp3_item_i.md` was accepted as recommended. The nineteen ARCADE claim rows now have lanes and five ship-order conditions (HAUSSMANN register §28.5; derived counts unchanged). Documentation review gains an append rule and tranche T13 for AEP-3 + AEP-4, plus a conditional profile row. DP3 itself still waits on the reader records.

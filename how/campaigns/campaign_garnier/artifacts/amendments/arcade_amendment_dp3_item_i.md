@@ -6,7 +6,7 @@ source_campaign: campaign_arcade
 source_mission: mission_arcade_a5_1_garnier_amendment
 title: "DP3 item (i): the ARCADE amendment — four relations into the claims lanes, the P2.3 re-scope, the registry cards, VITRINE, the v8.14 carries, and ARCADE's budget"
 created: 2026-10-20
-updated: 2026-10-20
+updated: 2026-10-20  # + §6 erratum appended 2026-10-20 (A5.2)
 status: accepted          # ⛩ RATIFIED 2026-10-20 in advance of DP3 (ARCADE R59 → R61–R63, operator). PRIOR (SO-7): proposed — authored the same sitting
 last_edited_by: agent_rosetta
 session: session_stanley_20261020_053954_arcade_a5_1_garnier_amendment
@@ -166,6 +166,9 @@ Derived (python, this sitting):
 `[I]` For DP3's P2 forecast:
 - ARCADE has **no further load on GARNIER's P2** beyond the T13 37 kT (§2) and the carries in §5. Carries 6 and 7 are site work owned by GARNIER lanes (P2.2 release fidelity · P4.3 regression), sized there.
 - ARCADE's own remainder is A5.1's close plus A5.2 (≈60).
+
+
+> **Erratum, 2026-10-20 (ARCADE A5.2, appended; the rows above are kept as ratified).** `[D]` A2.2 and A2.3 **did** record actuals: ≈45 and ≈55 kT, in each card's `budget_status:` comment (`actual_recorded # …`). This sitting's derivation read only the `token_budget_actual:` key, so it missed them. A4.1's 145 came from its AAR line. Re-derived over all 14 completed cards: **1,055 estimated → 1,135 actual (×1.08), 14 of 14 recorded**. The A5.1 actual is 90 vs 50. The explorer line (≈713 kT) is unchanged. The three cards now carry the `token_budget_actual:` key. Ruling R61 does not move: the corrected figure leaves ARCADE's further load on GARNIER P2 at nil beyond T13 and the §5 carries. Source: [[aar_campaign_arcade]] §Estimate vs actual.
 
 ---
 

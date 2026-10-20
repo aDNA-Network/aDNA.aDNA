@@ -4,7 +4,7 @@ type: campaign
 title: "Operation ARCADE — write the standard's four relations into its own objects: the access points (Exchange · Terminal), the commercial home and economic platform (AILedger, PBC), the first named profile (aDNA-Medical), and the open public way"
 owner: stanley
 persona: rosetta
-status: active          # ⛩ ratified at the plan gate 2026-10-15 (R3: "Ratify now, run P0 + A1.1") — see §7.7 below
+status: completed       # ⛩ CLOSED 2026-10-20 at A5.2 on the R65 conditional pre-grant (§7.7 close block below); was: active — ratified at the plan gate 2026-10-15 (R3: "Ratify now, run P0 + A1.1")
 campaign_class: side_campaign
 parent_campaign: campaign_garnier
 phase_count: 6
@@ -19,11 +19,11 @@ executor_tier_default: opus      # judgment missions declared fable; see each ca
 executor_runtime: claude
 priority: high
 created: 2026-10-15
-updated: 2026-10-20   # A5.1 (R59–R63): GARNIER DP3 item (i) ruled IN ADVANCE — the amendment accepted as recommended, VITRINE superseded, spec-mirror sync carried; A5.1 COMPLETED → CURRENT A5.2 (G5 closure half) — prior: A4.2 sitting 3 (R55–R58): v8.13 FIRED (aDNA-Network/aDNA 223ecc1 + tag v8.13; standard v2.6 published) + deploy tail (prod tree c7d152a1; AEP-3 + AEP-4) + five sends; A4.2 COMPLETED → P4 COMPLETE, CURRENT → A5.1 — prior: A4.2 sitting 2 (R47–R52): owed rows f1 · f2 · MP · R1 local, ledger §4 Q2–Q5 ruled, v2.6 §19.9 errata (Noether's post-fold read), §5.3 Holders candidate + Aspasia reply outbound_ready, Q9 answered mid-sitting → branch PUSHED (R53); spec_terminal_harness_contract v0.3 (R54, R38 met) — prior: A4.2 sitting 1 (R44–R46): Noether reply delivered (aDNA.aDNA ADR-067 in force), v8.13 ledger, f-b/f-c/f-d local, push held — prior: G4 v2.6 SIGNED (R43, all 15 as recommended) + A4.1 sitting 2 (fourteenth sitting): v2.6 folded LOCALLY, aDNA.aDNA ADR-067 accepted, Noether reply outbound_ready, A4.1 COMPLETED — CURRENT → A4.2 (push + fire still held, R41); prior: A4.1 sitting 1 (thirteenth sitting; R41–R42) — v2.6 queue assembled at the object + G4 gate AUTHORED, unsigned (15 lines); PUSH STILL HELD (R41: local fold allowed on signature, publication waits on Q9) — CURRENT → G4 (human); prior: G3 RULED (twelfth sitting; R34–R40) — aDNA.aDNA ADR-066 accepted 4/4, Harness §7 row conditional-apply, Lannes G3 memo delivered, PUSH STILL HELD (R40) — P3 COMPLETE, CURRENT → A4.1; prior: A3.3 closed (eleventh sitting; R29–R33) — P3 missions complete, Ledoux reply delivered, PUSH STILL HELD (R29) — CURRENT → G3 (human); prior: A3.2 closed (tenth sitting; R25–R28) — ADR-066 proposed, PUSH HELD (R25), memo to Lannes delivered — CURRENT → A3.3; prior: A3.1 closed (ninth sitting; R23–R24) — CURRENT → A3.2; prior: A2.3 closed (eighth sitting; R21–R22) — P2 COMPLETE, CURRENT → A3.1; prior: G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
+updated: 2026-10-20   # A5.2 (R64–R66): campaign AAR (artifacts/p5/aar_campaign_arcade.md) · fold-path pattern graduated (proposed) · spec-mirror backlog idea · amendment §6 erratum (14/14 recorded, ×1.08) · G5 closure half SIGNED (R65) → status completed — prior: A5.1 (R59–R63): GARNIER DP3 item (i) ruled IN ADVANCE — the amendment accepted as recommended, VITRINE superseded, spec-mirror sync carried; A5.1 COMPLETED → CURRENT A5.2 (G5 closure half) — prior: A4.2 sitting 3 (R55–R58): v8.13 FIRED (aDNA-Network/aDNA 223ecc1 + tag v8.13; standard v2.6 published) + deploy tail (prod tree c7d152a1; AEP-3 + AEP-4) + five sends; A4.2 COMPLETED → P4 COMPLETE, CURRENT → A5.1 — prior: A4.2 sitting 2 (R47–R52): owed rows f1 · f2 · MP · R1 local, ledger §4 Q2–Q5 ruled, v2.6 §19.9 errata (Noether's post-fold read), §5.3 Holders candidate + Aspasia reply outbound_ready, Q9 answered mid-sitting → branch PUSHED (R53); spec_terminal_harness_contract v0.3 (R54, R38 met) — prior: A4.2 sitting 1 (R44–R46): Noether reply delivered (aDNA.aDNA ADR-067 in force), v8.13 ledger, f-b/f-c/f-d local, push held — prior: G4 v2.6 SIGNED (R43, all 15 as recommended) + A4.1 sitting 2 (fourteenth sitting): v2.6 folded LOCALLY, aDNA.aDNA ADR-067 accepted, Noether reply outbound_ready, A4.1 COMPLETED — CURRENT → A4.2 (push + fire still held, R41); prior: A4.1 sitting 1 (thirteenth sitting; R41–R42) — v2.6 queue assembled at the object + G4 gate AUTHORED, unsigned (15 lines); PUSH STILL HELD (R41: local fold allowed on signature, publication waits on Q9) — CURRENT → G4 (human); prior: G3 RULED (twelfth sitting; R34–R40) — aDNA.aDNA ADR-066 accepted 4/4, Harness §7 row conditional-apply, Lannes G3 memo delivered, PUSH STILL HELD (R40) — P3 COMPLETE, CURRENT → A4.1; prior: A3.3 closed (eleventh sitting; R29–R33) — P3 missions complete, Ledoux reply delivered, PUSH STILL HELD (R29) — CURRENT → G3 (human); prior: A3.2 closed (tenth sitting; R25–R28) — ADR-066 proposed, PUSH HELD (R25), memo to Lannes delivered — CURRENT → A3.3; prior: A3.1 closed (ninth sitting; R23–R24) — CURRENT → A3.2; prior: A2.3 closed (eighth sitting; R21–R22) — P2 COMPLETE, CURRENT → A3.1; prior: G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
 last_edited_by: agent_rosetta
 ratification_status: accepted
 ratification_date: '2026-10-15'
-current_phase: 5   # P5 open 2026-10-20 at A4.2's close (P4 complete); was 4 — P4 open 2026-10-19 at G3 (was 1 — never advanced past P1; re-derived at G3)
+current_phase: 5   # campaign CLOSED 2026-10-20 at A5.2; P5 open 2026-10-20 at A4.2's close (P4 complete); was 4 — P4 open 2026-10-19 at G3 (was 1 — never advanced past P1; re-derived at G3)
 plan: ~/.claude/plans/please-read-the-claude-md-sorted-flask.md
 tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, adna_medical, standard_v2_6, v8_13]
 ---
@@ -123,7 +123,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 | Mission | Title | Sessions | Tier | Deps | Status |
 |---|---|---:|---|---|---|
 | [[mission_arcade_a5_1_garnier_amendment]] | GARNIER amendment at DP3; VITRINE dispositioned | 1 | fable | A4.2 | **completed 2026-10-20** |
-| [[mission_arcade_a5_2_aar_close]] | Campaign AAR, graduation, close splash | 1 | opus | A5.1 | queued |
+| [[mission_arcade_a5_2_aar_close]] | Campaign AAR, graduation, close splash | 1 | opus | A5.1 | **completed 2026-10-20** |
 
 **⛩ G5:** DP3 rules the amendment (parent's gate); closure signed. Budget ≈110 kT.
 
@@ -136,7 +136,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 | G2 | P2 exit | ADR-065; the two estate memos' send GOs | **ruled 2026-10-16** (R17 sign ADR-065 as written, R2 stands · R18 send GO ×3 — memo 1, memo 2, and the stale 10-04 Noether memo · R19 `sync:vaults` + build, not deployed · R20 four replies + WebForge notice sent, `lip_registry.md` proposed; Stanley, plan-time AskUserQuestion, `session_stanley_20261016_205633_arcade_g2_sends_sync_replies`) |
 | G3 | P3 exit | ADR-066 (four lines) + the Harness §7 row + the Lannes G3 memo GO + the push (if Q9 lifted) | **RULED 2026-10-19** — R34–R37 aDNA.aDNA ADR-066 accepted 4/4 · R38 Harness row conditional-apply · R39 memo delivered (§0 kept) · R40 push held (Q9 silent) |
 | G4 | P4 exit | the v2.6 cut; the v8.13 fire | v2.6 gate **SIGNED 2026-10-20** (R43, all 15 as recommended) + **folded locally** (standard v2.6, unreleased) · **v8.13 FIRED 2026-10-20** (R56 conditional pre-grant; `aDNA-Network/aDNA` `223ecc1` + tag `v8.13`; deploy tail R57, prod `c7d152a1`) — **G4 CLOSED** |
-| G5 | P5 exit | GARNIER DP3 amendment (parent) · closure | **amendment half RULED 2026-10-20** — GARNIER DP3 item (i) in advance (R59 → R61 accept as recommended · R62 VITRINE `superseded` · R63 spec-mirror sync carried to v8.14 / P2.2; Stanley, plan-time AskUserQuestion, `session_stanley_20261020_053954_arcade_a5_1_garnier_amendment`); DP3 itself `pending` · **closure half pending** (A5.2, operator signs) |
+| G5 | P5 exit | GARNIER DP3 amendment (parent) · closure | **amendment half RULED 2026-10-20** — GARNIER DP3 item (i) in advance (R59 → R61 accept as recommended · R62 VITRINE `superseded` · R63 spec-mirror sync carried to v8.14 / P2.2; Stanley, plan-time AskUserQuestion, `session_stanley_20261020_053954_arcade_a5_1_garnier_amendment`); DP3 itself `pending` · **closure half SIGNED 2026-10-20** (R65 conditional pre-grant: AAR landed · 15/15 card AARs · validator zero drift · gitleaks 0, all held at the seal; Stanley, plan-time AskUserQuestion, `session_stanley_20261020_195614_arcade_a5_2_aar_close`) — **G5 CLOSED** |
 
 Each gate needs a named operator, date, scope and event reference; no agent signature advances a phase.
 
@@ -166,6 +166,17 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
 | **Gate / session reference** | plan-time `AskUserQuestion` R3 = "Ratify now, run P0 + A1.1" · plan `~/.claude/plans/please-read-the-claude-md-sorted-flask.md` · session `session_stanley_20261015_212937_arcade_p0_situation_review_and_a1_1` |
 | **Scope of authority** | this charter and P0/A1.1 execution; every later gate (G1–G5) and every outward act (push · send · deploy · release) is its own ruling |
 | **Pending co-signs** | none for the charter; ADR-065's reading of ADR-027 needs aDNALabs' (Berthier's) answer before it binds across estates |
+
+### §7.7 Close — G5 closure half
+
+| Field | Value |
+|---|---|
+| **Decision** | Close Operation ARCADE: the campaign AAR accepted as written (`artifacts/p5/aar_campaign_arcade.md`), graduation as planned (R66), no decadal pass (R64); charter `status: completed` |
+| **Ratified-by** | Stanley (operator) |
+| **Date** | 2026-10-20 |
+| **Status** | accepted, conditional pre-grant **R65**, every condition verified at the seal: the AAR landed · the five AAR lines on all 15 cards · `adna_validate.py --governance` "Zero drift" · gitleaks 0 on every changed path |
+| **Gate / session reference** | plan-time `AskUserQuestion` R65 = "Sign now, conditional" · plan `~/.claude/plans/please-read-the-claude-md-shiny-kite.md` · session `session_stanley_20261020_195614_arcade_a5_2_aar_close` |
+| **Scope of authority** | the closure only. The 13 carries (AAR §Carries) are each their owner's, and every outward act among them is its own GO |
 
 ## Execution Log
 
@@ -269,3 +280,19 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
   - the population on `main` would repack 82 routes (→ the append rule);
   - the gate-49 harness is ours, so no memo was sent.
 - A5.1 budget ≈90 vs 50 (1.8×). **CURRENT → A5.2** (opus): campaign AAR, graduation, close splash, the closure signature.
+
+### A5.2 closed; G5 closure signed; ARCADE COMPLETE — 2026-10-20
+
+- [D] Session `session_stanley_20261020_195614_arcade_a5_2_aar_close` (Tier 2, opus). Plan-time rulings **R64** (no decadal pass) · **R65** (G5 closure pre-granted on four conditions) · **R66** (graduation as planned).
+- [D] **Standing checks.** Receipts committed: LatticeProtocol ×2 · Network · Fluxer. Untracked: HarnessOld · Terminal · the Harness.aDNA cc copy. No new inbox mail.
+- [D] **Campaign AAR** → [[aar_campaign_arcade]]:
+  - scorecard 13/15 validated, 2 partial by design;
+  - 14/14 actuals: 1,055 → 1,135 kT (×1.08); campaign ≈1,205 vs 1,115; explorers ≈713 kT on their own line;
+  - 13 carries, all `next`.
+- [D] **Finding.** A2.2 + A2.3 *had* recorded actuals, in `budget_status:`. The A5.1 table read one key. Fixed by an erratum under the amendment's §6 (R61 unmoved) and the key normalised on three cards.
+- [D] **Graduation.**
+  - `pattern_profile_upstream_fold_path` (`proposed`);
+  - the four relations not re-graduated (aDNA.aDNA ADR-065 + A2.1 glossary = full coverage);
+  - `pattern_ledger_backed_acceptance_tables` stays `draft` (census: 1 adoption);
+  - `idea_upstream_release_spec_mirror_regen` (v8.14, high).
+- **G5 CLOSED → ARCADE COMPLETE.** GARNIER is the sole active front (P1.3 readers → DP3).

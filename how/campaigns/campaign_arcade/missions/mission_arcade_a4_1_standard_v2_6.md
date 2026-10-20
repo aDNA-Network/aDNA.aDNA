@@ -10,7 +10,7 @@ campaign_phase: 4
 campaign_mission_number: 12
 mission_class: implementation
 created: '2026-10-15'
-updated: 2026-10-20
+updated: 2026-10-20   # A5.2: token_budget_actual key normalised (value unchanged)
 last_edited_by: agent_rosetta
 tags: [plan, campaign, arcade]
 executor_tier: fable
@@ -18,6 +18,7 @@ executor_lane: hosted
 executor_runtime: claude
 token_budget_estimated: 150
 token_budget_unit: kT_content_load
+token_budget_actual: 145   # ≈ content-load kT; normalised 2026-10-20 at ARCADE A5.2 from this card's own AAR Follow-up line (≈70 + 75) (no new number)
 estimated_sessions: 2
 calibrated_sessions: null
 estimation_class: content-novel
