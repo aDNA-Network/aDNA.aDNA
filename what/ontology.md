@@ -1,7 +1,7 @@
 ---
 type: ontology
 created: 2026-02-20
-updated: 2026-10-04   # I-01: `reviewer` row added, entity_count re-derived 26 → 27
+updated: 2026-10-20   # ARCADE A4.2 (G4 row C1, Noether 10-03 #5): Base Invariance row cites aDNA.aDNA ADR-044; `completed` canonical, `complete` a registered alias. Prior 2026-10-04 I-01: `reviewer` row added, entity_count re-derived 26 → 27
 status: active
 last_edited_by: agent_rosetta
 tags:
@@ -347,10 +347,12 @@ Base entity types are **structurally invariant** across all aDNA instances at th
 | Entity type name | YES — no renaming |
 | Triad assignment | YES — no reassignment |
 | Directory location | YES — canonical paths |
-| Base frontmatter fields | YES — always present |
+| Base frontmatter fields | YES — always present, with one exception: `status` is optional for the `directory_index` and `coordination` classes, which have no lifecycle (aDNA.aDNA ADR-044) |
 | Execution hierarchy | YES — Campaign → Mission → Objective |
 | Type-specific fields | NO — instances may add fields (additive only) |
 | Extension relationships | NO — extensions may define new relationships |
+
+**Status values.** `completed` is the canonical spelling of the finished state. `complete` is a registered alias: a reader treats it as `completed`, and a writer writes `completed`.
 
 ### Merge Algorithm (4-Step Summary)
 
