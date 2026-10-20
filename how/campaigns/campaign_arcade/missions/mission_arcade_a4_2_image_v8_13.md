@@ -3,7 +3,7 @@ plan_id: mission_arcade_a4_2_image_v8_13
 type: plan
 title: "Fire the v8.13 template release"
 owner: stanley
-status: queued
+status: active      # sitting 1 done 2026-10-20 (R44–R46): ledger + f-b/f-c/f-d local; objective 2 (the fire) waits on Q9
 campaign_id: campaign_arcade
 campaign: campaign_arcade
 campaign_phase: 4
@@ -47,8 +47,8 @@ G4 — fire GO.
 ## Objectives
 
 ### 1. Release ledger
-- **Status**: planned
-- **Session**: 
+- **Status**: completed
+- **Session**: session_stanley_20261020_010905_arcade_a4_2_ledger_and_local_fixes
 - **Description**: Preconditions · payload enumerated · the five version surfaces · smoke test rows.
 - **Files**: how/campaigns/campaign_arcade/artifacts/p4/v8_13_release_ledger.md
 - **Depends on**: none
@@ -77,16 +77,25 @@ G4 — fire GO.
 
 ## Completion Summary
 
-*Fill out when setting `status: completed`.*
+*Partial: sitting 1 (2026-10-20). Completed at the fire.*
 
 ### Deliverables
--
+- Sitting 1 (R44 hold · R45 Noether send · R46 scope):
+  - the Noether reply was delivered, so aDNA.aDNA ADR-067 is in force;
+  - `artifacts/p4/v8_13_release_ledger.md` (objective 1);
+  - f-c (examples · `lattice_interop.md` v1.1.0 · schema `condition` · `lattice_validate.py` face + `faces/` · `ontology.md` · date note);
+  - f-b (d11 Derivability + G-015 + the 0–5/50 → 0–3/33 correction);
+  - f-d (stamp currency);
+  - all committed locally (six commits), none pushed.
 
 ### Descoped
 -
 
 ### Key Findings
--
+- [D] Six card rows were **not authored** when this sitting opened: f1 canvases (byte-identical to the image) · f2 (`10.42.0.1` at `:230`) · the mesh-probe skill (idea only) · the P5 and P7 ADRs · Rand's row. All are listed in ledger §2b.
+- [D] `CLAUDE.md` §Compliance Dimensions said 0–5 / 50; the checker scores 0–3 / 30, so the line was wrong since it was written. The image carries the same text twice (ledger f-b′).
+- [D] Consuming the face makes `lattice_validate.py` accept `agent`, which the canonical schema does not list (ledger §4 Q3).
+- [D] The signed `entity_count` 28 is a raw row count; the dev copy's derived 27 is what a fold ships (ledger §4 Q4).
 
 ### Scope Changes
 -

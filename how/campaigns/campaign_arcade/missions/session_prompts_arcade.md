@@ -1,7 +1,7 @@
 ---
 type: session_prompt_index
 created: 2026-10-15
-updated: 2026-10-20   # G4 v2.6 SIGNED (R43) + A4.1 COMPLETED (v2.6 folded locally; Noether reply outbound_ready); CURRENT → A4.2; prior: A4.1 sitting 1 (R41–R42: queue + G4 gate authored, unsigned; push held); CURRENT → G4 (human) then A4.1 sitting 2; prior: G3 RULED (R34–R40: aDNA.aDNA ADR-066 accepted 4/4 · Harness row conditional · Lannes memo sent · push held); CURRENT → A4.1; prior: A3.3 closed (R29–R33; push still HELD); CURRENT → G3 (human); prior: A3.2 closed (R25–R28; push HELD); CURRENT → A3.3; prior: A3.1 closed (R23–R24); CURRENT → A3.2; prior: A2.3 closed (R21–R22); P2 complete; CURRENT → A3.1; prior: G2 RULED (R17–R20); CURRENT → A2.3; prior: A2.2 closed; CURRENT → G2 (human); prior: A2.1 closed; CURRENT → A2.2; prior: G1 RULED (R11–R14); CURRENT → A2.1; prior: A1.4 closed; P1 complete; CURRENT → G1 (human)
+updated: 2026-10-20   # A4.2 sitting 1 done (R44–R46): Noether reply delivered, ledger + f-b/f-c/f-d local; CURRENT → A4.2 sitting 2; prior: G4 v2.6 SIGNED (R43) + A4.1 COMPLETED (v2.6 folded locally; Noether reply outbound_ready); CURRENT → A4.2; prior: A4.1 sitting 1 (R41–R42: queue + G4 gate authored, unsigned; push held); CURRENT → G4 (human) then A4.1 sitting 2; prior: G3 RULED (R34–R40: aDNA.aDNA ADR-066 accepted 4/4 · Harness row conditional · Lannes memo sent · push held); CURRENT → A4.1; prior: A3.3 closed (R29–R33; push still HELD); CURRENT → G3 (human); prior: A3.2 closed (R25–R28; push HELD); CURRENT → A3.3; prior: A3.1 closed (R23–R24); CURRENT → A3.2; prior: A2.3 closed (R21–R22); P2 complete; CURRENT → A3.1; prior: G2 RULED (R17–R20); CURRENT → A2.3; prior: A2.2 closed; CURRENT → G2 (human); prior: A2.1 closed; CURRENT → A2.2; prior: G1 RULED (R11–R14); CURRENT → A2.1; prior: A1.4 closed; P1 complete; CURRENT → G1 (human)
 status: active
 last_edited_by: agent_rosetta
 tags: [arcade, session_prompts]
@@ -112,7 +112,29 @@ Rules: every ADR number vault-qualified (rule 3); tense labels (rule 4); nothing
 Close: the five-line AAR on the card → status completed; CURRENT → A4.2 (opus; prompt authored at close; the v8.13 fire is its own G4 gate and is publication, so it waits on Q9); STATE ⏭ (n); CHANGELOG; validator zero drift; gitleaks 0; explicit-path commit; push only if the hold has lifted.
 ```
 
-## A4.2 — the v8.13 template release (ledger local; the fire is publication) · ⏭ CURRENT
+## A4.2 sitting 2 — the owed rows, then the fire on hold-lift · ⏭ CURRENT
+
+```text
+Run from ~/aDNA/aDNA.aDNA. Do the open reads, and again at the seal: root CLAUDE.md, STATE.md ⏭ QUEUED (o), how/sessions/active/, who/coordination/inbox/, who/coordination/, git status (the ahead-count is the R25/R29/R40/R41/R44 hold; 12 after sitting 1). Then read how/campaigns/campaign_arcade/CLAUDE.md, missions/mission_arcade_a4_2_image_v8_13.md (objective 1 done; its Key Findings), artifacts/p4/v8_13_release_ledger.md (§2b owed rows · §4 five fire-gate questions) and how/skills/skill_template_release.md, with the memory note reference_skill_template_release_execution.
+
+FIRST, the standing checks: (i) Q9: Jake's line in this inbox and in AILedger's relay (~/aDNA/AILedger.aDNA/who/coordination/{inbox,inbox_stanley_desk,fluxer_outbox}/ and the 28eee5ac-era receipts). "Yes" → push the held commits before starting. Silent or "wait for G8" → local work only. (ii) R38: `test -d ~/aDNA/HarnessOld.aDNA`. (iii) Noether's receipt of the 10-20 reply (LP inbox, untracked at delivery). It is not a blocker.
+
+THEN put ledger §4 Q2–Q5 to the operator at plan time (AskUserQuestion; recommendations are in the ledger). On the rulings:
+(1) Author the owed rows the operator keeps, in the dev graph first, as explicit-path commits:
+  - f1: the canvas partition repair, with canvas_std.compute_sync_hash from Canvas.aDNA, read-only;
+  - f2: the skill_l1_upgrade redaction at :230;
+  - MP: the mesh-probe skill, from how/backlog/idea_upstream_skill_mesh_probe_discipline.md (skills count +1, through the validator);
+  - R1: Rand's row, from who/coordination/inbox/coord_2026_10_07_rand_to_rosetta_active_forges_row_design.md.
+  P5 and P7 are ADR drafts (`proposed`) only if the operator opens a gate for them.
+(2) Re-measure every ledger row at the object.
+(3) Only on the operator's fire GO, with the hold lifted: dry-run, pause, fire, deploy tail, then the AEPs (R2: no company name). Record the f-b′ image-only deltas (.adna CLAUDE.md:320 + adna_reference.md:114) by path and reason.
+
+Rules: every ADR number vault-qualified (rule 3); tense labels (rule 4).
+
+Close: AAR only when the fire lands (otherwise the card stays active); CURRENT → A5.1 after the fire; STATE ⏭ (p); CHANGELOG; validator zero drift; gitleaks 0; explicit-path commits; push only if the hold has lifted.
+```
+
+## A4.2 sitting 1 — the v8.13 template release (ledger local; the fire is publication) · ✅ done 2026-10-20 (R44–R46)
 
 ```text
 Run from ~/aDNA/aDNA.aDNA. Do the open reads, and again at the seal: root CLAUDE.md, STATE.md ⏭ QUEUED (n), how/sessions/active/, who/coordination/inbox/, who/coordination/, git status (the ahead-count is the R25/R29/R40/R41 hold; 5 after A4.1). Then read how/campaigns/campaign_arcade/CLAUDE.md, missions/mission_arcade_a4_2_image_v8_13.md (opus, ≈90 kT; its Notes carry fire rows f1… and f-a…f-e from G4) and how/skills/skill_template_release.md, with the memory note reference_skill_template_release_execution (diff-based delta-only fold; five version surfaces; tags only; never move a pushed tag; DE-LINK before folding; dry-run then pause).

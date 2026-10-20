@@ -116,7 +116,9 @@ Plus this vault's `MANIFEST.md:174` (M1), which describes the image and moves in
 
 Re-derive §0 · enumerate payload = exactly the ruled §2 rows · (b.2) diff each path both trees, record image-only
 deltas by path + reason (f-b′ is one) · (b.1) added-lines scan: 0 private paths, 0 bare SHAs, **0 company names
-(R2)** · `gitleaks` · hook `--self-test` · `adna_validate --governance` zero drift **both trees** · write the
+(R2)**. Dev-vault names that (b.1) must disposition were found at authoring: `aDNA.aDNA ADR-067` / `LinkML.aDNA ADR-005` in the
+`lattice_validate.py` comment and in `tools/AGENTS.md`, and `source_vault: LinkML.aDNA` in `faces/upstream.json`. That last one is the
+pin's datum: a fork reads it as **unverifiable**, by design, so keep it and record it as a deliberate image-only delta. · `gitleaks` · hook `--self-test` · `adna_validate --governance` zero drift **both trees** · write the
 ratification block **in the firing commit**.
 
 **Smoke rows (fresh clone of the release):**

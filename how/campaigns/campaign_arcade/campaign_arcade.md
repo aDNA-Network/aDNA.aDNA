@@ -19,7 +19,7 @@ executor_tier_default: opus      # judgment missions declared fable; see each ca
 executor_runtime: claude
 priority: high
 created: 2026-10-15
-updated: 2026-10-20   # G4 v2.6 SIGNED (R43, all 15 as recommended) + A4.1 sitting 2 (fourteenth sitting): v2.6 folded LOCALLY, aDNA.aDNA ADR-067 accepted, Noether reply outbound_ready, A4.1 COMPLETED — CURRENT → A4.2 (push + fire still held, R41); prior: A4.1 sitting 1 (thirteenth sitting; R41–R42) — v2.6 queue assembled at the object + G4 gate AUTHORED, unsigned (15 lines); PUSH STILL HELD (R41: local fold allowed on signature, publication waits on Q9) — CURRENT → G4 (human); prior: G3 RULED (twelfth sitting; R34–R40) — aDNA.aDNA ADR-066 accepted 4/4, Harness §7 row conditional-apply, Lannes G3 memo delivered, PUSH STILL HELD (R40) — P3 COMPLETE, CURRENT → A4.1; prior: A3.3 closed (eleventh sitting; R29–R33) — P3 missions complete, Ledoux reply delivered, PUSH STILL HELD (R29) — CURRENT → G3 (human); prior: A3.2 closed (tenth sitting; R25–R28) — ADR-066 proposed, PUSH HELD (R25), memo to Lannes delivered — CURRENT → A3.3; prior: A3.1 closed (ninth sitting; R23–R24) — CURRENT → A3.2; prior: A2.3 closed (eighth sitting; R21–R22) — P2 COMPLETE, CURRENT → A3.1; prior: G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
+updated: 2026-10-20   # A4.2 sitting 1 (R44–R46): Noether reply delivered (aDNA.aDNA ADR-067 in force), v8.13 ledger, f-b/f-c/f-d local, push held — prior: G4 v2.6 SIGNED (R43, all 15 as recommended) + A4.1 sitting 2 (fourteenth sitting): v2.6 folded LOCALLY, aDNA.aDNA ADR-067 accepted, Noether reply outbound_ready, A4.1 COMPLETED — CURRENT → A4.2 (push + fire still held, R41); prior: A4.1 sitting 1 (thirteenth sitting; R41–R42) — v2.6 queue assembled at the object + G4 gate AUTHORED, unsigned (15 lines); PUSH STILL HELD (R41: local fold allowed on signature, publication waits on Q9) — CURRENT → G4 (human); prior: G3 RULED (twelfth sitting; R34–R40) — aDNA.aDNA ADR-066 accepted 4/4, Harness §7 row conditional-apply, Lannes G3 memo delivered, PUSH STILL HELD (R40) — P3 COMPLETE, CURRENT → A4.1; prior: A3.3 closed (eleventh sitting; R29–R33) — P3 missions complete, Ledoux reply delivered, PUSH STILL HELD (R29) — CURRENT → G3 (human); prior: A3.2 closed (tenth sitting; R25–R28) — ADR-066 proposed, PUSH HELD (R25), memo to Lannes delivered — CURRENT → A3.3; prior: A3.1 closed (ninth sitting; R23–R24) — CURRENT → A3.2; prior: A2.3 closed (eighth sitting; R21–R22) — P2 COMPLETE, CURRENT → A3.1; prior: G2 RULED (seventh sitting, R17–R20) — CURRENT → A2.3; prior: A2.2 closed (sixth sitting) — CURRENT → G2 (human); prior: G1 RULED (R11–R14) + three memos delivered + A2.1 closed (fifth sitting) — CURRENT → A2.2; prior: A1.4 closed (fourth sitting) — P1 complete, G1 pending
 last_edited_by: agent_rosetta
 ratification_status: accepted
 ratification_date: '2026-10-15'
@@ -114,7 +114,7 @@ tags: [campaign, arcade, side_campaign, garnier, exchange, terminal, ailedger, a
 | Mission | Title | Sessions | Tier | Deps | Status |
 |---|---|---:|---|---|---|
 | [[mission_arcade_a4_1_standard_v2_6]] | Assemble the standard v2.6 cut (ISS gate; replies to Noether) | 2 | fable | A3.3 | completed 2026-10-20 (G4 signed R43; v2.6 folded locally; Noether reply outbound_ready) |
-| [[mission_arcade_a4_2_image_v8_13]] | Fire v8.13 (`skill_template_release`) | 1 | opus | A4.1 | queued |
+| [[mission_arcade_a4_2_image_v8_13]] | Fire v8.13 (`skill_template_release`) | 1 | opus | A4.1 | active (sitting 1 done 2026-10-20: ledger + local fixes; the fire waits on Q9) |
 
 **⛩ G4:** the v2.6 cut and the v8.13 fire — each its own operator gate. Budget ≈240 kT.
 
@@ -226,3 +226,10 @@ Every mission closes with a scoped diff, cited evidence and a five-line AAR; cou
 ### G4 (v2.6) signed + A4.1 sitting 2 — 2026-10-20
 
 - [D] Session `session_stanley_20261020_001835_arcade_g4_v2_6_fold` (Tier 2, opus on a fable card). Operator: **R43 "Signed as recommended"** — all 15 lines. Open reads: Q9 silent · `HarnessOld.aDNA` absent · md5 `094a3266`. Folded `what/docs/adna_standard.md` **v2.5 → v2.6 locally** (assert-per-anchor script; 12 lines replaced, 103 added; four surfaces together; md5 → `3e883ab4`). aDNA.aDNA ADR-063 accepted · **aDNA.aDNA ADR-067** adopted from Noether's draft + accepted (clauses 1, 2, 4; clause 3 logged) · aDNA.aDNA ADR-066 fold note · aDNA.aDNA ADR-062 annex erratum · `adr_index` 62 = 61 · 1 · 0 derived · `spec_graph_exchange` v0.2 · `spec_platform_ecosystem` v0.5 · `lip_registry` (b) ruled · two backlog ideas dispositioned · A4.2 fire rows f-a…f-e · Noether reply `outbound_ready`. **A4.1 COMPLETED** (≈145 vs 150 kT). CURRENT → A4.2; push and the fire held (R41).
+
+### A4.2 sitting 1 — 2026-10-20
+
+- [D] Session `session_stanley_20261020_010905_arcade_a4_2_ledger_and_local_fixes` (Tier 2, opus). Open reads: Q9 **silent**. AILedger receipted the G3 memo at `28eee5ac` ("Q9 is Jake's line"). `HarnessOld.aDNA` absent; md5 `3e883ab4`; ahead 5.
+- Plan-time rulings: **R44** keep holding (no off-channel answer) · **R45** send the Noether reply · **R46** scope = ledger + f-c + f-b + f-d.
+- Done: the Noether reply was delivered (aDNA.aDNA ADR-067 in force); f-c ×3 commits; f-d (stamp currency); f-b (d11); the v8.13 ledger. The ledger found 6 card rows not yet authored, plus 5 fire-gate questions.
+- Six commits, all local; ahead 5 → 12. CURRENT stays A4.2 (sitting 2: the owed rows, then the fire on hold-lift).

@@ -30,6 +30,16 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-20 (o) — ARCADE A4.2 sitting 1: Noether reply delivered (aDNA.aDNA ADR-067 in force); v8.13 ledger; lattice-tree + validator fixes local; push still held → CURRENT A4.2 sitting 2
+
+- **Delivered (R45):** the Noether reply → `LatticeProtocol.aDNA/who/coordination/inbox/` (HEAD `ea4ebcb`, cmp identical, body md5 `7377c88d` both sides, re-synced). **aDNA.aDNA ADR-067 is in force** from 2026-10-20T01:10:09Z.
+- **Lattice tree (G4 row C1):** `deep_research` conditions → CEL membership (a comprehensive run used to skip the review gate) · `claude_code` passes its own schema (F-AC-22; carried to 66 vaults at the fire) · `binder_generation` canonical interface form and composes · `full_therapeutics` + `composed_therapeutics` seam directions · `lattice_interop.md` v1.1.0 · `condition` described as CEL · 19/19 examples pass the canonical schema and the LinkML face.
+- **Validator:** `lattice_validate.py` reads its enums from a vendored, pinned copy of the lattice master's face (`faces/`), so they can no longer drift. `adna_validate --governance` gains the **stamp-currency** check (aDNA.aDNA ADR-067 clause 4: warning on mismatch, unverifiable never fails).
+- **Compliance:** **Derivability**, the 11th dimension (d11, gap G-015, registries only; tiers unchanged for all 111 existing objects). Finding: `CLAUDE.md` said "0–5 each, 50 max"; the checker has always scored 0–3. Corrected to 0–3 / 33. `lip_registry.md` declares first. Three registries surface in the third state.
+- **`what/ontology.md`:** the Base Invariance row cites aDNA.aDNA ADR-044; `completed` is canonical and `complete` an alias.
+- **Ledger:** `artifacts/p4/v8_13_release_ledger.md`: 15 rows local, 6 owed (f1 · f2 · mesh-probe · P5 · P7 · Rand's row), five fire-gate questions.
+- Campaign: A4.2 stays **active** (the fire waits on Q9); STATE ⏭ (o). **Committed locally; push held (R44), ahead 12.**
+
 ### 2026-10-20 (n) — ARCADE G4 signed: standard v2.5 → v2.6 (local, unreleased); aDNA.aDNA ADR-063 + aDNA.aDNA ADR-067 accepted; A4.1 complete → CURRENT A4.2
 
 - **Standard v2.6 (folded locally; released only with v8.13, which waits on Q9):** §4.1 requirement levels read against §5.5 (aDNA.aDNA ADR-063 E-1) · §15.1 archive-don't-delete (E-2) + the purge exception · conformance **profiles** `<level>+<profile>` + `who/coordination/` optional at Starter + `data_tier` + new **§15.5 release integrity** (aDNA.aDNA ADR-066) · §5.3 `federation_ref` minimum + `exchange/` example · §5.5 `token_estimate` = `ceil(bytes/4)` SHOULD · §6.4 `adr_`/`campaign_`/`coord_` + §19.6 ADR numbering · new **§19.7 Graph Exchange**, **§19.8 Campaigns**, **§19.9 Memorialized Data Models** (aDNA.aDNA ADR-067). Minor: no v2.5-conformant instance un-conforms (§15.4).
