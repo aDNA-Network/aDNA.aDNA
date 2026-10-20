@@ -30,6 +30,13 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-20 (t) — GARNIER holding sitting: the Framework table derived (Aldus's row written); four template gaps filed; reader stimulus back up
+
+- **`what/specs/spec_framework_ecosystem.md` v0.1 → v0.2.** The Active Frameworks table had one row (III). It now has twelve, derived from the fleet's own MANIFEST files rather than typed in: Git · Documents · OnWriting · LinkML · TypeScript · Organization · VisualDNA · Atlantis · React · Tailwind · Hardware. Documents.aDNA's row carries the wording its operator ruling gave it. A note under the table says which fields were read, and what that reading cannot see.
+- **Filed:** `how/backlog/idea_upstream_template_gaps_from_documents_genesis.md`. Four gaps a brand-new project had to patch on day one (coordination memo fields · `executor_tier` on missions · a cap on a campaign's live pointer · a plural-directory rule that has no exception for words like `context`). All four were checked still open, both here and in the published template; queued for v8.14.
+- **Received:** Aldus's memo, plus two of Hestia's ideas (one spelling for version fields; a Windows sibling of `OSX.aDNA`). A reply to Aldus was delivered to Documents.aDNA's inbox.
+- **GARNIER:** the local preview the three readers will see is running again, byte-identical to its frozen record (15 of 15 pages). The campaign still waits on those readers.
+
 ### 2026-10-20 (s) — ARCADE A5.2: campaign AAR, graduation, close → G5 closed, Operation ARCADE completed
 
 - **Campaign AAR** (`how/campaigns/campaign_arcade/artifacts/p5/aar_campaign_arcade.md`): what ARCADE changed (aDNA.aDNA ADR-064–067 · three specs re-anchored · standard v2.6 inside template v8.13 · AEP-3 + AEP-4 · the GARNIER DP3 (i) amendment) and the budget, re-derived from every card: 1,055 → 1,135 kT across 14 missions (×1.08). Thirteen carries are handed on by name. No decadal pass was run (R64).
