@@ -1,7 +1,7 @@
 ---
 type: directory_index
 created: 2026-04-13
-updated: 2026-09-16
+updated: 2026-10-20
 last_edited_by: agent_rosetta
 tags: [directory_index, root]
 ---
@@ -43,7 +43,7 @@ aDNA.aDNA/
 │   ├── publishing/     Vault-to-web pipeline
 │   ├── campaigns/      Strategic initiatives (campaign_rosetta active)
 │   ├── templates/      46 templates (26 base + 11 extension + 9 operational)
-│   ├── skills/         57 skills (27 base + 30 project-specific)
+│   ├── skills/         58 skills (27 base + 31 project-specific)
 │   ├── sessions/       Session tracking
 │   ├── missions/       Multi-session tasks
 │   ├── pipelines/      Content-as-code workflows

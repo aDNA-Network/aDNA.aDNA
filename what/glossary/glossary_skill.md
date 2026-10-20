@@ -1,12 +1,12 @@
 ---
 type: glossary_entry
 created: 2026-04-14
-updated: 2026-06-30
+updated: 2026-10-20
 status: active
 term: "Skill"
 spec_section: "§19.3"
 see_also: [template, how, mission]
-last_edited_by: agent_stanley
+last_edited_by: agent_rosetta
 tags: [glossary, operations]
 ---
 
@@ -22,7 +22,7 @@ A reusable agent procedure stored at `how/skills/skill_{name}.md`. Sections: pur
 
 ## Usage Examples
 
-- This vault has 57 skills (27 base + 30 project-specific). `skill_dual_audience_review` is a quality gate skill: it walks the agent through checking whether a content file is legible to both developers and non-developers.
+- This vault has 58 skills (27 base + 31 project-specific). `skill_dual_audience_review` is a quality gate skill: it walks the agent through checking whether a content file is legible to both developers and non-developers.
 - `skill_onboarding` fires automatically on first-run detection — when the vault has no session history and MANIFEST.md still shows `last_edited_by: agent_init`.
 
 ## See Also
