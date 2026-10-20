@@ -3,7 +3,7 @@ type: governance
 subtype: campaign_claude
 campaign_id: campaign_arcade
 created: 2026-10-15
-updated: 2026-10-19
+updated: 2026-10-20
 status: active
 last_edited_by: agent_rosetta
 tags: [governance, campaign, arcade]
@@ -18,7 +18,7 @@ tags: [governance, campaign, arcade]
 |---|---|
 | Campaign | `campaign_arcade` — Operation ARCADE, side campaign of `campaign_garnier` |
 | Owner · executor | Stanley · Rosetta (`agent_rosetta`, runtime claude) |
-| Status · phase | active · P1 complete (A0.1 · A1.1–A1.4); **G1 RULED 2026-10-16** (R11–R14 — four §7.7 signed as written, three send GOs, A2.1 in-sitting, push at close); **P2 open — A2.1 + A2.2 done 2026-10-16** (ADR-065 proposed, witness row re-tensed; two estate memos `outbound_ready`); **G2 RULED 2026-10-16** (R17 ADR-065 accepted · R18 sends ×3 · R19 sync+build not deployed · R20 replies); **A2.3 done 2026-10-18** (R21–R22; 19 `proposed` register rows, scrub RED→0) → **P2 COMPLETE, P3 open**; **A3.1 done 2026-10-19** (R23–R24; U1–U25 10·14·1·0, §16 7·1·2·1, memo to Lannes `outbound_ready`) → **A3.2 done 2026-10-19** (R25–R28; aDNA.aDNA ADR-066 proposed, four §7.7 lines; memo to Lannes delivered with the Q9 ask; **branch push HELD until Jake answers Q9**) → **A3.3 done 2026-10-19** (R29–R33; profiles list + template + validator design + fold path; Ledoux reply delivered; Harness §7 row delta + G3 memo to Lannes staged) → P3 missions complete → **G3 RULED 2026-10-19** (R34–R40: aDNA.aDNA ADR-066 accepted 4/4 · Harness §7 row conditional-apply · Lannes G3 memo delivered · push still held, Q9 silent) → **P3 COMPLETE; CURRENT A4.1** (fable — the v2.6 cut; G4 human) — updated 2026-10-19 |
+| Status · phase | active · P1 complete (A0.1 · A1.1–A1.4); **G1 RULED 2026-10-16** (R11–R14 — four §7.7 signed as written, three send GOs, A2.1 in-sitting, push at close); **P2 open — A2.1 + A2.2 done 2026-10-16** (ADR-065 proposed, witness row re-tensed; two estate memos `outbound_ready`); **G2 RULED 2026-10-16** (R17 ADR-065 accepted · R18 sends ×3 · R19 sync+build not deployed · R20 replies); **A2.3 done 2026-10-18** (R21–R22; 19 `proposed` register rows, scrub RED→0) → **P2 COMPLETE, P3 open**; **A3.1 done 2026-10-19** (R23–R24; U1–U25 10·14·1·0, §16 7·1·2·1, memo to Lannes `outbound_ready`) → **A3.2 done 2026-10-19** (R25–R28; aDNA.aDNA ADR-066 proposed, four §7.7 lines; memo to Lannes delivered with the Q9 ask; **branch push HELD until Jake answers Q9**) → **A3.3 done 2026-10-19** (R29–R33; profiles list + template + validator design + fold path; Ledoux reply delivered; Harness §7 row delta + G3 memo to Lannes staged) → P3 missions complete → **G3 RULED 2026-10-19** (R34–R40: aDNA.aDNA ADR-066 accepted 4/4 · Harness §7 row conditional-apply · Lannes G3 memo delivered · push still held, Q9 silent) → **P3 COMPLETE; A4.1 sitting 1 done 2026-10-20** (R41–R42; v2.6 queue + G4 gate authored, 15 lines unsigned; push still held) → **CURRENT G4** (human: sign `how/gates/arcade_v2_6_gate.md`; then A4.1 sitting 2 folds + Noether reply) — updated 2026-10-20 |
 | Charter | [[campaign_arcade]] · CURRENT pointer: [[session_prompts_arcade]] |
 
 ## Quick start

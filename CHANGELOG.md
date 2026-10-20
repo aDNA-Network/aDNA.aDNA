@@ -30,6 +30,13 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-20 (m) — ARCADE A4.1 sitting 1: the v2.6 queue assembled; the G4 gate authored; push still held → CURRENT G4
+
+- **Proposed (gate input):** `how/campaigns/campaign_arcade/artifacts/p4/v2_6_cut_queue.md`, everything waiting for standard v2.6. Each row carries its source, its live anchor (re-found by `grep -nF`), a recommendation, a §15.4 minor-compatibility note and a tense label. There are 8 standard rows to sign, aDNA.aDNA ADR-066's 7 hunks carried (accepted at G3), 6 rows outside the standard, and one set of reply positions for Noether.
+- **Authored:** `how/gates/arcade_v2_6_gate.md`, the G4 gate (15 ratification lines, all blank).
+- **Rulings R41–R42:** local work does not wait on Q9; publication (push · image release · AEPs) does. Sitting 1 covers queue + gate; the fold and the Noether reply are sitting 2.
+- `what/docs/adna_standard.md` is **byte-unchanged** (md5 `094a3266`). Campaign: A4.1 `in_progress`; prompts **CURRENT → G4** (sitting-2 prompt authored); STATE ⏭ (m). **Committed locally; push held (R41).**
+
 ### 2026-10-19 (l) — ARCADE G3 ruled: aDNA.aDNA ADR-066 accepted; the Lannes G3 memo delivered; push still held → CURRENT A4.1
 
 - **Accepted (operator §7.7, R34–R37):** `what/decisions/adr_066_conformance_profiles_release_integrity.md`. Each of its four clauses was signed as written, one line each: conformance profiles (`<level>+<profile>`, listed not hosted) · §15.5 release-integrity manifest · `who/coordination/` optional at Starter · `data_tier` as an optional base label, plus the purge carve-out. The text enters `adna_standard.md` only at the v2.6 cut; md5 `094a3266` is unchanged. `adr_index` tally re-derived: 61 = 59 accepted · 1 amended · 1 proposed.
