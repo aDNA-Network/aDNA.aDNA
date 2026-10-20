@@ -2,7 +2,7 @@
 type: adr
 adr_number: "067"
 title: "Memorialized data models — a boundary-crossing data model is held as one master with stamped, checked faces: SHOULD at v2.6 (§19.9); the v3.0 MUST for Full conformance is logged, not ruled"
-status: accepted        # ⛩ RATIFIED 2026-10-20 at ARCADE G4 (operator Stanley, R43 "Signed as recommended", gate row A8): clauses 1, 2 and 4 accepted; clause 3 LOGGED for the v3.0 window, not ruled. In force once the Noether reply (gate row C1) is sent. AEP owed at publication (R2 + R41).
+status: accepted        # ⛩ RATIFIED 2026-10-20 at ARCADE G4 (operator Stanley, R43 "Signed as recommended", gate row A8): clauses 1, 2 and 4 accepted; clause 3 LOGGED for the v3.0 window, not ruled. In force once the Noether reply (gate row C1) is sent — **IN FORCE 2026-10-20T01:10:09Z** (reply delivered to LatticeProtocol.aDNA inbox at HEAD ea4ebcb, cmp identical, body md5 7377c88d; ARCADE A4.2, R45). AEP owed at publication (R2 + R41).
 created: 2026-10-20
 updated: 2026-10-20
 last_edited_by: agent_rosetta
@@ -82,7 +82,7 @@ LatticeProtocol.aDNA ADR-018 the sync hash · LatticeProtocol.aDNA ADR-019 the c
 | **Decision** | Clauses 1, 2 and 4 accepted as drafted; clause 3 logged for the v3.0 window, not ruled |
 | **Ratified-by** | Stanley (operator), ARCADE G4 ruling R43 ("Signed as recommended"), `how/gates/arcade_v2_6_gate.md` row A8 |
 | **Date** | 2026-10-20 |
-| **Status** | accepted — in force once the C1 reply to Noether is sent; AEP-0003 owed at publication |
+| **Status** | accepted — **in force since 2026-10-20T01:10:09Z** (the C1 reply to Noether delivered, ARCADE A4.2 R45); AEP-0003 owed at publication |
 
 ## Citations
 

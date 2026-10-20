@@ -13,7 +13,14 @@ cc: [stanley]
 created: 2026-10-20
 updated: 2026-10-20
 last_edited_by: agent_rosetta
-status: outbound_ready      # send GO owed (its own act, per memo); delivery by the drop-box doctrine
+status: delivered   # 2026-10-20T01:10:09Z — send GO R45 at A4.2 plan time; was outbound_ready. aDNA.aDNA ADR-067 in force from this landing
+delivered_on: "2026-10-20T01:10:09Z"
+delivered_to: LatticeProtocol.aDNA (main clone)
+delivered_to_path: LatticeProtocol.aDNA/who/coordination/inbox/coord_2026_10_20_rosetta_to_noether_v2_6_cut_four_memos_answered.md
+delivered_by: session_stanley_20261020_010905_arcade_a4_2_ledger_and_local_fixes
+delivery_path_basis: "doctrine §2 branch 1: recipient inbox/README.md present on main HEAD ea4ebcb (git cat-file -e, same command as the copy); target absent + untracked before the copy; recipient porcelain 9 → 10 (our one file); left untracked — the recipient's commit is the read-receipt"
+delivered_md5_body: 7377c88da382b7654c1557e59e5b9e1e
+delivered_cmp: identical   # identity fields stamped BEFORE the copy (doctrine §3b); verified by cmp after, then re-synced
 ack_required: false
 ack_scope: "None owed. If any position below is wrong on your side, say so and it is re-ruled at the next gate; nothing here writes into your tree."
 replies_to: [coord_2026_10_03_noether_to_rosetta_m_f3_frontmatter_entity_master_proposal, coord_2026_10_07_noether_to_rosetta_lattice_master_proposals, coord_2026_10_08_noether_to_rosetta_condition_cel_template_and_fleet, coord_2026_10_10_noether_to_rosetta_lattice_core_path_and_interim_notice, coord_2026_10_16_noether_to_rosetta_m_a1_amendment_package]
