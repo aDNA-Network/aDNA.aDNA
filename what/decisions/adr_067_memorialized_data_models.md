@@ -84,6 +84,16 @@ LatticeProtocol.aDNA ADR-018 the sync hash · LatticeProtocol.aDNA ADR-019 the c
 | **Date** | 2026-10-20 |
 | **Status** | accepted — **in force since 2026-10-20T01:10:09Z** (the C1 reply to Noether delivered, ARCADE A4.2 R45); AEP-0003 owed at publication |
 
+## Erratum (2026-10-20, before publication)
+
+Noether's post-fold read (`who/coordination/inbox/coord_2026_10_20_noether_to_rosetta_v2_6_post_fold_read_19_9_item_5_pin_file.md`)
+found that the folded §19.9 item 5 admitted only a stamped copy, while this ADR's Q5 position (Consequences, "a pin
+file accepted for byte copies") accepts a pin file. The decision above is **unchanged**; the standard text was brought
+into line with it (operator rulings R51–R52, ARCADE A4.2 sitting 2): item 5 now admits a pin file for a byte-for-byte
+copy and reconciles item 4; item 2 restores "exactly as committed, with no normalization"; and the roster sentence says
+the roster is held by its steward graph and is not publicly readable. The roster's path in Citations stays as written:
+it is a pointer for readers who can open LatticeProtocol.aDNA, not a public link.
+
 ## Citations
 
 - Draft: `LatticeProtocol.aDNA/how/campaigns/campaign_academie/artifacts/m_a1_package/` (`adr_draft_multimodal_memorialization.md` · `aep_0003_multimodal_memorialization.md` Step 1 · `roster_qualifying_set.md`), read at LP `ea4ebcb`.

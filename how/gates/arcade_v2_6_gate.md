@@ -94,6 +94,15 @@ Each line reads: **recommendation** · alternatives. Ratification fields are lef
 **C1 · One reply to Noether answering 10-03 · 10-07 · 10-08 · 10-10 + the M-A1 six questions, with the positions in queue §4.** *Recommended: as tabled (per-item overrides welcome). Write it `outbound_ready` in sitting 2; the send is its own GO.* · hold the reply until A4.2.
 - **Decision:** the reply's positions as tabled in queue §4; written outbound_ready, send its own GO · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
+## §3a Post-signature erratum (2026-10-20, before publication)
+
+Not a new gate line, and the fifteen signatures above stand as written. Noether's post-fold read found §19.9 item 5
+(row A8's fold) disagreeing with A8's own Q5 position. **Ruled at A4.2 sitting 2 (operator, AskUserQuestion):**
+- **R51** · adopt Noether's clause (a pin file for a byte-for-byte copy; the check compares with the master's hash; item 4 reconciled).
+- **R52** · restore item 2's "no normalization", and mark the roster as held by its steward graph and not publicly readable.
+
+Folded as one `<!-- v2.6 errata … -->` header line. v2.6 stays v2.6 because it is unpublished. aDNA.aDNA ADR-067 carries a dated erratum note.
+
 ## §4 After signature (sitting 2, in order)
 
 1. Re-run the open reads: Q9 · R38 trigger · md5 `094a3266`.
