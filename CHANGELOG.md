@@ -30,6 +30,19 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-20 (p) — ARCADE A4.2 sitting 2: the v8.13 owed rows authored; ledger questions ruled; v2.6 errata before publication; Q9 answered → branch pushed → CURRENT A4.2 sitting 3
+
+- **Canvases (f1):** the four example canvases now carry the Canvas Standard v2.5.0 partition. `hello_world` is a generated view of its lattice, and the three templates are primary and claim no source. Hashes come from `canvas_std` and validate at `adna_native` with 0 errors.
+- **Redaction (f2):** `skill_l1_upgrade.md` no longer carries a real overlay address. It uses placeholders resolved in the node vault, with RFC 5737 examples, at three lines (the count of one was wrong).
+- **New skill (MP):** `skill_mesh_probe_discipline`, eight rules for any reachability claim about a mesh peer, generalized from Network.aDNA with no addresses or host names. Skills 57 → 58.
+- **Forge ecosystem (R1):** `spec_forge_ecosystem` §Active Forges gains Design.aDNA (Rand's row).
+- **Schema (R48):** `lattice_yaml_schema.json` records that the validator's face admits `agent` while this enum keeps four values. `entity_count` 27 ships.
+- **Standard v2.6 errata (R51–R52, before publication):** §19.9 item 5 admits a pin file for a byte-for-byte copy, which fixes a seam our own vendored face fell into; item 2 says "no normalization"; the roster is marked as held privately. aDNA.aDNA ADR-067 carries an erratum note; the decision is unchanged.
+- **Doctrine (R50):** `doctrine_credential_handling` §5.3 Holders proposed (every holder of a retiring credential is named and told first). It is not in force until signed. The Aspasia reply is `outbound_ready`.
+- **Contract (R54):** `spec_terminal_harness_contract` v0.3 splits the Harness row for Operation Jacquard (HarnessOld.aDNA `PASS`, the successor `TAUGHT-AS-DESIGN`). No clause changed. Re-pin notices are `outbound_ready`.
+- **Hold lifted (R53):** Jake answered Q9 (*"Yes, push now, anchoring excluded"*). The condition was verified at aDNA.aDNA ADR-066, and the branch was pushed at close.
+- **Ledger:** all owed rows authored or carried (P5 + P7 → v8.14); §4 Q1–Q5 answered. v8.13 has not fired; that is its own GO.
+
 ### 2026-10-20 (o) — ARCADE A4.2 sitting 1: Noether reply delivered (aDNA.aDNA ADR-067 in force); v8.13 ledger; lattice-tree + validator fixes local; push still held → CURRENT A4.2 sitting 2
 
 - **Delivered (R45):** the Noether reply → `LatticeProtocol.aDNA/who/coordination/inbox/` (HEAD `ea4ebcb`, cmp identical, body md5 `7377c88d` both sides, re-synced). **aDNA.aDNA ADR-067 is in force** from 2026-10-20T01:10:09Z.

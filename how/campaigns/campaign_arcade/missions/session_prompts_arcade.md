@@ -1,7 +1,7 @@
 ---
 type: session_prompt_index
 created: 2026-10-15
-updated: 2026-10-20   # A4.2 sitting 1 done (R44–R46): Noether reply delivered, ledger + f-b/f-c/f-d local; CURRENT → A4.2 sitting 2; prior: G4 v2.6 SIGNED (R43) + A4.1 COMPLETED (v2.6 folded locally; Noether reply outbound_ready); CURRENT → A4.2; prior: A4.1 sitting 1 (R41–R42: queue + G4 gate authored, unsigned; push held); CURRENT → G4 (human) then A4.1 sitting 2; prior: G3 RULED (R34–R40: aDNA.aDNA ADR-066 accepted 4/4 · Harness row conditional · Lannes memo sent · push held); CURRENT → A4.1; prior: A3.3 closed (R29–R33; push still HELD); CURRENT → G3 (human); prior: A3.2 closed (R25–R28; push HELD); CURRENT → A3.3; prior: A3.1 closed (R23–R24); CURRENT → A3.2; prior: A2.3 closed (R21–R22); P2 complete; CURRENT → A3.1; prior: G2 RULED (R17–R20); CURRENT → A2.3; prior: A2.2 closed; CURRENT → G2 (human); prior: A2.1 closed; CURRENT → A2.2; prior: G1 RULED (R11–R14); CURRENT → A2.1; prior: A1.4 closed; P1 complete; CURRENT → G1 (human)
+updated: 2026-10-20   # A4.2 sitting 2 done (R47–R52): owed rows f1 · f2 · MP · R1 local, ledger Q2–Q5 ruled, v2.6 errata; CURRENT → A4.2 sitting 3 (the fire on hold-lift); prior: A4.2 sitting 1 done (R44–R46): Noether reply delivered, ledger + f-b/f-c/f-d local; CURRENT → A4.2 sitting 2; prior: G4 v2.6 SIGNED (R43) + A4.1 COMPLETED (v2.6 folded locally; Noether reply outbound_ready); CURRENT → A4.2; prior: A4.1 sitting 1 (R41–R42: queue + G4 gate authored, unsigned; push held); CURRENT → G4 (human) then A4.1 sitting 2; prior: G3 RULED (R34–R40: aDNA.aDNA ADR-066 accepted 4/4 · Harness row conditional · Lannes memo sent · push held); CURRENT → A4.1; prior: A3.3 closed (R29–R33; push still HELD); CURRENT → G3 (human); prior: A3.2 closed (R25–R28; push HELD); CURRENT → A3.3; prior: A3.1 closed (R23–R24); CURRENT → A3.2; prior: A2.3 closed (R21–R22); P2 complete; CURRENT → A3.1; prior: G2 RULED (R17–R20); CURRENT → A2.3; prior: A2.2 closed; CURRENT → G2 (human); prior: A2.1 closed; CURRENT → A2.2; prior: G1 RULED (R11–R14); CURRENT → A2.1; prior: A1.4 closed; P1 complete; CURRENT → G1 (human)
 status: active
 last_edited_by: agent_rosetta
 tags: [arcade, session_prompts]
@@ -112,7 +112,26 @@ Rules: every ADR number vault-qualified (rule 3); tense labels (rule 4); nothing
 Close: the five-line AAR on the card → status completed; CURRENT → A4.2 (opus; prompt authored at close; the v8.13 fire is its own G4 gate and is publication, so it waits on Q9); STATE ⏭ (n); CHANGELOG; validator zero drift; gitleaks 0; explicit-path commit; push only if the hold has lifted.
 ```
 
-## A4.2 sitting 2 — the owed rows, then the fire on hold-lift · ⏭ CURRENT
+## A4.2 sitting 3 — the v8.13 fire, on hold-lift and its own GO · ⏭ CURRENT
+
+```text
+Run from ~/aDNA/aDNA.aDNA. Do the open reads, and again at the seal: root CLAUDE.md, STATE.md ⏭ QUEUED (p), how/sessions/active/, who/coordination/inbox/, who/coordination/, git status (the R25…R44 hold LIFTED at sitting 2's close: Q9 answered, branch pushed, R53; expect ahead 0). Then read how/campaigns/campaign_arcade/CLAUDE.md, missions/mission_arcade_a4_2_image_v8_13.md (objective 1 done; sittings 1–2 Key Findings), artifacts/p4/v8_13_release_ledger.md (all of it: §2 is now fully authored, and §4 Q1 is the only open question) and how/skills/skill_template_release.md, with the memory note reference_skill_template_release_execution.
+
+FIRST, the standing checks: (i) Q9 is ANSWERED ("Yes, push now, anchoring excluded", R53). Its condition still binds: no ledger anchoring and nothing from Lister §11.7 in any public text. Grep the fire's payload for it at (b.1). (ii) R38 is APPLIED (v0.3, R54); nothing to do. (iii) md5 what/docs/adna_standard.md is 86385da8 (v2.6 + the R51–R52 errata). (iv) Sends owed, each its own GO (drop-box doctrine): coord_2026_10_20_rosetta_to_aspasia_holders_line_adopted → Fluxer.aDNA · coord_2026_10_20_rosetta_to_panacea_spec_terminal_harness_contract_v0_3_row_1_repin → HarnessOld.aDNA (the successor has no inbox/) · coord_2026_10_20_rosetta_to_vauban_spec_terminal_harness_contract_v0_3_notice → Terminal.aDNA.
+
+ON THE FIRE GO ONLY:
+(1) Re-derive ledger §0 and re-measure every §2 row at the object. Payload = the ruled rows exactly: f-a (+errata) · f-b · f-c1–c6 · f-d · V1 · V2 = pattern_channel_proof only (R49) · T1 · f1 · f2 · MP. Not payload: V3 (the ISS family), the ledger-backed draft pattern, and R1 (dev-only).
+(2) (b.2): diff each path in both trees and move the named lines only. Record the image-only deltas by path and reason: f-b′ (.adna CLAUDE.md:320 + adna_reference.md:114 → 11 dimensions, 0–3, 33 max) · faces/upstream.json source_vault (kept, unverifiable in a fork, by design) · the image's own skills count surfaces (33 → 34). (b.1): 0 private paths · 0 bare SHAs · 0 company names (R2) · 0 10.x literals.
+(3) Dry run, then PAUSE for the operator. Then fire: the five version surfaces in one commit (ledger §3), CHANGELOG [8.13] with the three drafted release-note lines plus the standard minor and the claude_code fix, the ratification block in the firing commit, tag v8.13 (tags only; never move a pushed tag). MANIFEST.md:174 (M1) moves in the same sitting.
+(4) Smoke S1–S9 on a fresh clone of the release.
+(5) Deploy tail: build_tour_files at source_ref v8.13; then the AEPs (AEP-0003 for aDNA.aDNA ADR-067, and one for aDNA.aDNA ADR-066, naming the profile and not its steward; no company name). After the fire, the post-fire memos, each its own GO: Noether (schema md5 e2e18e03 · face pin · the R51–R52 outcome) and Venus (re-point to the template's mesh-probe skill).
+
+Rules: every ADR number vault-qualified (rule 3); tense labels (rule 4); nothing on site/ before the deploy tail; explicit-path commits.
+
+Close: on the fire, write the five-line AAR on the card → status completed, and set CURRENT → A5.1 (author its prompt). Otherwise the card stays active. STATE ⏭ (q); CHANGELOG; validator zero drift both trees; gitleaks 0; push only if the hold has lifted.
+```
+
+## A4.2 sitting 2 — the owed rows, then the fire on hold-lift · ✅ done 2026-10-20 (R47–R54; Q9 answered at the seal → pushed)
 
 ```text
 Run from ~/aDNA/aDNA.aDNA. Do the open reads, and again at the seal: root CLAUDE.md, STATE.md ⏭ QUEUED (o), how/sessions/active/, who/coordination/inbox/, who/coordination/, git status (the ahead-count is the R25/R29/R40/R41/R44 hold; 12 after sitting 1). Then read how/campaigns/campaign_arcade/CLAUDE.md, missions/mission_arcade_a4_2_image_v8_13.md (objective 1 done; its Key Findings), artifacts/p4/v8_13_release_ledger.md (§2b owed rows · §4 five fire-gate questions) and how/skills/skill_template_release.md, with the memory note reference_skill_template_release_execution.

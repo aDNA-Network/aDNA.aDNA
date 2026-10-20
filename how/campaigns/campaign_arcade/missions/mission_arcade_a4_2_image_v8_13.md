@@ -3,7 +3,7 @@ plan_id: mission_arcade_a4_2_image_v8_13
 type: plan
 title: "Fire the v8.13 template release"
 owner: stanley
-status: active      # sitting 1 done 2026-10-20 (R44–R46): ledger + f-b/f-c/f-d local; objective 2 (the fire) waits on Q9
+status: active      # sitting 2 done 2026-10-20 (R47–R54): owed rows f1 · f2 · MP · R1, §4 Q2–Q5 ruled, v2.6 errata, Q9 answered → branch pushed (R53); objective 2 (the fire) waits on its own GO. Prior: sitting 1 (R44–R46) ledger + f-b/f-c/f-d local
 campaign_id: campaign_arcade
 campaign: campaign_arcade
 campaign_phase: 4
@@ -87,15 +87,26 @@ G4 — fire GO.
   - f-b (d11 Derivability + G-015 + the 0–5/50 → 0–3/33 correction);
   - f-d (stamp currency);
   - all committed locally (six commits), none pushed.
+- Sitting 2 (R47 owed rows · R48 `+agent` + `entity_count` · R49 image scope · R50 Aspasia · R51–R52 v2.6 errata):
+  - f1 canvas partition `c03b8a8` · f2 redaction `7553f59` · MP `skill_mesh_probe_discipline` `21af31c` · R1 Rand's row `9805032`;
+  - the `+agent` divergence recorded in the canonical schema `57d31a9`;
+  - `doctrine_credential_handling` §5.3 Holders PROPOSED + the Aspasia reply `outbound_ready` `bbfa0dc`;
+  - §19.9 errata + aDNA.aDNA ADR-067 erratum note + G4 gate §3a `04ea898`;
+  - the ledger re-measured `0d1608a`;
+  - at the seal: Q9 answered (R53, branch pushed at close); R38 met → `spec_terminal_harness_contract` v0.3 `ca9f8b6` (R54).
 
 ### Descoped
--
+- P5 (root-triad exception ADR) and P7 (`standing_grant` + unattended-envelope ADRs) → v8.14 (R47).
+- The draft `pattern_ledger_backed_acceptance_tables` and the ISS family stay out of the image (R49).
 
 ### Key Findings
 - [D] Six card rows were **not authored** when this sitting opened: f1 canvases (byte-identical to the image) · f2 (`10.42.0.1` at `:230`) · the mesh-probe skill (idea only) · the P5 and P7 ADRs · Rand's row. All are listed in ledger §2b.
 - [D] `CLAUDE.md` §Compliance Dimensions said 0–5 / 50; the checker scores 0–3 / 30, so the line was wrong since it was written. The image carries the same text twice (ledger f-b′).
 - [D] Consuming the face makes `lattice_validate.py` accept `agent`, which the canonical schema does not list (ledger §4 Q3).
 - [D] The signed `entity_count` 28 is a raw row count; the dev copy's derived 27 is what a fold ships (ledger §4 Q4).
+- [D] Sitting 2: the f2 redaction was owed at **three** lines, not one. The 10-16 memo to Mondrian counted the full address; the subnet also stood as `10.42.0.x` in prose and in the checklist table (image `:236` · `:392`).
+- [D] Sitting 2: as folded, §19.9 item 5 failed **this vault's own** f-c4 face, a pinned byte copy. Noether's post-fold read found the seam from the other side. Fixed before publication (R51), so the standard, aDNA.aDNA ADR-067's Q5 and `adna_validate`'s f-d check now agree.
+- [D] Sitting 2: the skills count has two surfaces in MANIFEST (the tree line and `### Skills (N)`); the validator caught the second one. The Mondrian canvas hashes reproduced exactly (`28cf14bb…`, `85b1fe92…`), a second-route check on f1.
 
 ### Scope Changes
 -

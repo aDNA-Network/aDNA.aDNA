@@ -35,7 +35,7 @@ tags: [artifact, template_release, ledger, v8_13, v2_6, arcade, proposed]
 | Skills | dev **58** (+`skill_mesh_probe_discipline`, sitting 2) · image **33** | `ls how/skills/skill_*.md \| wc -l`, both trees |
 | `main` CI | last run 2026-10-19 `39285780433` success (`external-links`, scheduled) | `gh run list --branch main --limit 1` |
 | Branch hold | `vitrine/design` **ahead 10** at authoring, **19** at the sitting-2 re-measure, **not pushed** (R25/R29/R40/R41/R44) | `git status -sb` |
-| Q9 | **silent** (re-swept at sitting 2: AILedger s175 10-19 — "Jake's to answer, to Rosetta"; s177 no Q9 line). AILedger receipted the G3 memo at `28eee5ac` ("Q9 is Jake's line"); the operator confirmed no off-channel answer (R44) | AILedger `who/coordination/{inbox,inbox_stanley_desk,fluxer_outbox}` swept 2026-10-20 |
+| Q9 | **ANSWERED "yes" mid-sitting 2**: Jake, verbatim *"Yes, push now, anchoring excluded (Recommended)"* (relayed by Aspasia, 02:16Z). Condition verified at aDNA.aDNA ADR-066; the branch was pushed at sitting 2's close (R53). *(Was:)* **silent** (re-swept at sitting 2: AILedger s175 10-19 — "Jake's to answer, to Rosetta"; s177 no Q9 line). AILedger receipted the G3 memo at `28eee5ac` ("Q9 is Jake's line"); the operator confirmed no off-channel answer (R44) | AILedger `who/coordination/{inbox,inbox_stanley_desk,fluxer_outbox}` swept 2026-10-20 |
 | Hook contract version | **4.3.0** in the image (`.adna/how/standard/hooks/pre-push-sanitize.sh:8`); re-derive at the gate | `grep -n LAYER_CONTRACT_VERSION` on the hook itself (the authoring grep missed the path) |
 
 ## §1 · What this release is
@@ -104,9 +104,9 @@ Plus this vault's `MANIFEST.md:174` (M1), which describes the image and moves in
 ## §4 · ⛩ Questions for the operator at the fire gate
 
 > **Sitting 2 (2026-10-20):** Q2–Q5 **ruled** at plan time (R47–R49, all as recommended; Q5's recommendation was
-> authored at the sitting). **Q1 stays open.**
+> authored at the sitting). **Q1 answered mid-sitting (R53).**
 
-1. **Q9 / publication.** ⛩ **OPEN.** The fire, the AEPs and the push are all publication (R2, R41). Fire only once Jake answers
+1. ✅ **Q9 answered "yes, anchoring excluded" (R53); the branch was pushed.** The fire is now gated only by **its own operator GO**, which is still publication (AEPs, deploy). *(Was:)* **Q9 / publication.** ⛩ **OPEN.** The fire, the AEPs and the push are all publication (R2, R41). Fire only once Jake answers
    Q9 "yes", or once the operator rules otherwise.
 2. ✅ **R47: f1 · f2 · MP · R1 authored; P5 · P7 → v8.14.** *(Was:)* **Owed rows (§2b).** Author f1 · f2 · MP · R1 in a sitting before the fire, and put P5 + P7 to a small ADR gate?
    **Or** ship v8.13 without them and carry them to v8.14? *Recommendation: author f1 · f2 · MP · R1 (all small,
