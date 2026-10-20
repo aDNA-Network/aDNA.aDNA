@@ -2,7 +2,7 @@
 type: governance
 scope: workspace
 created: 2026-05-25
-updated: 2026-09-24   # §2.6 Lanes PROPOSED (Automator 2026-09-23 memo) — amendment candidate, not in force; prior: 2026-08-17   # S199: Hestia co-sign amendments folded (§2.5 normative/epistemic + vacuity · §3.5 as-executed corrections 33/112 + 100-of-112 + kinds-carried-by-no-row · §4.5 rule 6 binds the delivering lane); §9 block RATIFIED S198 + S199 amendment row. Was: three-body amendment PROPOSED (Chambellan M-A6)
+updated: 2026-10-20   # §5.3 Holders PROPOSED (Aspasia 2026-10-19 memo, Hestia's ruling; operator R50 adopt as candidate) — not in force; prior: 2026-09-24   # §2.6 Lanes PROPOSED (Automator 2026-09-23 memo) — amendment candidate, not in force; prior: 2026-08-17   # S199: Hestia co-sign amendments folded (§2.5 normative/epistemic + vacuity · §3.5 as-executed corrections 33/112 + 100-of-112 + kinds-carried-by-no-row · §4.5 rule 6 binds the delivering lane); §9 block RATIFIED S198 + S199 amendment row. Was: three-body amendment PROPOSED (Chambellan M-A6)
 last_edited_by: agent_rosetta
 status: active
 canonical_at: /Users/stanley/aDNA/aDNA.aDNA/what/doctrine/doctrine_credential_handling.md
@@ -351,6 +351,28 @@ A "rotation" that stores the same byte-identical value back is **not a rotation*
 - Confirm the new value works against the vendor API (smoke test).
 
 The leaked value is dead from the moment of leak; the rotation re-provisions a live replacement.
+
+### §5.3 Holders — who is told before the far side changes (⛩ PROPOSED 2026-10-20 — NOT IN FORCE until §9 carries its row)
+
+> Proposed on Aspasia's (Fluxer.aDNA) 2026-10-19 memo, continuing Hestia's ruling the same day (Home Sitting 59,
+> operator-ruled: *"yes"*). §9 of this doctrine is ratified, so this paragraph is an **amendment candidate**: it binds
+> nothing until the operator signs the line below and §9 records the row.
+
+**The rule.** Every holder of a retiring credential is **named, and told, before** the far side changes. A rotation
+revokes every holder, not only the one rotating. An empty or absent holder set is a **finding, not a pass**. The holder
+fact lives on the **register row** (Network.aDNA's `holders:` in `access_inventory.md` §3.1a; Home.aDNA's credential
+rows), never only in a card, a memo or an act package.
+
+**Why (PASS, measured at the source):** a 2026-08-31 SSH-key rotation (Home C91) proved the rotating desk's own access
+end to end and never asked who else held the key being retired. The other holder was locked out for 48 days, and
+learned of it only by trying to read logs (`Fluxer.aDNA/what/context/fluxer/c91_rekey_executed_20260831.md` §5;
+Network.aDNA finding F-S473-01, 2026-09-15). Every check in that act package passed; the harm sat outside every check,
+because this section had no word for a credential's **other holders**.
+
+**Scope (what this does not change):** §4.3 (how the value moves, both stores), §5.1 and §5.2. It names the fact, not
+its schema: Network.aDNA's `key_holders` block and Home.aDNA's C-row field are each their own shape.
+
+- **Ratified-by:** — · **Date:** — · **Status:** proposed (§9 row owed at signature).
 
 ## §6 Discipline — the rules every vault inherits
 
