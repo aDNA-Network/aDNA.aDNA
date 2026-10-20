@@ -146,7 +146,9 @@ ratification block **in the firing commit**.
 | S8 | canvas_std `validate(adna_native)` over the 4 example canvases (where Canvas.aDNA is present) | 0 errors · 0 advisories (f1) |
 | S9 | `grep -rnE '\b10\.[0-9]+\.' how/skills/` in the fresh clone | 0 (f2 + MP) |
 
-## §6 · Publication-bound tail (only after the fire GO)
+## §6 · Publication-bound tail (only after the fire GO) — ✅ DONE 2026-10-20 (R57 · R58)
+
+> Shipped the same sitting: trust page at `source_ref v8.13` · changelog 2026-10-20 · **AEP-3** (aDNA.aDNA ADR-067) + **AEP-4** (aDNA.aDNA ADR-066) at `/community/proposals/` · gate-49 home re-baseline · prod `tree=c7d152a1` (deploy record `cbca256` on `main`). Post-fire memos delivered: Noether → LatticeProtocol.aDNA · Venus → Network.aDNA.
 
 - **Deploy tail:** `build_tour_files` re-vendors at `source_ref: v8.13`; gate-49 red-first discipline if home changes.
 - **AEPs:** AEP-0003 (aDNA.aDNA ADR-067, Noether's draft, renumbered at filing) and one for aDNA.aDNA ADR-066 (names

@@ -30,6 +30,15 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-20 (q) — ARCADE A4.2 sitting 3: v8.13 fired (standard v2.6 published) and deployed; AEP-3 + AEP-4 filed; five memos delivered → A4.2 completed, CURRENT A5.1
+
+- **Template release v8.13 (R56):** `aDNA-Network/aDNA` `223ecc1` + annotated tag `v8.13`. Standard v2.5 → v2.6, governance 8.12 → 8.13, templates 32 → 33, skills 33 → 34. Fired under a conditional pre-grant; every condition was a command with an output, and all held at the push. Fresh-clone smoke S1–S9 passed.
+- **Image-staged copies:** four new files (`pattern_channel_proof`, `skill_mesh_probe_discipline`, `template_profile_spec`, `what/docs/profiles/AGENTS.md`) shipped as de-narrated copies kept beside the ledger. The dev copy of the profiles list named the steward's graph, which a public copy may not (R2).
+- **Deploy tail (R57):** the trust page shows v8.13; a changelog entry; **AEP-3** (memorialized data models) and **AEP-4** (conformance profiles and release integrity) filed as `accepted`, not `final`. AEP-4 says plainly that it was decided before it was filed. Prod `c7d152a1`.
+- **Sends (R55, R58):** Aspasia · Panacea (the Harness.aDNA cc held: no inbox, peer live) · Vauban · Noether · Venus.
+- **This vault:** `MANIFEST.md` standard row v2.6; `skill_mesh_probe_discipline` active and counted with the base skills (28 + 30).
+- A4.2 completed (AAR on the card). **P4 complete. CURRENT → A5.1.**
+
 ### 2026-10-20 (p) — ARCADE A4.2 sitting 2: the v8.13 owed rows authored; ledger questions ruled; v2.6 errata before publication; Q9 answered → branch pushed → CURRENT A4.2 sitting 3
 
 - **Canvases (f1):** the four example canvases now carry the Canvas Standard v2.5.0 partition. `hello_world` is a generated view of its lattice, and the three templates are primary and claim no source. Hashes come from `canvas_std` and validate at `adna_native` with 0 errors.

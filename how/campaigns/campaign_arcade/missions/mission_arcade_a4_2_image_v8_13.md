@@ -3,7 +3,7 @@ plan_id: mission_arcade_a4_2_image_v8_13
 type: plan
 title: "Fire the v8.13 template release"
 owner: stanley
-status: active      # sitting 2 done 2026-10-20 (R47–R54): owed rows f1 · f2 · MP · R1, §4 Q2–Q5 ruled, v2.6 errata, Q9 answered → branch pushed (R53); objective 2 (the fire) waits on its own GO. Prior: sitting 1 (R44–R46) ledger + f-b/f-c/f-d local
+status: completed   # 2026-10-20 sitting 3 (R55–R58): v8.13 FIRED (aDNA-Network/aDNA 223ecc1 + tag v8.13) + deploy tail (tree c7d152a1) + five sends; AAR below. Prior: sitting 2 (R47–R54) owed rows + Q9 answered → pushed; sitting 1 (R44–R46) ledger + local fixes
 campaign_id: campaign_arcade
 campaign: campaign_arcade
 campaign_phase: 4
@@ -17,11 +17,12 @@ executor_tier: opus
 executor_lane: hosted
 executor_runtime: claude
 token_budget_estimated: 90
+token_budget_actual: 175   # three sittings: ≈45 + ≈55 + ≈75 (sitting 3: assembly + image-staged authoring ≈30 · deploy tail + AEPs ≈30 · sends/close ≈15); drift ≈1.9× — under the 2× retrospective line, and the excess is the three-sitting split the card's estimated_sessions: 1 did not foresee
 token_budget_unit: kT_content_load
 estimated_sessions: 1
 calibrated_sessions: null
 estimation_class: content-novel
-budget_status: provisional_until_G0_actual
+budget_status: actual_recorded
 depends_on:
 - mission_arcade_a4_1_standard_v2_6
 blocks:
@@ -54,8 +55,8 @@ G4 — fire GO.
 - **Depends on**: none
 
 ### 2. Fire + deploy tail
-- **Status**: planned
-- **Session**: 
+- **Status**: completed
+- **Session**: session_stanley_20261020_024816_arcade_a4_2_fire
 - **Description**: Only on the operator's GO; build_tour_files re-vendors; gate-49 red-first discipline if home changes.
 - **Files**: aDNA-Network/aDNA · .adna/ local sync · site/
 - **Depends on**: 1
@@ -77,7 +78,7 @@ G4 — fire GO.
 
 ## Completion Summary
 
-*Partial: sitting 1 (2026-10-20). Completed at the fire.*
+*Completed 2026-10-20 at sitting 3 (the fire).*
 
 ### Deliverables
 - Sitting 1 (R44 hold · R45 Noether send · R46 scope):
@@ -94,6 +95,12 @@ G4 — fire GO.
   - §19.9 errata + aDNA.aDNA ADR-067 erratum note + G4 gate §3a `04ea898`;
   - the ledger re-measured `0d1608a`;
   - at the seal: Q9 answered (R53, branch pushed at close); R38 met → `spec_terminal_harness_contract` v0.3 `ca9f8b6` (R54).
+- Sitting 3 (R55 sends ×3 · R56 conditional fire pre-grant · R57 deploy tail with AEPs · R58 post-fire memos):
+  - sends: Aspasia → Fluxer.aDNA · Panacea → HarnessOld.aDNA · Vauban → Terminal.aDNA (`0cacd0f`); the cc to Harness.aDNA HELD (no inbox, peer live);
+  - **v8.13 FIRED:** `aDNA-Network/aDNA` main `1a25446..223ecc1` + annotated tag `v8.13` (39 paths; every R56 condition held at the push); local sync `~/aDNA/.adna` `846ebde`; smoke S1–S9 ✅ on a fresh clone of the tag;
+  - four image-staged copies (`artifacts/p4/image_staged/`) + the ledger §5a fire record + §7.7 block (`cd55ae5`);
+  - deploy tail from a standalone clone of `main`: trust page at `source_ref v8.13` (`55f7147`) · changelog 2026-10-20 (`45f64c6`, `c7d152a`) · **AEP-3 + AEP-4** (`e4c4737`) · twin manifest (`fc54950`) · gate-49 home re-baseline (`0312a63`) · CI `39363498745` success · `deploy_adna.sh prod` → `tree=c7d152a1`, alias-probed · deploy record `cbca256`;
+  - post-fire memos delivered: Noether → LatticeProtocol.aDNA · Venus → Network.aDNA.
 
 ### Descoped
 - P5 (root-triad exception ADR) and P7 (`standing_grant` + unattended-envelope ADRs) → v8.14 (R47).
@@ -106,6 +113,11 @@ G4 — fire GO.
 - [D] The signed `entity_count` 28 is a raw row count; the dev copy's derived 27 is what a fold ships (ledger §4 Q4).
 - [D] Sitting 2: the f2 redaction was owed at **three** lines, not one. The 10-16 memo to Mondrian counted the full address; the subnet also stood as `10.42.0.x` in prose and in the checklist table (image `:236` · `:392`).
 - [D] Sitting 2: as folded, §19.9 item 5 failed **this vault's own** f-c4 face, a pinned byte copy. Noether's post-fold read found the seam from the other side. Fixed before publication (R51), so the standard, aDNA.aDNA ADR-067's Q5 and `adna_validate`'s f-d check now agree.
+- [D] Sitting 3: **R2 catch at the fold** — the dev `what/docs/profiles/AGENTS.md:59` named the steward's graph; the image copy names the profile only. All four NEW files needed image-staged copies (dev-only wikilinks, campaign/session/finding narration, a stale "proposed until G3"). The V1 templates carried `(v8.13, proposed — ARCADE A1.3, Vauban …)` tags inline; de-narrated image-side, the standard kept byte-identical.
+- [D] Sitting 3: a **sixth** version surface (`.adna/MANIFEST.md:127`), a nested index stale since v8.12 (`how/templates/AGENTS.md:17`), and S2/S3 = 15 in the image (the ledger's 19 was the dev count).
+- [D] Sitting 3: the three-way merge from the v8.12 base (`878db24`) did the (b.2) line work mechanically: 15 files base = image, 5 kept deliberate image-only de-narrations, 1 frontmatter conflict.
+- [D] Sitting 3: Docker Desktop 29.8.1 bind mounts refuse Node's `fs.cpSync` (EACCES on the `cp` syscall), which the Vercel adapter uses after build, so `visual_regression_container.sh` died before any test. Ran the same image + steps on a container-native copy of the tree. A host `.vercel/` dir was a red herring.
+- [D] Sitting 3: `check:markup` caught a duplicate heading id on `/changelog/` (every entry renders on one page) — the new entry reused the 10-04 entry's last heading.
 - [D] Sitting 2: the skills count has two surfaces in MANIFEST (the tree line and `### Skills (N)`); the validator caught the second one. The Mondrian canvas hashes reproduced exactly (`28cf14bb…`, `85b1fe92…`), a second-route check on f1.
 
 ### Scope Changes
@@ -115,8 +127,8 @@ G4 — fire GO.
 
 *Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
 
-- **Worked**:
-- **Didn't**:
-- **Finding**:
-- **Change**:
-- **Follow-up**:
+- **Worked**: the R56 conditional pre-grant: every condition was a command with an output, so the push needed no pause and no judgement call; the three-way merge from the last fire's base turned (b.2) from a hand diff into 15 clean merges + 6 explained lines; red-first gate-49 caught the one expected change and nothing else.
+- **Didn't**: the ledger enumerated paths but not the *text* each new file would carry into a public tree — R2 and the narration were found only by the (b.1) scan at the fold, and four files had to be re-authored on the spot. One estimate (1 session) became three.
+- **Finding**: a dev-graph file and its image copy are two objects whenever the file narrates its own making; "copy the file" is the wrong primitive for any file authored inside a campaign. The image copy is a staged artifact from the start.
+- **Change**: author image-bound files twice from day one (dev copy with provenance, image copy de-narrated) and stage the image copy beside the ledger row, so the fold is a copy and the scan finds nothing.
+- **Follow-up**: v8.14 currency candidates (ledger §5a item 9); dev T1 files' stale "proposed until G3"; dev `faces/upstream.json` bare `ADR-067`; the Harness.aDNA cc leg retry; P5 + P7 ADRs; a `visual_regression_container.sh` fix for the Docker cpSync refusal (WebForge/HAUSSMANN owns the harness).
