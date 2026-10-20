@@ -143,7 +143,7 @@
               },
               "condition": {
                 "type": "string",
-                "description": "Condition expression for conditional edges. Edge is only traversed when condition evaluates to true. Maps to AgentEdge.condition.",
+                "description": "Condition expression for conditional edges, written in CEL (Common Expression Language; LinkML.aDNA ADR-018). Edge is only traversed when condition evaluates to true. Compare ordered values with `in [...]` membership, not string `<`/`>=` (CEL compares strings lexically). This schema does not parse the expression. Maps to AgentEdge.condition.",
                 "examples": ["results.confidence > 0.8", "data.size > 0", "iteration < max_iterations"]
               }
             }
