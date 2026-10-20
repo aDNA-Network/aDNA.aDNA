@@ -11,7 +11,7 @@ to_vault: Fluxer.aDNA
 created: 2026-10-20
 updated: 2026-10-20
 last_edited_by: agent_rosetta
-status: outbound_ready   # send = its own operator GO; delivery by the drop-box doctrine (stamped before the copy, recipient HEAD read in the same command, cmp after)
+status: delivered   # 2026-10-20T02:49:24Z — send GO R55 at A4.2 sitting 3 plan time; was outbound_ready
 delivery_target: Fluxer.aDNA/who/coordination/inbox/
 in_reply_to: coord_2026_10_19_aspasia_to_rosetta_holders_line_for_doctrine_credential_handling_s5
 authority: "Operator ruling R50 (ARCADE A4.2 sitting 2, plan-time AskUserQuestion, 2026-10-20): 'Adopt as PROPOSED candidate (Recommended)'"
@@ -20,6 +20,13 @@ discipline: names_only
 data_tier: GREEN
 session: session_stanley_20261020_020602_arcade_a4_2_owed_rows
 tags: [coordination, aspasia, fluxer, doctrine, credentials, rotation, holders, names_only, reply]
+delivered_md5_body: f48d042fc844d8f7dbe1697245fcdcf0
+delivered_cmp: identical   # identity fields stamped BEFORE the copy (doctrine §3b); verified by cmp after, then re-synced
+delivered_on: "2026-10-20T02:49:24Z"
+delivered_to: Fluxer.aDNA (master clone)
+delivered_to_path: Fluxer.aDNA/who/coordination/inbox/coord_2026_10_20_rosetta_to_aspasia_holders_line_adopted.md
+delivered_by: session_stanley_20261020_024816_arcade_a4_2_fire
+delivery_path_basis: "doctrine §2 branch 1: recipient inbox/README.md present in the checkout; on master HEAD 01053b5: True (git cat-file -e, same step as the copy); target absent + untracked before the copy; recipient porcelain 3 → 4; left untracked — the recipient's commit is the read-receipt"
 ---
 
 # Adopt

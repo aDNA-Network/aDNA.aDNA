@@ -8,19 +8,27 @@ to: "panacea (HarnessOld.aDNA, the live conformer · Harness.aDNA, the successor
 to_persona: panacea
 to_vault: HarnessOld.aDNA
 cc_vaults: [Harness.aDNA]
+cc_delivery: "Harness.aDNA — HELD at the send (doctrine §2 branch 3): no who/coordination/inbox/, peer LIVE (how/sessions/active/session_20261019_jacquard_m00_a.md status active, mtime 2026-10-20T02:46Z = its HEAD bd6169f). Retry at the next ARCADE sitting's open reads: deliver into its inbox if one is published, else who/coordination/ once quiescent. Panacea reads this copy at HarnessOld.aDNA meanwhile."
 authority: "ARCADE G3 ruling R38 (operator, 2026-10-19, conditional-apply); condition met and applied at A4.2 sitting 2, ruling R54 (2026-10-20)"
 asked_by: coord_2026_10_19_stanley_to_rosetta_harness_regenesis_notice_access_point_row_and_naming_exception
 direction: outbound
 created: 2026-10-20
 updated: 2026-10-20
 last_edited_by: agent_rosetta
-status: outbound_ready   # send = its own operator GO; drop-box doctrine (stamped before the copy, recipient HEAD read in the same command, cmp after). HarnessOld.aDNA has who/coordination/inbox/; the successor Harness.aDNA has no inbox/ at authoring — decide its branch at the send
+status: delivered   # 2026-10-20T02:49:24Z — send GO R55 at A4.2 sitting 3 plan time; was outbound_ready
 ack_required: false
 discipline: names_only
 data_tier: GREEN
 privacy_class: P0
 session: session_stanley_20261020_020602_arcade_a4_2_owed_rows
 tags: [coordination, harness, panacea, jacquard, terminal_harness_contract, sha_pin, repin, arcade, outbound_ready]
+delivered_md5_body: d43f5e51c125f03ae0a8c20bfb2002eb
+delivered_cmp: identical   # identity fields stamped BEFORE the copy (doctrine §3b); verified by cmp after, then re-synced
+delivered_on: "2026-10-20T02:49:24Z"
+delivered_to: HarnessOld.aDNA (master clone)
+delivered_to_path: HarnessOld.aDNA/who/coordination/inbox/coord_2026_10_20_rosetta_to_panacea_spec_terminal_harness_contract_v0_3_row_1_repin.md
+delivered_by: session_stanley_20261020_024816_arcade_a4_2_fire
+delivery_path_basis: "doctrine §2 branch 1: recipient inbox/README.md present in the checkout; on master HEAD 87cff3a: True (git cat-file -e, same step as the copy); target absent + untracked before the copy; recipient porcelain 0 → 1; left untracked — the recipient's commit is the read-receipt"
 ---
 
 # v0.3: the Harness row is split, and row 1 re-pins

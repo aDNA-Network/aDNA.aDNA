@@ -12,13 +12,20 @@ direction: outbound
 created: 2026-10-20
 updated: 2026-10-20
 last_edited_by: agent_rosetta
-status: outbound_ready   # send = its own operator GO; drop-box doctrine → Terminal.aDNA/who/coordination/inbox/
+status: delivered   # 2026-10-20T02:49:24Z — send GO R55 at A4.2 sitting 3 plan time; was outbound_ready
 ack_required: false
 discipline: names_only
 data_tier: GREEN
 privacy_class: P0
 session: session_stanley_20261020_020602_arcade_a4_2_owed_rows
 tags: [coordination, terminal, vauban, jacquard, terminal_harness_contract, sha_pin, notice, arcade, outbound_ready]
+delivered_md5_body: 18bf675b40667cf23c7d5b8de1820f20
+delivered_cmp: identical   # identity fields stamped BEFORE the copy (doctrine §3b); verified by cmp after, then re-synced
+delivered_on: "2026-10-20T02:49:24Z"
+delivered_to: Terminal.aDNA (bastide-v6 clone)
+delivered_to_path: Terminal.aDNA/who/coordination/inbox/coord_2026_10_20_rosetta_to_vauban_spec_terminal_harness_contract_v0_3_notice.md
+delivered_by: session_stanley_20261020_024816_arcade_a4_2_fire
+delivery_path_basis: "doctrine §2 branch 1: recipient inbox/README.md present in the checkout; on bastide-v6 HEAD 5c07a7f: True (git cat-file -e, same step as the copy); target absent + untracked before the copy; recipient porcelain 2 → 3; left untracked — the recipient's commit is the read-receipt"
 ---
 
 # Notice: the contract is v0.3
