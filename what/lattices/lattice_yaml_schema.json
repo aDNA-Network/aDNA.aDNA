@@ -80,7 +80,7 @@
               },
               "type": {
                 "type": "string",
-                "description": "Node type. Aligned with AgentNodeType enum (objects/agents/modes.py). Module=reference to a Lattice module. Dataset=reference to a Lattice dataset. Process=generic processing step. Reasoning=LLM reasoning step (hybrid/reasoning mode).",
+                "description": "Node type. Aligned with AgentNodeType enum (objects/agents/modes.py). Module=reference to a Lattice module. Dataset=reference to a Lattice dataset. Process=generic processing step. Reasoning=LLM reasoning step (hybrid/reasoning mode). Recorded divergence (v8.13, operator ruling R48): the LinkML generated face that lattice_validate.py reads (tools/faces/lattice.schema.json) also admits agent, the face's ruled divergence matching the five node kinds of the Lattice Protocol runtime; this canonical enum keeps four until the master is adopted, which aDNA.aDNA ADR-067 makes a separate decision. A lattice using type agent passes lattice_validate.py and fails this schema.",
                 "enum": ["module", "dataset", "process", "reasoning"]
               },
               "ref": {
