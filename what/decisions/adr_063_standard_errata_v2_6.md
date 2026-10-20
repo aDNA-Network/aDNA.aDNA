@@ -2,9 +2,9 @@
 type: adr
 adr_number: "063"
 title: "Standard errata for the v2.6 window — two self-contradictions found by the data-engineers primer (§4.1 vs §5.5 required files · §6.5 → §15 dangling rule)"
-status: proposed        # ⛩ drafted 2026-10-04 by agent_rosetta at mission_primer_followup_sweep O3; operator §7.7 at the standard v2.6 window — NOT before; adna_standard.md unchanged until then
+status: accepted        # ⛩ RATIFIED 2026-10-20 at ARCADE G4 (R43, E-1 + E-2 as drafted); folded into adna_standard.md v2.6 (local, unreleased). PRIOR (SO-7): drafted 2026-10-04 by agent_rosetta at mission_primer_followup_sweep O3; operator §7.7 at the standard v2.6 window — NOT before; adna_standard.md unchanged until then
 created: 2026-10-04
-updated: 2026-10-04
+updated: 2026-10-20
 last_edited_by: agent_rosetta
 campaign_id: ""
 mission_id: "mission_primer_followup_sweep"
@@ -18,7 +18,7 @@ tags: [adr, standard, errata, v2_6, conformance, archive, proposed]
 
 ## Status
 
-**Proposed** — drafted 2026-10-04 at `mission_primer_followup_sweep` O3. Ratification is the operator's, at the
+**Accepted 2026-10-20** (ARCADE G4, R43; both errata as drafted; folded at v2.6). *Prior:* **Proposed** — drafted 2026-10-04 at `mission_primer_followup_sweep` O3. Ratification is the operator's, at the
 standard's v2.6 window, **one §7.7 line per erratum** (they are independent). Until then `what/docs/adna_standard.md`
 (v2.5) is byte-unchanged and both of its readings stand. *(Why a proposed ADR and not a quiet fix: the standard is the
 one document in this vault that the vault may not edit on its own authority — Standing Order 9 — and an erratum is a
@@ -49,5 +49,5 @@ fixed in the primer, which states the tension instead. The drafted corrections a
 
 ## Ratification (§7.7)
 
-- **E-1** · **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed.
-- **E-2** · **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed.
+- **E-1** · **Decision:** accept as drafted · **Ratified-by:** Stanley (operator), ARCADE G4 R43 (`how/gates/arcade_v2_6_gate.md` row A1) · **Date:** 2026-10-20 · **Status:** accepted — folded at v2.6.
+- **E-2** · **Decision:** accept as drafted · **Ratified-by:** Stanley (operator), ARCADE G4 R43 (`how/gates/arcade_v2_6_gate.md` row A2) · **Date:** 2026-10-20 · **Status:** accepted — folded at v2.6.

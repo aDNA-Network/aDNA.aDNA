@@ -4,7 +4,7 @@ adr_number: "062"
 title: "LinkML adoption is a standard-level ruling housed in aDNA.aDNA — not a vault, not Context.aDNA's"
 status: accepted        # ⛩ Ratified by operator Stanley 2026-10-03 (accept-all on operator_rulings_packet_20261003 row A1, at plan time) — clauses 1–3 as written + riders i/ii as a non-normative annex. Routing ruling (a) had been taken 2026-09-24.
 created: 2026-09-24
-updated: 2026-10-03
+updated: 2026-10-20   # annex erratum — rider ii path → LatticeProtocol.aDNA/what/schemas/ (ARCADE G4, operator R43, gate row B6); clauses unchanged
 last_edited_by: agent_rosetta
 campaign_id: ""
 mission_id: ""
@@ -66,7 +66,13 @@ Both riders answer Vauban's (Terminal.aDNA) 2026-09-26 memo `coord_2026_09_26_va
 
 - **Rider i — the four conventions LinkML cannot express** (Vauban item 3): **present-but-null** (a key must exist and its value must be null) · **present-but-empty** (a key must exist with an empty collection) · **key-forbidden-at-any-depth** (a key name may appear nowhere in the tree) · **pattern-on-map-values** (every value of a map matches a regex). The standard records them here now as *non-normative*; they become **normative annotations in the v2.6 schema cut** (the release that ships the standard's own entity-type schemas per clause 3 — not this ADR, not v8.12). Until then a vault states them in prose beside its LinkML, as Terminal does.
 - **Rider i, toolchain note.** Vauban's GPL-free validation path — `jsonschema[format-nongpl]` pinned through a `uv` override so the `format` checkers pull no GPL dependency — is recorded as the **fleet-reusable toolchain path** for anyone validating LinkML-projected JSON Schema. A recommendation, not a requirement.
-- **Rider ii — where `lattice_core` lives** (Vauban item 4, K10): **with LatticeProtocol's primitives, Noether's call** (`LatticeProtocol.aDNA/what/latticeprotocol/`). Clause 1 says no `LinkML.aDNA` exists, and LatticeProtocol owns lattice semantics; a schema for the lattice primitives is a schema for *their* object. Terminal cites it there by reference (clause 3).
+- **Rider ii — where `lattice_core` lives** (Vauban item 4, K10): **with LatticeProtocol's primitives, Noether's call** (~~`LatticeProtocol.aDNA/what/latticeprotocol/`~~ → **`LatticeProtocol.aDNA/what/schemas/`** — annex erratum below). Clause 1 says no `LinkML.aDNA` exists, and LatticeProtocol owns lattice semantics; a schema for the lattice primitives is a schema for *their* object. Terminal cites it there by reference (clause 3).
+
+- **Annex erratum (2026-10-20, ARCADE G4, operator R43, gate row B6) — rider ii's path.** `lattice_core` landed at
+  `LatticeProtocol.aDNA/what/schemas/lattice_core.linkml.yaml` on 2026-10-10 (LP D-AC-25 (b), carried out at M-LC), not at
+  `what/latticeprotocol/`, which is LP's counsel-gated code repository (Noether's 10-10 memo,
+  `who/coordination/inbox/coord_2026_10_10_noether_to_rosetta_lattice_core_path_and_interim_notice.md` §1). The graph was
+  right and the subtree was not; the old path is struck above, never deleted. The annex still binds nothing.
 
 ## Ratification (§7.7)
 

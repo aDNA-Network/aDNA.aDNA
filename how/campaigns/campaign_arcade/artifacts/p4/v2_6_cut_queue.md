@@ -5,7 +5,7 @@ campaign_id: campaign_arcade
 mission_id: mission_arcade_a4_1_standard_v2_6
 created: 2026-10-20
 updated: 2026-10-20
-status: proposed        # ⛩ input to the G4 gate (how/gates/arcade_v2_6_gate.md); nothing here is in force; adna_standard.md byte-unchanged (md5 094a3266)
+status: ratified        # ⛩ G4 SIGNED 2026-10-20 (operator R43, every row as recommended) and folded at v2.6 (local). PRIOR: input to the G4 gate (how/gates/arcade_v2_6_gate.md); nothing here is in force; adna_standard.md byte-unchanged (md5 094a3266)
 last_edited_by: agent_rosetta
 standard_md5_at_assembly: 094a326626036731f2894e4cda4f78cb
 tags: [campaign_artifact, arcade, a4_1, v2_6, standard, queue, gate_input]

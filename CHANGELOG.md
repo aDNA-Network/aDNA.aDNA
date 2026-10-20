@@ -30,6 +30,13 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-20 (n) — ARCADE G4 signed: standard v2.5 → v2.6 (local, unreleased); aDNA.aDNA ADR-063 + aDNA.aDNA ADR-067 accepted; A4.1 complete → CURRENT A4.2
+
+- **Standard v2.6 (folded locally; released only with v8.13, which waits on Q9):** §4.1 requirement levels read against §5.5 (aDNA.aDNA ADR-063 E-1) · §15.1 archive-don't-delete (E-2) + the purge exception · conformance **profiles** `<level>+<profile>` + `who/coordination/` optional at Starter + `data_tier` + new **§15.5 release integrity** (aDNA.aDNA ADR-066) · §5.3 `federation_ref` minimum + `exchange/` example · §5.5 `token_estimate` = `ceil(bytes/4)` SHOULD · §6.4 `adr_`/`campaign_`/`coord_` + §19.6 ADR numbering · new **§19.7 Graph Exchange**, **§19.8 Campaigns**, **§19.9 Memorialized Data Models** (aDNA.aDNA ADR-067). Minor: no v2.5-conformant instance un-conforms (§15.4).
+- **Accepted (operator R43, "Signed as recommended"):** `how/gates/arcade_v2_6_gate.md`, all 15 lines. That covers aDNA.aDNA ADR-063 · **new aDNA.aDNA ADR-067** (adopted from Noether's LatticeProtocol.aDNA draft; clause 3 logged for v3.0) · `spec_graph_exchange` v0.2 · `spec_platform_ecosystem` v0.5 · the aDNA.aDNA ADR-062 annex erratum · the `lip_registry.md` rows · two backlog dispositions.
+- **Staged:** one reply to Noether answering four memos + the M-A1 six questions, `outbound_ready`.
+- Campaign: A4.1 **completed**; prompts **CURRENT → A4.2**; STATE ⏭ (n). **Committed locally; push held (R41).**
+
 ### 2026-10-20 (m) — ARCADE A4.1 sitting 1: the v2.6 queue assembled; the G4 gate authored; push still held → CURRENT G4
 
 - **Proposed (gate input):** `how/campaigns/campaign_arcade/artifacts/p4/v2_6_cut_queue.md`, everything waiting for standard v2.6. Each row carries its source, its live anchor (re-found by `grep -nF`), a recommendation, a §15.4 minor-compatibility note and a tense label. There are 8 standard rows to sign, aDNA.aDNA ADR-066's 7 hunks carried (accepted at G3), 6 rows outside the standard, and one set of reply positions for Noether.

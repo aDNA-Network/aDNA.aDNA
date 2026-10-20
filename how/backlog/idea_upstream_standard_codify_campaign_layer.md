@@ -3,14 +3,14 @@ idea_id: idea_upstream_standard_codify_campaign_layer
 type: backlog
 title: "The standard (v2.5) does not define the campaign layer — campaign · objective · AAR · phase gate · OODA · executor_tier · token budget are practice without a normative home"
 category: governance
-status: proposed
+status: accepted   # ⛩ ARCADE G4 2026-10-20 (operator R43, gate row A7): folded as standard v2.6 §19.8 Campaigns (optional extension); a normative §9 core waits for the v3.0 window
 disposition: "v8.13 lane — convention-to-codify — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 priority: medium
 effort: plan
 proposed_by: agent_rosetta
 proposed_date: 2026-10-03
 created: 2026-10-03
-updated: 2026-10-03
+updated: 2026-10-20
 last_edited_by: agent_rosetta
 plan_id:
 filed_from: how/missions/artifacts/sitrep_mid_campaign_20261003.md §5 S3
@@ -34,4 +34,4 @@ For the next standard cut (v2.6 candidate): a **§9 extension or a normative ann
 
 ## Decision
 
-—
+**Accepted 2026-10-20** (ARCADE G4, R43, row A7) as an **optional extension**, standard v2.6 §19.8 (heads a–e: containment · phase gates as human gates · AAR before `completed` · archive-don't-delete · OODA MAY). The normative-core placement (a §9 MUST) is left for the v3.0 window. Local, unreleased until the R41 hold lifts.

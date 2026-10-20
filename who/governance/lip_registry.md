@@ -4,7 +4,7 @@ subtype: registry
 title: "LIP Registry — the global Lattice Improvement Proposal number line (registrar view)"
 status: proposed            # ⛩ registrar ROLE accepted by the operator 2026-10-16 (ARCADE G2 sitting, ruling R20 on the Canvas 2026-07-02 handshake ask, re-asked 2026-10-16); the ROWS are census-derived and proposed until each steward confirms its own; §7.7 for the registry text at the v2.6 cut (A4.1)
 created: 2026-10-16
-updated: 2026-10-19   # §2.1 note row (F-AC-45, Noether 10-18); prior: 2026-10-16 created
+updated: 2026-10-20   # §Ratification (b) RULED at ARCADE G4 (operator R43, gate row B4): 0003 · 0005 · 0007 ratified; 0006 · 0008–0011 proposed until each steward confirms; 0001 · 0002 · 0004 recorded predecessor-only. Prior: §2.1 note row (F-AC-45, Noether 10-18); prior: 2026-10-16 created
 last_edited_by: agent_rosetta
 authored_at_tier: fable
 session: session_stanley_20261016_205633_arcade_g2_sends_sync_replies
@@ -66,8 +66,8 @@ Three number lines, three owners, deliberately not merged: **ADRs** are per-vaul
 
 | Field | Value |
 |---|---|
-| **Decision** | (a) `aDNA.aDNA` accepts the registrar role for the global LIP number line; (b) the §2 rows as derived, pending steward confirmation |
-| **Ratified-by** | (a) Stanley (operator), ruling R20 at the ARCADE G2 sitting — *in force*; (b) *pending — the v2.6 cut (A4.1), after stewards confirm* |
-| **Date** | (a) 2026-10-16 · (b) pending |
-| **Status** | (a) **accepted** · (b) **proposed** |
+| **Decision** | (a) `aDNA.aDNA` accepts the registrar role for the global LIP number line; (b) the §2 rows: **LIP-0003 · 0005 · 0007 ratified** (steward-confirmed: Noether 10-18 for 0003; aDNA.aDNA stewards 0005 · 0007) · **0006 · 0008–0011 stay proposed** until Venus / Canvas confirm their own rows · **0001 · 0002 · 0004 recorded as predecessor-only** (no live steward) |
+| **Ratified-by** | (a) Stanley (operator), ruling R20 at the ARCADE G2 sitting — *in force*; (b) Stanley (operator), ruling R43 at ARCADE G4 (`how/gates/arcade_v2_6_gate.md` row B4) — *in force for the three ratified rows* |
+| **Date** | (a) 2026-10-16 · (b) 2026-10-20 |
+| **Status** | (a) **accepted** · (b) **accepted in part** (3 rows) — the rest proposed or recorded |
 | **Scope of authority** | number assignment only; no LIP's content, status or home moves by this file |

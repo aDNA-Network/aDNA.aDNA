@@ -4,7 +4,7 @@ adr_number: "066"
 title: "Conformance profiles and release integrity — a named profile stacks on a conformance level (`<level>+<profile>`) and never relaxes it; a deterministic sha256 release manifest lets any release or instance prove its rules unmodified; `who/coordination/` becomes optional at Starter; `data_tier` is named as an optional base label and a purge carve-out bounds archive-never-delete"
 status: accepted        # ⛩ RATIFIED 2026-10-19 at ARCADE G3 (operator Stanley, R34–R37: all four clauses signed as written, plan-time AskUserQuestion) — text lands in adna_standard.md only at the v2.6 cut (A4.1). PRIOR (SO-7): proposed — four independent clauses, each its own §7.7 line, drafted 2026-10-19 at ARCADE A3.2
 created: 2026-10-19
-updated: 2026-10-19   # G3: §7.7 ×4 signed (R34–R37); push still held (R40). Prior: A3.2 — drafted
+updated: 2026-10-20   # FOLDED at standard v2.6 (ARCADE G4, R43; all 7 hunks, local, unreleased); claim row re-tensed. Prior: G3: §7.7 ×4 signed (R34–R37); push still held (R40). Prior: A3.2 — drafted
 last_edited_by: agent_rosetta
 campaign_id: campaign_arcade
 mission_id: mission_arcade_a3_2_adr_066_profiles_hash_manifest
@@ -162,7 +162,7 @@ No v2.5-conformant instance becomes non-conformant.
 
 | Claim | Tense |
 |---|---|
-| The standard defines profiles and a release manifest | `TAUGHT-AS-DESIGN` since G3 (2026-10-19, ratified); `PASS` only once the v2.6 cut ships the text. *Prior: `HORIZON` until G3 + the v2.6 cut* |
+| The standard defines profiles and a release manifest | **`PASS` in this vault's standard** since the v2.6 fold (2026-10-20, ARCADE G4 R43; `adna_standard.md` §5.5 Profiles + §15.5); still `TAUGHT-AS-DESIGN` for the public image until A4.2 ships it (held, R41). *Prior: `TAUGHT-AS-DESIGN` since G3 (2026-10-19, ratified); `PASS` only once the v2.6 cut ships the text.* *Prior: `HORIZON` until G3 + the v2.6 cut* |
 | aDNA-Medical is listed as an official profile | `HORIZON` (at Lister's Gate 3) |
 | A validator checks `<level>+<profile>` and `--verify`s a manifest | `HORIZON` (design at A3.3; code later) |
 | An exchange carries profile bytes | `HORIZON` here (Exchange.aDNA ADR-065 is `proposed`) |
@@ -208,6 +208,9 @@ AskUserQuestion at plan time (R34–R37, one line per clause; none declined, non
 G3. Drafted at `session_stanley_20261019_211219_arcade_memo_send_and_a3_2_adr_066` on rulings
 R25 (push held) + R28 (the four clauses; clause 4a refined at drafting from `data_class` to `data_tier` on the fleet
 evidence above). **Scope of authority:** this vault's text for the v2.6 cut; binds no other estate.
+
+*Fold note (2026-10-20, ARCADE G4 R43):* all four clauses' text folded into `what/docs/adna_standard.md` v2.6 from `how/campaigns/campaign_arcade/artifacts/p3/standard_deltas_adr_066.diff.md` (7 hunks; every anchor re-found by `grep -nF`; hunk 6 in its E-2-accepted form). Local and unreleased; AEP owed at publication (q11).
+
 
 ## Related
 

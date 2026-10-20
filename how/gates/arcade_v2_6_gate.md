@@ -3,15 +3,15 @@ type: gate_record
 gate_id: arcade_v2_6_gate
 campaign_id: campaign_arcade
 mission_id: mission_arcade_a4_1_standard_v2_6
-title: "G4 — the standard v2.6 cut (AUTHORED, pending operator ratification)"
-status: active
+title: "G4 — the standard v2.6 cut (RATIFIED 2026-10-20, R43)"
+status: ratified   # ⛩ R43 2026-10-20 — all 15 lines signed as recommended; fold LOCAL (R41)
 created: 2026-10-20
 updated: 2026-10-20
 last_edited_by: agent_rosetta
 tags: [gate_record, arcade, g4, v2_6, standard, ratification]
 ---
 
-# G4: the standard v2.6 cut (authored, unsigned)
+# G4: the standard v2.6 cut (ratified 2026-10-20, R43)
 
 > Authored at ARCADE A4.1 sitting 1 (2026-10-20). **This is an operator gate. Do NOT auto-advance.** Every ratification
 > line below is blank until the operator signs it. Evidence and candidate texts for every row are in
@@ -44,55 +44,55 @@ tags: [gate_record, arcade, g4, v2_6, standard, ratification]
 Each line reads: **recommendation** · alternatives. Ratification fields are left blank.
 
 **A1 · aDNA.aDNA ADR-063 E-1 (§4.1 reads against §5.5).** *Recommended: accept as drafted.* · amend · decline (the contradiction stays, recorded).
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** accept E-1 as drafted · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 **A2 · aDNA.aDNA ADR-063 E-2 (§15.1 archive-don't-delete).** *Recommended: accept as drafted.* · decline (hunk 6 uses its alternate opening).
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** accept E-2 as drafted · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 **A4 · §19.6 ADR numbering + §6.4 `adr_`/`campaign_`/`coord_` (R10's words, T-1).** *Recommended: accept T-1.* · amend · rule only (pattern note, no standard text).
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** accept T-1 (§19.6 numbering + §6.4 `adr_`/`campaign_`/`coord_`) · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 **A5 · `token_estimate` SHOULD be `ceil(bytes/4)` (q9, T-2).** *Recommended: accept T-2.* · defer · decline.
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** accept T-2 (`ceil(bytes/4)` SHOULD) · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 **A6 · Graph Exchange cross-reference: §5.3 example + new §19.7 (T-3).** *Recommended: accept T-3.* · §5.3 example only · defer.
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** accept T-3 (§5.3 example + §19.7 Graph Exchange) · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 **A7 · The campaign layer as optional extension §19.8 (T-5 heads a–e).** *Recommended: accept as an optional extension (MAY/SHOULD); the normative core waits for v3.0.* · defer the whole item to v3.0 · decline.
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** accept §19.8 Campaigns as an optional extension (heads a–e); normative core to v3.0 · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 **A8 · Noether's M-A1 v2.6 SHOULD rider as aDNA.aDNA ADR-067 → §19.9 (T-6).** *Recommended: accept clauses 1, 2 and 4. Clause 3 (the v3.0 MUST) is logged for the major window. In force only after Part C's six answers are sent. AEP at publication.* · defer the whole package to its own sitting · decline.
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** accept clauses 1, 2, 4 as aDNA.aDNA ADR-067 → §19.9; clause 3 logged for v3.0; in force after the C1 reply is sent; AEP at publication · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 **A9a · A minimal `federation_ref` clause in §5.3 (q10, T-4).** *Recommended: accept T-4 (wrapper meaning only; "declared", never verified).* · defer · decline.
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** accept T-4 (wrapper meaning only; declared, never verified) · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 *Deferred (no line): A9b, a closed wrapper `status` vocabulary, goes to the v3.0 window or its own ADR. The evidence is in queue §1.*
 
 ## §2 Same gate, not standard text
 
 **B1 · `spec_graph_exchange` §5.1 one-clause amendment (q2) → v0.2.** *Recommended: accept.* · decline.
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** accept the §5.1 one-clause amendment → spec v0.2 · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 **B2 · `spec_graph_exchange` L2-4 v1.1 wording, "real directory" (q3) → v0.2. The live count is 3, re-measured.** *Recommended: accept.* · keep the narrow reading.
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** accept the L2-4 v1.1 wording → spec v0.2 · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 **B3 · Derivability, an 11th compliance dimension (q4).** *Recommended: route to A4.2 (governance + `compliance_checker.py`, not the standard).* · decline.
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** route to A4.2 (governance + `compliance_checker.py`) · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** routed
 
 **B4 · `lip_registry.md` (b) rows (q5).** *Recommended: ratify 0003 · 0005 · 0007; keep 0006 · 0008–0011 proposed until each steward confirms; record 0001 · 0002 · 0004 as predecessor-only.* · ratify all 11 as derived · hold all.
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** ratify 0003 · 0005 · 0007; 0006 · 0008–0011 stay proposed; 0001 · 0002 · 0004 recorded predecessor-only · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted (partial, as recommended)
 
 **B5 · `spec_platform_ecosystem` threat-model hook repoint to Terminal's idea file (q8) → v0.5.** *Recommended: accept.* · defer to the next natural bump.
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** accept the hook repoint → spec v0.5 · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 **B6 · aDNA.aDNA ADR-062 annex rider ii path → `LatticeProtocol.aDNA/what/schemas/` (Noether 10-10).** *Recommended: accept as a dated annex erratum, old path struck, not deleted.* · leave as is.
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** accept as a dated annex erratum, old path struck · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 ## §3 Part C: the Noether reply's positions
 
 **C1 · One reply to Noether answering 10-03 · 10-07 · 10-08 · 10-10 + the M-A1 six questions, with the positions in queue §4.** *Recommended: as tabled (per-item overrides welcome). Write it `outbound_ready` in sitting 2; the send is its own GO.* · hold the reply until A4.2.
-- **Decision:** — · **Ratified-by:** — · **Date:** — · **Status:** proposed
+- **Decision:** the reply's positions as tabled in queue §4; written outbound_ready, send its own GO · **Ratified-by:** Stanley (operator), R43 "Signed as recommended" · **Date:** 2026-10-20 · **Status:** accepted
 
 ## §4 After signature (sitting 2, in order)
 

@@ -2,9 +2,9 @@
 type: backlog
 idea_id: idea_upstream_registry_derivability
 title: "Registry derivability as a compliance dimension — every hand-maintained registry has a consumer that fails on drift or a discovery pass that enumerates its territory; the third state is the defect"
-status: proposed            # candidate for the v2.6 cut (ARCADE A4.1); ruled there
+status: accepted            # ⛩ ruled at ARCADE G4 2026-10-20 (operator R43, gate row B3): ROUTED to A4.2 — the compliance dimensions are governance (CLAUDE.md + compliance_checker.py), not standard text
 created: 2026-10-16
-updated: 2026-10-16
+updated: 2026-10-20
 last_edited_by: agent_rosetta
 source: "Mondrian (Canvas.aDNA), coord_2026_09_16_mondrian_to_rosetta_partition_before_migrating §4 (delivered 2026-10-16); Canvas backlog idea of the same name — the FINDING is theirs, the SHAPE below is ours (they declined to draft a diff, twice burned)"
 campaign: campaign_arcade

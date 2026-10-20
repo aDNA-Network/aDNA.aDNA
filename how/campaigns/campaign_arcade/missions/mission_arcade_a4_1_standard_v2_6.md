@@ -3,7 +3,7 @@ plan_id: mission_arcade_a4_1_standard_v2_6
 type: plan
 title: "Assemble the standard v2.6 cut for the operator's gate"
 owner: stanley
-status: in_progress   # sitting 1 ✅ 2026-10-20 (queue + G4 gate); sitting 2 = fold on signature + Noether reply
+status: completed   # 2026-10-20 — G4 signed (R43); v2.6 folded LOCALLY (md5 094a3266 → 3e883ab4); Noether reply outbound_ready; push held (R41)
 campaign_id: campaign_arcade
 campaign: campaign_arcade
 campaign_phase: 4
@@ -58,15 +58,15 @@ G4 — the v2.6 cut (operator).
 - **Depends on**: none
 
 ### 2. Fold + cut
-- **Status**: planned
-- **Session**: 
+- **Status**: completed — v2.6 folded locally (1522 → 1613 lines; 12 lines replaced, 103 added; four surfaces together); not released (R41)
+- **Session**: session_stanley_20261020_001835_arcade_g4_v2_6_fold
 - **Description**: adna_standard.md v2.6 on signature only; frontmatter title · updated · header changelog · footer all move together.
 - **Files**: what/docs/adna_standard.md · CHANGELOG.md
 - **Depends on**: 1
 
 ### 3. Replies to Noether
-- **Status**: planned
-- **Session**: 
+- **Status**: completed — one memo, four memos + M-A1 answered, `outbound_ready` (send GO owed)
+- **Session**: session_stanley_20261020_001835_arcade_g4_v2_6_fold
 - **Description**: Three ack_required memos answered in one (10-07 · 10-08 · 10-10) — outbound_ready.
 - **Files**: who/coordination/coord_*_rosetta_to_noether_*.md
 - **Depends on**: 2
@@ -95,23 +95,32 @@ G4 — the v2.6 cut (operator).
 *Fill out when setting `status: completed`.*
 
 ### Deliverables
--
+- `how/campaigns/campaign_arcade/artifacts/p4/v2_6_cut_queue.md` (the queue, at the object) · `how/gates/arcade_v2_6_gate.md` (G4, 15 lines, **signed R43**)
+- `what/docs/adna_standard.md` **v2.6** (local, unreleased): §4.1 · §5.3 · §5.5 (+ Profiles) · §6.4 · §7.2 · §11.3 · §15.1 · new §15.5 · §19 Scan · §19.6 · new §19.7–§19.9; md5 `094a3266` → `3e883ab4`; `diff` = 12 lines replaced, 103 added, nothing else removed
+- aDNA.aDNA ADR-063 accepted (E-1 + E-2) · **aDNA.aDNA ADR-067 created + accepted** (Noether's M-A1 draft; clauses 1, 2, 4) · aDNA.aDNA ADR-066 fold note + claim re-tensed · aDNA.aDNA ADR-062 annex erratum · `adr_index` tally derived 62 = 61 · 1 · 0
+- `spec_graph_exchange` v0.2 (B1 + B2) · `spec_platform_ecosystem` v0.5 (B5) · `lip_registry.md` (b) ruled (B4) · two backlog ideas dispositioned (A7 accepted, B3 routed)
+- `who/coordination/coord_2026_10_20_rosetta_to_noether_v2_6_cut_four_memos_answered.md` `outbound_ready`
+- A4.2 card: fire rows f-a…f-e (the standard surface, B3, the Part C image items, aDNA.aDNA ADR-067 clause 4, the AEPs)
 
 ### Descoped
--
+- A9b (a closed wrapper `status` vocabulary) → v3.0 window / own ADR · aDNA.aDNA ADR-067 clause 3 → the major window · the HTML ISS render (markdown gate record used, vault precedent) · publication of every object above (R41, Q9)
 
 ### Key Findings
--
+- [D] The card's "four-surface checklist" row was an existing rule (§15.4, v2.5) — a queue can carry rules already in force; check before listing.
+- [D] The "incoming" ACADÉMIE P4 package had already landed as q1 — two card rows were one object.
+- [D] The owed Noether memos were four, not three (10-03 is also `ack_required`).
+- [D] q10's counts did not reproduce (405 · 203 · 192 · 23 vs 392 · 193 · 183 · 18), so the standard text cites no numbers; a predicate bug of mine (it skipped every how/federation wrapper) was caught before the number was used.
+- [D] Noether 10-08: the template `deep_research` lattice misroutes under CEL (a comprehensive run skips the review gate) — a live defect in the image, fixed in A4.2's queue.
 
 ### Scope Changes
--
+- The gate gained six non-standard rows (B1–B6) and a Part C reply-position line (C1) so that one signature covered every v2.6-window decision. Plan-time rulings R41 (local fold allowed while Q9 holds) · R42 (two sittings) · R43 (signed as recommended).
 
 ## AAR
 
 *Mandatory before setting `status: completed`. See `how/templates/template_aar_lightweight.md`.*
 
-- **Worked**:
-- **Didn't**:
-- **Finding**:
-- **Change**:
-- **Follow-up**:
+- **Worked**: Re-finding every anchor by `grep -nF` before writing, and folding by an assert-per-anchor script — 14 passages landed exactly once and the diff removed only the 12 intended lines.
+- **Didn't**: The q10 counts carried from A3.3 did not reproduce, and my first re-derivation had a predicate bug; a number copied forward is not a measurement.
+- **Finding**: A gate that carries candidate words (T-1…T-6) makes "signed as recommended" a signature on text, not on intentions — the fold needed no new judgement.
+- **Change**: Queue rows are checked against the live standard before they are listed (two of this card's rows were already settled).
+- **Follow-up**: Send GO for the Noether reply · Q9 (Jake) → push + A4.2 fire · AEP-0003 + aDNA.aDNA ADR-066's AEP at publication · A9b + aDNA.aDNA ADR-067 clause 3 to the v3.0 window. Budget ≈70 + 75 = 145 kT vs 150.

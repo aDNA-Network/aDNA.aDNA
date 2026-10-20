@@ -4,8 +4,8 @@ kind: ecosystem_spec
 name: graph_exchange
 title: "Graph Exchange — the ONE standard-side contract for publishing, discovering, fetching and trusting an aDNA graph as an artifact (cites Exchange.aDNA's owned specs, never copies them)"
 created: 2026-10-15
-updated: 2026-10-16   # status proposed → accepted at ARCADE G1 (operator R11, with aDNA.aDNA ADR-064 §Ratification); text byte-unchanged otherwise
-version: "0.1"
+updated: 2026-10-20   # v0.1 → v0.2 at ARCADE G4 (operator R43, gate rows B1 + B2): §5.1 one-clause amendment (Themis F-164-01) + L2-4 v1.1 wording (Q-066-1 ruled wide); §8 aDNA.aDNA ADR-066 bullet re-tensed. Prior: status proposed → accepted at ARCADE G1 (operator R11, with aDNA.aDNA ADR-064 §Ratification); text byte-unchanged otherwise
+version: "0.2"
 status: accepted          # ⛩ RATIFIED 2026-10-16 at ARCADE G1 with aDNA.aDNA ADR-064 (operator, R11 "sign all four as written"); the placement had been ratified as drafted 2026-08-25 (aDNALabs S250, operator) on the 2026-07-11 draft. PRIOR (SO-7): proposed until ADR-064's §7.7 — Standing Order 9 / standard §7.7
 last_edited_by: agent_rosetta
 campaign_id: campaign_arcade
@@ -93,11 +93,11 @@ Derived from standard §5.5 Starter plus the placement rule the Exchange already
 | L2-1 | `MANIFEST.md` present at the graph root | §4.1, §5.5 L1.1 |
 | L2-2 | `CLAUDE.md` + `README.md` present at the graph root | §5.5 L1.1 |
 | L2-3 | `what/` · `how/` · `who/` present (bare triad) or `.agentic/{what,how,who}/` (embedded) | §3.2, §3.3, §5.5 L1.2 |
-| L2-4 | federation wrappers under `how/federation/<name>/`, not at root (legacy root wrappers → finding `legacy_root_wrapper`) | aDNA.aDNA ADR-045 |
+| L2-4 | federation wrappers under `how/federation/<name>/`, not at root. A **legacy root wrapper** is a *real directory* at graph root whose `CLAUDE.md` carries `federation_ref:` → finding `legacy_root_wrapper`; a symlink at root is a Standing-Rule-9 shim and passes (v1.1 wording, v0.2) | aDNA.aDNA ADR-045 |
 | L2-5 | `MANIFEST.md` frontmatter carries `license:` (SPDX or the literal `unset`) | `skill_project_fork` Step 1.5 (v8.12); binds §3 row 2 |
 | L2-6 | *(advisory)* `adna_conformance:` declared in `MANIFEST.md`; absent ⇒ "unverified", never a failure | §5.5 Conformance Declaration |
 
-Findings are **info** or **warn**; L2 never refuses a publish (Exchange ADR-020). The honest floor from the 07-11 memo stands: no automated standard linter exists beyond `adna_validate.py`, so L2 starts narrow. v1 is what the runner already does plus L2-5/L2-6; the bump is a one-line change on their side once ADR-064 is signed.
+Findings are **info** or **warn**; L2 never refuses a publish (Exchange ADR-020). The honest floor from the 07-11 memo stands: no automated standard linter exists beyond `adna_validate.py`, so L2 starts narrow. v1 is what the runner already does plus L2-5/L2-6; the bump is a one-line change on their side once ADR-064 is signed. **v1 = the six rules executing** (Exchange.aDNA ADR-066); **the stamp moves only in the commit that runs all six** (v0.2, Themis F-164-01). *Tense: TAUGHT-AS-DESIGN — the rule set is built (adna_exchange 0.0.45) and not yet serving.* *Measured at v0.2 (2026-10-20, `lstat` + a tracked `CLAUDE.md`): **3** legacy root wrappers fleet-wide; weighing them is Rosetta's + Hestia's, nothing is sent to their owners from this spec.*
 
 ## §6 Access points and faces (the four relations — `TAUGHT-AS-DESIGN` unless marked)
 
@@ -115,10 +115,10 @@ Prices, settlement, payment rails (Exchange ADR-045/047: settlement is *recorded
 
 ## §8 Forward integration (WHO + WHAT named; WHEN/HOW/WHY deferred — `skill_forward_reference_stub_design`)
 
-- **Profiles** (aDNA.aDNA ADR-066, proposed at ARCADE A3.2): a published graph MAY declare `adna_conformance: <level>+<profile>`; the profile's release-integrity hash manifest rides inside the body; L2 gains an advisory row when the seam is cut (v2.6).
+- **Profiles** (aDNA.aDNA ADR-066, accepted at ARCADE G3; folded at standard v2.6 §5.5 + §15.5, 2026-10-20): a published graph MAY declare `adna_conformance: <level>+<profile>`; the profile's release-integrity hash manifest rides inside the body; L2 gains an advisory row when the seam is cut (v2.6).
 - **Witness anchoring** (Exchange ADR-058): the Exchange's signed tree heads anchored on the AILedger record. The standard names this only as what it is — a witness — and only once the operator clears public naming.
 - **Registry row truth** (aDNA.aDNA ADR-052): the adna.network registry projects Hestia's inventory; the Exchange's `conformance_report` is a different object. Neither is the other's source.
-- **Standard v2.6**: §5.3 gains the `how/federation/exchange/` example row; §19 names this spec among the optional extensions a graph may adopt.
+- **Standard v2.6** — *done 2026-10-20 (local, unreleased)*: §5.3 carries the `how/federation/exchange/` example; §19.7 names this spec among the optional extensions a graph may adopt.
 
 ## Provenance
 
@@ -127,4 +127,6 @@ Prices, settlement, payment rails (Exchange ADR-045/047: settlement is *recorded
 - 2026-10-15 — authored at ARCADE A1.1 (declared opus, executed fable at the operator's R3 selection); L2 custody ruled here as §5; text `proposed` until ADR-064 §7.7.
 - 2026-10-16 — **v0.1 ACCEPTED** at ARCADE G1: the operator signed aDNA.aDNA ADR-064 §Ratification as written (R11, plan-time AskUserQuestion, `session_stanley_20261016_174616_arcade_g1_and_a2_1_adr_065`); the Exchange is notified by the delivered triad reply (`coord_2026_10_15_rosetta_to_berthier_and_the_triad_*`) — its `RULE_SET_VERSION` bump is its own act on that notice.
 
-*End of spec_graph_exchange v0.1 (accepted 2026-10-16)*
+- 2026-10-20 — **v0.2** at ARCADE G4 (operator R43, gate rows B1 + B2): the §5.1 v1 clause + the L2-4 v1.1 wording; §8 re-tensed for the v2.6 fold.
+
+*End of spec_graph_exchange v0.2 (accepted 2026-10-20)*
