@@ -34,3 +34,8 @@ conflict_scan: "how/sessions/active/ empty at open"
 
 ## Log
 
+- 02:48Z — Session opened (Tier 2). Open reads: nothing new since sitting 2's close; branch 0/0 at `6f17137`; standard md5 `86385da8`.
+- 02:49Z — **R55 sends ×3 DELIVERED** (`0cacd0f`): Aspasia → Fluxer.aDNA inbox (master `01053b5`) · Panacea → HarnessOld.aDNA inbox (master `87cff3a`) · Vauban → Terminal.aDNA inbox (`bastide-v6` `5c07a7f`). Identity stamped before each copy, cmp identical, delivery-state after + re-synced. ⚠ The cc leg to Harness.aDNA is **HELD** (doctrine §2 branch 3: no inbox, session `jacquard_m00_a` live) — retry at the next open.
+- 02:52Z → 03:05Z — **Re-measure + assembly** in a fresh clone of `aDNA-Network/aDNA` @ `1a25446` (byte-identical to `~/aDNA/.adna`). §0 all held. (b.2) as a three-way merge (base `878db24` = the v8.12 fire). Findings in ledger §5a: R2 catch at dev `profiles/AGENTS.md:59` (steward named) → four NEW files image-staged (`artifacts/p4/image_staged/`); V1/tool narration de-narrated image-side; sixth version surface `.adna/MANIFEST.md:127`; `how/templates/AGENTS.md:17` stale since v8.12; S2/S3 = 15 in the image.
+- 03:05Z — **R56 conditions all green**: gitleaks 0 · hook self-test PASSED · (b.1) 0 company · 0 `10.x` · 0 Q9 · paths dispositioned · governance Zero drift both trees · porcelain 39 = 39 · remote `main` = `1a25446` at the push.
+- 03:07Z — **v8.13 FIRED**: `aDNA-Network/aDNA` main `1a25446..223ecc1` + annotated tag `v8.13` (`79d67c1`). Smoke S1–S9 on a fresh clone of the tag: all ✅ (ledger §7). Local sync `~/aDNA/.adna` `846ebde`, byte-identical. M1 + MP row moved; governance Zero drift.

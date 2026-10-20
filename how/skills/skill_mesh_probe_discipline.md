@@ -3,7 +3,7 @@ type: skill
 skill_type: process
 created: 2026-10-20
 updated: 2026-10-20
-status: proposed   # ships with template v8.13 (ruled 2026-10-04; ARCADE A4.2, R47); active at the fire. Network.aDNA's copy is canonical until then
+status: active   # shipped in template v8.13 (223ecc1 + tag v8.13, 2026-10-20; ARCADE A4.2 sitting 3, R56). The image copy is the same eight rules, de-narrated (no source-vault path, no finding IDs)
 category: network_operations
 trigger: "Any reachability claim about a mesh peer — UP or DOWN — before recording, relaying, or acting on it"
 last_edited_by: agent_rosetta

@@ -43,7 +43,7 @@ aDNA.aDNA/
 │   ├── publishing/     Vault-to-web pipeline
 │   ├── campaigns/      Strategic initiatives (campaign_rosetta active)
 │   ├── templates/      46 templates (26 base + 11 extension + 9 operational)
-│   ├── skills/         58 skills (27 base + 31 project-specific)
+│   ├── skills/         58 skills (28 base + 30 project-specific)
 │   ├── sessions/       Session tracking
 │   ├── missions/       Multi-session tasks
 │   ├── pipelines/      Content-as-code workflows

@@ -5,16 +5,16 @@ title: "v8.13 staging ledger: standard v2.6, the G4 image items, the Vauban temp
 campaign: campaign_arcade
 created: 2026-10-20
 updated: 2026-10-20
-status: proposed          # NOT FIRED. The fire is publication: it waits on Q9 (R25/R41/R44) and on its own fire GO (card gate G4 "fire GO")
+status: fired          # 2026-10-20 — aDNA-Network/aDNA main 1a25446..223ecc1 + annotated tag v8.13 (R56 conditional pre-grant; every condition held at the instant of push). Was: proposed (NOT FIRED)
 last_edited_by: agent_rosetta
-session: session_stanley_20261020_010905_arcade_a4_2_ledger_and_local_fixes   # authored; re-measured at session_stanley_20261020_020602_arcade_a4_2_owed_rows (sitting 2: §2b authored, §4 Q2–Q5 ruled R47–R49, v2.6 errata R51–R52)
+session: session_stanley_20261020_010905_arcade_a4_2_ledger_and_local_fixes   # authored; re-measured at session_stanley_20261020_020602_arcade_a4_2_owed_rows (sitting 2: §2b authored, §4 Q2–Q5 ruled R47–R49, v2.6 errata R51–R52); fired at session_stanley_20261020_024816_arcade_a4_2_fire (sitting 3)
 mission: mission_arcade_a4_2_image_v8_13
 supersedes_none: true
 relates: [release_staging_ledger_v8_12, skill_template_release, v2_6_cut_queue, arcade_v2_6_gate, mission_arcade_a4_2_image_v8_13]
 tags: [artifact, template_release, ledger, v8_13, v2_6, arcade, proposed]
 ---
 
-# v8.13 staging ledger (NOT FIRED)
+# v8.13 staging ledger — FIRED 2026-10-20 (`223ecc1` + tag `v8.13`)
 
 > ⚠ **Ledger rows are hypotheses.** They were measured against disk on **2026-10-20** and must be measured **again**
 > before firing. v8.6 · v8.8 · v8.10 · v8.11 · v8.12 each caught a row wrong at fire time. **A fold is not a copy:**
@@ -155,13 +155,68 @@ ratification block **in the firing commit**.
   `e2e18e03`), the vendored face pin (f-c4), and the outcome of the 10-20 post-fold read (R51–R52 adopted, `04ea898`;
   nothing was owed back, so this is information). Network.aDNA (Venus) re-points to the template skill once MP lands.
 
+## §5a · Fire-time re-measure (sitting 3, 2026-10-20) — what the rows said vs what disk said
+
+**§0 re-derived, all held** [D]: image 8.12 · image standard `094a3266` · dev `86385da8` · ADRs 61 accepted · 1 amended · 0
+proposed · templates 47/32 · skills 58/33 · hook contract 4.3.0 · `main` CI `39285780433` success · the fresh clone of
+`aDNA-Network/aDNA` at `1a25446` was **byte-identical** to `~/aDNA/.adna` (`diff -rq` empty).
+
+**Method — (b.2) mechanised as a three-way merge** [D]: base = this vault at the v8.12 fire (`878db24`), ours = the image,
+theirs = dev HEAD (`git merge-file`). Every dev commit touching a payload path since the base is an ARCADE payload
+commit, plus `2e3f5cf` (Primer I-01, the source of the 27 R48 ruled). Result: 15 files base = image (the merge is the
+dev change exactly) · 5 files kept image-only lines that earlier releases de-narrated on purpose (`compliance_checker.py`
+comment · `ontology.md:407` · a stray `status: completed` the image never carried in `template_aar` + `template_aar_lightweight`
+· `template_campaign` class-evidence line) · **1 conflict**, `skill_l1_upgrade.md` frontmatter only, resolved to dev; f2
+lands at image `:232–234 · :237 · :393`, `grep 10\.` = 0.
+
+**Findings at the object** [D]:
+1. f-a measures **116** lines, not 115 (the errata header line).
+2. The image **already had** `what/patterns/` (`pattern_lattice_home.md`); V2's "neither directory" was wrong for patterns.
+3. ⛔ **R2 catch:** dev `what/docs/profiles/AGENTS.md:59` names the steward's graph in its Expected row. The image copy names
+   the profile only (R21). All four NEW files ship as **image-staged copies** (`artifacts/p4/image_staged/`): wikilinks into
+   dev-only files removed, campaign/session/finding-ID narration removed, stale "proposed until G3" re-tensed to v2.6
+   section numbers. `pattern_channel_proof` rules 1–4 verbatim; its instances and example re-told without graph names.
+4. **Narration in the payload** (b.1): inline `(v8.13, proposed — ARCADE A1.3, Vauban …)` tags in all six V1 templates,
+   persona/finding tags in `lattice_interop.md` · `tools/AGENTS.md` · `adna_validate.py` · `faces/upstream.json` ·
+   `ontology.md` → de-narrated image-side (the v8.10 contract rule; "proposed" is false once shipped). The standard is
+   **byte-identical** to dev (`86385da8`): its signed text keeps its own `ARCADE G4` decision lines.
+5. **A sixth version surface:** `.adna/MANIFEST.md:127` "aDNA Standard v2.5 | Shipped" → v2.6 (§3 named five).
+6. `.adna/how/templates/AGENTS.md:17` was stale **since v8.12** (31 / 6 operational against a table of 32 / 7) → 33 / 8,
+   `template_profile_spec` row added. `.adna/CLAUDE.md` `token_estimate` ~6100 → ~7200 (measured `bytes/4` = 7186).
+7. S2/S3 read **15/15**, not 19/19: four example lattices are dev-only (`campaign_execution` · `content_pipeline` ·
+   `context_serving` · `dual_audience_review`). The ledger's 19 was the dev count.
+8. Kept by design: `faces/lattice.schema.json` (a pinned, generated byte copy, md5 `45a816a2`) carries `aDNA.aDNA ADR-062` and
+   `F-AC-20` in two descriptions; editing it would break its own pin. `faces/upstream.json` `source_vault` + commits = the
+   pin's datum (unverifiable in a fork). Canvas `sync_hash` values = f1's topology hashes.
+9. **Not moved — v8.14 currency candidates** (not named lines): `.adna/what/ontology.md:407` cites "Standard v2.1";
+   `compliance_checker.py:4` + `adna_validate.py:2` docstrings say v2.5; `template_home_claude.md` points at
+   `aDNA.aDNA/CLAUDE.md` for the rubric; `.adna/MANIFEST.md:127` "16 base + 8 extension"; the dev T1 files still read
+   "proposed until G3"; dev `faces/upstream.json` carries a bare `ADR-067 clause 4` (rule 3).
+
+**R56 conditions at the push** [D]: gitleaks `dir` on the clone **no leaks** (2.51 MB) · hook `--self-test` **PASSED** ·
+(b.1) over 914 added lines: **0** company/steward names · **0** `10.x` · **0** Q9 hits (the one `anchor` line is §15.5's
+*"Anchoring a root anywhere external is outside this standard"*, which states the exclusion) · **0** private paths
+undispositioned (`~/aDNA/adna` usage lines pre-existing; `aDNA.aDNA/what/specs/spec_graph_exchange.md` is the signed §19.7
+cross-reference into the public dev graph) · `adna_validate --governance` **Zero drift** clone + dev · porcelain **39 = 39**
+enumerated (30 payload + 2 faces + 7 image surfaces) · remote `main` = `1a25446` re-read immediately before the push.
+
+## §7 · Fire record
+
+| Step | Result |
+|---|---|
+| firing commit | `aDNA-Network/aDNA` main `1a25446..223ecc1` (39 paths) |
+| tag | annotated `v8.13` → `223ecc1` (tag object `79d67c1`); tags-only, no release object |
+| local sync | `~/aDNA/.adna` `846ebde` — rsync `-a -c --delete` from the tag; `diff -rq` empty |
+| M1 | this vault's `MANIFEST.md:174` v2.5 → v2.6, same sitting; MP row → base table (split 28 + 30) |
+| smoke (fresh clone of tag `v8.13`) | S1 badges ×2 READMEs + `version: "8.13"` + title v2.6 + md5 `86385da8` + `[v8.13]` ✅ · S2 15/15 ✅ · S3 15/15 ✅ · S4 11 dimensions, `/33` ✅ · S5 Zero drift, `Stamp currency: 0 current · 0 stale · 1 unverifiable`, face pin *unverifiable* ✅ · S6 `45a816a2` ✅ · S7 fork: 33 templates · 34 skills · governance Zero drift · the conformance walk's 61 lines **identical to v8.12's** (pre-existing placeholder seeds) ✅ · S8 canvas_std `adna_native` ×4: 0 errors · 0 advisories ✅ · S9 0 ✅ |
+
 ## Ratification (§7.7)
 
 *Written in the firing commit, never before.*
 
 | Field | Value |
 |---|---|
-| **Decision** | |
-| **Ratified-by** | |
-| **Date** | |
-| **Status** | |
+| **Decision** | Fire v8.13 as the ruled §2 payload (f-a · f-b · f-c1–c6 · f-d · V1 · V2 = `pattern_channel_proof` only · T1 · f1 · f2 · MP), with the §5a image-only deltas, governance 8.12 → 8.13, standard v2.5 → v2.6; the deploy tail ships with it (R57) |
+| **Ratified-by** | Stanley (operator) — R56, conditional push pre-grant, plan-time AskUserQuestion at session_stanley_20261020_024816_arcade_a4_2_fire; every condition held at the instant of push |
+| **Date** | 2026-10-20 |
+| **Status** | accepted — fired (`223ecc1` + tag `v8.13`) |
