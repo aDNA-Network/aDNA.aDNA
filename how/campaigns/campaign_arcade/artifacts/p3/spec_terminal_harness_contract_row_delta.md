@@ -3,7 +3,7 @@ type: artifact
 artifact_class: standard_delta
 created: 2026-10-19
 updated: 2026-10-19
-status: accepted_conditional   # ⛩ RULED 2026-10-19 at ARCADE G3 (operator R38: conditional-apply) — P1 failed at the gate (HarnessOld.aDNA absent), so spec_terminal_harness_contract.md stays byte-unchanged; the first sitting that observes HarnessOld.aDNA on disk applies the delta with no second gate. PRIOR (SO-7): proposed — a fifth G3 §7.7 line
+status: applied   # ⛩ APPLIED 2026-10-20 at ARCADE A4.2 sitting 2 (R54): P1 HarnessOld.aDNA present · P2 14b651d3…/7f2508f0… · P3 provider_id rareharness · target blob f629b019 before the edit → spec v0.3, blob ca1ae630; plus one pointer update the delta did not foresee (the frozen latticeagent_specs/ + harness_control_surface_spec.md stayed in HarnessOld.aDNA, same blobs → cells repointed there); two re-pin notices outbound_ready (Panacea · Vauban). Prior: accepted_conditional   # ⛩ RULED 2026-10-19 at ARCADE G3 (operator R38: conditional-apply) — P1 failed at the gate (HarnessOld.aDNA absent), so spec_terminal_harness_contract.md stays byte-unchanged; the first sitting that observes HarnessOld.aDNA on disk applies the delta with no second gate. PRIOR (SO-7): proposed — a fifth G3 §7.7 line
 last_edited_by: agent_rosetta
 campaign_id: campaign_arcade
 mission_id: mission_arcade_a3_3_profile_scaffolding

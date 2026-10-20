@@ -3,9 +3,9 @@ type: spec
 kind: ecosystem_spec
 name: terminal_harness_contract
 created: 2026-05-25
-updated: 2026-10-16   # v0.2 delta ACCEPTED at ARCADE G1 (operator R11; §7.7 below); authored 2026-10-15 — ARCADE A1.2: path-only re-anchor to the in-Harness contract copies (blob SHAs unchanged — the §8 no-drift case), the Terminal.aDNA protocol-seam binding (ADR-B09), the §7 adoption table at today's names; v0.1 2026-05-25
-version: "0.2"
-version_status: "v0.2 ACCEPTED — ARCADE G1, 2026-10-16 (operator R11; §7.7 below); supersedes v0.1 (ratified with aDNA.aDNA ADR-027, 2026-07-02) — path-only re-anchor, no normative clause body changed"
+updated: 2026-10-20   # v0.3: §7 Harness row split for Operation Jacquard (HarnessOld.aDNA PASS · Harness.aDNA successor TAUGHT-AS-DESIGN); the frozen LatticeAgent-era snapshot paths repointed to HarnessOld.aDNA (blobs unchanged, §8 no-drift); no clause changed — ARCADE G3 R38 conditional-apply, condition met and applied at A4.2 sitting 2 (R54). Prior: 2026-10-16   # v0.2 delta ACCEPTED at ARCADE G1 (operator R11; §7.7 below); authored 2026-10-15 — ARCADE A1.2: path-only re-anchor to the in-Harness contract copies (blob SHAs unchanged — the §8 no-drift case), the Terminal.aDNA protocol-seam binding (ADR-B09), the §7 adoption table at today's names; v0.1 2026-05-25
+version: "0.3"
+version_status: "v0.3 ACCEPTED (conditional, met 2026-10-20) — ARCADE G3 R38, applied at A4.2 sitting 2 R54; §7 row split, no clause changed. v0.2 ACCEPTED — ARCADE G1, 2026-10-16 (operator R11; §7.7 below); supersedes v0.1 (ratified with aDNA.aDNA ADR-027, 2026-07-02) — path-only re-anchor, no normative clause body changed"
 status: active
 last_edited_by: agent_rosetta
 co_signed_adr: aDNA.aDNA/what/decisions/adr_027_terminal_harness_contract_canonicalization.md
@@ -20,7 +20,7 @@ archive_originals:          # SO-7 audit trail — read-only; the vault was arch
   - "Archive.aDNA/LatticeTerminal.aDNA/how/campaigns/campaign_terminal_genesis/missions/M0.0a-architecture-lock/PROVIDER-CONTRACT.md"
   - "Archive.aDNA/LatticeTerminal.aDNA/how/campaigns/campaign_terminal_genesis/missions/M0.0d-launch-harness-spec/HARNESS-CONTRACT.md"
 reference_conformance: "Archive.aDNA/LatticeAgent.aDNA/what/specs/spec_latticeterminal_adna_interop_contract.md"   # archived original, blob a640076e70be0931e7e0f18fd72acc22749b6385
-reference_conformance_live_descendant: "Harness.aDNA/what/context/harness_core/latticeagent_specs/spec_latticeterminal_adna_interop_contract.md"   # frozen snapshot, blob 98cf8b3748d4950f3bf657beb17360905ba5592d — differs from the original ONLY by the 2026-06-07 pin-rehome annotation (diff'd 2026-10-15); no clause text differs
+reference_conformance_live_descendant: "HarnessOld.aDNA/what/context/harness_core/latticeagent_specs/spec_latticeterminal_adna_interop_contract.md"   # frozen snapshot, blob 98cf8b3748d4950f3bf657beb17360905ba5592d — differs from the original ONLY by the 2026-06-07 pin-rehome annotation (diff'd 2026-10-15); no clause text differs
 tags: [spec, ecosystem, terminal, harness, provider_contract, boundary_contract, multi_terminal, aDNA_pattern, v0_2_proposed, arcade]
 ---
 
@@ -55,7 +55,7 @@ They **compose, never invert**: the launcher resolves a provider and execs it; a
 |---|---|---|---|---|
 | Lifecycle/observability ownership; invariants I-1…I-8; 6-state machine (IDLE·PROCESSING·WAITING_USER·COMPLETED·ERROR·OFFLINE + `stale` decoration); hook subscription; env injection; worktree binding; v2 compliant-provider checklist | `Harness.aDNA/what/context/harness_core/terminal_contracts/PROVIDER-CONTRACT.md` | `14b651d3…` | `Archive.aDNA/LatticeTerminal.aDNA/…/M0.0a-architecture-lock/PROVIDER-CONTRACT.md` (same blob) | §1 (I-1..I-8) · §2 (states) · §3 (hooks) · §4 (env) · §5 (worktree) · §8 (compliant-provider checklist) |
 | Launch/selection seam; the `harness.adna.provider.v1` descriptor; provider reconciliation; composition proof; LEAK-5 structural bar | `Harness.aDNA/what/context/harness_core/terminal_contracts/HARNESS-CONTRACT.md` | `7f2508f0…` | `Archive.aDNA/LatticeTerminal.aDNA/…/M0.0d-launch-harness-spec/HARNESS-CONTRACT.md` (same blob) | §1 (two seams) · §2 (launch txn) · §3 (descriptor + field law) · §4 (reconciliation) · §5 (composition proof) · §6 (default-partner) |
-| **Reference conformance implementation** (a harness that conformed first, with the reusable per-clause SHA-drift mechanism) | `Archive.aDNA/LatticeAgent.aDNA/what/specs/spec_latticeterminal_adna_interop_contract.md` (archived original, `a640076e…`); live frozen snapshot `Harness.aDNA/what/context/harness_core/latticeagent_specs/spec_latticeterminal_adna_interop_contract.md` (`98cf8b37…` — differs only by the 2026-06-07 pin-rehome annotation) | see cell | — | §1 (SHA-drift table) · §4 (state mapping) · §5 (hook equivalents) · §8 (descriptor) · §9 (bidirectional cadence) |
+| **Reference conformance implementation** (a harness that conformed first, with the reusable per-clause SHA-drift mechanism) | `Archive.aDNA/LatticeAgent.aDNA/what/specs/spec_latticeterminal_adna_interop_contract.md` (archived original, `a640076e…`); live frozen snapshot `HarnessOld.aDNA/what/context/harness_core/latticeagent_specs/spec_latticeterminal_adna_interop_contract.md` (`98cf8b37…` — differs only by the 2026-06-07 pin-rehome annotation) | see cell | — | §1 (SHA-drift table) · §4 (state mapping) · §5 (hook equivalents) · §8 (descriptor) · §9 (bidirectional cadence) |
 
 Any conforming party reads the canonical files at a pinned SHA and tracks drift per §8. *(v0.1 pointed the first two rows at `LatticeTerminal.aDNA/…` and the third at `LatticeAgent.aDNA/…`; both vaults were archived in June 2026 and the ecosystem's own precedent — Harness re-pointed its pointer-spec off LatticeTerminal at WS-3/M1, 2026-06-07 — forbids a live spec citing an archived vault. The path cells moved; the blobs did not.)*
 
@@ -82,7 +82,7 @@ A conforming harness (the "provider" role) MUST satisfy `PROVIDER-CONTRACT.md §
 5. Document **mailbox storage + read API**; never require terminal-write access (`PROVIDER-CONTRACT.md §6`).
 6. Ship the **`harness.adna.provider.v1` descriptor** with `provider_id`, `detect`, `launch`, `env_inject`, and the FIXED constants `lifecycle_owner: "provider"` + `observability: "hud"` (no lifecycle verb — LEAK-5 structural bar; `HARNESS-CONTRACT.md §3`).
 
-**Canonical clause homes for the harness-side schemas** (these fill what the LatticeAgent-era `spec_provider_contract.md` left as TBD stubs): control-surface registration → the frozen snapshot `Harness.aDNA/what/context/harness_core/latticeagent_specs/spec_control_surface_schema.md` (provenance) and its live adapted descendant `Harness.aDNA/what/context/harness_core/harness_control_surface_spec.md`; telemetry emission (closed-10-root enum) → the frozen snapshot `…/latticeagent_specs/spec_telemetry_event_schema.md` and its live descendant `…/harness_core/harness_telemetry_spec.md`. These are the **reference** schema shapes; a non-Harness harness MAY supply its own equivalents but MUST remain provider-generic (§5). *(v0.1 cited `LatticeAgent.aDNA/what/specs/…`; that vault is archived — row 2 of the re-anchor idea.)*
+**Canonical clause homes for the harness-side schemas** (these fill what the LatticeAgent-era `spec_provider_contract.md` left as TBD stubs): control-surface registration → the frozen snapshot `HarnessOld.aDNA/what/context/harness_core/latticeagent_specs/spec_control_surface_schema.md` (provenance) and its live adapted descendant `HarnessOld.aDNA/what/context/harness_core/harness_control_surface_spec.md`; telemetry emission (closed-10-root enum) → the frozen snapshot `…/latticeagent_specs/spec_telemetry_event_schema.md` and its live descendant `…/harness_core/harness_telemetry_spec.md`. These are the **reference** schema shapes; a non-Harness harness MAY supply its own equivalents but MUST remain provider-generic (§5). *(v0.1 cited `LatticeAgent.aDNA/what/specs/…`; that vault is archived — row 2 of the re-anchor idea.)*
 
 ## §5 — Provider-generic constraint
 
@@ -112,12 +112,13 @@ The bilateral LT↔LA contract assumed a single terminal (LatticeTerminal's HUD)
 
 This contract federates by the **pointer-spec** pattern (reused from the LatticeAgent-era `spec_provider_contract.md` — NOT a heavyweight `iii/`-style wrapper). Each consumer vault carries a lightweight spec in its own `what/specs/` with `canonical_at:` pointing here + a per-clause SHA-pin table (§8).
 
-| Vault | Role | Pointer-spec | Adoption posture (2026-10-15) |
+| Vault | Role | Pointer-spec | Adoption posture (2026-10-20) |
 |---|---|---|---|
 | `Archive.aDNA/LatticeTerminal.aDNA` (was `LatticeTerminal.aDNA`; archived June 2026) | Terminal (original clause source) | `what/specs/spec_terminal_harness_contract_ref.md` (archived, read-only) | Its two contract files remain the normative clause source **by content** — custody of the authoritative copies passed to `Harness.aDNA` at WS-3/M1 (2026-06-07), byte-identical. No rewrite. |
-| `Archive.aDNA/LatticeAgent.aDNA` (was `LatticeAgent.aDNA`; archived June 2026) | Harness (reference conformance, first conformer) | `what/specs/spec_provider_contract.md` (archived) | **Superseded → `Harness.aDNA`**; its interop spec and schema specs survive as frozen snapshots under `Harness.aDNA/what/context/harness_core/latticeagent_specs/`. |
+| `Archive.aDNA/LatticeAgent.aDNA` (was `LatticeAgent.aDNA`; archived June 2026) | Harness (reference conformance, first conformer) | `what/specs/spec_provider_contract.md` (archived) | **Superseded → `Harness.aDNA`**; its interop spec and schema specs survive as frozen snapshots under `HarnessOld.aDNA/what/context/harness_core/latticeagent_specs/`. |
 | **`Terminal.aDNA`** (Python/Textual; took the canonical name 2026-09-22; the Go console archived 2026-10-06 → `Archive.aDNA/TerminalGo.aDNA`) | Terminal (live; the network's recommended default — [[spec_platform_ecosystem]] §Access points) | **None authored for the Python graph yet** (`HORIZON`). The last pointer-spec is the Go console's, archived with it: `Archive.aDNA/TerminalGo.aDNA/what/specs/spec_provider_conformance.md` (its §6 pins on the two contracts re-verified by Terminal CHANGE-LEDGER L-155, 2026-09). | Conforms by record: ADR-B09 (seams) · the Claude-Code `harness.adna.provider.v1` descriptor ack (carried-into-slice1 §G, 2026-09-21) · Harness on the interim PTY (s2 C). A pointer-spec for the Python graph is **asked of Vauban at ARCADE A1.3**; until it exists this row is the conformance record. |
-| **`Harness.aDNA`** (was `RareHarnessNeo.aDNA` → `RareHarness.aDNA` 2026-05-25 → elevated 2026-05-31) | Harness (`provider_id: rareharness`; forward exemplar at v0.1, live conformer now) | `what/specs/rh_provider_conformance_ref.md` (v0.3, 2026-06-07 — already repointed to the in-Harness contract copies at WS-3/M1, the precedent this re-anchor follows) | Descriptor full shape finalized (v0.3); runtime wiring at genesis-execution. ⚠ Its row 2 still reads `canonical_adr_status: proposed` — aDNA.aDNA ADR-027 has been `accepted` since 2026-07-02; a re-pin notice is staged (`who/coordination/coord_2026_10_15_rosetta_to_panacea_*`), to send once G1 signs this v0.2 (the doctrine SHA their row 1 pins changes with it). |
+| **`HarnessOld.aDNA`** (was `Harness.aDNA` until Operation Jacquard Sitting B, 2026-10-19; before that `RareHarnessNeo.aDNA` → `RareHarness.aDNA` 2026-05-25 → elevated 2026-05-31; live, read-mostly) | Harness (`provider_id: rareharness`; **the live conformer**) | `what/specs/rh_provider_conformance_ref.md` (v0.3; §6 rows 1–2 re-pinned at `2ad992c` 2026-10-19: row 1 → this spec v0.2, row 2 → aDNA.aDNA ADR-027 accepted) | `PASS` on the interim PTY, with the `stream-json` leg live. Remains the conformer until the successor ships its own descriptor (its P5). Holds the frozen LatticeAgent-era snapshots (`latticeagent_specs/`, `harness_control_surface_spec.md`), which the successor did not carry. |
+| **`Harness.aDNA`** (re-founded 2026-10-19 on Harness², Operation Jacquard; forked from `.adna` v8.12; no shim; persona unchanged) | Harness (successor; the recommended default harness by name, [[spec_platform_ecosystem]] §Access points, unchanged) | `what/specs/rh_provider_conformance_ref.md` (carried in at the fork with today's pins) | `TAUGHT-AS-DESIGN` until its P5 ships a `harness.adna.provider.v1` descriptor; clause sources `what/context/harness_core/terminal_contracts/` carried byte-identical (P2, `git hash-object` 2026-10-20), so §5's path cells resolve unchanged. |
 
 ## §8 — Drift discipline
 
@@ -128,6 +129,16 @@ Adopt LatticeAgent's per-clause **artifact-SHA drift table** (`spec_latticetermi
 ## §9 — Resolution of the Cmux open question (historical)
 
 The Go console's `adr_010_agent_provider_contract.md` open-Q5 asked: *"is this ADR the cmux-side adapter, or do the two vaults [Cmux + LatticeAgent] co-define the contract?"* — **Answer: neither.** Both conformed to this canonical (which itself references the normative clauses). Cmux's ADR-010 was its conformance ADR; LatticeAgent's interop spec was its conformance spec. The contract is co-defined by no single pair — it is ecosystem-canonical here. *(Both vaults are archived; the answer stands and binds the live Terminal and Harness the same way.)*
+
+## §7.7 — Ratification (v0.3 delta)
+
+| Field | Value |
+|---|---|
+| **Decision** | `spec_terminal_harness_contract` §7: split the Harness row (HarnessOld.aDNA `PASS` · Harness.aDNA successor `TAUGHT-AS-DESIGN` until its P5); retire the re-pin ⚠; v0.3, no clause changed; applied when P1 holds |
+| **Ratified-by** | Stanley (operator) — R38 "conditional-apply" |
+| **Date** | 2026-10-19 (ruled) · 2026-10-20 (condition met, applied) |
+| **Status** | **accepted** — P1 `HarnessOld.aDNA` present · P2 successor contracts at `14b651d3…` / `7f2508f0…` · P3 `provider_id: rareharness` · target blob `f629b019…` before the edit, all `[D]` at A4.2 sitting 2 (R54). Applied with one pointer update the delta did not foresee: the frozen snapshots stayed in HarnessOld.aDNA (same blobs), so their path cells moved there |
+| **Gate / session reference** | ARCADE G3 `session_stanley_20261019_232222_arcade_g3_gate` (ruled) · `session_stanley_20261020_020602_arcade_a4_2_owed_rows` (applied); delta `how/campaigns/campaign_arcade/artifacts/p3/spec_terminal_harness_contract_row_delta.md` |
 
 ## §7.7 — Ratification (v0.2 delta)
 
@@ -146,6 +157,8 @@ The Go console's `adr_010_agent_provider_contract.md` open-Q5 asked: *"is this A
 - 2026-06-11 — Berthier (Terminal.aDNA, Operation Gateway gw_p0) proposed the five-spot re-anchor (`idea_terminal_harness_contract_reanchor`); accepted at Champollion G0 2026-07-02 (M1.1 → M2.1), not executed there.
 - 2026-10-15 — **v0.2 (proposed)** at ARCADE A1.2 (declared opus, executed fable at the operator's session): rows 1–5 of the idea applied as path cells; blob SHAs re-verified on both trees; the §6 third binding added from Terminal ADR-B09; the Terminal row's pointer-spec gap recorded honestly as `HORIZON`. Text `proposed` until G1 (§7.7).
 - 2026-10-16 — **v0.2 ACCEPTED** at ARCADE G1 (operator R11, as written; §7.7). The two clause-source blobs did not move (`canonical_clause_sha` unchanged); this file's own blob moved with the signature — consumers re-pin from `git hash-object` on receipt of the notice.
+
+- 2026-10-20 — **v0.3 (accepted, conditional met)** at ARCADE A4.2 sitting 2 (R54, on G3's R38): §7 Harness row split for Operation Jacquard (HarnessOld.aDNA `PASS` · Harness.aDNA successor `TAUGHT-AS-DESIGN`); the re-pin ⚠ retired (closed by `2ad992c`); the frozen LatticeAgent-era snapshot paths repointed to HarnessOld.aDNA, blobs unchanged (§8 no-drift). The clause-source blobs did not move; this file's own blob did (`f629b019…` → the v0.3 blob), so both Harness pointer-specs' row 1 re-pin, by notice.
 
 ## See also
 
