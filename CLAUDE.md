@@ -509,7 +509,7 @@ Objects that have been through a schema migration carry an optional `_migration_
 
 ### Compliance Dimensions
 
-Object quality is measured across 10 dimensions (scored 0-5 each, 50 max):
+Object quality is measured across 11 dimensions, each scored 0–3 by the checker (33 max; a dimension that does not apply to an object type scores 3). *(Corrected 2026-10-20, ARCADE A4.2: this line read "10 dimensions (scored 0-5 each, 50 max)", but `compliance_checker.py` has always scored 0–3 out of 30.)*
 
 1. **Triad structure** — correct directory placement
 2. **Governance** — CLAUDE.md, MANIFEST.md, STATE.md coherence
@@ -521,6 +521,7 @@ Object quality is measured across 10 dimensions (scored 0-5 each, 50 max):
 8. **Registration** — lattice registry readiness
 9. **Companions** — YAML companion files for non-YAML objects
 10. **Reproducibility** — clear inputs, outputs, and execution context
+11. **Derivability** — a registry-class object (a hand-maintained list) names, in its frontmatter `derivability:` block, either its **consumer** (what fails when it drifts) or its **discovery pass** (what enumerates its territory, with `last_run`). A registry with neither is in the "third state": correct today, read by nothing (gap G-015). Applies to registries only. Added at ARCADE G4 (R43, row B3) from Mondrian's finding (`how/backlog/idea_upstream_registry_derivability.md`); first declared by `who/governance/lip_registry.md`
 
 Reference: `what/lattices/tools/compliance_checker.py` for automated checking.
 

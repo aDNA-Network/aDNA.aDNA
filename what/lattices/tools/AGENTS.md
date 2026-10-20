@@ -16,7 +16,7 @@ Python utilities for validating aDNA objects, scoring compliance, and converting
 
 | Tool | Function |
 |------|----------|
-| `compliance_checker.py` | Score vault objects across 10 aDNA compliance dimensions. Outputs YAML scorecard + MD report. |
+| `compliance_checker.py` | Score vault objects across 11 aDNA compliance dimensions (0–3 each; d11 derivability applies to registries only). Outputs YAML scorecard + MD report. |
 | `lattice_validate.py` | Validate `.lattice.yaml` against JSON Schema + federation readiness checks. Enum values come from `faces/lattice.schema.json` |
 | `adna_validate.py` | Validate aDNA instance conformance per §5.5 (starter/standard/full levels). `--governance` also checks stamp currency (aDNA.aDNA ADR-067 clause 4) |
 | `faces/` | `lattice.schema.json`: a byte copy of the lattice master's generated face (LinkML.aDNA), pinned in `faces/upstream.json`. Re-vendor it from its source and update the pin; never edit it |

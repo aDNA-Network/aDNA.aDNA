@@ -4,13 +4,17 @@ subtype: registry
 title: "LIP Registry — the global Lattice Improvement Proposal number line (registrar view)"
 status: proposed            # ⛩ registrar ROLE accepted by the operator 2026-10-16 (ARCADE G2 sitting, ruling R20 on the Canvas 2026-07-02 handshake ask, re-asked 2026-10-16); the ROWS are census-derived and proposed until each steward confirms its own; §7.7 for the registry text at the v2.6 cut (A4.1)
 created: 2026-10-16
-updated: 2026-10-20   # §Ratification (b) RULED at ARCADE G4 (operator R43, gate row B4): 0003 · 0005 · 0007 ratified; 0006 · 0008–0011 proposed until each steward confirms; 0001 · 0002 · 0004 recorded predecessor-only. Prior: §2.1 note row (F-AC-45, Noether 10-18); prior: 2026-10-16 created
+updated: 2026-10-20   # §4 + frontmatter derivability: declared (ARCADE A4.2, d11 first consumer). Prior: §Ratification (b) RULED at ARCADE G4 (operator R43, gate row B4): 0003 · 0005 · 0007 ratified; 0006 · 0008–0011 proposed until each steward confirms; 0001 · 0002 · 0004 recorded predecessor-only. Prior: §2.1 note row (F-AC-45, Noether 10-18); prior: 2026-10-16 created
 last_edited_by: agent_rosetta
 authored_at_tier: fable
 session: session_stanley_20261016_205633_arcade_g2_sends_sync_replies
 campaign: campaign_arcade
 census_method: "grep -rl 'LIP-0NNN' --include='*.md' over */who/governance */what/decisions */what/docs on this node, 2026-10-16, plus the archived predecessor line Archive.aDNA/lattice-labs/how/governance/lips/lip_registry.md and Canvas.aDNA/who/governance/lips/lip_registry.md (read at HEAD f0c2c44)"
 relates: ["Canvas.aDNA who/governance/lips/lip_registry.md", "Canvas.aDNA what/decisions/adr_003_standard_governance.md §Amendment 1", "Archive.aDNA/lattice-labs/how/governance/lips/lip_registry.md (predecessor line, reader-only)", adr_055_proposal_process]
+derivability:              # d11, the 11th compliance dimension (ARCADE A4.2, G4 row B3); scored by what/lattices/tools/compliance_checker.py
+  discovery_pass: "the census_method above, re-run at each minor cut; new LIP tokens not in §2 are findings"
+  last_run: 2026-10-16
+  # consumer: not named — the adna_validate LIP-token check in §4 is not built yet; naming it would claim a consumer that does not exist
 tags: [governance, registry, lip, registrar, number_line, proposed]
 ---
 
@@ -61,6 +65,7 @@ Three number lines, three owners, deliberately not merged: **ADRs** are per-vaul
 - **Consumer:** `adna_validate.py` gains, at the v2.6 cut, a check that every `LIP-0NNN` token in this vault's governance and specs appears in §2 — the registry fails when the text drifts from it.
 - **Discovery pass:** the `census_method` in the frontmatter is re-run at each minor cut; new tokens not in §2 are findings.
 - Until the consumer exists, this file is in the third state Mondrian names, and says so.
+- **Declared (2026-10-20):** the frontmatter `derivability:` block carries the discovery pass and its last run, and the 11th compliance dimension (d11, `compliance_checker.py`) scores it. This file is that dimension's first in-vault consumer. Its consumer leg stays unnamed until the check exists.
 
 ## Ratification (§7.7)
 
