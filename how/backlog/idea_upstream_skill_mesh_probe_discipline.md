@@ -1,9 +1,9 @@
 ---
 type: backlog_idea
-status: proposed
+status: completed   # shipped in template v8.13 (223ecc1 + tag v8.13, 2026-10-20); closed at the v8.14 ledger §2c T13 (S2-R2). Was: proposed
 priority: medium
 created: 2026-10-04
-updated: 2026-10-20
+updated: 2026-10-21
 last_edited_by: agent_rosetta
 filed_from: Network.aDNA/who/coordination/coord_2026_08_03_venus_to_rosetta_upstream_four_operational_patterns.md (read at the source 2026-10-04; the memo never reached this tree — its 2026-10-04 nudge did)
 filing_authorization: skill_upstream_contribution (operator plan-time ruling 2026-10-03 PDT — adopt #1 as a node-vault skill candidate)
@@ -12,6 +12,7 @@ source_skill: Network.aDNA/how/skills/skill_mesh_probe_discipline.md (status act
 built_at: "2026-10-20 — how/skills/skill_mesh_probe_discipline.md authored in the dev graph (ARCADE A4.2 row MP, operator R47), status proposed; eight rules in substance, mesh specifics parameterized ({{MESH_NAME}} · {{MESH_CIDR}} · {{HEALTH_SURFACE}}), no addresses or host names; precedents by finding ID. Ships at the v8.13 fire (held on Q9); pattern_channel_proof ships with it (R49)"
 disposition: "v8.13 lane — skill-to-template — ⛩ ruled 2026-10-04 (Stanley, plan-time AskUserQuestion, session_stanley_20261004_041949_garnier_g_inbox_primer_o4_s21b); status stays proposed until the release gate executes it; Network's copy is canonical until then"
 tags: [backlog, upstream, skill, mesh, probe, reachability, network_operations, v8_13]
+closed_by: how/missions/artifacts/v8_14/v8_14_release_ledger.md §2c T13
 ---
 
 # Idea: `skill_mesh_probe_discipline` as a base template skill (node-vault class)

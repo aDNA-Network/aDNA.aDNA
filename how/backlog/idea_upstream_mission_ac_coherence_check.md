@@ -4,13 +4,14 @@ status: proposed
 disposition: "v8.13 lane — convention-to-codify — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 priority: high
 created: 2026-08-21
-updated: 2026-10-03
+updated: 2026-10-21
 last_edited_by: agent_rosetta
 filed_from: aDNA.aDNA/how/campaigns/campaign_haussmann/missions/mission_haussmann_p3_1_md_twins.md (AAR); amended from mission_haussmann_p3_3_mcp_server.md O3 (2026-08-21) — third instance, with the check IN FORCE
 filing_authorization: skill_upstream_contribution
 filing_approved_by: operator (in-session, 2026-08-21)
 upstream_target: aDNA-Network/aDNA
 tags: [backlog, upstream, mission, acceptance_criteria, standing_order_11, adr_016, gate_discipline, self_checking_spec]
+release_window: v8.14   # written locally 2026-10-21, how/missions/artifacts/v8_14/v8_14_release_ledger.md §2a′ T1; status stays proposed until the fire folds it
 ---
 
 # A mission's acceptance criteria should be read against each other before a gate ratifies a budget

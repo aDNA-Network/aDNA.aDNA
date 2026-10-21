@@ -1,16 +1,17 @@
 ---
 type: backlog_idea
 created: 2026-08-08
-updated: 2026-10-03
+updated: 2026-10-21
 status: proposed
 disposition: "v8.13 or decline on re-measurement at the gate — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
-last_edited_by: agent_hestia
+last_edited_by: agent_rosetta
 author: hestia (Home.aDNA)
 trigger: "Operation Open Hearth A2 (onboarding-seam review), reached from the shim side — the Rule-9 ref-sweep for §C rows 124/125 found the `.adna` onboarding pair to be the single largest live referrer class in the fleet (90 files / 43 vaults = 56% of the whole roster)"
 informational: false
 upstream_target: .adna base template → maintained via `aDNA.aDNA` `skill_template_release`
 precedent: idea_upstream_onboarding_workspace_default_adna.md   # resolved 2026-06-10; SAME CLASS, different defect
 tags: [backlog, upstream, onboarding, l1_upgrade, quest, galilei, torricelli, stale_paths, rule_1, hestia, open_hearth]
+release_window: v8.14 (held)   # ruled in on condition (S2-R2); condition FAILED 2026-10-21: successor repo aDNA-Network/adna-lab is PRIVATE → how/missions/artifacts/v8_14/v8_14_release_ledger.md §4 S2-Q7
 ---
 
 # Upstream Idea — the `.adna` L1-onboarding pair still teaches the pre-Galilei / pre-Torricelli world

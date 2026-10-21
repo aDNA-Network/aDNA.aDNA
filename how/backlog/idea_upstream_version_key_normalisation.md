@@ -3,12 +3,13 @@ type: backlog_idea
 status: idea
 priority: low
 created: 2026-10-07
-updated: 2026-10-07
-last_edited_by: agent_hestia
+updated: 2026-10-21
+last_edited_by: agent_rosetta
 filed_from: Home.aDNA/what/decisions/adr_022_inventory_vaults_version_field.md (Sitting 49)
 filing_authorization: skill_upstream_contribution · operator approval of Hestia's ADR-022 recommendations (plan spicy-snail, 2026-10-07)
 upstream_target: aDNA-Network/aDNA
 tags: [backlog, upstream, version, template_version, standard_base, manifest, changelog, fork_stamp, home_adna]
+release_window: v2.7   # how/missions/artifacts/v8_14/v8_14_release_ledger.md §2e W5 (S2-R2)
 ---
 
 # Idea: one spelling for "my version" and one for "the standard release I was forked from"

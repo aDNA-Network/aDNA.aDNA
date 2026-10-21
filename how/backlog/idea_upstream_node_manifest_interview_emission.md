@@ -9,6 +9,7 @@ disposition: "v8.13 or decline on re-measurement at the gate — ⛩ ruled 2026-
 target: skill_node_bootstrap_interview.md (+ the `.adna/` template release train)
 origin: "ADR-015 §B3(1) (aDNALabs, accepted ⛩C2 2026-07-02) + Home ADR-006 (node_manifest v0 adopt-with-amendments, Hearthfire P1 2026-07-06)"
 tags: [backlog, upstream, node_manifest, interview, bootstrap, adr_015, tier3, hearthfire, hestia]
+release_window: v8.15   # how/missions/artifacts/v8_14/v8_14_release_ledger.md §2c T6: Home ADR-006 accepted; Hestia shape hand-off to confirm (own GO)
 ---
 
 # Upstream idea — the bootstrap interview additionally emits `node_manifest.yaml`

@@ -5,6 +5,7 @@ filed_by: Sang Nila Utama (UHSingapore.aDNA, campaign_uhs_merlion_forge M0) — 
 status: proposed
 disposition: "fold into v8.12 P5 disposition — advisory doc now, ADR at v8.13 — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 related: [adr_045_wrapper_placement_in_triad, pattern_base_extension, skill_project_fork, skill_node_health_check]
+release_window: v2.7   # standard-window queue, how/missions/artifacts/v8_14/v8_14_release_ledger.md §2e W1 (S2-R3); the advisory half shipped v8.12
 ---
 
 # Upstream idea — root triad-exception discipline (ADR-045 companion)

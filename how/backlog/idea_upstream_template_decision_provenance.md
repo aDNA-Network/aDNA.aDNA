@@ -1,15 +1,16 @@
 ---
 type: backlog_idea
-status: proposed
+status: completed   # MET at v8.12 (re-measured 2026-10-21, v8.14 ledger §2c T7): image adr_003 accepted · skill_project_fork stamps template_inherited · re-vendor advisory at image CHANGELOG.md:88. Was: proposed
 disposition: "fold into v8.12 P7 (ruling record + gates scaffold) disposition — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 priority: medium
 created: 2026-09-16
-updated: 2026-10-03
+updated: 2026-10-21
 last_edited_by: agent_rosetta
 filed_from: aDNA.aDNA (gate-advisory sitting, 2026-09-16)
 filing_authorization: skill_upstream_contribution
 upstream_target: aDNA-Network/aDNA
 tags: [backlog, upstream, template, fork, provenance, adr_003, hooks, release]
+closed_by: how/missions/artifacts/v8_14/v8_14_release_ledger.md §2c T7 (S2-R2)
 ---
 
 # Upstream: template-decision provenance + downstream re-vendor advisory (rides the next release)

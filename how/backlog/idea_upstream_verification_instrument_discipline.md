@@ -4,7 +4,7 @@ status: proposed
 disposition: "v8.13 lane — convention-to-codify — ⛩ ruled 2026-10-03 (Stanley, accept-all on operator_rulings_packet_20261003 B2); status stays proposed until the gate executes it"
 priority: high
 created: 2026-08-21
-updated: 2026-10-03
+updated: 2026-10-21
 last_edited_by: agent_rosetta
 filed_from: aDNA.aDNA/how/campaigns/campaign_haussmann/missions/mission_haussmann_p3_1_md_twins.md (AAR)
 filing_authorization: skill_upstream_contribution
@@ -12,6 +12,7 @@ filing_approved_by: operator (in-session, 2026-08-21)
 upstream_target: aDNA-Network/aDNA
 relates: [coord_2026_08_20_hopper_to_rosetta_standard_bearer_gate_is_a_noop, adr_011_secret_scanning]
 tags: [backlog, upstream, verification, gates, instrument_discipline, red_test, vacuous_pass, doctrine]
+release_window: v8.14   # written locally 2026-10-21, how/missions/artifacts/v8_14/v8_14_release_ledger.md §2a′ T2; status stays proposed until the fire folds it
 ---
 
 # A verification instrument is not believed until it has failed, and must assert it reached its target

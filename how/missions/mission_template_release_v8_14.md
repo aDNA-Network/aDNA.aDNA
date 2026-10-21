@@ -3,9 +3,9 @@ mission_id: mission_template_release_v8_14
 type: plan
 title: "Template release v8.14: ship the ARCADE carries, the Documents genesis template gaps and the mesh-probe portability fix to aDNA-Network/aDNA"
 created: 2026-10-21
-updated: 2026-10-21   # sitting 1: ledger authored, 14 local rows written, stopped at §4
-status: awaiting_operator   # halted at the ledger's §4 questions (sitting 1 done). Fire is its own GO
-gate: how/missions/artifacts/v8_14/v8_14_release_ledger.md §4
+updated: 2026-10-21   # sitting 2: §4 ruled (S2-R1–R6, after an operator-requested review); ruled rows written; T5 condition failed → S2-Q7. Sitting 1: ledger authored, 14 local rows written
+status: awaiting_operator   # §4 ruled; waiting on S2-Q7 (T5) and the fire GO (O3). Was: halted at §4 (sitting 1)
+gate: how/missions/artifacts/v8_14/v8_14_release_ledger.md §4 S2-Q7 + §5 (fire GO)
 last_edited_by: agent_rosetta
 mission_class: integration
 executor_tier: opus            # build/execution: enumerated rows, each with its object; the two ADR drafts (O2) are judgment and may be summoned to fable
@@ -13,8 +13,8 @@ executor_runtime: claude
 executor_lane: oauth
 estimation_class: known-method   # fifth ledger of the same shape (v8.10 · v8.11 · v8.12 · v8.13)
 estimated_sessions: 3
-token_budget_estimated: "≈150 kT content-load over three sittings (S1 ledger + local rows ≈60 · S2 ADR drafts P5 + P7 ≈45 · S3 re-measure + fire + deploy tail ≈45); v8.13 ran 175 against 90, so the band is wide"
-token_budget_actual: "S1 ≈65 kT (orientation + plan ≈20 · re-measure ≈15 · 14 rows ≈15 · ledger + mission ≈10 · close ≈5)"
+token_budget_estimated: "≈150 kT content-load over three sittings (S1 ledger + local rows ≈60 · S2 ADR drafts P5 + P7 ≈45 · S3 re-measure + fire + deploy tail ≈45); v8.13 ran 175 against 90, so the band is wide. Re-based at S2: S2 became rulings + ruled rows (P5/P7 left this mission, S2-R3); S3 ≈50 incl. the spec-only mirror"
+token_budget_actual: "S1 ≈65 kT (orientation + plan ≈20 · re-measure ≈15 · 14 rows ≈15 · ledger + mission ≈10 · close ≈5) · S2 ≈55 kT (review re-measure ≈20 · rows + red-prove ≈12 · ledger ≈10 · backlog ≈8 · close ≈5); running ≈120"
 depends_on: [campaign_arcade]
 source: how/campaigns/campaign_arcade/artifacts/p5/aar_campaign_arcade.md §Carries
 tags: [mission, template_release, v8_14, ledger, arcade_carries, documents_adna, awaiting_operator]
@@ -62,18 +62,20 @@ Plain version: every new project should start with what the last few projects ha
 - **Description**: Author the staging ledger: §0 derived, §2 rows, §3 surfaces, §4 questions, §5 checklist. Write the S-sized rows in the dev graph. Stop at §4.
 - **Files**: `how/missions/artifacts/v8_14/v8_14_release_ledger.md`; the 14 dev-graph files in ledger §2a.
 
-### 2. ADR drafts (P5 · P7)
-- **Status**: planned
-- **Description**: Draft the root-triad exception ADR (P5) and the `standing_grant` + unattended-envelope ADR(s) (P7) as `proposed`, each with an empty §7.7 block. P7 has no backlog file yet, so file one first. Alternatively, the operator rules at §4 Q3 that v8.14 fires without them.
-- **Depends on**: 1, plus the §4 Q3 ruling.
+### 2. Rulings + ruled rows *(re-scoped at sitting 2; was "ADR drafts (P5 · P7)")*
+- **Status**: completed (sitting 2, 2026-10-21) — except T5 (condition failed → ledger §4 S2-Q7)
+- **Session**: `session_stanley_20261021_040841_v8_14_rulings_and_rows`
+- **Description**: The operator asked for a careful review of the §4 recommendations; the review re-measured every premise, revised four, and the reviewed plan was approved (S2-R1–R6). Ruled rows written (ledger §2a′); §2c corrected (T7 MET, T6 → v8.15); P5 · P7 · E-3 · E-4 · T11 **left this mission** for a v2.7 standard-window queue (ledger §2e), because a governance release cannot carry standard text.
+- **Depends on**: 1.
 
 ### 3. Re-measure + fire + deploy tail
 - **Status**: planned
 - **Description**: Run `skill_template_release` steps (a)–(g) against the ledger. Every row is re-measured in both trees first. Each outward act (push = release; spec-mirror deploy) has its own GO.
-- **Depends on**: 1, 2 (or Q3).
+- **Depends on**: 1, 2, and the S2-Q7 ruling on T5.
 
 ## Notes
 
+- **The v2.7 queue (ledger §2e) is not this mission's.** It needs a standard window and a fable drafting sitting; it is the honest home for rows that were "carried" three releases running.
 - The vehicle is a standalone mission, not a campaign (operator, plan time 2026-10-21). v8.12 rode as a lane of a multi-lane session, and v8.13 rode as ARCADE P4.
 - **GARNIER is still the front.** This mission runs only while the P1.3 readers are absent. A reader sitting pre-empts it.
 

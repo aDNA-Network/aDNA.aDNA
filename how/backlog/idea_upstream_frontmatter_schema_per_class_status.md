@@ -3,13 +3,14 @@ type: backlog_idea
 status: proposed
 priority: medium
 created: 2026-10-04
-updated: 2026-10-04
+updated: 2026-10-21
 last_edited_by: agent_rosetta
 filed_from: how/missions/artifacts/primer/source_inconsistencies.md I-16 (Operation Primer O3 round 2, data-engineer lens; discharged at mission_primer_followup_sweep O1)
 filing_authorization: mission_primer_followup_sweep O1 (operator-summoned 2026-10-04 (h)); skill_upstream_contribution — the file is template-owned (byte-identical to .adna/what/lattices/tools/frontmatter_schema.json, verified cmp 2026-10-04), so the fix rides a release, never a local edit
 upstream_target: aDNA-Network/aDNA
 disposition: "v8.13 lane — validator/schema — the schema (v2.3) requires `status` unconditionally; standard §7.2 (v2.5, ADR-044) makes it optional for `directory_index` and `coordination`"
 tags: [backlog, upstream, schema, frontmatter, validator, adr_044, v8_13]
+release_window: v8.14   # written locally 2026-10-21, how/missions/artifacts/v8_14/v8_14_release_ledger.md §2a′ T3 (red-proven); status stays proposed until the fire folds it
 ---
 
 # Idea: `frontmatter_schema.json` follows §7.2's per-class `status` profile
