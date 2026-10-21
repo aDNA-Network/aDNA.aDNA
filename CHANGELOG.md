@@ -30,6 +30,18 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-21 (v) — v8.14 rulings: six decisions taken after a review; two contradictions found in the standard itself
+
+- **Reviewed, then ruled.** Stanley asked for a careful second look at the six recommendations. Every premise was re-checked across the fleet and the published template; four recommendations changed; the reviewed set was approved.
+- **Written in this vault (not yet published):**
+  - campaign missions gain `executor_lane`, `gate` and `depends_on`. `unblocks` was not added: it is the reverse of `depends_on`, and a reverse list kept by hand drifts;
+  - campaign missions gain an acceptance-coherence check: before a budget is ratified, the author confirms each method can actually satisfy each test, and records which pairs were checked;
+  - campaigns gain two rules for checks: a check must have been seen to fail on purpose, and must say "cannot verify" rather than pass when it did not reach its target;
+  - the frontmatter schema stops requiring `status` on index and correspondence files, as the standard already says. The fix was proven to fail when its rule is removed.
+- **Found: the standard contradicts itself twice.** §3.5 says projects SHOULD be named like `ProjectName.aDNA/` and then says the name MUST be lowercase; 124 of 133 projects on this machine are PascalCase. Appendix B looks for missions under `type: mission` while every template writes `type: plan`. Both are queued as errata for the next standard window (v2.7), alongside two older asks that had been carried through three template releases because a template release cannot change the standard.
+- **Corrected:** one triage row from the first sitting claimed work was still owed that had already shipped at v8.12.
+- **Held:** refreshing the L1 setup skill. The repository it should point to is private, so the name should not go into the public template without a decision.
+
 ### 2026-10-21 (u) — v8.14 queue opened: staging ledger authored, eleven template rows written locally, stopped for operator rulings
 
 - **New mission:** `how/missions/mission_template_release_v8_14.md`, a standalone mission rather than a campaign (operator, plan time). Its staging ledger is `how/missions/artifacts/v8_14/v8_14_release_ledger.md`, **proposed, not fired**.
