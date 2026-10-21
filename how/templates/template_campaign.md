@@ -97,6 +97,14 @@ tags: [campaign]
 | Deliverables validated | AAR scorecard (validated/total) | Yes — all deliverables must be validated or justified |
 | Files committed | Git status clean | Yes — no orphaned changes |
 
+**Instrument discipline** *(v8.14)*. A check whose green anyone acts on must earn that trust in two ways:
+
+1. **Demonstrated to fail.** Before relying on it, make it go red on purpose: mutate what it asserts, watch it fail,
+   restore, watch it pass. Record that this was done.
+2. **Reached its target.** It must show that it measured the thing it names (a success status, the expected host, a
+   non-empty scope), and it must say **CANNOT VERIFY** rather than pass when it did not. An honest gap beats a false
+   green. Corollary: *presence is not conformance*; checking that a field exists is weaker than checking its value.
+
 ### Per-Phase
 
 | Check | Method | Gate? |
