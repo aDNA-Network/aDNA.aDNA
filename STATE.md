@@ -36,8 +36,8 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
   - ledger §4 Q1–Q6 (operator §7.7) `#needs-human`;
   - mission O2 (P5/P7 ADR drafts), unless Q3 says fire without them;
   - O3 fire (own GO);
-  - push of `vitrine/design` (held; asked at close);
   - plus the (t) list below (P1.3 readers · Framework §7.7 · Hestia router-line memo).
+- **Pushed at close** (ruled): `vitrine/design` `1fa9b76..afe4962`, gitleaks clean; nothing released or deployed.
 - **Next Session Prompt:** GARNIER stays the front. If reader records exist, run the GARNIER CURRENT prompt. Otherwise read [[v8_14_release_ledger]] §4. If the operator has ruled, author the ruled rows (T1 T2 T3, re-measure T5/T6) and then mission O2, or go straight to O3 if Q3 = fire without the ADRs. Run `skill_template_release` (a)–(g) with every row re-measured in both trees.
 
 ### 2026-10-20 (t, UTC) — GARNIER holding sitting: receipts · **Framework table derived (1 → 12 rows; Aldus's row written)** · four template gaps filed · reply DELIVERED · **:4466 stimulus UP 15/15**
