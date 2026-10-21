@@ -30,6 +30,22 @@ Changelog entries are organized by **governance version** (primary heading). Sta
 
 ## [Unreleased]
 
+### 2026-10-21 (u) — v8.14 queue opened: staging ledger authored, eleven template rows written locally, stopped for operator rulings
+
+- **New mission:** `how/missions/mission_template_release_v8_14.md`, a standalone mission rather than a campaign (operator, plan time). Its staging ledger is `how/missions/artifacts/v8_14/v8_14_release_ledger.md`, **proposed, not fired**.
+- **Written in this vault (not yet in the published template):**
+  - campaign and campaign-mission templates gain `executor_tier` and token-budget fields, with `token_budget_actual` as the one actuals key;
+  - the coordination memo template gains `to:` · `reply_to:` · `status: staged` → `delivered`;
+  - campaign CLAUDE files get a ≤ 200-character live pointer;
+  - `skill_new_entity_type` says mass nouns stay singular;
+  - `skill_mesh_probe_discipline` rule 1 now bounds a probe with `timeout`, because `ping`'s `-t`/`-W` flags mean different things on macOS and Linux (Venus's finding);
+  - `skill_template_release` gains Step (g), the specification mirror;
+  - four stale version or tense lines are corrected.
+- **Found:** the script that mirrors the specification onto the website hard-codes version `2.2`. Re-running it as the backlog idea described would have turned the live page from 2.5 back to 2.2. The new skill step checks the version against the source first.
+- **Triage:** thirteen v8.13-lane ideas the last release never carried are listed with a proposed in / defer / hold for each. Most were already accepted on 2026-10-03.
+- **Received:** Venus (v8.13 skill compared; nothing owed back) and Stanley of `Harness.aDNA` (three pointers that now describe `HarnessOld.aDNA`; recorded in ledger §2d).
+- **Owed:** the operator's six rulings at ledger §4; then the P5 and P7 ADR drafts (or carry them again); then the fire, on its own GO.
+
 ### 2026-10-20 (t) — GARNIER holding sitting: the Framework table derived (Aldus's row written); four template gaps filed; reader stimulus back up
 
 - **`what/specs/spec_framework_ecosystem.md` v0.1 → v0.2.** The Active Frameworks table had one row (III). It now has twelve, derived from the fleet's own MANIFEST files rather than typed in: Git · Documents · OnWriting · LinkML · TypeScript · Organization · VisualDNA · Atlantis · React · Tailwind · Hardware. Documents.aDNA's row carries the wording its operator ruling gave it. A note under the table says which fields were read, and what that reading cannot see.
