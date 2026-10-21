@@ -4,8 +4,8 @@ type: plan
 title: "Template release v8.14: ship the ARCADE carries, the Documents genesis template gaps and the mesh-probe portability fix to aDNA-Network/aDNA"
 created: 2026-10-21
 updated: 2026-10-21   # sitting 2: §4 ruled (S2-R1–R6, after an operator-requested review); ruled rows written; T5 condition failed → S2-Q7. Sitting 1: ledger authored, 14 local rows written
-status: awaiting_operator   # §4 ruled; waiting on S2-Q7 (T5) and the fire GO (O3). Was: halted at §4 (sitting 1)
-gate: how/missions/artifacts/v8_14/v8_14_release_ledger.md §4 S2-Q7 + §5 (fire GO)
+status: awaiting_operator   # §4 ruled incl. S2-R7 (T5 carried); waiting on the fire GO (O3). Was: halted at §4 (sitting 1)
+gate: how/missions/artifacts/v8_14/v8_14_release_ledger.md §5 (fire GO)
 last_edited_by: agent_rosetta
 mission_class: integration
 executor_tier: opus            # build/execution: enumerated rows, each with its object; the two ADR drafts (O2) are judgment and may be summoned to fable
@@ -71,7 +71,7 @@ Plain version: every new project should start with what the last few projects ha
 ### 3. Re-measure + fire + deploy tail
 - **Status**: planned
 - **Description**: Run `skill_template_release` steps (a)–(g) against the ledger. Every row is re-measured in both trees first. Each outward act (push = release; spec-mirror deploy) has its own GO.
-- **Depends on**: 1, 2, and the S2-Q7 ruling on T5.
+- **Depends on**: 1, 2 (S2-R7: T5 carried, so nothing else is owed before the fire GO).
 
 ## Notes
 

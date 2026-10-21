@@ -111,7 +111,7 @@ struck where it changed (SO-6).*
 | T2 | `idea_upstream_verification_instrument_discipline` (high) | B2 ✓ | [D] open; the image has no doctrine directory | **in → §2a′ ✓** | Two clauses in the campaign template's Verification Strategy |
 | T3 | `idea_upstream_frontmatter_schema_per_class_status` (medium) | not B2 | [D] open: `frontmatter_schema.json:7` required `status` in both trees | **in → §2a′ ✓** | A schema-vs-standard contradiction is a correctness bug |
 | T4 | `idea_upstream_adna_overview_successor` (low) | question | open | **defer** | Replacing a shipped 49 KB document is its own ruling |
-| T5 | `idea_upstream_l1_onboarding_skill_stale_paths` | B2 ✓ ("or decline on re-measurement") | [D] open: image `skill_l1_upgrade.md:96` clones `LatticeProtocol/latlab.git` (28 `latlab` mentions) | **in, conditional → condition FAILED** (§2a′) | Successor repo is private; back to the operator (S2-Q7) |
+| T5 | `idea_upstream_l1_onboarding_skill_stale_paths` | B2 ✓ ("or decline on re-measurement") | [D] open: image `skill_l1_upgrade.md:96` clones `LatticeProtocol/latlab.git` (28 `latlab` mentions) | **in, conditional → condition FAILED → carried** (S2-R7) | Successor repo is private; carried until its visibility is decided |
 | T6 | `idea_upstream_node_manifest_interview_emission` | B2 ✓ (same) | [D] half the defer-trigger has fired: Home ADR-006 **accepted**; Hestia's shape hand-off not confirmed | ~~in, if open~~ → **v8.15** | Ask Hestia for a one-line shape confirmation (own GO). Its consumers (Lighthouse) run nothing yet |
 | T7 | `idea_upstream_template_decision_provenance` | B2 ✓ | [D] **MET at v8.12**: image `adr_003` accepted · `skill_project_fork` stamps `template_inherited` (×2) · re-vendor advisory at image `CHANGELOG.md:88` | ~~with C2~~ → **close (MET)** | The sitting-1 row was wrong: it was read off the idea's disposition, not the image |
 | T8–T10 | ISS trio | B2 ✓ ("unless the Astro runtime fix lands first") | [D] fix not landed (`gate_receiver.py:56` `*`, last touched 2026-05-31) | **hold** | Shape ruled with Astro's runtime owner, by memo; red-prove before "done" |
@@ -173,13 +173,13 @@ premise and revised Q1, Q2, Q5 and Q6. Approving the reviewed plan ruled all six
 
 **Open (new at sitting 2):**
 
-7. **S2-Q7 · T5.** The ruled condition failed: the successor L1 repo `aDNA-Network/adna-lab` is private, and so is the `LatticeProtocol/latlab` the image names today. Options: (a) write the private successor name with the image's existing invite wording; (b) keep the old name, since GitHub redirects; (c) carry T5 until the repo's visibility is decided.
+7. ~~**S2-Q7 · T5.**~~ ✅ **S2-R7 (2026-10-21): carry T5** until `adna-lab`'s visibility is decided; the skill is unchanged in v8.14 (the old name still works, since GitHub redirects renamed repos). *Was:* The ruled condition failed: the successor L1 repo `aDNA-Network/adna-lab` is private, and so is the `LatticeProtocol/latlab` the image names today. Options: (a) write the private successor name with the image's existing invite wording; (b) keep the old name, since GitHub redirects; (c) carry T5 until the repo's visibility is decided.
 
 ## §5 · Fire-time checklist (sitting 3)
 
-- [ ] (a) Preconditions: operator opens the gate for v8.14 · each row traces to a ruling (§4 S2-R1–R6) · tree clean · S2-Q7 ruled.
+- [ ] (a) Preconditions: operator opens the gate for v8.14 · each row traces to a ruling (§4 S2-R1–R6) · tree clean · S2-Q7 ruled (S2-R7: carry T5).
 - [ ] Re-derive §0 and re-measure every §2a and §2a′ row in both trees (b.2). Classify `img Δ` line by line: fold the named lines, keep the de-narration.
-- [ ] (b.1) Leak sweep on the assembled tree: wikilinks · private paths · dev-vault names · mission IDs · SHAs. **V1's Venus line stays dev-only.** No private repo name lands unless S2-Q7 rules (a).
+- [ ] (b.1) Leak sweep on the assembled tree: wikilinks · private paths · dev-vault names · mission IDs · SHAs. **V1's Venus line stays dev-only.** No private repo name lands (S2-R7: T5 carried).
 - [ ] (c) Fresh clone; rsync `.adna/`; embed-note swap on `.adna/README.md`; the C3d edit on the image MANIFEST.
 - [ ] (d) Bump surfaces 1, 2, 5; path-scoped add; annotated tag `v8.14`; **push = release, operator confirms**.
 - [ ] (e) Local `.adna` sync + `npm run sync:install`.

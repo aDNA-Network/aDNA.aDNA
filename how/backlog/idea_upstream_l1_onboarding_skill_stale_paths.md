@@ -11,7 +11,7 @@ informational: false
 upstream_target: .adna base template → maintained via `aDNA.aDNA` `skill_template_release`
 precedent: idea_upstream_onboarding_workspace_default_adna.md   # resolved 2026-06-10; SAME CLASS, different defect
 tags: [backlog, upstream, onboarding, l1_upgrade, quest, galilei, torricelli, stale_paths, rule_1, hestia, open_hearth]
-release_window: v8.14 (held)   # ruled in on condition (S2-R2); condition FAILED 2026-10-21: successor repo aDNA-Network/adna-lab is PRIVATE → how/missions/artifacts/v8_14/v8_14_release_ledger.md §4 S2-Q7
+release_window: unassigned   # CARRIED (S2-R7, 2026-10-21) until aDNA-Network/adna-lab visibility is decided; ruled in on condition (S2-R2), condition FAILED (repo PRIVATE) — how/missions/artifacts/v8_14/v8_14_release_ledger.md §4 item 7
 ---
 
 # Upstream Idea — the `.adna` L1-onboarding pair still teaches the pre-Galilei / pre-Torricelli world

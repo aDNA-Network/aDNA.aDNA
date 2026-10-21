@@ -38,15 +38,14 @@ Dynamic operational snapshot for cold-start orientation. Updated each session.
   - Q6g guide grep;
   - ledger §2a′ / §2c / §2e plus a ratification block;
   - 2 ideas closed MET, 7 windowed, 3 new.
-- **T5 condition FAILED [D]:** `aDNA-Network/adna-lab` is PRIVATE, and so is the `LatticeProtocol/latlab` the image names today. Not written → ledger §4 **S2-Q7** `#needs-human`.
+- **T5 condition FAILED [D]:** `aDNA-Network/adna-lab` is PRIVATE, and so is the `LatticeProtocol/latlab` the image names today. Not written → **S2-R7 (at close): carry T5** until the repo's visibility is decided.
 - **Owed:**
-  - S2-Q7 (operator);
   - O3 fire (own GO), then the deploy tail with the spec-only mirror (own GO; the script fix goes on `main`);
   - optional memos (own GO): Hestia (T6 shape) · Harness (E-3);
   - the v2.7 queue needs a standard window + a fable drafting sitting;
-  - push asked at close;
+  - pushed at close (ruled);
   - plus (t)/(u): GARNIER P1.3 readers · Framework §7.7 · Hestia router-line memo.
-- **Next Session Prompt:** GARNIER stays the front. If reader records exist, run its CURRENT prompt. Otherwise, with S2-Q7 ruled and a fire GO, run O3 from [[v8_14_release_ledger]] §5: `skill_template_release` (a)–(f), every §2a/§2a′ row re-measured in both trees, push = release. Then the deploy tail on its own GO, with the spec-only mirror per §2b Q1.
+- **Next Session Prompt:** GARNIER stays the front. If reader records exist, run its CURRENT prompt. Otherwise, on a fire GO, run O3 from [[v8_14_release_ledger]] §5: `skill_template_release` (a)–(f), every §2a/§2a′ row re-measured in both trees, push = release. Then the deploy tail on its own GO, with the spec-only mirror per §2b Q1.
 
 ### 2026-10-21 (u, UTC) — v8.14 queue OPENED: standalone mission + staging ledger (PROPOSED, NOT FIRED) · **11 rows written locally** · stopped at §4
 
