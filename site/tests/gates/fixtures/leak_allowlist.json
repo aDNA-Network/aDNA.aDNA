@@ -2,7 +2,7 @@
   "_doc": "HAUSSMANN P0.5 (editorial gate, O2) — dated allowlist of REVIEWED, PERMANENT exceptions to the leak lint. This is NOT the debt list: today's genuine leaks live in leak_baseline.json and must go to zero at P1.3. An entry here says 'this token, on this surface, is deliberate public copy'.",
   "_discipline": "Every entry carries surface + pattern + an explicit `tokens` list + rationale + date + reviewed_by. Token-scoped by design: allowlisting `learn/** internal_id` wholesale would let a NEW internal id (e.g. campaign_haussmann) leak into a tutorial unseen. Only the reviewed strings are excused; anything else on the same surface still goes red.",
   "_surface_globs": "`**` matches any path suffix. `index.html` matches the built homepage exactly.",
-  "updated": "2026-09-07",
+  "updated": "2026-10-21",
   "entries": [
     {
       "surface": "index.html",
@@ -255,6 +255,16 @@
       "rationale": "HAUSSMANN P4.4a A1 / F-i. This is a MACHINE surface: a JSON field whose value is `org_graph` is an API CONTRACT, not jargon in a sentence. The registry's consumers key on these literals, so rewriting them to prose would break the contract the endpoint exists to publish — the raw_enum pattern is aimed at enums leaking into HUMAN copy, which is a different defect on a different surface. SCOPE: this entry grants raw_enum on THIS FILE ONLY. Every other leak class (internal_path, internal_id, op_codename, machine_ident, truncated_lede, production_tidy, backlog_finding_id) applies to it in full and was measured at ZERO. TOKENS ARE DERIVED, NOT TYPED (KW-14) — F-i's own row named three (`org_graph`, `tbd_at_p0`, `genesis_stub`); running the gate's patterns against the built file found SEVEN. Scoping to the three the row typed would have left four firing and the gate red on a good tree. They live under exactly two keys: `class` (6) and `status` (1 = genesis_stub). Re-derive with: node -e \"...leak_patterns against dist/vaults.json...\" (see the gate's scanTargets note). A NEW CLASS FIRING HERE IS THE GATE WORKING — add it by review, never by widening the pattern.",
       "date": "2026-08-24",
       "reviewed_by": "agent_rosetta (P4.4a A1 / F-i)"
+    },
+    {
+      "surface": "reference/specification/**",
+      "pattern": "truncated_lede",
+      "tokens": [
+        "(e.g. <"
+      ],
+      "rationale": "v8.14 deploy tail (spec mirror v2.5 → v2.6). Standard v2.6 §5.3 reads \"(e.g. `how/federation/exchange/` for a graph published through an aDNA Exchange …)\": the parenthesis closes, but its first text node ends at the inline <code>, so the truncated-lede heuristic sees \"(e.g. <\" with no closing paren in that node. Normative text, published byte-identical in the image (md5 86385da8); it cannot be edited to suit a heuristic. SCOPE: the specification pages only (the §5 section page + /full/, 1 hit each, measured); token-scoped, so any other truncated lede on these pages still goes red.",
+      "date": "2026-10-21",
+      "reviewed_by": "agent_rosetta (v8.14 deploy tail)"
     }
   ]
 }

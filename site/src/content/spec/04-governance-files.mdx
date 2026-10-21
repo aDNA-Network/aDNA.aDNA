@@ -4,7 +4,7 @@ description: "aDNA Specification §4 — Governance Files."
 section_title: "Governance Files"
 number: 4
 slug_id: "4-governance-files"
-version: "2.5"
+version: "2.6"
 prev: "3-triad-architecture"
 next: "5-directory-structure"
 ---
@@ -26,9 +26,11 @@ The following ALLCAPS files constitute the governance layer:
 |------|----------|---------|----------------|
 | **CLAUDE.md** | MUST | Agent root context — persona, project map, safety rules, startup protocol | When structure or protocols change |
 | **MANIFEST.md** | MUST | Static project overview — what the project is, architecture, entry points | When project scope or architecture changes |
-| **STATE.md** | SHOULD | Dynamic operational state — current phase, blockers, recent decisions, next steps | Every session close-out |
-| **AGENTS.md** | MUST | Root-level agent guide — directory purpose, key files, patterns | When directory structure changes |
+| **STATE.md** | MUST (Standard+) · SHOULD (Starter) | Dynamic operational state — current phase, blockers, recent decisions, next steps | Every session close-out |
+| **AGENTS.md** | MUST (Standard+) · SHOULD (Starter) | Root-level agent guide — directory purpose, key files, patterns | When directory structure changes |
 | **README.md** | MUST | Root-level human guide — navigation, setup, how to browse | When onboarding experience changes |
+
+Requirement levels in this table are read against the conformance level declared in §5.5; where the two disagree, §5.5 governs (v2.6, aDNA.aDNA ADR-063 E-1).
 
 ```mermaid
 flowchart LR

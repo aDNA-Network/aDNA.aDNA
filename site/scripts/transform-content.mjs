@@ -149,9 +149,11 @@ function escapeMdxSyntax(content) {
   return lines.map(line => {
     if (line.trimStart().startsWith('```')) inCodeBlock = !inCodeBlock;
     if (inCodeBlock) return line;
-    line = line.replace(/<(\d)/g, '&lt;$1');
-    line = line.replace(/<!--(.*?)-->/g, '{/* $1 */}');
-    return line;
+    // Inline code spans are literal in MDX, so neither rule applies inside backticks: converting
+    // `<!-- vX.Y -->` there printed `{/* vX.Y */}` as the example of the syntax it documents.
+    // One left-to-right scan, so a comment that itself contains backticks is still converted whole.
+    return line.replace(/(`+[^`]*`+)|<!--(.*?)-->|<(\d)/g, (m, code, comment, digit) =>
+      code !== undefined ? code : comment !== undefined ? `{/* ${comment} */}` : `&lt;${digit}`);
   }).join('\n');
 }
 
@@ -233,7 +235,9 @@ const tutorialMapping = [
 ];
 
 const referenceMapping = [
-  { source: 'adna_standard.md', slug: 'specification', title: 'aDNA Specification', version: '2.2', stability: 'stable' },
+  // version is read from the source's frontmatter title ("aDNA Universal Standard vX.Y"), never kept here:
+  // a constant in this table once read '2.2' while the live page read '2.5', so a re-run would have regressed it.
+  { source: 'adna_standard.md', slug: 'specification', title: 'aDNA Specification', versionFromTitle: true, stability: 'stable' },
   { source: 'adna_design.md', slug: 'design-rationale', title: 'Design Rationale', stability: 'stable' },
   { source: 'standard_reading_guide.md', slug: 'reading-guide', title: 'Reading Guide', stability: 'stable' },
   { source: 'agent_first_guide.md', slug: 'agent-first-guide', title: 'Agent-First Guide', stability: 'stable' },
@@ -322,7 +326,13 @@ function transformReference() {
     let raw;
     try { raw = readFileSync(sourcePath, 'utf-8'); } catch { console.warn(`  SKIP: ${sourcePath} not found`); continue; }
 
-    const { body } = parseFrontmatter(raw);
+    const { meta, body } = parseFrontmatter(raw);
+    let version = entry.version;
+    if (entry.versionFromTitle) {
+      const m = (meta.title || '').match(/\bv(\d+\.\d+)\b/);
+      if (!m) throw new Error(`${entry.source}: no "vX.Y" in its frontmatter title (${JSON.stringify(meta.title)}); refusing to guess the version`);
+      version = m[1];
+    }
     const content = escapeMdxSyntax(rewriteWikilinks(stripH1(body)));
     const desc = generateDescription(content);
 
@@ -333,7 +343,7 @@ function transformReference() {
       `ref_title: "${entry.title}"`,
       `stability: "${entry.stability}"`,
     ];
-    if (entry.version) lines.push(`version: "${entry.version}"`);
+    if (version) lines.push(`version: "${version}"`);
     lines.push('---');
 
     const outPath = join(SITE_CONTENT, 'reference', `${entry.slug}.mdx`);

@@ -4,7 +4,7 @@ description: "aDNA Specification §5 — Directory Structure."
 section_title: "Directory Structure"
 number: 5
 slug_id: "5-directory-structure"
-version: "2.5"
+version: "2.6"
 prev: "4-governance-files"
 next: "6-naming-conventions"
 ---
@@ -125,7 +125,9 @@ how/ contains everything about HOW the project works.
 | `skills/` | Reusable agent procedures (see §19.3) |
 | `processes/` | Human-readable workflow documentation |
 | `deliverables/` | Output artifacts |
-| `federation/` | Consumer federation wrappers — one `<wrapper>/` per federated software-element/service graph (v2.5, ADR-045) |
+| `federation/` | Consumer federation wrappers — one `<wrapper>/` per federated software-element/service graph (v2.5, ADR-045) (e.g. `how/federation/exchange/` for a graph published through an aDNA Exchange, §19.7) |
+
+A federation wrapper's `CLAUDE.md` SHOULD carry a `federation_ref:` block naming at least `source_vault` and `version` (the version is recorded as the source states it, never normalised), and SHOULD add `pinned_at_commit` when it pins a commit. A reader treats the block as what the consumer **declares**, not as a fact the source has verified (v2.6).
 
 ## 5.4 Universal Skeleton
 
@@ -193,7 +195,7 @@ An aDNA instance at Starter conformance MUST have:
 
 1. **Governance files**: `CLAUDE.md`, `MANIFEST.md`, `README.md` at the root (bare) or repository root (embedded)
 2. **Triad directories**: `what/`, `how/`, `who/` (bare) or `.agentic/what/`, `.agentic/how/`, `.agentic/who/` (embedded)
-3. **Required subdirectories**: `what/context/`, `how/missions/`, `how/sessions/`, `how/templates/`, `who/coordination/`, `who/governance/`
+3. **Required subdirectories**: `what/context/`, `how/missions/`, `how/sessions/`, `how/templates/`, `who/governance/` — plus `who/coordination/` when more than one agent writes the instance (v2.6, aDNA.aDNA ADR-066 clause 3)
 4. **Frontmatter**: All content files inside the triad MUST include the base fields defined in §7.2, per its per-class profile (`type`, `status`, `created`, `updated`, `last_edited_by`, `tags`; `status` optional for `directory_index` + `coordination` — v2.5, ADR-044)
 
 Starter conformance represents the minimum viable aDNA instance — sufficient for a single-agent project with basic session tracking.
@@ -206,7 +208,7 @@ An aDNA instance at Standard conformance MUST satisfy all Starter requirements A
 
 5. **Additional governance files**: `STATE.md` and a root `AGENTS.md`
 6. **Per-directory AGENTS.md**: Every triad leg (`what/`, `how/`, `who/`) MUST have an `AGENTS.md` file
-7. **Recommended directories**: `what/decisions/`, `how/backlog/`, `how/sessions/active/`, `how/sessions/history/`
+7. **Recommended directories**: `what/decisions/`, `how/backlog/`, `how/sessions/active/`, `how/sessions/history/`, `who/coordination/`
 8. **Session lifecycle**: Sessions MUST follow the lifecycle defined in §8 (creation → execution → close-out with SITREP)
 
 Standard conformance represents an active multi-agent project with operational discipline.
@@ -215,7 +217,7 @@ Standard conformance represents an active multi-agent project with operational d
 
 An aDNA instance at Full conformance MUST satisfy all Standard requirements AND:
 
-9. **Context library**: `what/context/` MUST contain at least one topic directory with its own `AGENTS.md` and at least one context file with `token_estimate` in frontmatter
+9. **Context library**: `what/context/` MUST contain at least one topic directory with its own `AGENTS.md` and at least one context file with `token_estimate` in frontmatter `token_estimate` SHOULD be computed as `ceil(bytes / 4)` over the file's UTF-8 bytes unless the instance's `MANIFEST.md` declares another method (v2.6).
 10. **FAIR metadata**: Deployable objects (modules, datasets, lattices) MUST include a `fair:` frontmatter block with at minimum `keywords` and `license`
 11. **Ontology artifact**: `what/ontology.md` MUST exist with a Mermaid ER diagram (per §5.1)
 12. **Template compliance**: All content types used in the project MUST have corresponding templates in `how/templates/`
@@ -227,9 +229,24 @@ Full conformance represents a mature, federatable aDNA instance ready for cross-
 Projects MAY declare their conformance level in `MANIFEST.md` using the `adna_conformance` frontmatter field:
 
 ```yaml
-adna_conformance: starter  # or: standard, full
+adna_conformance: starter  # or: standard, full — or <level>+<profile>, e.g. starter+medical (v2.6)
 ```
 
 An instance that does not declare a conformance level is assumed to be unverified. The `adna_validate.py` tool (see `what/lattices/tools/`) can determine conformance level programmatically.
+
+### Profiles (v2.6, aDNA.aDNA ADR-066 clause 1)
+
+A **profile** is a named, versioned overlay on exactly one conformance level. A profile MUST keep every MUST of its base
+level, MAY add requirements of its own, and MUST NOT relax a base MUST. An instance declares it as
+`adna_conformance: <level>+<profile>` (profile names are snake_case, §6.1) with `adna_profile_version: <semver>`.
+A validator that does not know a profile MUST evaluate the base level and report the profile as unverified; it MUST NOT
+fail the instance for the suffix. A release of a declared profile MUST carry a release manifest (§15.5).
+
+**Named profiles.** The standard lists profiles; it does not host them. A profile's text and releases stay with its
+steward. Listing is recorded by the standard's maintainer at the steward's request (§7.7) and certifies nothing.
+
+| Profile | Steward | Version | Release manifest root | Status |
+|---|---|---|---|---|
+| *(none listed yet)* | | | | |
 
 ---

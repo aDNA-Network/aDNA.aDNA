@@ -4,7 +4,7 @@ description: "aDNA Specification §11 — Coordination Protocol."
 section_title: "Coordination Protocol"
 number: 11
 slug_id: "11-coordination-protocol"
-version: "2.5"
+version: "2.6"
 prev: "10-context-library"
 next: "12-template-system"
 ---
@@ -38,6 +38,6 @@ A coordination note MUST include:
 - **When** it was created and when it expires
 - **Action needed** — what the target agent should do
 
-Agents MUST check `who/coordination/` during every session startup.
+Agents MUST check `who/coordination/`, when it exists, during every session startup.
 
 ---

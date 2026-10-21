@@ -4,7 +4,7 @@ description: "aDNA Specification §15 — Archive & Versioning."
 section_title: "Archive & Versioning"
 number: 15
 slug_id: "15-archive-versioning"
-version: "2.5"
+version: "2.6"
 prev: "14-content-as-code-pipelines"
 next: "16-tool-integration-tiers"
 ---
@@ -31,6 +31,14 @@ The archive pattern varies by environment:
 - `archive/` subdirectories for visibly-deprecated items (documents users should see are retired)
 - Session history follows the same `YYYY-MM/` pattern regardless of environment
 
+**Archive-don't-delete** (both environments; v2.6, aDNA.aDNA ADR-063 E-2): governance records, decisions, mission and session
+files are archived — moved under `archive/`, `history/`, or kept in git history with a status flip — never deleted.
+Deletion of a record is itself a recorded decision.
+
+**Purge exception** (v2.6, aDNA.aDNA ADR-066 clause 4b): secrets, and regulated data (RED material, or data under a legal
+erasure duty), found where they must not be MUST be purged from the working tree and from history. The purge leaves an
+incident record that holds no payload — class, location, date, actor, and how the purge was verified.
+
 ## 15.2 Retention
 
 Session history SHOULD NOT be auto-deleted. Manual cleanup after 6 months is acceptable if storage is a concern.
@@ -55,5 +63,25 @@ The aDNA standard uses two versioning tracks:
 - Governance version changes are operational and do not affect standard conformance.
 
 **Version-cut checklist** (v2.5, ADR-046 — the footer-lag anti-recurrence rule): on every version bump, the document's four version-bearing surfaces MUST agree before the cut commits — (1) the frontmatter `title`, (2) the frontmatter `updated` date, (3) a new changelog comment line in the header block, and (4) the *End of …* footer line. A cut that leaves any of the four stale is incomplete. *(This rule exists because the footer lagged the title across multiple historical bumps — most recently shipping "v2.3" inside the published v2.4 document.)*
+
+## 15.5 Release Integrity (v2.6, aDNA.aDNA ADR-066 clause 2)
+
+A release MAY ship `manifest_sha256.txt` at its root; a release of a declared profile (§5.5) MUST.
+
+- **Input**: the files listed by `git ls-files -s` at the release commit, minus the manifest and any paths the header
+  declares excluded. Untracked files are never in a manifest.
+- **Normalization** (checked, never applied): UTF-8 without BOM, LF line endings; relative, `/`-separated,
+  NFC-normalized paths with no `..`, leading `/`, or newline. A validator rejects un-normalized input. Hashes are over
+  raw bytes.
+- **Lines**: `<sha256-hex>  <git-mode>  <path>`, two-space separated, sorted by bytewise-ascending path; a symlink
+  (`120000`) hashes its target string.
+- **Header** (bound into the root): `# adna-release-manifest v1`, `# profile:`, `# profile_version:`, `# upstream:`
+  (standard version and commit), `# scope: release | instance_profile`, `# algorithm: sha256`, `# files:`, `# excluded:`.
+- **Root**: `# root: <sha256>` over the exact bytes of every line above it, each terminated by `\n`.
+
+`scope: instance_profile` covers the rule surface a profile defines. It MUST include the governance files and any
+module that changes data egress or model routing. An instance whose instance-profile root equals the release's (after
+declared modules) runs unmodified rules. A manifest root identifies files; it is not a package address, and neither
+stands in for the other. Anchoring a root anywhere external is outside this standard.
 
 ---

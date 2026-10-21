@@ -4,7 +4,7 @@ description: "aDNA Specification §7 — Frontmatter System."
 section_title: "Frontmatter System"
 number: 7
 slug_id: "7-frontmatter-system"
-version: "2.5"
+version: "2.6"
 prev: "6-naming-conventions"
 next: "8-session-model"
 ---
@@ -47,6 +47,11 @@ tags: []
 | `tags` | Categorization array for filtering and discovery |
 
 **Per-class profile** (v2.5, ADR-044): the six base fields are required for content and session entities. **`status` is optional for `type: directory_index` and `type: coordination`** — an index or correspondence record has no lifecycle state, and their canonical templates omit it. The other five base fields remain required for all classes.
+
+**Optional base label** (v2.6, aDNA.aDNA ADR-066 clause 4a): `data_tier: GREEN | AMBER | RED`. It records how far a
+file's content may travel (GREEN ⊂ AMBER ⊂ RED in what may be seen). The value space is the fleet's `DataTier`
+(LatticeProtocol `lattice_core`; LinkML.aDNA compliance slots); this standard names the key and mints no values. A profile
+MAY make it required and MAY narrow it. It is a label, never data.
 
 ## 7.3 Tag Conventions
 
