@@ -2,7 +2,7 @@
 type: skill
 skill_type: process
 created: 2026-06-10
-updated: 2026-07-24
+updated: 2026-10-21
 status: active
 category: release
 trigger: Operator opens a template-release gate — ratified dev-graph changes are ready to ship to the public face `aDNA-Network/aDNA`
@@ -202,6 +202,30 @@ Run against a THROWAWAY clone of the just-pushed release (`git clone … $(mktem
 Record the checklist result in the release session file; a red row REVERTS the release decision to the
 operator (never auto-remediate a pushed tag — a fix is a new gate).
 
+### Step (g) — Spec mirror (only when the standard version moved)
+
+When the release changes the standard's version (the `adna_standard.md` title), the site's
+`/reference/specification/` pages are a **projection** of it and fall one version behind unless they are
+regenerated. This is site work, so it runs on `main`, after the fire, and **its deploy is its own GO** (the
+"not for site deploys" rule above still holds: this step stages, it does not deploy by itself).
+
+```bash
+cd site
+node scripts/transform-content.mjs          # .md → src/content/**.mdx (all mappings, not just the spec)
+node scripts/split_specification.mjs         # specification.mdx → one file per numbered section
+node scripts/split_specification.mjs --check # drift check: the parts reconstitute the source
+npx playwright test tests/gates/gate-32-spec-split.spec.ts
+```
+
+Controls:
+1. **Version from the source, not a constant.** The rendered `version:` must equal the version in the released
+   standard's title. `transform-content.mjs` writes `version:` from its `referenceMapping` table, so check that
+   value before running: a stale constant there silently *regresses* the page.
+2. **Diff the whole projection before committing.** The transform rewrites every mapped page; any hand edit made
+   to a generated `.mdx` since the last run shows up as a deletion. Keep the spec pages; ask about the rest.
+3. **After the deploy GO**, probe the live `/reference/specification/` and record the version it serves beside
+   the release tag.
+
 ## Outputs
 
 | Output | Type | Description |
@@ -211,6 +235,7 @@ operator (never auto-remediate a pushed tag — a fix is a new gate).
 | Local node `.adna` sync commit | git (local) | Step (e); origin stays frozen |
 | Regenerated `install_truth.json` | fixture | If template sha moved (step e) |
 | Smoke-test record | session file | Step (f) checklist, 7 rows |
+| Spec-mirror projection | `site/src/content/reference/` | Step (g), only when the standard version moved; deployed on its own GO |
 
 ## Error Handling
 

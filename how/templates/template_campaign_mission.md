@@ -8,6 +8,9 @@ campaign_id: campaign_<name>
 campaign_phase: <N>
 campaign_mission_number: <N>
 mission_class:                        # Optional: reconnaissance | implementation | verification | integration | closeout
+executor_tier: fable | opus | sonnet  # planned model-routing class (see pattern_model_tiered_campaign_execution)
+token_budget_estimated: "<kT, per ADR-016>"   # per-mission budget declaration
+token_budget_actual: "<kT, filled at close>"  # the ONE actuals key — record actuals here, not under another name
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
 last_edited_by: agent_<username>
@@ -30,7 +33,7 @@ One-paragraph description of what this mission achieves when all objectives are 
 
 ## Premise pass
 
-*(v8.13, proposed — ARCADE A1.3, Vauban 10-06 #9a + 10-07 #3.)* Every premise this card depends on, re-read **first-hand, read-only, on the tree at `<HEAD>`** at the plan gate, with its result. A bounded grep or count is a premise until it is re-run first-hand at the sitting that depends on it. **A premise pass may delegate the search; it never delegates the read**: every `file:line` in this card is tagged `[D]` (VERIFIED — this sitting read the line) or `[R]` (REPORTED — the subagent or peer that returned it, named), the vault's own provenance tags. "No premises beyond the card's own inputs" is a valid single row.
+*(v8.13.)* Every premise this card depends on, re-read **first-hand, read-only, on the tree at `<HEAD>`** at the plan gate, with its result. A bounded grep or count is a premise until it is re-run first-hand at the sitting that depends on it. **A premise pass may delegate the search; it never delegates the read**: every `file:line` in this card is tagged `[D]` (VERIFIED — this sitting read the line) or `[R]` (REPORTED — the subagent or peer that returned it, named), the vault's own provenance tags. "No premises beyond the card's own inputs" is a valid single row.
 
 | # | Premise | Where read (`file:line` @ HEAD) | Result | Tag |
 |---|---|---|---|---|
@@ -73,7 +76,7 @@ Any cross-cutting observations, risks, or decisions made during execution.
 
 ### Descoped
 - [Objectives skipped or deferred, with justification]
-- *(v8.13, proposed — Vauban 10-06 #3)* A carry handed in across a gate is dispositioned **by name with a pointer** — MET `file:line` · retired (reason) · next (reason) — or it is open ("none vanishes").
+- *(v8.13)* A carry handed in across a gate is dispositioned **by name with a pointer** — MET `file:line` · retired (reason) · next (reason) — or it is open ("none vanishes").
 
 ### Key Findings
 - [Insights, patterns, or discoveries from execution]

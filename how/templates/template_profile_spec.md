@@ -30,9 +30,9 @@ so a reviewer can tell a deliberate silence from a forgotten one. The skeleton g
 spec's sections (Operation Lister's `adna_medical_spec.md` v0.1). Field-specific sections (§7 in
 particular) are where profiles differ most.
 
-*Tense.* The `<level>+<profile>` syntax, §15.5 release integrity and the §15.1 purge carve-out cited below are
-aDNA.aDNA ADR-066 clauses 1, 2 and 4b. They are proposed until ARCADE G3 and become standard text only at the v2.6 cut
-(`HORIZON` until then). A profile drafted before the cut cites the ADR, not a section number.
+*Upstream.* The `<level>+<profile>` syntax (§5.5), release integrity (§15.5) and the purge carve-out (§15.1) cited
+below are standard text from v2.6 (decision record: aDNA.aDNA ADR-066 clauses 1, 2 and 4b). A profile pinned to an
+earlier standard cannot use them.
 
 ## 1. Scope and normative language
 

@@ -1,8 +1,8 @@
 ---
 type: directory_index
 created: 2026-10-19
-updated: 2026-10-19
-status: proposed        # the directory and its rule follow aDNA.aDNA ADR-066 clause 1, proposed until G3 (ARCADE P3 exit); the table is empty of listed rows until a steward's release
+updated: 2026-10-21
+status: active          # aDNA.aDNA ADR-066 clause 1 accepted at ARCADE G3 (2026-10-19) and standard text from v2.6 (§5.5); the table stays empty of listed rows until a steward's release. Was: proposed until G3
 last_edited_by: agent_rosetta
 campaign_id: campaign_arcade
 mission_id: mission_arcade_a3_3_profile_scaffolding

@@ -1,7 +1,7 @@
 ---
 type: ontology
 created: 2026-02-20
-updated: 2026-10-20   # ARCADE A4.2 (G4 row C1, Noether 10-03 #5): Base Invariance row cites aDNA.aDNA ADR-044; `completed` canonical, `complete` a registered alias. Prior 2026-10-04 I-01: `reviewer` row added, entity_count re-derived 26 → 27
+updated: 2026-10-21   # v8.14 queue (C3): §Related standard link v2.3 → v2.6. Prior 2026-10-20 ARCADE A4.2: Base Invariance row cites aDNA.aDNA ADR-044
 status: active
 last_edited_by: agent_rosetta
 tags:
@@ -404,7 +404,7 @@ For the full merge algorithm, conflict taxonomy, and worked examples, see [Ontol
 ## Cross-References
 
 - [CLAUDE.md](../CLAUDE.md) — Vault structure map and agent protocol
-- [aDNA Standard v2.3](docs/adna_standard.md) — Normative specification (§5.1 ontology artifact, §3 triad architecture)
+- [aDNA Standard v2.6](docs/adna_standard.md) — Normative specification (§5.1 ontology artifact, §3 triad architecture)
 - [Ontology Unification Protocol](docs/ontology_unification.md) — Formal merge algorithm, conflict taxonomy, namespace specification
 - [Lattice Federation & Sharing Protocol](docs/lattice_federation.md) — Federation lifecycle, import triggers merge
 - [aDNA Design Rationale](docs/adna_design.md) — Design decisions and deployment forms

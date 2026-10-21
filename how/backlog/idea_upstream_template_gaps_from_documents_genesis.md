@@ -3,13 +3,14 @@ type: backlog_idea
 status: proposed
 priority: medium
 created: 2026-10-20
-updated: 2026-10-20
+updated: 2026-10-21
 last_edited_by: agent_rosetta
 filed_from: who/coordination/inbox/coord_2026_10_19_aldus_to_rosetta_framework_spec_row.md (§Upstream candidates; Documents.aDNA Phase 0 read 08 finding (f), G0-2 (f))
 filing_authorization: skill_upstream_contribution — operator approval at plan time, 2026-10-20 (AskUserQuestion "Inbox + spec row (Recommended)", plan approved), session_stanley_20261020_221216_garnier_inbox_framework_rows
 upstream_target: aDNA-Network/aDNA (how/templates/ + how/skills/skill_new_entity_type.md)
 disposition: "v8.14 template queue — sits beside ARCADE's 'one budget key' carry ([[aar_campaign_arcade]] §Carries); (b) and that carry touch the same template and should land in one diff."
 tags: [backlog, upstream, templates, coordination, campaign_mission, campaign_claude, new_entity_type, v8_14, documents_adna, aldus]
+release_window: v8.14   # ledger how/missions/artifacts/v8_14/v8_14_release_ledger.md rows Ga · Gb (with C13) · Gc · Gd, all written locally 2026-10-21; Documents extra fields = §4 Q1
 ---
 
 # Idea: four template gaps a fresh genesis had to patch locally

@@ -3,13 +3,14 @@ type: backlog_idea
 status: proposed
 priority: high
 created: 2026-10-20
-updated: 2026-10-20
+updated: 2026-10-21
 last_edited_by: agent_rosetta
 filed_from: how/campaigns/campaign_arcade/artifacts/p5/aar_campaign_arcade.md (Gap 1 · Technical Debt 1); finding first measured at ARCADE A5.1 (live fetch, 2026-10-20)
 filing_authorization: ARCADE A5.2 graduation (R66, operator plan-time AskUserQuestion 2026-10-20); the sync itself was ruled carried by R63, not executed
 upstream_target: this vault's how/skills/skill_template_release.md (dev-graph skill; folds to the image only if the skill ships there)
 disposition: "v8.14 lane — first row of the queue; the only ARCADE carry with a live public symptom. The sync's deploy is its own GO (GARNIER P2.2 release fidelity owns the site side)."
 tags: [backlog, upstream, release, spec_mirror, site, v8_14, arcade]
+release_window: v8.14   # ledger how/missions/artifacts/v8_14/v8_14_release_ledger.md rows Q1 (site sync, owed) + Q2 (skill step (g), written 2026-10-21)
 ---
 
 # Idea: the release skill must regenerate the site's spec mirror

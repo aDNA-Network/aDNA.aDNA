@@ -2,7 +2,7 @@
 type: skill
 skill_type: process
 created: 2026-10-20
-updated: 2026-10-20
+updated: 2026-10-21
 status: active   # shipped in template v8.13 (223ecc1 + tag v8.13, 2026-10-20; ARCADE A4.2 sitting 3, R56). The image copy is the same eight rules, de-narrated (no source-vault path, no finding IDs)
 category: network_operations
 trigger: "Any reachability claim about a mesh peer — UP or DOWN — before recording, relaying, or acting on it"
@@ -41,7 +41,11 @@ port depends on the *probing* side's groups as well.
 ## The rule
 
 1. **Warm, then measure.** Send a throwaway `ping -c2 <peer>` first, then the real measurement, e.g.
-   `ping -c5 -t15 <peer>` (example form: `ping -c5 -t15 198.51.100.7`). Never conclude anything from a single cold probe.
+   `timeout 20 ping -c5 <peer>` (example form: `timeout 20 ping -c5 198.51.100.7`). Never conclude anything from a single cold probe.
+   ⚠ **`ping`'s timing flags are not portable.** On macOS `-t N` is a total timeout in seconds and `-W N` a per-reply
+   wait in **milliseconds**; on Linux (iputils) `-t N` sets the **TTL** (no time bound at all) and `-W N` is seconds.
+   So bound the probe with `timeout` (rule 5) rather than a `ping` flag, check `uname -s` on the vantage, and record
+   the command as typed beside the result. A `-W 5` that waits 5 ms reads a healthy peer as 0/5.
 2. **State the vantage.** Every recorded reachability fact names the machine it was measured from (`A→peer 5/5 0%`
    is not the same fact as `B→peer`). A claim without a vantage is not a fact.
 3. **Cross-check before declaring DOWN.** A peer is down when it fails a warm probe **and** sibling peers answer
@@ -71,6 +75,10 @@ an alarm raised after probing the wrong address (*probe the address you mean*); 
 that all read DOWN, with the host surfacing minutes after the close (say "down as of `<time>`"); and the mirror
 image, a warmed probe that read UP inside a short up-window on a flapping host, caught only by the close re-read.
 For months the discipline had bounded DOWN claims while UP claims shipped unbounded. Rules 7–8 close that gap.
+Rule 1's flag-portability note came back from the source graph after v8.13 shipped (Venus, `Network.aDNA`,
+2026-10-20): a healthy sibling read 0/5 at `-W 5` and 5/5 at `-W 5000` from one macOS vantage in the same minute,
+and the day before the same shape had been recorded as "a slow path". It was the unit. *(Dev-graph narration;
+de-narrate at the fold.)*
 
 ## Self-reference
 

@@ -1,5 +1,5 @@
 {
-  "$comment": "Pin file for byte copies held in this graph (aDNA.aDNA ADR-067 clause 2: a copy held in another graph is a face; the Noether reply's Q5 position: a pin file is accepted in place of an in-file stamp for a byte copy). Never edit a pinned copy: re-vendor it from its source and update this pin. adna_validate.py --governance checks it (ADR-067 clause 4: a mismatch is a warning; an absent source is unverifiable, never failed).",
+  "$comment": "Pin file for byte copies held in this graph (aDNA.aDNA ADR-067 clause 2: a copy held in another graph is a face; the Noether reply's Q5 position: a pin file is accepted in place of an in-file stamp for a byte copy). Never edit a pinned copy: re-vendor it from its source and update this pin. adna_validate.py --governance checks it (aDNA.aDNA ADR-067 clause 4: a mismatch is a warning; an absent source is unverifiable, never failed).",
   "copies": [
     {
       "path": "lattice.schema.json",

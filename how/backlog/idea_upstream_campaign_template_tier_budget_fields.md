@@ -10,12 +10,13 @@ effort: quick
 proposed_by: agent_rosetta
 proposed_date: 2026-10-03
 created: 2026-10-03
-updated: 2026-10-03
+updated: 2026-10-21
 last_edited_by: agent_rosetta
 plan_id:
 filed_from: how/missions/artifacts/sitrep_mid_campaign_20261003.md §5 S4
 relates: [template_mission, template_campaign, template_campaign_mission, campaign_garnier, pattern_model_tiered_campaign_execution, release_staging_ledger_v8_12]
 tags: [backlog, upstream, templates, executor_tier, token_budget, v8_12_candidate]
+release_window: v8.14   # ledger how/missions/artifacts/v8_14/v8_14_release_ledger.md rows C13+Gb (written locally 2026-10-21); `type: plan` → §4 Q6
 ---
 
 # Campaign-level templates are behind the mission template
